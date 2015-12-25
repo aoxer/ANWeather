@@ -1,39 +1,28 @@
 //
 //  ANWeatherData.h
-//  大安天气
+//  ANWeather
 //
-//  Created by a on 15/12/24.
+//  Created by a on 15/12/25.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ANNowM.h"
+#import "ANDailyForecastM.h"
+#import "ANAqiM.h"
 @interface ANWeatherData : NSObject
-
 /**
- *  "city": "北京",  //城市名称
+ *  当前天气的模型
  */
-@property (copy, nonatomic)NSString *city;
+@property (strong, nonatomic)ANNowM *now;
 /**
- *  "dir": "北风", //风向
+ *  空气质量的模型
  */
-@property (copy, nonatomic)NSString *dir;
+@property (strong, nonatomic)ANAqiM *aqi;
 /**
- *  "sc": "3级", //风力
+ *  几日天气的模型数组
  */
-@property (copy, nonatomic)NSString *sc;
-/**
- *  "pm25": "7", //PM2.5 1小时平均值(ug/m³)
- */
-@property (copy, nonatomic)NSString *pm25;
-
-/**
- *"spd": "15" //风速（kmph）
- */
-@property (copy, nonatomic)NSString *spd;
-
-@property (strong, nonatomic)NSMutableArray *ditailArray;
-
+@property (strong, nonatomic)NSMutableArray *daily_forecast;
 
 
 @end

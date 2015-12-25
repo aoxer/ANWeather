@@ -10,12 +10,38 @@
 
 @implementation ANPM25ItemView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+    }
+    return self;
 }
-*/
+
+
+
+- (void)setCity:(ANCity *)city
+{
+    _city = city;
+    // pm2.5
+    self.pm25Label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    self.pm25Label.backgroundColor = ANRandomColor;
+    self.pm25Label.text = self.city.pm25;
+    [self addSubview:self.pm25Label];
+    
+    // pm2.5
+    self.qltyLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 20)];
+    self.qltyLabel.backgroundColor = ANRandomColor;
+    self.qltyLabel.text = self.city.qlty;
+    [self addSubview:self.qltyLabel];
+
+}
+
++ (instancetype)view
+{
+    return [[[NSBundle mainBundle] loadNibNamed:@"ANPM25ItemView" owner:nil options:0 ] lastObject];
+}
 
 @end

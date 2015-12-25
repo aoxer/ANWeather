@@ -7,6 +7,7 @@
 //
 
 /*
+
 {
 HeWeather data service 3.0 = [
 {
@@ -361,6 +362,8 @@ HeWeather data service 3.0 = [
 #import "AFNetworking.h"
 #import "MJExtension.h"
 #import "ANWeatherData.h"
+#import "ANDailyForecastM.h"
+
 
 #define MARGIN 5
 #define ANMaxRow 3
@@ -373,6 +376,8 @@ HeWeather data service 3.0 = [
 @property (strong, nonatomic)ANTempItemView *tempItem;
 
 @property (strong, nonatomic)ANWeatherData *weatherData;
+
+
 @end
 
 @implementation ViewController
@@ -389,9 +394,10 @@ HeWeather data service 3.0 = [
 
 - (void)viewDidLoad {
     
-    [self addItem];
-    
     [self sendRequest];
+    
+    
+    [self addItem];
 }
 
 - (void)sendRequest
@@ -410,13 +416,17 @@ HeWeather data service 3.0 = [
     [param setValue:@"beijing" forKey:@"city"];
     
     [mgr GET:requsetURL parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        ANLog(@"%@", responseObject);
         
-        NSArray *array = [ANWeatherData objectArrayWithKeyValuesArray:responseObject[@"HeWeather data service 3.0"]];
-        NSMutableDictionary *dict =  [NSMutableDictionary dictionary];
-        dict[@"hourly_forecast"] = [ANWeatherData keyValuesArrayWithObjectArray:array];
+        NSMutableDictionary *WeatherDict = [responseObject[@"HeWeather data service 3.0"] lastObject];
         
-        [dict writeToFile:@"/Users/a/Desktop/weather.plist" atomically:YES];
+//        NSArray *dailayForecastArray = WeatherDict[@"daily_forecast"];
+//        NSMutableDictionary *aqiDict = WeatherDict[@"aqi"][@"city"];
+//        NSMutableDictionary *nowDict = WeatherDict[@"now"];
+
+        ANWeatherData *data = [ANWeatherData objectWithKeyValues:WeatherDict];
+        self.weatherData = data;
+        
+        self.pm25Item.city = self.weatherData.aqi.city;
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -432,8 +442,9 @@ HeWeather data service 3.0 = [
  */
 - (void)addItem
 {
+    
     // 天气
-    ANWeatherItemView *weatherItem = [[ANWeatherItemView alloc] init];
+    ANWeatherItemView *weatherItem = [ANWeatherItemView view];
     weatherItem.backgroundColor = ANRandomColor;
     [self.view addSubview:weatherItem];
     self.weatherItem = weatherItem;
@@ -441,6 +452,7 @@ HeWeather data service 3.0 = [
     
     // pm2.5
     ANPM25ItemView *pm25Item = [[ANPM25ItemView alloc] init];
+    pm25Item.city = self.weatherData.aqi.city;
     pm25Item.backgroundColor = ANRandomColor;
     [self.view addSubview:pm25Item];
     self.pm25Item = pm25Item;
