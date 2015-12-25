@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  大安天气
+//
+//  Created by a on 15/12/24.
+//  Copyright (c) 2015年 YongChaoAn. All rights reserved.
+//
+
+#import "UIView+Extension.h"
+
+#ifndef _____PrefixHeader_pch
+#define _____PrefixHeader_pch
+
+
+
+#ifdef DEBUG // 开发阶段
+#define ANLog(...) NSLog(__VA_ARGS__)
+#else // 发布阶段
+#define ANLog(...)
+#endif
+
+
+// RGB颜色
+#define ANColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+// 随机颜色
+#define ANRandomColor ANColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256), 1)
+// 屏幕宽度
+#define ANScreenWidth [UIScreen mainScreen].bounds.size.width
+// 屏幕高度
+#define ANScreenHeight [UIScreen mainScreen].bounds.size.height
+// 通知中心
+#define ANNotificationCenter [NSNotificationCenter defaultCenter]
+
+
+#endif
