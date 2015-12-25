@@ -20,7 +20,7 @@
 #define ANLog(...)
 #endif
 
-
+#define IOS_8_ABOVE [[UIDevice currentDevice].systemVersion doubleValue] >= 8.0
 // RGB颜色
 #define ANColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 

@@ -54,8 +54,11 @@
     self.weatherItem.condLabel.text = weatherData.now.cond.txt;
     self.weatherItem.condImageView.image = [self getWeatherImageWithCondTxt:weatherData.now.cond.txt];
     // pm2.5
-    self.pm25Item.pm25Label.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
-    
+    if (weatherData.aqi.city.pm25 == nil) {
+        self.pm25Item.pm25Label.text = @"";
+    } else {
+        self.pm25Item.pm25Label.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
+    }
     // 温度
     self.tempItem.tempLabel.text = [NSString stringWithFormat:@"%@°", weatherData.now.tmp];
     
