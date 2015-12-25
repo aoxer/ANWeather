@@ -9,16 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "ANCity.h"
 @interface ANPM25ItemView : UIView
+
+
+/**
+ *  空气质量的模型
+ */
+@property (strong, nonatomic)ANCity *city;
 /**
  *  pm2.5的label
  */
-@property (strong, nonatomic)UILabel *pm25Label;
+@property (weak, nonatomic) IBOutlet UILabel *pm25Label;
 /**
- *  空气质量的label
+ *  pm2.5的图片
  */
-@property (strong, nonatomic)UILabel *qltyLabel;
-
-@property (strong, nonatomic)ANCity *city;
+@property (weak, nonatomic) IBOutlet UIImageView *pm25ImageView;
 
 + (instancetype)view;
+
 @end

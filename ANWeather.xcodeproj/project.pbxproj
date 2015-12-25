@@ -49,8 +49,11 @@
 		002216291C2D04C600E665F6 /* ANWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216281C2D04C600E665F6 /* ANWeatherData.m */; };
 		0022162C1C2D27C900E665F6 /* ANCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0022162B1C2D27C900E665F6 /* ANCity.m */; };
 		002216311C2D2EC300E665F6 /* ANPM25ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002216301C2D2EC300E665F6 /* ANPM25ItemView.xib */; };
-		002216341C2D3AF500E665F6 /* ANItemFrameM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216331C2D3AF500E665F6 /* ANItemFrameM.m */; };
 		002216371C2D3B7500E665F6 /* ANAqiM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216361C2D3B7500E665F6 /* ANAqiM.m */; };
+		0022163A1C2D576900E665F6 /* ANWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216391C2D576900E665F6 /* ANWeatherView.m */; };
+		0022163C1C2D62E700E665F6 /* ANTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0022163B1C2D62E700E665F6 /* ANTempItemView.xib */; };
+		0022163E1C2D62FF00E665F6 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0022163D1C2D62FF00E665F6 /* ANWindSpeedItemView.xib */; };
+		002216411C2D737A00E665F6 /* ANCondM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216401C2D737A00E665F6 /* ANCondM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,10 +149,14 @@
 		0022162A1C2D27C900E665F6 /* ANCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANCity.h; path = ANWeather/Model/ANCity.h; sourceTree = "<group>"; };
 		0022162B1C2D27C900E665F6 /* ANCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANCity.m; path = ANWeather/Model/ANCity.m; sourceTree = "<group>"; };
 		002216301C2D2EC300E665F6 /* ANPM25ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ANPM25ItemView.xib; path = ANWeather/View/ANPM25ItemView.xib; sourceTree = "<group>"; };
-		002216321C2D3AF500E665F6 /* ANItemFrameM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANItemFrameM.h; path = ANWeather/Model/ANItemFrameM.h; sourceTree = "<group>"; };
-		002216331C2D3AF500E665F6 /* ANItemFrameM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANItemFrameM.m; path = ANWeather/Model/ANItemFrameM.m; sourceTree = "<group>"; };
 		002216351C2D3B7500E665F6 /* ANAqiM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANAqiM.h; path = ANWeather/Model/ANAqiM.h; sourceTree = "<group>"; };
 		002216361C2D3B7500E665F6 /* ANAqiM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANAqiM.m; path = ANWeather/Model/ANAqiM.m; sourceTree = "<group>"; };
+		002216381C2D576900E665F6 /* ANWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANWeatherView.h; path = ANWeather/View/ANWeatherView.h; sourceTree = "<group>"; };
+		002216391C2D576900E665F6 /* ANWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANWeatherView.m; path = ANWeather/View/ANWeatherView.m; sourceTree = "<group>"; };
+		0022163B1C2D62E700E665F6 /* ANTempItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ANTempItemView.xib; path = ANWeather/View/ANTempItemView.xib; sourceTree = "<group>"; };
+		0022163D1C2D62FF00E665F6 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ANWindSpeedItemView.xib; path = ANWeather/View/ANWindSpeedItemView.xib; sourceTree = "<group>"; };
+		0022163F1C2D737A00E665F6 /* ANCondM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANCondM.h; path = ANWeather/Model/ANCondM.h; sourceTree = "<group>"; };
+		002216401C2D737A00E665F6 /* ANCondM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANCondM.m; path = ANWeather/Model/ANCondM.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,12 +260,12 @@
 				0022162B1C2D27C900E665F6 /* ANCity.m */,
 				0022161E1C2CFC5900E665F6 /* ANNowM.h */,
 				0022161F1C2CFC5900E665F6 /* ANNowM.m */,
+				0022163F1C2D737A00E665F6 /* ANCondM.h */,
+				002216401C2D737A00E665F6 /* ANCondM.m */,
 				0022160C1C2CF69A00E665F6 /* ANWindM.h */,
 				0022160D1C2CF69A00E665F6 /* ANWindM.m */,
 				002216151C2CF97000E665F6 /* ANTemM.h */,
 				002216161C2CF97000E665F6 /* ANTemM.m */,
-				002216321C2D3AF500E665F6 /* ANItemFrameM.h */,
-				002216331C2D3AF500E665F6 /* ANItemFrameM.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -266,16 +273,20 @@
 		002215651C2CE6C800E665F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				002216381C2D576900E665F6 /* ANWeatherView.h */,
+				002216391C2D576900E665F6 /* ANWeatherView.m */,
+				002215B41C2CE8C100E665F6 /* ANWeatherItemView.h */,
+				002215B51C2CE8C100E665F6 /* ANWeatherItemView.m */,
+				002215B61C2CE8C100E665F6 /* ANWeatherItemView.xib */,
 				002215B01C2CE8C100E665F6 /* ANPM25ItemView.h */,
 				002215B11C2CE8C100E665F6 /* ANPM25ItemView.m */,
 				002216301C2D2EC300E665F6 /* ANPM25ItemView.xib */,
 				002215B21C2CE8C100E665F6 /* ANTempItemView.h */,
 				002215B31C2CE8C100E665F6 /* ANTempItemView.m */,
-				002215B41C2CE8C100E665F6 /* ANWeatherItemView.h */,
-				002215B51C2CE8C100E665F6 /* ANWeatherItemView.m */,
-				002215B61C2CE8C100E665F6 /* ANWeatherItemView.xib */,
+				0022163B1C2D62E700E665F6 /* ANTempItemView.xib */,
 				002215B71C2CE8C100E665F6 /* ANWindSpeedItemView.h */,
 				002215B81C2CE8C100E665F6 /* ANWindSpeedItemView.m */,
+				0022163D1C2D62FF00E665F6 /* ANWindSpeedItemView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -457,10 +468,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0022163C1C2D62E700E665F6 /* ANTempItemView.xib in Resources */,
 				002215BC1C2CE8C100E665F6 /* ANWeatherItemView.xib in Resources */,
 				002216311C2D2EC300E665F6 /* ANPM25ItemView.xib in Resources */,
 				002215301C2CE63900E665F6 /* Main.storyboard in Resources */,
 				002215351C2CE63900E665F6 /* LaunchScreen.xib in Resources */,
+				0022163E1C2D62FF00E665F6 /* ANWindSpeedItemView.xib in Resources */,
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +494,7 @@
 			files = (
 				002215F31C2CE8E500E665F6 /* AFSecurityPolicy.m in Sources */,
 				0022162C1C2D27C900E665F6 /* ANCity.m in Sources */,
+				0022163A1C2D576900E665F6 /* ANWeatherView.m in Sources */,
 				002215FA1C2CE8E500E665F6 /* MJFoundation.m in Sources */,
 				002216001C2CE8E500E665F6 /* NSObject+MJKeyValue.m in Sources */,
 				002215F01C2CE8E500E665F6 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -496,8 +510,8 @@
 				002215BB1C2CE8C100E665F6 /* ANWeatherItemView.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
 				002215F41C2CE8E500E665F6 /* AFURLConnectionOperation.m in Sources */,
-				002216341C2D3AF500E665F6 /* ANItemFrameM.m in Sources */,
 				002216011C2CE8E500E665F6 /* NSObject+MJProperty.m in Sources */,
+				002216411C2D737A00E665F6 /* ANCondM.m in Sources */,
 				002216201C2CFC5900E665F6 /* ANNowM.m in Sources */,
 				0022160E1C2CF69A00E665F6 /* ANWindM.m in Sources */,
 				002215F51C2CE8E500E665F6 /* AFURLRequestSerialization.m in Sources */,

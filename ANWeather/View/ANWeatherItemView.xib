@@ -4,21 +4,40 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANWeatherItemView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ANWeatherItemView">
             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="天气" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVH-qa-H5J">
-                    <rect key="frame" x="49" y="36" width="34" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRi-hd-lsc">
+                    <rect key="frame" x="0.0" y="129" width="150" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="VkC-1j-B7x"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slq-2d-7OU">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
+                </imageView>
             </subviews>
+            <constraints>
+                <constraint firstItem="Slq-2d-7OU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Fd-TL-15n"/>
+                <constraint firstAttribute="trailing" secondItem="Slq-2d-7OU" secondAttribute="trailing" id="9KF-Pg-zB7"/>
+                <constraint firstItem="YRi-hd-lsc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Euz-yM-9Iq"/>
+                <constraint firstAttribute="trailing" secondItem="YRi-hd-lsc" secondAttribute="trailing" id="FTc-GQ-K8q"/>
+                <constraint firstItem="YRi-hd-lsc" firstAttribute="top" secondItem="Slq-2d-7OU" secondAttribute="bottom" id="TAr-3V-zOr"/>
+                <constraint firstAttribute="bottom" secondItem="YRi-hd-lsc" secondAttribute="bottom" id="axs-OT-7Q4"/>
+                <constraint firstItem="Slq-2d-7OU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eEO-Bs-CBu"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="condImageView" destination="Slq-2d-7OU" id="sN2-SZ-SKu"/>
+                <outlet property="condLabel" destination="YRi-hd-lsc" id="GfK-Oo-Lpt"/>
+            </connections>
             <point key="canvasLocation" x="252" y="191"/>
         </view>
     </objects>

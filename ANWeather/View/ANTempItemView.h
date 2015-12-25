@@ -10,4 +10,7 @@
 
 @interface ANTempItemView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+
++ (instancetype)view;
 @end

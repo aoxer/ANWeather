@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ANWindM.h"
+#import "ANCondM.h"
 @interface ANNowM : NSObject
 /**
  "fl": "30", //体感温度
@@ -32,4 +33,9 @@
  *  风的模型
  */
 @property (strong, nonatomic)ANWindM *wind;
+/**
+ * 天气状况
+ */
+@property (strong, nonatomic)ANCondM *cond;
+
 @end

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ANWindSpeedItemView : UIView
-
+@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windDirLabel;
++ (instancetype)view;
 @end
