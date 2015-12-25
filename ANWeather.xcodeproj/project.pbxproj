@@ -46,11 +46,11 @@
 		002216171C2CF97000E665F6 /* ANTemM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216161C2CF97000E665F6 /* ANTemM.m */; };
 		002216201C2CFC5900E665F6 /* ANNowM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0022161F1C2CFC5900E665F6 /* ANNowM.m */; };
 		002216231C2CFE0A00E665F6 /* ANDailyForecastM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216221C2CFE0A00E665F6 /* ANDailyForecastM.m */; };
-		002216261C2D00AE00E665F6 /* ANAqiM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216251C2D00AE00E665F6 /* ANAqiM.m */; };
 		002216291C2D04C600E665F6 /* ANWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216281C2D04C600E665F6 /* ANWeatherData.m */; };
 		0022162C1C2D27C900E665F6 /* ANCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0022162B1C2D27C900E665F6 /* ANCity.m */; };
 		002216311C2D2EC300E665F6 /* ANPM25ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 002216301C2D2EC300E665F6 /* ANPM25ItemView.xib */; };
 		002216341C2D3AF500E665F6 /* ANItemFrameM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216331C2D3AF500E665F6 /* ANItemFrameM.m */; };
+		002216371C2D3B7500E665F6 /* ANAqiM.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216361C2D3B7500E665F6 /* ANAqiM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,8 +141,6 @@
 		0022161F1C2CFC5900E665F6 /* ANNowM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANNowM.m; path = ANWeather/Model/ANNowM.m; sourceTree = "<group>"; };
 		002216211C2CFE0A00E665F6 /* ANDailyForecastM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANDailyForecastM.h; path = ANWeather/Model/ANDailyForecastM.h; sourceTree = "<group>"; };
 		002216221C2CFE0A00E665F6 /* ANDailyForecastM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANDailyForecastM.m; path = ANWeather/Model/ANDailyForecastM.m; sourceTree = "<group>"; };
-		002216241C2D00AE00E665F6 /* ANAqiM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANAqiM.h; path = ANWeather/Model/ANAqiM.h; sourceTree = "<group>"; };
-		002216251C2D00AE00E665F6 /* ANAqiM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANAqiM.m; path = ANWeather/Model/ANAqiM.m; sourceTree = "<group>"; };
 		002216271C2D04C600E665F6 /* ANWeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANWeatherData.h; path = ANWeather/Model/ANWeatherData.h; sourceTree = "<group>"; };
 		002216281C2D04C600E665F6 /* ANWeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANWeatherData.m; path = ANWeather/Model/ANWeatherData.m; sourceTree = "<group>"; };
 		0022162A1C2D27C900E665F6 /* ANCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANCity.h; path = ANWeather/Model/ANCity.h; sourceTree = "<group>"; };
@@ -150,6 +148,8 @@
 		002216301C2D2EC300E665F6 /* ANPM25ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ANPM25ItemView.xib; path = ANWeather/View/ANPM25ItemView.xib; sourceTree = "<group>"; };
 		002216321C2D3AF500E665F6 /* ANItemFrameM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANItemFrameM.h; path = ANWeather/Model/ANItemFrameM.h; sourceTree = "<group>"; };
 		002216331C2D3AF500E665F6 /* ANItemFrameM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANItemFrameM.m; path = ANWeather/Model/ANItemFrameM.m; sourceTree = "<group>"; };
+		002216351C2D3B7500E665F6 /* ANAqiM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANAqiM.h; path = ANWeather/Model/ANAqiM.h; sourceTree = "<group>"; };
+		002216361C2D3B7500E665F6 /* ANAqiM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANAqiM.m; path = ANWeather/Model/ANAqiM.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,8 +247,8 @@
 				002216281C2D04C600E665F6 /* ANWeatherData.m */,
 				002216211C2CFE0A00E665F6 /* ANDailyForecastM.h */,
 				002216221C2CFE0A00E665F6 /* ANDailyForecastM.m */,
-				002216241C2D00AE00E665F6 /* ANAqiM.h */,
-				002216251C2D00AE00E665F6 /* ANAqiM.m */,
+				002216351C2D3B7500E665F6 /* ANAqiM.h */,
+				002216361C2D3B7500E665F6 /* ANAqiM.m */,
 				0022162A1C2D27C900E665F6 /* ANCity.h */,
 				0022162B1C2D27C900E665F6 /* ANCity.m */,
 				0022161E1C2CFC5900E665F6 /* ANNowM.h */,
@@ -503,9 +503,9 @@
 				002215F51C2CE8E500E665F6 /* AFURLRequestSerialization.m in Sources */,
 				002215F71C2CE8E500E665F6 /* AFURLSessionManager.m in Sources */,
 				002216021C2CE8E500E665F6 /* NSString+MJExtension.m in Sources */,
-				002216261C2D00AE00E665F6 /* ANAqiM.m in Sources */,
 				002216291C2D04C600E665F6 /* ANWeatherData.m in Sources */,
 				002215F61C2CE8E500E665F6 /* AFURLResponseSerialization.m in Sources */,
+				002216371C2D3B7500E665F6 /* ANAqiM.m in Sources */,
 				002215FE1C2CE8E500E665F6 /* NSObject+MJClass.m in Sources */,
 				002216231C2CFE0A00E665F6 /* ANDailyForecastM.m in Sources */,
 				002215F91C2CE8E500E665F6 /* MJExtensionConst.m in Sources */,
