@@ -12,6 +12,8 @@
 #import "ANWeatherData.h"
 #import "ANDailyForecastM.h"
 #import "ANWeatherView.h"
+#import "MBProgressHUD+MJ.h"
+#import "RESideMenu.h"
 
 
 #import <CoreLocation/CoreLocation.h>
@@ -57,36 +59,73 @@
 
 - (void)viewDidLoad {
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:nil action:nil];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"right" style:UIBarButtonItemStyleDone target:self action:@selector(getLocation)];
+    // 设置导航栏
+    [self setupNavigaitonItem];
     
+    // 发送请求
     [self sendRequestWithCity:@"beijing"];
     
     // 添加天气View
-    self.weatherView = [[ANWeatherView alloc] initWithFrame:self.view.bounds];
-    [self.weatherView weatherView];
-    [self.view addSubview:_weatherView];
+    [self SetupWeatherView];
     
-
     // 成为CoreLocation管理者的代理监听获取到的位置
     self.locationMgr.delegate = self;
   
     // 如果是iOS8+ 请求位置授权
+    [self requestAuthorizaiton];
+}
+
+/**
+ *  如果是iOS8+ 请求位置授权
+ */
+- (void)requestAuthorizaiton
+{
     if (IOS_8_ABOVE) {
         [self.locationMgr requestAlwaysAuthorization];
     } else {
         [self.locationMgr startUpdatingLocation];
     }
     
+
 }
 
+/**
+ *  设置导航栏
+ */
+- (void)setupNavigaitonItem
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(callLeft)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"right" style:UIBarButtonItemStyleDone target:self action:@selector(getLocation)];
+}
+
+- (void)callLeft
+{
+    [self.sideMenuViewController presentLeftMenuViewController];
+}
+/**
+ *  设置天气控件
+ */
+- (void)SetupWeatherView
+{
+    self.weatherView = [[ANWeatherView alloc] initWithFrame:self.view.bounds];
+    [self.weatherView weatherView];
+    [self.view addSubview:_weatherView];
+}
+
+/**
+ *  获取位置
+ */
 - (void)getLocation
 {
+    // 弹出提示HUD
+    [MBProgressHUD showMessage:@"定位ing..."];
     // (开始获取位置)
     [self.locationMgr startUpdatingLocation];
 }
 
-// 发送数据请求
+/**
+ *  发送数据请求
+ */
 - (void)sendRequestWithCity:(NSString *)city
 {
     //http://apis.baidu.com/heweather/weather/free
@@ -123,6 +162,9 @@
 
 
 #pragma mark CLLocationManagerDelegate
+/**
+ *  位置发生改变时调用
+ */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     [self.locationMgr stopUpdatingLocation];
@@ -137,6 +179,13 @@
             NSString *city = [pm.locality substringWithRange:NSMakeRange(0, pm.locality.length - 1)];
             
             [self sendRequestWithCity:city];
+            
+            // 隐藏HUD
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showMessage:@"定位成功"];
+            [MBProgressHUD hideHUD];
+            
+            
             
             ANLog(@"%@", city);
         }
