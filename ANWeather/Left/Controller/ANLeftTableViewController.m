@@ -20,7 +20,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (ANScreenHeight - 54 * 5) /2.0f, ANScreenWidth, 54*5) style:UITableViewStylePlain];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundView = nil;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -52,7 +52,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
         
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
@@ -65,11 +65,22 @@
     NSArray *titles = @[@"Home", @"Calendar", @"Profile", @"Settings", @"Log Out"];
     NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty"];
 
+//    监听通知
+    [ANNotificationCenter addObserver:self selector:@selector(setupCellWithIndexPath:notification:) name:@"didReviceWeatherDataNotification" object:nil];
+    
+    
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
     return cell;
 }
+
+- (void)setupCellWithIndexPath:(NSIndexPath *)indexPath notification:(NSNotification *)notification
+{
+    ANLog(@"%@--%@", indexPath.row, notification.userInfo);
+}
+    
+    
 
 /*
 // Override to support conditional editing of the table view.

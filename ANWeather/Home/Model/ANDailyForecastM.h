@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "ANWindM.h"
 #import "ANTemM.h"
-/**
-"date": "2015-07-02", //预报日期
+/*
+ "date": "2015-07-02", //预报日期
  */
-
 @interface ANDailyForecastM : NSObject
 /**
  *  最高温最低温的模型
@@ -26,7 +25,6 @@
  *  预报日期
  */
 @property (copy, nonatomic)NSString *date;
-
 
 
 @end

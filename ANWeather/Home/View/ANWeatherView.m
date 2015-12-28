@@ -48,8 +48,7 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
-    
-    
+
     // 天气
     self.weatherItem.condLabel.text = weatherData.now.cond.txt;
     self.weatherItem.condImageView.image = [self getWeatherImageWithCondTxt:weatherData.now.cond.txt];
@@ -61,11 +60,16 @@
     }
     // 温度
     self.tempItem.tempLabel.text = [NSString stringWithFormat:@"%@°", weatherData.now.tmp];
+#warning 字典转模型到底需不需要在这里转
+    ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
+    
+   self.tempItem.maxMinTemp.text = [NSString stringWithFormat:@"%@°~%@°", day1.tmp.max, day1.tmp.min];
     
     // 风速
     self.windSpeedItem.windSpeedLabel.text = weatherData.now.wind.sc;
     self.windSpeedItem.windDirLabel.text = weatherData.now.wind.dir;
 
+    
     
 }
 
@@ -97,6 +101,7 @@
  */
 - (void)weatherView
 {
+    self.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     // 创建tableView 容纳方块View
     self.backgroundColor = ANRandomColor;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -117,7 +122,7 @@
     
     // 温度
     ANTempItemView *tempItem = [ANTempItemView view];
-    tempItem.backgroundColor = ANRandomColor;
+    tempItem.backgroundColor = ANColor(54, 54, 54, 1);
     [self addSubview:tempItem];
     self.tempItem = tempItem;
     [self.items addObject:tempItem];

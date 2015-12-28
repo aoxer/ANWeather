@@ -10,8 +10,13 @@
 
 @implementation ANTempItemView
 
+- (void)awakeFromNib
+{
+    self.tempLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:60];
+}
 + (instancetype)view
 {
+    
     return [[[NSBundle mainBundle] loadNibNamed:@"ANTempItemView" owner:nil options:0 ] lastObject];
 }
 @end

@@ -94,8 +94,12 @@
  */
 - (void)setupNavigaitonItem
 {
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(callLeft)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"right" style:UIBarButtonItemStyleDone target:self action:@selector(getLocation)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"top_navigation_menuicon" andImageNameHighlight:nil];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(getLocation) andImageName:@"location" andImageNameHighlight:nil];
+    self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
+
+
 }
 
 - (void)callLeft
@@ -108,6 +112,7 @@
 - (void)SetupWeatherView
 {
     self.weatherView = [[ANWeatherView alloc] initWithFrame:self.view.bounds];
+    self.weatherView.backgroundColor = ANColor(40, 40, 40, 1);
     [self.weatherView weatherView];
     [self.view addSubview:_weatherView];
 }
@@ -150,14 +155,28 @@
 //        NSMutableDictionary *nowDict = WeatherDict[@"now"];
 
         ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:WeatherDict];
+        
         self.weatherView.weatherData = weatherData;
 //        ANLog(@"%@", responseObject);
+        
+        // 发出通知
+        [self postNotificationsWithWeatherDict:WeatherDict];
+
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         ANLog(@"%@",error);
     }];
     
     
+}
+
+/**
+ *  发出通知
+ */
+- (void)postNotificationsWithWeatherDict:(NSDictionary *)weatherDict
+{
+    // 发送一个接收到数据模型的通知
+//    [ANNotificationCenter postNotificationName:@"didReviceWeatherDataNotification" object:self userInfo:weatherDict];
 }
 
 
@@ -193,6 +212,9 @@
     }];
 }
 
-
+- (void)dealloc
+{
+    [ANNotificationCenter removeObserver:self];
+}
 
 @end

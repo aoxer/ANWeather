@@ -11,6 +11,7 @@
 @interface ANTempItemView : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *tempLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxMinTemp;
 
 + (instancetype)view;
 @end
