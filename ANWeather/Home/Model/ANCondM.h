@@ -13,4 +13,8 @@
  *   "txt": "晴" //天气状况描述
  */
 @property (copy, nonatomic)NSString *txt;
+/**
+ *   "txt": "晴" //白天天气状况描述
+ */
+@property (copy, nonatomic)NSString *txt_d;
 @end
