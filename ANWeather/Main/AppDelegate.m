@@ -10,8 +10,8 @@
 #import "ViewController.h"
 #import "RESideMenu.h"
 #import "ANLeftTableViewController.h"
+#import "ANRightTableViewController.h"
 
-#import "DEMOLeftMenuViewController.h"
 
 
 
@@ -29,10 +29,11 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     
     ANLeftTableViewController *leftViewController = [[ANLeftTableViewController alloc] init];
+    ANLeftTableViewController *rightViewController = [[ANRightTableViewController alloc] init];
     
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
                                                                     leftMenuViewController:leftViewController
-                                                                   rightMenuViewController:nil];
+                                                                   rightMenuViewController:rightViewController];
     
     sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
     sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent

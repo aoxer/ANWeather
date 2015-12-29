@@ -19,4 +19,9 @@
     
     return [[[NSBundle mainBundle] loadNibNamed:@"ANTempItemView" owner:nil options:0 ] lastObject];
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    ANLog(@"%@", NSStringFromClass([self class]));
+}
 @end

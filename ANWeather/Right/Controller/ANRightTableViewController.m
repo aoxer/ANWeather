@@ -1,32 +1,27 @@
 //
-//  ANLeftTableViewController.m
+//  ANRightTableViewController.m
 //  ANWeather
 //
-//  Created by a on 15/12/26.
+//  Created by a on 15/12/29.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
-//
+// 
+#import "ANRightTableViewController.h"
 
-#import "ANLeftTableViewController.h"
-
-#import "ANAboutTableViewController.h"
-
-@interface ANLeftTableViewController ()
+@interface ANRightTableViewController ()
 
 @end
 
-@implementation ANLeftTableViewController
+@implementation ANRightTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, (ANScreenHeight - 54 * 5) /2.0f, ANScreenWidth, 54*5) style:UITableViewStylePlain];
-    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundView = nil;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
- }
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -38,56 +33,24 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *ID = @"cell";
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        
-        cell.backgroundColor = [UIColor clearColor];
-        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
-        cell.textLabel.textColor = [UIColor whiteColor];
-        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
-        cell.selectedBackgroundView = [[UIView alloc] init];
-
-    }
-    
-    NSArray *titles = @[@"Home", @"Share", @"Settings", @"about"];
-    NSArray *images = @[@"IconHome", @"IconProfile", @"IconSettings", @"IconEmpty"];
-
-    cell.textLabel.text = titles[indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
+    // Configure the cell...
     
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (3 == indexPath.row) {
-        ANAboutTableViewController *aboutVC = [[ANAboutTableViewController alloc] init];
-        [self.navigationController pushViewController:aboutVC animated:YES];
-        ANLog(@"%zd", indexPath.row);
-        
-    }
-}
-
-- (void)setupCell:(NSNotification *)notification
-{
-    ANLog(@"%@", notification.userInfo);
-}
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

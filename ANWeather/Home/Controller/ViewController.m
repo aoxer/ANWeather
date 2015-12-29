@@ -15,6 +15,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "RESideMenu.h"
 #import "ANDaysWeatherCell.h"
+#import "MJRefresh.h"
 
 
 #import <CoreLocation/CoreLocation.h>
@@ -47,6 +48,7 @@
 
 @implementation ViewController
 
+#pragma mark 懒加载们
 - (NSMutableArray *)dailyForecastArray
 {
     if (!_dailyForecastArray) {
@@ -73,11 +75,16 @@
 
 - (void)viewDidLoad {
     
+    self.locationMgr.distanceFilter = 1000.f;
+    
+    // 设置tableView
+    [self setupTableView];
+    
     // 设置导航栏
     [self setupNavigaitonItem];
     
     // 发送请求
-    [self sendRequestWithCity:@"beijing"];
+    [self sendRequestWithCity:@"shanghai"];
     
     // 添加天气View
     [self SetupWeatherView];
@@ -87,7 +94,31 @@
   
     // 如果是iOS8+ 请求位置授权
     [self requestAuthorizaiton];
+    
 }
+
+/**
+ *  初始化tableView
+ */
+- (void)setupTableView
+{
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+#warning 刷新没做
+        
+        [self.tableView.header endRefreshing];
+    }];
+    
+}
+
+- (void)pullDownRefreshingWithCity:(NSString *)city
+{
+   
+}
+
 
 /**
  *  如果是iOS8+ 请求位置授权
@@ -100,7 +131,6 @@
         [self.locationMgr startUpdatingLocation];
     }
     
-
 }
 
 /**
@@ -119,6 +149,7 @@
 - (void)callLeft
 {
     [self.sideMenuViewController presentLeftMenuViewController];
+    
 }
 /**
  *  设置天气控件
@@ -126,9 +157,11 @@
 - (void)SetupWeatherView
 {
     self.weatherView = [[ANWeatherView alloc] initWithFrame:self.view.bounds];
+    self.weatherView.showsVerticalScrollIndicator = NO;
     self.weatherView.backgroundColor = ANColor(40, 40, 40, 1);
     self.weatherView.delegate = self;
     self.weatherView.dataSource = self;
+    
     [self.weatherView weatherView];
     [self.view addSubview:_weatherView];
 }
@@ -138,12 +171,46 @@
  */
 - (void)getLocation
 {
-    // 弹出提示HUD
-    [MBProgressHUD showMessage:@"定位ing..."];
-    // (开始获取位置)
-    [self.locationMgr startUpdatingLocation];
+    if ([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus] !=kCLAuthorizationStatusDenied) {
+        // 弹出提示HUD
+        [MBProgressHUD showMessage:@"定位ing..."];
+        // (开始获取位置)
+        [self.locationMgr startUpdatingLocation];
+    } else {
+        // 弹出提醒 并作点击ok跳转
+        [self showAlertForLoaction];
+    }
 }
 
+
+/**
+ *  弹出提醒设置定位功能
+ */
+-(void)showAlertForLoaction
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"定位功能未开启" message:@"是否打开？" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction  *cancel = [UIAlertAction actionWithTitle:@"不打" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        ANLog(@"cancelClickd");
+    }];
+
+    UIAlertAction  *ok = [UIAlertAction actionWithTitle:@"打开" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        NSURL *url = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+        
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            NSURL *url = [NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+
+    }];
+    
+    [alert addAction:cancel];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+
+}
 /**
  *  发送数据请求
  */
@@ -189,12 +256,20 @@
 
 
 #pragma mark CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [MBProgressHUD hideHUD];
+    [MBProgressHUD showError:@"定位失败啥的"];
+}
+
 /**
  *  位置发生改变时调用
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    [self.locationMgr stopUpdatingLocation];
+    
+    
     CLLocation *location = [locations lastObject];
 
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -207,17 +282,21 @@
             
             [self sendRequestWithCity:city];
             
-            // 隐藏HUD
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showMessage:@"定位成功"];
-            [MBProgressHUD hideHUD];
-            
-            
-            
             ANLog(@"%@", city);
         }
         
+        // 隐藏HUD
+        [MBProgressHUD hideHUD];
+        
+        if (error) {
+            // 隐藏HUD
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showError:@"定位失败请fdsafd"];
+        }
     }];
+    
+//    [self.locationMgr stopUpdatingLocation];
+
 }
 
 - (void)dealloc
@@ -225,8 +304,15 @@
     [ANNotificationCenter removeObserver:self];
 }
 #pragma mark  UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+   
+    
     return self.dailyForecastArray.count;
 }
 
@@ -238,6 +324,11 @@
     
     return cell;
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
 }
 
 
