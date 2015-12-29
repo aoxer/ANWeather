@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ANWindM.h"
 #import "ANTemM.h"
+#import "ANCondM.h"
 /*
  "date": "2015-07-02", //预报日期
  */
@@ -25,6 +26,8 @@
  *  预报日期
  */
 @property (copy, nonatomic)NSString *date;
-
-
+/**
+ *  天气描述
+ */
+@property (strong, nonatomic)ANCondM *cond;
 @end
