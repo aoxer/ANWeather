@@ -9,6 +9,7 @@
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "MJExtension.h"
+#import "NSString+WeekDay.h"
 
 #ifndef _____PrefixHeader_pch
 #define _____PrefixHeader_pch

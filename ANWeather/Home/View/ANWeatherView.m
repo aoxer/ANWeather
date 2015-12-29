@@ -11,6 +11,7 @@
 #import "ANWindSpeedItemView.h"
 #import "ANPM25ItemView.h"
 #import "ANTempItemView.h"
+#import "ANDaysWeatherCell.h"
 
 #import "ANWeatherData.h"
 
@@ -28,11 +29,25 @@
 @property (strong, nonatomic)ANPM25ItemView *pm25Item;
 @property (strong, nonatomic)ANTempItemView *tempItem;
 
+@property (strong, nonatomic)NSMutableArray *daysWeatherArray;
+@property (strong, nonatomic)ANDaysWeatherCell *daysWeatherCell;
+
 
 
 
 @end
 @implementation ANWeatherView
+
+/**
+ *  懒加载数组
+ */
+- (NSMutableArray *)daysWeatherArray
+{
+    if (!_daysWeatherArray) {
+        _daysWeatherArray = [NSMutableArray array];
+    }
+    return _daysWeatherArray;
+}
 
 /**
  *  懒加载数组
@@ -101,7 +116,7 @@
  */
 - (void)weatherView
 {
-    self.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
+    self.contentInset = UIEdgeInsetsMake(ANScreenHeight - 64 + MARGIN, 0, 0, 0);
     // 创建tableView 容纳方块View
     self.backgroundColor = ANRandomColor;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -146,9 +161,10 @@
         view.width = (ANScreenWidth - MARGIN * 3) / ANMaxCol;
         view.height = (ANScreenHeight - 74 - MARGIN * 3) / ANMaxRow;
         view.x = MARGIN + col * (view.width + MARGIN);
-        view.y = 74 + row * (view.height + MARGIN);
+        view.y = - ANScreenHeight +(ANScreenHeight - view.height * 2 - MARGIN * 2) + row * (view.height + MARGIN);
         
-        
-    }
+    }    
 }
+
+
 @end

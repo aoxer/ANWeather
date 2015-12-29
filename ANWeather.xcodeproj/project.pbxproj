@@ -64,6 +64,8 @@
 		00934F341C3107040042F0D9 /* ANMaxMinTempItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00934F331C3107040042F0D9 /* ANMaxMinTempItemView.m */; };
 		00934F371C3107190042F0D9 /* ANMaxMinTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F361C3107190042F0D9 /* ANMaxMinTempItemView.xib */; };
 		00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F3A1C311F710042F0D9 /* ANTempItemView.xib */; };
+		00934F471C315F060042F0D9 /* ANDaysWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */; };
+		00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +188,9 @@
 		00934F331C3107040042F0D9 /* ANMaxMinTempItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMaxMinTempItemView.m; sourceTree = "<group>"; };
 		00934F361C3107190042F0D9 /* ANMaxMinTempItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANMaxMinTempItemView.xib; sourceTree = "<group>"; };
 		00934F3A1C311F710042F0D9 /* ANTempItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTempItemView.xib; sourceTree = "<group>"; };
+		00934F441C315F060042F0D9 /* ANDaysWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDaysWeatherCell.h; sourceTree = "<group>"; };
+		00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherCell.m; sourceTree = "<group>"; };
+		00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANDaysWeatherCell.xib; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -498,6 +503,9 @@
 				00934F321C3107040042F0D9 /* ANMaxMinTempItemView.h */,
 				00934F331C3107040042F0D9 /* ANMaxMinTempItemView.m */,
 				00934F361C3107190042F0D9 /* ANMaxMinTempItemView.xib */,
+				00934F441C315F060042F0D9 /* ANDaysWeatherCell.h */,
+				00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */,
+				00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */,
 			);
 			name = View;
 			path = ANWeather/Home/View;
@@ -626,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,
+				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
 				009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */,
 				009034051C2E2FA3001FFED3 /* ANWeatherItemView.xib in Resources */,
 				009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */,
@@ -692,6 +701,7 @@
 				009033F81C2E2FA3001FFED3 /* ANAqiM.m in Sources */,
 				009033FD1C2E2FA3001FFED3 /* ANTemM.m in Sources */,
 				002215F81C2CE8E500E665F6 /* MJDictionaryCache.m in Sources */,
+				00934F471C315F060042F0D9 /* ANDaysWeatherCell.m in Sources */,
 				00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */,
 				00934F341C3107040042F0D9 /* ANMaxMinTempItemView.m in Sources */,
 				009033FA1C2E2FA3001FFED3 /* ANCondM.m in Sources */,

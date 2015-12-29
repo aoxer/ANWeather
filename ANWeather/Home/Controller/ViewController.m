@@ -14,10 +14,11 @@
 #import "ANWeatherView.h"
 #import "MBProgressHUD+MJ.h"
 #import "RESideMenu.h"
+#import "ANDaysWeatherCell.h"
 
 
 #import <CoreLocation/CoreLocation.h>
-@interface ViewController ()<CLLocationManagerDelegate>
+@interface ViewController ()<CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 
 @property (strong, nonatomic)ANWeatherView *weatherView;
@@ -25,6 +26,11 @@
  *  天气数据模型
  */
 @property (strong, nonatomic)ANWeatherData *weatherData;
+/**
+ *  几日天气模型数组
+ */
+@property (strong, nonatomic)NSMutableArray *dailyForecastArray;
+
 
 /**
  *  位置管理者
@@ -40,6 +46,14 @@
 @end
 
 @implementation ViewController
+
+- (NSMutableArray *)dailyForecastArray
+{
+    if (!_dailyForecastArray) {
+        _dailyForecastArray = [NSMutableArray array];
+    }
+    return _dailyForecastArray;
+}
 
 - (CLGeocoder *)geocoder
 {
@@ -113,6 +127,8 @@
 {
     self.weatherView = [[ANWeatherView alloc] initWithFrame:self.view.bounds];
     self.weatherView.backgroundColor = ANColor(40, 40, 40, 1);
+    self.weatherView.delegate = self;
+    self.weatherView.dataSource = self;
     [self.weatherView weatherView];
     [self.view addSubview:_weatherView];
 }
@@ -150,18 +166,17 @@
         
         NSMutableDictionary *WeatherDict = [responseObject[@"HeWeather data service 3.0"] lastObject];
         
-//        NSArray *dailayForecastArray = WeatherDict[@"daily_forecast"];
+#warning 转为模型数组
+        self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:WeatherDict[@"daily_forecast"]];
+        
 //        NSMutableDictionary *aqiDict = WeatherDict[@"aqi"][@"city"];
 //        NSMutableDictionary *nowDict = WeatherDict[@"now"];
 
         ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:WeatherDict];
-        
         self.weatherView.weatherData = weatherData;
-//        ANLog(@"%@", responseObject);
         
-        // 发出通知
-        [self postNotificationsWithWeatherDict:WeatherDict];
-
+//        ANLog(@"%@", responseObject);
+        [self.weatherView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         ANLog(@"%@",error);
@@ -170,14 +185,7 @@
     
 }
 
-/**
- *  发出通知
- */
-- (void)postNotificationsWithWeatherDict:(NSDictionary *)weatherDict
-{
-    // 发送一个接收到数据模型的通知
-//    [ANNotificationCenter postNotificationName:@"didReviceWeatherDataNotification" object:self userInfo:weatherDict];
-}
+
 
 
 #pragma mark CLLocationManagerDelegate
@@ -216,5 +224,27 @@
 {
     [ANNotificationCenter removeObserver:self];
 }
+#pragma mark  UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dailyForecastArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ANDaysWeatherCell *cell = [ANDaysWeatherCell cellWithTableView:tableView];
+
+    cell.dailyForcast = self.dailyForecastArray[indexPath.row];
+    
+    return cell;
+    
+}
+
+
+//#pragma mark ANDaysWeatherCellDelegate
+//- (void)daysWeatherCell:(ANDaysWeatherCell *)didChangeData
+//{
+//    [self.weatherView reloadData];
+//}
 
 @end

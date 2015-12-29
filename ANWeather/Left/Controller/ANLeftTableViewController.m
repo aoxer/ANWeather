@@ -66,7 +66,7 @@
     NSArray *images = @[@"IconHome", @"IconCalendar", @"IconProfile", @"IconSettings", @"IconEmpty"];
 
 //    监听通知
-    [ANNotificationCenter addObserver:self selector:@selector(setupCellWithIndexPath:notification:) name:@"didReviceWeatherDataNotification" object:nil];
+    [ANNotificationCenter addObserver:self selector:@selector(setupCell:) name:@"didReviceWeatherDataNotification" object:nil];
     
     
     cell.textLabel.text = titles[indexPath.row];
@@ -75,9 +75,9 @@
     return cell;
 }
 
-- (void)setupCellWithIndexPath:(NSIndexPath *)indexPath notification:(NSNotification *)notification
+- (void)setupCell:(NSNotification *)notification
 {
-    ANLog(@"%@--%@", indexPath.row, notification.userInfo);
+    ANLog(@"%@", notification.userInfo);
 }
     
     
