@@ -44,8 +44,8 @@
     ANLog(@"%@", dailyForcast.cond.txt_d);
     self.week.text = [self weekDayFromDate:dailyForcast.date];
     self.date.text = [self dateWithMonthDay:dailyForcast.date];
-    self.maxTemp.text = dailyForcast.tmp.max;
-    self.minTemp.text = dailyForcast.tmp.min;
+    self.maxTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.max];
+    self.minTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.min];
     self.weatherIcon.image = [self getWeatherImageWithCondTxt:dailyForcast.cond.txt_d];
    
 
@@ -86,25 +86,25 @@
     NSInteger weekday = [weekdayComponents weekday];
    
     switch (weekday) {
-        case 1:
+        case 2:
             return @"周一";
             break;
-        case 2:
+        case 3:
             return @"周二";
             break;
-        case 3:
+        case 4:
             return @"周三";
             break;
-        case 4:
+        case 5:
             return @"周四";
             break;
-        case 5:
+        case 6:
             return @"周五";
             break;
-        case 6:
+        case 7:
             return @"周六";
             break;
-        case 7:
+        case 1:
             return @"周日";
         default:
             break;
