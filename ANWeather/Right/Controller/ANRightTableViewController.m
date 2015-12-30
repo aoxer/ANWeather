@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 // 
 #import "ANRightTableViewController.h"
+#import "ViewController.h"
+
 
 @interface ANRightTableViewController ()
 
@@ -15,12 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.frame = CGRectMake(0, (ANScreenHeight - 54 * 5) /2.0f, ANScreenWidth, 54*5);
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+
+    self.tableView.contentInset = UIEdgeInsetsMake(ANScreenHeight*0.5, 0, 0, 0);
+    self.tableView.contentSize = CGSizeMake(ANScreenWidth*0.1, ANScreenHeight);
+    self.tableView.backgroundColor = ANRandomColor;
+    self.tableView.backgroundView = nil;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,13 +37,84 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 6;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *ID = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+#warning cell向右靠
+        cell.indentationLevel = 10;
+        cell.backgroundColor = [UIColor clearColor];
+        cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
+        cell.selectedBackgroundView = [[UIView alloc] init];
+        
+    }
+    ANLog(@"%zd", indexPath.row);
+    NSArray *titles = @[@"Home", @"Settings", @"神秘选项", @"意见反馈", @"评分", @"About"];
+    NSArray *images = @[@"IconHome", @"IconProfile", @"IconSettings", @"IconProfile", @"IconSettings", @"IconSettings"];
+    
+    cell.textLabel.text = titles[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+#warning 待改
+        case 0:
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+            
+        case 1:
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+            
+        case 2:
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+            
+        case 3:
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+            
+        case 4:
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+            
+        case 5:
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+            
+            
+            
+        default:
+            break;
+    }
+    
 }
 
 /*

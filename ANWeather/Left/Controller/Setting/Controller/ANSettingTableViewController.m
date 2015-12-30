@@ -1,18 +1,18 @@
 //
-//  ANAboutTableViewController.m
+//  ANSettingTableViewController.m
 //  ANWeather
 //
-//  Created by a on 15/12/29.
+//  Created by a on 15/12/30.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
 
-#import "ANAboutTableViewController.h"
+#import "ANSettingTableViewController.h"
 
-@interface ANAboutTableViewController ()
+@interface ANSettingTableViewController ()
 
 @end
 
-@implementation ANAboutTableViewController
+@implementation ANSettingTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,13 +34,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 2;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 3;
+    return 0;
 }
 
 /*

@@ -43,7 +43,11 @@
     sideMenuViewController.contentViewShadowOpacity = 0.6;
     sideMenuViewController.contentViewShadowRadius = 12;
     sideMenuViewController.contentViewShadowEnabled = YES;
+    sideMenuViewController.contentViewScaleValue = 1.0;
+    
     self.window.rootViewController = sideMenuViewController;
+//    self.window.rootViewController = [[ANRightTableViewController alloc] init];
+    
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

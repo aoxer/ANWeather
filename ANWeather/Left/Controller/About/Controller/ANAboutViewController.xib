@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANAboutViewController">
+            <connections>
+                <outlet property="scrollView" destination="h5j-Ks-cj8" id="Muf-e9-yr3"/>
+                <outlet property="view" destination="h5j-Ks-cj8" id="wpX-z5-8cm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="h5j-Ks-cj8">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大安天气 Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD8-KC-16c">
+                    <rect key="frame" x="0.0" y="426" width="320" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="aCY-7j-jAl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thunder" translatesAutoresizingMaskIntoConstraints="NO" id="872-XM-sDU">
+                    <rect key="frame" x="110" y="134" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="5gg-Wn-Ote"/>
+                        <constraint firstAttribute="height" constant="100" id="yWK-JN-rVV"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="nD8-KC-16c" secondAttribute="centerY" constant="-152.5" id="0oc-sM-kFG"/>
+                <constraint firstAttribute="centerY" secondItem="872-XM-sDU" secondAttribute="centerY" constant="100" id="0uw-N3-d04"/>
+                <constraint firstAttribute="trailing" secondItem="nD8-KC-16c" secondAttribute="trailing" id="5ZL-z7-3kn"/>
+                <constraint firstAttribute="centerX" secondItem="872-XM-sDU" secondAttribute="centerX" id="DCZ-pb-lbD"/>
+                <constraint firstAttribute="centerX" secondItem="nD8-KC-16c" secondAttribute="centerX" id="IGo-Vn-ruc"/>
+                <constraint firstItem="nD8-KC-16c" firstAttribute="leading" secondItem="h5j-Ks-cj8" secondAttribute="leading" id="h5g-0v-ye3"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="225" y="-7"/>
+        </scrollView>
+    </objects>
+    <resources>
+        <image name="thunder" width="100" height="135"/>
+    </resources>
+</document>

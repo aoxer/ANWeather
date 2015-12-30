@@ -81,14 +81,16 @@
 		009034071C2E2FA3001FFED3 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F51C2E2FA3001FFED3 /* ANWindSpeedItemView.m */; };
 		009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009033F61C2E2FA3001FFED3 /* ANWindSpeedItemView.xib */; };
 		009034121C2E341D001FFED3 /* DEMOLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0090340C1C2E341D001FFED3 /* DEMOLeftMenuViewController.m */; };
-		0090341B1C2E3933001FFED3 /* ANLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0090341A1C2E3933001FFED3 /* ANLeftTableViewController.m */; };
 		00934F341C3107040042F0D9 /* ANMaxMinTempItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00934F331C3107040042F0D9 /* ANMaxMinTempItemView.m */; };
 		00934F371C3107190042F0D9 /* ANMaxMinTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F361C3107190042F0D9 /* ANMaxMinTempItemView.xib */; };
 		00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F3A1C311F710042F0D9 /* ANTempItemView.xib */; };
 		00934F471C315F060042F0D9 /* ANDaysWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */; };
 		00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */; };
-		00B98CCE1C32CD7400AD5B5C /* ANAboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CCC1C32CD7400AD5B5C /* ANAboutTableViewController.m */; };
-		00B98CCF1C32CD7400AD5B5C /* ANAboutTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CCD1C32CD7400AD5B5C /* ANAboutTableViewController.xib */; };
+		00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CE71C33846200AD5B5C /* ANAboutViewController.m */; };
+		00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */; };
+		00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */; };
+		00B98D0A1C33846200AD5B5C /* ANSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */; };
+		00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
 
@@ -247,8 +249,6 @@
 		009033F61C2E2FA3001FFED3 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindSpeedItemView.xib; sourceTree = "<group>"; };
 		0090340B1C2E341D001FFED3 /* DEMOLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOLeftMenuViewController.h; path = ../../../DEMOLeftMenuViewController.h; sourceTree = "<group>"; };
 		0090340C1C2E341D001FFED3 /* DEMOLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMOLeftMenuViewController.m; path = ../../../DEMOLeftMenuViewController.m; sourceTree = "<group>"; };
-		009034191C2E3933001FFED3 /* ANLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANLeftTableViewController.h; sourceTree = "<group>"; };
-		0090341A1C2E3933001FFED3 /* ANLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLeftTableViewController.m; sourceTree = "<group>"; };
 		00934F321C3107040042F0D9 /* ANMaxMinTempItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANMaxMinTempItemView.h; sourceTree = "<group>"; };
 		00934F331C3107040042F0D9 /* ANMaxMinTempItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANMaxMinTempItemView.m; sourceTree = "<group>"; };
 		00934F361C3107190042F0D9 /* ANMaxMinTempItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANMaxMinTempItemView.xib; sourceTree = "<group>"; };
@@ -256,9 +256,14 @@
 		00934F441C315F060042F0D9 /* ANDaysWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDaysWeatherCell.h; sourceTree = "<group>"; };
 		00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherCell.m; sourceTree = "<group>"; };
 		00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANDaysWeatherCell.xib; sourceTree = "<group>"; };
-		00B98CCB1C32CD7400AD5B5C /* ANAboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutTableViewController.h; sourceTree = "<group>"; };
-		00B98CCC1C32CD7400AD5B5C /* ANAboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutTableViewController.m; sourceTree = "<group>"; };
-		00B98CCD1C32CD7400AD5B5C /* ANAboutTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutTableViewController.xib; sourceTree = "<group>"; };
+		00B98CE61C33846200AD5B5C /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
+		00B98CE71C33846200AD5B5C /* ANAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutViewController.m; sourceTree = "<group>"; };
+		00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutViewController.xib; sourceTree = "<group>"; };
+		00B98CFB1C33846200AD5B5C /* ANSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSettingTableViewController.h; sourceTree = "<group>"; };
+		00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSettingTableViewController.m; sourceTree = "<group>"; };
+		00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANSettingTableViewController.xib; sourceTree = "<group>"; };
+		00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANLeftTableViewController.h; sourceTree = "<group>"; };
+		00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLeftTableViewController.m; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -341,8 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				003C98241C32B25A00160D91 /* Right */,
-				00ED1C0B1C2FB1C700813F30 /* WeatherDetail */,
 				009033B61C2E2E9E001FFED3 /* Left */,
+				00ED1C0B1C2FB1C700813F30 /* WeatherDetail */,
 				009033B51C2E2E88001FFED3 /* Home */,
 				002215671C2CE6DA00E665F6 /* Category */,
 				002215691C2CE78500E665F6 /* libs */,
@@ -587,10 +592,10 @@
 		009033B61C2E2E9E001FFED3 /* Left */ = {
 			isa = PBXGroup;
 			children = (
-				009034181C2E391F001FFED3 /* Controller */,
+				00B98CE31C33846200AD5B5C /* Controller */,
+				00B98D041C33846200AD5B5C /* Model */,
+				00B98D051C33846200AD5B5C /* View */,
 				009033CE1C2E2F92001FFED3 /* 3 */,
-				009033D11C2E2F92001FFED3 /* Model */,
-				009033D21C2E2F92001FFED3 /* View */,
 			);
 			name = Left;
 			sourceTree = "<group>";
@@ -630,22 +635,6 @@
 			);
 			name = 3;
 			path = ANWeather/Left/Controller;
-			sourceTree = "<group>";
-		};
-		009033D11C2E2F92001FFED3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			path = ANWeather/Left/Model;
-			sourceTree = "<group>";
-		};
-		009033D21C2E2F92001FFED3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			path = ANWeather/Left/View;
 			sourceTree = "<group>";
 		};
 		009033D41C2E2FA3001FFED3 /* Controller */ = {
@@ -710,17 +699,228 @@
 			path = ANWeather/Home/View;
 			sourceTree = "<group>";
 		};
-		009034181C2E391F001FFED3 /* Controller */ = {
+		00B98CE31C33846200AD5B5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				00B98CCB1C32CD7400AD5B5C /* ANAboutTableViewController.h */,
-				00B98CCC1C32CD7400AD5B5C /* ANAboutTableViewController.m */,
-				00B98CCD1C32CD7400AD5B5C /* ANAboutTableViewController.xib */,
-				009034191C2E3933001FFED3 /* ANLeftTableViewController.h */,
-				0090341A1C2E3933001FFED3 /* ANLeftTableViewController.m */,
+				00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */,
+				00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */,
+				00B98CE41C33846200AD5B5C /* About */,
+				00B98CED1C33846200AD5B5C /* Comment */,
+				00B98CF11C33846200AD5B5C /* Feedback */,
+				00B98CF51C33846200AD5B5C /* Home */,
+				00B98CF91C33846200AD5B5C /* Setting */,
+				00B98D001C33846200AD5B5C /* support  */,
 			);
 			name = Controller;
 			path = ANWeather/Left/Controller;
+			sourceTree = "<group>";
+		};
+		00B98CE41C33846200AD5B5C /* About */ = {
+			isa = PBXGroup;
+			children = (
+				00B98CE51C33846200AD5B5C /* Controller */,
+				00B98CE91C33846200AD5B5C /* Model */,
+				00B98CEA1C33846200AD5B5C /* View */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		00B98CE51C33846200AD5B5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00B98CE61C33846200AD5B5C /* ANAboutViewController.h */,
+				00B98CE71C33846200AD5B5C /* ANAboutViewController.m */,
+				00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B98CE91C33846200AD5B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B98CEA1C33846200AD5B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B98CED1C33846200AD5B5C /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				00B98CEE1C33846200AD5B5C /* Controller */,
+				00B98CEF1C33846200AD5B5C /* Model */,
+				00B98CF01C33846200AD5B5C /* View */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		00B98CEE1C33846200AD5B5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B98CEF1C33846200AD5B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B98CF01C33846200AD5B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B98CF11C33846200AD5B5C /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				00B98CF21C33846200AD5B5C /* Controller */,
+				00B98CF31C33846200AD5B5C /* Model */,
+				00B98CF41C33846200AD5B5C /* View */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		00B98CF21C33846200AD5B5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B98CF31C33846200AD5B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B98CF41C33846200AD5B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B98CF51C33846200AD5B5C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				00B98CF61C33846200AD5B5C /* Controller */,
+				00B98CF71C33846200AD5B5C /* Model */,
+				00B98CF81C33846200AD5B5C /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		00B98CF61C33846200AD5B5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B98CF71C33846200AD5B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B98CF81C33846200AD5B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B98CF91C33846200AD5B5C /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				00B98CFA1C33846200AD5B5C /* Controller */,
+				00B98CFE1C33846200AD5B5C /* Model */,
+				00B98CFF1C33846200AD5B5C /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		00B98CFA1C33846200AD5B5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00B98CFB1C33846200AD5B5C /* ANSettingTableViewController.h */,
+				00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */,
+				00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B98CFE1C33846200AD5B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B98CFF1C33846200AD5B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B98D001C33846200AD5B5C /* support  */ = {
+			isa = PBXGroup;
+			children = (
+				00B98D011C33846200AD5B5C /* Controller */,
+				00B98D021C33846200AD5B5C /* Model */,
+				00B98D031C33846200AD5B5C /* View */,
+			);
+			path = "support ";
+			sourceTree = "<group>";
+		};
+		00B98D011C33846200AD5B5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00B98D021C33846200AD5B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00B98D031C33846200AD5B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00B98D041C33846200AD5B5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = ANWeather/Left/Model;
+			sourceTree = "<group>";
+		};
+		00B98D051C33846200AD5B5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			path = ANWeather/Left/View;
 			sourceTree = "<group>";
 		};
 		00ED1C0B1C2FB1C700813F30 /* WeatherDetail */ = {
@@ -835,18 +1035,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B98CCF1C32CD7400AD5B5C /* ANAboutTableViewController.xib in Resources */,
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,
 				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
 				009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */,
 				009034051C2E2FA3001FFED3 /* ANWeatherItemView.xib in Resources */,
 				009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */,
+				00B98D0A1C33846200AD5B5C /* ANSettingTableViewController.xib in Resources */,
 				002215301C2CE63900E665F6 /* Main.storyboard in Resources */,
 				00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */,
 				003C981C1C327FFD00160D91 /* MJRefresh.bundle in Resources */,
 				002215351C2CE63900E665F6 /* LaunchScreen.xib in Resources */,
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
 				00934F371C3107190042F0D9 /* ANMaxMinTempItemView.xib in Resources */,
+				00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,6 +1072,7 @@
 				002215F01C2CE8E500E665F6 /* AFHTTPRequestOperationManager.m in Sources */,
 				002215EF1C2CE8E500E665F6 /* AFHTTPRequestOperation.m in Sources */,
 				003C98141C327FFD00160D91 /* MJRefreshAutoNormalFooter.m in Sources */,
+				00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */,
 				009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */,
 				003C98201C327FFD00160D91 /* UIView+MJExtension.m in Sources */,
 				002215C21C2CE8CE00E665F6 /* UIView+Extension.m in Sources */,
@@ -878,6 +1080,7 @@
 				003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */,
 				009034071C2E2FA3001FFED3 /* ANWindSpeedItemView.m in Sources */,
 				003C98101C327FFD00160D91 /* MJRefreshComponent.m in Sources */,
+				00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */,
 				009033FB1C2E2FA3001FFED3 /* ANDailyForecastM.m in Sources */,
 				009034121C2E341D001FFED3 /* DEMOLeftMenuViewController.m in Sources */,
 				003C981E1C327FFD00160D91 /* UIScrollView+MJExtension.m in Sources */,
@@ -898,7 +1101,6 @@
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
-				0090341B1C2E3933001FFED3 /* ANLeftTableViewController.m in Sources */,
 				002215F41C2CE8E500E665F6 /* AFURLConnectionOperation.m in Sources */,
 				002216011C2CE8E500E665F6 /* NSObject+MJProperty.m in Sources */,
 				002215F51C2CE8E500E665F6 /* AFURLRequestSerialization.m in Sources */,
@@ -912,7 +1114,6 @@
 				002215FE1C2CE8E500E665F6 /* NSObject+MJClass.m in Sources */,
 				003C98161C327FFD00160D91 /* MJRefreshBackGifFooter.m in Sources */,
 				002215F91C2CE8E500E665F6 /* MJExtensionConst.m in Sources */,
-				00B98CCE1C32CD7400AD5B5C /* ANAboutTableViewController.m in Sources */,
 				009033F91C2E2FA3001FFED3 /* ANCity.m in Sources */,
 				009033CC1C2E2F53001FFED3 /* RESideMenu.m in Sources */,
 				009033FE1C2E2FA3001FFED3 /* ANWeatherData.m in Sources */,
@@ -930,6 +1131,7 @@
 				003C98151C327FFD00160D91 /* MJRefreshAutoStateFooter.m in Sources */,
 				003C98181C327FFD00160D91 /* MJRefreshBackStateFooter.m in Sources */,
 				003C981B1C327FFD00160D91 /* MJRefreshStateHeader.m in Sources */,
+				00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */,
 				003C981A1C327FFD00160D91 /* MJRefreshNormalHeader.m in Sources */,
 				0022152A1C2CE63900E665F6 /* ANWeather.xcdatamodeld in Sources */,
 				002215FB1C2CE8E500E665F6 /* MJProperty.m in Sources */,

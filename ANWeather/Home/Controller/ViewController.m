@@ -16,6 +16,7 @@
 #import "RESideMenu.h"
 #import "ANDaysWeatherCell.h"
 #import "MJRefresh.h"
+#import "ANRightTableViewController.h"
 
 
 #import <CoreLocation/CoreLocation.h>
@@ -138,9 +139,9 @@
  */
 - (void)setupNavigaitonItem
 {
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"top_navigation_menuicon" andImageNameHighlight:nil];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"navigationbar-sidebar" andImageNameHighlight:nil];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(getLocation) andImageName:@"location" andImageNameHighlight:nil];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"add_element" andImageNameHighlight:nil];
     self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
 
 
@@ -149,6 +150,12 @@
 - (void)callLeft
 {
     [self.sideMenuViewController presentLeftMenuViewController];
+}
+
+- (void)callRight
+{
+    [self.sideMenuViewController presentRightMenuViewController];
+//    [self.navigationController pushViewController:[[ANRightTableViewController alloc] init] animated:YES];
     
 }
 /**
@@ -162,9 +169,10 @@
     self.weatherView.delegate = self;
     self.weatherView.dataSource = self;
     
-    [self.weatherView weatherView];
+    [self.weatherView weatherView]; 
     [self.view addSubview:_weatherView];
 }
+
 
 /**
  *  获取位置
@@ -251,8 +259,6 @@
     
     
 }
-
-
 
 
 #pragma mark CLLocationManagerDelegate
