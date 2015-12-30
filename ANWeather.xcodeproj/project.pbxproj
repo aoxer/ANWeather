@@ -91,6 +91,7 @@
 		00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */; };
 		00B98D0A1C33846200AD5B5C /* ANSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */; };
 		00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */; };
+		00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
 
@@ -264,6 +265,8 @@
 		00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANSettingTableViewController.xib; sourceTree = "<group>"; };
 		00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANLeftTableViewController.h; sourceTree = "<group>"; };
 		00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLeftTableViewController.m; sourceTree = "<group>"; };
+		00B98D131C33B0AF00AD5B5C /* ANRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRightTableViewCell.h; sourceTree = "<group>"; };
+		00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRightTableViewCell.m; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -575,6 +578,8 @@
 		003C984A1C32BA3A00160D91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00B98D131C33B0AF00AD5B5C /* ANRightTableViewCell.h */,
+				00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1066,6 +1071,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				002215F31C2CE8E500E665F6 /* AFSecurityPolicy.m in Sources */,
+				00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */,
 				002215FA1C2CE8E500E665F6 /* MJFoundation.m in Sources */,
 				002216001C2CE8E500E665F6 /* NSObject+MJKeyValue.m in Sources */,
 				003C98191C327FFD00160D91 /* MJRefreshGifHeader.m in Sources */,

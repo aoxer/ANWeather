@@ -7,6 +7,7 @@
 // 
 #import "ANRightTableViewController.h"
 #import "ViewController.h"
+#import "ANRightTableViewCell.h"
 
 
 @interface ANRightTableViewController ()
@@ -51,10 +52,10 @@
 {
     static NSString *ID = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    ANRightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[ANRightTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
 #warning cell向右靠
         // 屏幕适配
         CGFloat indentationLevel = ANScreenWidth / 26;
