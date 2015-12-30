@@ -56,7 +56,9 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
 #warning cell向右靠
-        cell.indentationLevel = 10;
+        // 屏幕适配
+        CGFloat indentationLevel = ANScreenWidth / 26;
+        cell.indentationLevel = indentationLevel;
         cell.backgroundColor = [UIColor clearColor];
         cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         cell.textLabel.textColor = [UIColor whiteColor];
