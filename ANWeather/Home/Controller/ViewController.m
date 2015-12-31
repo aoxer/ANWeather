@@ -289,6 +289,8 @@
             // 请求授权
             [self.locationMgr requestWhenInUseAuthorization];
 
+            
+            // a
         } else {
             // 弹出提醒 并作点击ok跳转
 #warning 待优化 可以 弹出提示操作view
