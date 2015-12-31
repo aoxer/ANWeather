@@ -382,15 +382,15 @@
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         
         CLPlacemark *pm = [placemarks lastObject];
-        ANLog(@" %@\n %@\n %@\n %@\n %@\n %@\n %@\n ",
-              pm.name, // eg. Apple Inc.
-              pm.thoroughfare, // street address, eg. 1 Infinite Loop
-              pm.subThoroughfare, // eg. 1
-              pm.locality, // city, eg. Cupertino
-              pm.subLocality, // neighborhood, common name, eg. Mission District
-              pm.administrativeArea, // state, eg. CA
-              pm.country // eg. United States
-              );
+//        ANLog(@" %@\n %@\n %@\n %@\n %@\n %@\n %@\n ",
+//              pm.name, // eg. Apple Inc.
+//              pm.thoroughfare, // street address, eg. 1 Infinite Loop
+//              pm.subThoroughfare, // eg. 1
+//              pm.locality, // city, eg. Cupertino
+//              pm.subLocality, // neighborhood, common name, eg. Mission District
+//              pm.administrativeArea, // state, eg. CA
+//              pm.country // eg. United States
+//              );
         
         // 获取到的城市和当前城市不一样就开始刷新
         if (![pm.locality isEqualToString:self.city]){
