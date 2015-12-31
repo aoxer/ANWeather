@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ANConst : NSObject
+// 账号信息
 
-@end
+extern NSString * const ANApiKey;
+extern NSString * const ANWeatherRequestUrl;

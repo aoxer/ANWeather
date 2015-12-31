@@ -67,7 +67,6 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
         
     }
-    ANLog(@"%zd", indexPath.row);
     NSArray *titles = @[@"Home", @"Settings", @"神秘选项", @"意见反馈", @"评分", @"About"];
     NSArray *images = @[@"IconHome", @"IconProfile", @"IconSettings", @"IconProfile", @"IconSettings", @"IconSettings"];
     

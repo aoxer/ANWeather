@@ -24,7 +24,6 @@
 {
     [super layoutSubviews];
     
-
     self.imageView.x = self.indentationLevel * self.indentationWidth + 25;
 }
 

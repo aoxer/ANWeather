@@ -10,6 +10,8 @@
 #import "ANNowM.h"
 #import "ANDailyForecastM.h"
 #import "ANAqiM.h"
+#import "ANBasicM.h"
+#import "ANStatusM.h"
 @interface ANWeatherData : NSObject
 /**
  *  当前天气的模型
@@ -23,6 +25,14 @@
  *  几日天气的模型数组
  */
 @property (strong, nonatomic)NSMutableArray *daily_forecast;
+/**
+ *  城市基本信息
+ */
+@property (strong, nonatomic)ANBasicM *basic;
+/**
+ *  城市基本信息
+ */
+@property (strong, nonatomic)ANStatusM *status;
 
 
 @end

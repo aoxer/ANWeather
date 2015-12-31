@@ -7,7 +7,11 @@
 //
 
 #import "ANConst.h"
+/*
+ http://apis.baidu.com/heweather/weather/free
+ appKey b8e9ab215ac9fd93a92939ab2718ab60
+ */
 
-@implementation ANConst
-
-@end
+// 账号信息
+NSString * const ANApiKey = @"b8e9ab215ac9fd93a92939ab2718ab60";
+NSString * const ANWeatherRequestUrl = @"http://apis.baidu.com/heweather/weather/free";

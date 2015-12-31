@@ -9,5 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface ANOffLineTool : NSObject
+/**
+ *  把返回的json存到本地
+ */
++ (void)saveWeathersDictWithJson:(NSDictionary *)weathersDict;
+/**
+ * 根据城市名去沙盒中加载缓存
+ */
++ (NSDictionary *)weathersWithCity:(NSString *)city;
 
++ (NSString *)getLastCity;
 @end

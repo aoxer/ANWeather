@@ -92,6 +92,16 @@
 		00B98D0A1C33846200AD5B5C /* ANSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */; };
 		00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */; };
 		00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */; };
+		00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D1D1C33C07800AD5B5C /* ANOffLineTool.m */; };
+		00B98D841C33E79700AD5B5C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */; };
+		00B98D911C33EB2800AD5B5C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D871C33EB2800AD5B5C /* FMDatabase.m */; };
+		00B98D921C33EB2800AD5B5C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D891C33EB2800AD5B5C /* FMDatabaseAdditions.m */; };
+		00B98D931C33EB2800AD5B5C /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D8B1C33EB2800AD5B5C /* FMDatabasePool.m */; };
+		00B98D941C33EB2800AD5B5C /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D8D1C33EB2800AD5B5C /* FMDatabaseQueue.m */; };
+		00B98D951C33EB2800AD5B5C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D901C33EB2800AD5B5C /* FMResultSet.m */; };
+		00B98D981C34035600AD5B5C /* ANBasicM.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D971C34035600AD5B5C /* ANBasicM.m */; };
+		00B98D9B1C341DD400AD5B5C /* ANConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D9A1C341DD400AD5B5C /* ANConst.m */; };
+		00B98DA11C343C0B00AD5B5C /* ANStatusM.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98DA01C343C0B00AD5B5C /* ANStatusM.m */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
 
@@ -267,6 +277,26 @@
 		00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLeftTableViewController.m; sourceTree = "<group>"; };
 		00B98D131C33B0AF00AD5B5C /* ANRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRightTableViewCell.h; sourceTree = "<group>"; };
 		00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRightTableViewCell.m; sourceTree = "<group>"; };
+		00B98D1C1C33C07800AD5B5C /* ANOffLineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANOffLineTool.h; path = ANWeather/Home/Tool/ANOffLineTool.h; sourceTree = "<group>"; };
+		00B98D1D1C33C07800AD5B5C /* ANOffLineTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANOffLineTool.m; path = ANWeather/Home/Tool/ANOffLineTool.m; sourceTree = "<group>"; };
+		00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		00B98D861C33EB2800AD5B5C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		00B98D871C33EB2800AD5B5C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		00B98D881C33EB2800AD5B5C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		00B98D891C33EB2800AD5B5C /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		00B98D8A1C33EB2800AD5B5C /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		00B98D8B1C33EB2800AD5B5C /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		00B98D8C1C33EB2800AD5B5C /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		00B98D8D1C33EB2800AD5B5C /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		00B98D8E1C33EB2800AD5B5C /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		00B98D8F1C33EB2800AD5B5C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		00B98D901C33EB2800AD5B5C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		00B98D961C34035600AD5B5C /* ANBasicM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANBasicM.h; sourceTree = "<group>"; };
+		00B98D971C34035600AD5B5C /* ANBasicM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANBasicM.m; sourceTree = "<group>"; };
+		00B98D991C341DD400AD5B5C /* ANConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANConst.h; path = ANWeather/Main/ANConst.h; sourceTree = "<group>"; };
+		00B98D9A1C341DD400AD5B5C /* ANConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANConst.m; path = ANWeather/Main/ANConst.m; sourceTree = "<group>"; };
+		00B98D9F1C343C0B00AD5B5C /* ANStatusM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANStatusM.h; sourceTree = "<group>"; };
+		00B98DA01C343C0B00AD5B5C /* ANStatusM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANStatusM.m; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -276,6 +306,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B98D841C33E79700AD5B5C /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +323,7 @@
 		002215151C2CE63900E665F6 = {
 			isa = PBXGroup;
 			children = (
+				00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */,
 				002215201C2CE63900E665F6 /* ANWeather */,
 				0022153D1C2CE63900E665F6 /* ANWeatherTests */,
 				0022151F1C2CE63900E665F6 /* Products */,
@@ -377,6 +409,7 @@
 		002215691C2CE78500E665F6 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				00B98D851C33EB2800AD5B5C /* fmdb */,
 				003C97E11C327FFD00160D91 /* MJRefresh */,
 				009033C41C2E2F53001FFED3 /* RESideMenu */,
 				009033BB1C2E2F46001FFED3 /* MBProgressHUD */,
@@ -451,6 +484,8 @@
 				002216031C2CE8F800E665F6 /* AppDelegate.h */,
 				002216041C2CE8F800E665F6 /* AppDelegate.m */,
 				002216051C2CE8F800E665F6 /* main.m */,
+				00B98D991C341DD400AD5B5C /* ANConst.h */,
+				00B98D9A1C341DD400AD5B5C /* ANConst.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -587,6 +622,7 @@
 		009033B51C2E2E88001FFED3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				00B98D1F1C33C07D00AD5B5C /* Tool */,
 				009033D41C2E2FA3001FFED3 /* Controller */,
 				009033D71C2E2FA3001FFED3 /* Model */,
 				009033E81C2E2FA3001FFED3 /* View */,
@@ -657,6 +693,10 @@
 			children = (
 				009033E41C2E2FA3001FFED3 /* ANWeatherData.h */,
 				009033E51C2E2FA3001FFED3 /* ANWeatherData.m */,
+				00B98D9F1C343C0B00AD5B5C /* ANStatusM.h */,
+				00B98DA01C343C0B00AD5B5C /* ANStatusM.m */,
+				00B98D961C34035600AD5B5C /* ANBasicM.h */,
+				00B98D971C34035600AD5B5C /* ANBasicM.m */,
 				009033D81C2E2FA3001FFED3 /* ANAqiM.h */,
 				009033D91C2E2FA3001FFED3 /* ANAqiM.m */,
 				009033DA1C2E2FA3001FFED3 /* ANCity.h */,
@@ -928,6 +968,33 @@
 			path = ANWeather/Left/View;
 			sourceTree = "<group>";
 		};
+		00B98D1F1C33C07D00AD5B5C /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				00B98D1C1C33C07800AD5B5C /* ANOffLineTool.h */,
+				00B98D1D1C33C07800AD5B5C /* ANOffLineTool.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		00B98D851C33EB2800AD5B5C /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				00B98D861C33EB2800AD5B5C /* FMDatabase.h */,
+				00B98D871C33EB2800AD5B5C /* FMDatabase.m */,
+				00B98D881C33EB2800AD5B5C /* FMDatabaseAdditions.h */,
+				00B98D891C33EB2800AD5B5C /* FMDatabaseAdditions.m */,
+				00B98D8A1C33EB2800AD5B5C /* FMDatabasePool.h */,
+				00B98D8B1C33EB2800AD5B5C /* FMDatabasePool.m */,
+				00B98D8C1C33EB2800AD5B5C /* FMDatabaseQueue.h */,
+				00B98D8D1C33EB2800AD5B5C /* FMDatabaseQueue.m */,
+				00B98D8E1C33EB2800AD5B5C /* FMDB.h */,
+				00B98D8F1C33EB2800AD5B5C /* FMResultSet.h */,
+				00B98D901C33EB2800AD5B5C /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		00ED1C0B1C2FB1C700813F30 /* WeatherDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1076,6 +1143,7 @@
 				002216001C2CE8E500E665F6 /* NSObject+MJKeyValue.m in Sources */,
 				003C98191C327FFD00160D91 /* MJRefreshGifHeader.m in Sources */,
 				002215F01C2CE8E500E665F6 /* AFHTTPRequestOperationManager.m in Sources */,
+				00B98D951C33EB2800AD5B5C /* FMResultSet.m in Sources */,
 				002215EF1C2CE8E500E665F6 /* AFHTTPRequestOperation.m in Sources */,
 				003C98141C327FFD00160D91 /* MJRefreshAutoNormalFooter.m in Sources */,
 				00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */,
@@ -1085,11 +1153,14 @@
 				003C98171C327FFD00160D91 /* MJRefreshBackNormalFooter.m in Sources */,
 				003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */,
 				009034071C2E2FA3001FFED3 /* ANWindSpeedItemView.m in Sources */,
+				00B98D911C33EB2800AD5B5C /* FMDatabase.m in Sources */,
+				00B98DA11C343C0B00AD5B5C /* ANStatusM.m in Sources */,
 				003C98101C327FFD00160D91 /* MJRefreshComponent.m in Sources */,
 				00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */,
 				009033FB1C2E2FA3001FFED3 /* ANDailyForecastM.m in Sources */,
 				009034121C2E341D001FFED3 /* DEMOLeftMenuViewController.m in Sources */,
 				003C981E1C327FFD00160D91 /* UIScrollView+MJExtension.m in Sources */,
+				00B98D931C33EB2800AD5B5C /* FMDatabasePool.m in Sources */,
 				002215C11C2CE8CE00E665F6 /* Foundation+Log.m in Sources */,
 				003C98131C327FFD00160D91 /* MJRefreshAutoGifFooter.m in Sources */,
 				003C98111C327FFD00160D91 /* MJRefreshFooter.m in Sources */,
@@ -1098,6 +1169,7 @@
 				003C980F1C327FFD00160D91 /* MJRefreshBackFooter.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,
 				002215FF1C2CE8E500E665F6 /* NSObject+MJCoding.m in Sources */,
+				00B98D921C33EB2800AD5B5C /* FMDatabaseAdditions.m in Sources */,
 				003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */,
 				009033F71C2E2FA3001FFED3 /* ViewController.m in Sources */,
 				009033CB1C2E2F53001FFED3 /* RECommonFunctions.m in Sources */,
@@ -1105,6 +1177,7 @@
 				002215F11C2CE8E500E665F6 /* AFHTTPSessionManager.m in Sources */,
 				009033CD1C2E2F53001FFED3 /* UIViewController+RESideMenu.m in Sources */,
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
+				00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */,
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
 				002215F41C2CE8E500E665F6 /* AFURLConnectionOperation.m in Sources */,
@@ -1118,10 +1191,13 @@
 				003C980E1C327FFD00160D91 /* MJRefreshAutoFooter.m in Sources */,
 				002215F61C2CE8E500E665F6 /* AFURLResponseSerialization.m in Sources */,
 				002215FE1C2CE8E500E665F6 /* NSObject+MJClass.m in Sources */,
+				00B98D941C33EB2800AD5B5C /* FMDatabaseQueue.m in Sources */,
 				003C98161C327FFD00160D91 /* MJRefreshBackGifFooter.m in Sources */,
 				002215F91C2CE8E500E665F6 /* MJExtensionConst.m in Sources */,
 				009033F91C2E2FA3001FFED3 /* ANCity.m in Sources */,
 				009033CC1C2E2F53001FFED3 /* RESideMenu.m in Sources */,
+				00B98D9B1C341DD400AD5B5C /* ANConst.m in Sources */,
+				00B98D981C34035600AD5B5C /* ANBasicM.m in Sources */,
 				009033FE1C2E2FA3001FFED3 /* ANWeatherData.m in Sources */,
 				002216071C2CE8F800E665F6 /* main.m in Sources */,
 				009034041C2E2FA3001FFED3 /* ANWeatherItemView.m in Sources */,

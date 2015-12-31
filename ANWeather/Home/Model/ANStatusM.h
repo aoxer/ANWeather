@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ANStatusM : NSObject
-
+/**
+ *  status
+ */
+@property (copy, nonatomic)NSString *status;
 @end
