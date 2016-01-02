@@ -7,11 +7,15 @@
 //
 
 #import "ANWeatherView.h"
+
 #import "ANWeatherItemView.h"
 #import "ANWindSpeedItemView.h"
 #import "ANPM25ItemView.h"
 #import "ANTempItemView.h"
+
 #import "ANDaysWeatherCell.h"
+
+#import "ANTopView.h"
 
 #import "ANWeatherData.h"
 
@@ -22,6 +26,8 @@
 
 
 @interface ANWeatherView ()
+
+@property (strong, nonatomic)ANTopView *topView;
 
 @property (strong, nonatomic)NSMutableArray *items;
 @property (strong, nonatomic)ANWeatherItemView *weatherItem;
@@ -110,16 +116,26 @@
 
 }
 
+ 
+
 
 /**
  *  添加方块元素
  */
 - (void)weatherView
 {
-    self.contentInset = UIEdgeInsetsMake(ANScreenHeight - 64 + MARGIN, 0, 0, 0);
+    
+    self.showsVerticalScrollIndicator = NO;
+    self.backgroundColor = ANColor(40, 40, 40, 1);
     // 创建tableView 容纳方块View
     self.backgroundColor = ANRandomColor;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    // 顶部容器
+    ANTopView *topView = [ANTopView view];
+    topView.backgroundColor = ANRandomColor;
+    [self addSubview:topView];
+    self.topView = topView;
 
     // 天气
     ANWeatherItemView *weatherItem = [ANWeatherItemView view];
@@ -149,21 +165,44 @@
     self.windSpeedItem = windSpeedItem;
     [self.items addObject:windSpeedItem];
 
+   
     
+}
+
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    // 布局下面方块元素
     NSInteger count = self.items.count;
+    
+    
+    CGFloat itemViewW = (ANScreenWidth - MARGIN * 3) / ANMaxCol;
+    CGFloat itemViewH = (ANScreenHeight - MARGIN * 3) / ANMaxRow;
+    
     for (int i = 0; i<count; i++) {
         
         int row = i / ANMaxCol;
         int col = i % ANMaxCol;
         
-        UIView *view = self.items[i];
+        UIView *itemView = self.items[i];
         
-        view.width = (ANScreenWidth - MARGIN * 3) / ANMaxCol;
-        view.height = (ANScreenHeight - 74 - MARGIN * 3) / ANMaxRow;
-        view.x = MARGIN + col * (view.width + MARGIN);
-        view.y = - ANScreenHeight +(ANScreenHeight - view.height * 2 - MARGIN * 2) + row * (view.height + MARGIN);
+        CGFloat itemViewX = MARGIN + col * (itemViewW + MARGIN);
+        // y为负值
+        CGFloat itemViewY = - ANScreenHeight + (ANScreenHeight - itemViewH * 2 - MARGIN * 2) + row * (itemViewH + MARGIN);
         
-    }    
+        itemView.frame = CGRectMake(itemViewX, itemViewY, itemViewW, itemViewH);
+    }
+    
+    // 布局顶部元素
+    CGFloat topViewW = ANScreenWidth;
+    CGFloat topViewH = self.height - 2 * itemViewH;
+    CGFloat topViewX = 0;
+    CGFloat topViewY = -ANScreenHeight + (ANScreenHeight - itemViewH * 2 - MARGIN * 2 - topViewH);
+    
+    self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
+    
 }
 
 
