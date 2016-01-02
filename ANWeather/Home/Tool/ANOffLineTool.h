@@ -18,5 +18,13 @@
  */
 + (NSDictionary *)weathersWithCity:(NSString *)city;
 
+/**
+ *  获取上一次的城市
+ */
 + (NSString *)getLastCity;
+
+/**
+ *  判断缓存文件是否存在
+ */
++ (BOOL)sqlExists;
 @end

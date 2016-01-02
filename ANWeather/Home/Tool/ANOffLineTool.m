@@ -70,6 +70,13 @@ static FMDatabase *_db;
     ANLog(@"ANOffLintTool city--%@", city);
     return city;
 }
+
++ (BOOL)sqlExists
+{
+     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"weaters.sqlite"];
+    
+    return [[NSFileManager defaultManager] fileExistsAtPath:path];
+}
 @end
 
 

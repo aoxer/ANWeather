@@ -10,9 +10,15 @@
 
 @implementation ANTopView
 
+
+
+
 + (instancetype)view
 {
+
     return [[[NSBundle mainBundle] loadNibNamed:@"ANTopView" owner:nil options:0] lastObject];
 }
+
+
 
 @end

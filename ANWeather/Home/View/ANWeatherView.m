@@ -90,6 +90,9 @@
     self.windSpeedItem.windSpeedLabel.text = weatherData.now.wind.sc;
     self.windSpeedItem.windDirLabel.text = weatherData.now.wind.dir;
 
+    // topView
+    self.topView.backgroundImageView.clipsToBounds = YES;
+    [self.topView bringSubviewToFront:self.topView.currentTmp];
     
     
 }
@@ -179,7 +182,7 @@
     
     
     CGFloat itemViewW = (ANScreenWidth - MARGIN * 3) / ANMaxCol;
-    CGFloat itemViewH = (ANScreenHeight - MARGIN * 3) / ANMaxRow;
+    CGFloat itemViewH = (ANScreenHeight - MARGIN * 3 - 64) / ANMaxRow;
     
     for (int i = 0; i<count; i++) {
         
@@ -199,7 +202,7 @@
     CGFloat topViewW = ANScreenWidth;
     CGFloat topViewH = self.height - 2 * itemViewH;
     CGFloat topViewX = 0;
-    CGFloat topViewY = -ANScreenHeight + (ANScreenHeight - itemViewH * 2 - MARGIN * 2 - topViewH);
+    CGFloat topViewY = -ANScreenHeight + (ANScreenHeight - itemViewH * 2 - MARGIN * 2 - topViewH) - MARGIN;
     
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     
