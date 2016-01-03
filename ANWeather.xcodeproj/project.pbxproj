@@ -103,6 +103,7 @@
 		00B98DAC1C3527DE00AD5B5C /* ANTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98DAB1C3527DE00AD5B5C /* ANTopView.m */; };
 		00B98DAE1C3527EE00AD5B5C /* ANTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98DAD1C3527ED00AD5B5C /* ANTopView.xib */; };
 		00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B98DB11C38280200AD5B5C /* CoreImage.framework */; };
+		00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
 
@@ -299,6 +300,8 @@
 		00B98DAB1C3527DE00AD5B5C /* ANTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTopView.m; sourceTree = "<group>"; };
 		00B98DAD1C3527ED00AD5B5C /* ANTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTopView.xib; sourceTree = "<group>"; };
 		00B98DB11C38280200AD5B5C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		00B98DB31C38DDD300AD5B5C /* ANSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSearchBar.h; sourceTree = "<group>"; };
+		00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSearchBar.m; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,6 +490,8 @@
 				0022152E1C2CE63900E665F6 /* Main.storyboard */,
 				002216031C2CE8F800E665F6 /* AppDelegate.h */,
 				002216041C2CE8F800E665F6 /* AppDelegate.m */,
+				00B98DB31C38DDD300AD5B5C /* ANSearchBar.h */,
+				00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */,
 				002216051C2CE8F800E665F6 /* main.m */,
 				00B98D991C341DD400AD5B5C /* ANConst.h */,
 				00B98D9A1C341DD400AD5B5C /* ANConst.m */,
@@ -1169,6 +1174,7 @@
 				003C98131C327FFD00160D91 /* MJRefreshAutoGifFooter.m in Sources */,
 				003C98111C327FFD00160D91 /* MJRefreshFooter.m in Sources */,
 				003C98121C327FFD00160D91 /* MJRefreshHeader.m in Sources */,
+				00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
 				003C980F1C327FFD00160D91 /* MJRefreshBackFooter.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,

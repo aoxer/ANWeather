@@ -112,7 +112,7 @@
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"navigationbar-sidebar" andImageNameHighlight:nil];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(getLocation) andImageName:@"add_element" andImageNameHighlight:nil];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"add_element" andImageNameHighlight:nil];
     self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
     
    

@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import "ANRightTableViewCell.h"
 
+#import "ANSearchBar.h"
+
 
 @interface ANRightTableViewController ()
+@property (strong, nonatomic)ANSearchBar *searchBar;
 
 @end
 
@@ -18,21 +21,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 初始化tableView
+    [self setupTableView];
+    
+    // 初始化searchBar
+    [self setupSearchBar];
+}
+
+- (void)setupSearchBar
+{
+    self.searchBar = [ANSearchBar searchBar];
+
+    self.searchBar.frame = CGRectMake(ANScreenWidth*0.5, -30, 100, 30);
+    [self.tableView addSubview:self.searchBar];
+}
+
+- (void)setupTableView
+{
     self.tableView.frame = CGRectMake(0, (ANScreenHeight - 54 * 5) /2.0f, ANScreenWidth, 54*5);
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
-
+    
     self.tableView.contentInset = UIEdgeInsetsMake(ANScreenHeight*0.5, 0, 0, 0);
     self.tableView.contentSize = CGSizeMake(ANScreenWidth*0.1, ANScreenHeight);
     self.tableView.backgroundColor = ANRandomColor;
     self.tableView.backgroundView = nil;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,6 +55,7 @@
     // Return the number of sections.
     return 1;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
