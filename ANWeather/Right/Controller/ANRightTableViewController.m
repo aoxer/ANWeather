@@ -11,6 +11,10 @@
 
 
 #import "ANCitySearchController.h"
+
+// 已选城市缓存路径
+#define ANSelectedCityFilePath [ANDocumentPath stringByAppendingPathComponent:@"selectedCity.data"]
+
 @interface ANRightTableViewController ()
 
 @end
@@ -19,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // 初始化tableView
     [self setupTableView];
     
@@ -73,11 +77,15 @@
     }
     
     if (0 == indexPath.row) {
+        cell.textLabel.text = @"城市管理";
+       
+    } else if (1 == indexPath.row){
         
         cell.imageView.image = [UIImage imageNamed:@"addcity"];
         cell.textLabel.text = @"添加城市";
         
-    } else if (1 == indexPath.row){
+        
+    } else if (2 == indexPath.row){
         
         cell.imageView.image = [UIImage imageNamed:@"city"];
         cell.textLabel.text = @"定位";
@@ -86,7 +94,7 @@
         
         cell.imageView.image = [UIImage imageNamed:@"city"];
         cell.textLabel.text = self.selectedCitys[indexPath.row];
-    
+
     }
     
        return cell;
@@ -96,13 +104,30 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (0 == indexPath.row) {
+    if (1 == indexPath.row) {
         
         ANCitySearchController *search = [[ANCitySearchController alloc] init];
-        [self.navigationController presentViewController:search animated:YES completion:nil];
-         ANLog(@"presentViewController");
+        [self presentViewController:search animated:YES completion:nil];
+        [search returnCityNameBlock:^(NSString *cityName) {
+
+
+            if(![self.selectedCitys containsObject:cityName]) { // 如果选择城市不存在
+                
+                // 1.把传回来的城市添加到已选城市列表
+                [self.selectedCitys addObject:cityName];
+                
+                // 2.刷新表格
+                [self.tableView reloadData];
+                
+                // 3.缓存到本地
+                [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
+
+            }
+            
+            
+        }];
     
-    } else if (1 == indexPath.row){
+    } else if (2 == indexPath.row){
         
         [ANNotificationCenter postNotificationName:ANGetLocationDidClickNotification object:nil];
     }
@@ -113,13 +138,17 @@
 - (NSMutableArray *)selectedCitys
 {
     if (_selectedCitys == nil) {
-        _selectedCitys = [NSMutableArray array];
         
-        for (int i = 0; i<20; i++) {
-            [_selectedCitys addObject:[NSString stringWithFormat:@"city%d", i]];
+        // 1.从本地读取
+        _selectedCitys = [NSKeyedUnarchiver unarchiveObjectWithFile:ANSelectedCityFilePath];
+        
+        // 2.如果读取出来为空
+        if (_selectedCitys == nil) {
+            _selectedCitys = [NSMutableArray array];
+            [_selectedCitys addObjectsFromArray:@[@"城市管理",@"添加", @"定位"]];
         }
         
-        }
+    }
 
     return _selectedCitys;
 }

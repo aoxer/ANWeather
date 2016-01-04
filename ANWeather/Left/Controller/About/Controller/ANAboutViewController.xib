@@ -32,6 +32,7 @@
                     </constraints>
                 </imageView>
             </subviews>
+            <color key="backgroundColor" red="0.62857086490000003" green="0.62857086490000003" blue="0.62857086490000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="nD8-KC-16c" secondAttribute="centerY" constant="-152.5" id="0oc-sM-kFG"/>
                 <constraint firstAttribute="centerY" secondItem="872-XM-sDU" secondAttribute="centerY" constant="100" id="0uw-N3-d04"/>

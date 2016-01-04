@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ANSettingTableViewController : UITableViewController
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^cityNameBlock)(NSString *cityName);
+
 @interface ANCitySearchController : UITableViewController
+
+/**
+ *  传送城市名的block
+ */
+@property (copy, nonatomic)cityNameBlock cityNameBlock ;
+
+- (void)returnCityNameBlock:(cityNameBlock)cityNameBlock;
 
 @end

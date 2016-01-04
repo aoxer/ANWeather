@@ -36,5 +36,7 @@
 // 通知中心
 #define ANNotificationCenter [NSNotificationCenter defaultCenter]
 
+// DocumentPath
+#define ANDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
 #endif

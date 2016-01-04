@@ -7,9 +7,10 @@
 //
 
 #import "ANLeftTableViewController.h"
+
 #import "ViewController.h"
 #import "ANSettingTableViewController.h"
-
+#import "ANAboutViewController.h"
 @interface ANLeftTableViewController ()
 
 @end
@@ -35,20 +36,10 @@
 
 #pragma mark - Table view data source
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    
-    return @"城市管理";
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 6;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,8 +58,8 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
 
     }
-    NSArray *titles = @[@"Home", @"Settings", @"神秘选项", @"意见反馈", @"评分", @"About"];
-    NSArray *images = @[@"IconHome", @"IconProfile", @"IconSettings", @"IconProfile", @"IconSettings", @"IconSettings"];
+    NSArray *titles = @[@"Home", @"Settings", @"神秘选项", @"评分", @"About"];
+    NSArray *images = @[@"IconHome", @"IconProfile", @"IconProfile", @"IconSettings", @"IconSettings"];
 
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
@@ -102,12 +93,7 @@
             break;
             
         case 4:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANSettingTableViewController alloc] init]] animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-            break;
-            
-        case 5:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANSettingTableViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANAboutViewController alloc] init]] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             

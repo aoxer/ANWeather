@@ -58,6 +58,9 @@
 		003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */; };
 		003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C98481C32BA3A00160D91 /* ANRightTableViewController.m */; };
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
+		004EDA021C3ABB32001614A4 /* AreaCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9FF1C3ABB32001614A4 /* AreaCodeModel.m */; };
+		004EDA031C3ABB32001614A4 /* PinYinSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA011C3ABB32001614A4 /* PinYinSortModel.m */; };
+		004EDA051C3ABD72001614A4 /* citys.json in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA041C3ABD72001614A4 /* citys.json */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -81,14 +84,12 @@
 		009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F31C2E2FA3001FFED3 /* ANWeatherView.m */; };
 		009034071C2E2FA3001FFED3 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F51C2E2FA3001FFED3 /* ANWindSpeedItemView.m */; };
 		009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009033F61C2E2FA3001FFED3 /* ANWindSpeedItemView.xib */; };
-		009034121C2E341D001FFED3 /* DEMOLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0090340C1C2E341D001FFED3 /* DEMOLeftMenuViewController.m */; };
 		00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F3A1C311F710042F0D9 /* ANTempItemView.xib */; };
 		00934F471C315F060042F0D9 /* ANDaysWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */; };
 		00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */; };
 		00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CE71C33846200AD5B5C /* ANAboutViewController.m */; };
 		00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */; };
 		00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */; };
-		00B98D0A1C33846200AD5B5C /* ANSettingTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */; };
 		00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */; };
 		00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */; };
 		00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D1D1C33C07800AD5B5C /* ANOffLineTool.m */; };
@@ -218,10 +219,15 @@
 		003C980D1C327FFD00160D91 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		003C982B1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BackgroundColor.h"; sourceTree = "<group>"; };
 		003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
-		003C98471C32BA3A00160D91 /* ANRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRightTableViewController.h; sourceTree = "<group>"; };
-		003C98481C32BA3A00160D91 /* ANRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRightTableViewController.m; sourceTree = "<group>"; };
+		003C98471C32BA3A00160D91 /* ANRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANRightTableViewController.h; path = Controller/ANRightTableViewController.h; sourceTree = "<group>"; };
+		003C98481C32BA3A00160D91 /* ANRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANRightTableViewController.m; path = Controller/ANRightTableViewController.m; sourceTree = "<group>"; };
 		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
 		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
+		004ED9FE1C3ABB32001614A4 /* AreaCodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaCodeModel.h; sourceTree = "<group>"; };
+		004ED9FF1C3ABB32001614A4 /* AreaCodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaCodeModel.m; sourceTree = "<group>"; };
+		004EDA001C3ABB32001614A4 /* PinYinSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinSortModel.h; sourceTree = "<group>"; };
+		004EDA011C3ABB32001614A4 /* PinYinSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinSortModel.m; sourceTree = "<group>"; };
+		004EDA041C3ABD72001614A4 /* citys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citys.json; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -264,8 +270,6 @@
 		009033F41C2E2FA3001FFED3 /* ANWindSpeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindSpeedItemView.h; sourceTree = "<group>"; };
 		009033F51C2E2FA3001FFED3 /* ANWindSpeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindSpeedItemView.m; sourceTree = "<group>"; };
 		009033F61C2E2FA3001FFED3 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindSpeedItemView.xib; sourceTree = "<group>"; };
-		0090340B1C2E341D001FFED3 /* DEMOLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEMOLeftMenuViewController.h; path = ../../../DEMOLeftMenuViewController.h; sourceTree = "<group>"; };
-		0090340C1C2E341D001FFED3 /* DEMOLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEMOLeftMenuViewController.m; path = ../../../DEMOLeftMenuViewController.m; sourceTree = "<group>"; };
 		00934F3A1C311F710042F0D9 /* ANTempItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTempItemView.xib; sourceTree = "<group>"; };
 		00934F441C315F060042F0D9 /* ANDaysWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDaysWeatherCell.h; sourceTree = "<group>"; };
 		00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherCell.m; sourceTree = "<group>"; };
@@ -275,9 +279,8 @@
 		00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutViewController.xib; sourceTree = "<group>"; };
 		00B98CFB1C33846200AD5B5C /* ANSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSettingTableViewController.h; sourceTree = "<group>"; };
 		00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSettingTableViewController.m; sourceTree = "<group>"; };
-		00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANSettingTableViewController.xib; sourceTree = "<group>"; };
-		00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANLeftTableViewController.h; sourceTree = "<group>"; };
-		00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLeftTableViewController.m; sourceTree = "<group>"; };
+		00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANLeftTableViewController.h; path = ANWeather/Left/Controller/ANLeftTableViewController.h; sourceTree = "<group>"; };
+		00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANLeftTableViewController.m; path = ANWeather/Left/Controller/ANLeftTableViewController.m; sourceTree = "<group>"; };
 		00B98D131C33B0AF00AD5B5C /* ANRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRightTableViewCell.h; sourceTree = "<group>"; };
 		00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRightTableViewCell.m; sourceTree = "<group>"; };
 		00B98D1C1C33C07800AD5B5C /* ANOffLineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANOffLineTool.h; path = ANWeather/Home/Tool/ANOffLineTool.h; sourceTree = "<group>"; };
@@ -367,6 +370,7 @@
 		002215211C2CE63900E665F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				004EDA041C3ABD72001614A4 /* citys.json */,
 				002215221C2CE63900E665F6 /* Info.plist */,
 				002215681C2CE70800E665F6 /* PrefixHeader.pch */,
 			);
@@ -601,8 +605,10 @@
 		003C98241C32B25A00160D91 /* Right */ = {
 			isa = PBXGroup;
 			children = (
+				003C98471C32BA3A00160D91 /* ANRightTableViewController.h */,
+				003C98481C32BA3A00160D91 /* ANRightTableViewController.m */,
 				003C98461C32BA3A00160D91 /* Controller */,
-				003C98491C32BA3A00160D91 /* Model */,
+				004ED9FD1C3ABB32001614A4 /* Model */,
 				003C984A1C32BA3A00160D91 /* View */,
 			);
 			name = Right;
@@ -612,19 +618,10 @@
 		003C98461C32BA3A00160D91 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				003C98471C32BA3A00160D91 /* ANRightTableViewController.h */,
-				003C98481C32BA3A00160D91 /* ANRightTableViewController.m */,
 				004ED9F61C3A8957001614A4 /* ANCitySearchController.h */,
 				004ED9F71C3A8957001614A4 /* ANCitySearchController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		003C98491C32BA3A00160D91 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		003C984A1C32BA3A00160D91 /* View */ = {
@@ -634,6 +631,17 @@
 				00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		004ED9FD1C3ABB32001614A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				004ED9FE1C3ABB32001614A4 /* AreaCodeModel.h */,
+				004ED9FF1C3ABB32001614A4 /* AreaCodeModel.m */,
+				004EDA001C3ABB32001614A4 /* PinYinSortModel.h */,
+				004EDA011C3ABB32001614A4 /* PinYinSortModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		009033B51C2E2E88001FFED3 /* Home */ = {
@@ -650,10 +658,13 @@
 		009033B61C2E2E9E001FFED3 /* Left */ = {
 			isa = PBXGroup;
 			children = (
-				00B98CE31C33846200AD5B5C /* Controller */,
-				00B98D041C33846200AD5B5C /* Model */,
-				00B98D051C33846200AD5B5C /* View */,
-				009033CE1C2E2F92001FFED3 /* 3 */,
+				00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */,
+				00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */,
+				00B98CE41C33846200AD5B5C /* About */,
+				00B98CF11C33846200AD5B5C /* Feedback */,
+				00B98CF51C33846200AD5B5C /* Home */,
+				00B98CF91C33846200AD5B5C /* Setting */,
+				00B98D001C33846200AD5B5C /* support  */,
 			);
 			name = Left;
 			sourceTree = "<group>";
@@ -683,16 +694,6 @@
 			);
 			name = RESideMenu;
 			path = ANWeather/Libs/RESideMenu;
-			sourceTree = "<group>";
-		};
-		009033CE1C2E2F92001FFED3 /* 3 */ = {
-			isa = PBXGroup;
-			children = (
-				0090340B1C2E341D001FFED3 /* DEMOLeftMenuViewController.h */,
-				0090340C1C2E341D001FFED3 /* DEMOLeftMenuViewController.m */,
-			);
-			name = 3;
-			path = ANWeather/Left/Controller;
 			sourceTree = "<group>";
 		};
 		009033D41C2E2FA3001FFED3 /* Controller */ = {
@@ -761,22 +762,6 @@
 			path = ANWeather/Home/View;
 			sourceTree = "<group>";
 		};
-		00B98CE31C33846200AD5B5C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */,
-				00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */,
-				00B98CE41C33846200AD5B5C /* About */,
-				00B98CED1C33846200AD5B5C /* Comment */,
-				00B98CF11C33846200AD5B5C /* Feedback */,
-				00B98CF51C33846200AD5B5C /* Home */,
-				00B98CF91C33846200AD5B5C /* Setting */,
-				00B98D001C33846200AD5B5C /* support  */,
-			);
-			name = Controller;
-			path = ANWeather/Left/Controller;
-			sourceTree = "<group>";
-		};
 		00B98CE41C33846200AD5B5C /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,7 +769,8 @@
 				00B98CE91C33846200AD5B5C /* Model */,
 				00B98CEA1C33846200AD5B5C /* View */,
 			);
-			path = About;
+			name = About;
+			path = ANWeather/Left/Controller/About;
 			sourceTree = "<group>";
 		};
 		00B98CE51C33846200AD5B5C /* Controller */ = {
@@ -811,37 +797,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		00B98CED1C33846200AD5B5C /* Comment */ = {
-			isa = PBXGroup;
-			children = (
-				00B98CEE1C33846200AD5B5C /* Controller */,
-				00B98CEF1C33846200AD5B5C /* Model */,
-				00B98CF01C33846200AD5B5C /* View */,
-			);
-			path = Comment;
-			sourceTree = "<group>";
-		};
-		00B98CEE1C33846200AD5B5C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		00B98CEF1C33846200AD5B5C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		00B98CF01C33846200AD5B5C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		00B98CF11C33846200AD5B5C /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,7 +804,8 @@
 				00B98CF31C33846200AD5B5C /* Model */,
 				00B98CF41C33846200AD5B5C /* View */,
 			);
-			path = Feedback;
+			name = Feedback;
+			path = ANWeather/Left/Controller/Feedback;
 			sourceTree = "<group>";
 		};
 		00B98CF21C33846200AD5B5C /* Controller */ = {
@@ -880,7 +836,8 @@
 				00B98CF71C33846200AD5B5C /* Model */,
 				00B98CF81C33846200AD5B5C /* View */,
 			);
-			path = Home;
+			name = Home;
+			path = ANWeather/Left/Controller/Home;
 			sourceTree = "<group>";
 		};
 		00B98CF61C33846200AD5B5C /* Controller */ = {
@@ -911,7 +868,8 @@
 				00B98CFE1C33846200AD5B5C /* Model */,
 				00B98CFF1C33846200AD5B5C /* View */,
 			);
-			path = Setting;
+			name = Setting;
+			path = ANWeather/Left/Controller/Setting;
 			sourceTree = "<group>";
 		};
 		00B98CFA1C33846200AD5B5C /* Controller */ = {
@@ -919,7 +877,6 @@
 			children = (
 				00B98CFB1C33846200AD5B5C /* ANSettingTableViewController.h */,
 				00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */,
-				00B98CFD1C33846200AD5B5C /* ANSettingTableViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -945,7 +902,8 @@
 				00B98D021C33846200AD5B5C /* Model */,
 				00B98D031C33846200AD5B5C /* View */,
 			);
-			path = "support ";
+			name = "support ";
+			path = "ANWeather/Left/Controller/support ";
 			sourceTree = "<group>";
 		};
 		00B98D011C33846200AD5B5C /* Controller */ = {
@@ -967,22 +925,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		00B98D041C33846200AD5B5C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
-			path = ANWeather/Left/Model;
-			sourceTree = "<group>";
-		};
-		00B98D051C33846200AD5B5C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			path = ANWeather/Left/View;
 			sourceTree = "<group>";
 		};
 		00B98D1F1C33C07D00AD5B5C /* Tool */ = {
@@ -1131,13 +1073,13 @@
 				00B98DAE1C3527EE00AD5B5C /* ANTopView.xib in Resources */,
 				009034051C2E2FA3001FFED3 /* ANWeatherItemView.xib in Resources */,
 				009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */,
-				00B98D0A1C33846200AD5B5C /* ANSettingTableViewController.xib in Resources */,
 				002215301C2CE63900E665F6 /* Main.storyboard in Resources */,
 				00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */,
 				003C981C1C327FFD00160D91 /* MJRefresh.bundle in Resources */,
 				002215351C2CE63900E665F6 /* LaunchScreen.xib in Resources */,
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
 				00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */,
+				004EDA051C3ABD72001614A4 /* citys.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,7 +1118,6 @@
 				003C98101C327FFD00160D91 /* MJRefreshComponent.m in Sources */,
 				00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */,
 				009033FB1C2E2FA3001FFED3 /* ANDailyForecastM.m in Sources */,
-				009034121C2E341D001FFED3 /* DEMOLeftMenuViewController.m in Sources */,
 				003C981E1C327FFD00160D91 /* UIScrollView+MJExtension.m in Sources */,
 				00B98D931C33EB2800AD5B5C /* FMDatabasePool.m in Sources */,
 				002215C11C2CE8CE00E665F6 /* Foundation+Log.m in Sources */,
@@ -1196,6 +1137,7 @@
 				002215F11C2CE8E500E665F6 /* AFHTTPSessionManager.m in Sources */,
 				009033CD1C2E2F53001FFED3 /* UIViewController+RESideMenu.m in Sources */,
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
+				004EDA031C3ABB32001614A4 /* PinYinSortModel.m in Sources */,
 				00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */,
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
@@ -1205,6 +1147,7 @@
 				009034021C2E2FA3001FFED3 /* ANTempItemView.m in Sources */,
 				002215F71C2CE8E500E665F6 /* AFURLSessionManager.m in Sources */,
 				002216021C2CE8E500E665F6 /* NSString+MJExtension.m in Sources */,
+				004EDA021C3ABB32001614A4 /* AreaCodeModel.m in Sources */,
 				00B98DAC1C3527DE00AD5B5C /* ANTopView.m in Sources */,
 				009034001C2E2FA3001FFED3 /* ANPM25ItemView.m in Sources */,
 				009033FC1C2E2FA3001FFED3 /* ANNowM.m in Sources */,
