@@ -57,6 +57,7 @@
 		003C98201C327FFD00160D91 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C980D1C327FFD00160D91 /* UIView+MJExtension.m */; };
 		003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */; };
 		003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C98481C32BA3A00160D91 /* ANRightTableViewController.m */; };
+		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -104,6 +105,7 @@
 		00B98DAE1C3527EE00AD5B5C /* ANTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98DAD1C3527ED00AD5B5C /* ANTopView.xib */; };
 		00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B98DB11C38280200AD5B5C /* CoreImage.framework */; };
 		00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */; };
+		00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B98DB91C3A327C00AD5B5C /* addcity.png */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
 
@@ -218,6 +220,8 @@
 		003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
 		003C98471C32BA3A00160D91 /* ANRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRightTableViewController.h; sourceTree = "<group>"; };
 		003C98481C32BA3A00160D91 /* ANRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRightTableViewController.m; sourceTree = "<group>"; };
+		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
+		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -302,6 +306,7 @@
 		00B98DB11C38280200AD5B5C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		00B98DB31C38DDD300AD5B5C /* ANSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSearchBar.h; sourceTree = "<group>"; };
 		00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSearchBar.m; sourceTree = "<group>"; };
+		00B98DB91C3A327C00AD5B5C /* addcity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addcity.png; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -351,6 +356,7 @@
 			children = (
 				002215631C2CE6B700E665F6 /* Classes */,
 				002215311C2CE63900E665F6 /* Images.xcassets */,
+				00B98DB91C3A327C00AD5B5C /* addcity.png */,
 				002215331C2CE63900E665F6 /* LaunchScreen.xib */,
 				002215281C2CE63900E665F6 /* ANWeather.xcdatamodeld */,
 				002215211C2CE63900E665F6 /* Supporting Files */,
@@ -608,6 +614,8 @@
 			children = (
 				003C98471C32BA3A00160D91 /* ANRightTableViewController.h */,
 				003C98481C32BA3A00160D91 /* ANRightTableViewController.m */,
+				004ED9F61C3A8957001614A4 /* ANCitySearchController.h */,
+				004ED9F71C3A8957001614A4 /* ANCitySearchController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1116,6 +1124,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */,
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,
 				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
 				009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */,
@@ -1211,6 +1220,7 @@
 				00B98D981C34035600AD5B5C /* ANBasicM.m in Sources */,
 				009033FE1C2E2FA3001FFED3 /* ANWeatherData.m in Sources */,
 				002216071C2CE8F800E665F6 /* main.m in Sources */,
+				004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */,
 				009034041C2E2FA3001FFED3 /* ANWeatherItemView.m in Sources */,
 				009033F81C2E2FA3001FFED3 /* ANAqiM.m in Sources */,
 				009033FD1C2E2FA3001FFED3 /* ANTemM.m in Sources */,

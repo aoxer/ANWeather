@@ -12,3 +12,6 @@
 
 extern NSString * const ANApiKey;
 extern NSString * const ANWeatherRequestUrl;
+
+// 通知们
+extern NSString * const ANGetLocationDidClickNotification;

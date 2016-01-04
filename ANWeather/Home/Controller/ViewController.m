@@ -80,6 +80,7 @@
     // 更新位置为每1000m
     self.locationMgr.distanceFilter = 1000.f;
     
+    [ANNotificationCenter addObserver:self selector:@selector(getLocation) name:ANGetLocationDidClickNotification object:nil];
 }
 
 
@@ -116,6 +117,12 @@
     self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
     
    
+}
+
+- (void)test
+{
+
+    [self.navigationController presentViewController:[[ANRightTableViewController alloc] init] animated:YES completion:nil];
 }
 
 /**
@@ -477,6 +484,12 @@
         _locationMgr = [[CLLocationManager alloc] init];
     }
     return _locationMgr;
+}
+
+- (void)dealloc
+{
+    
+    [ANNotificationCenter removeObserver:self];
 }
 
 @end

@@ -7,20 +7,16 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C16C972B-FFDB-44D1-A54F-993ED7EF5DAF</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ANWeather</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>04101981B66E318109934C9516F88D824BB96459</key>
-		<string>https://github.com/ccgus/fmdb.git</string>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>https://github.com/aoxer/ANWeather.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ANWeather.xcodeproj/project.xcworkspace</string>
+	<string>ANWeather.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>04101981B66E318109934C9516F88D824BB96459</key>
-		<string>../../fmdb/</string>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>../..</string>
 	</dict>
@@ -39,14 +35,6 @@
 			<string>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ANWeather</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>04101981B66E318109934C9516F88D824BB96459</string>
-			<key>IDESourceControlWCCName</key>
-			<string>fmdb</string>
 		</dict>
 	</array>
 </dict>

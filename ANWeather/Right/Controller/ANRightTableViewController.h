@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ANRightTableViewController : UITableViewController
+
+ @interface ANRightTableViewController : UITableViewController
+ 
+/**
+ *  存放城市们的数组
+ */
+@property (strong, nonatomic)NSMutableArray *selectedCitys;
+
+
 
 @end
