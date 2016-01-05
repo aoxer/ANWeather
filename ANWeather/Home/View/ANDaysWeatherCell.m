@@ -41,7 +41,6 @@
 - (void)setDailyForcast:(ANDailyForecastM *)dailyForcast
 {
     _dailyForcast = dailyForcast;
-    ANLog(@"%@", dailyForcast.cond.txt_d);
     self.week.text = [self weekDayFromDate:dailyForcast.date];
     self.date.text = [self dateWithMonthDay:dailyForcast.date];
     self.maxTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.max];
@@ -119,7 +118,7 @@
  */
 - (UIImage *)getWeatherImageWithCondTxt:(NSString *)txt
 {
-    
+
     
     if ([txt isEqualToString:@"雷阵雨"]) {
         return [UIImage imageNamed:@"thunder_mini"];

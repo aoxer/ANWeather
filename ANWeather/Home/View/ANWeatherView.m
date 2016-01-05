@@ -91,7 +91,6 @@
     self.windSpeedItem.windDirLabel.text = weatherData.now.wind.dir;
 
     // topView
-    self.topView.backgroundImageView.clipsToBounds = YES;
     [self.topView bringSubviewToFront:self.topView.currentTmp];
     
     

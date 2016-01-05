@@ -47,7 +47,10 @@
  *  当前城市
  */
 @property (copy, nonatomic)NSString *city;
-
+/**
+ *  nav的titleView
+ */
+@property (strong, nonatomic)UIButton *titleViewBtn;
 
 @end
 
@@ -59,6 +62,9 @@
     
     // 设置上一次城市
     [self setupLastCity];
+    
+    // 加载数据
+    [self loadWeatherWithCity:self.city];
     
     // 设置tableView
     [self setupTableView];
@@ -72,15 +78,15 @@
     // 如果是iOS8+ 请求位置授权
     [self requestAuthorizaiton];
     
-    // 加载数据
-    [self loadWeatherWithCity:self.city];
-    
     // 成为CoreLocation管理者的代理监听获取到的位置
     self.locationMgr.delegate = self;
     // 更新位置为每1000m
     self.locationMgr.distanceFilter = 1000.f;
     
+    // 监听定位的通知
     [ANNotificationCenter addObserver:self selector:@selector(getLocation) name:ANGetLocationDidClickNotification object:nil];
+    // 监听城市更换的通知
+    [ANNotificationCenter addObserver:self selector:@selector(getSelectedCityWeather:) name:ANCityDidClickNotification object:nil];
 }
 
 
@@ -99,7 +105,6 @@
 #warning 定位没做
         // 定位
         
-        
         // 加载天气
         [self sendRequestWithCity:self.city];
         
@@ -111,10 +116,14 @@
  */
 - (void)setupNavigaitonItem
 {
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"navigationbar-sidebar" andImageNameHighlight:nil];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"navigationbar-sidebar" andImageNameHighlight:@"navigationbar-sidebar"];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"add_element" andImageNameHighlight:nil];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"add_element" andImageNameHighlight:@"add_element"];
     self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
+    // 设置导航栏文字颜色
+    NSMutableDictionary *attr = [NSMutableDictionary dictionary];
+    attr[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:attr];
     
    
 }
@@ -176,14 +185,16 @@
 {
     // 1.从缓存读取数据加载数据
     NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
-    
-    if ([weathersDict[@"status"] isEqualToString:@"ok"]) { // 有缓存
+    ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
+    if ([basic.city isEqualToString:self.city]) { // 有缓存
 
         [self dealingResult:weathersDict];
         
     } else { // 没缓存
         [self sendRequestWithCity:city];
     }
+    
+    
     
 }
 
@@ -201,19 +212,23 @@
     // 把字典数组转为模型数组
     self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weathersDict[@"daily_forecast"]];
     
-    // 重新加载tableVie Xw
+    // 设置导航栏
+#warning 待确认
+        self.navigationItem.title = weatherData.basic.city;
+//    self.navigationItem.title = self.city;
+    
+    // 重新加载tableView
     [self.weatherView reloadData];
     
-    // 设置导航栏
-    self.navigationItem.title = weatherData.basic.city;
-
 }
+
 
 /**
  *  发送数据请求
  */
 - (void)sendRequestWithCity:(NSString *)city
 {
+    
     // 1.创建请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     mgr.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -274,6 +289,19 @@
    
 }
 
+/**
+ *  获取所选城市天气
+ */
+- (void)getSelectedCityWeather:(NSNotification *)notification
+{
+    NSString *city = (NSString *)notification.userInfo;
+    // 把市去掉 赋值给成员变量
+    self.city = [city removeShi];
+    self.navigationItem.title = self.city;
+    // 开始刷新
+    [self.tableView.header beginRefreshing];
+    
+}
 
 
 /**
@@ -323,10 +351,10 @@
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
     // cancel
-    UIAlertAction  *cancel = [UIAlertAction actionWithTitle:@"不打"
+    UIAlertAction  *cancel = [UIAlertAction actionWithTitle:@"取消"
                                                       style:UIAlertActionStyleCancel
                                                     handler:^(UIAlertAction *action) {
-                                                        [MBProgressHUD showError:@"你会后悔的!哼!"];
+
     }];
 
     // ok
@@ -349,7 +377,6 @@
     // present出alert
     [self presentViewController:alert animated:YES completion:nil];
     
-
 }
 
 
@@ -373,8 +400,6 @@
         
 //            [self.locationMgr requestWhenInUseAuthorization];
 
-
-        
     } else {// 其他则提示授权失败
         
     }
@@ -389,16 +414,10 @@
 
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         
+        // 隐藏HUD
+        [MBProgressHUD hideHUD];
+
         CLPlacemark *pm = [placemarks lastObject];
-        ANLog(@" %@\n %@\n %@\n %@\n %@\n %@\n %@\n ",
-              pm.name, // eg. Apple Inc.
-              pm.thoroughfare, // street address, eg. 1 Infinite Loop
-              pm.subThoroughfare, // eg. 1
-              pm.locality, // city, eg. Cupertino
-              pm.subLocality, // neighborhood, common name, eg. Mission District
-              pm.administrativeArea, // state, eg. CA
-              pm.country // eg. United States
-              );
         
         // 获取到的城市和当前城市不一样就开始刷新
         if (![pm.locality isEqualToString:self.city]){
@@ -406,22 +425,13 @@
             [self.tableView.header beginRefreshing];
         }
         
-        // 把"市"去掉
-        if ([pm.locality hasSuffix:@"市"]) {
-            NSString *city = [pm.locality substringWithRange:NSMakeRange(0, pm.locality.length - 1)];
-            self.city = city;
-            
-        } else { // 如果没有 就把获取到的城市名赋值给成员变量
-            self.city = pm.locality;
-        }
-        
-        
+        // 把市去掉
+        self.city = [pm.locality removeShi];
         
         // 设置导航栏
         self.navigationItem.title = pm.locality;
         
-        // 隐藏HUD
-        [MBProgressHUD hideHUD];
+       
  
         if (error) { // 定位失败
             ANLog(@"%@", error);
@@ -488,7 +498,7 @@
 
 - (void)dealloc
 {
-    
+    [ANNotificationCenter removeObserver:self];
     [ANNotificationCenter removeObserver:self];
 }
 

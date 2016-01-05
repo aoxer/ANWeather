@@ -10,12 +10,15 @@
 
 @implementation ANTopView
 
-
-
-
+- (void)awakeFromNib
+{
+    self.backgroundImageView.clipsToBounds = YES;
+}
 + (instancetype)view
 {
 
+    
+    
     return [[[NSBundle mainBundle] loadNibNamed:@"ANTopView" owner:nil options:0] lastObject];
 }
 

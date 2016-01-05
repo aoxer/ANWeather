@@ -11,6 +11,7 @@
 #import "MJExtension.h" 
 #import "RESideMenu.h"
 #import "ANConst.h"
+#import "NSString+Extension.h"
 
 #ifndef _____PrefixHeader_pch
 #define _____PrefixHeader_pch

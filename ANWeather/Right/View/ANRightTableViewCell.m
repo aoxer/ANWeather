@@ -8,23 +8,43 @@
 
 #import "ANRightTableViewCell.h"
 
-@implementation ANRightTableViewCell
+@interface ANRightTableViewCell ()
 
-- (void)awakeFromNib {
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    self.imageView.x = self.indentationLevel * self.indentationWidth + 25;
-}
 
 @end
+
+@implementation ANRightTableViewCell
+
+ 
+
+ 
+- (IBAction)delCity {
+    
+    if ([self.delegate respondsToSelector:@selector(rightTableViewCellDidClickDelBtnAtCell:)]) {
+        [self.delegate rightTableViewCellDidClickDelBtnAtCell:self];
+    }
+    
+    ANLog(@"delCity %zd", self.tag);
+}
+
+
+
+/**
+ *  根据xib创建cell
+ */
++ (instancetype)cellWithTableView:(UITableView *)tableView
+{
+    static NSString *ID = @"citys";
+    ANRightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"ANRightTableViewCell" owner:nil options:0] lastObject];
+    }
+    
+    return cell;
+}
+
+
+
+
+ @end

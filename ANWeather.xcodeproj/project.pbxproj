@@ -61,6 +61,8 @@
 		004EDA021C3ABB32001614A4 /* AreaCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9FF1C3ABB32001614A4 /* AreaCodeModel.m */; };
 		004EDA031C3ABB32001614A4 /* PinYinSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA011C3ABB32001614A4 /* PinYinSortModel.m */; };
 		004EDA051C3ABD72001614A4 /* citys.json in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA041C3ABD72001614A4 /* citys.json */; };
+		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
+		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -228,6 +230,9 @@
 		004EDA001C3ABB32001614A4 /* PinYinSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinSortModel.h; sourceTree = "<group>"; };
 		004EDA011C3ABB32001614A4 /* PinYinSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinSortModel.m; sourceTree = "<group>"; };
 		004EDA041C3ABD72001614A4 /* citys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citys.json; sourceTree = "<group>"; };
+		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
+		004EDA0B1C3B96B9001614A4 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extension.h"; path = "ANWeather/Category/NSString+Extension.h"; sourceTree = "<group>"; };
+		004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "ANWeather/Category/NSString+Extension.m"; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -412,6 +417,8 @@
 		002215671C2CE6DA00E665F6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				004EDA0B1C3B96B9001614A4 /* NSString+Extension.h */,
+				004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */,
 				003C982B1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.h */,
 				003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */,
 				00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */,
@@ -629,6 +636,7 @@
 			children = (
 				00B98D131C33B0AF00AD5B5C /* ANRightTableViewCell.h */,
 				00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */,
+				004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1066,6 +1074,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */,
 				00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */,
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,
 				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
@@ -1177,6 +1186,7 @@
 				003C98181C327FFD00160D91 /* MJRefreshBackStateFooter.m in Sources */,
 				003C981B1C327FFD00160D91 /* MJRefreshStateHeader.m in Sources */,
 				00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */,
+				004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */,
 				003C981A1C327FFD00160D91 /* MJRefreshNormalHeader.m in Sources */,
 				0022152A1C2CE63900E665F6 /* ANWeather.xcdatamodeld in Sources */,
 				002215FB1C2CE8E500E665F6 /* MJProperty.m in Sources */,
