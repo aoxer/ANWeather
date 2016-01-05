@@ -71,55 +71,22 @@
     _weatherData = weatherData;
 
     // 天气
-    self.weatherItem.condLabel.text = weatherData.now.cond.txt;
-    self.weatherItem.condImageView.image = [self getWeatherImageWithCondTxt:weatherData.now.cond.txt];
-    // pm2.5
-    if (weatherData.aqi.city.pm25 == nil) {
-        self.pm25Item.pm25Label.text = @"";
-    } else {
-        self.pm25Item.pm25Label.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
-    }
-    // 温度
-    self.tempItem.tempLabel.text = [NSString stringWithFormat:@"%@°", weatherData.now.tmp];
-#warning 字典转模型到底需不需要在这里转
-    ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
+    self.weatherItem.weatherData = weatherData;
     
-   self.tempItem.maxMinTemp.text = [NSString stringWithFormat:@"%@°~%@°", day1.tmp.max, day1.tmp.min];
+    // pm2.5
+    self.pm25Item.weatherData = weatherData;
+    
+    // 温度
+
     
     // 风速
-    self.windSpeedItem.windSpeedLabel.text = weatherData.now.wind.sc;
-    self.windSpeedItem.windDirLabel.text = weatherData.now.wind.dir;
+    self.windSpeedItem.weatherData = weatherData;
 
     // topView
-    [self.topView bringSubviewToFront:self.topView.currentTmp];
+    self.topView.weatherData = weatherData;
     
     
 }
-
-- (UIImage *)getWeatherImageWithCondTxt:(NSString *)txt
-{
-    if ([txt isEqualToString:@"雷阵雨"]) {
-        return [UIImage imageNamed:@"thunder"];
-    }else if ([txt isEqualToString:@"晴"]){
-        return [UIImage imageNamed:@"sun"];
-    }else if ([txt isEqualToString:@"多云"]){
-        return [UIImage imageNamed:@"sunandcloud"];
-    }else if ([txt isEqualToString:@"阴"]){
-        return [UIImage imageNamed:@"cloud"];
-    }else if ([txt hasSuffix:@"雨"]){
-        return [UIImage imageNamed:@"rain"];
-    }else if ([txt hasSuffix:@"雪"]){
-        return [UIImage imageNamed:@"snow"];
-    }else{
-        return [UIImage imageNamed:@"sandfloat"];
-    }
-    
-    return [UIImage imageNamed:@"sun"];
-
-}
-
- 
-
 
 /**
  *  添加方块元素

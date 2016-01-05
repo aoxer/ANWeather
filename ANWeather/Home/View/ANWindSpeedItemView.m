@@ -7,7 +7,18 @@
 //
 
 #import "ANWindSpeedItemView.h"
+#import "ANWeatherData.h"
+@interface ANWindSpeedItemView ()
+/**
+ *  风速
+ */
+@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
+/**
+ *  风向
+ */
+@property (weak, nonatomic) IBOutlet UILabel *windDirLabel;
 
+@end
 @implementation ANWindSpeedItemView
 
 + (instancetype)view
@@ -18,6 +29,14 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     ANLog(@"%@", NSStringFromClass([self class]));
+}
+
+-(void)setWeatherData:(ANWeatherData *)weatherData
+{
+    // 风速
+    self.windSpeedLabel.text = weatherData.now.wind.sc;
+    // 风向
+    self.windDirLabel.text = weatherData.now.wind.dir;
 }
 
 @end

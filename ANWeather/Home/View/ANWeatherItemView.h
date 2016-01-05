@@ -7,19 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ANCondM.h"
+@class ANWeatherData;
 @interface ANWeatherItemView : UIView
 /**
- *  天气状况
+ * 天气模型
  */
-@property (weak, nonatomic) IBOutlet UILabel *condLabel;
-/**
- *  天气图片
- */
-@property (weak, nonatomic) IBOutlet UIImageView *condImageView;
-/**
- *  天气状况
- */
-@property (strong, nonatomic)ANCondM *cond;
+@property (strong, nonatomic)ANWeatherData *weatherData;
 + (instancetype)view;
 @end

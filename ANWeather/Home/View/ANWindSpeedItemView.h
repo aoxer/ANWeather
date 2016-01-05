@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ANWeatherData;
 
 @interface ANWindSpeedItemView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
-@property (weak, nonatomic) IBOutlet UILabel *windDirLabel;
+
+@property (strong, nonatomic)ANWeatherData *weatherData;
 + (instancetype)view;
 @end

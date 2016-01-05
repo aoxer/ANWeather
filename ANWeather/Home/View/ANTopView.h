@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ANWeatherData.h"
 
 @interface ANTopView : UIView
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (weak, nonatomic) IBOutlet UILabel *currentTmp;
-@property (weak, nonatomic) IBOutlet UILabel *minTmp;
-@property (weak, nonatomic) IBOutlet UILabel *maxTmp;
 
-@property (weak, nonatomic) IBOutlet UILabel *MonthDay;
+@property (strong, nonatomic)ANWeatherData *weatherData;
 
-
+ 
 + (instancetype)view;
 @end

@@ -86,11 +86,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="MonthDay" destination="pbf-dI-4HK" id="jiB-d2-o2f"/>
-                <outlet property="backgroundImageView" destination="zaQ-6J-lJT" id="XyQ-MX-Owx"/>
-                <outlet property="currentTmp" destination="tzS-vV-JDs" id="tkK-qs-8yY"/>
-                <outlet property="maxTmp" destination="zIl-xp-1md" id="jwR-UV-vii"/>
-                <outlet property="minTmp" destination="LVe-AQ-EGL" id="qdG-oC-X7M"/>
+                <outlet property="MonthDay" destination="pbf-dI-4HK" id="fZH-cz-OIY"/>
+                <outlet property="backgroundImageView" destination="zaQ-6J-lJT" id="zPJ-EQ-rzX"/>
+                <outlet property="currentTmp" destination="tzS-vV-JDs" id="dbL-hb-BVk"/>
+                <outlet property="maxTmp" destination="zIl-xp-1md" id="xuG-mY-Z2V"/>
+                <outlet property="minTmp" destination="LVe-AQ-EGL" id="o3g-Fr-nyH"/>
             </connections>
             <point key="canvasLocation" x="276.5" y="237.5"/>
         </view>

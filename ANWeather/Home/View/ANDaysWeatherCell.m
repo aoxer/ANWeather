@@ -113,12 +113,14 @@
     
 }
 
+
+
 /**
  *  根据天气换图片
  */
 - (UIImage *)getWeatherImageWithCondTxt:(NSString *)txt
 {
-
+    
     
     if ([txt isEqualToString:@"雷阵雨"]) {
         return [UIImage imageNamed:@"thunder_mini"];
@@ -139,7 +141,7 @@
         return [UIImage imageNamed:@"snow_heavyx_mini"];
         
     }else if ([txt hasSuffix:@"霾"] || [txt hasSuffix:@"雾"]){
-            return [UIImage imageNamed:@"sand_float_mini"];
+        return [UIImage imageNamed:@"sand_float_mini"];
     }else{
         return [UIImage imageNamed:@"sandfloat_mini"];
     }
@@ -147,6 +149,7 @@
     return [UIImage imageNamed:@"sun"];
     
 }
+
 
 /**
  *  根据xib创建cell
