@@ -1,0 +1,1952 @@
+{
+    "area": [
+        {
+            "area": "北京",
+            "city": [
+                {
+                    "city_name": "北京",
+                    "city_code": "101010100"
+                },
+                {
+                    "city_name": "朝阳",
+                    "city_code": "101010300"
+                },
+                {
+                    "city_name": "顺义",
+                    "city_code": "101010400"
+                },
+                {
+                    "city_name": "怀柔",
+                    "city_code": "101010500"
+                },
+                {
+                    "city_name": "通州",
+                    "city_code": "101010600"
+                },
+                {
+                    "city_name": "昌平",
+                    "city_code": "101010700"
+                },
+                {
+                    "city_name": "延庆",
+                    "city_code": "101010800"
+                },
+                {
+                    "city_name": "丰台",
+                    "city_code": "101010900"
+                },
+                {
+                    "city_name": "石景山",
+                    "city_code": "101011000"
+                },
+                {
+                    "city_name": "大兴",
+                    "city_code": "101011100"
+                },
+                {
+                    "city_name": "房山",
+                    "city_code": "101011200"
+                },
+                {
+                    "city_name": "密云",
+                    "city_code": "101011300"
+                },
+                {
+                    "city_name": "门头沟",
+                    "city_code": "101011400"
+                },
+                {
+                    "city_name": "平谷",
+                    "city_code": "101011500"
+                },
+                {
+                    "city_name": "八达岭",
+                    "city_code": "101011600"
+                },
+                {
+                    "city_name": "佛爷顶",
+                    "city_code": "101011700"
+                },
+                {
+                    "city_name": "汤河口",
+                    "city_code": "101011800"
+                },
+                {
+                    "city_name": "密云上甸子",
+                    "city_code": "101011900"
+                },
+                {
+                    "city_name": "斋堂",
+                    "city_code": "101012000"
+                },
+                {
+                    "city_name": "霞云岭",
+                    "city_code": "101012100"
+                },
+                {
+                    "city_name": "北京城区",
+                    "city_code": "101012200"
+                },
+                {
+                    "city_name": "海淀",
+                    "city_code": "101010200"
+                }
+            ]
+        },
+        {
+            "area": "天津",
+            "city": [
+                {
+                    "city_name": "天津",
+                    "city_code": "101030100"
+                },
+                {
+                    "city_name": "宝坻",
+                    "city_code": "101030300"
+                },
+                {
+                    "city_name": "东丽",
+                    "city_code": "101030400"
+                },
+                {
+                    "city_name": "西青",
+                    "city_code": "101030500"
+                },
+                {
+                    "city_name": "北辰",
+                    "city_code": "101030600"
+                },
+                {
+                    "city_name": "蓟县",
+                    "city_code": "101031400"
+                },
+                {
+                    "city_name": "汉沽",
+                    "city_code": "101030800"
+                },
+                {
+                    "city_name": "静海",
+                    "city_code": "101030900"
+                },
+                {
+                    "city_name": "津南",
+                    "city_code": "101031000"
+                },
+                {
+                    "city_name": "塘沽",
+                    "city_code": "101031100"
+                },
+                {
+                    "city_name": "大港",
+                    "city_code": "101031200"
+                },
+                {
+                    "city_name": "武清",
+                    "city_code": "101030200"
+                },
+                {
+                    "city_name": "宁河",
+                    "city_code": "101030700"
+                }
+            ]
+        },
+        {
+            "area": "上海",
+            "city": [
+                {
+                    "city_name": "上海",
+                    "city_code": "101020100"
+                },
+                {
+                    "city_name": "宝山",
+                    "city_code": "101020300"
+                },
+                {
+                    "city_name": "嘉定",
+                    "city_code": "101020500"
+                },
+                {
+                    "city_name": "南汇",
+                    "city_code": "101020600"
+                },
+                {
+                    "city_name": "浦东",
+                    "city_code": "101021300"
+                },
+                {
+                    "city_name": "青浦",
+                    "city_code": "101020800"
+                },
+                {
+                    "city_name": "松江",
+                    "city_code": "101020900"
+                },
+                {
+                    "city_name": "奉贤",
+                    "city_code": "101021000"
+                },
+                {
+                    "city_name": "崇明",
+                    "city_code": "101021100"
+                },
+                {
+                    "city_name": "徐家汇",
+                    "city_code": "101021200"
+                },
+                {
+                    "city_name": "闵行",
+                    "city_code": "101020200"
+                },
+                {
+                    "city_name": "金山",
+                    "city_code": "101020700"
+                }
+            ]
+        },
+        {
+            "area": "河北",
+            "city": [
+                {
+                    "city_name": "石家庄",
+                    "city_code": "101090101"
+                },
+                {
+                    "city_name": "张家口",
+                    "city_code": "101090301"
+                },
+                {
+                    "city_name": "承德",
+                    "city_code": "101090402"
+                },
+                {
+                    "city_name": "唐山",
+                    "city_code": "101090501"
+                },
+                {
+                    "city_name": "秦皇岛",
+                    "city_code": "101091101"
+                },
+                {
+                    "city_name": "沧州",
+                    "city_code": "101090701"
+                },
+                {
+                    "city_name": "衡水",
+                    "city_code": "101090801"
+                },
+                {
+                    "city_name": "邢台",
+                    "city_code": "101090901"
+                },
+                {
+                    "city_name": "邯郸",
+                    "city_code": "101091001"
+                },
+                {
+                    "city_name": "保定",
+                    "city_code": "101090201"
+                },
+                {
+                    "city_name": "廊坊",
+                    "city_code": "101090601"
+                }
+            ]
+        },
+        {
+            "area": "河南",
+            "city": [
+                {
+                    "city_name": "郑州",
+                    "city_code": "101180101"
+                },
+                {
+                    "city_name": "新乡",
+                    "city_code": "101180301"
+                },
+                {
+                    "city_name": "许昌",
+                    "city_code": "101180401"
+                },
+                {
+                    "city_name": "平顶山",
+                    "city_code": "101180501"
+                },
+                {
+                    "city_name": "信阳",
+                    "city_code": "101180601"
+                },
+                {
+                    "city_name": "南阳",
+                    "city_code": "101180701"
+                },
+                {
+                    "city_name": "开封",
+                    "city_code": "101180801"
+                },
+                {
+                    "city_name": "洛阳",
+                    "city_code": "101180901"
+                },
+                {
+                    "city_name": "商丘",
+                    "city_code": "101181001"
+                },
+                {
+                    "city_name": "焦作",
+                    "city_code": "101181101"
+                },
+                {
+                    "city_name": "鹤壁",
+                    "city_code": "101181201"
+                },
+                {
+                    "city_name": "濮阳",
+                    "city_code": "101181301"
+                },
+                {
+                    "city_name": "周口",
+                    "city_code": "101181401"
+                },
+                {
+                    "city_name": "漯河",
+                    "city_code": "101181501"
+                },
+                {
+                    "city_name": "驻马店",
+                    "city_code": "101181601"
+                },
+                {
+                    "city_name": "三门峡",
+                    "city_code": "101181701"
+                },
+                {
+                    "city_name": "济源",
+                    "city_code": "101181801"
+                },
+                {
+                    "city_name": "安阳",
+                    "city_code": "101180201"
+                }
+            ]
+        },
+        {
+            "area": "安徽",
+            "city": [
+                {
+                    "city_name": "合肥",
+                    "city_code": "101220101"
+                },
+                {
+                    "city_name": "芜湖",
+                    "city_code": "101220301"
+                },
+                {
+                    "city_name": "淮南",
+                    "city_code": "101220401"
+                },
+                {
+                    "city_name": "马鞍山",
+                    "city_code": "101220501"
+                },
+                {
+                    "city_name": "安庆",
+                    "city_code": "101220601"
+                },
+                {
+                    "city_name": "宿州",
+                    "city_code": "101220701"
+                },
+                {
+                    "city_name": "阜阳",
+                    "city_code": "101220801"
+                },
+                {
+                    "city_name": "亳州",
+                    "city_code": "101220901"
+                },
+                {
+                    "city_name": "黄山",
+                    "city_code": "101221001"
+                },
+                {
+                    "city_name": "滁州",
+                    "city_code": "101221101"
+                },
+                {
+                    "city_name": "淮北",
+                    "city_code": "101221201"
+                },
+                {
+                    "city_name": "铜陵",
+                    "city_code": "101221301"
+                },
+                {
+                    "city_name": "宣城",
+                    "city_code": "101221401"
+                },
+                {
+                    "city_name": "六安",
+                    "city_code": "101221501"
+                },
+                {
+                    "city_name": "巢湖",
+                    "city_code": "101221601"
+                },
+                {
+                    "city_name": "池州",
+                    "city_code": "101221701"
+                },
+                {
+                    "city_name": "蚌埠",
+                    "city_code": "101220201"
+                }
+            ]
+        },
+        {
+            "area": "浙江",
+            "city": [
+                {
+                    "city_name": "杭州",
+                    "city_code": "101210101"
+                },
+                {
+                    "city_name": "舟山",
+                    "city_code": "101211101"
+                },
+                {
+                    "city_name": "湖州",
+                    "city_code": "101210201"
+                },
+                {
+                    "city_name": "嘉兴",
+                    "city_code": "101210301"
+                },
+                {
+                    "city_name": "金华",
+                    "city_code": "101210901"
+                },
+                {
+                    "city_name": "绍兴",
+                    "city_code": "101210501"
+                },
+                {
+                    "city_name": "台州",
+                    "city_code": "101210601"
+                },
+                {
+                    "city_name": "温州",
+                    "city_code": "101210701"
+                },
+                {
+                    "city_name": "丽水",
+                    "city_code": "101210801"
+                },
+                {
+                    "city_name": "衢州",
+                    "city_code": "101211001"
+                },
+                {
+                    "city_name": "宁波",
+                    "city_code": "101210401"
+                }
+            ]
+        },
+        {
+            "area": "重庆",
+            "city": [
+                {
+                    "city_name": "重庆",
+                    "city_code": "101040100"
+                },
+                {
+                    "city_name": "合川",
+                    "city_code": "101040300"
+                },
+                {
+                    "city_name": "南川",
+                    "city_code": "101040400"
+                },
+                {
+                    "city_name": "江津",
+                    "city_code": "101040500"
+                },
+                {
+                    "city_name": "万盛",
+                    "city_code": "101040600"
+                },
+                {
+                    "city_name": "渝北",
+                    "city_code": "101040700"
+                },
+                {
+                    "city_name": "北碚",
+                    "city_code": "101040800"
+                },
+                {
+                    "city_name": "巴南",
+                    "city_code": "101040900"
+                },
+                {
+                    "city_name": "长寿",
+                    "city_code": "101041000"
+                },
+                {
+                    "city_name": "黔江",
+                    "city_code": "101041100"
+                },
+                {
+                    "city_name": "万州天城",
+                    "city_code": "101041200"
+                },
+                {
+                    "city_name": "万州龙宝",
+                    "city_code": "101041300"
+                },
+                {
+                    "city_name": "涪陵",
+                    "city_code": "101041400"
+                },
+                {
+                    "city_name": "开县",
+                    "city_code": "101041500"
+                },
+                {
+                    "city_name": "城口",
+                    "city_code": "101041600"
+                },
+                {
+                    "city_name": "云阳",
+                    "city_code": "101041700"
+                },
+                {
+                    "city_name": "巫溪",
+                    "city_code": "101041800"
+                },
+                {
+                    "city_name": "奉节",
+                    "city_code": "101041900"
+                },
+                {
+                    "city_name": "巫山",
+                    "city_code": "101042000"
+                },
+                {
+                    "city_name": "潼南",
+                    "city_code": "101042100"
+                },
+                {
+                    "city_name": "垫江",
+                    "city_code": "101042200"
+                },
+                {
+                    "city_name": "梁平",
+                    "city_code": "101042300"
+                },
+                {
+                    "city_name": "忠县",
+                    "city_code": "101042400"
+                },
+                {
+                    "city_name": "石柱",
+                    "city_code": "101042500"
+                },
+                {
+                    "city_name": "大足",
+                    "city_code": "101042600"
+                },
+                {
+                    "city_name": "荣昌",
+                    "city_code": "101042700"
+                },
+                {
+                    "city_name": "铜梁",
+                    "city_code": "101042800"
+                },
+                {
+                    "city_name": "璧山",
+                    "city_code": "101042900"
+                },
+                {
+                    "city_name": "丰都",
+                    "city_code": "101043000"
+                },
+                {
+                    "city_name": "武隆",
+                    "city_code": "101043100"
+                },
+                {
+                    "city_name": "彭水",
+                    "city_code": "101043200"
+                },
+                {
+                    "city_name": "綦江",
+                    "city_code": "101043300"
+                },
+                {
+                    "city_name": "酉阳",
+                    "city_code": "101043400"
+                },
+                {
+                    "city_name": "秀山",
+                    "city_code": "101043600"
+                },
+                {
+                    "city_name": "沙坪坝",
+                    "city_code": "101043700"
+                },
+                {
+                    "city_name": "永川",
+                    "city_code": "101040200"
+                }
+            ]
+        },
+        {
+            "area": "福建",
+            "city": [
+                {
+                    "city_name": "福州",
+                    "city_code": "101230101"
+                },
+                {
+                    "city_name": "泉州",
+                    "city_code": "101230501"
+                },
+                {
+                    "city_name": "漳州",
+                    "city_code": "101230601"
+                },
+                {
+                    "city_name": "龙岩",
+                    "city_code": "101230701"
+                },
+                {
+                    "city_name": "晋江",
+                    "city_code": "101230509"
+                },
+                {
+                    "city_name": "南平",
+                    "city_code": "101230901"
+                },
+                {
+                    "city_name": "厦门",
+                    "city_code": "101230201"
+                },
+                {
+                    "city_name": "宁德",
+                    "city_code": "101230301"
+                },
+                {
+                    "city_name": "莆田",
+                    "city_code": "101230401"
+                },
+                {
+                    "city_name": "三明",
+                    "city_code": "101230801"
+                }
+            ]
+        },
+        {
+            "area": "甘肃",
+            "city": [
+                {
+                    "city_name": "兰州",
+                    "city_code": "101160101"
+                },
+                {
+                    "city_name": "平凉",
+                    "city_code": "101160301"
+                },
+                {
+                    "city_name": "庆阳",
+                    "city_code": "101160401"
+                },
+                {
+                    "city_name": "武威",
+                    "city_code": "101160501"
+                },
+                {
+                    "city_name": "金昌",
+                    "city_code": "101160601"
+                },
+                {
+                    "city_name": "嘉峪关",
+                    "city_code": "101161401"
+                },
+                {
+                    "city_name": "酒泉",
+                    "city_code": "101160801"
+                },
+                {
+                    "city_name": "天水",
+                    "city_code": "101160901"
+                },
+                {
+                    "city_name": "武都",
+                    "city_code": "101161001"
+                },
+                {
+                    "city_name": "临夏",
+                    "city_code": "101161101"
+                },
+                {
+                    "city_name": "合作",
+                    "city_code": "101161201"
+                },
+                {
+                    "city_name": "白银",
+                    "city_code": "101161301"
+                },
+                {
+                    "city_name": "定西",
+                    "city_code": "101160201"
+                },
+                {
+                    "city_name": "张掖",
+                    "city_code": "101160701"
+                }
+            ]
+        },
+        {
+            "area": "广东",
+            "city": [
+                {
+                    "city_name": "广州",
+                    "city_code": "101280101"
+                },
+                {
+                    "city_name": "惠州",
+                    "city_code": "101280301"
+                },
+                {
+                    "city_name": "梅州",
+                    "city_code": "101280401"
+                },
+                {
+                    "city_name": "汕头",
+                    "city_code": "101280501"
+                },
+                {
+                    "city_name": "深圳",
+                    "city_code": "101280601"
+                },
+                {
+                    "city_name": "珠海",
+                    "city_code": "101280701"
+                },
+                {
+                    "city_name": "佛山",
+                    "city_code": "101280800"
+                },
+                {
+                    "city_name": "肇庆",
+                    "city_code": "101280901"
+                },
+                {
+                    "city_name": "湛江",
+                    "city_code": "101281001"
+                },
+                {
+                    "city_name": "江门",
+                    "city_code": "101281101"
+                },
+                {
+                    "city_name": "河源",
+                    "city_code": "101281201"
+                },
+                {
+                    "city_name": "清远",
+                    "city_code": "101281301"
+                },
+                {
+                    "city_name": "云浮",
+                    "city_code": "101281401"
+                },
+                {
+                    "city_name": "潮州",
+                    "city_code": "101281501"
+                },
+                {
+                    "city_name": "东莞",
+                    "city_code": "101281601"
+                },
+                {
+                    "city_name": "中山",
+                    "city_code": "101281701"
+                },
+                {
+                    "city_name": "阳江",
+                    "city_code": "101281801"
+                },
+                {
+                    "city_name": "揭阳",
+                    "city_code": "101281901"
+                },
+                {
+                    "city_name": "茂名",
+                    "city_code": "101282001"
+                },
+                {
+                    "city_name": "汕尾",
+                    "city_code": "101282101"
+                },
+                {
+                    "city_name": "韶关",
+                    "city_code": "101280201"
+                }
+            ]
+        },
+        {
+            "area": "广西",
+            "city": [
+                {
+                    "city_name": "南宁",
+                    "city_code": "101300101"
+                },
+                {
+                    "city_name": "柳州",
+                    "city_code": "101300301"
+                },
+                {
+                    "city_name": "来宾",
+                    "city_code": "101300401"
+                },
+                {
+                    "city_name": "桂林",
+                    "city_code": "101300501"
+                },
+                {
+                    "city_name": "梧州",
+                    "city_code": "101300601"
+                },
+                {
+                    "city_name": "防城港",
+                    "city_code": "101301401"
+                },
+                {
+                    "city_name": "贵港",
+                    "city_code": "101300801"
+                },
+                {
+                    "city_name": "玉林",
+                    "city_code": "101300901"
+                },
+                {
+                    "city_name": "百色",
+                    "city_code": "101301001"
+                },
+                {
+                    "city_name": "钦州",
+                    "city_code": "101301101"
+                },
+                {
+                    "city_name": "河池",
+                    "city_code": "101301201"
+                },
+                {
+                    "city_name": "北海",
+                    "city_code": "101301301"
+                },
+                {
+                    "city_name": "崇左",
+                    "city_code": "101300201"
+                },
+                {
+                    "city_name": "贺州",
+                    "city_code": "101300701"
+                }
+            ]
+        },
+        {
+            "area": "贵州",
+            "city": [
+                {
+                    "city_name": "贵阳",
+                    "city_code": "101260101"
+                },
+                {
+                    "city_name": "安顺",
+                    "city_code": "101260301"
+                },
+                {
+                    "city_name": "都匀",
+                    "city_code": "101260401"
+                },
+                {
+                    "city_name": "兴义",
+                    "city_code": "101260906"
+                },
+                {
+                    "city_name": "铜仁",
+                    "city_code": "101260601"
+                },
+                {
+                    "city_name": "毕节",
+                    "city_code": "101260701"
+                },
+                {
+                    "city_name": "六盘水",
+                    "city_code": "101260801"
+                },
+                {
+                    "city_name": "遵义",
+                    "city_code": "101260201"
+                },
+                {
+                    "city_name": "凯里",
+                    "city_code": "101260501"
+                }
+            ]
+        },
+        {
+            "area": "云南",
+            "city": [
+                {
+                    "city_name": "昆明",
+                    "city_code": "101290101"
+                },
+                {
+                    "city_name": "红河",
+                    "city_code": "101290301"
+                },
+                {
+                    "city_name": "文山",
+                    "city_code": "101290601"
+                },
+                {
+                    "city_name": "玉溪",
+                    "city_code": "101290701"
+                },
+                {
+                    "city_name": "楚雄",
+                    "city_code": "101290801"
+                },
+                {
+                    "city_name": "普洱",
+                    "city_code": "101290901"
+                },
+                {
+                    "city_name": "昭通",
+                    "city_code": "101291001"
+                },
+                {
+                    "city_name": "临沧",
+                    "city_code": "101291101"
+                },
+                {
+                    "city_name": "怒江",
+                    "city_code": "101291201"
+                },
+                {
+                    "city_name": "香格里拉",
+                    "city_code": "101291301"
+                },
+                {
+                    "city_name": "丽江",
+                    "city_code": "101291401"
+                },
+                {
+                    "city_name": "德宏",
+                    "city_code": "101291501"
+                },
+                {
+                    "city_name": "景洪",
+                    "city_code": "101291601"
+                },
+                {
+                    "city_name": "大理",
+                    "city_code": "101290201"
+                },
+                {
+                    "city_name": "曲靖",
+                    "city_code": "101290401"
+                },
+                {
+                    "city_name": "保山",
+                    "city_code": "101290501"
+                }
+            ]
+        },
+        {
+            "area": "内蒙古",
+            "city": [
+                {
+                    "city_name": "呼和浩特",
+                    "city_code": "101080101"
+                },
+                {
+                    "city_name": "乌海",
+                    "city_code": "101080301"
+                },
+                {
+                    "city_name": "集宁",
+                    "city_code": "101080401"
+                },
+                {
+                    "city_name": "通辽",
+                    "city_code": "101080501"
+                },
+                {
+                    "city_name": "阿拉善左旗",
+                    "city_code": "101081201"
+                },
+                {
+                    "city_name": "鄂尔多斯",
+                    "city_code": "101080701"
+                },
+                {
+                    "city_name": "临河",
+                    "city_code": "101080801"
+                },
+                {
+                    "city_name": "锡林浩特",
+                    "city_code": "101080901"
+                },
+                {
+                    "city_name": "呼伦贝尔",
+                    "city_code": "101081000"
+                },
+                {
+                    "city_name": "乌兰浩特",
+                    "city_code": "101081101"
+                },
+                {
+                    "city_name": "包头",
+                    "city_code": "101080201"
+                },
+                {
+                    "city_name": "赤峰",
+                    "city_code": "101080601"
+                }
+            ]
+        },
+        {
+            "area": "江西",
+            "city": [
+                {
+                    "city_name": "南昌",
+                    "city_code": "101240101"
+                },
+                {
+                    "city_name": "上饶",
+                    "city_code": "101240301"
+                },
+                {
+                    "city_name": "抚州",
+                    "city_code": "101240401"
+                },
+                {
+                    "city_name": "宜春",
+                    "city_code": "101240501"
+                },
+                {
+                    "city_name": "鹰潭",
+                    "city_code": "101241101"
+                },
+                {
+                    "city_name": "赣州",
+                    "city_code": "101240701"
+                },
+                {
+                    "city_name": "景德镇",
+                    "city_code": "101240801"
+                },
+                {
+                    "city_name": "萍乡",
+                    "city_code": "101240901"
+                },
+                {
+                    "city_name": "新余",
+                    "city_code": "101241001"
+                },
+                {
+                    "city_name": "九江",
+                    "city_code": "101240201"
+                },
+                {
+                    "city_name": "吉安",
+                    "city_code": "101240601"
+                }
+            ]
+        },
+        {
+            "area": "湖北",
+            "city": [
+                {
+                    "city_name": "武汉",
+                    "city_code": "101200101"
+                },
+                {
+                    "city_name": "黄冈",
+                    "city_code": "101200501"
+                },
+                {
+                    "city_name": "荆州",
+                    "city_code": "101200801"
+                },
+                {
+                    "city_name": "宜昌",
+                    "city_code": "101200901"
+                },
+                {
+                    "city_name": "恩施",
+                    "city_code": "101201001"
+                },
+                {
+                    "city_name": "十堰",
+                    "city_code": "101201101"
+                },
+                {
+                    "city_name": "神农架",
+                    "city_code": "101201201"
+                },
+                {
+                    "city_name": "随州",
+                    "city_code": "101201301"
+                },
+                {
+                    "city_name": "荆门",
+                    "city_code": "101201401"
+                },
+                {
+                    "city_name": "天门",
+                    "city_code": "101201501"
+                },
+                {
+                    "city_name": "仙桃",
+                    "city_code": "101201601"
+                },
+                {
+                    "city_name": "潜江",
+                    "city_code": "101201701"
+                },
+                {
+                    "city_name": "襄樊",
+                    "city_code": "101200201"
+                },
+                {
+                    "city_name": "鄂州",
+                    "city_code": "101200301"
+                },
+                {
+                    "city_name": "孝感",
+                    "city_code": "101200401"
+                },
+                {
+                    "city_name": "黄石",
+                    "city_code": "101200601"
+                },
+                {
+                    "city_name": "咸宁",
+                    "city_code": "101200701"
+                }
+            ]
+        },
+        {
+            "area": "四川",
+            "city": [
+                {
+                    "city_name": "成都",
+                    "city_code": "101270101"
+                },
+                {
+                    "city_name": "自贡",
+                    "city_code": "101270301"
+                },
+                {
+                    "city_name": "绵阳",
+                    "city_code": "101270401"
+                },
+                {
+                    "city_name": "南充",
+                    "city_code": "101270501"
+                },
+                {
+                    "city_name": "达州",
+                    "city_code": "101270601"
+                },
+                {
+                    "city_name": "遂宁",
+                    "city_code": "101270701"
+                },
+                {
+                    "city_name": "广安",
+                    "city_code": "101270801"
+                },
+                {
+                    "city_name": "巴中",
+                    "city_code": "101270901"
+                },
+                {
+                    "city_name": "泸州",
+                    "city_code": "101271001"
+                },
+                {
+                    "city_name": "宜宾",
+                    "city_code": "101271101"
+                },
+                {
+                    "city_name": "内江",
+                    "city_code": "101271201"
+                },
+                {
+                    "city_name": "资阳",
+                    "city_code": "101271301"
+                },
+                {
+                    "city_name": "乐山",
+                    "city_code": "101271401"
+                },
+                {
+                    "city_name": "眉山",
+                    "city_code": "101271501"
+                },
+                {
+                    "city_name": "凉山",
+                    "city_code": "101271601"
+                },
+                {
+                    "city_name": "雅安",
+                    "city_code": "101271701"
+                },
+                {
+                    "city_name": "甘孜",
+                    "city_code": "101271801"
+                },
+                {
+                    "city_name": "阿坝",
+                    "city_code": "101271901"
+                },
+                {
+                    "city_name": "德阳",
+                    "city_code": "101272001"
+                },
+                {
+                    "city_name": "广元",
+                    "city_code": "101272101"
+                },
+                {
+                    "city_name": "攀枝花",
+                    "city_code": "101270201"
+                }
+            ]
+        },
+        {
+            "area": "宁夏",
+            "city": [
+                {
+                    "city_name": "银川",
+                    "city_code": "101170101"
+                },
+                {
+                    "city_name": "中卫",
+                    "city_code": "101170501"
+                },
+                {
+                    "city_name": "固原",
+                    "city_code": "101170401"
+                },
+                {
+                    "city_name": "石嘴山",
+                    "city_code": "101170201"
+                },
+                {
+                    "city_name": "吴忠",
+                    "city_code": "101170301"
+                }
+            ]
+        },
+        {
+            "area": "青海",
+            "city": [
+                {
+                    "city_name": "西宁",
+                    "city_code": "101150101"
+                },
+                {
+                    "city_name": "黄南",
+                    "city_code": "101150301"
+                },
+                {
+                    "city_name": "海北",
+                    "city_code": "101150801"
+                },
+                {
+                    "city_name": "果洛",
+                    "city_code": "101150501"
+                },
+                {
+                    "city_name": "玉树",
+                    "city_code": "101150601"
+                },
+                {
+                    "city_name": "海西",
+                    "city_code": "101150701"
+                },
+                {
+                    "city_name": "海东",
+                    "city_code": "101150201"
+                },
+                {
+                    "city_name": "海南",
+                    "city_code": "101150401"
+                }
+            ]
+        },
+        {
+            "area": "山东",
+            "city": [
+                {
+                    "city_name": "济南",
+                    "city_code": "101120101"
+                },
+                {
+                    "city_name": "潍坊",
+                    "city_code": "101120601"
+                },
+                {
+                    "city_name": "临沂",
+                    "city_code": "101120901"
+                },
+                {
+                    "city_name": "菏泽",
+                    "city_code": "101121001"
+                },
+                {
+                    "city_name": "滨州",
+                    "city_code": "101121101"
+                },
+                {
+                    "city_name": "东营",
+                    "city_code": "101121201"
+                },
+                {
+                    "city_name": "威海",
+                    "city_code": "101121301"
+                },
+                {
+                    "city_name": "枣庄",
+                    "city_code": "101121401"
+                },
+                {
+                    "city_name": "日照",
+                    "city_code": "101121501"
+                },
+                {
+                    "city_name": "莱芜",
+                    "city_code": "101121601"
+                },
+                {
+                    "city_name": "聊城",
+                    "city_code": "101121701"
+                },
+                {
+                    "city_name": "青岛",
+                    "city_code": "101120201"
+                },
+                {
+                    "city_name": "淄博",
+                    "city_code": "101120301"
+                },
+                {
+                    "city_name": "德州",
+                    "city_code": "101120401"
+                },
+                {
+                    "city_name": "烟台",
+                    "city_code": "101120501"
+                },
+                {
+                    "city_name": "济宁",
+                    "city_code": "101120701"
+                },
+                {
+                    "city_name": "泰安",
+                    "city_code": "101120801"
+                }
+            ]
+        },
+        {
+            "area": "陕西",
+            "city": [
+                {
+                    "city_name": "西安",
+                    "city_code": "101110101"
+                },
+                {
+                    "city_name": "延安",
+                    "city_code": "101110300"
+                },
+                {
+                    "city_name": "榆林",
+                    "city_code": "101110401"
+                },
+                {
+                    "city_name": "铜川",
+                    "city_code": "101111001"
+                },
+                {
+                    "city_name": "商洛",
+                    "city_code": "101110601"
+                },
+                {
+                    "city_name": "安康",
+                    "city_code": "101110701"
+                },
+                {
+                    "city_name": "汉中",
+                    "city_code": "101110801"
+                },
+                {
+                    "city_name": "宝鸡",
+                    "city_code": "101110901"
+                },
+                {
+                    "city_name": "咸阳",
+                    "city_code": "101110200"
+                },
+                {
+                    "city_name": "渭南",
+                    "city_code": "101110501"
+                }
+            ]
+        },
+        {
+            "area": "山西",
+            "city": [
+                {
+                    "city_name": "太原",
+                    "city_code": "101100101"
+                },
+                {
+                    "city_name": "临汾",
+                    "city_code": "101100701"
+                },
+                {
+                    "city_name": "运城",
+                    "city_code": "101100801"
+                },
+                {
+                    "city_name": "朔州",
+                    "city_code": "101100901"
+                },
+                {
+                    "city_name": "忻州",
+                    "city_code": "101101001"
+                },
+                {
+                    "city_name": "长治",
+                    "city_code": "101100501"
+                },
+                {
+                    "city_name": "大同",
+                    "city_code": "101100201"
+                },
+                {
+                    "city_name": "阳泉",
+                    "city_code": "101100301"
+                },
+                {
+                    "city_name": "晋中",
+                    "city_code": "101100401"
+                },
+                {
+                    "city_name": "晋城",
+                    "city_code": "101100601"
+                },
+                {
+                    "city_name": "吕梁",
+                    "city_code": "101101100"
+                }
+            ]
+        },
+        {
+            "area": "新疆",
+            "city": [
+                {
+                    "city_name": "乌鲁木齐",
+                    "city_code": "101130101"
+                },
+                {
+                    "city_name": "石河子",
+                    "city_code": "101130301"
+                },
+                {
+                    "city_name": "昌吉",
+                    "city_code": "101130401"
+                },
+                {
+                    "city_name": "吐鲁番",
+                    "city_code": "101130501"
+                },
+                {
+                    "city_name": "库尔勒",
+                    "city_code": "101130601"
+                },
+                {
+                    "city_name": "阿拉尔",
+                    "city_code": "101130701"
+                },
+                {
+                    "city_name": "阿克苏",
+                    "city_code": "101130801"
+                },
+                {
+                    "city_name": "喀什",
+                    "city_code": "101130901"
+                },
+                {
+                    "city_name": "伊宁",
+                    "city_code": "101131001"
+                },
+                {
+                    "city_name": "塔城",
+                    "city_code": "101131101"
+                },
+                {
+                    "city_name": "哈密",
+                    "city_code": "101131201"
+                },
+                {
+                    "city_name": "和田",
+                    "city_code": "101131301"
+                },
+                {
+                    "city_name": "阿勒泰",
+                    "city_code": "101131401"
+                },
+                {
+                    "city_name": "阿图什",
+                    "city_code": "101131501"
+                },
+                {
+                    "city_name": "博乐",
+                    "city_code": "101131601"
+                },
+                {
+                    "city_name": "克拉玛依",
+                    "city_code": "101130201"
+                }
+            ]
+        },
+        {
+            "area": "西藏",
+            "city": [
+                {
+                    "city_name": "拉萨",
+                    "city_code": "101140101"
+                },
+                {
+                    "city_name": "山南",
+                    "city_code": "101140301"
+                },
+                {
+                    "city_name": "阿里",
+                    "city_code": "101140701"
+                },
+                {
+                    "city_name": "昌都",
+                    "city_code": "101140501"
+                },
+                {
+                    "city_name": "那曲",
+                    "city_code": "101140601"
+                },
+                {
+                    "city_name": "日喀则",
+                    "city_code": "101140201"
+                },
+                {
+                    "city_name": "林芝",
+                    "city_code": "101140401"
+                }
+            ]
+        },
+        {
+            "area": "台湾",
+            "city": [
+                {
+                    "city_name": "台北县",
+                    "city_code": "101340101"
+                },
+                {
+                    "city_name": "高雄",
+                    "city_code": "101340201"
+                },
+                {
+                    "city_name": "台中",
+                    "city_code": "101340401"
+                }
+            ]
+        },
+        {
+            "area": "海南",
+            "city": [
+                {
+                    "city名": "海口",
+                    "city_code": "101310101"
+                },
+                {
+                    "city_name": "三亚",
+                    "city_code": "101310201"
+                },
+                {
+                    "city_name": "东方",
+                    "city_code": "101310202"
+                },
+                {
+                    "city_name": "临高",
+                    "city_code": "101310203"
+                },
+                {
+                    "city_name": "澄迈",
+                    "city_code": "101310204"
+                },
+                {
+                    "city_name": "儋州",
+                    "city_code": "101310205"
+                },
+                {
+                    "city_name": "昌江",
+                    "city_code": "101310206"
+                },
+                {
+                    "city_name": "白沙",
+                    "city_code": "101310207"
+                },
+                {
+                    "city_name": "琼中",
+                    "city_code": "101310208"
+                },
+                {
+                    "city_name": "定安",
+                    "city_code": "101310209"
+                },
+                {
+                    "city_name": "屯昌",
+                    "city_code": "101310210"
+                },
+                {
+                    "city_name": "琼海",
+                    "city_code": "101310211"
+                },
+                {
+                    "city_name": "文昌",
+                    "city_code": "101310212"
+                },
+                {
+                    "city_name": "保亭",
+                    "city_code": "101310214"
+                },
+                {
+                    "city_name": "万宁",
+                    "city_code": "101310215"
+                },
+                {
+                    "city_name": "陵水",
+                    "city_code": "101310216"
+                },
+                {
+                    "city_name": "西沙",
+                    "city_code": "101310217"
+                },
+                {
+                    "city_name": "南沙岛",
+                    "city_code": "101310220"
+                },
+                {
+                    "city_name": "乐东",
+                    "city_code": "101310221"
+                },
+                {
+                    "city_name": "五指山",
+                    "city_code": "101310222"
+                },
+                {
+                    "city_name": "琼山",
+                    "city_code": "101310102"
+                }
+            ]
+        },
+        {
+            "area": "湖南",
+            "city": [
+                {
+                    "city_name": "长沙",
+                    "city_code": "101250101"
+                },
+                {
+                    "city_name": "株洲",
+                    "city_code": "101250301"
+                },
+                {
+                    "city_name": "衡阳",
+                    "city_code": "101250401"
+                },
+                {
+                    "city_name": "郴州",
+                    "city_code": "101250501"
+                },
+                {
+                    "city_name": "常德",
+                    "city_code": "101250601"
+                },
+                {
+                    "city_name": "益阳",
+                    "city_code": "101250700"
+                },
+                {
+                    "city_name": "娄底",
+                    "city_code": "101250801"
+                },
+                {
+                    "city_name": "邵阳",
+                    "city_code": "101250901"
+                },
+                {
+                    "city_name": "岳阳",
+                    "city_code": "101251001"
+                },
+                {
+                    "city_name": "张家界",
+                    "city_code": "101251101"
+                },
+                {
+                    "city_name": "怀化",
+                    "city_code": "101251201"
+                },
+                {
+                    "city_name": "黔阳",
+                    "city_code": "101251301"
+                },
+                {
+                    "city_name": "永州",
+                    "city_code": "101251401"
+                },
+                {
+                    "city_name": "吉首",
+                    "city_code": "101251501"
+                },
+                {
+                    "city_name": "湘潭",
+                    "city_code": "101250201"
+                }
+            ]
+        },
+        {
+            "area": "江苏",
+            "city": [
+                {
+                    "city_name": "南京",
+                    "city_code": "101190101"
+                },
+                {
+                    "city_name": "镇江",
+                    "city_code": "101190301"
+                },
+                {
+                    "city_name": "苏州",
+                    "city_code": "101190401"
+                },
+                {
+                    "city_name": "南通",
+                    "city_code": "101190501"
+                },
+                {
+                    "city_name": "扬州",
+                    "city_code": "101190601"
+                },
+                {
+                    "city_name": "宿迁",
+                    "city_code": "101191301"
+                },
+                {
+                    "city_name": "徐州",
+                    "city_code": "101190801"
+                },
+                {
+                    "city_name": "淮安",
+                    "city_code": "101190901"
+                },
+                {
+                    "city_name": "连云港",
+                    "city_code": "101191001"
+                },
+                {
+                    "city_name": "常州",
+                    "city_code": "101191101"
+                },
+                {
+                    "city_name": "泰州",
+                    "city_code": "101191201"
+                },
+                {
+                    "city_name": "无锡",
+                    "city_code": "101190201"
+                },
+                {
+                    "city_name": "盐城",
+                    "city_code": "101190701"
+                }
+            ]
+        },
+        {
+            "area": "黑龙江",
+            "city": [
+                {
+                    "city_name": "哈尔滨",
+                    "city_code": "101050101"
+                },
+                {
+                    "city_name": "牡丹江",
+                    "city_code": "101050301"
+                },
+                {
+                    "city_name": "佳木斯",
+                    "city_code": "101050401"
+                },
+                {
+                    "city_name": "绥化",
+                    "city_code": "101050501"
+                },
+                {
+                    "city_name": "黑河",
+                    "city_code": "101050601"
+                },
+                {
+                    "city_name": "双鸭山",
+                    "city_code": "101051301"
+                },
+                {
+                    "city_name": "伊春",
+                    "city_code": "101050801"
+                },
+                {
+                    "city_name": "大庆",
+                    "city_code": "101050901"
+                },
+                {
+                    "city_name": "七台河",
+                    "city_code": "101051002"
+                },
+                {
+                    "city_name": "鸡西",
+                    "city_code": "101051101"
+                },
+                {
+                    "city_name": "鹤岗",
+                    "city_code": "101051201"
+                },
+                {
+                    "city_name": "齐齐哈尔",
+                    "city_code": "101050201"
+                },
+                {
+                    "city_name": "大兴安岭",
+                    "city_code": "101050701"
+                }
+            ]
+        },
+        {
+            "area": "吉林",
+            "city": [
+                {
+                    "city_name": "长春",
+                    "city_code": "101060101"
+                },
+                {
+                    "city_name": "延吉",
+                    "city_code": "101060301"
+                },
+                {
+                    "city_name": "四平",
+                    "city_code": "101060401"
+                },
+                {
+                    "city_name": "白山",
+                    "city_code": "101060901"
+                },
+                {
+                    "city_name": "白城",
+                    "city_code": "101060601"
+                },
+                {
+                    "city_name": "辽源",
+                    "city_code": "101060701"
+                },
+                {
+                    "city_name": "松原",
+                    "city_code": "101060801"
+                },
+                {
+                    "city_name": "吉林",
+                    "city_code": "101060201"
+                },
+                {
+                    "city_name": "通化",
+                    "city_code": "101060501"
+                }
+            ]
+        },
+        {
+            "area": "辽宁",
+            "city": [
+                {
+                    "city_name": "沈阳",
+                    "city_code": "101070101"
+                },
+                {
+                    "city_name": "鞍山",
+                    "city_code": "101070301"
+                },
+                {
+                    "city_name": "抚顺",
+                    "city_code": "101070401"
+                },
+                {
+                    "city_name": "本溪",
+                    "city_code": "101070501"
+                },
+                {
+                    "city_name": "丹东",
+                    "city_code": "101070601"
+                },
+                {
+                    "city_name": "葫芦岛",
+                    "city_code": "101071401"
+                },
+                {
+                    "city_name": "营口",
+                    "city_code": "101070801"
+                },
+                {
+                    "city_name": "阜新",
+                    "city_code": "101070901"
+                },
+                {
+                    "city_name": "辽阳",
+                    "city_code": "101071001"
+                },
+                {
+                    "city_name": "铁岭",
+                    "city_code": "101071101"
+                },
+                {
+                    "city_name": "朝阳",
+                    "city_code": "101071201"
+                },
+                {
+                    "city_name": "盘锦",
+                    "city_code": "101071301"
+                },
+                {
+                    "city_name": "大连",
+                    "city_code": "101070201"
+                },
+                {
+                    "city_name": "锦州",
+                    "city_code": "101070701"
+                }
+            ]
+        }
+    ]
+}

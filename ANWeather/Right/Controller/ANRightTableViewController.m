@@ -108,10 +108,12 @@
         [ANNotificationCenter postNotificationName:ANGetLocationDidClickNotification object:nil];
         
     } else {
-        // 发布关于城市被点击的通知
-        [ANNotificationCenter postNotificationName:ANCityDidClickNotification object:nil userInfo:self.selectedCitys[indexPath.row]];
-        // 回到首页
-        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+
+        // 回到首页并把城市带过去
+        ViewController *viewController = [[ViewController alloc] init];
+        NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
+        viewController.selectedCity = selectedCity;
+        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:viewController] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
 
     }

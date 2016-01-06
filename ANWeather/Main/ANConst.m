@@ -20,4 +20,5 @@ NSString * const ANWeatherRequestUrl = @"http://apis.baidu.com/heweather/weather
 NSString * const ANGetLocationDidClickNotification = @"ANGetLocationDidClickNotification";
 NSString * const ANCityDidClickNotification = @"ANCityDidClickNotification";
 
-
+// 友盟AppKey
+NSString * const ANUMAppKey = @"568bcd9ce0f55a549f0035b3";

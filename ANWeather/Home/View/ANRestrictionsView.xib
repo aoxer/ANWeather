@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="zaa-EF-Ld9" customClass="ANRestrictionsView">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日限行" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SI-bX-u97">
+                    <rect key="frame" x="0.0" y="129" width="150" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Qit-wM-eli"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.41960784309999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9   0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EJ-Nj-7Cm">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                    <color key="textColor" red="1" green="0.41779369440000003" blue="0.19249891159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="9EJ-Nj-7Cm" firstAttribute="top" secondItem="zaa-EF-Ld9" secondAttribute="top" id="9u3-aq-VCb"/>
+                <constraint firstItem="9EJ-Nj-7Cm" firstAttribute="leading" secondItem="zaa-EF-Ld9" secondAttribute="leading" id="EQl-y5-HvB"/>
+                <constraint firstItem="1SI-bX-u97" firstAttribute="leading" secondItem="zaa-EF-Ld9" secondAttribute="leading" id="Ocp-By-hcf"/>
+                <constraint firstAttribute="trailing" secondItem="9EJ-Nj-7Cm" secondAttribute="trailing" id="Q8o-L6-Uei"/>
+                <constraint firstItem="1SI-bX-u97" firstAttribute="top" secondItem="9EJ-Nj-7Cm" secondAttribute="bottom" id="bRp-3V-3oH"/>
+                <constraint firstAttribute="bottom" secondItem="1SI-bX-u97" secondAttribute="bottom" id="nQy-qs-VZ3"/>
+                <constraint firstAttribute="trailing" secondItem="1SI-bX-u97" secondAttribute="trailing" id="xYp-8E-zp6"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="maxMinTemp" destination="1SI-bX-u97" id="FnE-hF-cXt"/>
+                <outlet property="tempLabel" destination="9EJ-Nj-7Cm" id="Mj6-wQ-Lvg"/>
+            </connections>
+            <point key="canvasLocation" x="252" y="191"/>
+        </view>
+    </objects>
+</document>

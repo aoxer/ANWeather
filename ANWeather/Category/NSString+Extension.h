@@ -13,4 +13,10 @@
  *  把"市"字去掉
  */
 - (NSString *)removeShi;
+/**
+ *  有市字就把市去掉 是州则取下级城市
+ *
+ *  @param subLocality 下级城市
+ */
+- (NSString *)getCityName:(NSString *)subLocality;
 @end

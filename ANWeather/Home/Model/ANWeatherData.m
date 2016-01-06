@@ -7,8 +7,9 @@
 //
 
 #import "ANWeatherData.h" 
-
+#import "ANDailyForecastM.h"
 @implementation ANWeatherData
+
 - (NSDictionary *)objectClassInArray
 {
     return @{ @"daily_forecast" : [ANDailyForecastM class]};

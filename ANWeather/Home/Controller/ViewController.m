@@ -26,6 +26,11 @@
 
 @interface ViewController ()<CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
+/**
+ *  已选城市城市
+ */
+@property (copy, nonatomic)NSString *city;
+
 @property (strong, nonatomic)ANWeatherView *weatherView;
 /**
  *  天气数据模型
@@ -43,10 +48,6 @@
 @property (strong, nonatomic)CLLocationManager *locationMgr;
 @property (strong, nonatomic)CLGeocoder *geocoder;
 
-/**
- *  当前城市
- */
-@property (copy, nonatomic)NSString *city;
 /**
  *  nav的titleView
  */
@@ -85,8 +86,7 @@
     
     // 监听定位的通知
     [ANNotificationCenter addObserver:self selector:@selector(getLocation) name:ANGetLocationDidClickNotification object:nil];
-    // 监听城市更换的通知
-    [ANNotificationCenter addObserver:self selector:@selector(getSelectedCityWeather:) name:ANCityDidClickNotification object:nil];
+
 }
 
 
@@ -102,11 +102,13 @@
     // MJRefresh
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
-#warning 定位没做
-        // 定位
-        
         // 加载天气
-        [self sendRequestWithCity:self.city];
+        if (self.selectedCity.length != 0) { // 如果有已选城市 加载已选城市
+            [self sendRequestWithCity:self.selectedCity];
+        } else { // 没有则加载上次定位城市
+            [self sendRequestWithCity:self.city];
+        }
+       
         
     }];
 }
@@ -169,6 +171,7 @@
 
 - (void)setupLastCity
 {
+    
     if ([ANOffLineTool sqlExists])
     {
         self.city = [ANOffLineTool getLastCity];
@@ -180,21 +183,33 @@
 
 /**
  *  读取天气
- */
+ */ 
 - (void)loadWeatherWithCity:(NSString *)city
 {
-    // 1.从缓存读取数据加载数据
-    NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
-    ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
-    if ([basic.city isEqualToString:self.city]) { // 有缓存
-
-        [self dealingResult:weathersDict];
-        
-    } else { // 没缓存
-        [self sendRequestWithCity:city];
+    
+    if (self.selectedCity.length != 0) { // 如果有已选城市 加载以宣城市
+        // 1.从缓存读取数据加载数据
+        NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:self.selectedCity];
+        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
+        if ([basic.city isEqualToString:self.selectedCity]) { // 有缓存
+            
+            [self dealingResult:weathersDict];
+            
+        } else { // 没缓存
+            [self sendRequestWithCity:self.selectedCity];
+        }
+    } else { // 没有则加载定位城市
+        // 1.从缓存读取数据加载数据
+        NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
+        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
+        if ([basic.city isEqualToString:self.city]) { // 有缓存
+            
+            [self dealingResult:weathersDict];
+            
+        } else { // 没缓存
+            [self sendRequestWithCity:city];
+        }
     }
-    
-    
     
 }
 
@@ -213,9 +228,9 @@
     self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weathersDict[@"daily_forecast"]];
     
     // 设置导航栏
-#warning 待确认
-        self.navigationItem.title = weatherData.basic.city;
-//    self.navigationItem.title = self.city;
+
+    self.navigationItem.title = weatherData.basic.city;
+
     
     // 重新加载tableView
     [self.weatherView reloadData];
@@ -417,16 +432,27 @@
         // 隐藏HUD
         [MBProgressHUD hideHUD];
 
-        CLPlacemark *pm = [placemarks lastObject];
-        
+        CLPlacemark *pm = [placemarks firstObject];
+        ANLog(@" %@\n %@\n %@\n %@\n %@\n %@\n %@\n ",
+              pm.name, // eg. Apple Inc.
+              pm.thoroughfare, // street address, eg. 1 Infinite Loop
+              pm.subThoroughfare, // eg. 1
+              pm.locality, // city, eg. Cupertino
+              pm.subLocality, // neighborhood, common name, eg. Mission District
+              pm.administrativeArea, // state, eg. CA
+              pm.country // eg. United States
+              );
         // 获取到的城市和当前城市不一样就开始刷新
         if (![pm.locality isEqualToString:self.city]){
             
             [self.tableView.header beginRefreshing];
         }
         
-        // 把市去掉
-        self.city = [pm.locality removeShi];
+        
+        // 把市字去掉 如果是州 就获取下级城市
+        
+        self.city = [pm.locality getCityName:pm.subLocality];
+        
         
         // 设置导航栏
         self.navigationItem.title = pm.locality;
@@ -498,8 +524,7 @@
 
 - (void)dealloc
 {
-    [ANNotificationCenter removeObserver:self];
-    [ANNotificationCenter removeObserver:self];
+     [ANNotificationCenter removeObserver:self];
 }
 
 @end

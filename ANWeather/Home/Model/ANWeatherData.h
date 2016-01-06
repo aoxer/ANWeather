@@ -12,6 +12,9 @@
 #import "ANAqiM.h"
 #import "ANBasicM.h"
 #import "ANStatusM.h"
+
+//@class ANNowM, ANDailyForecastM, ANAqiM, ANBasicM, ANStatusM;
+
 @interface ANWeatherData : NSObject
 /**
  *  当前天气的模型

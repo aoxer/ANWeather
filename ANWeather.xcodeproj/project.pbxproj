@@ -36,6 +36,8 @@
 		002216021C2CE8E500E665F6 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 002215EE1C2CE8E500E665F6 /* NSString+MJExtension.m */; };
 		002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216041C2CE8F800E665F6 /* AppDelegate.m */; };
 		002216071C2CE8F800E665F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 002216051C2CE8F800E665F6 /* main.m */; };
+		00224B7E1C3C0373003BA1E6 /* ANCareController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00224B7C1C3C0373003BA1E6 /* ANCareController.m */; };
+		00224B7F1C3C0373003BA1E6 /* ANCareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00224B7D1C3C0373003BA1E6 /* ANCareController.xib */; };
 		003C980E1C327FFD00160D91 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C97E41C327FFD00160D91 /* MJRefreshAutoFooter.m */; };
 		003C980F1C327FFD00160D91 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C97E61C327FFD00160D91 /* MJRefreshBackFooter.m */; };
 		003C98101C327FFD00160D91 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C97E81C327FFD00160D91 /* MJRefreshComponent.m */; };
@@ -58,11 +60,23 @@
 		003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */; };
 		003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C98481C32BA3A00160D91 /* ANRightTableViewController.m */; };
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
-		004EDA021C3ABB32001614A4 /* AreaCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9FF1C3ABB32001614A4 /* AreaCodeModel.m */; };
-		004EDA031C3ABB32001614A4 /* PinYinSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA011C3ABB32001614A4 /* PinYinSortModel.m */; };
 		004EDA051C3ABD72001614A4 /* citys.json in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA041C3ABD72001614A4 /* citys.json */; };
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
+		006C2E331C3C1547000832FF /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E181C3C1547000832FF /* UMSocialLocalizable.strings */; };
+		006C2E341C3C1547000832FF /* libUMSocial_Sdk_4.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 006C2E261C3C1547000832FF /* libUMSocial_Sdk_4.2.a */; };
+		006C2E351C3C1547000832FF /* libUMSocial_Sdk_Comment_4.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 006C2E271C3C1547000832FF /* libUMSocial_Sdk_Comment_4.2.a */; };
+		006C2E361C3C1547000832FF /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E291C3C1547000832FF /* UMSCommentDetailController.xib */; };
+		006C2E371C3C1547000832FF /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E2A1C3C1547000832FF /* UMSCommentInputController.xib */; };
+		006C2E381C3C1547000832FF /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E2B1C3C1547000832FF /* UMSCommentInputControlleriPad.xib */; };
+		006C2E391C3C1547000832FF /* UMShareEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E2C1C3C1547000832FF /* UMShareEditViewController.xib */; };
+		006C2E3A1C3C1547000832FF /* UMShareEditViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E2D1C3C1547000832FF /* UMShareEditViewControlleriPad.xib */; };
+		006C2E3B1C3C1547000832FF /* UMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E2E1C3C1547000832FF /* UMSLoginViewController.xib */; };
+		006C2E3C1C3C1547000832FF /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E2F1C3C1547000832FF /* UMSnsAccountViewController.xib */; };
+		006C2E3D1C3C1547000832FF /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E301C3C1547000832FF /* UMSShareListController.xib */; };
+		006C2E3E1C3C1547000832FF /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E311C3C1547000832FF /* UMSocialSDKResourcesNew.bundle */; };
+		006C2E411C3C163B000832FF /* ANRestrictionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006C2E401C3C163B000832FF /* ANRestrictionsView.m */; };
+		006C2E431C3C1661000832FF /* ANRestrictionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E421C3C1661000832FF /* ANRestrictionsView.xib */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -89,6 +103,11 @@
 		00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F3A1C311F710042F0D9 /* ANTempItemView.xib */; };
 		00934F471C315F060042F0D9 /* ANDaysWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */; };
 		00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */; };
+		0095112F1C3CDD4300EA9FDC /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 0095112E1C3CDD4300EA9FDC /* area.json */; };
+		009511321C3CDFD700EA9FDC /* ANAreaM.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511311C3CDFD700EA9FDC /* ANAreaM.m */; };
+		009511351C3CE23800EA9FDC /* ANCityM.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511341C3CE23800EA9FDC /* ANCityM.m */; };
+		0095113D1C3D501900EA9FDC /* AreaCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0095113A1C3D501900EA9FDC /* AreaCodeModel.m */; };
+		0095113E1C3D501900EA9FDC /* PinYinSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0095113C1C3D501900EA9FDC /* PinYinSortModel.m */; };
 		00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CE71C33846200AD5B5C /* ANAboutViewController.m */; };
 		00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */; };
 		00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */; };
@@ -181,6 +200,9 @@
 		002216031C2CE8F800E665F6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ANWeather/Main/AppDelegate.h; sourceTree = "<group>"; };
 		002216041C2CE8F800E665F6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ANWeather/Main/AppDelegate.m; sourceTree = "<group>"; };
 		002216051C2CE8F800E665F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ANWeather/Main/main.m; sourceTree = "<group>"; };
+		00224B7B1C3C0373003BA1E6 /* ANCareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCareController.h; sourceTree = "<group>"; };
+		00224B7C1C3C0373003BA1E6 /* ANCareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCareController.m; sourceTree = "<group>"; };
+		00224B7D1C3C0373003BA1E6 /* ANCareController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANCareController.xib; sourceTree = "<group>"; };
 		003C97E31C327FFD00160D91 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		003C97E41C327FFD00160D91 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		003C97E51C327FFD00160D91 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -225,14 +247,37 @@
 		003C98481C32BA3A00160D91 /* ANRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANRightTableViewController.m; path = Controller/ANRightTableViewController.m; sourceTree = "<group>"; };
 		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
 		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
-		004ED9FE1C3ABB32001614A4 /* AreaCodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaCodeModel.h; sourceTree = "<group>"; };
-		004ED9FF1C3ABB32001614A4 /* AreaCodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaCodeModel.m; sourceTree = "<group>"; };
-		004EDA001C3ABB32001614A4 /* PinYinSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinSortModel.h; sourceTree = "<group>"; };
-		004EDA011C3ABB32001614A4 /* PinYinSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinSortModel.m; sourceTree = "<group>"; };
 		004EDA041C3ABD72001614A4 /* citys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citys.json; sourceTree = "<group>"; };
 		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
 		004EDA0B1C3B96B9001614A4 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extension.h"; path = "ANWeather/Category/NSString+Extension.h"; sourceTree = "<group>"; };
 		004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "ANWeather/Category/NSString+Extension.m"; sourceTree = "<group>"; };
+		006C2E191C3C1547000832FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
+		006C2E1B1C3C1547000832FF /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
+		006C2E1C1C3C1547000832FF /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
+		006C2E1D1C3C1547000832FF /* UMSocialBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialBar.h; sourceTree = "<group>"; };
+		006C2E1E1C3C1547000832FF /* UMSocialConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialConfig.h; sourceTree = "<group>"; };
+		006C2E1F1C3C1547000832FF /* UMSocialControllerService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialControllerService.h; sourceTree = "<group>"; };
+		006C2E201C3C1547000832FF /* UMSocialControllerServiceComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialControllerServiceComment.h; sourceTree = "<group>"; };
+		006C2E211C3C1547000832FF /* UMSocialData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialData.h; sourceTree = "<group>"; };
+		006C2E221C3C1547000832FF /* UMSocialDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialDataService.h; sourceTree = "<group>"; };
+		006C2E231C3C1547000832FF /* UMSocialSnsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsData.h; sourceTree = "<group>"; };
+		006C2E241C3C1547000832FF /* UMSocialSnsPlatformManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsPlatformManager.h; sourceTree = "<group>"; };
+		006C2E251C3C1547000832FF /* UMSocialSnsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialSnsService.h; sourceTree = "<group>"; };
+		006C2E261C3C1547000832FF /* libUMSocial_Sdk_4.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_4.2.a; sourceTree = "<group>"; };
+		006C2E271C3C1547000832FF /* libUMSocial_Sdk_Comment_4.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_Comment_4.2.a; sourceTree = "<group>"; };
+		006C2E291C3C1547000832FF /* UMSCommentDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentDetailController.xib; sourceTree = "<group>"; };
+		006C2E2A1C3C1547000832FF /* UMSCommentInputController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputController.xib; sourceTree = "<group>"; };
+		006C2E2B1C3C1547000832FF /* UMSCommentInputControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSCommentInputControlleriPad.xib; sourceTree = "<group>"; };
+		006C2E2C1C3C1547000832FF /* UMShareEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewController.xib; sourceTree = "<group>"; };
+		006C2E2D1C3C1547000832FF /* UMShareEditViewControlleriPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMShareEditViewControlleriPad.xib; sourceTree = "<group>"; };
+		006C2E2E1C3C1547000832FF /* UMSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSLoginViewController.xib; sourceTree = "<group>"; };
+		006C2E2F1C3C1547000832FF /* UMSnsAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSnsAccountViewController.xib; sourceTree = "<group>"; };
+		006C2E301C3C1547000832FF /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
+		006C2E311C3C1547000832FF /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
+		006C2E321C3C1547000832FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
+		006C2E3F1C3C163B000832FF /* ANRestrictionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRestrictionsView.h; sourceTree = "<group>"; };
+		006C2E401C3C163B000832FF /* ANRestrictionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRestrictionsView.m; sourceTree = "<group>"; };
+		006C2E421C3C1661000832FF /* ANRestrictionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRestrictionsView.xib; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -279,6 +324,15 @@
 		00934F441C315F060042F0D9 /* ANDaysWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDaysWeatherCell.h; sourceTree = "<group>"; };
 		00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherCell.m; sourceTree = "<group>"; };
 		00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANDaysWeatherCell.xib; sourceTree = "<group>"; };
+		0095112E1C3CDD4300EA9FDC /* area.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = area.json; sourceTree = "<group>"; };
+		009511301C3CDFD700EA9FDC /* ANAreaM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAreaM.h; sourceTree = "<group>"; };
+		009511311C3CDFD700EA9FDC /* ANAreaM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAreaM.m; sourceTree = "<group>"; };
+		009511331C3CE23800EA9FDC /* ANCityM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCityM.h; sourceTree = "<group>"; };
+		009511341C3CE23800EA9FDC /* ANCityM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCityM.m; sourceTree = "<group>"; };
+		009511391C3D501900EA9FDC /* AreaCodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaCodeModel.h; sourceTree = "<group>"; };
+		0095113A1C3D501900EA9FDC /* AreaCodeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaCodeModel.m; sourceTree = "<group>"; };
+		0095113B1C3D501900EA9FDC /* PinYinSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYinSortModel.h; sourceTree = "<group>"; };
+		0095113C1C3D501900EA9FDC /* PinYinSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinYinSortModel.m; sourceTree = "<group>"; };
 		00B98CE61C33846200AD5B5C /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
 		00B98CE71C33846200AD5B5C /* ANAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutViewController.m; sourceTree = "<group>"; };
 		00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutViewController.xib; sourceTree = "<group>"; };
@@ -324,7 +378,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006C2E341C3C1547000832FF /* libUMSocial_Sdk_4.2.a in Frameworks */,
 				00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */,
+				006C2E351C3C1547000832FF /* libUMSocial_Sdk_Comment_4.2.a in Frameworks */,
 				00B98D841C33E79700AD5B5C /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +431,7 @@
 		002215211C2CE63900E665F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0095112E1C3CDD4300EA9FDC /* area.json */,
 				004EDA041C3ABD72001614A4 /* citys.json */,
 				002215221C2CE63900E665F6 /* Info.plist */,
 				002215681C2CE70800E665F6 /* PrefixHeader.pch */,
@@ -433,6 +490,7 @@
 		002215691C2CE78500E665F6 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				006C2E171C3C1547000832FF /* UMSocial_Sdk_4.2 */,
 				00B98D851C33EB2800AD5B5C /* fmdb */,
 				003C97E11C327FFD00160D91 /* MJRefresh */,
 				009033C41C2E2F53001FFED3 /* RESideMenu */,
@@ -514,6 +572,41 @@
 				00B98D9A1C341DD400AD5B5C /* ANConst.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		00224B771C3C02A7003BA1E6 /* Care */ = {
+			isa = PBXGroup;
+			children = (
+				00224B781C3C02A7003BA1E6 /* Controller */,
+				00224B791C3C02A7003BA1E6 /* Model */,
+				00224B7A1C3C02A7003BA1E6 /* View */,
+			);
+			name = Care;
+			path = ANWeather/Left/Controller/Care;
+			sourceTree = "<group>";
+		};
+		00224B781C3C02A7003BA1E6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00224B7B1C3C0373003BA1E6 /* ANCareController.h */,
+				00224B7C1C3C0373003BA1E6 /* ANCareController.m */,
+				00224B7D1C3C0373003BA1E6 /* ANCareController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00224B791C3C02A7003BA1E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00224B7A1C3C02A7003BA1E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		003C97E11C327FFD00160D91 /* MJRefresh */ = {
@@ -644,12 +737,63 @@
 		004ED9FD1C3ABB32001614A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				004ED9FE1C3ABB32001614A4 /* AreaCodeModel.h */,
-				004ED9FF1C3ABB32001614A4 /* AreaCodeModel.m */,
-				004EDA001C3ABB32001614A4 /* PinYinSortModel.h */,
-				004EDA011C3ABB32001614A4 /* PinYinSortModel.m */,
+				009511391C3D501900EA9FDC /* AreaCodeModel.h */,
+				0095113A1C3D501900EA9FDC /* AreaCodeModel.m */,
+				0095113B1C3D501900EA9FDC /* PinYinSortModel.h */,
+				0095113C1C3D501900EA9FDC /* PinYinSortModel.m */,
+				009511301C3CDFD700EA9FDC /* ANAreaM.h */,
+				009511311C3CDFD700EA9FDC /* ANAreaM.m */,
+				009511331C3CE23800EA9FDC /* ANCityM.h */,
+				009511341C3CE23800EA9FDC /* ANCityM.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		006C2E171C3C1547000832FF /* UMSocial_Sdk_4.2 */ = {
+			isa = PBXGroup;
+			children = (
+				006C2E181C3C1547000832FF /* UMSocialLocalizable.strings */,
+				006C2E1A1C3C1547000832FF /* Header */,
+				006C2E261C3C1547000832FF /* libUMSocial_Sdk_4.2.a */,
+				006C2E271C3C1547000832FF /* libUMSocial_Sdk_Comment_4.2.a */,
+				006C2E281C3C1547000832FF /* SocialSDKXib */,
+				006C2E311C3C1547000832FF /* UMSocialSDKResourcesNew.bundle */,
+			);
+			name = UMSocial_Sdk_4.2;
+			path = ANWeather/Libs/UMSocial_Sdk_4.2;
+			sourceTree = "<group>";
+		};
+		006C2E1A1C3C1547000832FF /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				006C2E1B1C3C1547000832FF /* UMSocial.h */,
+				006C2E1C1C3C1547000832FF /* UMSocialAccountManager.h */,
+				006C2E1D1C3C1547000832FF /* UMSocialBar.h */,
+				006C2E1E1C3C1547000832FF /* UMSocialConfig.h */,
+				006C2E1F1C3C1547000832FF /* UMSocialControllerService.h */,
+				006C2E201C3C1547000832FF /* UMSocialControllerServiceComment.h */,
+				006C2E211C3C1547000832FF /* UMSocialData.h */,
+				006C2E221C3C1547000832FF /* UMSocialDataService.h */,
+				006C2E231C3C1547000832FF /* UMSocialSnsData.h */,
+				006C2E241C3C1547000832FF /* UMSocialSnsPlatformManager.h */,
+				006C2E251C3C1547000832FF /* UMSocialSnsService.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		006C2E281C3C1547000832FF /* SocialSDKXib */ = {
+			isa = PBXGroup;
+			children = (
+				006C2E291C3C1547000832FF /* UMSCommentDetailController.xib */,
+				006C2E2A1C3C1547000832FF /* UMSCommentInputController.xib */,
+				006C2E2B1C3C1547000832FF /* UMSCommentInputControlleriPad.xib */,
+				006C2E2C1C3C1547000832FF /* UMShareEditViewController.xib */,
+				006C2E2D1C3C1547000832FF /* UMShareEditViewControlleriPad.xib */,
+				006C2E2E1C3C1547000832FF /* UMSLoginViewController.xib */,
+				006C2E2F1C3C1547000832FF /* UMSnsAccountViewController.xib */,
+				006C2E301C3C1547000832FF /* UMSShareListController.xib */,
+			);
+			path = SocialSDKXib;
 			sourceTree = "<group>";
 		};
 		009033B51C2E2E88001FFED3 /* Home */ = {
@@ -673,6 +817,7 @@
 				00B98CF51C33846200AD5B5C /* Home */,
 				00B98CF91C33846200AD5B5C /* Setting */,
 				00B98D001C33846200AD5B5C /* support  */,
+				00224B771C3C02A7003BA1E6 /* Care */,
 			);
 			name = Left;
 			sourceTree = "<group>";
@@ -747,6 +892,9 @@
 			children = (
 				009033F21C2E2FA3001FFED3 /* ANWeatherView.h */,
 				009033F31C2E2FA3001FFED3 /* ANWeatherView.m */,
+				006C2E3F1C3C163B000832FF /* ANRestrictionsView.h */,
+				006C2E401C3C163B000832FF /* ANRestrictionsView.m */,
+				006C2E421C3C1661000832FF /* ANRestrictionsView.xib */,
 				009033E91C2E2FA3001FFED3 /* ANPM25ItemView.h */,
 				009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */,
 				009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */,
@@ -1057,6 +1205,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 002215151C2CE63900E665F6;
 			productRefGroup = 0022151F1C2CE63900E665F6 /* Products */;
@@ -1074,21 +1223,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006C2E361C3C1547000832FF /* UMSCommentDetailController.xib in Resources */,
+				006C2E391C3C1547000832FF /* UMShareEditViewController.xib in Resources */,
 				004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */,
 				00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */,
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,
+				006C2E431C3C1661000832FF /* ANRestrictionsView.xib in Resources */,
+				006C2E3D1C3C1547000832FF /* UMSShareListController.xib in Resources */,
+				006C2E371C3C1547000832FF /* UMSCommentInputController.xib in Resources */,
+				00224B7F1C3C0373003BA1E6 /* ANCareController.xib in Resources */,
 				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
+				0095112F1C3CDD4300EA9FDC /* area.json in Resources */,
 				009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */,
 				00B98DAE1C3527EE00AD5B5C /* ANTopView.xib in Resources */,
+				006C2E3C1C3C1547000832FF /* UMSnsAccountViewController.xib in Resources */,
 				009034051C2E2FA3001FFED3 /* ANWeatherItemView.xib in Resources */,
 				009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */,
+				006C2E381C3C1547000832FF /* UMSCommentInputControlleriPad.xib in Resources */,
 				002215301C2CE63900E665F6 /* Main.storyboard in Resources */,
 				00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */,
 				003C981C1C327FFD00160D91 /* MJRefresh.bundle in Resources */,
 				002215351C2CE63900E665F6 /* LaunchScreen.xib in Resources */,
+				006C2E331C3C1547000832FF /* UMSocialLocalizable.strings in Resources */,
+				006C2E3E1C3C1547000832FF /* UMSocialSDKResourcesNew.bundle in Resources */,
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
 				00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */,
+				006C2E3A1C3C1547000832FF /* UMShareEditViewControlleriPad.xib in Resources */,
 				004EDA051C3ABD72001614A4 /* citys.json in Resources */,
+				006C2E3B1C3C1547000832FF /* UMSLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1107,12 +1269,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				002215F31C2CE8E500E665F6 /* AFSecurityPolicy.m in Sources */,
+				0095113E1C3D501900EA9FDC /* PinYinSortModel.m in Sources */,
 				00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */,
 				002215FA1C2CE8E500E665F6 /* MJFoundation.m in Sources */,
 				002216001C2CE8E500E665F6 /* NSObject+MJKeyValue.m in Sources */,
 				003C98191C327FFD00160D91 /* MJRefreshGifHeader.m in Sources */,
 				002215F01C2CE8E500E665F6 /* AFHTTPRequestOperationManager.m in Sources */,
 				00B98D951C33EB2800AD5B5C /* FMResultSet.m in Sources */,
+				0095113D1C3D501900EA9FDC /* AreaCodeModel.m in Sources */,
 				002215EF1C2CE8E500E665F6 /* AFHTTPRequestOperation.m in Sources */,
 				003C98141C327FFD00160D91 /* MJRefreshAutoNormalFooter.m in Sources */,
 				00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */,
@@ -1136,8 +1300,10 @@
 				00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
 				003C980F1C327FFD00160D91 /* MJRefreshBackFooter.m in Sources */,
+				006C2E411C3C163B000832FF /* ANRestrictionsView.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,
 				002215FF1C2CE8E500E665F6 /* NSObject+MJCoding.m in Sources */,
+				009511321C3CDFD700EA9FDC /* ANAreaM.m in Sources */,
 				00B98D921C33EB2800AD5B5C /* FMDatabaseAdditions.m in Sources */,
 				003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */,
 				009033F71C2E2FA3001FFED3 /* ViewController.m in Sources */,
@@ -1146,7 +1312,6 @@
 				002215F11C2CE8E500E665F6 /* AFHTTPSessionManager.m in Sources */,
 				009033CD1C2E2F53001FFED3 /* UIViewController+RESideMenu.m in Sources */,
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
-				004EDA031C3ABB32001614A4 /* PinYinSortModel.m in Sources */,
 				00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */,
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
@@ -1156,7 +1321,6 @@
 				009034021C2E2FA3001FFED3 /* ANTempItemView.m in Sources */,
 				002215F71C2CE8E500E665F6 /* AFURLSessionManager.m in Sources */,
 				002216021C2CE8E500E665F6 /* NSString+MJExtension.m in Sources */,
-				004EDA021C3ABB32001614A4 /* AreaCodeModel.m in Sources */,
 				00B98DAC1C3527DE00AD5B5C /* ANTopView.m in Sources */,
 				009034001C2E2FA3001FFED3 /* ANPM25ItemView.m in Sources */,
 				009033FC1C2E2FA3001FFED3 /* ANNowM.m in Sources */,
@@ -1175,6 +1339,7 @@
 				004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */,
 				009034041C2E2FA3001FFED3 /* ANWeatherItemView.m in Sources */,
 				009033F81C2E2FA3001FFED3 /* ANAqiM.m in Sources */,
+				00224B7E1C3C0373003BA1E6 /* ANCareController.m in Sources */,
 				009033FD1C2E2FA3001FFED3 /* ANTemM.m in Sources */,
 				002215F81C2CE8E500E665F6 /* MJDictionaryCache.m in Sources */,
 				00934F471C315F060042F0D9 /* ANDaysWeatherCell.m in Sources */,
@@ -1190,6 +1355,7 @@
 				003C981A1C327FFD00160D91 /* MJRefreshNormalHeader.m in Sources */,
 				0022152A1C2CE63900E665F6 /* ANWeather.xcdatamodeld in Sources */,
 				002215FB1C2CE8E500E665F6 /* MJProperty.m in Sources */,
+				009511351C3CE23800EA9FDC /* ANCityM.m in Sources */,
 				002215F21C2CE8E500E665F6 /* AFNetworkReachabilityManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1228,6 +1394,15 @@
 				002215341C2CE63900E665F6 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		006C2E181C3C1547000832FF /* UMSocialLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				006C2E191C3C1547000832FF /* en */,
+				006C2E321C3C1547000832FF /* zh-Hans */,
+			);
+			name = UMSocialLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1320,6 +1495,12 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ANWeather/PrefixHeader.pch";
 				INFOPLIST_FILE = ANWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UMSocial_Sdk_4.4",
+					"$(PROJECT_DIR)/UMSocial_Sdk_4.2",
+					"$(PROJECT_DIR)/ANWeather/Libs/UMSocial_Sdk_4.2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1331,6 +1512,12 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ANWeather/PrefixHeader.pch";
 				INFOPLIST_FILE = ANWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/UMSocial_Sdk_4.4",
+					"$(PROJECT_DIR)/UMSocial_Sdk_4.2",
+					"$(PROJECT_DIR)/ANWeather/Libs/UMSocial_Sdk_4.2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

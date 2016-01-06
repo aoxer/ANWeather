@@ -8,9 +8,9 @@
 
 #import "ANCitySearchController.h"
 
+#import "ANAreaM.h"
+#import "ANCityM.h"
 #import "AreaCodeModel.h"
-#import "PinYinSortModel.h"
-
 
 @interface ANCitySearchController ()<UISearchResultsUpdating>
 
@@ -24,6 +24,11 @@
  *  存放城市们的数组
  */
 @property (strong, nonatomic)NSMutableArray *citysArray;
+/**
+ *  存放省们的数组
+ */
+@property (strong, nonatomic)NSMutableArray *areaArray;
+
 
 
 @end
@@ -60,21 +65,42 @@
 
 - (void)loadCitys {
 
-    NSString *citysPath = [[NSBundle mainBundle] pathForResource:@"citys" ofType:@"json"];
+        NSString *citysPath = [[NSBundle mainBundle] pathForResource:@"area" ofType:@"json"];
+//    NSString *citysPath = [[NSBundle mainBundle] pathForResource:@"citys" ofType:@"json"];
+
+    
     NSString *encodingCitys = [NSString stringWithContentsOfFile:citysPath encoding:NSUTF8StringEncoding error:nil];
     NSData *jsonData = [encodingCitys dataUsingEncoding:NSUTF8StringEncoding];
     
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
-     NSArray *citys = [AreaCodeModel objectArrayWithKeyValuesArray:dict[@"RECORDS"]];
-    
-    for (AreaCodeModel *model in citys) {
-
-        if (model.City_Name.length && !model.District_Name.length) {
-            // 把市级放到数组里
-            [self.citysArray addObject:model.City_Name];
+      NSArray *areaes = [ANAreaM objectArrayWithKeyValuesArray:dict[@"area"]];
+//
+    for (ANAreaM *area in areaes) {
+        
+        // 把省名提取出来存到areaArray里
+        [self.areaArray addObject:area];
+        // 把当前省(area)的所有市名提取出来放到array里
+        NSArray *areaCityArray = [ANCityM objectArrayWithKeyValuesArray:area.city];
+        // 把每个省的市名放到citysArray里
+        for (ANCityM *city in areaCityArray) {
+            if (city.city_name.length) {
+                ANLog(@"%@", city.city_name);
+                [self.citysArray addObject:city.city_name];
+            }
+            
         }
+        
     }
+    
+//    NSArray *citys = [AreaCodeModel objectArrayWithKeyValuesArray:dict[@"RECORDS"]];
+//    for (AreaCodeModel *model in citys) {
+//
+//        if (model.City_Name.length && !model.District_Name.length) {
+//            // 把市级放到数组里
+//            [self.citysArray addObject:model.City_Name];
+//        }
+//    }
     
 //    // 创建模型
 //    NSMutableArray *pinYinArray = [NSMutableArray array];
@@ -164,6 +190,14 @@
 }
 
 #pragma mark 懒加载
+- (NSMutableArray *)areaArray
+{
+    if (_areaArray == nil) {
+        _areaArray = [NSMutableArray array];
+    }
+    return _areaArray;
+}
+
 - (NSMutableArray *)citysArray
 {
     if (_citysArray == nil) {

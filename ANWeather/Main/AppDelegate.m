@@ -12,6 +12,7 @@
 #import "ANLeftTableViewController.h"
 #import "ANRightTableViewController.h"
 
+#import "UMSocial.h"
 
 
 
@@ -23,6 +24,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // 友盟分享
+    [UMSocialData setAppKey:ANUMAppKey];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

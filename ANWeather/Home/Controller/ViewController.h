@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UITableViewController
+
+/**
+ *  已选城市城市
+ */
+@property (copy, nonatomic)NSString *selectedCity;
  @end
 
