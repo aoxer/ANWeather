@@ -85,8 +85,7 @@
         // 把每个省的市名放到citysArray里
         for (ANCityM *city in areaCityArray) {
             if (city.city_name.length) {
-                ANLog(@"%@", city.city_name);
-                [self.citysArray addObject:city.city_name];
+                 [self.citysArray addObject:city.city_name];
             }
             
         }

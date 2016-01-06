@@ -60,34 +60,6 @@
                     "city_code": "101011500"
                 },
                 {
-                    "city_name": "八达岭",
-                    "city_code": "101011600"
-                },
-                {
-                    "city_name": "佛爷顶",
-                    "city_code": "101011700"
-                },
-                {
-                    "city_name": "汤河口",
-                    "city_code": "101011800"
-                },
-                {
-                    "city_name": "密云上甸子",
-                    "city_code": "101011900"
-                },
-                {
-                    "city_name": "斋堂",
-                    "city_code": "101012000"
-                },
-                {
-                    "city_name": "霞云岭",
-                    "city_code": "101012100"
-                },
-                {
-                    "city_name": "北京城区",
-                    "city_code": "101012200"
-                },
-                {
                     "city_name": "海淀",
                     "city_code": "101010200"
                 }
@@ -495,14 +467,6 @@
                     "city_code": "101041100"
                 },
                 {
-                    "city_name": "万州天城",
-                    "city_code": "101041200"
-                },
-                {
-                    "city_name": "万州龙宝",
-                    "city_code": "101041300"
-                },
-                {
                     "city_name": "涪陵",
                     "city_code": "101041400"
                 },
@@ -589,10 +553,6 @@
                 {
                     "city_name": "秀山",
                     "city_code": "101043600"
-                },
-                {
-                    "city_name": "沙坪坝",
-                    "city_code": "101043700"
                 },
                 {
                     "city_name": "永川",

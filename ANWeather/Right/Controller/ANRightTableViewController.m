@@ -101,6 +101,19 @@
                 
                 // 3.缓存到本地
                 [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
+                
+            } else { // 如果存在
+                
+                // 1.提到前面
+                NSInteger cityIndex = [self.selectedCitys indexOfObject:cityName];
+                [self.selectedCitys removeObjectAtIndex:cityIndex];
+                [self.selectedCitys insertObject:cityName atIndex:2];
+                
+                // 2.刷新表格
+                [self.tableView reloadData];
+                
+                // 3.缓存到本地
+                [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
             }
         }];
     
@@ -116,6 +129,14 @@
         [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:viewController] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
 
+        //点击已选城市把选择城市提到最前
+        if (indexPath.row > 2) {
+            [self.selectedCitys insertObject:self.selectedCitys[indexPath.row] atIndex:2];
+            [self.selectedCitys removeObjectAtIndex:indexPath.row+1];
+            
+            [self.tableView reloadData];
+            
+        }
     }
 
 }
