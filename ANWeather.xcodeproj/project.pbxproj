@@ -75,13 +75,11 @@
 		009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033E71C2E2FA3001FFED3 /* ANWindM.m */; };
 		009034001C2E2FA3001FFED3 /* ANPM25ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */; };
 		009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */; };
-		009034021C2E2FA3001FFED3 /* ANTempItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033ED1C2E2FA3001FFED3 /* ANTempItemView.m */; };
 		009034041C2E2FA3001FFED3 /* ANWeatherItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */; };
 		009034051C2E2FA3001FFED3 /* ANWeatherItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */; };
 		009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F31C2E2FA3001FFED3 /* ANWeatherView.m */; };
 		009034071C2E2FA3001FFED3 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F51C2E2FA3001FFED3 /* ANWindSpeedItemView.m */; };
 		009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009033F61C2E2FA3001FFED3 /* ANWindSpeedItemView.xib */; };
-		00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F3A1C311F710042F0D9 /* ANTempItemView.xib */; };
 		00934F471C315F060042F0D9 /* ANDaysWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */; };
 		00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */; };
 		0095112F1C3CDD4300EA9FDC /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 0095112E1C3CDD4300EA9FDC /* area.json */; };
@@ -119,6 +117,8 @@
 		009511EC1C3D854D00EA9FDC /* MSSimpleGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511E51C3D854D00EA9FDC /* MSSimpleGauge.m */; };
 		009511EE1C3D86D200EA9FDC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009511ED1C3D86D200EA9FDC /* QuartzCore.framework */; };
 		009511F01C3D86EC00EA9FDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */; };
+		0095126D1C3E572700EA9FDC /* ANHumItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0095126C1C3E572700EA9FDC /* ANHumItemView.m */; };
+		0095126F1C3E574100EA9FDC /* ANHumItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0095126E1C3E574100EA9FDC /* ANHumItemView.xib */; };
 		00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CE71C33846200AD5B5C /* ANAboutViewController.m */; };
 		00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */; };
 		00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */; };
@@ -278,8 +278,6 @@
 		009033E91C2E2FA3001FFED3 /* ANPM25ItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPM25ItemView.h; sourceTree = "<group>"; };
 		009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPM25ItemView.m; sourceTree = "<group>"; };
 		009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPM25ItemView.xib; sourceTree = "<group>"; };
-		009033EC1C2E2FA3001FFED3 /* ANTempItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTempItemView.h; sourceTree = "<group>"; };
-		009033ED1C2E2FA3001FFED3 /* ANTempItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTempItemView.m; sourceTree = "<group>"; };
 		009033EF1C2E2FA3001FFED3 /* ANWeatherItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWeatherItemView.h; sourceTree = "<group>"; };
 		009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWeatherItemView.m; sourceTree = "<group>"; };
 		009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWeatherItemView.xib; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 		009033F41C2E2FA3001FFED3 /* ANWindSpeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindSpeedItemView.h; sourceTree = "<group>"; };
 		009033F51C2E2FA3001FFED3 /* ANWindSpeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindSpeedItemView.m; sourceTree = "<group>"; };
 		009033F61C2E2FA3001FFED3 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindSpeedItemView.xib; sourceTree = "<group>"; };
-		00934F3A1C311F710042F0D9 /* ANTempItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTempItemView.xib; sourceTree = "<group>"; };
 		00934F441C315F060042F0D9 /* ANDaysWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDaysWeatherCell.h; sourceTree = "<group>"; };
 		00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherCell.m; sourceTree = "<group>"; };
 		00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANDaysWeatherCell.xib; sourceTree = "<group>"; };
@@ -362,6 +359,9 @@
 		009511E61C3D854D00EA9FDC /* MSSimpleGaugeSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSimpleGaugeSubclass.h; sourceTree = "<group>"; };
 		009511ED1C3D86D200EA9FDC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0095126B1C3E572700EA9FDC /* ANHumItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANHumItemView.h; sourceTree = "<group>"; };
+		0095126C1C3E572700EA9FDC /* ANHumItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHumItemView.m; sourceTree = "<group>"; };
+		0095126E1C3E574100EA9FDC /* ANHumItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANHumItemView.xib; sourceTree = "<group>"; };
 		00B98CE61C33846200AD5B5C /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
 		00B98CE71C33846200AD5B5C /* ANAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutViewController.m; sourceTree = "<group>"; };
 		00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutViewController.xib; sourceTree = "<group>"; };
@@ -824,9 +824,9 @@
 				009033E91C2E2FA3001FFED3 /* ANPM25ItemView.h */,
 				009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */,
 				009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */,
-				009033EC1C2E2FA3001FFED3 /* ANTempItemView.h */,
-				009033ED1C2E2FA3001FFED3 /* ANTempItemView.m */,
-				00934F3A1C311F710042F0D9 /* ANTempItemView.xib */,
+				0095126B1C3E572700EA9FDC /* ANHumItemView.h */,
+				0095126C1C3E572700EA9FDC /* ANHumItemView.m */,
+				0095126E1C3E574100EA9FDC /* ANHumItemView.xib */,
 				009033EF1C2E2FA3001FFED3 /* ANWeatherItemView.h */,
 				009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */,
 				009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */,
@@ -1275,6 +1275,7 @@
 				006C2E3D1C3C1547000832FF /* UMSShareListController.xib in Resources */,
 				006C2E371C3C1547000832FF /* UMSCommentInputController.xib in Resources */,
 				00224B7F1C3C0373003BA1E6 /* ANCareController.xib in Resources */,
+				0095126F1C3E574100EA9FDC /* ANHumItemView.xib in Resources */,
 				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
 				0095112F1C3CDD4300EA9FDC /* area.json in Resources */,
 				009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */,
@@ -1284,7 +1285,6 @@
 				009034081C2E2FA3001FFED3 /* ANWindSpeedItemView.xib in Resources */,
 				006C2E381C3C1547000832FF /* UMSCommentInputControlleriPad.xib in Resources */,
 				002215301C2CE63900E665F6 /* Main.storyboard in Resources */,
-				00934F3B1C311F710042F0D9 /* ANTempItemView.xib in Resources */,
 				002215351C2CE63900E665F6 /* LaunchScreen.xib in Resources */,
 				006C2E331C3C1547000832FF /* UMSocialLocalizable.strings in Resources */,
 				006C2E3E1C3C1547000832FF /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -1340,6 +1340,7 @@
 				00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
 				006C2E411C3C163B000832FF /* ANRestrictionsView.m in Sources */,
+				0095126D1C3E572700EA9FDC /* ANHumItemView.m in Sources */,
 				009511781C3D84C500EA9FDC /* FMDatabase.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,
 				002215FF1C2CE8E500E665F6 /* NSObject+MJCoding.m in Sources */,
@@ -1358,7 +1359,6 @@
 				002216011C2CE8E500E665F6 /* NSObject+MJProperty.m in Sources */,
 				009511791C3D84C500EA9FDC /* FMDatabaseAdditions.m in Sources */,
 				002215F51C2CE8E500E665F6 /* AFURLRequestSerialization.m in Sources */,
-				009034021C2E2FA3001FFED3 /* ANTempItemView.m in Sources */,
 				002215F71C2CE8E500E665F6 /* AFURLSessionManager.m in Sources */,
 				009511861C3D84C500EA9FDC /* MJRefreshBackNormalFooter.m in Sources */,
 				002216021C2CE8E500E665F6 /* NSString+MJExtension.m in Sources */,

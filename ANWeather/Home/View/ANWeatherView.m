@@ -11,7 +11,7 @@
 #import "ANWeatherItemView.h"
 #import "ANWindSpeedItemView.h"
 #import "ANPM25ItemView.h"
-#import "ANTempItemView.h"
+#import "ANHumItemView.h"
 
 #import "ANDaysWeatherCell.h"
 
@@ -33,7 +33,7 @@
 @property (strong, nonatomic)ANWeatherItemView *weatherItem;
 @property (strong, nonatomic)ANWindSpeedItemView *windSpeedItem;
 @property (strong, nonatomic)ANPM25ItemView *pm25Item;
-@property (strong, nonatomic)ANTempItemView *tempItem;
+@property (strong, nonatomic)ANHumItemView *humItem;
 
 @property (strong, nonatomic)NSMutableArray *daysWeatherArray;
 @property (strong, nonatomic)ANDaysWeatherCell *daysWeatherCell;
@@ -78,7 +78,7 @@
     self.pm25Item.weatherData = weatherData;
     
     // 温度
-
+    self.humItem.weatherData = weatherData;
     
     // 风速
     self.windSpeedItem.weatherData = weatherData;
@@ -122,11 +122,11 @@
     [self.items addObject:pm25Item];
     
     // 温度
-    ANTempItemView *tempItem = [ANTempItemView view];
-    tempItem.backgroundColor = ANColor(54, 54, 54, 1);
-    [self addSubview:tempItem];
-    self.tempItem = tempItem;
-    [self.items addObject:tempItem];
+    ANHumItemView *humItem = [ANHumItemView view];
+    humItem.backgroundColor = ANColor(54, 54, 54, 1);
+    [self addSubview:humItem];
+    self.humItem = humItem;
+    [self.items addObject:humItem];
     
     // 风速
     ANWindSpeedItemView *windSpeedItem = [ANWindSpeedItemView view];

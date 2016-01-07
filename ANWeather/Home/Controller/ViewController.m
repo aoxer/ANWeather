@@ -189,8 +189,8 @@
     if (self.selectedCity.length != 0) { // 如果有已选城市 加载已选城市
         // 1.从缓存读取数据加载数据
         NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:self.selectedCity];
-//        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
-        if ([ANOffLineTool sqlExists]) { // 有缓存
+        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
+        if ([basic.city isEqualToString:self.selectedCity]) { // 有缓存
             
             [self dealingResult:weathersDict];
             
@@ -200,8 +200,8 @@
     } else { // 没有已选城市则加载缓存城市
         // 1.从缓存读取数据加载数据
         NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
-//        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
-        if ([ANOffLineTool sqlExists]) { // 有缓存
+        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
+        if ([basic.city isEqualToString:self.city]) { // 有缓存
             
             [self dealingResult:weathersDict];
             

@@ -30,6 +30,10 @@
  */
 @property (copy, nonatomic)NSString *tmp;
 /**
+ *  相对湿度
+ */
+@property (copy, nonatomic)NSString *hum;
+/**
  *  风的模型
  */
 @property (strong, nonatomic)ANWindM *wind;
