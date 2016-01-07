@@ -68,9 +68,10 @@
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
+    ANLog(@"%s",  __func__);
     _weatherData = weatherData;
 
-    // 天气
+    // 天气图标
     self.weatherItem.weatherData = weatherData;
     
     // pm2.5

@@ -15,30 +15,31 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="sN2-J6-qAc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="93W-ub-YGW">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-Ml-ikn">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
-                </imageView>
+                    <color key="backgroundColor" red="0.62857086490000003" green="0.62857086490000003" blue="0.62857086490000003" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <constraints>
+                <constraint firstItem="jgu-Ml-ikn" firstAttribute="top" secondItem="oKd-6L-Ydu" secondAttribute="top" id="4cQ-7M-Pve"/>
                 <constraint firstAttribute="trailing" secondItem="eWB-4O-axn" secondAttribute="trailing" id="7JS-Ja-2NT"/>
-                <constraint firstAttribute="trailing" secondItem="93W-ub-YGW" secondAttribute="trailing" id="Bed-wW-vbO"/>
-                <constraint firstItem="eWB-4O-axn" firstAttribute="top" secondItem="93W-ub-YGW" secondAttribute="bottom" id="PwZ-Ag-IMa"/>
                 <constraint firstItem="eWB-4O-axn" firstAttribute="leading" secondItem="oKd-6L-Ydu" secondAttribute="leading" id="RPN-LO-MQ0"/>
                 <constraint firstAttribute="bottom" secondItem="eWB-4O-axn" secondAttribute="bottom" id="YFp-EI-4kx"/>
-                <constraint firstItem="93W-ub-YGW" firstAttribute="top" secondItem="oKd-6L-Ydu" secondAttribute="top" id="Yop-Dl-Ajq"/>
-                <constraint firstItem="93W-ub-YGW" firstAttribute="leading" secondItem="oKd-6L-Ydu" secondAttribute="leading" id="qi5-DY-LPd"/>
+                <constraint firstItem="eWB-4O-axn" firstAttribute="top" secondItem="jgu-Ml-ikn" secondAttribute="bottom" id="fdT-M9-ysn"/>
+                <constraint firstItem="jgu-Ml-ikn" firstAttribute="leading" secondItem="oKd-6L-Ydu" secondAttribute="leading" id="iwr-fd-Feh"/>
+                <constraint firstAttribute="trailing" secondItem="jgu-Ml-ikn" secondAttribute="trailing" id="xfo-Kb-Vet"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="pm25ImageView" destination="93W-ub-YGW" id="zhH-Qe-MQI"/>
+                <outlet property="GaugeView" destination="jgu-Ml-ikn" id="f2E-Va-Tql"/>
                 <outlet property="pm25Label" destination="eWB-4O-axn" id="NRT-G1-f3A"/>
             </connections>
-            <point key="canvasLocation" x="252" y="191"/>
+            <point key="canvasLocation" x="61" y="234"/>
         </view>
     </objects>
 </document>

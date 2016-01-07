@@ -39,42 +39,16 @@
 {
     
     self.condLabel.text = weatherData.now.cond.txt;
-    self.condImageView.image = [self getWeatherImageWithCondTxt:weatherData.now.cond.txt];
+    self.condImageView.image = [self getWeatherImageWithCondCode:weatherData.now.cond.code];
 }
 
 
 /**
  *  根据天气换图片
  */
-- (UIImage *)getWeatherImageWithCondTxt:(NSString *)txt
+- (UIImage *)getWeatherImageWithCondCode:(NSString *)code
 {
-    
-    
-    if ([txt isEqualToString:@"雷阵雨"]) {
-        return [UIImage imageNamed:@"thunder_mini"];
-        
-    }else if ([txt isEqualToString:@"晴"]){
-        return [UIImage imageNamed:@"sun_mini"];
-        
-    }else if ([txt isEqualToString:@"多云"]){
-        return [UIImage imageNamed:@"sun_and_cloud_mini"];
-        
-    }else if ([txt isEqualToString:@"阴"]){
-        return [UIImage imageNamed:@"cloud"];
-        
-    }else if ([txt hasSuffix:@"雨"]){
-        return [UIImage imageNamed:@"rain_mini"];
-        
-    }else if ([txt hasSuffix:@"雪"]){
-        return [UIImage imageNamed:@"snow_heavyx_mini"];
-        
-    }else if ([txt hasSuffix:@"霾"] || [txt hasSuffix:@"雾"]){
-        return [UIImage imageNamed:@"sand_float_mini"];
-    }else{
-        return [UIImage imageNamed:@"sandfloat_mini"];
-    }
-    
-    return [UIImage imageNamed:@"sun"];
+    return [UIImage imageNamed:code];
     
 }
 

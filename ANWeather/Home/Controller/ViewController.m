@@ -141,14 +141,13 @@
  */
 - (void)SetupWeatherView
 {
-    
     self.weatherView = [[ANWeatherView alloc] initWithFrame:self.view.bounds];
     
     self.weatherView.contentInset = UIEdgeInsetsMake(ANScreenHeight - 20 - self.navigationController.navigationBar.height, 0, 0, 0);
     
     self.weatherView.delegate = self;
     self.weatherView.dataSource = self;
-    
+     
     [self.weatherView weatherView];
     [self.view addSubview:_weatherView];
 }
@@ -187,22 +186,22 @@
 - (void)loadWeatherWithCity:(NSString *)city
 {
     
-    if (self.selectedCity.length != 0) { // 如果有已选城市 加载以宣城市
+    if (self.selectedCity.length != 0) { // 如果有已选城市 加载已选城市
         // 1.从缓存读取数据加载数据
         NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:self.selectedCity];
-        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
-        if ([basic.city isEqualToString:self.selectedCity]) { // 有缓存
+//        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
+        if ([ANOffLineTool sqlExists]) { // 有缓存
             
             [self dealingResult:weathersDict];
             
         } else { // 没缓存
             [self sendRequestWithCity:self.selectedCity];
         }
-    } else { // 没有则加载定位城市
+    } else { // 没有已选城市则加载缓存城市
         // 1.从缓存读取数据加载数据
         NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
-        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
-        if ([basic.city isEqualToString:self.city]) { // 有缓存
+//        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
+        if ([ANOffLineTool sqlExists]) { // 有缓存
             
             [self dealingResult:weathersDict];
             
@@ -222,6 +221,8 @@
 {
     // 通过取出的字典创建模型
     ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weathersDict];
+#warning 只有刷新时才调用weatherView.weatherData 的setWeatherData方法
+
     self.weatherView.weatherData = weatherData;
     
     // 把字典数组转为模型数组

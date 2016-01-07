@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSSimpleGauge.h"
 @class ANWeatherData;
 
 
 @interface ANPM25ItemView : UIView
 
-
+/**
+ *  仪表盘view
+ */
+@property (strong, nonatomic) MSSimpleGauge *bigGauge;
 /**
  *  空气质量的模型
  */
