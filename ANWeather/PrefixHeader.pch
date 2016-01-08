@@ -21,7 +21,7 @@
 
 
 #ifdef DEBUG // 开发阶段
-#define ANLog(...) NSLog(__VA_ARGS__)
+#define ANLog(...) NSLog( @"< %s:(第%d行) > %@",__func__ , __LINE__, [NSString stringWithFormat:__VA_ARGS__] ) 
 #else // 发布阶段
 #define ANLog(...)
 #endif
