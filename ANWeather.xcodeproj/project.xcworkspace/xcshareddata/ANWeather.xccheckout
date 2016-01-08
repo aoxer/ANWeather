@@ -12,6 +12,8 @@
 	<dict>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>https://github.com/aoxer/ANWeather.git</string>
+		<key>F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3</key>
+		<string>https://github.com/facebook/pop.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ANWeather.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>../..</string>
+		<key>F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3</key>
+		<string>../../pop</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/aoxer/ANWeather.git</string>
@@ -35,6 +39,14 @@
 			<string>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ANWeather</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pop</string>
 		</dict>
 	</array>
 </dict>

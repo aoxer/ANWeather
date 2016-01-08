@@ -35,7 +35,7 @@
 @implementation ANDaysWeatherCell
 
 - (void)awakeFromNib {
-    self.backgroundColor = ANRandomColor;
+    self.userInteractionEnabled = NO;
 }
  
 - (void)setDailyForcast:(ANDailyForecastM *)dailyForcast

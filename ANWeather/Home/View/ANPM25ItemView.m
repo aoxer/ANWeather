@@ -30,11 +30,10 @@
     [super drawRect:rect];
     
     self.bigGauge = [[MSSimpleGauge alloc] initWithFrame:self.GaugeView.bounds];
-    ANLog(@"%@\n %@", NSStringFromCGRect(self.GaugeView.frame), NSStringFromCGRect(self.bigGauge.frame));
-    self.bigGauge.backgroundColor = ANRandomColor;
+    self.bigGauge.backgroundColor = [UIColor clearColor];
     self.bigGauge.startAngle = 0;
     self.bigGauge.endAngle = 180;
-    self.bigGauge.value = 20;
+    self.bigGauge.backgroundColor = [UIColor clearColor];
     [self addSubview:self.bigGauge];
 }
 
@@ -54,6 +53,8 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
+    CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
+    
     
     if (weatherData.aqi.city.qlty == nil) {
         self.qltyLabel.text = @"优";
@@ -61,6 +62,20 @@
         self.qltyLabel.text = weatherData.aqi.city.qlty;
     }
     
+    self.bigGauge.value = pm2_5 / 3;
+    if (pm2_5 <= 50) {
+        self.bigGauge.fillArcFillColor = [UIColor greenColor];
+    } else if (pm2_5 > 50 && pm2_5 <= 100) {
+        self.bigGauge.fillArcFillColor = [UIColor yellowColor];
+    } else if (pm2_5 > 100 && pm2_5 <= 150) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 1);
+    } else if (pm2_5 > 150 && pm2_5 <= 200) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 1);
+    } else if (pm2_5 > 200 && pm2_5 <= 300) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 1);
+    }  else if (pm2_5 > 300) {
+        self.bigGauge.fillArcFillColor = [UIColor purpleColor];
+    }
 }
 
 @end

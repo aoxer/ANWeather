@@ -19,7 +19,7 @@
                     <color key="textColor" red="1" green="0.41960784309999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN3-gY-bgi">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lN3-gY-bgi">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
                     <fontDescription key="fontDescription" type="system" pointSize="64"/>
                     <color key="textColor" red="1" green="0.41779369440000003" blue="0.19249891159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

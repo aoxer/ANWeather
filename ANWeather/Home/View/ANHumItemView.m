@@ -9,21 +9,17 @@
 #import "ANHumItemView.h"
 #import "ANWeatherData.h"
 
-#import "HumidityView.h"
 
 @interface ANHumItemView ()
 @property (weak, nonatomic) IBOutlet UILabel *humLabel;
 
-@property (strong, nonatomic)HumidityView *humidityView;
-@end
+ @end
 
 @implementation ANHumItemView
 
 - (void)drawRect:(CGRect)rect
 {
-    self.humidityView = [[HumidityView alloc] initWithFrame:self.bounds];
-    [self.humidityView buildView];
-    [self addSubview:self.humidityView];
+    self.backgroundColor = [UIColor clearColor];
 }
 
 + (instancetype)view
@@ -37,8 +33,10 @@
 {
     _weatherData = weatherData;
     
-    self.humLabel.text = [NSString stringWithFormat:@"%@%%", weatherData.now.hum];
-    
+    NSString *hum = [NSString stringWithFormat:@"%@%%", weatherData.now.hum];
+    NSMutableAttributedString *humAttr = [[NSMutableAttributedString alloc] initWithString:hum];
+    [humAttr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:50] range:NSMakeRange(hum.length-1, 1)];
+    self.humLabel.attributedText = humAttr;
 }
 
 /*

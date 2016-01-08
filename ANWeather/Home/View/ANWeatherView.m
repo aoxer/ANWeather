@@ -96,41 +96,35 @@
 {
     
     self.showsVerticalScrollIndicator = NO;
-    self.backgroundColor = ANColor(40, 40, 40, 1);
     // 创建tableView 容纳方块View
-    self.backgroundColor = ANRandomColor;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.backgroundColor = [UIColor lightGrayColor];
     
     // 顶部容器
     ANTopView *topView = [ANTopView view];
-    topView.backgroundColor = ANRandomColor;
     [self addSubview:topView];
     self.topView = topView;
 
     // 天气
     ANWeatherItemView *weatherItem = [ANWeatherItemView view];
-    weatherItem.backgroundColor = ANRandomColor;
     [self addSubview:weatherItem];
     self.weatherItem = weatherItem;
     [self.items addObject:weatherItem];
     
     // pm2.5
     ANPM25ItemView *pm25Item = [ANPM25ItemView view];
-    pm25Item.backgroundColor = ANRandomColor;
     [self addSubview:pm25Item];
     self.pm25Item = pm25Item;
     [self.items addObject:pm25Item];
     
-    // 温度
+    // 湿度
     ANHumItemView *humItem = [ANHumItemView view];
-    humItem.backgroundColor = ANColor(54, 54, 54, 1);
     [self addSubview:humItem];
     self.humItem = humItem;
     [self.items addObject:humItem];
     
     // 风速
     ANWindSpeedItemView *windSpeedItem = [ANWindSpeedItemView view];
-    windSpeedItem.backgroundColor = ANRandomColor;
     [self addSubview:windSpeedItem];
     self.windSpeedItem = windSpeedItem;
     [self.items addObject:windSpeedItem];
@@ -157,7 +151,7 @@
         int col = i % ANMaxCol;
         
         UIView *itemView = self.items[i];
-        
+        itemView.backgroundColor = ANColor(203, 178, 144, 1);
         CGFloat itemViewX = MARGIN + col * (itemViewW + MARGIN);
         // y为负值
         CGFloat itemViewY = - ANScreenHeight + (ANScreenHeight - itemViewH * 2 - MARGIN * 2) + row * (itemViewH + MARGIN);

@@ -56,8 +56,6 @@
 		006C2E3C1C3C1547000832FF /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E2F1C3C1547000832FF /* UMSnsAccountViewController.xib */; };
 		006C2E3D1C3C1547000832FF /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E301C3C1547000832FF /* UMSShareListController.xib */; };
 		006C2E3E1C3C1547000832FF /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E311C3C1547000832FF /* UMSocialSDKResourcesNew.bundle */; };
-		006C2E411C3C163B000832FF /* ANRestrictionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 006C2E401C3C163B000832FF /* ANRestrictionsView.m */; };
-		006C2E431C3C1661000832FF /* ANRestrictionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006C2E421C3C1661000832FF /* ANRestrictionsView.xib */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -243,9 +241,6 @@
 		006C2E301C3C1547000832FF /* UMSShareListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMSShareListController.xib; sourceTree = "<group>"; };
 		006C2E311C3C1547000832FF /* UMSocialSDKResourcesNew.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResourcesNew.bundle; sourceTree = "<group>"; };
 		006C2E321C3C1547000832FF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMSocialLocalizable.strings"; sourceTree = "<group>"; };
-		006C2E3F1C3C163B000832FF /* ANRestrictionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANRestrictionsView.h; sourceTree = "<group>"; };
-		006C2E401C3C163B000832FF /* ANRestrictionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANRestrictionsView.m; sourceTree = "<group>"; };
-		006C2E421C3C1661000832FF /* ANRestrictionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRestrictionsView.xib; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -818,9 +813,6 @@
 			children = (
 				009033F21C2E2FA3001FFED3 /* ANWeatherView.h */,
 				009033F31C2E2FA3001FFED3 /* ANWeatherView.m */,
-				006C2E3F1C3C163B000832FF /* ANRestrictionsView.h */,
-				006C2E401C3C163B000832FF /* ANRestrictionsView.m */,
-				006C2E421C3C1661000832FF /* ANRestrictionsView.xib */,
 				009033E91C2E2FA3001FFED3 /* ANPM25ItemView.h */,
 				009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */,
 				009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */,
@@ -1271,7 +1263,6 @@
 				004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */,
 				00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */,
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,
-				006C2E431C3C1661000832FF /* ANRestrictionsView.xib in Resources */,
 				006C2E3D1C3C1547000832FF /* UMSShareListController.xib in Resources */,
 				006C2E371C3C1547000832FF /* UMSCommentInputController.xib in Resources */,
 				00224B7F1C3C0373003BA1E6 /* ANCareController.xib in Resources */,
@@ -1339,7 +1330,6 @@
 				0095117D1C3D84C500EA9FDC /* MJRefreshAutoFooter.m in Sources */,
 				00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
-				006C2E411C3C163B000832FF /* ANRestrictionsView.m in Sources */,
 				0095126D1C3E572700EA9FDC /* ANHumItemView.m in Sources */,
 				009511781C3D84C500EA9FDC /* FMDatabase.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,

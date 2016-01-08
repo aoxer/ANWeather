@@ -345,7 +345,6 @@
             // a
         } else {
             // 弹出提醒 并作点击ok跳转
-#warning 待优化 可以 弹出提示操作view
             [self showAlertForTitle:@"授权状态不对" message:@"是否跳转到设置?"];
         }
         
