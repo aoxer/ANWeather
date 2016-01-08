@@ -9,13 +9,22 @@
 #import "ANHumItemView.h"
 #import "ANWeatherData.h"
 
+#import "HumidityView.h"
+
 @interface ANHumItemView ()
 @property (weak, nonatomic) IBOutlet UILabel *humLabel;
 
-
+@property (strong, nonatomic)HumidityView *humidityView;
 @end
 
 @implementation ANHumItemView
+
+- (void)drawRect:(CGRect)rect
+{
+    self.humidityView = [[HumidityView alloc] initWithFrame:self.bounds];
+    [self.humidityView buildView];
+    [self addSubview:self.humidityView];
+}
 
 + (instancetype)view
 {
