@@ -6,64 +6,8 @@
                 {
                     "city_name": "北京",
                     "city_code": "101010100"
-                },
-                {
-                    "city_name": "朝阳",
-                    "city_code": "101010300"
-                },
-                {
-                    "city_name": "顺义",
-                    "city_code": "101010400"
-                },
-                {
-                    "city_name": "怀柔",
-                    "city_code": "101010500"
-                },
-                {
-                    "city_name": "通州",
-                    "city_code": "101010600"
-                },
-                {
-                    "city_name": "昌平",
-                    "city_code": "101010700"
-                },
-                {
-                    "city_name": "延庆",
-                    "city_code": "101010800"
-                },
-                {
-                    "city_name": "丰台",
-                    "city_code": "101010900"
-                },
-                {
-                    "city_name": "石景山",
-                    "city_code": "101011000"
-                },
-                {
-                    "city_name": "大兴",
-                    "city_code": "101011100"
-                },
-                {
-                    "city_name": "房山",
-                    "city_code": "101011200"
-                },
-                {
-                    "city_name": "密云",
-                    "city_code": "101011300"
-                },
-                {
-                    "city_name": "门头沟",
-                    "city_code": "101011400"
-                },
-                {
-                    "city_name": "平谷",
-                    "city_code": "101011500"
-                },
-                {
-                    "city_name": "海淀",
-                    "city_code": "101010200"
                 }
-            ]
+                     ]
         },
         {
             "area": "天津",
@@ -71,56 +15,8 @@
                 {
                     "city_name": "天津",
                     "city_code": "101030100"
-                },
-                {
-                    "city_name": "宝坻",
-                    "city_code": "101030300"
-                },
-                {
-                    "city_name": "东丽",
-                    "city_code": "101030400"
-                },
-                {
-                    "city_name": "西青",
-                    "city_code": "101030500"
-                },
-                {
-                    "city_name": "北辰",
-                    "city_code": "101030600"
-                },
-                {
-                    "city_name": "蓟县",
-                    "city_code": "101031400"
-                },
-                {
-                    "city_name": "汉沽",
-                    "city_code": "101030800"
-                },
-                {
-                    "city_name": "静海",
-                    "city_code": "101030900"
-                },
-                {
-                    "city_name": "津南",
-                    "city_code": "101031000"
-                },
-                {
-                    "city_name": "塘沽",
-                    "city_code": "101031100"
-                },
-                {
-                    "city_name": "大港",
-                    "city_code": "101031200"
-                },
-                {
-                    "city_name": "武清",
-                    "city_code": "101030200"
-                },
-                {
-                    "city_name": "宁河",
-                    "city_code": "101030700"
                 }
-            ]
+                     ]
         },
         {
             "area": "上海",
@@ -128,50 +24,6 @@
                 {
                     "city_name": "上海",
                     "city_code": "101020100"
-                },
-                {
-                    "city_name": "宝山",
-                    "city_code": "101020300"
-                },
-                {
-                    "city_name": "嘉定",
-                    "city_code": "101020500"
-                },
-                {
-                    "city_name": "南汇",
-                    "city_code": "101020600"
-                },
-                {
-                    "city_name": "浦东",
-                    "city_code": "101021300"
-                },
-                {
-                    "city_name": "青浦",
-                    "city_code": "101020800"
-                },
-                {
-                    "city_name": "松江",
-                    "city_code": "101020900"
-                },
-                {
-                    "city_name": "奉贤",
-                    "city_code": "101021000"
-                },
-                {
-                    "city_name": "崇明",
-                    "city_code": "101021100"
-                },
-                {
-                    "city_name": "徐家汇",
-                    "city_code": "101021200"
-                },
-                {
-                    "city_name": "闵行",
-                    "city_code": "101020200"
-                },
-                {
-                    "city_name": "金山",
-                    "city_code": "101020700"
                 }
             ]
         },
@@ -429,136 +281,8 @@
                 {
                     "city_name": "重庆",
                     "city_code": "101040100"
-                },
-                {
-                    "city_name": "合川",
-                    "city_code": "101040300"
-                },
-                {
-                    "city_name": "南川",
-                    "city_code": "101040400"
-                },
-                {
-                    "city_name": "江津",
-                    "city_code": "101040500"
-                },
-                {
-                    "city_name": "万盛",
-                    "city_code": "101040600"
-                },
-                {
-                    "city_name": "渝北",
-                    "city_code": "101040700"
-                },
-                {
-                    "city_name": "北碚",
-                    "city_code": "101040800"
-                },
-                {
-                    "city_name": "巴南",
-                    "city_code": "101040900"
-                },
-                {
-                    "city_name": "长寿",
-                    "city_code": "101041000"
-                },
-                {
-                    "city_name": "黔江",
-                    "city_code": "101041100"
-                },
-                {
-                    "city_name": "涪陵",
-                    "city_code": "101041400"
-                },
-                {
-                    "city_name": "开县",
-                    "city_code": "101041500"
-                },
-                {
-                    "city_name": "城口",
-                    "city_code": "101041600"
-                },
-                {
-                    "city_name": "云阳",
-                    "city_code": "101041700"
-                },
-                {
-                    "city_name": "巫溪",
-                    "city_code": "101041800"
-                },
-                {
-                    "city_name": "奉节",
-                    "city_code": "101041900"
-                },
-                {
-                    "city_name": "巫山",
-                    "city_code": "101042000"
-                },
-                {
-                    "city_name": "潼南",
-                    "city_code": "101042100"
-                },
-                {
-                    "city_name": "垫江",
-                    "city_code": "101042200"
-                },
-                {
-                    "city_name": "梁平",
-                    "city_code": "101042300"
-                },
-                {
-                    "city_name": "忠县",
-                    "city_code": "101042400"
-                },
-                {
-                    "city_name": "石柱",
-                    "city_code": "101042500"
-                },
-                {
-                    "city_name": "大足",
-                    "city_code": "101042600"
-                },
-                {
-                    "city_name": "荣昌",
-                    "city_code": "101042700"
-                },
-                {
-                    "city_name": "铜梁",
-                    "city_code": "101042800"
-                },
-                {
-                    "city_name": "璧山",
-                    "city_code": "101042900"
-                },
-                {
-                    "city_name": "丰都",
-                    "city_code": "101043000"
-                },
-                {
-                    "city_name": "武隆",
-                    "city_code": "101043100"
-                },
-                {
-                    "city_name": "彭水",
-                    "city_code": "101043200"
-                },
-                {
-                    "city_name": "綦江",
-                    "city_code": "101043300"
-                },
-                {
-                    "city_name": "酉阳",
-                    "city_code": "101043400"
-                },
-                {
-                    "city_name": "秀山",
-                    "city_code": "101043600"
-                },
-                {
-                    "city_name": "永川",
-                    "city_code": "101040200"
                 }
-            ]
+                     ]
         },
         {
             "area": "福建",

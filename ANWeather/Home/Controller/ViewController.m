@@ -87,6 +87,10 @@
     // 监听定位的通知
     [ANNotificationCenter addObserver:self selector:@selector(getLocation) name:ANGetLocationDidClickNotification object:nil];
 
+    if (!self.isComeLeft) { // 如果不是从左边进来的 就开始刷新
+        [self.tableView.header beginRefreshing];
+        self.isComeLeft = NO;
+    }
 }
 
 
@@ -98,7 +102,7 @@
 {
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+//    self.tableView.backgroundColor = [UIColor lightGrayColor];
     // MJRefresh
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
@@ -227,6 +231,8 @@
     
     // 把字典数组转为模型数组
     self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weathersDict[@"daily_forecast"]];
+    // 删除当天数据
+    [self.dailyForecastArray removeObjectAtIndex:0];
     
     // 设置导航栏
 

@@ -94,7 +94,7 @@
  */
 - (void)weatherView
 {
-    
+
     self.showsVerticalScrollIndicator = NO;
     // 创建tableView 容纳方块View
     self.separatorStyle = UITableViewCellSeparatorStyleNone;

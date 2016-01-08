@@ -32,11 +32,15 @@
 -(void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
+    // 设置湿度
     
     NSString *hum = [NSString stringWithFormat:@"%@%%", weatherData.now.hum];
     NSMutableAttributedString *humAttr = [[NSMutableAttributedString alloc] initWithString:hum];
-    [humAttr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:50] range:NSMakeRange(hum.length-1, 1)];
+    [humAttr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(hum.length-1, 1)];
+    [humAttr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(hum.length-1, 1)];
     self.humLabel.attributedText = humAttr;
+     
+   
 }
 
 /*

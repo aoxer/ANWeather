@@ -70,11 +70,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ViewController *homeVc = [[ViewController alloc] init];
+    homeVc.isComeLeft = YES;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
 #warning 待改
         case 0:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]] animated:YES];
+             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController: homeVc] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             

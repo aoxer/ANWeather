@@ -357,6 +357,8 @@
 		0095126B1C3E572700EA9FDC /* ANHumItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANHumItemView.h; sourceTree = "<group>"; };
 		0095126C1C3E572700EA9FDC /* ANHumItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHumItemView.m; sourceTree = "<group>"; };
 		0095126E1C3E574100EA9FDC /* ANHumItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANHumItemView.xib; sourceTree = "<group>"; };
+		0098E79E1C3F819700499D33 /* AddedFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddedFont.h; sourceTree = "<group>"; };
+		0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		00B98CE61C33846200AD5B5C /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
 		00B98CE71C33846200AD5B5C /* ANAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutViewController.m; sourceTree = "<group>"; };
 		00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutViewController.xib; sourceTree = "<group>"; };
@@ -448,6 +450,8 @@
 		002215211C2CE63900E665F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0098E79E1C3F819700499D33 /* AddedFont.h */,
+				0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */,
 				0095112E1C3CDD4300EA9FDC /* area.json */,
 				004EDA041C3ABD72001614A4 /* citys.json */,
 				002215221C2CE63900E665F6 /* Info.plist */,

@@ -14,5 +14,9 @@
  *  已选城市城市
  */
 @property (copy, nonatomic)NSString *selectedCity;
+/**
+ *  是否从左边进来
+ */
+@property (assign, nonatomic)BOOL isComeLeft;
  @end
 

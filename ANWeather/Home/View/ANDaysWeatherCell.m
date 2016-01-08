@@ -36,11 +36,13 @@
 
 - (void)awakeFromNib {
     self.userInteractionEnabled = NO;
+    self.backgroundColor = [UIColor lightGrayColor];
 }
  
 - (void)setDailyForcast:(ANDailyForecastM *)dailyForcast
 {
     _dailyForcast = dailyForcast;
+    
     self.week.text = [self weekDayFromDate:dailyForcast.date];
     self.date.text = [self dateWithMonthDay:dailyForcast.date];
     self.maxTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.max];

@@ -12,6 +12,7 @@
 #import "RESideMenu.h"
 #import "ANConst.h"
 #import "NSString+Extension.h"
+#import "AddedFont.h"
 
 
 #ifndef _____PrefixHeader_pch

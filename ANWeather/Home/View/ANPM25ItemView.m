@@ -14,9 +14,13 @@
 
 @property (weak, nonatomic) IBOutlet UIView *GaugeView;
 
-
 /**
  *  pm2.5的label
+ */
+@property (weak, nonatomic) IBOutlet UILabel *pm2_5;
+
+/**
+ *  空气质量的label
  */
 @property (weak, nonatomic) IBOutlet UILabel *qltyLabel;
 
@@ -55,14 +59,18 @@
     _weatherData = weatherData;
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
     
+    //pm2.5
+    self.pm2_5.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
     
+    // 空气质量
     if (weatherData.aqi.city.qlty == nil) {
         self.qltyLabel.text = @"优";
     } else {
         self.qltyLabel.text = weatherData.aqi.city.qlty;
     }
     
-    self.bigGauge.value = pm2_5 / 3;
+    // 指针
+    [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
     if (pm2_5 <= 50) {
         self.bigGauge.fillArcFillColor = [UIColor greenColor];
     } else if (pm2_5 > 50 && pm2_5 <= 100) {

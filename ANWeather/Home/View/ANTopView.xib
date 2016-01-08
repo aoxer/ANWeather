@@ -11,13 +11,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-dI-4HK">
-                    <rect key="frame" x="221" y="235" width="50" height="20"/>
+                    <rect key="frame" x="221" y="230" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="VfT-o2-K8H"/>
                         <constraint firstAttribute="width" constant="50" id="et9-4w-8S8"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-w3-jGQ" userLabel="MaxMin">
@@ -67,7 +67,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Fjd-w3-jGQ" firstAttribute="top" secondItem="tzS-vV-JDs" secondAttribute="bottom" id="47C-Mi-Z5x"/>
                 <constraint firstItem="pbf-dI-4HK" firstAttribute="leading" secondItem="Fjd-w3-jGQ" secondAttribute="trailing" constant="10" id="A5W-aT-E4a"/>
@@ -75,6 +74,7 @@
                 <constraint firstAttribute="bottom" secondItem="Fjd-w3-jGQ" secondAttribute="bottom" id="Cx2-fp-VOP"/>
                 <constraint firstItem="tzS-vV-JDs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="H2z-cl-kcD"/>
                 <constraint firstAttribute="trailing" secondItem="tzS-vV-JDs" secondAttribute="trailing" id="M8d-il-cws"/>
+                <constraint firstItem="Fjd-w3-jGQ" firstAttribute="centerY" secondItem="pbf-dI-4HK" secondAttribute="centerY" id="OP2-jY-tnK"/>
                 <constraint firstItem="zaQ-6J-lJT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Rrg-Ko-Iup"/>
                 <constraint firstAttribute="centerX" secondItem="Fjd-w3-jGQ" secondAttribute="centerX" id="h7E-Vs-fEW"/>
                 <constraint firstItem="zaQ-6J-lJT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lhT-2z-oRR"/>
@@ -82,6 +82,11 @@
                 <constraint firstAttribute="bottom" secondItem="pbf-dI-4HK" secondAttribute="bottom" id="rRT-0o-sIp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="rRT-0o-sIp"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="MonthDay" destination="pbf-dI-4HK" id="fZH-cz-OIY"/>
                 <outlet property="backgroundImageView" destination="zaQ-6J-lJT" id="zPJ-EQ-rzX"/>
