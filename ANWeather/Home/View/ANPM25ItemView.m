@@ -60,10 +60,14 @@
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
     
     //pm2.5
-    self.pm2_5.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
+    if (!weatherData.aqi.city.pm25.length) {
+        self.pm2_5.text = @"";
+    } else {
+        self.pm2_5.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
+    }
     
     // 空气质量
-    if (weatherData.aqi.city.qlty == nil) {
+    if (weatherData.aqi.city.qlty.length) {
         self.qltyLabel.text = @"优";
     } else {
         self.qltyLabel.text = weatherData.aqi.city.qlty;

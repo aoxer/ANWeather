@@ -42,6 +42,7 @@
     // 背景图片
     
     // 当前温度
+    
     self.currentTmp.text = weatherData.now.tmp;
     // 最低温
     self.minTmp.text = day1.tmp.min;

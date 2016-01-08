@@ -190,7 +190,7 @@
 - (void)loadWeatherWithCity:(NSString *)city
 {
     
-    if (self.selectedCity.length != 0) { // 如果有已选城市 加载已选城市
+    if (self.selectedCity.length != 0) { // 如果有已选城市 (从右面回来) 加载已选城市
         // 1.从缓存读取数据加载数据
         NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:self.selectedCity];
         ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
@@ -226,7 +226,7 @@
     // 通过取出的字典创建模型
     ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weathersDict];
 #warning 只有刷新时才调用weatherView.weatherData 的setWeatherData方法
-
+    ANLog(@"%@", weathersDict);
     self.weatherView.weatherData = weatherData;
     
     // 把字典数组转为模型数组
