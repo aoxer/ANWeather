@@ -34,7 +34,7 @@
                     <color key="textColor" red="0.27516940820000002" green="0.38335939219999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="XP6-Uc-L4v">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XP6-Uc-L4v">
                     <rect key="frame" x="142" y="0.0" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="sjC-NT-uJC"/>
@@ -80,7 +80,4 @@
             <point key="canvasLocation" x="367.5" y="-335"/>
         </view>
     </objects>
-    <resources>
-        <image name="cloud" width="100" height="135"/>
-    </resources>
 </document>

@@ -71,11 +71,13 @@ static FMDatabase *_db;
     return city;
 }
 
-+ (BOOL)sqlExists
++ (BOOL)cityExists
 {
-     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"weaters.sqlite"];
+    if ([self getLastCity].length) {
+        return YES;
+    }
     
-    return [[NSFileManager defaultManager] fileExistsAtPath:path];
+    return NO;
 }
 @end
 

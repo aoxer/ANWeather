@@ -26,5 +26,5 @@
 /**
  *  判断缓存文件是否存在
  */
-+ (BOOL)sqlExists;
++ (BOOL)cityExists;
 @end

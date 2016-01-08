@@ -171,7 +171,7 @@
 - (void)setupLastCity
 {
     
-    if ([ANOffLineTool sqlExists])
+    if ([ANOffLineTool cityExists])
     {
         self.city = [ANOffLineTool getLastCity];
     } else {
@@ -338,7 +338,7 @@
     } else if ([CLLocationManager locationServicesEnabled] &&
                ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined ||
                [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)) {// 如果定位开启但授权状态不可用
-        if (![ANOffLineTool sqlExists]) { // 第一次打开软件
+        if (![ANOffLineTool cityExists]) { // 第一次打开软件
             // 请求授权
             [self.locationMgr requestWhenInUseAuthorization];
 
