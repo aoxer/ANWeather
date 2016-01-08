@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM2.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWB-4O-axn">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空气质量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWB-4O-axn">
                     <rect key="frame" x="0.0" y="129" width="150" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="sN2-J6-qAc"/>
@@ -19,8 +19,8 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-Ml-ikn">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-Ml-ikn">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="126"/>
                     <color key="backgroundColor" red="0.62857086490000003" green="0.62857086490000003" blue="0.62857086490000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
@@ -37,7 +37,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="GaugeView" destination="jgu-Ml-ikn" id="f2E-Va-Tql"/>
-                <outlet property="pm25Label" destination="eWB-4O-axn" id="NRT-G1-f3A"/>
+                <outlet property="qltyLabel" destination="eWB-4O-axn" id="H5k-8S-Gum"/>
             </connections>
             <point key="canvasLocation" x="61" y="234"/>
         </view>
