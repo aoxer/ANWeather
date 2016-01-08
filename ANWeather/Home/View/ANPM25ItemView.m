@@ -18,7 +18,7 @@
 /**
  *  pm2.5的label
  */
-@property (weak, nonatomic) IBOutlet UILabel *pm25Label;
+@property (weak, nonatomic) IBOutlet UILabel *qltyLabel;
 
 @end
 
@@ -53,20 +53,16 @@
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
-    if (weatherData.aqi.city.pm25 == nil) {
-        self.pm25Label.text = @"";
+    _weatherData = weatherData;
+    
+    if (weatherData.aqi.city.qlty == nil) {
+        self.qltyLabel.text = @"优";
     } else {
-        self.pm25Label.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
+        self.qltyLabel.text = weatherData.aqi.city.qlty;
     }
     
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    
-    
-}
 @end
 
 
