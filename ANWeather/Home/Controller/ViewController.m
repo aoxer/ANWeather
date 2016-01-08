@@ -48,10 +48,7 @@
 @property (strong, nonatomic)CLLocationManager *locationMgr;
 @property (strong, nonatomic)CLGeocoder *geocoder;
 
-/**
- *  nav的titleView
- */
-@property (strong, nonatomic)UIButton *titleViewBtn;
+
 
 @end
 
@@ -65,7 +62,7 @@
     [self setupLastCity];
     
     // 加载数据
-    [self loadWeatherWithCity:self.city];
+    [self judgeCity];
     
     // 设置tableView
     [self setupTableView];
@@ -86,13 +83,18 @@
     
     // 监听定位的通知
     [ANNotificationCenter addObserver:self selector:@selector(getLocation) name:ANGetLocationDidClickNotification object:nil];
-
-    if (!self.isComeLeft) { // 如果不是从左边进来的 就开始刷新
-        [self.tableView.header beginRefreshing];
+    
+    if (self.isComeLeft) {
         self.isComeLeft = NO;
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    [self judgeCity];
+}
 
 #pragma mark 初始化方法
 /**
@@ -104,16 +106,16 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    self.tableView.backgroundColor = [UIColor lightGrayColor];
     // MJRefresh
+    __weak typeof(self)weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         // 加载天气
         if (self.selectedCity.length != 0) { // 如果有已选城市 加载已选城市
-            [self sendRequestWithCity:self.selectedCity];
+            [weakSelf sendRequestWithCity:self.selectedCity];
         } else { // 没有则加载上次定位城市
-            [self sendRequestWithCity:self.city];
+            [weakSelf sendRequestWithCity:self.city];
         }
        
-        
     }];
 }
 
@@ -145,7 +147,7 @@
  */
 - (void)SetupWeatherView
 {
-    self.weatherView = [[ANWeatherView alloc] initWithFrame:self.view.bounds];
+    self.weatherView.frame = self.view.bounds;
     
     self.weatherView.contentInset = UIEdgeInsetsMake(ANScreenHeight - 20 - self.navigationController.navigationBar.height, 0, 0, 0);
     
@@ -154,6 +156,9 @@
      
     [self.weatherView weatherView];
     [self.view addSubview:_weatherView];
+    
+    ANLog(@"%@", self.weatherView);
+
 }
 
 /**
@@ -175,46 +180,46 @@
 - (void)setupLastCity
 {
     
-    if ([ANOffLineTool cityExists])
+    if (![ANOffLineTool isFirst])
     {
         self.city = [ANOffLineTool getLastCity];
     } else {
 #warning 出厂需改为beijing
-        self.city = @"shanghai";
+        self.city = @"上海";
     }
 }
 
 /**
  *  读取天气
  */ 
-- (void)loadWeatherWithCity:(NSString *)city
+- (void)judgeCity
 {
     
-    if (self.selectedCity.length != 0) { // 如果有已选城市 (从右面回来) 加载已选城市
-        // 1.从缓存读取数据加载数据
-        NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:self.selectedCity];
-        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
-        if ([basic.city isEqualToString:self.selectedCity]) { // 有缓存
-            
-            [self dealingResult:weathersDict];
-            
-        } else { // 没缓存
-            [self sendRequestWithCity:self.selectedCity];
-        }
-    } else { // 没有已选城市则加载缓存城市
-        // 1.从缓存读取数据加载数据
-        NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
-        ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]];
-        if ([basic.city isEqualToString:self.city]) { // 有缓存
-            
-            [self dealingResult:weathersDict];
-            
-        } else { // 没缓存
-            [self sendRequestWithCity:city];
-        }
+    if (self.selectedCity.length) { // 如果有已选城市 (从右面回来) 加载已选城市
+        
+        [self loadWeatherWithCity:self.selectedCity];
+       
+    } else { // 没有已选城市则加载当前城市
+       
+        [self loadWeatherWithCity:self.city];
     }
     
 }
+
+- (void)loadWeatherWithCity:(NSString *)city
+{
+    if ([ANOffLineTool cityExists:city]) { // 有城市缓存
+        // 从缓存读取数据加载数据
+        NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
+        [self dealingResult:weathersDict];
+        
+    } else { // 没缓存
+        // 发送请求
+        [self sendRequestWithCity:city];
+    }
+}
+
+
 
 /**
  *  处理返回的数据
@@ -223,24 +228,26 @@
  */
 - (void)dealingResult:(NSDictionary *)weathersDict
 {
+    
     // 通过取出的字典创建模型
-    ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weathersDict];
+    self.weatherData = [ANWeatherData objectWithKeyValues:weathersDict];
 #warning 只有刷新时才调用weatherView.weatherData 的setWeatherData方法
-    ANLog(@"%@", weathersDict);
-    self.weatherView.weatherData = weatherData;
+     self.weatherView.weatherData = self.weatherData;
     
     // 把字典数组转为模型数组
     self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weathersDict[@"daily_forecast"]];
     // 删除当天数据
-    [self.dailyForecastArray removeObjectAtIndex:0];
+    if (self.dailyForecastArray.count) {
+        [self.dailyForecastArray removeObjectAtIndex:0];
+    }
     
     // 设置导航栏
 
-    self.navigationItem.title = weatherData.basic.city;
+    self.navigationItem.title = self.weatherData.basic.city;
 
     
     // 重新加载tableView
-    [self.weatherView reloadData];
+    [self.tableView reloadData];
     
 }
 
@@ -344,7 +351,8 @@
     } else if ([CLLocationManager locationServicesEnabled] &&
                ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined ||
                [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)) {// 如果定位开启但授权状态不可用
-        if (![ANOffLineTool cityExists]) { // 第一次打开软件
+#warning 待改判断是否第一次打开
+                   if (![ANOffLineTool isFirst]) { // 第一次打开软件
             // 请求授权
             [self.locationMgr requestWhenInUseAuthorization];
 
@@ -528,6 +536,13 @@
     return _locationMgr;
 }
 
+- (ANWeatherView *)weatherView
+{
+    if (!_weatherView) {
+        _weatherView = [[ANWeatherView alloc] init];
+    }
+    return _weatherView;
+}
 - (void)dealloc
 {
      [ANNotificationCenter removeObserver:self];

@@ -67,7 +67,7 @@
     }
     
     // 空气质量
-    if (weatherData.aqi.city.qlty.length) {
+    if (!weatherData.aqi.city.qlty.length) {
         self.qltyLabel.text = @"优";
     } else {
         self.qltyLabel.text = weatherData.aqi.city.qlty;

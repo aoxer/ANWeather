@@ -26,5 +26,9 @@
 /**
  *  判断缓存文件是否存在
  */
-+ (BOOL)cityExists;
++ (BOOL)cityExists:(NSString *)city;
+/**
+ *  是否为第一次打开
+ */
++ (BOOL)isFirst;
 @end
