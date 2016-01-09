@@ -41,7 +41,6 @@
 		003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */; };
 		003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C98481C32BA3A00160D91 /* ANRightTableViewController.m */; };
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
-		004EDA051C3ABD72001614A4 /* citys.json in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA041C3ABD72001614A4 /* citys.json */; };
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
 		005B1AF01C40FAEF001F6CF9 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */; };
@@ -214,7 +213,6 @@
 		003C98481C32BA3A00160D91 /* ANRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANRightTableViewController.m; path = Controller/ANRightTableViewController.m; sourceTree = "<group>"; };
 		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
 		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
-		004EDA041C3ABD72001614A4 /* citys.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citys.json; sourceTree = "<group>"; };
 		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
 		004EDA0B1C3B96B9001614A4 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extension.h"; path = "ANWeather/Category/NSString+Extension.h"; sourceTree = "<group>"; };
 		004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "ANWeather/Category/NSString+Extension.m"; sourceTree = "<group>"; };
@@ -455,7 +453,6 @@
 				0098E79E1C3F819700499D33 /* AddedFont.h */,
 				0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */,
 				0095112E1C3CDD4300EA9FDC /* area.json */,
-				004EDA041C3ABD72001614A4 /* citys.json */,
 				002215221C2CE63900E665F6 /* Info.plist */,
 				002215681C2CE70800E665F6 /* PrefixHeader.pch */,
 			);
@@ -1299,7 +1296,6 @@
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
 				00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */,
 				006C2E3A1C3C1547000832FF /* UMShareEditViewControlleriPad.xib in Resources */,
-				004EDA051C3ABD72001614A4 /* citys.json in Resources */,
 				006C2E3B1C3C1547000832FF /* UMSLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
