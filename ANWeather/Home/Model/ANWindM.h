@@ -24,5 +24,9 @@
 /**
  *  风力几级
  */
-@property (copy, nonatomic)NSString *sc; 
+@property (copy, nonatomic)NSString *sc;
+/**
+ *   "spd": "15" //风速（kmph）
+ */
+@property (copy, nonatomic)NSString *spd;
 @end

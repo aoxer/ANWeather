@@ -11,8 +11,7 @@
 #import "ANDailyForecastM.h"
 #import "ANAqiM.h"
 #import "ANBasicM.h"
-#import "ANStatusM.h"
-
+ 
 //@class ANNowM, ANDailyForecastM, ANAqiM, ANBasicM, ANStatusM;
 
 @interface ANWeatherData : NSObject
@@ -35,7 +34,7 @@
 /**
  *  城市基本信息
  */
-@property (strong, nonatomic)ANStatusM *status;
+@property (strong, nonatomic)NSString *status;
 
 
 @end

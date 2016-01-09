@@ -19,27 +19,25 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3级" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZA-qI-Zdf">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOC-SV-vYf" customClass="ANWindmill">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
-                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="64"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="JZA-qI-Zdf" firstAttribute="leading" secondItem="y0M-ca-ebG" secondAttribute="leading" id="7tq-SR-nqq"/>
-                <constraint firstItem="Rda-fP-PLS" firstAttribute="top" secondItem="JZA-qI-Zdf" secondAttribute="bottom" id="8bf-11-2W5"/>
-                <constraint firstItem="JZA-qI-Zdf" firstAttribute="top" secondItem="y0M-ca-ebG" secondAttribute="top" id="8gu-A5-vWe"/>
-                <constraint firstAttribute="trailing" secondItem="JZA-qI-Zdf" secondAttribute="trailing" id="Zpl-mB-Yfs"/>
+                <constraint firstItem="Rda-fP-PLS" firstAttribute="top" secondItem="XOC-SV-vYf" secondAttribute="bottom" id="9rC-ac-pb5"/>
+                <constraint firstAttribute="trailing" secondItem="XOC-SV-vYf" secondAttribute="trailing" id="IbT-5d-eoI"/>
+                <constraint firstItem="XOC-SV-vYf" firstAttribute="leading" secondItem="y0M-ca-ebG" secondAttribute="leading" id="Pda-0E-kM7"/>
                 <constraint firstAttribute="trailing" secondItem="Rda-fP-PLS" secondAttribute="trailing" id="hhe-Zu-Vfe"/>
                 <constraint firstItem="Rda-fP-PLS" firstAttribute="leading" secondItem="y0M-ca-ebG" secondAttribute="leading" id="mjR-1g-aCn"/>
                 <constraint firstAttribute="bottom" secondItem="Rda-fP-PLS" secondAttribute="bottom" id="vkI-en-5Zd"/>
+                <constraint firstItem="XOC-SV-vYf" firstAttribute="top" secondItem="y0M-ca-ebG" secondAttribute="top" id="yE2-mX-XeA"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="windDirLabel" destination="Rda-fP-PLS" id="9Kf-5n-GLs"/>
-                <outlet property="windSpeedLabel" destination="JZA-qI-Zdf" id="zSe-ME-sZT"/>
+                <outlet property="windmill" destination="XOC-SV-vYf" id="KCe-Sc-3le"/>
             </connections>
             <point key="canvasLocation" x="252" y="191"/>
         </view>

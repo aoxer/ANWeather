@@ -19,4 +19,9 @@
  *  @param subLocality 下级城市
  */
 - (NSString *)getCityName:(NSString *)subLocality;
+
+/**
+ *  判断日期是否为今天
+ */
+- (BOOL)isToday;
 @end

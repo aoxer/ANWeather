@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.m
 //  大安天气
 //
@@ -58,6 +58,8 @@
 
 - (void)viewDidLoad {
     
+    [super viewDidLoad];
+    
     // 设置上一次城市
     [self setupLastCity];
     
@@ -84,16 +86,23 @@
     // 监听定位的通知
     [ANNotificationCenter addObserver:self selector:@selector(getLocation) name:ANGetLocationDidClickNotification object:nil];
     
+    // 监听缓存数据非今天的通知
+//    [ANNotificationCenter addObserver:self selector:@selector(sendRequestWithCity:) name:@"isNotTodayNotification" object:nil];
+    
     if (self.isComeLeft) {
         self.isComeLeft = NO;
     }
+    
+#warning 根据topView日期判断是否要刷新数据 通知
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+    
     [self judgeCity];
+  
+    
 }
 
 #pragma mark 初始化方法
@@ -187,6 +196,7 @@
 #warning 出厂需改为beijing
         self.city = @"上海";
     }
+    
 }
 
 /**
@@ -545,7 +555,8 @@
 }
 - (void)dealloc
 {
-     [ANNotificationCenter removeObserver:self];
+//    [ANNotificationCenter removeObserver:self];
+    [ANNotificationCenter removeObserver:self];
 }
 
 @end

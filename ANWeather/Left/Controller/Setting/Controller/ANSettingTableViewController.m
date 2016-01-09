@@ -30,7 +30,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 3;
+    return 4;
 }
 
 
@@ -42,8 +42,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
     
-    NSArray *titles = @[@"风力单位", @"温度单位", @"时间单位"];
-    NSArray *subTitles = @[@"风力等级", @"华氏", @"24h"];
+    NSArray *titles = @[@"风力单位", @"温度单位", @"时间单位", @"清空缓存"];
+    NSArray *subTitles = @[@"风力等级", @"华氏", @"24h", @"缓存大小"];
     
     cell.textLabel.text = titles[indexPath.row];
     cell.detailTextLabel.text = subTitles[indexPath.row];

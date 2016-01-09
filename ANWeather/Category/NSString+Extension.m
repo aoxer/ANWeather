@@ -34,4 +34,26 @@
     
     return cityNameWithoutShi;
 }
+
+- (BOOL)isToday
+{
+    NSCalendar *calender = [NSCalendar currentCalendar];
+    NSDateComponents *compoent = [calender components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    // 把2016-1-9改为2016-01-09;
+    NSString *month = nil;
+    NSString *day = nil;
+    if ([NSString stringWithFormat:@"%zd", compoent.month].length == 1 ||
+        [NSString stringWithFormat:@"%zd", compoent.day].length == 1) {
+        
+        month = [NSString stringWithFormat:@"0%zd", compoent.month];
+        day = [NSString stringWithFormat:@"0%zd", compoent.day];
+        
+    }
+    NSString *date = [NSString stringWithFormat:@"%zd-%@-%@", compoent.year, month, day];
+    
+    if ([self isEqualToString:date]) {
+        return YES;
+    }
+    return NO;
+}
 @end

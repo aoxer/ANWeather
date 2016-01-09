@@ -36,14 +36,21 @@
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
+    _weatherData = weatherData;
+    
+    
     
     ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
     
+    // 判断传进来的模型是否为今天的数据
+//    if (![day1.date isToday]) {
+//        [ANNotificationCenter postNotificationName:@"isNotTodayNotification" object:nil];
+//    }
     // 背景图片
     
     // 当前温度
-    
-    self.currentTmp.text = weatherData.now.tmp;
+#warning TODO 修改attributeText
+    self.currentTmp.text = [NSString stringWithFormat:@"%@°", weatherData.now.tmp];
     // 最低温
     self.minTmp.text = day1.tmp.min;
     // 最高温
@@ -66,6 +73,7 @@
     
     return MMDD;
 }
+
 
 
 @end

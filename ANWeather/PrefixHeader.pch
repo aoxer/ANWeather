@@ -25,6 +25,8 @@
 #else // 发布阶段
 #define ANLog(...)
 #endif
+// 角度转弧度
+#define   ANRadian(x)  ((M_PI * (x))/ 180.f)
 
 #define IOS_8_ABOVE [[UIDevice currentDevice].systemVersion doubleValue] >= 8.0
 // RGB颜色

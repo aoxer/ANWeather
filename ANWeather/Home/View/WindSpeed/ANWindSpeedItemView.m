@@ -7,12 +7,13 @@
 //
 
 #import "ANWindSpeedItemView.h"
+#import "ANWindmill.h"
 #import "ANWeatherData.h"
 @interface ANWindSpeedItemView ()
 /**
  *  风速
  */
-@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
+@property (weak, nonatomic) IBOutlet ANWindmill *windmill;
 /**
  *  风向
  */
@@ -20,6 +21,14 @@
 
 @end
 @implementation ANWindSpeedItemView
+
+-(void)awakeFromNib
+{
+    ANWindmill *windmill = [ANWindmill view];
+    windmill.frame = self.windmill.bounds;
+    [self addSubview:windmill];
+    self.windmill = windmill;
+}
 
 + (instancetype)view
 {
@@ -34,9 +43,10 @@
 -(void)setWeatherData:(ANWeatherData *)weatherData
 {
     // 风速
-    self.windSpeedLabel.text = weatherData.now.wind.sc;
+    self.windmill.weatherData = weatherData;
     // 风向
-    self.windDirLabel.text = weatherData.now.wind.dir;
+    self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@",weatherData.now.wind.dir, weatherData.now.wind.sc];
 }
+
 
 @end
