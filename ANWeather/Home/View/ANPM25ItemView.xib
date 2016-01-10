@@ -21,7 +21,6 @@
                 </label>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-Ml-ikn">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="108"/>
-                    <color key="backgroundColor" red="0.62857086490000003" green="0.62857086490000003" blue="0.62857086490000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C6-JU-TD1">
                     <rect key="frame" x="0.0" y="108" width="150" height="21"/>

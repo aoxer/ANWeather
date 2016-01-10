@@ -24,6 +24,19 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    [self setup];
+}
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+- (void)setup
+{
     self.backgroundImageView.clipsToBounds = YES;
 }
 
@@ -47,7 +60,7 @@
 //        [ANNotificationCenter postNotificationName:@"isNotTodayNotification" object:nil];
 //    }
     // 背景图片
-    
+    self.backgroundImageView.image = [[UIImage imageNamed:@"bangwan"] blurImageWithvalue:2.0];
     // 当前温度
 #warning TODO 修改attributeText
     self.currentTmp.text = [NSString stringWithFormat:@"%@°", weatherData.now.tmp];

@@ -13,7 +13,7 @@
 #import "ANPM25ItemView.h"
 #import "ANHumItemView.h"
 
-#import "ANDaysWeatherCell.h"
+#import "ANDaysWeatherView.h"
 
 #import "ANTopView.h"
 
@@ -34,26 +34,22 @@
 @property (strong, nonatomic)ANWindSpeedItemView *windSpeedItem;
 @property (strong, nonatomic)ANPM25ItemView *pm25Item;
 @property (strong, nonatomic)ANHumItemView *humItem;
-
-@property (strong, nonatomic)NSMutableArray *daysWeatherArray;
-@property (strong, nonatomic)ANDaysWeatherCell *daysWeatherCell;
-
-
+   
+@property (strong, nonatomic)ANDaysWeatherView *daysWeatherView;
 
 
 @end
 @implementation ANWeatherView
 
-/**
- *  懒加载数组
- */
-- (NSMutableArray *)daysWeatherArray
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    if (!_daysWeatherArray) {
-        _daysWeatherArray = [NSMutableArray array];
+    if (self = [super initWithFrame:frame]) {
+        [self weatherView];
+        self.backgroundColor = ANColor(100, 100, 100, 0.75);
     }
-    return _daysWeatherArray;
+    return  self;
 }
+
 
 /**
  *  懒加载数组
@@ -69,7 +65,6 @@
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
-    ANLog(@"%s",  __func__);
     _weatherData = weatherData;
 
     // 天气图标
@@ -87,6 +82,8 @@
     // topView
     self.topView.weatherData = weatherData;
     
+    // cell
+    self.daysWeatherView.weatherData = weatherData;
     
 }
 
@@ -95,17 +92,29 @@
  */
 - (void)weatherView
 {
-
-    self.showsVerticalScrollIndicator = NO;
-    // 创建tableView 容纳方块View
-    self.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.backgroundColor = [UIColor lightGrayColor];
+//
+//    self.showsVerticalScrollIndicator = NO;
+//    // 创建tableView 容纳方块View
+//    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.backgroundColor = [UIColor redColor];
     
     // 顶部容器
     ANTopView *topView = [ANTopView view];
     [self addSubview:topView];
     self.topView = topView;
 
+    // 湿度
+    ANHumItemView *humItem = [ANHumItemView view];
+    [self addSubview:humItem];
+    self.humItem = humItem;
+    [self.items addObject:humItem];
+    
+    // 风速
+    ANWindSpeedItemView *windSpeedItem = [ANWindSpeedItemView view];
+    [self addSubview:windSpeedItem];
+    self.windSpeedItem = windSpeedItem;
+    [self.items addObject:windSpeedItem];
+    
     // 天气
     ANWeatherItemView *weatherItem = [ANWeatherItemView view];
     [self addSubview:weatherItem];
@@ -118,33 +127,28 @@
     self.pm25Item = pm25Item;
     [self.items addObject:pm25Item];
     
-    // 湿度
-    ANHumItemView *humItem = [ANHumItemView view];
-    [self addSubview:humItem];
-    self.humItem = humItem;
-    [self.items addObject:humItem];
-    
-    // 风速
-    ANWindSpeedItemView *windSpeedItem = [ANWindSpeedItemView view];
-    [self addSubview:windSpeedItem];
-    self.windSpeedItem = windSpeedItem;
-    [self.items addObject:windSpeedItem];
 
-   
-    
+    // cell
+    ANDaysWeatherView *daysWeatherView = [[ANDaysWeatherView alloc] init];
+    daysWeatherView.backgroundColor = ANColor(100, 100, 100, 0.5);
+    [self addSubview:daysWeatherView];
+    self.daysWeatherView = daysWeatherView;
+ 
 }
+
 
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
+ 
     // 布局下面方块元素
     NSInteger count = self.items.count;
     
     
     CGFloat itemViewW = (ANScreenWidth - MARGIN * 3) / ANMaxCol;
-    CGFloat itemViewH = (ANScreenHeight - MARGIN * 3 - 64) / ANMaxRow;
+    CGFloat itemViewH = (self.height - MARGIN * 4) / ANMaxRow;
     
     for (int i = 0; i<count; i++) {
         
@@ -152,23 +156,30 @@
         int col = i % ANMaxCol;
         
         UIView *itemView = self.items[i];
-        itemView.backgroundColor = ANColor(203, 178, 144, 1);
+        itemView.backgroundColor = ANColor(200, 200, 200, 0.5);
         CGFloat itemViewX = MARGIN + col * (itemViewW + MARGIN);
-        // y为负值
-        CGFloat itemViewY = - ANScreenHeight + (ANScreenHeight - itemViewH * 2 - MARGIN * 2) + row * (itemViewH + MARGIN);
-        
+        CGFloat itemViewY = self.height - itemViewH - MARGIN - row * (itemViewH + MARGIN);
         itemView.frame = CGRectMake(itemViewX, itemViewY, itemViewW, itemViewH);
     }
     
     // 布局顶部元素
-    CGFloat topViewW = ANScreenWidth;
-    CGFloat topViewH = self.height - 2 * itemViewH;
-    CGFloat topViewX = 0;
-    CGFloat topViewY = -ANScreenHeight + (ANScreenHeight - itemViewH * 2 - MARGIN * 2 - topViewH) - MARGIN;
+    CGFloat topViewW = ANScreenWidth - MARGIN * 2;
+    CGFloat topViewH = self.height - 2 * itemViewH - MARGIN * 4;
+    CGFloat topViewX = MARGIN;
+    CGFloat topViewY = MARGIN;
     
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     
+    self.daysWeatherView.frame = CGRectMake(0, self.height + MARGIN, ANScreenWidth, 44*6);
+    
 }
+//- (UITableView *)tableView
+//{
+//    if (!_tableView) {
+//        _tableView = [[UITableView alloc] init];
+//    }
+//    return _tableView;
+//}
 
 
 @end

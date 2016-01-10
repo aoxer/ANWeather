@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ANWeatherData.h"
-@interface ANWeatherView : UITableView
+@interface ANWeatherView : UIView
 /**
  *  天气数据模型
  */
 @property (strong, nonatomic)ANWeatherData *weatherData;
 
 
-- (void)weatherView;
-@end
+ @end

@@ -28,19 +28,30 @@
 
 @implementation ANPM25ItemView
 
-
-- (void)drawRect:(CGRect)rect
+- (void)awakeFromNib
 {
-    [super drawRect:rect];
-    
+    [super awakeFromNib];
+    [self setup];
+}
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+
+
+- (void)setup
+{
     self.bigGauge = [[MSSimpleGauge alloc] initWithFrame:self.GaugeView.bounds];
     self.bigGauge.backgroundColor = [UIColor clearColor];
     self.bigGauge.startAngle = 0;
-    self.bigGauge.endAngle = 180;
+    self.bigGauge.endAngle = 360;
     self.bigGauge.backgroundColor = [UIColor clearColor];
     [self addSubview:self.bigGauge];
 }
-
 
 + (instancetype)view
 {
@@ -58,7 +69,7 @@
 {
     _weatherData = weatherData;
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
-    
+
     //pm2.5
     if (!weatherData.aqi.city.pm25.length) {
         self.pm2_5.text = @"";

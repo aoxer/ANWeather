@@ -95,9 +95,7 @@ static FMDatabase *_db;
     NSString *cityName = nil;
     while (set.next) {
         
-        
-        
-        cityName = [set objectForColumnName:@"city"];
+        cityName = [set stringForColumn:@"city"];
         // 如果返回的结果里有传进来的城市数据
         if ([cityName isEqualToString:city]) {
             return YES;

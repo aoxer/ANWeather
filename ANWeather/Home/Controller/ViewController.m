@@ -24,7 +24,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface ViewController ()<CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController ()<CLLocationManagerDelegate>
 
 /**
  *  已选城市城市
@@ -36,10 +36,6 @@
  *  天气数据模型
  */
 @property (strong, nonatomic)ANWeatherData *weatherData;
-/**
- *  几日天气模型数组
- */
-@property (strong, nonatomic)NSMutableArray *dailyForecastArray;
 
 
 /**
@@ -101,8 +97,7 @@
     [super viewDidAppear:animated];
     
     [self judgeCity];
-  
-    
+ 
 }
 
 #pragma mark 初始化方法
@@ -110,7 +105,9 @@
  *  初始化tableView
  */
 - (void)setupTableView
-{
+{   self.tableView.backgroundColor = ANColor(131, 131, 171, 1);
+    self.tableView.contentSize = CGSizeMake(ANScreenWidth, ANScreenHeight*2);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 300, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    self.tableView.backgroundColor = [UIColor lightGrayColor];
@@ -156,17 +153,12 @@
  */
 - (void)SetupWeatherView
 {
-    self.weatherView.frame = self.view.bounds;
+   CGRect rect = CGRectMake(0, 0, ANScreenWidth, self.view.bounds.size.height - 44);
+     self.weatherView.frame = rect;
     
-    self.weatherView.contentInset = UIEdgeInsetsMake(ANScreenHeight - 20 - self.navigationController.navigationBar.height, 0, 0, 0);
     
-    self.weatherView.delegate = self;
-    self.weatherView.dataSource = self;
-     
-    [self.weatherView weatherView];
-    [self.view addSubview:_weatherView];
+    [self.tableView addSubview:_weatherView];
     
-    ANLog(@"%@", self.weatherView);
 
 }
 
@@ -493,42 +485,7 @@
 
 }
 
-#pragma mark  UITableViewDataSource & UITableViewDelete
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.dailyForecastArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ANDaysWeatherCell *cell = [ANDaysWeatherCell cellWithTableView:tableView];
-
-    cell.dailyForcast = self.dailyForecastArray[indexPath.row];
-    
-    return cell;
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44;
-}
-
-
-
 #pragma mark 懒加载们
-- (NSMutableArray *)dailyForecastArray
-{
-    if (!_dailyForecastArray) {
-        _dailyForecastArray = [NSMutableArray array];
-    }
-    return _dailyForecastArray;
-}
 
 - (CLGeocoder *)geocoder
 {
@@ -557,6 +514,12 @@
 {
 //    [ANNotificationCenter removeObserver:self];
     [ANNotificationCenter removeObserver:self];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 20);
+
 }
 
 @end

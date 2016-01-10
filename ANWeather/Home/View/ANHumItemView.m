@@ -17,7 +17,20 @@
 
 @implementation ANHumItemView
 
-- (void)drawRect:(CGRect)rect
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self setup];
+}
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+- (void)setup
 {
     self.backgroundColor = [UIColor clearColor];
 }

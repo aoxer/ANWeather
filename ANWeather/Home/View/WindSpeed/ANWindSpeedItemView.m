@@ -22,13 +22,29 @@
 @end
 @implementation ANWindSpeedItemView
 
--(void)awakeFromNib
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self setup];
+}
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+- (void)setup
 {
     ANWindmill *windmill = [ANWindmill view];
+    windmill.backgroundColor = [UIColor clearColor];
     windmill.frame = self.windmill.bounds;
     [self addSubview:windmill];
     self.windmill = windmill;
 }
+
+ 
 
 + (instancetype)view
 {
