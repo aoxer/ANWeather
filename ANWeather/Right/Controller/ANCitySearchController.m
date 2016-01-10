@@ -213,6 +213,11 @@
     return _resultCitys;
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 #pragma mark - searchController delegate
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController
 {
