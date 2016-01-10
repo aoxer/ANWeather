@@ -40,6 +40,7 @@
 		00224B7F1C3C0373003BA1E6 /* ANCareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00224B7D1C3C0373003BA1E6 /* ANCareController.xib */; };
 		003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */; };
 		003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C98481C32BA3A00160D91 /* ANRightTableViewController.m */; };
+		00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492A611C4230CD003296FB /* ANDaysWeatherView.m */; };
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
@@ -211,6 +212,8 @@
 		003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackgroundColor.m"; sourceTree = "<group>"; };
 		003C98471C32BA3A00160D91 /* ANRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANRightTableViewController.h; path = Controller/ANRightTableViewController.h; sourceTree = "<group>"; };
 		003C98481C32BA3A00160D91 /* ANRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANRightTableViewController.m; path = Controller/ANRightTableViewController.m; sourceTree = "<group>"; };
+		00492A601C4230CD003296FB /* ANDaysWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDaysWeatherView.h; sourceTree = "<group>"; };
+		00492A611C4230CD003296FB /* ANDaysWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherView.m; sourceTree = "<group>"; };
 		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
 		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
 		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
@@ -837,6 +840,8 @@
 				009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */,
 				009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */,
 				005B1AEC1C40FAEF001F6CF9 /* WindSpeed */,
+				00492A601C4230CD003296FB /* ANDaysWeatherView.h */,
+				00492A611C4230CD003296FB /* ANDaysWeatherView.m */,
 				00934F441C315F060042F0D9 /* ANDaysWeatherCell.h */,
 				00934F451C315F060042F0D9 /* ANDaysWeatherCell.m */,
 				00934F461C315F060042F0D9 /* ANDaysWeatherCell.xib */,
@@ -1338,6 +1343,7 @@
 				002215C11C2CE8CE00E665F6 /* Foundation+Log.m in Sources */,
 				0095118F1C3D84C500EA9FDC /* UIView+MJExtension.m in Sources */,
 				0095117D1C3D84C500EA9FDC /* MJRefreshAutoFooter.m in Sources */,
+				00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */,
 				00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
 				0095126D1C3E572700EA9FDC /* ANHumItemView.m in Sources */,

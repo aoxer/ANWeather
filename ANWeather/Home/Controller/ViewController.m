@@ -24,7 +24,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface ViewController ()<CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ViewController ()<CLLocationManagerDelegate>
 
 /**
  *  已选城市城市
@@ -36,10 +36,6 @@
  *  天气数据模型
  */
 @property (strong, nonatomic)ANWeatherData *weatherData;
-/**
- *  几日天气模型数组
- */
-@property (strong, nonatomic)NSMutableArray *dailyForecastArray;
 
 
 /**
@@ -101,8 +97,7 @@
     [super viewDidAppear:animated];
     
     [self judgeCity];
-  
-    
+ 
 }
 
 #pragma mark 初始化方法
@@ -111,6 +106,8 @@
  */
 - (void)setupTableView
 {
+    self.tableView.contentSize = CGSizeMake(ANScreenWidth, ANScreenHeight*2);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 300, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    self.tableView.backgroundColor = [UIColor lightGrayColor];
@@ -156,17 +153,15 @@
  */
 - (void)SetupWeatherView
 {
-    self.weatherView.frame = self.view.bounds;
+    self.weatherView.frame = CGRectMake(self.view.x, self.view.y, self.view.width, self.view.height);
     
-    self.weatherView.contentInset = UIEdgeInsetsMake(ANScreenHeight - 20 - self.navigationController.navigationBar.height, 0, 0, 0);
+//    self.weatherView.contentInset = UIEdgeInsetsMake(ANScreenHeight - 20 - self.navigationController.navigationBar.height, 0, 0, 0);
+//    
+//    self.weatherView.delegate = self;
+//    self.weatherView.dataSource = self;
     
-    self.weatherView.delegate = self;
-    self.weatherView.dataSource = self;
-     
-    [self.weatherView weatherView];
-    [self.view addSubview:_weatherView];
+    [self.tableView addSubview:_weatherView];
     
-    ANLog(@"%@", self.weatherView);
 
 }
 
@@ -243,13 +238,6 @@
     self.weatherData = [ANWeatherData objectWithKeyValues:weathersDict];
 #warning 只有刷新时才调用weatherView.weatherData 的setWeatherData方法
      self.weatherView.weatherData = self.weatherData;
-    
-    // 把字典数组转为模型数组
-    self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weathersDict[@"daily_forecast"]];
-    // 删除当天数据
-    if (self.dailyForecastArray.count) {
-        [self.dailyForecastArray removeObjectAtIndex:0];
-    }
     
     // 设置导航栏
 
@@ -493,42 +481,7 @@
 
 }
 
-#pragma mark  UITableViewDataSource & UITableViewDelete
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    return 1;
-//}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.dailyForecastArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ANDaysWeatherCell *cell = [ANDaysWeatherCell cellWithTableView:tableView];
-
-    cell.dailyForcast = self.dailyForecastArray[indexPath.row];
-    
-    return cell;
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44;
-}
-
-
-
 #pragma mark 懒加载们
-- (NSMutableArray *)dailyForecastArray
-{
-    if (!_dailyForecastArray) {
-        _dailyForecastArray = [NSMutableArray array];
-    }
-    return _dailyForecastArray;
-}
 
 - (CLGeocoder *)geocoder
 {
@@ -557,6 +510,12 @@
 {
 //    [ANNotificationCenter removeObserver:self];
     [ANNotificationCenter removeObserver:self];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 64);
+
 }
 
 @end
