@@ -105,7 +105,7 @@
  *  初始化tableView
  */
 - (void)setupTableView
-{
+{   self.tableView.backgroundColor = ANColor(131, 131, 171, 1);
     self.tableView.contentSize = CGSizeMake(ANScreenWidth, ANScreenHeight*2);
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 300, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -153,12 +153,9 @@
  */
 - (void)SetupWeatherView
 {
-    self.weatherView.frame = CGRectMake(self.view.x, self.view.y, self.view.width, self.view.height);
+   CGRect rect = CGRectMake(0, 0, ANScreenWidth, self.view.bounds.size.height - 44);
+     self.weatherView.frame = rect;
     
-//    self.weatherView.contentInset = UIEdgeInsetsMake(ANScreenHeight - 20 - self.navigationController.navigationBar.height, 0, 0, 0);
-//    
-//    self.weatherView.delegate = self;
-//    self.weatherView.dataSource = self;
     
     [self.tableView addSubview:_weatherView];
     
@@ -514,7 +511,7 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 64);
+    self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 20);
 
 }
 

@@ -45,7 +45,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self weatherView];
-        
+        self.backgroundColor = ANColor(100, 100, 100, 0.75);
     }
     return  self;
 }
@@ -103,18 +103,6 @@
     [self addSubview:topView];
     self.topView = topView;
 
-    // 天气
-    ANWeatherItemView *weatherItem = [ANWeatherItemView view];
-    [self addSubview:weatherItem];
-    self.weatherItem = weatherItem;
-    [self.items addObject:weatherItem];
-    
-    // pm2.5
-    ANPM25ItemView *pm25Item = [ANPM25ItemView view];
-    [self addSubview:pm25Item];
-    self.pm25Item = pm25Item;
-    [self.items addObject:pm25Item];
-    
     // 湿度
     ANHumItemView *humItem = [ANHumItemView view];
     [self addSubview:humItem];
@@ -127,8 +115,22 @@
     self.windSpeedItem = windSpeedItem;
     [self.items addObject:windSpeedItem];
     
+    // 天气
+    ANWeatherItemView *weatherItem = [ANWeatherItemView view];
+    [self addSubview:weatherItem];
+    self.weatherItem = weatherItem;
+    [self.items addObject:weatherItem];
+    
+    // pm2.5
+    ANPM25ItemView *pm25Item = [ANPM25ItemView view];
+    [self addSubview:pm25Item];
+    self.pm25Item = pm25Item;
+    [self.items addObject:pm25Item];
+    
+
     // cell
     ANDaysWeatherView *daysWeatherView = [[ANDaysWeatherView alloc] init];
+    daysWeatherView.backgroundColor = ANColor(100, 100, 100, 0.5);
     [self addSubview:daysWeatherView];
     self.daysWeatherView = daysWeatherView;
  
@@ -146,7 +148,7 @@
     
     
     CGFloat itemViewW = (ANScreenWidth - MARGIN * 3) / ANMaxCol;
-    CGFloat itemViewH = (self.height - MARGIN * 3) / ANMaxRow;
+    CGFloat itemViewH = (self.height - MARGIN * 4) / ANMaxRow;
     
     for (int i = 0; i<count; i++) {
         
@@ -154,21 +156,21 @@
         int col = i % ANMaxCol;
         
         UIView *itemView = self.items[i];
-        itemView.backgroundColor = ANColor(203, 178, 144, 1);
+        itemView.backgroundColor = ANColor(200, 200, 200, 0.5);
         CGFloat itemViewX = MARGIN + col * (itemViewW + MARGIN);
-        CGFloat itemViewY = self.height - 64 - itemViewH * 2 - MARGIN * 2 + row * (itemViewH + MARGIN);
+        CGFloat itemViewY = self.height - itemViewH - MARGIN - row * (itemViewH + MARGIN);
         itemView.frame = CGRectMake(itemViewX, itemViewY, itemViewW, itemViewH);
     }
     
     // 布局顶部元素
-    CGFloat topViewW = ANScreenWidth;
-    CGFloat topViewH = self.height - 2 * itemViewH - MARGIN * 3 - 20;
-    CGFloat topViewX = 0;
-    CGFloat topViewY = -MARGIN * 3;
+    CGFloat topViewW = ANScreenWidth - MARGIN * 2;
+    CGFloat topViewH = self.height - 2 * itemViewH - MARGIN * 4;
+    CGFloat topViewX = MARGIN;
+    CGFloat topViewY = MARGIN;
     
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     
-    self.daysWeatherView.frame = CGRectMake(0, self.height - 64, ANScreenWidth, 44*6);
+    self.daysWeatherView.frame = CGRectMake(0, self.height + MARGIN, ANScreenWidth, 44*6);
     
 }
 //- (UITableView *)tableView

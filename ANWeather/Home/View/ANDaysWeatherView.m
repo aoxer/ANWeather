@@ -26,9 +26,9 @@
 
 - (void)drawRect:(CGRect)rect
 {
-
+    ANLog(@"%@", [self superview]);
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, self.bounds.size.height)];
-    tableView.backgroundColor = [UIColor greenColor];
+    tableView.backgroundColor = [UIColor clearColor];
     tableView.delegate = self;
     tableView.dataSource = self;
     [self addSubview:tableView];

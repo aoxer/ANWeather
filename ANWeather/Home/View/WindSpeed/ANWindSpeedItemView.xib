@@ -21,7 +21,6 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOC-SV-vYf" customClass="ANWindmill">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <constraints>

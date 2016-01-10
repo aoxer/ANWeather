@@ -25,6 +25,7 @@
 -(void)awakeFromNib
 {
     ANWindmill *windmill = [ANWindmill view];
+    windmill.backgroundColor = [UIColor clearColor];
     windmill.frame = self.windmill.bounds;
     [self addSubview:windmill];
     self.windmill = windmill;
