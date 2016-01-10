@@ -245,7 +245,7 @@
      self.weatherView.weatherData = self.weatherData;
     
     // 把字典数组转为模型数组
-    self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weathersDict[@"daily_forecast"]];
+    self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:self.weatherData.daily_forecast];
     // 删除当天数据
     if (self.dailyForecastArray.count) {
         [self.dailyForecastArray removeObjectAtIndex:0];
