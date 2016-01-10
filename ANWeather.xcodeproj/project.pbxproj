@@ -41,6 +41,7 @@
 		003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C982C1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m */; };
 		003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C98481C32BA3A00160D91 /* ANRightTableViewController.m */; };
 		00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492A611C4230CD003296FB /* ANDaysWeatherView.m */; };
+		00492AA01C4285F2003296FB /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492A9F1C4285F2003296FB /* UIImage+Blur.m */; };
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
@@ -214,6 +215,8 @@
 		003C98481C32BA3A00160D91 /* ANRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANRightTableViewController.m; path = Controller/ANRightTableViewController.m; sourceTree = "<group>"; };
 		00492A601C4230CD003296FB /* ANDaysWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDaysWeatherView.h; sourceTree = "<group>"; };
 		00492A611C4230CD003296FB /* ANDaysWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherView.m; sourceTree = "<group>"; };
+		00492A9E1C4285F2003296FB /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Blur.h"; path = "ANWeather/Category/UIImage+Blur.h"; sourceTree = "<group>"; };
+		00492A9F1C4285F2003296FB /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Blur.m"; path = "ANWeather/Category/UIImage+Blur.m"; sourceTree = "<group>"; };
 		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
 		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
 		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 		002215671C2CE6DA00E665F6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				00492A9E1C4285F2003296FB /* UIImage+Blur.h */,
+				00492A9F1C4285F2003296FB /* UIImage+Blur.m */,
 				004EDA0B1C3B96B9001614A4 /* NSString+Extension.h */,
 				004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */,
 				003C982B1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.h */,
@@ -1331,6 +1336,7 @@
 				00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */,
 				009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */,
 				009511881C3D84C500EA9FDC /* MJRefreshGifHeader.m in Sources */,
+				00492AA01C4285F2003296FB /* UIImage+Blur.m in Sources */,
 				009511EA1C3D854D00EA9FDC /* MSNeedleView.m in Sources */,
 				009511841C3D84C500EA9FDC /* MJRefreshAutoStateFooter.m in Sources */,
 				002215C21C2CE8CE00E665F6 /* UIView+Extension.m in Sources */,

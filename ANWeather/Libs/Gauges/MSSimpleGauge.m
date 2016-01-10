@@ -35,8 +35,10 @@
     
     _arcThickness = 50;
 
-    _backgroundArcFillColor = [UIColor colorWithRed:.82 green:.82 blue:.82 alpha:1];
-    _backgroundArcStrokeColor = [UIColor colorWithRed:.82 green:.82 blue:.82 alpha:1];
+    _backgroundArcFillColor = [UIColor clearColor];
+    _backgroundArcStrokeColor = [UIColor clearColor];
+//    _backgroundArcFillColor = [UIColor colorWithRed:.82 green:.82 blue:.82 alpha:1];
+//    _backgroundArcStrokeColor = [UIColor colorWithRed:.82 green:.82 blue:.82 alpha:1];
     
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;

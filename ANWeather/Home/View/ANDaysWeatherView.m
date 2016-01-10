@@ -24,17 +24,31 @@
 @end
 @implementation ANDaysWeatherView
 
-- (void)drawRect:(CGRect)rect
+
+
+- (void)awakeFromNib
 {
-    ANLog(@"%@", [self superview]);
+    [super awakeFromNib];
+    [self setup];
+}
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setup];
+    }
+    return self;
+}
+- (void)setup
+{
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, self.bounds.size.height)];
     tableView.backgroundColor = [UIColor clearColor];
     tableView.delegate = self;
     tableView.dataSource = self;
     [self addSubview:tableView];
     self.tableView = tableView;
-
 }
+
 
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
