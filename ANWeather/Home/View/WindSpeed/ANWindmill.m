@@ -21,6 +21,8 @@
  */
 @property (assign, nonatomic)CGFloat spd;
 
+@property (strong, nonatomic)CADisplayLink *link;
+
 @end
 @implementation ANWindmill
 
@@ -33,30 +35,41 @@
 {
     _weatherData = weatherData;
     // 设置风速
-    self.spd = weatherData.now.wind.spd.floatValue / 3.6 / 10.f; // /3.6为转换m/s 5.0为系数
-    [self rotateWithSpeed];
+    self.spd = weatherData.now.wind.spd.floatValue / 3.6 / 2; // /3.6为转换m/s
+    self.link.paused = NO;
     
     // 设置显示风向和风速
-
-    
 }
 
-- (void)rotateWithSpeed
+
+
+- (CADisplayLink *)link
 {
-    CGFloat duration = 1.f / self.spd;
-    [UIView animateWithDuration:duration
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.blade.transform = CGAffineTransformRotate(self.blade.transform, M_PI_2);
-                     }
-                     completion:^(BOOL finished){
-                         if (finished) {
-                             [self rotateWithSpeed];
-                         }
-                     }];
-    
+    if (_link == nil) {
+        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
+        
+        [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        _link = link;
+    }
+    return _link;
 }
+
+- (void)update
+{
+    _blade.transform = CGAffineTransformRotate(_blade.transform, ANRadian(self.spd));
+     
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    _blade.userInteractionEnabled = YES;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _link.paused = NO;
+    });
+}
+
+
 
  
 @end

@@ -11,7 +11,6 @@
 #import "ANWeatherItemView.h"
 #import "ANWindSpeedItemView.h"
 #import "ANPM25ItemView.h"
-#import "ANHumItemView.h"
 
 #import "ANDaysWeatherView.h"
 
@@ -22,7 +21,7 @@
 
 #define MARGIN 5
 #define ANMaxRow 3
-#define ANMaxCol 2
+#define ANMaxCol 3
 
 
 @interface ANWeatherView ()
@@ -33,8 +32,7 @@
 @property (strong, nonatomic)ANWeatherItemView *weatherItem;
 @property (strong, nonatomic)ANWindSpeedItemView *windSpeedItem;
 @property (strong, nonatomic)ANPM25ItemView *pm25Item;
-@property (strong, nonatomic)ANHumItemView *humItem;
-   
+
 @property (strong, nonatomic)ANDaysWeatherView *daysWeatherView;
 
 
@@ -73,9 +71,6 @@
     // pm2.5
     self.pm25Item.weatherData = weatherData;
     
-    // 温度
-    self.humItem.weatherData = weatherData;
-    
     // 风速
     self.windSpeedItem.weatherData = weatherData;
 
@@ -104,10 +99,10 @@
     self.topView = topView;
 
     // 湿度
-    ANHumItemView *humItem = [ANHumItemView view];
-    [self addSubview:humItem];
-    self.humItem = humItem;
-    [self.items addObject:humItem];
+//    ANHumItemView *humItem = [ANHumItemView view];
+//    [self addSubview:humItem];
+//    self.humItem = humItem;
+//    [self.items addObject:humItem];
     
     // 风速
     ANWindSpeedItemView *windSpeedItem = [ANWindSpeedItemView view];
@@ -147,7 +142,7 @@
     NSInteger count = self.items.count;
     
     
-    CGFloat itemViewW = (ANScreenWidth - MARGIN * 3) / ANMaxCol;
+    CGFloat itemViewW = (ANScreenWidth - MARGIN * 4) / ANMaxCol;
     CGFloat itemViewH = (self.height - MARGIN * 4) / ANMaxRow;
     
     for (int i = 0; i<count; i++) {
@@ -164,9 +159,9 @@
     
     // 布局顶部元素
     CGFloat topViewW = ANScreenWidth - MARGIN * 2;
-    CGFloat topViewH = self.height - 2 * itemViewH - MARGIN * 4;
+    CGFloat topViewH = self.height - 2 * itemViewH - MARGIN *2;
     CGFloat topViewX = MARGIN;
-    CGFloat topViewY = MARGIN;
+    CGFloat topViewY = self.height - (itemViewH + MARGIN * 2) - topViewH;
     
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     

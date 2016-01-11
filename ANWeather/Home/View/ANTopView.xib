@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-dI-4HK">
-                    <rect key="frame" x="221" y="230" width="50" height="20"/>
+                    <rect key="frame" x="251" y="230" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="VfT-o2-K8H"/>
                         <constraint firstAttribute="width" constant="50" id="et9-4w-8S8"/>
@@ -21,42 +22,51 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-w3-jGQ" userLabel="MaxMin">
-                    <rect key="frame" x="111" y="225" width="100" height="30"/>
+                    <rect key="frame" x="20" y="225" width="80" height="30"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVe-AQ-EGL">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVe-AQ-EGL">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="5od-Mj-k2Y"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="0.54117647058823526" green="0.78431372549019607" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="5od-Mj-k2Y"/>
+                                </mask>
+                            </variation>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIl-xp-1md">
-                            <rect key="frame" x="50" y="0.0" width="50" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-10°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIl-xp-1md">
+                            <rect key="frame" x="40" y="0.0" width="40" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="ku9-c9-NDE"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="ku9-c9-NDE"/>
+                                </mask>
+                            </variation>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="LVe-AQ-EGL" firstAttribute="leading" secondItem="Fjd-w3-jGQ" secondAttribute="leading" id="9O9-d0-XUj"/>
+                        <constraint firstItem="zIl-xp-1md" firstAttribute="leading" secondItem="Fjd-w3-jGQ" secondAttribute="centerX" id="9ZB-gm-tCF"/>
                         <constraint firstAttribute="height" constant="30" id="D4R-Pl-22U"/>
                         <constraint firstAttribute="trailing" secondItem="zIl-xp-1md" secondAttribute="trailing" id="YmS-ND-sJ5"/>
-                        <constraint firstAttribute="width" constant="100" id="aLE-cu-BYb"/>
+                        <constraint firstAttribute="width" constant="80" id="aLE-cu-BYb"/>
                         <constraint firstAttribute="bottom" secondItem="LVe-AQ-EGL" secondAttribute="bottom" id="ckC-vJ-89K"/>
                         <constraint firstItem="zIl-xp-1md" firstAttribute="top" secondItem="Fjd-w3-jGQ" secondAttribute="top" id="oN1-cx-GAe"/>
+                        <constraint firstAttribute="centerX" secondItem="LVe-AQ-EGL" secondAttribute="trailing" id="shH-Na-ZCB"/>
                         <constraint firstItem="LVe-AQ-EGL" firstAttribute="top" secondItem="Fjd-w3-jGQ" secondAttribute="top" id="uPz-bl-n0g"/>
                         <constraint firstAttribute="bottom" secondItem="zIl-xp-1md" secondAttribute="bottom" id="vgc-an-MfL"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bangwan" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-6J-lJT">
-                    <rect key="frame" x="0.0" y="0.0" width="321" height="225"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-19°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzS-vV-JDs">
                     <rect key="frame" x="0.0" y="125" width="321" height="100"/>
                     <constraints>
@@ -70,26 +80,25 @@
             <constraints>
                 <constraint firstItem="Fjd-w3-jGQ" firstAttribute="top" secondItem="tzS-vV-JDs" secondAttribute="bottom" id="47C-Mi-Z5x"/>
                 <constraint firstItem="pbf-dI-4HK" firstAttribute="leading" secondItem="Fjd-w3-jGQ" secondAttribute="trailing" constant="10" id="A5W-aT-E4a"/>
-                <constraint firstAttribute="trailing" secondItem="zaQ-6J-lJT" secondAttribute="trailing" id="Bo2-lM-08W"/>
                 <constraint firstAttribute="bottom" secondItem="Fjd-w3-jGQ" secondAttribute="bottom" id="Cx2-fp-VOP"/>
+                <constraint firstAttribute="trailing" secondItem="pbf-dI-4HK" secondAttribute="trailing" constant="20" id="DTd-XP-bi5"/>
                 <constraint firstItem="tzS-vV-JDs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="H2z-cl-kcD"/>
+                <constraint firstItem="Fjd-w3-jGQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="KON-fX-QUB"/>
                 <constraint firstAttribute="trailing" secondItem="tzS-vV-JDs" secondAttribute="trailing" id="M8d-il-cws"/>
                 <constraint firstItem="Fjd-w3-jGQ" firstAttribute="centerY" secondItem="pbf-dI-4HK" secondAttribute="centerY" id="OP2-jY-tnK"/>
-                <constraint firstItem="zaQ-6J-lJT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Rrg-Ko-Iup"/>
                 <constraint firstAttribute="centerX" secondItem="Fjd-w3-jGQ" secondAttribute="centerX" id="h7E-Vs-fEW"/>
-                <constraint firstItem="zaQ-6J-lJT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lhT-2z-oRR"/>
-                <constraint firstItem="Fjd-w3-jGQ" firstAttribute="top" secondItem="zaQ-6J-lJT" secondAttribute="bottom" id="mUp-Vu-3Cl"/>
                 <constraint firstAttribute="bottom" secondItem="pbf-dI-4HK" secondAttribute="bottom" id="rRT-0o-sIp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="h7E-Vs-fEW"/>
+                    <exclude reference="A5W-aT-E4a"/>
                     <exclude reference="rRT-0o-sIp"/>
                 </mask>
             </variation>
             <connections>
                 <outlet property="MonthDay" destination="pbf-dI-4HK" id="fZH-cz-OIY"/>
-                <outlet property="backgroundImageView" destination="zaQ-6J-lJT" id="zPJ-EQ-rzX"/>
                 <outlet property="currentTmp" destination="tzS-vV-JDs" id="dbL-hb-BVk"/>
                 <outlet property="maxTmp" destination="zIl-xp-1md" id="xuG-mY-Z2V"/>
                 <outlet property="minTmp" destination="LVe-AQ-EGL" id="o3g-Fr-nyH"/>
@@ -97,7 +106,4 @@
             <point key="canvasLocation" x="276.5" y="237.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="bangwan" width="198" height="268"/>
-    </resources>
 </document>

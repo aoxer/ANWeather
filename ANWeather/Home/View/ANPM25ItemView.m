@@ -8,11 +8,10 @@
 
 #import "ANPM25ItemView.h"
 #import "ANWeatherData.h"
-
+#import "MSSimpleGauge.h"
 
 @interface ANPM25ItemView ()
 
-@property (weak, nonatomic) IBOutlet UIView *GaugeView;
 
 /**
  *  pm2.5的label
@@ -23,6 +22,17 @@
  *  空气质量的label
  */
 @property (weak, nonatomic) IBOutlet UILabel *qltyLabel;
+
+
+/**
+ *  仪表盘view
+ */
+@property (weak, nonatomic) IBOutlet UIView *GaugeView;
+/**
+ *  仪表盘
+ */
+@property (strong, nonatomic) UIView *bigGauge;
+
 
 @end
 
@@ -37,7 +47,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setup];
+//        [self setup];
     }
     return self;
 }
@@ -45,12 +55,23 @@
 
 - (void)setup
 {
-    self.bigGauge = [[MSSimpleGauge alloc] initWithFrame:self.GaugeView.bounds];
-    self.bigGauge.backgroundColor = [UIColor clearColor];
-    self.bigGauge.startAngle = 0;
-    self.bigGauge.endAngle = 360;
-    self.bigGauge.backgroundColor = [UIColor clearColor];
-    [self addSubview:self.bigGauge];
+    // 指针颜色
+//    self.bigGauge.needleView.needleColor = ANRandomColor;
+    // 表盘
+#warning TODO
+//    self.bigGauge = [[MSSimpleGauge alloc] init];
+//    self.bigGauge.backgroundColor = [UIColor clearColor];
+//    self.bigGauge.startAngle = 0;
+//    self.bigGauge.endAngle = 90;
+//    [self.GaugeView addSubview:self.bigGauge];
+ 
+//    self.bigGauge = [[UIView alloc] initWithFrame:self.GaugeView.bounds];
+//    self.bigGauge.backgroundColor = [UIColor clearColor];
+////    self.bigGauge.startAngle = 0;
+////    self.bigGauge.endAngle = 360;
+//    self.bigGauge.backgroundColor = [UIColor clearColor];
+//    [self addSubview:self.bigGauge];
+
 }
 
 + (instancetype)view
@@ -85,22 +106,31 @@
     }
     
     // 指针
-    [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
-    if (pm2_5 <= 50) {
-        self.bigGauge.fillArcFillColor = [UIColor greenColor];
-    } else if (pm2_5 > 50 && pm2_5 <= 100) {
-        self.bigGauge.fillArcFillColor = [UIColor yellowColor];
-    } else if (pm2_5 > 100 && pm2_5 <= 150) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 1);
-    } else if (pm2_5 > 150 && pm2_5 <= 200) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 1);
-    } else if (pm2_5 > 200 && pm2_5 <= 300) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 1);
-    }  else if (pm2_5 > 300) {
-        self.bigGauge.fillArcFillColor = [UIColor purpleColor];
-    }
+//    [self.bigGauge setValue:130 animated:YES];
+//    self.bigGauge.fillArcFillColor = ANRandomColor;
+//    [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
+//    if (pm2_5 <= 50) {
+//        self.bigGauge.fillArcFillColor = [UIColor greenColor];
+//    } else if (pm2_5 > 50 && pm2_5 <= 100) {
+//        self.bigGauge.fillArcFillColor = [UIColor yellowColor];
+//    } else if (pm2_5 > 100 && pm2_5 <= 150) {
+//        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 1);
+//    } else if (pm2_5 > 150 && pm2_5 <= 200) {
+//        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 1);
+//    } else if (pm2_5 > 200 && pm2_5 <= 300) {
+//        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 1);
+//    }  else if (pm2_5 > 300) {
+//        self.bigGauge.fillArcFillColor = [UIColor purpleColor];
+//    }
 }
 
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+//    self.bigGauge.frame = self.GaugeView.bounds;
+}
 @end
 
 

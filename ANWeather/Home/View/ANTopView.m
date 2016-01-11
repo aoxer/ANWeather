@@ -12,7 +12,7 @@
 @interface ANTopView ()
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+//@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *currentTmp;
 @property (weak, nonatomic) IBOutlet UILabel *minTmp;
 @property (weak, nonatomic) IBOutlet UILabel *maxTmp;
@@ -37,7 +37,7 @@
 }
 - (void)setup
 {
-    self.backgroundImageView.clipsToBounds = YES;
+//    self.backgroundImageView.clipsToBounds = YES;
 }
 
 + (instancetype)view

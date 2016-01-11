@@ -4,58 +4,54 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANPM25ItemView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="oKd-6L-Ydu" customClass="ANPM25ItemView">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ANPM25ItemView">
+            <rect key="frame" x="0.0" y="0.0" width="112" height="163"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空气质量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWB-4O-axn">
-                    <rect key="frame" x="0.0" y="129" width="150" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="pm2.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUz-ll-boQ">
+                    <rect key="frame" x="0.0" y="180" width="222" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="sN2-J6-qAc"/>
+                        <constraint firstAttribute="height" constant="21" id="hMc-H0-OgT"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jgu-Ml-ikn">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="108"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="空气质量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHM-bE-lnO">
+                    <rect key="frame" x="0.0" y="201" width="222" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="78U-Gb-gMQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Es1-Qi-o7f">
+                    <rect key="frame" x="0.0" y="0.0" width="222" height="180"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C6-JU-TD1">
-                    <rect key="frame" x="0.0" y="108" width="150" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4C6-JU-TD1" firstAttribute="top" secondItem="jgu-Ml-ikn" secondAttribute="bottom" id="3XZ-g0-UTc"/>
-                <constraint firstItem="jgu-Ml-ikn" firstAttribute="top" secondItem="oKd-6L-Ydu" secondAttribute="top" id="4cQ-7M-Pve"/>
-                <constraint firstAttribute="trailing" secondItem="eWB-4O-axn" secondAttribute="trailing" id="7JS-Ja-2NT"/>
-                <constraint firstItem="eWB-4O-axn" firstAttribute="top" secondItem="4C6-JU-TD1" secondAttribute="bottom" id="OcF-wP-ZRI"/>
-                <constraint firstItem="jgu-Ml-ikn" firstAttribute="top" secondItem="oKd-6L-Ydu" secondAttribute="top" id="Ov1-a1-q12"/>
-                <constraint firstItem="eWB-4O-axn" firstAttribute="leading" secondItem="oKd-6L-Ydu" secondAttribute="leading" id="RPN-LO-MQ0"/>
-                <constraint firstAttribute="bottom" secondItem="eWB-4O-axn" secondAttribute="bottom" id="YFp-EI-4kx"/>
-                <constraint firstItem="eWB-4O-axn" firstAttribute="top" secondItem="jgu-Ml-ikn" secondAttribute="bottom" id="fdT-M9-ysn"/>
-                <constraint firstItem="jgu-Ml-ikn" firstAttribute="leading" secondItem="oKd-6L-Ydu" secondAttribute="leading" id="iwr-fd-Feh"/>
-                <constraint firstAttribute="trailing" secondItem="4C6-JU-TD1" secondAttribute="trailing" id="izj-IX-JwV"/>
-                <constraint firstItem="4C6-JU-TD1" firstAttribute="leading" secondItem="oKd-6L-Ydu" secondAttribute="leading" id="jXY-ba-ghC"/>
-                <constraint firstAttribute="trailing" secondItem="jgu-Ml-ikn" secondAttribute="trailing" id="xfo-Kb-Vet"/>
+                <constraint firstItem="SUz-ll-boQ" firstAttribute="top" secondItem="Es1-Qi-o7f" secondAttribute="bottom" id="0ce-l8-4Xv"/>
+                <constraint firstAttribute="trailing" secondItem="Es1-Qi-o7f" secondAttribute="trailing" id="1G7-he-pQh"/>
+                <constraint firstItem="NHM-bE-lnO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Kv-ca-Np6"/>
+                <constraint firstAttribute="trailing" secondItem="SUz-ll-boQ" secondAttribute="trailing" id="3jX-DC-tRE"/>
+                <constraint firstItem="NHM-bE-lnO" firstAttribute="top" secondItem="SUz-ll-boQ" secondAttribute="bottom" id="G9f-7k-C82"/>
+                <constraint firstAttribute="bottom" secondItem="NHM-bE-lnO" secondAttribute="bottom" id="S4u-2a-rDF"/>
+                <constraint firstItem="Es1-Qi-o7f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TEe-zC-ddQ"/>
+                <constraint firstItem="Es1-Qi-o7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WkS-Qh-Z2P"/>
+                <constraint firstItem="SUz-ll-boQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kRf-l6-IqD"/>
+                <constraint firstAttribute="trailing" secondItem="NHM-bE-lnO" secondAttribute="trailing" id="sTM-Sn-jBd"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="fdT-M9-ysn"/>
-                </mask>
-            </variation>
             <connections>
-                <outlet property="GaugeView" destination="jgu-Ml-ikn" id="f2E-Va-Tql"/>
-                <outlet property="pm2_5" destination="4C6-JU-TD1" id="q3u-RZ-iYX"/>
-                <outlet property="qltyLabel" destination="eWB-4O-axn" id="H5k-8S-Gum"/>
+                <outlet property="GaugeView" destination="Es1-Qi-o7f" id="IR2-nJ-aiS"/>
+                <outlet property="pm2_5" destination="SUz-ll-boQ" id="DhZ-ij-pUU"/>
+                <outlet property="qltyLabel" destination="NHM-bE-lnO" id="I5m-1s-xoK"/>
             </connections>
-            <point key="canvasLocation" x="61" y="234"/>
+            <point key="canvasLocation" x="-124" y="7.5"/>
         </view>
     </objects>
 </document>

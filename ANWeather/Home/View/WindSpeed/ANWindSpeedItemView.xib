@@ -7,11 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="y0M-ca-ebG" customClass="ANWindSpeedItemView">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="297" height="410"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WindSpeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-fP-PLS">
-                    <rect key="frame" x="0.0" y="129" width="150" height="21"/>
+                    <rect key="frame" x="0.0" y="389" width="297" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Qgt-iV-LEA"/>
                     </constraints>
@@ -20,7 +20,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOC-SV-vYf" customClass="ANWindmill">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
+                    <rect key="frame" x="0.0" y="0.0" width="297" height="389"/>
                 </view>
             </subviews>
             <constraints>
@@ -36,9 +36,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="windDirLabel" destination="Rda-fP-PLS" id="9Kf-5n-GLs"/>
-                <outlet property="windmill" destination="XOC-SV-vYf" id="KCe-Sc-3le"/>
+                <outlet property="windmill" destination="XOC-SV-vYf" id="wOc-2r-b04"/>
             </connections>
-            <point key="canvasLocation" x="252" y="191"/>
+            <point key="canvasLocation" x="325.5" y="321"/>
         </view>
     </objects>
 </document>

@@ -42,6 +42,13 @@
 		003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003C98481C32BA3A00160D91 /* ANRightTableViewController.m */; };
 		00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492A611C4230CD003296FB /* ANDaysWeatherView.m */; };
 		00492AA01C4285F2003296FB /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492A9F1C4285F2003296FB /* UIImage+Blur.m */; };
+		00492AA21C4362E3003296FB /* ANPM25ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00492AA11C4362E3003296FB /* ANPM25ItemView.xib */; };
+		00492AE51C4367AF003296FB /* MSAnnotatedGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492AD81C4367AF003296FB /* MSAnnotatedGauge.m */; };
+		00492AE61C4367AF003296FB /* MSArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492ADA1C4367AF003296FB /* MSArcLayer.m */; };
+		00492AE71C4367AF003296FB /* MSGradientArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492ADD1C4367AF003296FB /* MSGradientArcLayer.m */; };
+		00492AE81C4367AF003296FB /* MSNeedleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492ADF1C4367AF003296FB /* MSNeedleView.m */; };
+		00492AE91C4367AF003296FB /* MSRangeGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492AE11C4367AF003296FB /* MSRangeGauge.m */; };
+		00492AEA1C4367AF003296FB /* MSSimpleGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492AE31C4367AF003296FB /* MSSimpleGauge.m */; };
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
@@ -77,7 +84,6 @@
 		009033FE1C2E2FA3001FFED3 /* ANWeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033E51C2E2FA3001FFED3 /* ANWeatherData.m */; };
 		009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033E71C2E2FA3001FFED3 /* ANWindM.m */; };
 		009034001C2E2FA3001FFED3 /* ANPM25ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */; };
-		009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */; };
 		009034041C2E2FA3001FFED3 /* ANWeatherItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */; };
 		009034051C2E2FA3001FFED3 /* ANWeatherItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */; };
 		009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033F31C2E2FA3001FFED3 /* ANWeatherView.m */; };
@@ -110,16 +116,8 @@
 		0095118D1C3D84C500EA9FDC /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511731C3D84C500EA9FDC /* UIScrollView+MJExtension.m */; };
 		0095118E1C3D84C500EA9FDC /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511751C3D84C500EA9FDC /* UIScrollView+MJRefresh.m */; };
 		0095118F1C3D84C500EA9FDC /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511771C3D84C500EA9FDC /* UIView+MJExtension.m */; };
-		009511E71C3D854D00EA9FDC /* MSAnnotatedGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511DA1C3D854D00EA9FDC /* MSAnnotatedGauge.m */; };
-		009511E81C3D854D00EA9FDC /* MSArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511DC1C3D854D00EA9FDC /* MSArcLayer.m */; };
-		009511E91C3D854D00EA9FDC /* MSGradientArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511DF1C3D854D00EA9FDC /* MSGradientArcLayer.m */; };
-		009511EA1C3D854D00EA9FDC /* MSNeedleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511E11C3D854D00EA9FDC /* MSNeedleView.m */; };
-		009511EB1C3D854D00EA9FDC /* MSRangeGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511E31C3D854D00EA9FDC /* MSRangeGauge.m */; };
-		009511EC1C3D854D00EA9FDC /* MSSimpleGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511E51C3D854D00EA9FDC /* MSSimpleGauge.m */; };
 		009511EE1C3D86D200EA9FDC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009511ED1C3D86D200EA9FDC /* QuartzCore.framework */; };
 		009511F01C3D86EC00EA9FDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */; };
-		0095126D1C3E572700EA9FDC /* ANHumItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0095126C1C3E572700EA9FDC /* ANHumItemView.m */; };
-		0095126F1C3E574100EA9FDC /* ANHumItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0095126E1C3E574100EA9FDC /* ANHumItemView.xib */; };
 		00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CE71C33846200AD5B5C /* ANAboutViewController.m */; };
 		00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */; };
 		00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */; };
@@ -217,6 +215,21 @@
 		00492A611C4230CD003296FB /* ANDaysWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDaysWeatherView.m; sourceTree = "<group>"; };
 		00492A9E1C4285F2003296FB /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Blur.h"; path = "ANWeather/Category/UIImage+Blur.h"; sourceTree = "<group>"; };
 		00492A9F1C4285F2003296FB /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Blur.m"; path = "ANWeather/Category/UIImage+Blur.m"; sourceTree = "<group>"; };
+		00492AA11C4362E3003296FB /* ANPM25ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPM25ItemView.xib; sourceTree = "<group>"; };
+		00492AD71C4367AF003296FB /* MSAnnotatedGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAnnotatedGauge.h; sourceTree = "<group>"; };
+		00492AD81C4367AF003296FB /* MSAnnotatedGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAnnotatedGauge.m; sourceTree = "<group>"; };
+		00492AD91C4367AF003296FB /* MSArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSArcLayer.h; sourceTree = "<group>"; };
+		00492ADA1C4367AF003296FB /* MSArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSArcLayer.m; sourceTree = "<group>"; };
+		00492ADB1C4367AF003296FB /* MSArcLayerSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSArcLayerSubclass.h; sourceTree = "<group>"; };
+		00492ADC1C4367AF003296FB /* MSGradientArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGradientArcLayer.h; sourceTree = "<group>"; };
+		00492ADD1C4367AF003296FB /* MSGradientArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGradientArcLayer.m; sourceTree = "<group>"; };
+		00492ADE1C4367AF003296FB /* MSNeedleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNeedleView.h; sourceTree = "<group>"; };
+		00492ADF1C4367AF003296FB /* MSNeedleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNeedleView.m; sourceTree = "<group>"; };
+		00492AE01C4367AF003296FB /* MSRangeGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRangeGauge.h; sourceTree = "<group>"; };
+		00492AE11C4367AF003296FB /* MSRangeGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRangeGauge.m; sourceTree = "<group>"; };
+		00492AE21C4367AF003296FB /* MSSimpleGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSimpleGauge.h; sourceTree = "<group>"; };
+		00492AE31C4367AF003296FB /* MSSimpleGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSimpleGauge.m; sourceTree = "<group>"; };
+		00492AE41C4367AF003296FB /* MSSimpleGaugeSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSimpleGaugeSubclass.h; sourceTree = "<group>"; };
 		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
 		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
 		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
@@ -283,7 +296,6 @@
 		009033E71C2E2FA3001FFED3 /* ANWindM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindM.m; sourceTree = "<group>"; };
 		009033E91C2E2FA3001FFED3 /* ANPM25ItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPM25ItemView.h; sourceTree = "<group>"; };
 		009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPM25ItemView.m; sourceTree = "<group>"; };
-		009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPM25ItemView.xib; sourceTree = "<group>"; };
 		009033EF1C2E2FA3001FFED3 /* ANWeatherItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWeatherItemView.h; sourceTree = "<group>"; };
 		009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWeatherItemView.m; sourceTree = "<group>"; };
 		009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWeatherItemView.xib; sourceTree = "<group>"; };
@@ -346,25 +358,8 @@
 		009511751C3D84C500EA9FDC /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		009511761C3D84C500EA9FDC /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		009511771C3D84C500EA9FDC /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		009511D91C3D854D00EA9FDC /* MSAnnotatedGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAnnotatedGauge.h; sourceTree = "<group>"; };
-		009511DA1C3D854D00EA9FDC /* MSAnnotatedGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAnnotatedGauge.m; sourceTree = "<group>"; };
-		009511DB1C3D854D00EA9FDC /* MSArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSArcLayer.h; sourceTree = "<group>"; };
-		009511DC1C3D854D00EA9FDC /* MSArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSArcLayer.m; sourceTree = "<group>"; };
-		009511DD1C3D854D00EA9FDC /* MSArcLayerSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSArcLayerSubclass.h; sourceTree = "<group>"; };
-		009511DE1C3D854D00EA9FDC /* MSGradientArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGradientArcLayer.h; sourceTree = "<group>"; };
-		009511DF1C3D854D00EA9FDC /* MSGradientArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGradientArcLayer.m; sourceTree = "<group>"; };
-		009511E01C3D854D00EA9FDC /* MSNeedleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNeedleView.h; sourceTree = "<group>"; };
-		009511E11C3D854D00EA9FDC /* MSNeedleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNeedleView.m; sourceTree = "<group>"; };
-		009511E21C3D854D00EA9FDC /* MSRangeGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRangeGauge.h; sourceTree = "<group>"; };
-		009511E31C3D854D00EA9FDC /* MSRangeGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRangeGauge.m; sourceTree = "<group>"; };
-		009511E41C3D854D00EA9FDC /* MSSimpleGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSimpleGauge.h; sourceTree = "<group>"; };
-		009511E51C3D854D00EA9FDC /* MSSimpleGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSimpleGauge.m; sourceTree = "<group>"; };
-		009511E61C3D854D00EA9FDC /* MSSimpleGaugeSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSimpleGaugeSubclass.h; sourceTree = "<group>"; };
 		009511ED1C3D86D200EA9FDC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0095126B1C3E572700EA9FDC /* ANHumItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANHumItemView.h; sourceTree = "<group>"; };
-		0095126C1C3E572700EA9FDC /* ANHumItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHumItemView.m; sourceTree = "<group>"; };
-		0095126E1C3E574100EA9FDC /* ANHumItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANHumItemView.xib; sourceTree = "<group>"; };
 		0098E79E1C3F819700499D33 /* AddedFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddedFont.h; sourceTree = "<group>"; };
 		0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		00B98CE61C33846200AD5B5C /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
@@ -518,7 +513,7 @@
 		002215691C2CE78500E665F6 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				009511D81C3D854D00EA9FDC /* Gauges */,
+				00492AD61C4367AF003296FB /* Gauges */,
 				0095113F1C3D84C400EA9FDC /* fmdb */,
 				0095114B1C3D84C500EA9FDC /* MJRefresh */,
 				006C2E171C3C1547000832FF /* UMSocial_Sdk_4.2 */,
@@ -668,6 +663,27 @@
 				004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		00492AD61C4367AF003296FB /* Gauges */ = {
+			isa = PBXGroup;
+			children = (
+				00492AD71C4367AF003296FB /* MSAnnotatedGauge.h */,
+				00492AD81C4367AF003296FB /* MSAnnotatedGauge.m */,
+				00492AD91C4367AF003296FB /* MSArcLayer.h */,
+				00492ADA1C4367AF003296FB /* MSArcLayer.m */,
+				00492ADB1C4367AF003296FB /* MSArcLayerSubclass.h */,
+				00492ADC1C4367AF003296FB /* MSGradientArcLayer.h */,
+				00492ADD1C4367AF003296FB /* MSGradientArcLayer.m */,
+				00492ADE1C4367AF003296FB /* MSNeedleView.h */,
+				00492ADF1C4367AF003296FB /* MSNeedleView.m */,
+				00492AE01C4367AF003296FB /* MSRangeGauge.h */,
+				00492AE11C4367AF003296FB /* MSRangeGauge.m */,
+				00492AE21C4367AF003296FB /* MSSimpleGauge.h */,
+				00492AE31C4367AF003296FB /* MSSimpleGauge.m */,
+				00492AE41C4367AF003296FB /* MSSimpleGaugeSubclass.h */,
+			);
+			path = Gauges;
 			sourceTree = "<group>";
 		};
 		004ED9FD1C3ABB32001614A4 /* Model */ = {
@@ -837,10 +853,7 @@
 				009033F31C2E2FA3001FFED3 /* ANWeatherView.m */,
 				009033E91C2E2FA3001FFED3 /* ANPM25ItemView.h */,
 				009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */,
-				009033EB1C2E2FA3001FFED3 /* ANPM25ItemView.xib */,
-				0095126B1C3E572700EA9FDC /* ANHumItemView.h */,
-				0095126C1C3E572700EA9FDC /* ANHumItemView.m */,
-				0095126E1C3E574100EA9FDC /* ANHumItemView.xib */,
+				00492AA11C4362E3003296FB /* ANPM25ItemView.xib */,
 				009033EF1C2E2FA3001FFED3 /* ANWeatherItemView.h */,
 				009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */,
 				009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */,
@@ -969,28 +982,6 @@
 				0095116D1C3D84C500EA9FDC /* MJRefreshStateHeader.m */,
 			);
 			path = Header;
-			sourceTree = "<group>";
-		};
-		009511D81C3D854D00EA9FDC /* Gauges */ = {
-			isa = PBXGroup;
-			children = (
-				009511D91C3D854D00EA9FDC /* MSAnnotatedGauge.h */,
-				009511DA1C3D854D00EA9FDC /* MSAnnotatedGauge.m */,
-				009511DB1C3D854D00EA9FDC /* MSArcLayer.h */,
-				009511DC1C3D854D00EA9FDC /* MSArcLayer.m */,
-				009511DD1C3D854D00EA9FDC /* MSArcLayerSubclass.h */,
-				009511DE1C3D854D00EA9FDC /* MSGradientArcLayer.h */,
-				009511DF1C3D854D00EA9FDC /* MSGradientArcLayer.m */,
-				009511E01C3D854D00EA9FDC /* MSNeedleView.h */,
-				009511E11C3D854D00EA9FDC /* MSNeedleView.m */,
-				009511E21C3D854D00EA9FDC /* MSRangeGauge.h */,
-				009511E31C3D854D00EA9FDC /* MSRangeGauge.m */,
-				009511E41C3D854D00EA9FDC /* MSSimpleGauge.h */,
-				009511E51C3D854D00EA9FDC /* MSSimpleGauge.m */,
-				009511E61C3D854D00EA9FDC /* MSSimpleGaugeSubclass.h */,
-			);
-			name = Gauges;
-			path = ANWeather/Libs/Gauges;
 			sourceTree = "<group>";
 		};
 		00B98CE41C33846200AD5B5C /* About */ = {
@@ -1282,6 +1273,7 @@
 			files = (
 				006C2E361C3C1547000832FF /* UMSCommentDetailController.xib in Resources */,
 				006C2E391C3C1547000832FF /* UMShareEditViewController.xib in Resources */,
+				00492AA21C4362E3003296FB /* ANPM25ItemView.xib in Resources */,
 				005B1AF71C40FD32001F6CF9 /* ANWindmill.xib in Resources */,
 				004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */,
 				00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */,
@@ -1289,10 +1281,8 @@
 				006C2E3D1C3C1547000832FF /* UMSShareListController.xib in Resources */,
 				006C2E371C3C1547000832FF /* UMSCommentInputController.xib in Resources */,
 				00224B7F1C3C0373003BA1E6 /* ANCareController.xib in Resources */,
-				0095126F1C3E574100EA9FDC /* ANHumItemView.xib in Resources */,
 				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
 				0095112F1C3CDD4300EA9FDC /* area.json in Resources */,
-				009034011C2E2FA3001FFED3 /* ANPM25ItemView.xib in Resources */,
 				005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */,
 				00B98DAE1C3527EE00AD5B5C /* ANTopView.xib in Resources */,
 				006C2E3C1C3C1547000832FF /* UMSnsAccountViewController.xib in Resources */,
@@ -1332,15 +1322,15 @@
 				002216001C2CE8E500E665F6 /* NSObject+MJKeyValue.m in Sources */,
 				002215F01C2CE8E500E665F6 /* AFHTTPRequestOperationManager.m in Sources */,
 				002215EF1C2CE8E500E665F6 /* AFHTTPRequestOperation.m in Sources */,
-				009511E81C3D854D00EA9FDC /* MSArcLayer.m in Sources */,
+				00492AE61C4367AF003296FB /* MSArcLayer.m in Sources */,
 				00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */,
 				009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */,
 				009511881C3D84C500EA9FDC /* MJRefreshGifHeader.m in Sources */,
+				00492AE81C4367AF003296FB /* MSNeedleView.m in Sources */,
 				00492AA01C4285F2003296FB /* UIImage+Blur.m in Sources */,
-				009511EA1C3D854D00EA9FDC /* MSNeedleView.m in Sources */,
 				009511841C3D84C500EA9FDC /* MJRefreshAutoStateFooter.m in Sources */,
+				00492AE71C4367AF003296FB /* MSGradientArcLayer.m in Sources */,
 				002215C21C2CE8CE00E665F6 /* UIView+Extension.m in Sources */,
-				009511E91C3D854D00EA9FDC /* MSGradientArcLayer.m in Sources */,
 				003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */,
 				0095117B1C3D84C500EA9FDC /* FMDatabaseQueue.m in Sources */,
 				009511811C3D84C500EA9FDC /* MJRefreshHeader.m in Sources */,
@@ -1352,7 +1342,6 @@
 				00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */,
 				00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
-				0095126D1C3E572700EA9FDC /* ANHumItemView.m in Sources */,
 				009511781C3D84C500EA9FDC /* FMDatabase.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,
 				002215FF1C2CE8E500E665F6 /* NSObject+MJCoding.m in Sources */,
@@ -1363,8 +1352,8 @@
 				002215F11C2CE8E500E665F6 /* AFHTTPSessionManager.m in Sources */,
 				009033CD1C2E2F53001FFED3 /* UIViewController+RESideMenu.m in Sources */,
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
-				009511E71C3D854D00EA9FDC /* MSAnnotatedGauge.m in Sources */,
 				00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */,
+				00492AE51C4367AF003296FB /* MSAnnotatedGauge.m in Sources */,
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
 				002215F41C2CE8E500E665F6 /* AFURLConnectionOperation.m in Sources */,
@@ -1388,7 +1377,7 @@
 				0095117F1C3D84C500EA9FDC /* MJRefreshComponent.m in Sources */,
 				009511801C3D84C500EA9FDC /* MJRefreshFooter.m in Sources */,
 				002215F91C2CE8E500E665F6 /* MJExtensionConst.m in Sources */,
-				009511EB1C3D854D00EA9FDC /* MSRangeGauge.m in Sources */,
+				00492AE91C4367AF003296FB /* MSRangeGauge.m in Sources */,
 				009033F91C2E2FA3001FFED3 /* ANCity.m in Sources */,
 				009033CC1C2E2F53001FFED3 /* RESideMenu.m in Sources */,
 				00B98D9B1C341DD400AD5B5C /* ANConst.m in Sources */,
@@ -1415,7 +1404,7 @@
 				0022152A1C2CE63900E665F6 /* ANWeather.xcdatamodeld in Sources */,
 				002215FB1C2CE8E500E665F6 /* MJProperty.m in Sources */,
 				0095118A1C3D84C500EA9FDC /* MJRefreshStateHeader.m in Sources */,
-				009511EC1C3D854D00EA9FDC /* MSSimpleGauge.m in Sources */,
+				00492AEA1C4367AF003296FB /* MSSimpleGauge.m in Sources */,
 				009511351C3CE23800EA9FDC /* ANCityM.m in Sources */,
 				002215F21C2CE8E500E665F6 /* AFNetworkReachabilityManager.m in Sources */,
 			);
