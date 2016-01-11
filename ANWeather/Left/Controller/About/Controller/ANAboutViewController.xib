@@ -24,7 +24,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="872-XM-sDU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lake" translatesAutoresizingMaskIntoConstraints="NO" id="872-XM-sDU">
                     <rect key="frame" x="110" y="134" width="100" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="5gg-Wn-Ote"/>
@@ -46,6 +46,6 @@
         </scrollView>
     </objects>
     <resources>
-        <image name="location" width="100" height="135"/>
+        <image name="lake" width="1212" height="1884"/>
     </resources>
 </document>

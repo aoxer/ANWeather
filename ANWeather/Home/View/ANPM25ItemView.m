@@ -27,11 +27,11 @@
 /**
  *  仪表盘view
  */
-@property (weak, nonatomic) IBOutlet UIView *GaugeView;
+@property (weak, nonatomic) IBOutlet UIView *gaugeView;
 /**
  *  仪表盘
  */
-@property (strong, nonatomic) UIView *bigGauge;
+@property (strong, nonatomic)MSSimpleGauge *bigGauge;
 
 
 @end
@@ -41,54 +41,57 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setup];
+    [self superview];
 }
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        [self setup];
+        [self setup];
+
     }
     return self;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    [self setup];
 }
 
 
 - (void)setup
 {
-    // 指针颜色
-//    self.bigGauge.needleView.needleColor = ANRandomColor;
-    // 表盘
-#warning TODO
-//    self.bigGauge = [[MSSimpleGauge alloc] init];
-//    self.bigGauge.backgroundColor = [UIColor clearColor];
-//    self.bigGauge.startAngle = 0;
-//    self.bigGauge.endAngle = 90;
-//    [self.GaugeView addSubview:self.bigGauge];
- 
-//    self.bigGauge = [[UIView alloc] initWithFrame:self.GaugeView.bounds];
-//    self.bigGauge.backgroundColor = [UIColor clearColor];
-////    self.bigGauge.startAngle = 0;
-////    self.bigGauge.endAngle = 360;
-//    self.bigGauge.backgroundColor = [UIColor clearColor];
-//    [self addSubview:self.bigGauge];
-
+    if (!_bigGauge) {
+        _bigGauge = [[MSSimpleGauge alloc] initWithFrame:_gaugeView.frame];
+        _bigGauge.backgroundColor = ANClearColor;
+        _bigGauge.startAngle = 0;
+        _bigGauge.endAngle = 180;
+        [self.gaugeView addSubview:_bigGauge];
+        
+    }
 }
 
 + (instancetype)view
 {
-    
     return [[[NSBundle mainBundle] loadNibNamed:@"ANPM25ItemView" owner:nil options:0 ] lastObject];
     
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    ANLog(@"%@", NSStringFromClass([self class]));
+
+}
+
+- (void)setBigGauge:(MSSimpleGauge *)bigGauge
+{
+
 }
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
+    
+    
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
 
     //pm2.5
@@ -106,31 +109,37 @@
     }
     
     // 指针
-//    [self.bigGauge setValue:130 animated:YES];
-//    self.bigGauge.fillArcFillColor = ANRandomColor;
-//    [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
-//    if (pm2_5 <= 50) {
-//        self.bigGauge.fillArcFillColor = [UIColor greenColor];
-//    } else if (pm2_5 > 50 && pm2_5 <= 100) {
-//        self.bigGauge.fillArcFillColor = [UIColor yellowColor];
-//    } else if (pm2_5 > 100 && pm2_5 <= 150) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 1);
-//    } else if (pm2_5 > 150 && pm2_5 <= 200) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 1);
-//    } else if (pm2_5 > 200 && pm2_5 <= 300) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 1);
-//    }  else if (pm2_5 > 300) {
-//        self.bigGauge.fillArcFillColor = [UIColor purpleColor];
-//    }
-}
+    [self.bigGauge setValue:pm2_5 animated:YES];
+    self.bigGauge.fillArcFillColor = ANRandomColor;
+    
+    [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
+    if (pm2_5 <= 50) {
+        self.bigGauge.fillArcFillColor = [UIColor greenColor];
+    } else if (pm2_5 > 50 && pm2_5 <= 100) {
+        self.bigGauge.fillArcFillColor = [UIColor yellowColor];
+    } else if (pm2_5 > 100 && pm2_5 <= 150) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 1);
+    } else if (pm2_5 > 150 && pm2_5 <= 200) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 1);
+    } else if (pm2_5 > 200 && pm2_5 <= 300) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 1);
+    }  else if (pm2_5 > 300) {
+        self.bigGauge.fillArcFillColor = [UIColor purpleColor];
+    }
+    
+    [self setNeedsDisplay];
 
+}
 
 - (void)layoutSubviews
 {
-    [super layoutSubviews];
     
-//    self.bigGauge.frame = self.GaugeView.bounds;
+    self.bigGauge.frame = self.gaugeView.bounds;
+    
 }
+
+
+
 @end
 
 

@@ -5,7 +5,7 @@
 //  Created by a on 15/12/24.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
-
+#import <Accelerate/Accelerate.h>
 #import "ViewController.h"
 #import "AFNetworking.h"
 #import "MJExtension.h"
@@ -44,6 +44,7 @@
 @property (strong, nonatomic)CLLocationManager *locationMgr;
 @property (strong, nonatomic)CLGeocoder *geocoder;
 
+@property (strong, nonatomic)UIImageView *backGroungImageView;
 
 
 @end
@@ -95,7 +96,7 @@
 {
     [super viewDidAppear:animated];
     
-    [self judgeCity];
+//    [self judgeCity];
  
 }
 
@@ -104,21 +105,22 @@
  *  初始化tableView
  */
 - (void)setupTableView
-{   self.tableView.backgroundColor = ANColor(131, 131, 171, 1);
-    self.tableView.contentSize = CGSizeMake(ANScreenWidth, ANScreenHeight*2);
+{
+//    _backGroungImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lake"]];
+    
+    self.tableView.backgroundColor = ANColor(131, 131, 171, 1);
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 300, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.tableView.backgroundColor = [UIColor lightGrayColor];
-    // MJRefresh
-    __weak typeof(self)weakSelf = self;
+    self.tableView.backgroundView = self.backGroungImageView;
+    
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         // 加载天气
         if (self.selectedCity.length != 0) { // 如果有已选城市 加载已选城市
-            [weakSelf sendRequestWithCity:self.selectedCity];
+            [self sendRequestWithCity:self.selectedCity];
         } else { // 没有则加载上次定位城市
-            [weakSelf sendRequestWithCity:self.city];
+            [self sendRequestWithCity:self.city];
         }
        
     }];
@@ -129,9 +131,9 @@
  */
 - (void)setupNavigaitonItem
 {
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"navigationbar-sidebar" andImageNameHighlight:@"navigationbar-sidebar"];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"add_element" andImageNameHighlight:@"add_element"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
     self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
     // 设置导航栏文字颜色
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];
@@ -503,6 +505,15 @@
     }
     return _weatherView;
 }
+
+- (UIImageView *)backGroungImageView
+{
+    if (!_backGroungImageView) {
+        _backGroungImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lake"]];
+    }
+    return _backGroungImageView;
+}
+
 - (void)dealloc
 {
 //    [ANNotificationCenter removeObserver:self];
@@ -512,7 +523,39 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 20);
-
+    
+    ANLog(@"%@", NSStringFromCGSize(self.weatherView.size));
 }
 
+
+
+#pragma scrollViewDelegate
+#warning TODO 模糊
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
+//    blurFilter.blurRadiusInPixels = 2.0;
+//    UIImage *backGroundImage = [UIImage imageNamed:@"lake"];
+//   self.backGroungImageView.image = [blurFilter imageByFilteringImage:backGroundImage];
+    
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

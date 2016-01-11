@@ -48,6 +48,14 @@
     return  self;
 }
 
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+   
+    
+}
+
 
 /**
  *  懒加载数组
@@ -128,6 +136,13 @@
     daysWeatherView.backgroundColor = ANColor(100, 100, 100, 0.5);
     [self addSubview:daysWeatherView];
     self.daysWeatherView = daysWeatherView;
+    
+    [self.items enumerateObjectsUsingBlock:^(UIView *item, NSUInteger idx, BOOL *stop) {
+        item.layer.shadowColor = [UIColor blackColor].CGColor;
+        item.layer.shadowOpacity = 1;
+        item.layer.shadowRadius = 5;
+        item.layer.shadowOffset = CGSizeMake(3, 3);
+    }];
  
 }
 

@@ -16,14 +16,14 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="sk5-ku-FPe"/>
                     </constraints>
-                    <state key="normal" image="delete_link">
+                    <state key="normal" image="shanchu-huizhi">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="delCity" destination="1NB-3T-bVQ" eventType="touchUpInside" id="TvF-Qs-GIW"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="zBu-dd-dtV">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city" translatesAutoresizingMaskIntoConstraints="NO" id="zBu-dd-dtV">
                     <rect key="frame" x="150" y="0.0" width="20" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="THb-TT-ciD"/>
@@ -60,7 +60,7 @@
         </view>
     </objects>
     <resources>
-        <image name="delete_link" width="14" height="18"/>
-        <image name="location" width="30" height="30"/>
+        <image name="city" width="29" height="29"/>
+        <image name="shanchu-huizhi" width="17" height="17"/>
     </resources>
 </document>

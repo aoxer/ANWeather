@@ -12,7 +12,7 @@
 
 - (void)setup
 {
-    _needleColor = [UIColor blackColor];
+    _needleColor = ANColor(233, 233, 233, 0.7);
 }
 
 - (id)initWithFrame:(CGRect)frame

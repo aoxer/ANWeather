@@ -49,6 +49,11 @@
 		00492B041C438B5D003296FB /* MSNeedleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492AFB1C438B5D003296FB /* MSNeedleView.m */; };
 		00492B051C438B5D003296FB /* MSRangeGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492AFD1C438B5D003296FB /* MSRangeGauge.m */; };
 		00492B061C438B5D003296FB /* MSSimpleGauge.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492AFF1C438B5D003296FB /* MSSimpleGauge.m */; };
+		00492B081C43A84C003296FB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00492B071C43A84C003296FB /* Accelerate.framework */; };
+		00493D5E1C43D3F0003296FB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00493D5D1C43D3F0003296FB /* OpenGLES.framework */; };
+		00493D631C43D79A003296FB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00493D591C43D3C4003296FB /* CoreMedia.framework */; };
+		00493D641C43D7A1003296FB /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00493D5B1C43D3DD003296FB /* CoreVideo.framework */; };
+		00493D651C43D7B7003296FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00493D611C43D675003296FB /* AVFoundation.framework */; };
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
@@ -230,6 +235,11 @@
 		00492AFE1C438B5D003296FB /* MSSimpleGauge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSimpleGauge.h; sourceTree = "<group>"; };
 		00492AFF1C438B5D003296FB /* MSSimpleGauge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSimpleGauge.m; sourceTree = "<group>"; };
 		00492B001C438B5D003296FB /* MSSimpleGaugeSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSimpleGaugeSubclass.h; sourceTree = "<group>"; };
+		00492B071C43A84C003296FB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00493D591C43D3C4003296FB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		00493D5B1C43D3DD003296FB /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		00493D5D1C43D3F0003296FB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		00493D611C43D675003296FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		004ED9F61C3A8957001614A4 /* ANCitySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCitySearchController.h; sourceTree = "<group>"; };
 		004ED9F71C3A8957001614A4 /* ANCitySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCitySearchController.m; sourceTree = "<group>"; };
 		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
@@ -394,12 +404,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00493D651C43D7B7003296FB /* AVFoundation.framework in Frameworks */,
+				00493D5E1C43D3F0003296FB /* OpenGLES.framework in Frameworks */,
+				00493D641C43D7A1003296FB /* CoreVideo.framework in Frameworks */,
+				00493D631C43D79A003296FB /* CoreMedia.framework in Frameworks */,
+				00B98D841C33E79700AD5B5C /* libsqlite3.0.dylib in Frameworks */,
+				00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */,
 				009511F01C3D86EC00EA9FDC /* CoreGraphics.framework in Frameworks */,
 				009511EE1C3D86D200EA9FDC /* QuartzCore.framework in Frameworks */,
+				00492B081C43A84C003296FB /* Accelerate.framework in Frameworks */,
 				006C2E341C3C1547000832FF /* libUMSocial_Sdk_4.2.a in Frameworks */,
-				00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */,
 				006C2E351C3C1547000832FF /* libUMSocial_Sdk_Comment_4.2.a in Frameworks */,
-				00B98D841C33E79700AD5B5C /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,10 +431,14 @@
 		002215151C2CE63900E665F6 = {
 			isa = PBXGroup;
 			children = (
+				00493D611C43D675003296FB /* AVFoundation.framework */,
+				00493D5D1C43D3F0003296FB /* OpenGLES.framework */,
+				00493D5B1C43D3DD003296FB /* CoreVideo.framework */,
+				00493D591C43D3C4003296FB /* CoreMedia.framework */,
+				00492B071C43A84C003296FB /* Accelerate.framework */,
 				009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */,
 				009511ED1C3D86D200EA9FDC /* QuartzCore.framework */,
 				00B98DB11C38280200AD5B5C /* CoreImage.framework */,
-				00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */,
 				002215201C2CE63900E665F6 /* ANWeather */,
 				0022153D1C2CE63900E665F6 /* ANWeatherTests */,
 				0022151F1C2CE63900E665F6 /* Products */,
@@ -451,6 +470,7 @@
 		002215211C2CE63900E665F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */,
 				0098E79E1C3F819700499D33 /* AddedFont.h */,
 				0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */,
 				0095112E1C3CDD4300EA9FDC /* area.json */,
@@ -1551,6 +1571,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.4",
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.2",
 					"$(PROJECT_DIR)/ANWeather/Libs/UMSocial_Sdk_4.2",
+					"$(PROJECT_DIR)/GPUImage/build/Debug-iphonesimulator",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1568,6 +1589,7 @@
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.4",
 					"$(PROJECT_DIR)/UMSocial_Sdk_4.2",
 					"$(PROJECT_DIR)/ANWeather/Libs/UMSocial_Sdk_4.2",
+					"$(PROJECT_DIR)/GPUImage/build/Debug-iphonesimulator",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

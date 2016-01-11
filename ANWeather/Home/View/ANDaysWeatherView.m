@@ -31,14 +31,7 @@
     [super awakeFromNib];
     [self setup];
 }
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
+ 
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
@@ -46,12 +39,15 @@
 }
 - (void)setup
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, self.bounds.size.height)];
-    tableView.backgroundColor = [UIColor clearColor];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    [self addSubview:tableView];
-    self.tableView = tableView;
+    if (!_tableView) {
+        
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, self.bounds.size.height)];
+        tableView.backgroundColor = [UIColor clearColor];
+        tableView.delegate = self;
+        tableView.dataSource = self;
+        [self addSubview:tableView];
+        self.tableView = tableView;
+    }
 }
 
 
@@ -60,7 +56,7 @@
 {
     _weatherData = weatherData;
     self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weatherData.daily_forecast];
-    
+    [self.tableView reloadData];
 }
 
 
@@ -91,6 +87,8 @@
 {
     return 44;
 }
+
+
 
 #pragma mark 懒加载们
 - (NSMutableArray *)dailyForecastArray

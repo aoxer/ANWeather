@@ -53,21 +53,36 @@
     
     ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
     
-     // 背景图片
 
-//    self.backgroundImageView.image = [[UIImage imageNamed:@"bangwan"] blurImageWithvalue:2.0];
     // 当前温度
-#warning TODO 修改attributeText
-    self.currentTmp.text = [NSString stringWithFormat:@"%@°", weatherData.now.tmp];
+
+    self.currentTmp.text = [NSString stringWithFormat:@"%@°",weatherData.now.tmp];
     // 最低温
-    self.minTmp.text = day1.tmp.min;
+    self.minTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.min];
     // 最高温
-    self.maxTmp.text = day1.tmp.max;
+    self.maxTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.max];
     // 日期
     self.MonthDay.text = [self dateWithMonthDay:day1.date];
     
 }
 
+/**
+ *  缩小最后一个字符
+ */
+- (NSAttributedString *)lastLetterSmall:(NSString *)text size:(CGFloat)size
+{
+    NSString *str = text;
+    NSMutableAttributedString *AttrStr = [[NSMutableAttributedString alloc] initWithString:str];
+    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+    attach.bounds = CGRectMake(0, 10,20, 20);
+    [NSMutableAttributedString attributedStringWithAttachment:attach];
+    
+    
+    [AttrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:size] range:NSMakeRange(text.length, 1)];
+    [AttrStr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(text.length, 1)];
+
+    return AttrStr;
+}
 
 /**
  *  把日期转为月日
