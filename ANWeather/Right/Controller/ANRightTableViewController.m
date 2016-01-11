@@ -88,7 +88,11 @@
     if (0 == indexPath.row) {
         
         ANCitySearchController *search = [[ANCitySearchController alloc] init];
-        [self presentViewController:search animated:YES completion:nil];
+        
+        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:search] animated:YES];
+        [self.sideMenuViewController hideMenuViewController];
+        
+#warning 用searchVC的block返回所选城市名 放到数组
         [search returnCityNameBlock:^(NSString *cityName) {
 
             if(![self.selectedCitys containsObject:cityName]) { // 如果选择城市不存在
@@ -126,6 +130,7 @@
         ViewController *viewController = [[ViewController alloc] init];
         NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
         viewController.selectedCity = selectedCity;
+        
         [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:viewController] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
 

@@ -51,16 +51,11 @@
 {
     _weatherData = weatherData;
     
-    
-    
     ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
     
-    // 判断传进来的模型是否为今天的数据
-//    if (![day1.date isToday]) {
-//        [ANNotificationCenter postNotificationName:@"isNotTodayNotification" object:nil];
-//    }
-    // 背景图片
-    self.backgroundImageView.image = [[UIImage imageNamed:@"bangwan"] blurImageWithvalue:2.0];
+     // 背景图片
+
+//    self.backgroundImageView.image = [[UIImage imageNamed:@"bangwan"] blurImageWithvalue:2.0];
     // 当前温度
 #warning TODO 修改attributeText
     self.currentTmp.text = [NSString stringWithFormat:@"%@°", weatherData.now.tmp];

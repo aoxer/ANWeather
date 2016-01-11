@@ -1,5 +1,5 @@
 //
-//  ANCitySearchController.m
+//  ANcitiSearchController.m
 //  ANWeather
 //
 //  Created by a on 16/1/4.
@@ -7,23 +7,23 @@
 //
 
 #import "ANCitySearchController.h"
-
+#import "ViewController.h"
 #import "ANAreaM.h"
 #import "ANCityM.h"
 
 
-@interface ANCitySearchController ()<UISearchResultsUpdating>
+@interface ANCitySearchController ()<UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (strong, nonatomic)UISearchController *searchController;
 /**
  * 存放搜索返回的城市
  */
-@property (strong, nonatomic)NSMutableArray *resultCitys;
+@property (strong, nonatomic)NSMutableArray *resultcities;
 
 /**
  *  存放城市们的数组
  */
-@property (strong, nonatomic)NSMutableArray *citysArray;
+@property (strong, nonatomic)NSMutableArray *citiesArray;
 /**
  *  存放省们的数组
  */
@@ -43,17 +43,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 设置tableView
+    [self setupTableView];
+    
     // 设置搜索框
     [self setupSearchController];
     
     // 读取城市们
-    [self loadCitys];
+    [self loadcities];
    
     
+    
+}
+
+- (void)setupTableView
+{
+    self.tableView.backgroundColor = ANColor(40, 40, 40, 0.1);
+    self.navigationItem.title = @"请输入城市中文名";
+    self.navigationController.navigationBar.backgroundColor = ANRandomColor;
 }
 
 - (void)setupSearchController
 {
+    self.searchController.searchBar.backgroundColor = ANRandomColor;
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater =self;
     self.searchController.dimsBackgroundDuringPresentation = NO;
@@ -63,14 +75,14 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
 }
 
-- (void)loadCitys {
+- (void)loadcities {
 
-        NSString *citysPath = [[NSBundle mainBundle] pathForResource:@"area" ofType:@"json"];
-//    NSString *citysPath = [[NSBundle mainBundle] pathForResource:@"citys" ofType:@"json"];
+        NSString *citiesPath = [[NSBundle mainBundle] pathForResource:@"area" ofType:@"json"];
+//    NSString *citiesPath = [[NSBundle mainBundle] pathForResource:@"cities" ofType:@"json"];
 
     
-    NSString *encodingCitys = [NSString stringWithContentsOfFile:citysPath encoding:NSUTF8StringEncoding error:nil];
-    NSData *jsonData = [encodingCitys dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *encodingcities = [NSString stringWithContentsOfFile:citiesPath encoding:NSUTF8StringEncoding error:nil];
+    NSData *jsonData = [encodingcities dataUsingEncoding:NSUTF8StringEncoding];
     
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
@@ -82,28 +94,28 @@
         [self.areaArray addObject:area];
         // 把当前省(area)的所有市名提取出来放到array里
         NSArray *areaCityArray = [ANCityM objectArrayWithKeyValuesArray:area.city];
-        // 把每个省的市名放到citysArray里
+        // 把每个省的市名放到citiesArray里
         for (ANCityM *city in areaCityArray) {
             if (city.city_name.length) {
-                 [self.citysArray addObject:city.city_name];
+                 [self.citiesArray addObject:city.city_name];
             }
             
         }
         
     }
     
-//    NSArray *citys = [AreaCodeModel objectArrayWithKeyValuesArray:dict[@"RECORDS"]];
-//    for (AreaCodeModel *model in citys) {
+//    NSArray *cities = [AreaCodeModel objectArrayWithKeyValuesArray:dict[@"RECORDS"]];
+//    for (AreaCodeModel *model in cities) {
 //
 //        if (model.City_Name.length && !model.District_Name.length) {
 //            // 把市级放到数组里
-//            [self.citysArray addObject:model.City_Name];
+//            [self.citiesArray addObject:model.City_Name];
 //        }
 //    }
     
 //    // 创建模型
 //    NSMutableArray *pinYinArray = [NSMutableArray array];
-//    for (NSString *cityName in self.citysArray) {
+//    for (NSString *cityName in self.citiesArray) {
 //        PinYinSortModel *py = [[PinYinSortModel alloc] init];
 //        py.areaCodeModel.City_Name = cityName;
 //        // 传入汉字字符串, 返回大写拼音首字母
@@ -138,19 +150,31 @@
 
 #pragma mark - Table view data source & delegate
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     
-    return self.searchController.active ? 1 : self.citysArray.count;
+    return self.searchController.active ? 1 : self.citiesArray.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (self.searchController.active) {
+        // 如果有查询结果就有分割线 反之则相反
+        if (self.resultcities.count) {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        } else {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+    } else {
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    }
     
-    return self.searchController.active ? self.resultCitys.count : self.citysArray.count;;
+    return self.searchController.active ? self.resultcities.count : self.citiesArray.count;;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"citys";
+    static NSString *ID = @"cities";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
@@ -159,9 +183,9 @@
     }
     
     if (self.searchController.active) {
-        cell.textLabel.text = self.resultCitys[indexPath.row];
+        cell.textLabel.text = self.resultcities[indexPath.row];
     } else {
-        cell.textLabel.text = self.citysArray[indexPath.row];
+        cell.textLabel.text = self.citiesArray[indexPath.row];
     }
     
     return cell;
@@ -169,23 +193,53 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.searchController.active) {
-        ANLog(@"active-- %@", self.resultCitys[indexPath.row]);
-    } else {
-        ANLog(@" %@", self.citysArray[indexPath.row]);
-
-    }
 #warning block传值
     if (self.cityNameBlock != nil) {
-        if (self.searchController.active) {
-            self.cityNameBlock(self.resultCitys[indexPath.row]);
-            [self dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            self.cityNameBlock(self.citysArray[indexPath.row]);
+        if (self.searchController.active) { // 正在搜索的状态
+            
+            // 退回键盘
+            [self.searchController.searchBar resignFirstResponder];
+            
+            // 把所选city传给右侧已选城市列表
+            self.cityNameBlock(self.resultcities[indexPath.row]);
+            
+            // 拿到所选城市
+            NSString *selectedCity = [self.resultcities[indexPath.row] removeShi];
+            
+            // 回到首页并把城市带过去
+            [self backToHomeViewControllerWithSelectedCity:selectedCity];
+            
+
+        } else { // 直接选择城市的状态
+            
+            // 把所选city传给右侧已选城市列表
+            self.cityNameBlock(self.citiesArray[indexPath.row]);
+            
+            // 拿到所选城市
+            NSString *selectedCity = [self.citiesArray[indexPath.row] removeShi];
+           
+            // 回到首页并把城市带过去
+            [self backToHomeViewControllerWithSelectedCity:selectedCity];
         }
     }
+   
+}
 
-    [self dismissViewControllerAnimated:YES completion:nil];
+/**
+ *  回到首页并把所选城市带过去
+ */
+
+- (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity;
+{
+    ViewController *HomeVc = [[ViewController alloc] init];
+    
+    HomeVc.selectedCity = selectedCity;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:HomeVc];
+    
+    [self.sideMenuViewController setContentViewController:nav animated:YES];
+    
+    [self.sideMenuViewController hideMenuViewController];
 }
 
 #pragma mark 懒加载
@@ -197,20 +251,20 @@
     return _areaArray;
 }
 
-- (NSMutableArray *)citysArray
+- (NSMutableArray *)citiesArray
 {
-    if (_citysArray == nil) {
-        _citysArray = [NSMutableArray array];
+    if (_citiesArray == nil) {
+        _citiesArray = [NSMutableArray array];
     }
-    return _citysArray;
+    return _citiesArray;
 }
 
-- (NSMutableArray *)resultCitys
+- (NSMutableArray *)resultcities
 {
-    if (!_resultCitys) {
-        _resultCitys = [NSMutableArray array];
+    if (!_resultcities) {
+        _resultcities = [NSMutableArray array];
     }
-    return _resultCitys;
+    return _resultcities;
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -225,17 +279,24 @@
     
     NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c]%@", searchString];
     
-    if (self.resultCitys != nil) {
-        [self.resultCitys removeAllObjects];
+    if (self.resultcities != nil) {
+        [self.resultcities removeAllObjects];
     }
 
     // 过滤数据
-    self.resultCitys = [NSMutableArray arrayWithArray:[self.citysArray filteredArrayUsingPredicate:preicate]];
+    self.resultcities = [NSMutableArray arrayWithArray:[self.citiesArray filteredArrayUsingPredicate:preicate]];
     
     // 刷新表格
     [self.tableView reloadData];
 }
 
+#pragma UISearchBarDelegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+      self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    return YES;
+}
 
 
 

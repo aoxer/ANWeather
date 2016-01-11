@@ -51,7 +51,6 @@
 @implementation ViewController
 
 
-
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -236,12 +235,6 @@
 #warning 只有刷新时才调用weatherView.weatherData 的setWeatherData方法
      self.weatherView.weatherData = self.weatherData;
     
-    // 把字典数组转为模型数组
-    self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:self.weatherData.daily_forecast];
-    // 删除当天数据
-    if (self.dailyForecastArray.count) {
-        [self.dailyForecastArray removeObjectAtIndex:0];
-    }
     
     // 设置导航栏
 
