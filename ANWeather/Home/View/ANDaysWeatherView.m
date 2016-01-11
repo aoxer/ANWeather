@@ -39,6 +39,11 @@
     }
     return self;
 }
+
+- (void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    [self setup];
+}
 - (void)setup
 {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, self.bounds.size.height)];
