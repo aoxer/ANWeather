@@ -9,11 +9,13 @@
 #import "ANRightTableViewCell.h"
 #import "ViewController.h"
 
+#import "MBProgressHUD+MJ.h"
 
 #import "ANCitySearchController.h"
 
 // 已选城市缓存路径
 #define ANSelectedCityFilePath [ANDocumentPath stringByAppendingPathComponent:@"selectedCity.data"]
+
 
 @interface ANRightTableViewController ()<ANRightTableViewCellDelegate>
 
@@ -85,6 +87,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+#pragma mark 点击添加城市
     if (0 == indexPath.row) {
         
         ANCitySearchController *search = [[ANCitySearchController alloc] init];
@@ -92,7 +95,7 @@
         [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:search] animated:YES];
         [self.sideMenuViewController hideMenuViewController];
         
-#warning 用searchVC的block返回所选城市名 放到数组
+#pragma mark block
         [search returnCityNameBlock:^(NSString *cityName) {
 
             if(![self.selectedCitys containsObject:cityName]) { // 如果选择城市不存在
@@ -120,19 +123,23 @@
                 [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
             }
         }];
-    
+#pragma mark 定位
     } else if (1 == indexPath.row){
+        
+        [MBProgressHUD showMessage:@"定位ing..."];
+
+        // 发出需要定位的通知
         [ANNotificationCenter postNotificationName:ANGetLocationDidClickNotification object:nil];
         
+        // 回到首页并把所选城市带过去
+        [self.sideMenuViewController backToHomeViewController];
+        
+#pragma mark 其他城市
     } else {
 
         // 回到首页并把城市带过去
-        ViewController *viewController = [[ViewController alloc] init];
-        NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
-        viewController.selectedCity = selectedCity;
-        
-        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:viewController] animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
+         NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
+        [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
 
         //点击已选城市把选择城市提到最前
         if (indexPath.row > 2) {

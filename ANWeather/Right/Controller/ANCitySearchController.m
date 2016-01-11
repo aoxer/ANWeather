@@ -207,7 +207,7 @@
             NSString *selectedCity = [self.resultcities[indexPath.row] removeShi];
             
             // 回到首页并把城市带过去
-            [self backToHomeViewControllerWithSelectedCity:selectedCity];
+            [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
             
 
         } else { // 直接选择城市的状态
@@ -219,28 +219,28 @@
             NSString *selectedCity = [self.citiesArray[indexPath.row] removeShi];
            
             // 回到首页并把城市带过去
-            [self backToHomeViewControllerWithSelectedCity:selectedCity];
+            [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
         }
     }
    
 }
 
-/**
- *  回到首页并把所选城市带过去
- */
-
-- (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity;
-{
-    ViewController *HomeVc = [[ViewController alloc] init];
-    
-    HomeVc.selectedCity = selectedCity;
-    
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:HomeVc];
-    
-    [self.sideMenuViewController setContentViewController:nav animated:YES];
-    
-    [self.sideMenuViewController hideMenuViewController];
-}
+///**
+// *  回到首页并把所选城市带过去
+// */
+//
+//- (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity;
+//{
+//    ViewController *HomeVc = [[ViewController alloc] init];
+//    
+//    HomeVc.selectedCity = selectedCity;
+//    
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:HomeVc];
+//    
+//    [self.sideMenuViewController setContentViewController:nav animated:YES];
+//    
+//    [self.sideMenuViewController hideMenuViewController];
+//}
 
 #pragma mark 懒加载
 - (NSMutableArray *)areaArray

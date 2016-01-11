@@ -24,7 +24,7 @@
     hud.removeFromSuperViewOnHide = YES;
     
     // 1秒之后再消失
-    [hud hide:YES afterDelay:1.3];
+    [hud hide:YES afterDelay:2];
 }
 
 #pragma mark 显示错误信息
@@ -46,7 +46,9 @@
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // YES代表需要蒙版效果
-    hud.dimBackground = YES;
+    hud.dimBackground = NO;
+    // 1.8秒后消失
+    [hud hide:YES afterDelay:1.3];
     return hud;
 }
 

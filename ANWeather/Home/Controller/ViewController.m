@@ -45,7 +45,7 @@
 @property (strong, nonatomic)CLGeocoder *geocoder;
 
 @property (strong, nonatomic)UIImageView *backGroungImageView;
-
+@property (weak, nonatomic)MBProgressHUD *HUD;
 
 @end
 
@@ -113,7 +113,7 @@
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundView = self.backGroungImageView;
-    
+    self.tableView.header.backgroundColor = ANColor(131, 131, 171, 1);
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         // 加载天气
@@ -143,11 +143,6 @@
    
 }
 
-- (void)test
-{
-
-    [self.navigationController presentViewController:[[ANRightTableViewController alloc] init] animated:YES completion:nil];
-}
 
 /**
  *  设置天气控件
@@ -340,8 +335,6 @@
         [CLLocationManager authorizationStatus] !=kCLAuthorizationStatusDenied  &&
         [CLLocationManager authorizationStatus] !=kCLAuthorizationStatusNotDetermined) {
         
-        // 弹出提示HUD
-        [MBProgressHUD showMessage:@"定位ing..."];
         // 开始定位
         [self.locationMgr startUpdatingLocation];
         
@@ -410,7 +403,6 @@
 #pragma mark CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [MBProgressHUD hideHUD];
     [MBProgressHUD showError:@"定位失败请干点啥"];
     ANLog(@"定位失败%@", error);
 }
@@ -439,10 +431,7 @@
     CLLocation *location = [locations lastObject];
 
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        
-        // 隐藏HUD
-        [MBProgressHUD hideHUD];
-
+      
         CLPlacemark *pm = [placemarks firstObject];
         ANLog(@" %@\n %@\n %@\n %@\n %@\n %@\n %@\n ",
               pm.name, // eg. Apple Inc.
@@ -472,8 +461,7 @@
  
         if (error) { // 定位失败
             ANLog(@"%@", error);
-            [MBProgressHUD hideHUD];
-            [MBProgressHUD showError:@"定位失败请干点啥"];
+             [MBProgressHUD showError:@"定位失败请干点啥"];
         }
     }];
     
@@ -516,7 +504,6 @@
 
 - (void)dealloc
 {
-//    [ANNotificationCenter removeObserver:self];
     [ANNotificationCenter removeObserver:self];
 }
 
@@ -527,6 +514,14 @@
     ANLog(@"%@", NSStringFromCGSize(self.weatherView.size));
 }
 
+- (void)HUDWithText:(NSString *)text
+{
+    _HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    _HUD.delegate = self;
+    
+    _HUD.labelText = text;
+    [_HUD hide:YES afterDelay:2];
+}
 
 
 #pragma scrollViewDelegate
@@ -539,6 +534,7 @@
 //   self.backGroungImageView.image = [blurFilter imageByFilteringImage:backGroundImage];
     
 }
+
 
 
 @end

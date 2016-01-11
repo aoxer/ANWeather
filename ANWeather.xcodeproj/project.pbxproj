@@ -57,6 +57,7 @@
 		004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004ED9F71C3A8957001614A4 /* ANCitySearchController.m */; };
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
+		00557DE01C4422C000E6B790 /* RESideMenu+BackToHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557DDF1C4422C000E6B790 /* RESideMenu+BackToHome.m */; };
 		005B1AF01C40FAEF001F6CF9 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */; };
 		005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */; };
 		005B1AF51C40FB57001F6CF9 /* ANWindmill.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AF41C40FB57001F6CF9 /* ANWindmill.m */; };
@@ -245,6 +246,8 @@
 		004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANRightTableViewCell.xib; sourceTree = "<group>"; };
 		004EDA0B1C3B96B9001614A4 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extension.h"; path = "ANWeather/Category/NSString+Extension.h"; sourceTree = "<group>"; };
 		004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "ANWeather/Category/NSString+Extension.m"; sourceTree = "<group>"; };
+		00557DDE1C4422C000E6B790 /* RESideMenu+BackToHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RESideMenu+BackToHome.h"; path = "ANWeather/Category/RESideMenu+BackToHome.h"; sourceTree = "<group>"; };
+		00557DDF1C4422C000E6B790 /* RESideMenu+BackToHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RESideMenu+BackToHome.m"; path = "ANWeather/Category/RESideMenu+BackToHome.m"; sourceTree = "<group>"; };
 		005B1AED1C40FAEF001F6CF9 /* ANWindSpeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindSpeedItemView.h; sourceTree = "<group>"; };
 		005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindSpeedItemView.m; sourceTree = "<group>"; };
 		005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindSpeedItemView.xib; sourceTree = "<group>"; };
@@ -517,6 +520,8 @@
 			children = (
 				00492A9E1C4285F2003296FB /* UIImage+Blur.h */,
 				00492A9F1C4285F2003296FB /* UIImage+Blur.m */,
+				00557DDE1C4422C000E6B790 /* RESideMenu+BackToHome.h */,
+				00557DDF1C4422C000E6B790 /* RESideMenu+BackToHome.m */,
 				004EDA0B1C3B96B9001614A4 /* NSString+Extension.h */,
 				004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */,
 				003C982B1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.h */,
@@ -1378,6 +1383,7 @@
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
 				002215F41C2CE8E500E665F6 /* AFURLConnectionOperation.m in Sources */,
+				00557DE01C4422C000E6B790 /* RESideMenu+BackToHome.m in Sources */,
 				002216011C2CE8E500E665F6 /* NSObject+MJProperty.m in Sources */,
 				009511791C3D84C500EA9FDC /* FMDatabaseAdditions.m in Sources */,
 				002215F51C2CE8E500E665F6 /* AFURLRequestSerialization.m in Sources */,

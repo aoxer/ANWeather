@@ -35,7 +35,7 @@
 {
     _weatherData = weatherData;
     // 设置风速
-    self.spd = weatherData.now.wind.spd.floatValue / 3.6 / 2; // /3.6为转换m/s
+    self.spd = weatherData.now.wind.spd.floatValue / 3.6 / 3; // /3.6为转换m/s
     self.link.paused = NO;
     
     // 设置显示风向和风速
