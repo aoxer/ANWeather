@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UITableViewController
+#import "ANRightTableViewController.h"
+@interface ViewController : UITableViewController <ANRightTableViewControllerDelegate>
 
 /**
  *  已选城市城市
@@ -17,6 +17,11 @@
 /**
  *  是否从左边进来
  */
-@property (assign, nonatomic)BOOL isComeLeft;
+@property (assign, nonatomic)BOOL isFromLeft;
+/**
+ *  是否从左边进来
+ */
+@property (assign, nonatomic)BOOL isFromRight;
+
  @end
 

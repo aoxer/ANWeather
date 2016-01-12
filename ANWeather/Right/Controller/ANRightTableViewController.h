@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ANRightTableViewControllerDelegate <NSObject>
 
+@optional
+- (void)rightTableViewControllerClickGetLocation;
+
+@end
 
  @interface ANRightTableViewController : UITableViewController
  
@@ -17,5 +22,6 @@
  */
 @property (strong, nonatomic)NSMutableArray *selectedCitys;
 
+@property (weak, nonatomic)id<ANRightTableViewControllerDelegate> delegate;
 
 @end

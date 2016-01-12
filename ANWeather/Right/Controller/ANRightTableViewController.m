@@ -17,7 +17,7 @@
 #define ANSelectedCityFilePath [ANDocumentPath stringByAppendingPathComponent:@"selectedCity.data"]
 
 
-@interface ANRightTableViewController ()<ANRightTableViewCellDelegate>
+@interface ANRightTableViewController ()
 
 @end
 
@@ -87,58 +87,32 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-#pragma mark 点击添加城市
-    if (0 == indexPath.row) {
+    
+ 
+    if (0 == indexPath.row) { // 点击添加城市
         
-        ANCitySearchController *search = [[ANCitySearchController alloc] init];
+        [self addCity];
         
-        [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:search] animated:YES];
-        [self.sideMenuViewController hideMenuViewController];
-        
-#pragma mark block
-        [search returnCityNameBlock:^(NSString *cityName) {
-
-            if(![self.selectedCitys containsObject:cityName]) { // 如果选择城市不存在
-                
-                // 1.把传回来的城市添加到已选城市列表
-                [self.selectedCitys insertObject:cityName atIndex:2];
-                
-                // 2.刷新表格
-                [self.tableView reloadData];
-                
-                // 3.缓存到本地
-                [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
-                
-            } else { // 如果存在
-                
-                // 1.提到前面
-                NSInteger cityIndex = [self.selectedCitys indexOfObject:cityName];
-                [self.selectedCitys removeObjectAtIndex:cityIndex];
-                [self.selectedCitys insertObject:cityName atIndex:2];
-                
-                // 2.刷新表格
-                [self.tableView reloadData];
-                
-                // 3.缓存到本地
-                [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
-            }
-        }];
 #pragma mark 定位
     } else if (1 == indexPath.row){
         
-        [MBProgressHUD showMessage:@"定位ing..."];
-
-        // 发出需要定位的通知
-        [ANNotificationCenter postNotificationName:ANGetLocationDidClickNotification object:nil];
+        // 回到首页
+        ViewController *homeVC = [[ViewController alloc] init];
+        self.delegate = homeVC;
+        [self.sideMenuViewController backToHomeViewController:homeVC];
         
-        // 回到首页并把所选城市带过去
-        [self.sideMenuViewController backToHomeViewController];
+        // 调用代理方法
+        if ([self.delegate respondsToSelector:@selector(rightTableViewControllerClickGetLocation)]) {
+            [self.delegate rightTableViewControllerClickGetLocation];
+        }
+        
         
 #pragma mark 其他城市
     } else {
 
         // 回到首页并把城市带过去
          NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
+    
         [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
 
         //点击已选城市把选择城市提到最前
@@ -229,7 +203,46 @@
     
 }
 
+/**
+ *  添加城市
+ */
+- (void)addCity
+{
+    ANCitySearchController *search = [[ANCitySearchController alloc] init];
+    
+    [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:search] animated:YES];
+    [self.sideMenuViewController hideMenuViewController];
+    
+#pragma mark block
+    [search returnCityNameBlock:^(NSString *cityName) {
+        
+        if(![self.selectedCitys containsObject:cityName]) { // 如果选择城市不存在
+            
+            // 1.把传回来的城市添加到已选城市列表
+            [self.selectedCitys insertObject:cityName atIndex:2];
+            
+            // 2.刷新表格
+            [self.tableView reloadData];
+            
+            // 3.缓存到本地
+            [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
+            
+        } else { // 如果存在
+            
+            // 1.提到前面
+            NSInteger cityIndex = [self.selectedCitys indexOfObject:cityName];
+            [self.selectedCitys removeObjectAtIndex:cityIndex];
+            [self.selectedCitys insertObject:cityName atIndex:2];
+            
+            // 2.刷新表格
+            [self.tableView reloadData];
+            
+            // 3.缓存到本地
+            [NSKeyedArchiver archiveRootObject:self.selectedCitys toFile:ANSelectedCityFilePath];
+        }
+    }];
 
+}
 
 
 @end

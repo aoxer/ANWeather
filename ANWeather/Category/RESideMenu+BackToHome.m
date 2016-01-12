@@ -14,9 +14,10 @@
 /**
  *  回到首页并把所选城市带过去
  */
-- (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity;
+- (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity
 {
     ViewController *HomeVc = [[ViewController alloc] init];
+    HomeVc.isFromRight = YES;
     
     HomeVc.selectedCity = selectedCity;
     
@@ -28,13 +29,12 @@
 }
 
 /**
- *  回到首页并把所选城市带过去
+ *  跳到控制器
  */
-- (void)backToHomeViewController
+- (void)backToHomeViewController:(UIViewController*)viewController
 {
-    ViewController *HomeVc = [[ViewController alloc] init];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:HomeVc];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     [self setContentViewController:nav animated:YES];
     

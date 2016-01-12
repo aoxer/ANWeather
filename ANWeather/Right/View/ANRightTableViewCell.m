@@ -25,7 +25,6 @@
         [self.delegate rightTableViewCellDidClickDelBtnAtCell:self];
     }
     
-    ANLog(@"delCity %zd", self.tag);
 }
 
 

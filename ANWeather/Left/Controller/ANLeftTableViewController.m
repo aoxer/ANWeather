@@ -71,7 +71,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ViewController *homeVc = [[ViewController alloc] init];
-    homeVc.isComeLeft = YES;
+    homeVc.isFromLeft = YES;
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
 #warning 待改

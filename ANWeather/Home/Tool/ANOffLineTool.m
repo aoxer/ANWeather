@@ -66,7 +66,6 @@ static FMDatabase *_db;
 
 + (NSString *)getLastCity
 {
-    
     NSString *sql = @"SELECT city FROM t_weathers";
     
     FMResultSet *set = [_db executeQuery:sql];

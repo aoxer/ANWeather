@@ -59,9 +59,6 @@
     // 设置上一次城市
     [self setupLastCity];
     
-    // 加载数据
-    [self judgeCity];
-    
     // 设置tableView
     [self setupTableView];
     
@@ -74,20 +71,6 @@
     // 如果是iOS8+ 请求位置授权
     [self requestAuthorizaiton];
     
-    // 成为CoreLocation管理者的代理监听获取到的位置
-    self.locationMgr.delegate = self;
-    // 更新位置为每1000m
-    self.locationMgr.distanceFilter = 1000.f;
-    
-    // 监听定位的通知
-    [ANNotificationCenter addObserver:self selector:@selector(getLocation) name:ANGetLocationDidClickNotification object:nil];
-    
-    // 监听缓存数据非今天的通知
-//    [ANNotificationCenter addObserver:self selector:@selector(sendRequestWithCity:) name:@"isNotTodayNotification" object:nil];
-    
-    if (self.isComeLeft) {
-        self.isComeLeft = NO;
-    }
     
 #warning 根据topView日期判断是否要刷新数据 通知
 }
@@ -96,7 +79,23 @@
 {
     [super viewDidAppear:animated];
     
-//    [self judgeCity];
+    // 加载天气
+    if (self.isFromLeft) {// 如果是从左边来
+        
+        // 加载当前城市天气
+        [self loadWeatherWithCity:self.city];
+        self.isFromLeft = NO;
+        
+    } else if (self.isFromRight){ // 如果从右边来
+        
+        // 加载所选城市天气
+        [self loadWeatherWithCity:self.selectedCity];
+        self.isFromRight = NO;
+        
+    } else{
+        
+        [self sendRequestWithCity:self.city];
+    }
  
 }
 
@@ -115,14 +114,9 @@
     self.tableView.backgroundView = self.backGroungImageView;
     self.tableView.header.backgroundColor = ANColor(131, 131, 171, 1);
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+
+        [self sendRequestWithCity:self.navigationItem.title];
         
-        // 加载天气
-        if (self.selectedCity.length != 0) { // 如果有已选城市 加载已选城市
-            [self sendRequestWithCity:self.selectedCity];
-        } else { // 没有则加载上次定位城市
-            [self sendRequestWithCity:self.city];
-        }
-       
     }];
 }
 
@@ -165,8 +159,6 @@
 {
     if (IOS_8_ABOVE) {
         [self.locationMgr requestWhenInUseAuthorization];
-    } else {
-        [self.locationMgr startUpdatingLocation];
     }
     
 }
@@ -187,22 +179,7 @@
     
 }
 
-/**
- *  读取天气
- */ 
-- (void)judgeCity
-{
-    
-    if (self.selectedCity.length) { // 如果有已选城市 (从右面回来) 加载已选城市
-        
-        [self loadWeatherWithCity:self.selectedCity];
-       
-    } else { // 没有已选城市则加载当前城市
-       
-        [self loadWeatherWithCity:self.city];
-    }
-    
-}
+
 
 - (void)loadWeatherWithCity:(NSString *)city
 {
@@ -232,12 +209,9 @@
 #warning 只有刷新时才调用weatherView.weatherData 的setWeatherData方法
      self.weatherView.weatherData = self.weatherData;
     
-    
     // 设置导航栏
-
     self.navigationItem.title = self.weatherData.basic.city;
-
-    
+ 
     // 重新加载tableView
     [self.tableView reloadData];
     
@@ -306,6 +280,7 @@
  */
 - (void)callRight
 {
+ 
     [self.sideMenuViewController presentRightMenuViewController];
    
 }
@@ -330,33 +305,16 @@
  */
 - (void)getLocation
 {
+    // 开始更新
+    [self.locationMgr startUpdatingLocation];
     
-    if ([CLLocationManager locationServicesEnabled] && // 如果授权状态可用
-        [CLLocationManager authorizationStatus] !=kCLAuthorizationStatusDenied  &&
-        [CLLocationManager authorizationStatus] !=kCLAuthorizationStatusNotDetermined) {
-        
-        // 开始定位
-        [self.locationMgr startUpdatingLocation];
-        
-    } else if ([CLLocationManager locationServicesEnabled] &&
-               ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined ||
-               [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)) {// 如果定位开启但授权状态不可用
-#warning 待改判断是否第一次打开
-                   if (![ANOffLineTool isFirst]) { // 第一次打开软件
-            // 请求授权
-            [self.locationMgr requestWhenInUseAuthorization];
-
-            // a
-        } else {
-            // 弹出提醒 并作点击ok跳转
-            [self showAlertForTitle:@"授权状态不对" message:@"是否跳转到设置?"];
-        }
-        
-    } else if (![CLLocationManager locationServicesEnabled]){ // 如果定位功能不可用
-        
-        // 弹出提醒 并作点击ok跳转
-        [self showAlertForTitle:@"定位功能未开启" message:@"是否前往打开?"];
+    // 如果非第一次打开时 定位功能关闭
+    if (![ANOffLineTool isFirst] && ![CLLocationManager locationServicesEnabled]) {
+        [MBProgressHUD showError:@"定位功能关闭 请开启"];
+    } else if (![ANOffLineTool isFirst] && ANAuthorizationDenied) {// 如果非第一次打开时 定位功能授权状态不对
+       [MBProgressHUD showError:@"定位功能关闭 请开启"];
     }
+    
 }
 
 /**
@@ -401,70 +359,38 @@
 
 
 #pragma mark CLLocationManagerDelegate
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    [MBProgressHUD showError:@"定位失败请干点啥"];
-    ANLog(@"定位失败%@", error);
-}
-
-/**
- *  授权状态发生改变时调用
- */
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
-{
-    
-    if (status == kCLAuthorizationStatusNotDetermined ||
-        status == kCLAuthorizationStatusDenied) {// 如果授权状态为不确定或不允许就申请授权
-        
-//            [self.locationMgr requestWhenInUseAuthorization];
-
-    } else {// 其他则提示授权失败
-        
-    }
-}
-
 /**
  *  位置发生改变时调用
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
+     [MBProgressHUD showMessage:@"定位ing"];
+    
     CLLocation *location = [locations lastObject];
 
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
       
         CLPlacemark *pm = [placemarks firstObject];
-        ANLog(@" %@\n %@\n %@\n %@\n %@\n %@\n %@\n ",
-              pm.name, // eg. Apple Inc.
-              pm.thoroughfare, // street address, eg. 1 Infinite Loop
+        ANLog(@"  %@\n %@\n %@\n %@\n %@\n ",
               pm.subThoroughfare, // eg. 1
               pm.locality, // city, eg. Cupertino
               pm.subLocality, // neighborhood, common name, eg. Mission District
               pm.administrativeArea, // state, eg. CA
               pm.country // eg. United States
               );
-        // 获取到的城市和当前城市不一样就开始刷新
-        if (![pm.locality isEqualToString:self.city]){
-            
-            [self.tableView.header beginRefreshing];
-        }
         
+        // 获取到的城市开始刷新
+        NSString *locCity = [pm.locality getCityName:pm.locality];
+        self.city = locCity;
         
-        // 把市字去掉 如果是州 就获取下级城市
-        
-        self.city = [pm.locality getCityName:pm.subLocality];
-        
-        
-        // 设置导航栏
-        self.navigationItem.title = pm.locality;
-        
-       
- 
+        [self.tableView.header beginRefreshing];
+   
         if (error) { // 定位失败
-            ANLog(@"%@", error);
-             [MBProgressHUD showError:@"定位失败请干点啥"];
+             [MBProgressHUD showError:@"定位失败请手动选择城市"];
         }
     }];
     
+    [self.locationMgr stopUpdatingLocation];
 
 }
 
@@ -482,6 +408,10 @@
 {
     if (!_locationMgr) {
         _locationMgr = [[CLLocationManager alloc] init];
+        // 成为CoreLocation管理者的代理监听获取到的位置
+        _locationMgr.delegate = self;
+        // 更新位置为每1000m
+        _locationMgr.distanceFilter = 1000.f;
     }
     return _locationMgr;
 }
@@ -502,10 +432,7 @@
     return _backGroungImageView;
 }
 
-- (void)dealloc
-{
-    [ANNotificationCenter removeObserver:self];
-}
+
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
@@ -535,7 +462,11 @@
     
 }
 
-
+#pragma mark <ANRightTableViewControllerDelegate>
+- (void)rightTableViewControllerClickGetLocation
+{
+    [self getLocation];
+}
 
 @end
 

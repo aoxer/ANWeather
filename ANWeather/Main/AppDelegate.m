@@ -18,6 +18,7 @@
 
 @interface AppDelegate ()
 
+
 @end
 
 @implementation AppDelegate
@@ -30,14 +31,15 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    ViewController *viewController = [[ViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
-    ANLeftTableViewController *leftViewController = [[ANLeftTableViewController alloc] init];
-    ANLeftTableViewController *rightViewController = [[ANRightTableViewController alloc] init];
-    
+    ANLeftTableViewController *leftTableViewController = [[ANLeftTableViewController alloc] init];
+    ANRightTableViewController *rightTableViewController = [[ANRightTableViewController alloc] init];
+//    rightTableViewController.delegate = viewController;
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
-                                                                    leftMenuViewController:leftViewController
-                                                                   rightMenuViewController:rightViewController];
+                                                                    leftMenuViewController:leftTableViewController
+                                                                   rightMenuViewController:rightTableViewController];
     
     sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
     sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent

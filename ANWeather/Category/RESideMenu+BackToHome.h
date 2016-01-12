@@ -13,8 +13,9 @@
  *  回到首页并把所选城市带过去
  */
 - (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity;
+
 /**
  *  回到首页并把所选城市带过去
  */
-- (void)backToHomeViewController;
+- (void)backToHomeViewController:(UIViewController *)viewController;
 @end
