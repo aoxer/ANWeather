@@ -37,23 +37,25 @@
 
 - (BOOL)isToday
 {
-    NSCalendar *calender = [NSCalendar currentCalendar];
-    NSDateComponents *compoent = [calender components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
-    // 把2016-1-9改为2016-01-09;
-    NSString *month = nil;
-    NSString *day = nil;
-    if ([NSString stringWithFormat:@"%zd", compoent.month].length == 1 ||
-        [NSString stringWithFormat:@"%zd", compoent.day].length == 1) {
-        
-        month = [NSString stringWithFormat:@"0%zd", compoent.month];
-        day = [NSString stringWithFormat:@"0%zd", compoent.day];
-        
-    }
-    NSString *date = [NSString stringWithFormat:@"%zd-%@-%@", compoent.year, month, day];
     
-    if ([self isEqualToString:date]) {
+    NSDate *date = [NSDate date];
+    // 获取市区并加上相差时间
+//    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+//    NSInteger interval = [zone secondsFromGMTForDate:date];
+//    NSDate *locDate = [date dateByAddingTimeInterval:interval];
+//    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    
+    NSString *timeStr = [fmt stringFromDate:date];
+    
+//    NSString *dateWithoutTime = [timeStr substringWithRange:NSMakeRange(0, 10)];
+    
+    if ([self isEqualToString:timeStr]) {
         return YES;
     }
+    
     return NO;
+   
 }
 @end

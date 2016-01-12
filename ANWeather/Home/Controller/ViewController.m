@@ -72,13 +72,22 @@
     [self requestAuthorizaiton];
     
     
-#warning 根据topView日期判断是否要刷新数据 通知
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
+    // 判断是否为当天数据
+    [self judgeCity];
+}
+
+
+/**
+ *  判断城市
+ */
+- (void)judgeCity
+{
     // 加载天气
     if (self.isFromLeft) {// 如果是从左边来
         
@@ -96,9 +105,7 @@
         
         [self sendRequestWithCity:self.city];
     }
- 
 }
-
 #pragma mark 初始化方法
 /**
  *  初始化tableView
@@ -183,12 +190,12 @@
 
 - (void)loadWeatherWithCity:(NSString *)city
 {
-    if ([ANOffLineTool cityExists:city]) { // 有城市缓存
+    if ([ANOffLineTool cityExists:city] && [ANOffLineTool CityWeatherIsToday:city]) { // 有城市缓存并且为当天数据
         // 从缓存读取数据加载数据
         NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
         [self dealingResult:weathersDict];
         
-    } else { // 没缓存
+    } else { //
         // 发送请求
         [self sendRequestWithCity:city];
     }
@@ -382,7 +389,7 @@
         // 获取到的城市开始刷新
         NSString *locCity = [pm.locality getCityName:pm.locality];
         self.city = locCity;
-        
+        self.navigationItem.title = locCity;
         [self.tableView.header beginRefreshing];
    
         if (error) { // 定位失败

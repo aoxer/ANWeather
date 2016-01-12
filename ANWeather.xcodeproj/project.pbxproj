@@ -58,6 +58,7 @@
 		004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004EDA091C3AF61B001614A4 /* ANRightTableViewCell.xib */; };
 		004EDA0D1C3B96B9001614A4 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */; };
 		00557DE01C4422C000E6B790 /* RESideMenu+BackToHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557DDF1C4422C000E6B790 /* RESideMenu+BackToHome.m */; };
+		00557DE31C44F49C00E6B790 /* ANUpdateTimeM.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557DE21C44F49C00E6B790 /* ANUpdateTimeM.m */; };
 		005B1AF01C40FAEF001F6CF9 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */; };
 		005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */; };
 		005B1AF51C40FB57001F6CF9 /* ANWindmill.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AF41C40FB57001F6CF9 /* ANWindmill.m */; };
@@ -248,6 +249,8 @@
 		004EDA0C1C3B96B9001614A4 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extension.m"; path = "ANWeather/Category/NSString+Extension.m"; sourceTree = "<group>"; };
 		00557DDE1C4422C000E6B790 /* RESideMenu+BackToHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RESideMenu+BackToHome.h"; path = "ANWeather/Category/RESideMenu+BackToHome.h"; sourceTree = "<group>"; };
 		00557DDF1C4422C000E6B790 /* RESideMenu+BackToHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RESideMenu+BackToHome.m"; path = "ANWeather/Category/RESideMenu+BackToHome.m"; sourceTree = "<group>"; };
+		00557DE11C44F49C00E6B790 /* ANUpdateTimeM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUpdateTimeM.h; sourceTree = "<group>"; };
+		00557DE21C44F49C00E6B790 /* ANUpdateTimeM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUpdateTimeM.m; sourceTree = "<group>"; };
 		005B1AED1C40FAEF001F6CF9 /* ANWindSpeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindSpeedItemView.h; sourceTree = "<group>"; };
 		005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindSpeedItemView.m; sourceTree = "<group>"; };
 		005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindSpeedItemView.xib; sourceTree = "<group>"; };
@@ -853,6 +856,8 @@
 				009033E51C2E2FA3001FFED3 /* ANWeatherData.m */,
 				00B98D961C34035600AD5B5C /* ANBasicM.h */,
 				00B98D971C34035600AD5B5C /* ANBasicM.m */,
+				00557DE11C44F49C00E6B790 /* ANUpdateTimeM.h */,
+				00557DE21C44F49C00E6B790 /* ANUpdateTimeM.m */,
 				009033D81C2E2FA3001FFED3 /* ANAqiM.h */,
 				009033D91C2E2FA3001FFED3 /* ANAqiM.m */,
 				009033DA1C2E2FA3001FFED3 /* ANCity.h */,
@@ -1355,6 +1360,7 @@
 				00492B041C438B5D003296FB /* MSNeedleView.m in Sources */,
 				00492AA01C4285F2003296FB /* UIImage+Blur.m in Sources */,
 				009511841C3D84C500EA9FDC /* MJRefreshAutoStateFooter.m in Sources */,
+				00557DE31C44F49C00E6B790 /* ANUpdateTimeM.m in Sources */,
 				00492B031C438B5D003296FB /* MSGradientArcLayer.m in Sources */,
 				002215C21C2CE8CE00E665F6 /* UIView+Extension.m in Sources */,
 				003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */,

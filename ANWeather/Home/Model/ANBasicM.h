@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ANUpdateTimeM.h"
 /*
 basic = {
  cnty = 中国,
@@ -26,4 +26,8 @@ basic = {
  *  city = 北京,
  */
 @property (copy, nonatomic)NSString *city;
+/**
+ *  更新时间的模型
+ */
+@property (strong, nonatomic)ANUpdateTimeM *update;
 @end

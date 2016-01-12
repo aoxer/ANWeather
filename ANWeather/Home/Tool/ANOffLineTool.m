@@ -112,6 +112,22 @@ static FMDatabase *_db;
     return NO;
 }
 
++ (BOOL)CityWeatherIsToday:(NSString *)city
+{
+   NSDictionary *weatherDict = [self weathersWithCity:city];
+    
+    ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weatherDict];
+    
+    NSString *date = weatherData.basic.update.loc;
+    
+    NSString *dateWithoutTime = [date substringWithRange:NSMakeRange(0, 10)];
+    
+    if ([dateWithoutTime isToday]) {
+        return YES;
+    }
+    return NO;
+}
+
 - (NSMutableArray *)citiesArray
 {
     if (!_citiesArray) {
