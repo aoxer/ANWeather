@@ -71,16 +71,11 @@
     // 如果是iOS8+ 请求位置授权
     [self requestAuthorizaiton];
     
-    
+    // 判断城市并获取数据
+    [self judgeCity];
+
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    // 判断是否为当天数据
-    [self judgeCity];
-}
 
 
 /**
@@ -93,16 +88,16 @@
         
         // 加载当前城市天气
         [self loadWeatherWithCity:self.city];
-        self.isFromLeft = NO;
+         self.isFromLeft = NO;
         
     } else if (self.isFromRight){ // 如果从右边来
         
         // 加载所选城市天气
         [self loadWeatherWithCity:self.selectedCity];
-        self.isFromRight = NO;
+         self.isFromRight = NO;
         
     } else{
-        
+
         [self sendRequestWithCity:self.city];
     }
 }
@@ -112,14 +107,12 @@
  */
 - (void)setupTableView
 {
-//    _backGroungImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lake"]];
-    
     self.tableView.backgroundColor = ANColor(131, 131, 171, 1);
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 300, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundView = self.backGroungImageView;
-    self.tableView.header.backgroundColor = ANColor(131, 131, 171, 1);
+    
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 
         [self sendRequestWithCity:self.navigationItem.title];
@@ -135,7 +128,7 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
-    self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
+//    self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
     // 设置导航栏文字颜色
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];
     attr[NSForegroundColorAttributeName] = [UIColor whiteColor];
@@ -150,12 +143,14 @@
  */
 - (void)SetupWeatherView
 {
-   CGRect rect = CGRectMake(0, 0, ANScreenWidth, self.view.bounds.size.height - 44);
-     self.weatherView.frame = rect;
+    ANWeatherView *weatherView = [[ANWeatherView alloc] init];
     
+    CGRect rect = CGRectMake(0, 0, ANScreenWidth, self.view.bounds.size.height - 44);
+    weatherView.frame = rect;
     
-    [self.tableView addSubview:_weatherView];
+    [self.tableView addSubview:weatherView];
     
+    self.weatherView = weatherView;
 
 }
 
@@ -421,14 +416,6 @@
         _locationMgr.distanceFilter = 1000.f;
     }
     return _locationMgr;
-}
-
-- (ANWeatherView *)weatherView
-{
-    if (!_weatherView) {
-        _weatherView = [[ANWeatherView alloc] init];
-    }
-    return _weatherView;
 }
 
 - (UIImageView *)backGroungImageView

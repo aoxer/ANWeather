@@ -22,12 +22,13 @@
 {
     // 设置按钮
     UIButton *btn = [[UIButton alloc] init];
+    
     btn.size = CGSizeMake(30, 30);
     // 监听点击
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     // 设置按钮图片
-    [btn setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageNamed:imageNameHighlight] forState:UIControlStateHighlighted];
+    [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:imageNameHighlight] forState:UIControlStateHighlighted];
     // 设置size
 //    btn.size = btn.currentBackgroundImage.size;
     

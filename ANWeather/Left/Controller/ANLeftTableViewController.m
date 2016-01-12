@@ -82,7 +82,7 @@
             break;
             
         case 1:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANSettingTableViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self settingVC]] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
@@ -112,6 +112,14 @@
             break;
     }
 
+}
+
+- (ANSettingTableViewController *)settingVC
+{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ANSettingTableViewController" bundle:nil];
+    ANSettingTableViewController *settingVC = [sb instantiateViewControllerWithIdentifier:@"setting"];
+    
+    return settingVC;
 }
 
 - (void)setupCell:(NSNotification *)notification

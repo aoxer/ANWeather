@@ -8,12 +8,39 @@
 
 #import "ANCareController.h"
 #import "UMSocial.h"
+#import "UMSocialShakeService.h"
+#import "UMSocialScreenShoter.h"
 @interface ANCareController ()<UMSocialUIDelegate>
 
 @end
 
 @implementation ANCareController
-
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //设置第一响应者
+    [self becomeFirstResponder];
+}
+//在响应摇一摇动作方法内得到屏幕截图
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*)event
+{
+    if(motion == UIEventSubtypeMotionShake)
+    {
+        UIImage *image = [[UMSocialScreenShoterDefault screenShoter] getScreenShot];
+        [UMSocialSnsService presentSnsIconSheetView:self appKey:ANUMAppKey shareText:@"分享文字" shareImage:image shareToSnsNames:nil delegate:nil];
+        //下面使用应用类型截屏，如果是cocos2d游戏或者其他类型，使用相应的截屏对象
+        //UIImage *image = [[UMSocialScreenShoterDefault screenShoter] getScreenShot];
+    }
+}
+//在摇一摇的回调方法弹出分享面板
+-(UMSocialShakeConfig)didShakeWithShakeConfig
+{
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:ANUMAppKey shareText:@"你的分享文字" shareImage:nil shareToSnsNames:@[UMShareToSina,UMShareToTencent,UMShareToWechatSession,UMShareToWechatTimeline] delegate:nil];
+    //下面返回值控制是否显示分享编辑页面、是否显示截图、是否有音效，UMSocialShakeConfigNone表示都不显示
+    return UMSocialShakeConfigNone;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -22,7 +49,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-  
+    [UMSocialShakeService setShakeToShareWithTypes:@[UMShareToSina,UMShareToWechatSession]
+                                         shareText:@"share"
+                                      screenShoter:[UMSocialScreenShoterDefault screenShoter]
+                                  inViewController:self
+                                          delegate:self];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -37,6 +68,7 @@
                                 shareToSnsNames:list
                                        delegate:self];
 }
+
 
 #pragma mark - Table view data source
 

@@ -48,14 +48,6 @@
     return  self;
 }
 
--(void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-   
-    
-}
-
 
 /**
  *  懒加载数组
@@ -95,22 +87,10 @@
  */
 - (void)weatherView
 {
-//
-//    self.showsVerticalScrollIndicator = NO;
-//    // 创建tableView 容纳方块View
-//    self.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.backgroundColor = [UIColor redColor];
-    
     // 顶部容器
     ANTopView *topView = [ANTopView view];
     [self addSubview:topView];
     self.topView = topView;
-
-    // 湿度
-//    ANHumItemView *humItem = [ANHumItemView view];
-//    [self addSubview:humItem];
-//    self.humItem = humItem;
-//    [self.items addObject:humItem];
     
     // 风速
     ANWindSpeedItemView *windSpeedItem = [ANWindSpeedItemView view];
@@ -137,12 +117,6 @@
     [self addSubview:daysWeatherView];
     self.daysWeatherView = daysWeatherView;
     
-    [self.items enumerateObjectsUsingBlock:^(UIView *item, NSUInteger idx, BOOL *stop) {
-        item.layer.shadowColor = [UIColor blackColor].CGColor;
-        item.layer.shadowOpacity = 1;
-        item.layer.shadowRadius = 5;
-        item.layer.shadowOffset = CGSizeMake(3, 3);
-    }];
  
 }
 

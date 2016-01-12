@@ -40,4 +40,18 @@
     
     [self hideMenuViewController];
 }
+
+/**
+ *  跳到控制器
+ */
+- (void)backToHomeViewController
+{
+    ViewController *HomeVc = [[ViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:HomeVc];
+    
+    [self setContentViewController:nav animated:YES];
+    
+    [self hideMenuViewController];
+}
 @end

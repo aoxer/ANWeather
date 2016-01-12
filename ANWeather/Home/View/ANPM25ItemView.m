@@ -38,35 +38,24 @@
 
 @implementation ANPM25ItemView
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self superview];
-}
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
 
-    }
-    return self;
-}
-
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    
     [self setup];
+    ANLog(@"%@", NSStringFromCGRect(_gaugeView.bounds));
+
 }
 
 
 - (void)setup
 {
     if (!_bigGauge) {
-        _bigGauge = [[MSSimpleGauge alloc] initWithFrame:_gaugeView.frame];
+        _bigGauge = [[MSSimpleGauge alloc] initWithFrame:_gaugeView.bounds];
         _bigGauge.backgroundColor = ANClearColor;
         _bigGauge.startAngle = 0;
         _bigGauge.endAngle = 180;
-        [self.gaugeView addSubview:_bigGauge];
+        [_gaugeView addSubview:_bigGauge];
         
     }
 }
@@ -77,20 +66,10 @@
     
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-
-}
-
-- (void)setBigGauge:(MSSimpleGauge *)bigGauge
-{
-
-}
-
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
-    
+    ANLog(@"%@", weatherData);
     
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
 
@@ -110,7 +89,6 @@
     
     // 指针
     [self.bigGauge setValue:pm2_5 animated:YES];
-    self.bigGauge.fillArcFillColor = ANRandomColor;
     
     [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
     if (pm2_5 <= 50) {
@@ -128,14 +106,6 @@
     }
     
     [self setNeedsDisplay];
-
-}
-
-- (void)layoutSubviews
-{
-    
-    self.bigGauge.frame = self.gaugeView.bounds;
-    
 }
 
 
