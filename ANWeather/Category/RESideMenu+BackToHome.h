@@ -15,9 +15,9 @@
 - (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity;
 
 /**
- *  回到首页
+ *  转到控制器
  */
-- (void)backToHomeViewController:(UIViewController *)viewController;
+- (void)toViewController:(UIViewController *)viewController;
 /**
  *  回到首页
  */

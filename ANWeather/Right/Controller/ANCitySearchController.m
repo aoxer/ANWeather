@@ -58,6 +58,8 @@
 
 - (void)setupTableView
 {
+    ANAwesomeMenuHideOrShow
+    
     self.tableView.backgroundColor = ANColor(40, 40, 40, 0.1);
     self.navigationItem.title = @"请输入城市中文名";
     self.navigationController.navigationBar.backgroundColor = ANRandomColor;
@@ -225,22 +227,6 @@
    
 }
 
-///**
-// *  回到首页并把所选城市带过去
-// */
-//
-//- (void)backToHomeViewControllerWithSelectedCity:(NSString *)selectedCity;
-//{
-//    ViewController *HomeVc = [[ViewController alloc] init];
-//    
-//    HomeVc.selectedCity = selectedCity;
-//    
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:HomeVc];
-//    
-//    [self.sideMenuViewController setContentViewController:nav animated:YES];
-//    
-//    [self.sideMenuViewController hideMenuViewController];
-//}
 
 #pragma mark 懒加载
 - (NSMutableArray *)areaArray

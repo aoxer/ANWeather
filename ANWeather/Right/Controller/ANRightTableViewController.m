@@ -99,7 +99,7 @@
         // 回到首页
         ViewController *homeVC = [[ViewController alloc] init];
         self.delegate = homeVC;
-        [self.sideMenuViewController backToHomeViewController:homeVC];
+        [self.sideMenuViewController toViewController:homeVC];
         
         // 调用代理方法
         if ([self.delegate respondsToSelector:@selector(rightTableViewControllerClickGetLocation)]) {

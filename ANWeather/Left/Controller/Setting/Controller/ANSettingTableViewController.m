@@ -8,9 +8,10 @@
 
 #import "ANSettingTableViewController.h"
 #import "MBProgressHUD+MJ.h"
+#import "AwesomeMenu.h"
 
 
-@interface ANSettingTableViewController ()
+@interface ANSettingTableViewController ()<AwesomeMenuDelegate>
 
 @property (copy, nonatomic)NSString *cache;
 /**
@@ -38,9 +39,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    ANAwesomeMenuHideOrShow    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = ANColor(217, 217, 223, 1.0);
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(presentLeftMenuViewController) andImageName:@"back" andImageNameHighlight:@"back"];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(backToHomeViewController) andImageName:@"back" andImageNameHighlight:@"back"];
 
  }
 
@@ -153,7 +155,16 @@
             
         case 1:
             
-            [ANSettingTool isBigHand] ? (self.bigSmallHandMode = @"小手模式") : (self.bigSmallHandMode = @"大手模式");
+            if ([ANSettingTool isBigHand]) {
+                self.bigSmallHandMode = @"小手模式";
+                [[ANAwesomeMenu sharedAwesomeMenu] setHidden:NO];
+                ANLog(@"%@",[ANAwesomeMenu sharedAwesomeMenu]);
+            } else {
+                self.bigSmallHandMode = @"大手模式";
+                [ANAwesomeMenu sharedAwesomeMenu].hidden = YES;
+                ANLog(@"%@",[ANAwesomeMenu sharedAwesomeMenu]);
+             }
+            
             
             [ANSettingTool updateBigHand:![ANSettingTool isBigHand]];
 
@@ -267,64 +278,25 @@
     }
     return _bigSmallHandMode;
 }
-//
-//
-//- (void)getCacheSize{
-//    
-//    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-//    
-//    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-//        
-//        CGFloat fileSize = [self folderSizeAtPath:cachePath];
-//        ANLog(@"%@", [NSThread currentThread]);
-//
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            self.cache = [NSString stringWithFormat:@"%.2fM",fileSize];
-//            ANLog(@"%@", [NSThread currentThread]);
-//
-//        });
-//    });
-//    
-//    
-//}
-//
-//
-//
-//- (CGFloat)folderSizeAtPath:(NSString *)folderPath
-//{
-//    NSFileManager *manager = [NSFileManager defaultManager];
-//    if (![manager fileExistsAtPath:folderPath]) {
-//        return 0;
-//    }
-//    
-//    NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:folderPath] objectEnumerator];
-//    
-//    NSString *fileName = nil;
-//    long long folderSize = 0;
-//    while ((fileName = [childFilesEnumerator nextObject]) != nil) {
-//        NSString *fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
-//        folderSize += [self fileSizeAtPath:fileAbsolutePath];
-//    }
-//    return folderSize/(1024.0*1024.0);
-//}
-//
-//- (long long)fileSizeAtPath:(NSString *)filePath
-//{
-//    NSFileManager* manager = [NSFileManager defaultManager];
-//    if ([manager fileExistsAtPath:filePath]){
-//        return [[manager attributesOfItemAtPath:filePath error:nil] fileSize];
-//    }
-//    return 0;
-//
-//}
 
 
 
-
-
-
-
-
+#pragma mark AwesomeMenuDelegate
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    switch (idx) {
+        case 0:
+            [self.sideMenuViewController backToHomeViewController];
+            break;
+            
+        case 1:
+            [MBProgressHUD showError:@"Boom!xiaKaLaKa"];
+            break;
+            
+        default:
+            break;
+    }
+}
 
 
 

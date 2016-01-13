@@ -31,7 +31,7 @@
 /**
  *  跳到控制器
  */
-- (void)backToHomeViewController:(UIViewController*)viewController
+- (void)toViewController:(UIViewController*)viewController
 {
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];

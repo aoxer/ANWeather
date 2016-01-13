@@ -110,7 +110,6 @@ static FMDatabase *_db;
     
     while (set.next) {
         
-        ANLog(@"%d",[set intForColumn:isC]);
        return [set intForColumn:isC];
         
     }
@@ -126,7 +125,6 @@ static FMDatabase *_db;
     FMResultSet *set = [_db executeQuery:sql];
     while (set.next) {
         
-        ANLog(@"%d",[set intForColumn:isWindScale]);
         return [set intForColumn:isWindScale];
     }
     
@@ -142,7 +140,6 @@ static FMDatabase *_db;
     
     while (set.next) {
         
-        ANLog(@"%d",[set intForColumn:isBigHand]);
         return [set intForColumn:isBigHand];
     }
     
@@ -157,7 +154,6 @@ static FMDatabase *_db;
     FMResultSet *set = [_db executeQuery:sql];
     while (set.next) {
         
-        ANLog(@"%d",[set intForColumn:isShakeEnable]);
         return [set intForColumn:isShakeEnable];
     }
     

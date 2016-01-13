@@ -13,10 +13,10 @@
 #import "ANRightTableViewController.h"
 #import "ANSettingTool.h"
 #import "UMSocial.h"
+#import "AwesomeMenu.h"
 
 
-
-@interface AppDelegate ()
+@interface AppDelegate ()<AwesomeMenuDelegate>
 
 
 @end
@@ -27,7 +27,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
    
-    
     // 友盟分享
     [UMSocialData setAppKey:ANUMAppKey];
     
@@ -70,6 +69,7 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
+    [[ANAwesomeMenu sharedAwesomeMenu] setHidden:YES];
 //    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
@@ -80,6 +80,7 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
 {
+    [ANAwesomeMenu sharedAwesomeMenu].hidden = NO;
 //    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
@@ -88,6 +89,23 @@
 //    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
+
+#pragma mark AwesomeMenuDelegate
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    switch (idx) {
+        case 0:
+            [self.];
+            break;
+            
+        case 1:
+            [self callRight];
+            break;
+            
+        default:
+            break;
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
