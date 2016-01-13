@@ -184,7 +184,7 @@
             [ANSettingTool updateShakeEnable:![ANSettingTool isShakeEnable]];
             
             break;
-
+   
             
         default:
             break;
