@@ -49,15 +49,14 @@
         self.minTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.min];
     } else {
         
-        self.maxTemp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(dailyForcast.tmp.max)];
-        self.minTemp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(dailyForcast.tmp.min)];
+        self.maxTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(dailyForcast.tmp.max)];
+        self.minTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(dailyForcast.tmp.min)];
     }
     
     self.week.text = [self weekDayFromDate:dailyForcast.date];
     self.date.text = [self dateWithMonthDay:dailyForcast.date];
     self.weatherIcon.image = [self getWeatherImageWithCondCode:dailyForcast.cond.code_d];
    
-
 }
 
 /**

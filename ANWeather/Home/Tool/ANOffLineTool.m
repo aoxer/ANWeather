@@ -14,7 +14,6 @@
 
 @interface ANOffLineTool ()
 
-@property (strong, nonatomic)NSMutableArray *citiesArray;
 
 @end
 
@@ -83,8 +82,6 @@ static FMDatabase *_db;
 
 #warning 判断是否为今天 待做
 
-
-
 + (BOOL)cityExists:(NSString *)city
 {
     NSString *sql = @"SELECT city FROM t_weathers";
@@ -104,14 +101,7 @@ static FMDatabase *_db;
     return NO;
 }
 
-+ (BOOL)isFirst
-{
-    if (![self getLastCity].length) {
-        return YES;
-    }
-    return NO;
-}
-
+ 
 + (BOOL)CityWeatherIsToday:(NSString *)city
 {
    NSDictionary *weatherDict = [self weathersWithCity:city];
@@ -128,13 +118,7 @@ static FMDatabase *_db;
     return NO;
 }
 
-- (NSMutableArray *)citiesArray
-{
-    if (!_citiesArray) {
-        _citiesArray = [NSMutableArray array];
-    }
-    return _citiesArray;
-}
+
 @end
 
 

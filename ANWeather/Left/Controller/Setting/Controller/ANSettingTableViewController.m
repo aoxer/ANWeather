@@ -11,35 +11,24 @@
 
 
 @interface ANSettingTableViewController ()
-/**
- *  风力是KMH嘛?
- */
-@property (assign, nonatomic)BOOL isKMH;
-/**
- *  温度是℃嘛?
- */
-@property (assign, nonatomic)BOOL isC;
-/**
- * 是大手模式嘛?
- */
-@property (assign, nonatomic)BOOL isBigHand;
-/**
- * 缓存大小
- */
+
 @property (copy, nonatomic)NSString *cache;
 /**
  * 大小手模式
  */
-@property (copy, nonatomic)NSString *bigSmallHand;
+@property (copy, nonatomic)NSString *bigSmallHandMode;
 /**
  * 风力单位
  */
-@property (copy, nonatomic)NSString *windSpeedMode;
+@property (copy, nonatomic)NSString *windScaleSpeedMode;
 /**
  * 温度单位
  */
 @property (copy, nonatomic)NSString *tmpMode;
-
+/**
+ *  摇一摇开关
+ */
+@property (weak, nonatomic)UISwitch *switchBtn;
 
 
 
@@ -52,9 +41,8 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = ANColor(217, 217, 223, 1.0);
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(presentLeftMenuViewController) andImageName:@"back" andImageNameHighlight:@"back"];
-  
 
-}
+ }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -70,19 +58,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-
       
     cell.separatorInset = UIEdgeInsetsMake(0, 20, 0, 0);
     switch (indexPath.section) {
         case 0:
-            indexPath.row == 0 ? (cell.textLabel.text = @"温度单位") : (cell.textLabel.text = @"风力单位");
-            indexPath.row == 0 ? (cell.detailTextLabel.text = self.tmpMode) : (cell.detailTextLabel.text = self.windSpeedMode);
+            if (indexPath.row == 0) {
+                
+                cell.textLabel.text = @"温度单位";
+                cell.detailTextLabel.text = self.tmpMode;
+            } else if (indexPath.row == 1){
+                
+                cell.textLabel.text = @"风力单位";
+                cell.detailTextLabel.text = self.windScaleSpeedMode;
+            }
+            
+            
             cell.imageView.image = [UIImage imageNamed:@[@"blueArrow", @"blueArrow"][indexPath.row]];
             break;
             
         case 1:
             cell.textLabel.text = @"大手模式";
-            cell.detailTextLabel.text = self.bigSmallHand;
+            cell.detailTextLabel.text = self.bigSmallHandMode;
             cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
             break;
             
@@ -105,13 +101,20 @@
     return cell;
     
 }
-
+/**
+ *  创建switch
+ *
+ *  @param cell 放到哪个cell上
+ */
 - (void)switchBtnAtCell:(UITableViewCell *)cell
 {
     UISwitch *switchBtn = [[UISwitch alloc] init];
+    [ANSettingTool isShakeEnable] ? (switchBtn.on = YES) : (switchBtn.on = NO);
     switchBtn.centerY = cell.centerY;
     switchBtn.x = cell.width - switchBtn.width - 20;
     [cell.contentView addSubview:switchBtn];
+    
+    self.switchBtn = switchBtn;
 }
 
 #pragma mark UITableViewDelegate
@@ -122,16 +125,23 @@
         case 0:
             switch (indexPath.row) {
                 case 0:
+                    // 是摄氏度嘛
                     
-                    self.isC ? (self.tmpMode = @"°F") : (self.tmpMode = @"°C");
-                    self.isC = !self.isC;
-
+                    if ([ANSettingTool isC]) {
+                        self.tmpMode = @"°F";
+                    } else {
+                        self.tmpMode = @"°C";
+                    }
+                    
+                    // 转为华氏并存到数据库
+                    [ANSettingTool updateC:![ANSettingTool isC]];
                     break;
                     
                 case 1:
                     
-                    self.isKMH ? (self.windSpeedMode = @"风力级数") : (self.windSpeedMode = @"km/h");
-                    self.isKMH = !self.isKMH;
+                    [ANSettingTool isWindScale] ? (self.windScaleSpeedMode = @"km/h") : (self.windScaleSpeedMode = @"风力等级");
+                    
+                    [ANSettingTool updateWindScale:![ANSettingTool isWindScale]];
 
                     break;
                     
@@ -143,8 +153,10 @@
             
         case 1:
             
-            self.isBigHand ? (self.bigSmallHand = @"小手模式") : (self.bigSmallHand = @"大手模式");
-            self.isBigHand = !self.isBigHand;
+            [ANSettingTool isBigHand] ? (self.bigSmallHandMode = @"小手模式") : (self.bigSmallHandMode = @"大手模式");
+            
+            [ANSettingTool updateBigHand:![ANSettingTool isBigHand]];
+
              break;
             
         case 2:
@@ -154,6 +166,14 @@
             [self myClearCacheAction];
             self.cache = [self getCacheSize];
              break;
+            
+        case 3:
+            // 摇一摇分享
+            [ANSettingTool isShakeEnable] ? ([self.switchBtn setOn:NO animated:YES]) : ([self.switchBtn setOn:YES animated:YES]);
+            [ANSettingTool updateShakeEnable:![ANSettingTool isShakeEnable]];
+            
+            break;
+
             
         default:
             break;
@@ -224,28 +244,28 @@
     
 }
 
-- (NSString *)windSpeedMode
+- (NSString *)windScaleSpeedMode
 {
-    if (!_windSpeedMode) {
-        _windSpeedMode = @"风力级数";
+    if (!_windScaleSpeedMode) {
+        _windScaleSpeedMode = [ANSettingTool isWindScale] ? @"风力等级" : @"km/h";
     }
-    return _windSpeedMode;
+    return _windScaleSpeedMode;
 }
 
 - (NSString *)tmpMode
 {
     if (!_tmpMode) {
-        _tmpMode = @"°C";
+        _tmpMode = [ANSettingTool isC] ? @"°C" : @"°F";
     }
     return _tmpMode;
 }
 
-- (NSString *)bigSmallHand
+- (NSString *)bigSmallHandMode
 {
-    if (!_bigSmallHand) {
-        _bigSmallHand = @"大手模式";
+    if (!_bigSmallHandMode) {
+        _bigSmallHandMode = [ANSettingTool isBigHand] ? @"大手模式" : @"小手模式";
     }
-    return _bigSmallHand;
+    return _bigSmallHandMode;
 }
 //
 //

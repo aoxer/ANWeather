@@ -43,8 +43,7 @@
     [super drawRect:rect];
     
     [self setup];
-    ANLog(@"%@", NSStringFromCGRect(_gaugeView.bounds));
-
+ 
 }
 
 

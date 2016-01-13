@@ -98,6 +98,7 @@
 		0069A7631C4631A20058D710 /* icon-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7551C4631A20058D710 /* icon-plus@2x.png */; };
 		0069A7641C4631A20058D710 /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7561C4631A20058D710 /* icon-star.png */; };
 		0069A7651C4631A20058D710 /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7571C4631A20058D710 /* icon-star@2x.png */; };
+		0069A76B1C467B880058D710 /* NSUserDefaults+firstStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A76A1C467B880058D710 /* NSUserDefaults+firstStart.m */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -331,6 +332,8 @@
 		0069A7551C4631A20058D710 /* icon-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus@2x.png"; sourceTree = "<group>"; };
 		0069A7561C4631A20058D710 /* icon-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star.png"; sourceTree = "<group>"; };
 		0069A7571C4631A20058D710 /* icon-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star@2x.png"; sourceTree = "<group>"; };
+		0069A7691C467B880058D710 /* NSUserDefaults+firstStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+firstStart.h"; path = "ANWeather/Category/NSUserDefaults+firstStart.h"; sourceTree = "<group>"; };
+		0069A76A1C467B880058D710 /* NSUserDefaults+firstStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+firstStart.m"; path = "ANWeather/Category/NSUserDefaults+firstStart.m"; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -586,6 +589,8 @@
 				002215BE1C2CE8CE00E665F6 /* Foundation+Log.m */,
 				002215BF1C2CE8CE00E665F6 /* UIView+Extension.h */,
 				002215C01C2CE8CE00E665F6 /* UIView+Extension.m */,
+				0069A7691C467B880058D710 /* NSUserDefaults+firstStart.h */,
+				0069A76A1C467B880058D710 /* NSUserDefaults+firstStart.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -1448,6 +1453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0095118D1C3D84C500EA9FDC /* UIScrollView+MJExtension.m in Sources */,
+				0069A76B1C467B880058D710 /* NSUserDefaults+firstStart.m in Sources */,
 				002215F31C2CE8E500E665F6 /* AFSecurityPolicy.m in Sources */,
 				009511821C3D84C500EA9FDC /* MJRefreshAutoGifFooter.m in Sources */,
 				00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */,

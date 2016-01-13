@@ -27,11 +27,7 @@
  *  判断缓存文件是否存在
  */
 + (BOOL)cityExists:(NSString *)city;
-/**
- *  是否为第一次打开
- */
-+ (BOOL)isFirst;
-/**
+ /**
  *  判断当前城市是否为今天
  */
 + (BOOL)CityWeatherIsToday:(NSString *)city;

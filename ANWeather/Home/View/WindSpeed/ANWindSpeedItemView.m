@@ -61,11 +61,13 @@
     // 风速
     self.windmill.weatherData = weatherData;
     // 风向 风力
-    if ([ANSettingTool isLevel]) {
-        self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@",weatherData.now.wind.dir, weatherData.now.wind.sc];
+    if ([ANSettingTool isWindScale]) {
+        self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@级",weatherData.now.wind.dir, weatherData.now.wind.sc];
     } else {
-        self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@",weatherData.now.wind.dir, weatherData.now.wind.spd];
+        self.windDirLabel.text = [NSString stringWithFormat:@"%@%@kmh",weatherData.now.wind.dir, weatherData.now.wind.spd];
     }
+    
+    [ANSettingTool updateWindScale:![ANSettingTool isWindScale]];
 }
 
 

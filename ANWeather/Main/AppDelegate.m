@@ -11,7 +11,7 @@
 #import "RESideMenu.h"
 #import "ANLeftTableViewController.h"
 #import "ANRightTableViewController.h"
-
+#import "ANSettingTool.h"
 #import "UMSocial.h"
 
 
@@ -25,6 +25,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+   
     
     // 友盟分享
     [UMSocialData setAppKey:ANUMAppKey];

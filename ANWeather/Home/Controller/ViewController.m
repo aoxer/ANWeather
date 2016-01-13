@@ -144,12 +144,14 @@
         self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
         
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
+        
+        
     } else {
         
         [self awesomeMenu];
+        
     }
-    
-   
+
 }
 
 
@@ -184,13 +186,15 @@
 
 - (void)setupLastCity
 {
-    
-    if (![ANOffLineTool isFirst])
-    {
-        self.city = [ANOffLineTool getLastCity];
+    // 第一次打开设置默认城市
+    if ([NSUserDefaults isFirst])
+    { 
+        self.city = @"上海";
+        ANLog(@"第一次");
     } else {
 #warning 出厂需改为beijing
-        self.city = @"上海";
+        self.city = [ANOffLineTool getLastCity];
+        ANLog(@"第二次");
     }
     
 }
@@ -325,9 +329,9 @@
     [self.locationMgr startUpdatingLocation];
     
     // 如果非第一次打开时 定位功能关闭
-    if (![ANOffLineTool isFirst] && ![CLLocationManager locationServicesEnabled]) {
+    if (![NSUserDefaults isFirst] && ![CLLocationManager locationServicesEnabled]) {
         [MBProgressHUD showError:@"定位功能关闭 请开启"];
-    } else if (![ANOffLineTool isFirst] && ANAuthorizationDenied) {// 如果非第一次打开时 定位功能授权状态不对
+    } else if (![NSUserDefaults isFirst] && ANAuthorizationDenied) {// 如果非第一次打开时 定位功能授权状态不对
        [MBProgressHUD showError:@"定位功能关闭 请开启"];
     }
     
@@ -589,6 +593,8 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:menu];
 }
+
+
 
 @end
 

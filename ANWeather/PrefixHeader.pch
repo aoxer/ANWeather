@@ -17,6 +17,7 @@
 #import "AddedFont.h"
 #import "UIImage+Blur.h"
 #import "RESideMenu+BackToHome.h"
+#import "NSUserDefaults+firstStart.h"
 #ifndef _____PrefixHeader_pch
 #define _____PrefixHeader_pch
 

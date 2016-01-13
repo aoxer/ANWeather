@@ -37,14 +37,7 @@
 }
 - (void)setup
 {
-    CALayer *layer = [CALayer layer];
-    layer.frame = self.bounds;
-    layer.shadowOpacity = 1;
-    layer.cornerRadius = 50;
-    layer.shadowColor = [UIColor blackColor].CGColor;
-    
-    
-    [self.layer addSublayer:layer];
+    self.layer.shadowOpacity = 1;
 }
 
 + (instancetype)view
@@ -74,11 +67,11 @@
     } else {
         
         // 当前温度
-        self.currentTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(nowTmp)];
+        self.currentTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(nowTmp)];
         // 最低温
-        self.minTmp.text = [NSString stringWithFormat:@"%d°F", ANFahrenheit(day1.tmp.min)];
+        self.minTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.min)];
         // 最高温
-        self.maxTmp.text = [NSString stringWithFormat:@"%d°F", ANFahrenheit(day1.tmp.max)];
+        self.maxTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.max)];
     };
      
     // 日期
