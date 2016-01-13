@@ -77,11 +77,27 @@
 		00557E491C45770900E6B790 /* libUMSocial_Sdk_Shake_1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00557E441C45770900E6B790 /* libUMSocial_Sdk_Shake_1.0.a */; };
 		00557E4B1C45774F00E6B790 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00557E4A1C45774F00E6B790 /* MediaPlayer.framework */; };
 		00557E4D1C45EC3200E6B790 /* ANSettingTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00557E4C1C45EC3200E6B790 /* ANSettingTableViewController.storyboard */; };
-		00557E501C45F3E100E6B790 /* ANNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557E4F1C45F3E100E6B790 /* ANNavigationController.m */; };
 		005B1AF01C40FAEF001F6CF9 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */; };
 		005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */; };
 		005B1AF51C40FB57001F6CF9 /* ANWindmill.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AF41C40FB57001F6CF9 /* ANWindmill.m */; };
 		005B1AF71C40FD32001F6CF9 /* ANWindmill.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B1AF61C40FD32001F6CF9 /* ANWindmill.xib */; };
+		0069A7411C461BAE0058D710 /* ANSettingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7401C461BAE0058D710 /* ANSettingTool.m */; };
+		0069A7471C462E210058D710 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7441C462E210058D710 /* AwesomeMenu.m */; };
+		0069A7481C462E210058D710 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7461C462E210058D710 /* AwesomeMenuItem.m */; };
+		0069A7581C4631A20058D710 /* bg-addbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A74A1C4631A20058D710 /* bg-addbutton-highlighted.png */; };
+		0069A7591C4631A20058D710 /* bg-addbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A74B1C4631A20058D710 /* bg-addbutton-highlighted@2x.png */; };
+		0069A75A1C4631A20058D710 /* bg-addbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A74C1C4631A20058D710 /* bg-addbutton.png */; };
+		0069A75B1C4631A20058D710 /* bg-addbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A74D1C4631A20058D710 /* bg-addbutton@2x.png */; };
+		0069A75C1C4631A20058D710 /* bg-menuitem-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A74E1C4631A20058D710 /* bg-menuitem-highlighted.png */; };
+		0069A75D1C4631A20058D710 /* bg-menuitem-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A74F1C4631A20058D710 /* bg-menuitem-highlighted@2x.png */; };
+		0069A75E1C4631A20058D710 /* bg-menuitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7501C4631A20058D710 /* bg-menuitem.png */; };
+		0069A75F1C4631A20058D710 /* bg-menuitem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7511C4631A20058D710 /* bg-menuitem@2x.png */; };
+		0069A7601C4631A20058D710 /* icon-plus-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7521C4631A20058D710 /* icon-plus-highlighted.png */; };
+		0069A7611C4631A20058D710 /* icon-plus-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7531C4631A20058D710 /* icon-plus-highlighted@2x.png */; };
+		0069A7621C4631A20058D710 /* icon-plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7541C4631A20058D710 /* icon-plus.png */; };
+		0069A7631C4631A20058D710 /* icon-plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7551C4631A20058D710 /* icon-plus@2x.png */; };
+		0069A7641C4631A20058D710 /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7561C4631A20058D710 /* icon-star.png */; };
+		0069A7651C4631A20058D710 /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7571C4631A20058D710 /* icon-star@2x.png */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -289,14 +305,32 @@
 		00557E451C45770900E6B790 /* UMSocialShakeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialShakeService.h; sourceTree = "<group>"; };
 		00557E4A1C45774F00E6B790 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		00557E4C1C45EC3200E6B790 /* ANSettingTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ANSettingTableViewController.storyboard; sourceTree = "<group>"; };
-		00557E4E1C45F3E100E6B790 /* ANNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNavigationController.h; sourceTree = "<group>"; };
-		00557E4F1C45F3E100E6B790 /* ANNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNavigationController.m; sourceTree = "<group>"; };
 		005B1AED1C40FAEF001F6CF9 /* ANWindSpeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindSpeedItemView.h; sourceTree = "<group>"; };
 		005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindSpeedItemView.m; sourceTree = "<group>"; };
 		005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindSpeedItemView.xib; sourceTree = "<group>"; };
 		005B1AF31C40FB57001F6CF9 /* ANWindmill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindmill.h; sourceTree = "<group>"; };
 		005B1AF41C40FB57001F6CF9 /* ANWindmill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindmill.m; sourceTree = "<group>"; };
 		005B1AF61C40FD32001F6CF9 /* ANWindmill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindmill.xib; sourceTree = "<group>"; };
+		0069A73F1C461BAE0058D710 /* ANSettingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSettingTool.h; sourceTree = "<group>"; };
+		0069A7401C461BAE0058D710 /* ANSettingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSettingTool.m; sourceTree = "<group>"; };
+		0069A7431C462E210058D710 /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
+		0069A7441C462E210058D710 /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
+		0069A7451C462E210058D710 /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
+		0069A7461C462E210058D710 /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		0069A74A1C4631A20058D710 /* bg-addbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted.png"; sourceTree = "<group>"; };
+		0069A74B1C4631A20058D710 /* bg-addbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton-highlighted@2x.png"; sourceTree = "<group>"; };
+		0069A74C1C4631A20058D710 /* bg-addbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton.png"; sourceTree = "<group>"; };
+		0069A74D1C4631A20058D710 /* bg-addbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-addbutton@2x.png"; sourceTree = "<group>"; };
+		0069A74E1C4631A20058D710 /* bg-menuitem-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted.png"; sourceTree = "<group>"; };
+		0069A74F1C4631A20058D710 /* bg-menuitem-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem-highlighted@2x.png"; sourceTree = "<group>"; };
+		0069A7501C4631A20058D710 /* bg-menuitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem.png"; sourceTree = "<group>"; };
+		0069A7511C4631A20058D710 /* bg-menuitem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-menuitem@2x.png"; sourceTree = "<group>"; };
+		0069A7521C4631A20058D710 /* icon-plus-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted.png"; sourceTree = "<group>"; };
+		0069A7531C4631A20058D710 /* icon-plus-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus-highlighted@2x.png"; sourceTree = "<group>"; };
+		0069A7541C4631A20058D710 /* icon-plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus.png"; sourceTree = "<group>"; };
+		0069A7551C4631A20058D710 /* icon-plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-plus@2x.png"; sourceTree = "<group>"; };
+		0069A7561C4631A20058D710 /* icon-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star.png"; sourceTree = "<group>"; };
+		0069A7571C4631A20058D710 /* icon-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star@2x.png"; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -559,6 +593,7 @@
 		002215691C2CE78500E665F6 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0069A7421C462E210058D710 /* AwesomeMenu */,
 				00557E161C4575EA00E6B790 /* UMSocial_Sdk_4.4 */,
 				00492AF21C438B5D003296FB /* Gauges */,
 				0095113F1C3D84C400EA9FDC /* fmdb */,
@@ -632,8 +667,6 @@
 		002216081C2CE91400E665F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				00557E4E1C45F3E100E6B790 /* ANNavigationController.h */,
-				00557E4F1C45F3E100E6B790 /* ANNavigationController.m */,
 				0022152E1C2CE63900E665F6 /* Main.storyboard */,
 				002216031C2CE8F800E665F6 /* AppDelegate.h */,
 				002216041C2CE8F800E665F6 /* AppDelegate.m */,
@@ -824,6 +857,49 @@
 				005B1AF61C40FD32001F6CF9 /* ANWindmill.xib */,
 			);
 			path = WindSpeed;
+			sourceTree = "<group>";
+		};
+		0069A73E1C461B940058D710 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				0069A73F1C461BAE0058D710 /* ANSettingTool.h */,
+				0069A7401C461BAE0058D710 /* ANSettingTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		0069A7421C462E210058D710 /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0069A7491C4631A20058D710 /* Images */,
+				0069A7431C462E210058D710 /* AwesomeMenu.h */,
+				0069A7441C462E210058D710 /* AwesomeMenu.m */,
+				0069A7451C462E210058D710 /* AwesomeMenuItem.h */,
+				0069A7461C462E210058D710 /* AwesomeMenuItem.m */,
+			);
+			path = AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		0069A7491C4631A20058D710 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0069A74A1C4631A20058D710 /* bg-addbutton-highlighted.png */,
+				0069A74B1C4631A20058D710 /* bg-addbutton-highlighted@2x.png */,
+				0069A74C1C4631A20058D710 /* bg-addbutton.png */,
+				0069A74D1C4631A20058D710 /* bg-addbutton@2x.png */,
+				0069A74E1C4631A20058D710 /* bg-menuitem-highlighted.png */,
+				0069A74F1C4631A20058D710 /* bg-menuitem-highlighted@2x.png */,
+				0069A7501C4631A20058D710 /* bg-menuitem.png */,
+				0069A7511C4631A20058D710 /* bg-menuitem@2x.png */,
+				0069A7521C4631A20058D710 /* icon-plus-highlighted.png */,
+				0069A7531C4631A20058D710 /* icon-plus-highlighted@2x.png */,
+				0069A7541C4631A20058D710 /* icon-plus.png */,
+				0069A7551C4631A20058D710 /* icon-plus@2x.png */,
+				0069A7561C4631A20058D710 /* icon-star.png */,
+				0069A7571C4631A20058D710 /* icon-star@2x.png */,
+			);
+			name = Images;
+			path = ../ANWeather/Home/View/Images;
 			sourceTree = "<group>";
 		};
 		009033B51C2E2E88001FFED3 /* Home */ = {
@@ -1124,6 +1200,7 @@
 		00B98CF91C33846200AD5B5C /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				0069A73E1C461B940058D710 /* Tool */,
 				00B98CFA1C33846200AD5B5C /* Controller */,
 				00B98CFE1C33846200AD5B5C /* Model */,
 				00B98CFF1C33846200AD5B5C /* View */,
@@ -1311,17 +1388,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				00557E351C4575EA00E6B790 /* UMSCommentDetailController.xib in Resources */,
+				0069A75B1C4631A20058D710 /* bg-addbutton@2x.png in Resources */,
 				00557E381C4575EA00E6B790 /* UMShareEditViewController.xib in Resources */,
 				00492AA21C4362E3003296FB /* ANPM25ItemView.xib in Resources */,
+				0069A75F1C4631A20058D710 /* bg-menuitem@2x.png in Resources */,
+				0069A75E1C4631A20058D710 /* bg-menuitem.png in Resources */,
 				005B1AF71C40FD32001F6CF9 /* ANWindmill.xib in Resources */,
 				004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */,
 				00557E3C1C4575EA00E6B790 /* UMSShareListController.xib in Resources */,
+				0069A75D1C4631A20058D710 /* bg-menuitem-highlighted@2x.png in Resources */,
 				00557E361C4575EA00E6B790 /* UMSCommentInputController.xib in Resources */,
 				00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */,
+				0069A7641C4631A20058D710 /* icon-star.png in Resources */,
+				0069A7601C4631A20058D710 /* icon-plus-highlighted.png in Resources */,
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,
 				00224B7F1C3C0373003BA1E6 /* ANCareController.xib in Resources */,
 				00934F481C315F060042F0D9 /* ANDaysWeatherCell.xib in Resources */,
+				0069A75C1C4631A20058D710 /* bg-menuitem-highlighted.png in Resources */,
 				00557E3B1C4575EA00E6B790 /* UMSnsAccountViewController.xib in Resources */,
+				0069A7611C4631A20058D710 /* icon-plus-highlighted@2x.png in Resources */,
 				0095112F1C3CDD4300EA9FDC /* area.json in Resources */,
 				005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */,
 				00557E371C4575EA00E6B790 /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -1334,10 +1419,16 @@
 				00557E3D1C4575EA00E6B790 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				0095118B1C3D84C500EA9FDC /* MJRefresh.bundle in Resources */,
 				00557E4D1C45EC3200E6B790 /* ANSettingTableViewController.storyboard in Resources */,
+				0069A7581C4631A20058D710 /* bg-addbutton-highlighted.png in Resources */,
 				00557E481C45770900E6B790 /* ios-social-sdk-shake.html in Resources */,
+				0069A7631C4631A20058D710 /* icon-plus@2x.png in Resources */,
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
+				0069A7621C4631A20058D710 /* icon-plus.png in Resources */,
+				0069A7591C4631A20058D710 /* bg-addbutton-highlighted@2x.png in Resources */,
 				00557E391C4575EA00E6B790 /* UMShareEditViewControlleriPad.xib in Resources */,
 				00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */,
+				0069A7651C4631A20058D710 /* icon-star@2x.png in Resources */,
+				0069A75A1C4631A20058D710 /* bg-addbutton.png in Resources */,
 				00557E3A1C4575EA00E6B790 /* UMSLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1360,10 +1451,12 @@
 				002215F31C2CE8E500E665F6 /* AFSecurityPolicy.m in Sources */,
 				009511821C3D84C500EA9FDC /* MJRefreshAutoGifFooter.m in Sources */,
 				00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */,
+				0069A7481C462E210058D710 /* AwesomeMenuItem.m in Sources */,
 				002215FA1C2CE8E500E665F6 /* MJFoundation.m in Sources */,
 				002216001C2CE8E500E665F6 /* NSObject+MJKeyValue.m in Sources */,
 				002215F01C2CE8E500E665F6 /* AFHTTPRequestOperationManager.m in Sources */,
 				002215EF1C2CE8E500E665F6 /* AFHTTPRequestOperation.m in Sources */,
+				0069A7411C461BAE0058D710 /* ANSettingTool.m in Sources */,
 				00492B021C438B5D003296FB /* MSArcLayer.m in Sources */,
 				00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */,
 				009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */,
@@ -1396,7 +1489,6 @@
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
 				00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */,
 				00492B011C438B5D003296FB /* MSAnnotatedGauge.m in Sources */,
-				00557E501C45F3E100E6B790 /* ANNavigationController.m in Sources */,
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
 				002215F41C2CE8E500E665F6 /* AFURLConnectionOperation.m in Sources */,
@@ -1434,6 +1526,7 @@
 				009511831C3D84C500EA9FDC /* MJRefreshAutoNormalFooter.m in Sources */,
 				009034041C2E2FA3001FFED3 /* ANWeatherItemView.m in Sources */,
 				009033F81C2E2FA3001FFED3 /* ANAqiM.m in Sources */,
+				0069A7471C462E210058D710 /* AwesomeMenu.m in Sources */,
 				00224B7E1C3C0373003BA1E6 /* ANCareController.m in Sources */,
 				009033FD1C2E2FA3001FFED3 /* ANTemM.m in Sources */,
 				002215F81C2CE8E500E665F6 /* MJDictionaryCache.m in Sources */,

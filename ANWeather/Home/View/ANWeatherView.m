@@ -5,7 +5,6 @@
 //  Created by a on 15/12/25.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
-
 #import "ANWeatherView.h"
 
 #import "ANWeatherItemView.h"
@@ -34,7 +33,7 @@
 @property (strong, nonatomic)ANPM25ItemView *pm25Item;
 
 @property (strong, nonatomic)ANDaysWeatherView *daysWeatherView;
-
+ 
 
 @end
 @implementation ANWeatherView
@@ -43,7 +42,8 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self weatherView];
-        self.backgroundColor = ANColor(100, 100, 100, 0.75);
+        self.backgroundColor = ANClearColor;
+       
     }
     return  self;
 }
@@ -110,7 +110,6 @@
     self.pm25Item = pm25Item;
     [self.items addObject:pm25Item];
     
-
     // cell
     ANDaysWeatherView *daysWeatherView = [[ANDaysWeatherView alloc] init];
     daysWeatherView.backgroundColor = ANColor(100, 100, 100, 0.5);
@@ -148,22 +147,15 @@
     
     // 布局顶部元素
     CGFloat topViewW = ANScreenWidth - MARGIN * 2;
-    CGFloat topViewH = self.height - 2 * itemViewH - MARGIN *2;
+    CGFloat topViewH = itemViewH ;
     CGFloat topViewX = MARGIN;
     CGFloat topViewY = self.height - (itemViewH + MARGIN * 2) - topViewH;
     
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
-    
     self.daysWeatherView.frame = CGRectMake(0, self.height + MARGIN, ANScreenWidth, 44*6);
     
 }
-//- (UITableView *)tableView
-//{
-//    if (!_tableView) {
-//        _tableView = [[UITableView alloc] init];
-//    }
-//    return _tableView;
-//}
+
 
 
 @end

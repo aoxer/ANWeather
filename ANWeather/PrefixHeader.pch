@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
 
+#import "ANSettingTool.h"
+#import "UINavigationBar+BackgroundColor.h"
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "MJExtension.h" 
@@ -54,6 +56,8 @@
 // 高度
 #define  Height                            [UIScreen mainScreen].bounds.size.height
 
+// 华氏度
+#define ANFahrenheit(c) (c).integerValue * 9 / 5 + 32
  
 
 #endif

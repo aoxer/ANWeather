@@ -68,6 +68,7 @@
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
+     
     _weatherData = weatherData;
     ANLog(@"%@", weatherData);
     

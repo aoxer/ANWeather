@@ -19,6 +19,7 @@
 #import "ANRightTableViewController.h"
 #import "ANOffLineTool.h"
 
+#import "AwesomeMenu.h"
 
 
 #import <CoreLocation/CoreLocation.h>
@@ -78,6 +79,13 @@
 
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    
+}
 /**
  *  判断城市
  */
@@ -107,12 +115,11 @@
  */
 - (void)setupTableView
 {
-    self.tableView.backgroundColor = ANColor(131, 131, 171, 1);
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 300, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-64 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundView = self.backGroungImageView;
-    
+    self.tableView.header.tintColor = ANRandomColor;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 
         [self sendRequestWithCity:self.navigationItem.title];
@@ -125,14 +132,22 @@
  */
 - (void)setupNavigaitonItem
 {
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
+     
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"nav"];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
-//    self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
     // 设置导航栏文字颜色
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];
     attr[NSForegroundColorAttributeName] = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:attr];
+    
+    if ([ANSettingTool isBigHand]) {
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
+        
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
+    } else {
+        
+        [self awesomeMenu];
+    }
     
    
 }
@@ -144,8 +159,7 @@
 - (void)SetupWeatherView
 {
     ANWeatherView *weatherView = [[ANWeatherView alloc] init];
-    
-    CGRect rect = CGRectMake(0, 0, ANScreenWidth, self.view.bounds.size.height - 44);
+    CGRect rect = CGRectMake(0, 0, ANScreenWidth, ANScreenHeight);
     weatherView.frame = rect;
     
     [self.tableView addSubview:weatherView];
@@ -432,7 +446,7 @@
 {
     self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 20);
     
-    ANLog(@"%@", NSStringFromCGSize(self.weatherView.size));
+    ANLog(@"%f", scrollView.contentOffset.y);
 }
 
 - (void)HUDWithText:(NSString *)text
@@ -449,6 +463,11 @@
 #warning TODO 模糊
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    CGFloat offsetY = scrollView.contentOffset.y;
+    CGFloat alpha =  offsetY / 200;
+    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor lightGrayColor] colorWithAlphaComponent:alpha]];
+    
+    
 //    GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
 //    blurFilter.blurRadiusInPixels = 2.0;
 //    UIImage *backGroundImage = [UIImage imageNamed:@"lake"];
@@ -460,6 +479,115 @@
 - (void)rightTableViewControllerClickGetLocation
 {
     [self getLocation];
+}
+
+
+- (void)awesomeMenu
+{
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
+    
+    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
+    
+    // Default Menu
+    
+    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem4 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem5 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem6 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem7 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem8 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem9 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    
+    NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, starMenuItem6, starMenuItem7,starMenuItem8,starMenuItem9, nil];
+    
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
+                                                       highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
+                                                           ContentImage:[UIImage imageNamed:@"icon-plus.png"]
+                                                highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem menuItems:menuItems];
+    menu.delegate = self;
+    
+    menu.menuWholeAngle = M_PI_2;
+    menu.farRadius = 110.0f;
+    menu.endRadius = 100.0f;
+    menu.nearRadius = 90.0f;
+    menu.animationDuration = 0.3f;
+    menu.startPoint = CGPointMake(50, ANScreenHeight - 64-50);
+    
+    /* Path-like customization
+     
+     AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+     highlightedImage:storyMenuItemImagePressed
+     ContentImage:starImage
+     highlightedContentImage:nil];
+     AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+     highlightedImage:storyMenuItemImagePressed
+     ContentImage:starImage
+     highlightedContentImage:nil];
+     AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+     highlightedImage:storyMenuItemImagePressed
+     ContentImage:starImage
+     highlightedContentImage:nil];
+     AwesomeMenuItem *starMenuItem4 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+     highlightedImage:storyMenuItemImagePressed
+     ContentImage:starImage
+     highlightedContentImage:nil];
+     AwesomeMenuItem *starMenuItem5 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+     highlightedImage:storyMenuItemImagePressed
+     ContentImage:starImage
+     highlightedContentImage:nil];
+     
+     NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, starMenuItem4, starMenuItem5, nil];
+     
+     AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
+     highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
+     ContentImage:[UIImage imageNamed:@"icon-plus.png"]
+     highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
+     
+     AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.window.bounds startItem:startItem optionMenus:menus];
+     menu.delegate = self;
+     
+     menu.menuWholeAngle = M_PI_2;
+     menu.farRadius = 110.0f;
+     menu.endRadius = 100.0f;
+     menu.nearRadius = 90.0f;
+     menu.animationDuration = 0.3f;
+     menu.startPoint = CGPointMake(50.0, 410.0);
+     
+     */
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:menu];
 }
 
 @end

@@ -60,8 +60,12 @@
 {
     // 风速
     self.windmill.weatherData = weatherData;
-    // 风向
-    self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@",weatherData.now.wind.dir, weatherData.now.wind.sc];
+    // 风向 风力
+    if ([ANSettingTool isLevel]) {
+        self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@",weatherData.now.wind.dir, weatherData.now.wind.sc];
+    } else {
+        self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@",weatherData.now.wind.dir, weatherData.now.wind.spd];
+    }
 }
 
 

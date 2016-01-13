@@ -37,7 +37,14 @@
 }
 - (void)setup
 {
-//    self.backgroundImageView.clipsToBounds = YES;
+    CALayer *layer = [CALayer layer];
+    layer.frame = self.bounds;
+    layer.shadowOpacity = 1;
+    layer.cornerRadius = 50;
+    layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    
+    [self.layer addSublayer:layer];
 }
 
 + (instancetype)view
@@ -53,14 +60,27 @@
     
     ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
     
-
     // 当前温度
-
-    self.currentTmp.text = [NSString stringWithFormat:@"%@°",weatherData.now.tmp];
-    // 最低温
-    self.minTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.min];
-    // 最高温
-    self.maxTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.max];
+    NSString *nowTmp = weatherData.now.tmp;
+    
+    if ([ANSettingTool isC]) {
+        
+        // 当前温度
+        self.currentTmp.text = [NSString stringWithFormat:@"%@°",nowTmp];
+        // 最低温
+        self.minTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.min];
+        // 最高温
+        self.maxTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.max];
+    } else {
+        
+        // 当前温度
+        self.currentTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(nowTmp)];
+        // 最低温
+        self.minTmp.text = [NSString stringWithFormat:@"%d°F", ANFahrenheit(day1.tmp.min)];
+        // 最高温
+        self.maxTmp.text = [NSString stringWithFormat:@"%d°F", ANFahrenheit(day1.tmp.max)];
+    };
+     
     // 日期
     self.MonthDay.text = [self dateWithMonthDay:day1.date];
     
