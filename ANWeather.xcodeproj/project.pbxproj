@@ -76,6 +76,8 @@
 		00557E481C45770900E6B790 /* ios-social-sdk-shake.html in Resources */ = {isa = PBXBuildFile; fileRef = 00557E431C45770900E6B790 /* ios-social-sdk-shake.html */; };
 		00557E491C45770900E6B790 /* libUMSocial_Sdk_Shake_1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00557E441C45770900E6B790 /* libUMSocial_Sdk_Shake_1.0.a */; };
 		00557E4B1C45774F00E6B790 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00557E4A1C45774F00E6B790 /* MediaPlayer.framework */; };
+		00557E4D1C45EC3200E6B790 /* ANSettingTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00557E4C1C45EC3200E6B790 /* ANSettingTableViewController.storyboard */; };
+		00557E501C45F3E100E6B790 /* ANNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00557E4F1C45F3E100E6B790 /* ANNavigationController.m */; };
 		005B1AF01C40FAEF001F6CF9 /* ANWindSpeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */; };
 		005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */; };
 		005B1AF51C40FB57001F6CF9 /* ANWindmill.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AF41C40FB57001F6CF9 /* ANWindmill.m */; };
@@ -142,7 +144,6 @@
 		00B98DAC1C3527DE00AD5B5C /* ANTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98DAB1C3527DE00AD5B5C /* ANTopView.m */; };
 		00B98DAE1C3527EE00AD5B5C /* ANTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98DAD1C3527ED00AD5B5C /* ANTopView.xib */; };
 		00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B98DB11C38280200AD5B5C /* CoreImage.framework */; };
-		00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */; };
 		00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B98DB91C3A327C00AD5B5C /* addcity.png */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 /* End PBXBuildFile section */
@@ -287,6 +288,9 @@
 		00557E441C45770900E6B790 /* libUMSocial_Sdk_Shake_1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_Shake_1.0.a; sourceTree = "<group>"; };
 		00557E451C45770900E6B790 /* UMSocialShakeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialShakeService.h; sourceTree = "<group>"; };
 		00557E4A1C45774F00E6B790 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		00557E4C1C45EC3200E6B790 /* ANSettingTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ANSettingTableViewController.storyboard; sourceTree = "<group>"; };
+		00557E4E1C45F3E100E6B790 /* ANNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNavigationController.h; sourceTree = "<group>"; };
+		00557E4F1C45F3E100E6B790 /* ANNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNavigationController.m; sourceTree = "<group>"; };
 		005B1AED1C40FAEF001F6CF9 /* ANWindSpeedItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindSpeedItemView.h; sourceTree = "<group>"; };
 		005B1AEE1C40FAEF001F6CF9 /* ANWindSpeedItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindSpeedItemView.m; sourceTree = "<group>"; };
 		005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindSpeedItemView.xib; sourceTree = "<group>"; };
@@ -410,8 +414,6 @@
 		00B98DAB1C3527DE00AD5B5C /* ANTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTopView.m; sourceTree = "<group>"; };
 		00B98DAD1C3527ED00AD5B5C /* ANTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTopView.xib; sourceTree = "<group>"; };
 		00B98DB11C38280200AD5B5C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		00B98DB31C38DDD300AD5B5C /* ANSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSearchBar.h; sourceTree = "<group>"; };
-		00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSearchBar.m; sourceTree = "<group>"; };
 		00B98DB91C3A327C00AD5B5C /* addcity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addcity.png; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
@@ -630,11 +632,11 @@
 		002216081C2CE91400E665F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				00557E4E1C45F3E100E6B790 /* ANNavigationController.h */,
+				00557E4F1C45F3E100E6B790 /* ANNavigationController.m */,
 				0022152E1C2CE63900E665F6 /* Main.storyboard */,
 				002216031C2CE8F800E665F6 /* AppDelegate.h */,
 				002216041C2CE8F800E665F6 /* AppDelegate.m */,
-				00B98DB31C38DDD300AD5B5C /* ANSearchBar.h */,
-				00B98DB41C38DDD300AD5B5C /* ANSearchBar.m */,
 				002216051C2CE8F800E665F6 /* main.m */,
 				00B98D991C341DD400AD5B5C /* ANConst.h */,
 				00B98D9A1C341DD400AD5B5C /* ANConst.m */,
@@ -1135,6 +1137,7 @@
 			children = (
 				00B98CFB1C33846200AD5B5C /* ANSettingTableViewController.h */,
 				00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */,
+				00557E4C1C45EC3200E6B790 /* ANSettingTableViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1330,6 +1333,7 @@
 				00557E321C4575EA00E6B790 /* UMSocialLocalizable.strings in Resources */,
 				00557E3D1C4575EA00E6B790 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				0095118B1C3D84C500EA9FDC /* MJRefresh.bundle in Resources */,
+				00557E4D1C45EC3200E6B790 /* ANSettingTableViewController.storyboard in Resources */,
 				00557E481C45770900E6B790 /* ios-social-sdk-shake.html in Resources */,
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
 				00557E391C4575EA00E6B790 /* UMShareEditViewControlleriPad.xib in Resources */,
@@ -1379,7 +1383,6 @@
 				0095118F1C3D84C500EA9FDC /* UIView+MJExtension.m in Sources */,
 				0095117D1C3D84C500EA9FDC /* MJRefreshAutoFooter.m in Sources */,
 				00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */,
-				00B98DB51C38DDD300AD5B5C /* ANSearchBar.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
 				009511781C3D84C500EA9FDC /* FMDatabase.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,
@@ -1393,6 +1396,7 @@
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
 				00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */,
 				00492B011C438B5D003296FB /* MSAnnotatedGauge.m in Sources */,
+				00557E501C45F3E100E6B790 /* ANNavigationController.m in Sources */,
 				002215FC1C2CE8E500E665F6 /* MJPropertyKey.m in Sources */,
 				002216061C2CE8F800E665F6 /* AppDelegate.m in Sources */,
 				002215F41C2CE8E500E665F6 /* AFURLConnectionOperation.m in Sources */,

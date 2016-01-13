@@ -73,6 +73,7 @@
     ViewController *homeVc = [[ViewController alloc] init];
     homeVc.isFromLeft = YES;
     
+    ANSettingTableViewController *settingVC = [[ANSettingTableViewController alloc] init];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
 #warning 待改
@@ -87,7 +88,7 @@
             break;
             
         case 2:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANSettingTableViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:settingVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
@@ -113,7 +114,6 @@
     }
 
 }
-
 - (ANSettingTableViewController *)settingVC
 {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ANSettingTableViewController" bundle:nil];
@@ -121,7 +121,6 @@
     
     return settingVC;
 }
-
 - (void)setupCell:(NSNotification *)notification
 {
     ANLog(@"%@", notification.userInfo);

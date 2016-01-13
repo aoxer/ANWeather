@@ -54,6 +54,9 @@
                                       screenShoter:[UMSocialScreenShoterDefault screenShoter]
                                   inViewController:self
                                           delegate:self];
+    
+    // 不需要响应摇一摇动作调用如下代码：
+    [UMSocialShakeService unShakeToSns];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

@@ -93,11 +93,26 @@
             cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
             break;
             
+        case 3:
+            
+            cell.textLabel.text = @"摇一摇分享";
+            [self switchBtnAtCell:cell];
+            cell.highlighted = NO;
+            cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
+            break;
         default:
             break;
     }
     return cell;
     
+}
+
+- (void)switchBtnAtCell:(UITableViewCell *)cell
+{
+    UISwitch *switchBtn = [[UISwitch alloc] init];
+    switchBtn.centerY = cell.centerY;
+    switchBtn.x = cell.width - switchBtn.width - 20;
+    [cell.contentView addSubview:switchBtn];
 }
 
 #pragma mark UITableViewDelegate
@@ -194,7 +209,6 @@
                            if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
                                [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
                                
-                               [MBProgressHUD hideHUD];
                            }
                        }
                        [self performSelectorOnMainThread:@selector(clearCacheSuccess) withObject:nil waitUntilDone:YES];});
@@ -205,7 +219,9 @@
 
 -(void)clearCacheSuccess
 {
-    ANLog(@"清理成功");
+    
+    [MBProgressHUD hideHUD];
+    [MBProgressHUD showSuccess:@"清理成功"];
     
 }
 
