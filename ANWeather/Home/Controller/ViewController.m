@@ -25,7 +25,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface ViewController ()<CLLocationManagerDelegate>
+@interface ViewController ()<CLLocationManagerDelegate, AwesomeMenuDelegate>
 
 /**
  *  已选城市城市
@@ -75,9 +75,7 @@
     
     // 判断城市并获取数据
     [self judgeCity];
-    
-    
-
+     
 }
 
 
@@ -87,7 +85,7 @@
     [super viewWillAppear:YES];
     
     self.navigationController.navigationBar.shadowImage = [UIImage new];
-    
+   
 }
 /**
  *  判断城市
@@ -118,8 +116,16 @@
  */
 - (void)setupTableView
 {
+    
     ANAwesomeMenuHideOrShow
-    [ANAwesomeMenu sharedAwesomeMenu].delegate = self;
+    
+    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
+    awm.delegate = self;
+   
+    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentLeftMenuViewController) name:ANCallLeftNotification object:nil];
+    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentRightMenuViewController) name:ANCallRightNotification object:nil];
+    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(backToHomeViewController) name:ANCallHomeNotification object:nil];
+    
     self.tableView.contentInset = UIEdgeInsetsMake(-64 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -149,9 +155,11 @@
         self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
         
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
-        
-    } else {
-        
+
+    }else {
+        ANAwesomeMenu *awm = [[ANAwesomeMenu alloc] init];
+        awm.hidden = NO;
+
     }
 
 }
@@ -489,9 +497,35 @@
 
  
 
+- (void)dealloc
+{
+    [ANNotificationCenter removeObserver:self];
+    [ANNotificationCenter removeObserver:self];
+    [ANNotificationCenter removeObserver:self];
+}
 
 
-
+#pragma mark AwesomeMenuDelegate
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    switch (idx) {
+        case 0:
+            [ANNotificationCenter postNotificationName:ANCallLeftNotification object:nil];
+            break;
+            
+        case 1:
+            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
+            break;
+            
+        case 2:
+            [ANNotificationCenter postNotificationName:ANCallRightNotification object:nil];
+            break;
+            
+            
+        default:
+            break;
+    }
+}
 
 @end
 

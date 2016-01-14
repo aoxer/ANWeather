@@ -58,7 +58,7 @@
 
 - (void)setupTableView
 {
-    ANAwesomeMenuHideOrShow
+    
     
     self.tableView.backgroundColor = ANColor(40, 40, 40, 0.1);
     self.navigationItem.title = @"请输入城市中文名";

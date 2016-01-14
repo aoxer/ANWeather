@@ -7,11 +7,10 @@
 //
 
 #import "ANSettingTableViewController.h"
-#import "MBProgressHUD+MJ.h"
-#import "AwesomeMenu.h"
+#import "MBProgressHUD+MJ.h" 
 
 
-@interface ANSettingTableViewController ()<AwesomeMenuDelegate>
+@interface ANSettingTableViewController ()
 
 @property (copy, nonatomic)NSString *cache;
 /**
@@ -39,10 +38,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    ANAwesomeMenuHideOrShow    
+        
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = ANColor(217, 217, 223, 1.0);
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(backToHomeViewController) andImageName:@"back" andImageNameHighlight:@"back"];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(presentLeftMenuViewController) andImageName:@"back" andImageNameHighlight:@"back"];
 
  }
 
@@ -157,12 +156,12 @@
             
             if ([ANSettingTool isBigHand]) {
                 self.bigSmallHandMode = @"小手模式";
-                [[ANAwesomeMenu sharedAwesomeMenu] setHidden:NO];
-                ANLog(@"%@",[ANAwesomeMenu sharedAwesomeMenu]);
+                ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
+                awm.hidden = NO;
             } else {
                 self.bigSmallHandMode = @"大手模式";
-                [ANAwesomeMenu sharedAwesomeMenu].hidden = YES;
-                ANLog(@"%@",[ANAwesomeMenu sharedAwesomeMenu]);
+                ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
+                awm.hidden = YES;
              }
             
             
@@ -218,9 +217,11 @@
          long long fileSize = [[filemanager attributesOfItemAtPath:filePath error:nil]fileSize];
              //3）.加载到文件的大小
          sumSize += fileSize;
+        ANLog(@"%lld", sumSize);
      }
     
-     float size_m = sumSize/(1024*1024);
+     CGFloat size_m = sumSize / (1024*1024);
+    ANLog(@"%f", size_m);
      return [NSString stringWithFormat:@"%.2fM",size_m];
     
 }
@@ -280,23 +281,6 @@
 }
 
 
-
-#pragma mark AwesomeMenuDelegate
-- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
-{
-    switch (idx) {
-        case 0:
-            [self.sideMenuViewController backToHomeViewController];
-            break;
-            
-        case 1:
-            [MBProgressHUD showError:@"Boom!xiaKaLaKa"];
-            break;
-            
-        default:
-            break;
-    }
-}
 
 
 

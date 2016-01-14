@@ -16,7 +16,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="sk5-ku-FPe"/>
                     </constraints>
-                    <state key="normal" image="delete">
+                    <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -61,6 +61,5 @@
     </objects>
     <resources>
         <image name="city" width="29" height="29"/>
-        <image name="delete" width="32" height="32"/>
     </resources>
 </document>

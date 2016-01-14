@@ -24,7 +24,7 @@
 + (NSString *)getLastCity;
 
 /**
- *  判断缓存文件是否存在
+ *  判断是否有当前城市缓存
  */
 + (BOOL)cityExists:(NSString *)city;
  /**

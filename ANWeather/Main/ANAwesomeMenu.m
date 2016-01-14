@@ -47,8 +47,12 @@ static ANAwesomeMenu *_instance;
                                                                        highlightedImage:storyMenuItemImagePressed
                                                                            ContentImage:starImage
                                                                 highlightedContentImage:nil];
+                AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                                       highlightedImage:storyMenuItemImagePressed
+                                                                           ContentImage:starImage
+                                                                highlightedContentImage:nil];
                 
-                NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, nil];
+                NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2,starMenuItem3, nil];
                 
                 AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
                                                                    highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
