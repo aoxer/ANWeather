@@ -1,31 +1,27 @@
 //
-//  ANAboutViewController.m
+//  ANFeedBackViewController.m
 //  ANWeather
 //
-//  Created by a on 15/12/30.
-//  Copyright (c) 2015年 YongChaoAn. All rights reserved.
+//  Created by a on 16/1/14.
+//  Copyright (c) 2016年 YongChaoAn. All rights reserved.
 //
 
-#import "ANAboutViewController.h"
+#import "ANFeedBackViewController.h"
 
-@interface ANAboutViewController ()<AwesomeMenuDelegate>
+@interface ANFeedBackViewController ()<AwesomeMenuDelegate>
 
 @end
 
-@implementation ANAboutViewController
+@implementation ANFeedBackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(presentLeftMenuViewController) andImageName:@"back" andImageNameHighlight:@"back"];
+    // Do any additional setup after loading the view from its nib.
+}
 
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"top_navigation_menuicon" andImageNameHighlight:nil];
-//    
-//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:nil andImageName:@"location" andImageNameHighlight:nil];
-//    self.navigationController.navigationBar.barTintColor = ANColor(40, 40, 40, 0.3);
-//    self.navigationController.navigationBar.hidden = YES;
-//    // Do any additional setup after loading the view from its nib.
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 

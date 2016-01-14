@@ -80,6 +80,19 @@ static ANAwesomeMenu *_instance;
 - (id)copyWithZone:(NSZone *)zone
 {
     return _instance;
+    
+    if ([ANSettingTool isBigHand]) {\
+        ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
+        awm.alpha = 0;
+        awm.hidden = YES;\
+    } else {\
+        ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
+        [UIView animateWithDuration:2 animations:^{\
+            awm.alpha = 1;\
+        } completion:^(BOOL finished) {\
+            awm.hidden = NO;\
+        }];\
+    }
 }
 
 

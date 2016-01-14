@@ -62,12 +62,17 @@
 #define ANFahrenheit(c) (c).integerValue * 9 / 5 + 32
 
 // awesomeMenu 隐藏与否
-#define ANAwesomeMenuHideOrShow if ([ANSettingTool isBigHand]) { \
+#define ANAwesomeMenuHideOrShow     if ([ANSettingTool isBigHand]) {\
 ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
+awm.alpha = 0;\
 awm.hidden = YES;\
 } else {\
     ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
-    awm.hidden = NO;\
+    [UIView animateWithDuration:0.2 animations:^{\
+        awm.alpha = 1;\
+    } completion:^(BOOL finished) {\
+        awm.hidden = NO;\
+    }];\
 }
 
 #endif

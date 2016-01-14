@@ -10,6 +10,8 @@
 
 #import "ViewController.h"
 #import "ANSettingTableViewController.h"
+#import "ANSupportViewController.h"
+#import "ANFeedBackViewController.h"
 #import "ANAboutViewController.h"
 #import "ANCareController.h"
 @interface ANLeftTableViewController ()
@@ -70,10 +72,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // 主页
     ViewController *homeVc = [[ViewController alloc] init];
     homeVc.isFromLeft = YES;
-    
+    // 设置
     ANSettingTableViewController *settingVC = [[ANSettingTableViewController alloc] init];
+    // 神秘选项
+    ANSupportViewController *supportVC = [[ANSupportViewController alloc] init];
+    // 关心
+    ANCareController *careVC = [[ANCareController alloc] init];
+    // 反馈
+    ANFeedBackViewController *feedBackVC = [[ANFeedBackViewController alloc] init];
+    // 关于
+    ANAboutViewController *aboutVC = [[ANAboutViewController alloc] init];
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
 #warning 待改
@@ -88,23 +100,23 @@
             break;
             
         case 2:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:settingVC] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:supportVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
         case 3:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANCareController alloc] init]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:careVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
         case 4:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANAboutViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:aboutVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
             
         case 5:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[[ANAboutViewController alloc] init]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:feedBackVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
 

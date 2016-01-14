@@ -10,7 +10,7 @@
 #import "MBProgressHUD+MJ.h" 
 
 
-@interface ANSettingTableViewController ()
+@interface ANSettingTableViewController ()<AwesomeMenuDelegate>
 
 @property (copy, nonatomic)NSString *cache;
 /**
@@ -217,14 +217,13 @@
          long long fileSize = [[filemanager attributesOfItemAtPath:filePath error:nil]fileSize];
              //3）.加载到文件的大小
          sumSize += fileSize;
-        ANLog(@"%lld", sumSize);
      }
     
      CGFloat size_m = sumSize / (1024*1024);
-    ANLog(@"%f", size_m);
      return [NSString stringWithFormat:@"%.2fM",size_m];
     
 }
+
 
 -(void)myClearCacheAction{
     dispatch_async(
@@ -281,7 +280,39 @@
 }
 
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    ANAwesomeMenuHideOrShow
+    
+    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
+    awm.delegate = self;
+}
 
+#pragma mark AwesomeMenuDelegate
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    switch (idx) {
+        case 0:
+            [self.sideMenuViewController presentLeftMenuViewController];
+            //            [ANNotificationCenter postNotificationName:ANCallLeftNotification object:nil];
+            break;
+            
+        case 1:
+            [self.sideMenuViewController backToHomeViewController];
+            //            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
+            break;
+            
+        case 2:
+            [self.sideMenuViewController presentRightMenuViewController];
+            //            [ANNotificationCenter postNotificationName:ANCallRightNotification object:nil];
+            break;
+            
+            
+        default:
+            break;
+    }
+}
 
 
 

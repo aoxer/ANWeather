@@ -78,8 +78,6 @@
      
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
@@ -117,14 +115,15 @@
 - (void)setupTableView
 {
     
-    ANAwesomeMenuHideOrShow
+         ANAwesomeMenuHideOrShow
+        
+        ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
+        awm.delegate = self;
     
-    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
-    awm.delegate = self;
    
-    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentLeftMenuViewController) name:ANCallLeftNotification object:nil];
-    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentRightMenuViewController) name:ANCallRightNotification object:nil];
-    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(backToHomeViewController) name:ANCallHomeNotification object:nil];
+//    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentLeftMenuViewController) name:ANCallLeftNotification object:nil];
+//    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentRightMenuViewController) name:ANCallRightNotification object:nil];
+//    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(backToHomeViewController) name:ANCallHomeNotification object:nil];
     
     self.tableView.contentInset = UIEdgeInsetsMake(-64 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -310,9 +309,23 @@
  */
 - (void)callRight
 {
- 
     [self.sideMenuViewController presentRightMenuViewController];
-   
+}
+/**
+  *  召唤右侧菜单
+  */
+- (void)callHome
+{
+    [self.sideMenuViewController backToHomeViewController];
+    
+}
+
+
+- (void)dealloc
+{
+    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
+//    awm.delegate = nil;
+    ANLog(@"死了");
 }
 
 /**
@@ -498,12 +511,6 @@
 
  
 
-- (void)dealloc
-{
-    [ANNotificationCenter removeObserver:self];
-    [ANNotificationCenter removeObserver:self];
-    [ANNotificationCenter removeObserver:self];
-}
 
 
 #pragma mark AwesomeMenuDelegate
@@ -511,15 +518,18 @@
 {
     switch (idx) {
         case 0:
-            [ANNotificationCenter postNotificationName:ANCallLeftNotification object:nil];
+            [self callLeft];
+//            [ANNotificationCenter postNotificationName:ANCallLeftNotification object:nil];
             break;
             
         case 1:
-            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
+            [self callHome];
+//            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
             break;
             
         case 2:
-            [ANNotificationCenter postNotificationName:ANCallRightNotification object:nil];
+            [self callRight];
+//            [ANNotificationCenter postNotificationName:ANCallRightNotification object:nil];
             break;
             
             

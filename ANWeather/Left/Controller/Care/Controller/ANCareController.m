@@ -10,19 +10,27 @@
 #import "UMSocial.h"
 #import "UMSocialShakeService.h"
 #import "UMSocialScreenShoter.h"
-@interface ANCareController ()<UMSocialUIDelegate>
+@interface ANCareController ()<UMSocialUIDelegate, AwesomeMenuDelegate>
 
 @end
 
 @implementation ANCareController
+
+
 -(BOOL)canBecomeFirstResponder {
     return YES;
 }
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     //设置第一响应者
     [self becomeFirstResponder];
+    
+    ANAwesomeMenuHideOrShow
+    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
+    awm.delegate = self;
 }
+
 //在响应摇一摇动作方法内得到屏幕截图
 -(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*)event
 {
@@ -158,5 +166,34 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+
+#pragma mark AwesomeMenuDelegate
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    switch (idx) {
+        case 0:
+            [self.sideMenuViewController presentLeftMenuViewController];
+            //            [ANNotificationCenter postNotificationName:ANCallLeftNotification object:nil];
+            break;
+            
+        case 1:
+            [self.sideMenuViewController backToHomeViewController];
+            //            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
+            break;
+            
+        case 2:
+            [self.sideMenuViewController presentRightMenuViewController];
+            //            [ANNotificationCenter postNotificationName:ANCallRightNotification object:nil];
+            break;
+            
+            
+        default:
+            break;
+    }
+}
+
 
 @end

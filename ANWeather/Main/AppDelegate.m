@@ -16,7 +16,7 @@
 #import "AwesomeMenu.h"
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<AwesomeMenuDelegate>
 
 
 @end
@@ -25,7 +25,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     
     
     // 友盟分享
@@ -61,6 +60,7 @@
     
   
     [self.window makeKeyAndVisible];
+    
     return YES;
  
 }
@@ -70,9 +70,12 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
-    ANAwesomeMenuHideOrShow
     ANAwesomeMenu *awm =[ANAwesomeMenu sharedAwesomeMenu];
-    awm.hidden = YES;
+    [UIView animateWithDuration:1 animations:^{
+        awm.alpha = 0;
+    } completion:^(BOOL finished) {
+        awm.hidden = YES;
+    }];
 //    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
@@ -93,6 +96,17 @@
     
 //    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

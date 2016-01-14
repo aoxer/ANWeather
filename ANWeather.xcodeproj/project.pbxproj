@@ -101,6 +101,10 @@
 		0069A76B1C467B880058D710 /* NSUserDefaults+firstStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A76A1C467B880058D710 /* NSUserDefaults+firstStart.m */; };
 		0069A76E1C46D4070058D710 /* UIView+awesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A76D1C46D4070058D710 /* UIView+awesomeMenu.m */; };
 		0069A7711C46D5720058D710 /* ANAwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7701C46D5720058D710 /* ANAwesomeMenu.m */; };
+		0069A7781C47C2990058D710 /* ANFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7761C47C2990058D710 /* ANFeedBackViewController.m */; };
+		0069A7791C47C2990058D710 /* ANFeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7771C47C2990058D710 /* ANFeedBackViewController.xib */; };
+		0069A77D1C47C2B50058D710 /* ANSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A77B1C47C2B50058D710 /* ANSupportViewController.m */; };
+		0069A77E1C47C2B50058D710 /* ANSupportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0069A77C1C47C2B50058D710 /* ANSupportViewController.xib */; };
 		009033C11C2E2F46001FFED3 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */; };
 		009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */; };
 		009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 009033C01C2E2F46001FFED3 /* MBProgressHUD.m */; };
@@ -340,6 +344,12 @@
 		0069A76D1C46D4070058D710 /* UIView+awesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+awesomeMenu.m"; path = "ANWeather/Category/UIView+awesomeMenu.m"; sourceTree = "<group>"; };
 		0069A76F1C46D5720058D710 /* ANAwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANAwesomeMenu.h; path = ANWeather/Main/ANAwesomeMenu.h; sourceTree = "<group>"; };
 		0069A7701C46D5720058D710 /* ANAwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANAwesomeMenu.m; path = ANWeather/Main/ANAwesomeMenu.m; sourceTree = "<group>"; };
+		0069A7751C47C2990058D710 /* ANFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFeedBackViewController.h; sourceTree = "<group>"; };
+		0069A7761C47C2990058D710 /* ANFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFeedBackViewController.m; sourceTree = "<group>"; };
+		0069A7771C47C2990058D710 /* ANFeedBackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANFeedBackViewController.xib; sourceTree = "<group>"; };
+		0069A77A1C47C2B50058D710 /* ANSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSupportViewController.h; sourceTree = "<group>"; };
+		0069A77B1C47C2B50058D710 /* ANSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSupportViewController.m; sourceTree = "<group>"; };
+		0069A77C1C47C2B50058D710 /* ANSupportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANSupportViewController.xib; sourceTree = "<group>"; };
 		009033BC1C2E2F46001FFED3 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		009033BD1C2E2F46001FFED3 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		009033BE1C2E2F46001FFED3 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1194,6 +1204,9 @@
 		00B98CF21C33846200AD5B5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0069A7751C47C2990058D710 /* ANFeedBackViewController.h */,
+				0069A7761C47C2990058D710 /* ANFeedBackViewController.m */,
+				0069A7771C47C2990058D710 /* ANFeedBackViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1262,6 +1275,9 @@
 		00B98D011C33846200AD5B5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0069A77A1C47C2B50058D710 /* ANSupportViewController.h */,
+				0069A77B1C47C2B50058D710 /* ANSupportViewController.m */,
+				0069A77C1C47C2B50058D710 /* ANSupportViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1402,6 +1418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0069A7791C47C2990058D710 /* ANFeedBackViewController.xib in Resources */,
 				00557E351C4575EA00E6B790 /* UMSCommentDetailController.xib in Resources */,
 				0069A75B1C4631A20058D710 /* bg-addbutton@2x.png in Resources */,
 				00557E381C4575EA00E6B790 /* UMShareEditViewController.xib in Resources */,
@@ -1438,6 +1455,7 @@
 				00557E481C45770900E6B790 /* ios-social-sdk-shake.html in Resources */,
 				0069A7631C4631A20058D710 /* icon-plus@2x.png in Resources */,
 				002215321C2CE63900E665F6 /* Images.xcassets in Resources */,
+				0069A77E1C47C2B50058D710 /* ANSupportViewController.xib in Resources */,
 				0069A7621C4631A20058D710 /* icon-plus.png in Resources */,
 				0069A7591C4631A20058D710 /* bg-addbutton-highlighted@2x.png in Resources */,
 				00557E391C4575EA00E6B790 /* UMShareEditViewControlleriPad.xib in Resources */,
@@ -1499,9 +1517,11 @@
 				002215FF1C2CE8E500E665F6 /* NSObject+MJCoding.m in Sources */,
 				009511321C3CDFD700EA9FDC /* ANAreaM.m in Sources */,
 				003C982D1C32B2AC00160D91 /* UINavigationBar+BackgroundColor.m in Sources */,
+				0069A7781C47C2990058D710 /* ANFeedBackViewController.m in Sources */,
 				009033F71C2E2FA3001FFED3 /* ViewController.m in Sources */,
 				009033CB1C2E2F53001FFED3 /* RECommonFunctions.m in Sources */,
 				002215F11C2CE8E500E665F6 /* AFHTTPSessionManager.m in Sources */,
+				0069A77D1C47C2B50058D710 /* ANSupportViewController.m in Sources */,
 				009033CD1C2E2F53001FFED3 /* UIViewController+RESideMenu.m in Sources */,
 				009034061C2E2FA3001FFED3 /* ANWeatherView.m in Sources */,
 				00B98D1E1C33C07800AD5B5C /* ANOffLineTool.m in Sources */,

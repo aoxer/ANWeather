@@ -15,7 +15,7 @@
                         <sections>
                             <tableViewSection id="o0F-P3-1wy">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="HKD-n2-OgC" detailTextLabel="oHc-bf-rTV" imageView="Ppy-fb-Ht3" style="IBUITableViewCellStyleValue1" id="84T-Ys-LUh" customClass="ANSettingTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="HKD-n2-OgC" detailTextLabel="oHc-bf-rTV" imageView="Ppy-fb-Ht3" style="IBUITableViewCellStyleValue1" id="84T-Ys-LUh">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="84T-Ys-LUh" id="Qk4-BB-6Jr">
                                             <autoresizingMask key="autoresizingMask"/>
