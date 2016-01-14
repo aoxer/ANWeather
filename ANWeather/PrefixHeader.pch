@@ -18,7 +18,6 @@
 #import "UIImage+Blur.h"
 #import "RESideMenu+BackToHome.h"
 #import "NSUserDefaults+firstStart.h"
-#import "ANAwesomeMenu.h"
 #ifndef _____PrefixHeader_pch
 #define _____PrefixHeader_pch
 
@@ -61,18 +60,12 @@
 // 华氏度
 #define ANFahrenheit(c) (c).integerValue * 9 / 5 + 32
 
-// awesomeMenu 隐藏与否
-#define ANAwesomeMenuHideOrShow     if ([ANSettingTool isBigHand]) {\
-ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
-awm.alpha = 0;\
-awm.hidden = YES;\
-} else {\
-    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
-    [UIView animateWithDuration:0.2 animations:^{\
-        awm.alpha = 1;\
-    } completion:^(BOOL finished) {\
-        awm.hidden = NO;\
-    }];\
-}
+ 
+
+// 导航栏颜色
+#define ANNavBarColor ANColor(50, 50, 50, 1)
+
+
+
 
 #endif

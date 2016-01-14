@@ -43,16 +43,13 @@ static ANAwesomeMenu *_instance;
                                                                        highlightedImage:storyMenuItemImagePressed
                                                                            ContentImage:starImage
                                                                 highlightedContentImage:nil];
+              
                 AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                                        highlightedImage:storyMenuItemImagePressed
                                                                            ContentImage:starImage
                                                                 highlightedContentImage:nil];
-                AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                                       highlightedImage:storyMenuItemImagePressed
-                                                                           ContentImage:starImage
-                                                                highlightedContentImage:nil];
                 
-                NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2,starMenuItem3, nil];
+                NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1,starMenuItem2, nil];
                 
                 AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
                                                                    highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
@@ -81,18 +78,7 @@ static ANAwesomeMenu *_instance;
 {
     return _instance;
     
-    if ([ANSettingTool isBigHand]) {\
-        ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
-        awm.alpha = 0;
-        awm.hidden = YES;\
-    } else {\
-        ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];\
-        [UIView animateWithDuration:2 animations:^{\
-            awm.alpha = 1;\
-        } completion:^(BOOL finished) {\
-            awm.hidden = NO;\
-        }];\
-    }
+    
 }
 
 

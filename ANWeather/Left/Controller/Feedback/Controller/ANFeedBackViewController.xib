@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANFeedBackViewController">
@@ -13,7 +13,57 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3BQ-QI-FdJ">
+                    <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e22-aJ-Xck">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="VB8-vD-fRY"/>
+                                <constraint firstAttribute="height" constant="50" id="cZk-gk-Csg"/>
+                            </constraints>
+                            <state key="normal" image="back">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="left" destination="-1" eventType="touchUpInside" id="W6e-Xc-xG3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iss-3f-bof">
+                            <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="CXk-A9-Opv"/>
+                                <constraint firstAttribute="width" constant="50" id="GSF-6o-6CL"/>
+                            </constraints>
+                            <state key="normal" image="home">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="home" destination="-1" eventType="touchUpInside" id="e5L-5z-4xN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="iss-3f-bof" secondAttribute="bottom" id="Hg3-yR-fTt"/>
+                        <constraint firstItem="e22-aJ-Xck" firstAttribute="leading" secondItem="3BQ-QI-FdJ" secondAttribute="leading" id="N9v-gN-jMW"/>
+                        <constraint firstAttribute="height" constant="50" id="ame-xa-KVD"/>
+                        <constraint firstAttribute="bottom" secondItem="e22-aJ-Xck" secondAttribute="bottom" id="ymD-zn-aLg"/>
+                        <constraint firstItem="iss-3f-bof" firstAttribute="leading" secondItem="e22-aJ-Xck" secondAttribute="trailing" id="yrh-tW-HHW"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3BQ-QI-FdJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Std-UK-eos"/>
+                <constraint firstAttribute="bottom" secondItem="3BQ-QI-FdJ" secondAttribute="bottom" id="b9Y-zV-hvR"/>
+                <constraint firstAttribute="trailing" secondItem="3BQ-QI-FdJ" secondAttribute="trailing" id="ba0-cj-B9v"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="back" width="9" height="17"/>
+        <image name="home" width="20" height="20"/>
+    </resources>
 </document>

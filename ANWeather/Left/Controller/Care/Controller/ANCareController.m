@@ -10,12 +10,12 @@
 #import "UMSocial.h"
 #import "UMSocialShakeService.h"
 #import "UMSocialScreenShoter.h"
-@interface ANCareController ()<UMSocialUIDelegate, AwesomeMenuDelegate>
+#import "AwesomeMenu.h"
+@interface ANCareController ()<UMSocialUIDelegate,AwesomeMenuDelegate>
 
 @end
 
 @implementation ANCareController
-
 
 -(BOOL)canBecomeFirstResponder {
     return YES;
@@ -25,10 +25,7 @@
     [super viewDidAppear:animated];
     //设置第一响应者
     [self becomeFirstResponder];
-    
-    ANAwesomeMenuHideOrShow
-    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
-    awm.delegate = self;
+ 
 }
 
 //在响应摇一摇动作方法内得到屏幕截图

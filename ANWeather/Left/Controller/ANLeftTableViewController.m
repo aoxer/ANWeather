@@ -76,7 +76,7 @@
     ViewController *homeVc = [[ViewController alloc] init];
     homeVc.isFromLeft = YES;
     // 设置
-    ANSettingTableViewController *settingVC = [[ANSettingTableViewController alloc] init];
+    ANSettingTableViewController *settingVC = [self settingVC];
     // 神秘选项
     ANSupportViewController *supportVC = [[ANSupportViewController alloc] init];
     // 关心
@@ -95,7 +95,7 @@
             break;
             
         case 1:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:[self settingVC]] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:settingVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
@@ -110,13 +110,13 @@
             break;
             
         case 4:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:aboutVC] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:feedBackVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             
             
         case 5:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:feedBackVC] animated:YES];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:aboutVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
 
@@ -133,10 +133,7 @@
     
     return settingVC;
 }
-- (void)setupCell:(NSNotification *)notification
-{
-    ANLog(@"%@", notification.userInfo);
-}
+
 
 
 /*

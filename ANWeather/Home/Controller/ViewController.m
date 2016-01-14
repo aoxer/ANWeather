@@ -48,7 +48,8 @@
 @property (strong, nonatomic)UIImageView *backGroungImageView;
 @property (weak, nonatomic)MBProgressHUD *HUD;
 @property (weak, nonatomic)AwesomeMenu *menu;
-
+@property (strong, nonatomic)UIPanGestureRecognizer *dragGesture;
+@property (assign, nonatomic)CGPoint startPoint;
 @end
 
 @implementation ViewController
@@ -75,7 +76,8 @@
     
     // 判断城市并获取数据
     [self judgeCity];
-     
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -84,6 +86,14 @@
     
     self.navigationController.navigationBar.shadowImage = [UIImage new];
    
+    if ([ANSettingTool isBigHand]) {
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
+        
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
+        
+    }else {
+        [self awesome];
+    }
 }
 /**
  *  判断城市
@@ -109,21 +119,29 @@
     }
 }
 #pragma mark 初始化方法
+
+- (void)setupLastCity
+{
+    // 第一次打开设置默认城市
+    if ([NSUserDefaults isFirst])
+    {
+        self.city = @"上海";
+        ANLog(@"第一次");
+    } else {
+#warning 出厂需改为beijing
+        self.city = [ANOffLineTool getLastCity];
+        ANLog(@"第二次");
+    }
+    
+}
+
+
 /**
  *  初始化tableView
  */
 - (void)setupTableView
 {
-    
-         ANAwesomeMenuHideOrShow
-        
-        ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
-        awm.delegate = self;
-    
    
-//    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentLeftMenuViewController) name:ANCallLeftNotification object:nil];
-//    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(presentRightMenuViewController) name:ANCallRightNotification object:nil];
-//    [ANNotificationCenter addObserver:self.sideMenuViewController selector:@selector(backToHomeViewController) name:ANCallHomeNotification object:nil];
     
     self.tableView.contentInset = UIEdgeInsetsMake(-64 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
@@ -150,17 +168,6 @@
     attr[NSForegroundColorAttributeName] = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:attr];
     
-    if ([ANSettingTool isBigHand]) {
-        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
-        
-        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
-
-    }else {
-        ANAwesomeMenu *awm = [[ANAwesomeMenu alloc] init];
-        awm.hidden = NO;
-
-    }
-
 }
 
 
@@ -193,18 +200,23 @@
 
 #pragma mark 动作方法
 
-- (void)setupLastCity
+/**
+ *  处理拖动手势
+ *
+ *  @param recognizer 拖动手势识别器对象实例
+ */
+- (void)dragBtn:(UIPanGestureRecognizer *)recognizer
 {
-    // 第一次打开设置默认城市
-    if ([NSUserDefaults isFirst])
-    { 
-        self.city = @"上海";
-        ANLog(@"第一次");
-    } else {
-#warning 出厂需改为beijing
-        self.city = [ANOffLineTool getLastCity];
-        ANLog(@"第二次");
-    }
+     // 1.挪动的距离
+    CGPoint translation = [recognizer translationInView:recognizer.view];
+    CGPoint center = recognizer.view.center;
+    center.x += translation.x;
+    center.y += translation.y;
+    recognizer.view.center = center;
+    self.startPoint = center;
+    ANLog(@"%@", NSStringFromCGPoint(translation));
+    // 清空移动的距离
+    [recognizer setTranslation:CGPointZero inView:recognizer.view];
     
 }
 
@@ -311,22 +323,9 @@
 {
     [self.sideMenuViewController presentRightMenuViewController];
 }
-/**
-  *  召唤右侧菜单
-  */
-- (void)callHome
-{
-    [self.sideMenuViewController backToHomeViewController];
-    
-}
 
 
-- (void)dealloc
-{
-    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
-//    awm.delegate = nil;
-    ANLog(@"死了");
-}
+
 
 /**
  *  获取所选城市天气
@@ -493,7 +492,7 @@
 {
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat alpha =  offsetY / 200;
-    [self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor lightGrayColor] colorWithAlphaComponent:alpha]];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
     
     
 //    GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
@@ -509,7 +508,55 @@
     [self getLocation];
 }
 
- 
+-(void)awesome
+{
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
+    
+    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
+    
+    // Default Menu
+    
+    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+                                                           highlightedImage:storyMenuItemImagePressed
+                                                               ContentImage:starImage
+                                                    highlightedContentImage:nil];
+   
+    
+    NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, nil];
+    
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
+                                                       highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
+                                                           ContentImage:[UIImage imageNamed:@"icon-plus.png"]
+                                                highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
+    
+    // 添加手势
+    // 手势
+    self.dragGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragBtn:)];
+    [startItem addGestureRecognizer:self.dragGesture];
+
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem menuItems:menuItems];
+    menu.delegate = self;
+    
+    menu.menuWholeAngle = M_PI;
+    menu.farRadius = 110.0f;
+    menu.endRadius = 100.0f;
+    menu.nearRadius = 90.0f;
+    menu.animationDuration = 0.3f;
+    self.startPoint = CGPointMake(100, 100);
+    menu.startPoint = self.startPoint;
+
+    
+    [self.view insertSubview:menu atIndex:self.view.subviews.count];
+
+   
+    
+    self.menu = menu;
+}
 
 
 
@@ -523,13 +570,11 @@
             break;
             
         case 1:
-            [self callHome];
+            [self callRight];
 //            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
             break;
             
-        case 2:
-            [self callRight];
-//            [ANNotificationCenter postNotificationName:ANCallRightNotification object:nil];
+ 
             break;
             
             

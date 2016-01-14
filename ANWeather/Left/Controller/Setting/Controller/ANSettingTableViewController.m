@@ -8,9 +8,10 @@
 
 #import "ANSettingTableViewController.h"
 #import "MBProgressHUD+MJ.h" 
+#import "AwesomeMenu.h"
+#define ANTabViewHeight 50
 
-
-@interface ANSettingTableViewController ()<AwesomeMenuDelegate>
+@interface ANSettingTableViewController ()
 
 @property (copy, nonatomic)NSString *cache;
 /**
@@ -29,7 +30,10 @@
  *  摇一摇开关
  */
 @property (weak, nonatomic)UISwitch *switchBtn;
-
+/**
+ *  底部按钮
+ */
+@property (weak, nonatomic)UIView *tabbarView;
 
 
 @end
@@ -38,16 +42,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+
+    // 设置tableView
+    [self setupTableView];
+  
+    // 设置tabbar
+    [self setupTabbarView];
+}
+
+-(void)setupTabbarView
+{
+    // 容器
+    UIView *tabbarView = [[UIView alloc] init];
+    tabbarView.frame = CGRectMake(0, ANScreenHeight - 64-ANTabViewHeight, ANScreenWidth, ANTabViewHeight);
+   
+    // 按钮
+    UIButton *btn = [[UIButton alloc] init];
+    btn.imageView.image = [UIImage imageNamed:@"back"];
+    btn.frame = CGRectMake(0, 0, ANTabViewHeight, ANTabViewHeight);
+    [btn addTarget:self.sideMenuViewController action:@selector(presentLeftMenuViewController) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *homeBtn = [[UIButton alloc] init];
+    homeBtn.frame = CGRectMake(ANTabViewHeight, 0, ANTabViewHeight, ANTabViewHeight);
+    [btn addTarget:self.sideMenuViewController action:@selector(backToHomeViewController) forControlEvents:UIControlEventTouchUpInside];
+    
+    [tabbarView addSubview:btn];
+    [tabbarView addSubview:homeBtn];
+    
+    tabbarView.backgroundColor = ANNavBarColor;
+    [self.view addSubview:tabbarView];
+    self.tabbarView = tabbarView;
+    
+}
+
+ - (void)setupTableView
+{
+    self.tableView.scrollEnabled = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = ANColor(217, 217, 223, 1.0);
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(presentLeftMenuViewController) andImageName:@"back" andImageNameHighlight:@"back"];
-
- }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - Table view data source
@@ -156,13 +189,9 @@
             
             if ([ANSettingTool isBigHand]) {
                 self.bigSmallHandMode = @"小手模式";
-                ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
-                awm.hidden = NO;
-            } else {
+             } else {
                 self.bigSmallHandMode = @"大手模式";
-                ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
-                awm.hidden = YES;
-             }
+              }
             
             
             [ANSettingTool updateBigHand:![ANSettingTool isBigHand]];
@@ -219,8 +248,18 @@
          sumSize += fileSize;
      }
     
-     CGFloat size_m = sumSize / (1024*1024);
-     return [NSString stringWithFormat:@"%.2fM",size_m];
+    NSString *text = nil;
+    
+    if (sumSize <1024) {
+        text = @"";
+    } else if (sumSize>=1024 && sumSize <1024*1024) {
+        text = [NSString stringWithFormat:@"%lldKB", sumSize / 1024];
+    } else {
+        CGFloat floatSize = sumSize/1024/1024;
+        text = [NSString stringWithFormat:@"%.2fM", floatSize];
+    }
+    
+    return text;
     
 }
 
@@ -278,58 +317,6 @@
     }
     return _bigSmallHandMode;
 }
-
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    ANAwesomeMenuHideOrShow
-    
-    ANAwesomeMenu *awm = [ANAwesomeMenu sharedAwesomeMenu];
-    awm.delegate = self;
-}
-
-#pragma mark AwesomeMenuDelegate
-- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
-{
-    switch (idx) {
-        case 0:
-            [self.sideMenuViewController presentLeftMenuViewController];
-            //            [ANNotificationCenter postNotificationName:ANCallLeftNotification object:nil];
-            break;
-            
-        case 1:
-            [self.sideMenuViewController backToHomeViewController];
-            //            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
-            break;
-            
-        case 2:
-            [self.sideMenuViewController presentRightMenuViewController];
-            //            [ANNotificationCenter postNotificationName:ANCallRightNotification object:nil];
-            break;
-            
-            
-        default:
-            break;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

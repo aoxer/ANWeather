@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANSupportViewController">
@@ -13,7 +13,57 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-bK-nhn">
+                    <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGB-nk-efL">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="0NL-Pp-Oso"/>
+                                <constraint firstAttribute="height" constant="50" id="3uq-xw-b9a"/>
+                            </constraints>
+                            <state key="normal" image="back">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="left" destination="-1" eventType="touchUpInside" id="g1n-Ct-cf6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJj-I8-beC">
+                            <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="D0X-j0-a75"/>
+                                <constraint firstAttribute="height" constant="50" id="O8E-ax-hmV"/>
+                            </constraints>
+                            <state key="normal" image="home">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="home" destination="-1" eventType="touchUpInside" id="h5g-c5-kfU"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="vJj-I8-beC" secondAttribute="bottom" id="6IZ-Z2-tO8"/>
+                        <constraint firstItem="rGB-nk-efL" firstAttribute="leading" secondItem="mgW-bK-nhn" secondAttribute="leading" id="JUy-5x-lGu"/>
+                        <constraint firstItem="vJj-I8-beC" firstAttribute="leading" secondItem="rGB-nk-efL" secondAttribute="trailing" id="Lda-NG-piH"/>
+                        <constraint firstAttribute="height" constant="50" id="O3f-zB-6HL"/>
+                        <constraint firstAttribute="bottom" secondItem="rGB-nk-efL" secondAttribute="bottom" id="YXo-fU-bEP"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mgW-bK-nhn" secondAttribute="bottom" id="EfE-a4-f6R"/>
+                <constraint firstItem="mgW-bK-nhn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RD7-K2-H1g"/>
+                <constraint firstAttribute="trailing" secondItem="mgW-bK-nhn" secondAttribute="trailing" id="YBv-s6-Uep"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="back" width="9" height="17"/>
+        <image name="home" width="20" height="20"/>
+    </resources>
 </document>

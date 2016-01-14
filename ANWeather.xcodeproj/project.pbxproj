@@ -99,7 +99,6 @@
 		0069A7641C4631A20058D710 /* icon-star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7561C4631A20058D710 /* icon-star.png */; };
 		0069A7651C4631A20058D710 /* icon-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7571C4631A20058D710 /* icon-star@2x.png */; };
 		0069A76B1C467B880058D710 /* NSUserDefaults+firstStart.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A76A1C467B880058D710 /* NSUserDefaults+firstStart.m */; };
-		0069A76E1C46D4070058D710 /* UIView+awesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A76D1C46D4070058D710 /* UIView+awesomeMenu.m */; };
 		0069A7711C46D5720058D710 /* ANAwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7701C46D5720058D710 /* ANAwesomeMenu.m */; };
 		0069A7781C47C2990058D710 /* ANFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7761C47C2990058D710 /* ANFeedBackViewController.m */; };
 		0069A7791C47C2990058D710 /* ANFeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0069A7771C47C2990058D710 /* ANFeedBackViewController.xib */; };
@@ -340,8 +339,6 @@
 		0069A7571C4631A20058D710 /* icon-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-star@2x.png"; sourceTree = "<group>"; };
 		0069A7691C467B880058D710 /* NSUserDefaults+firstStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+firstStart.h"; path = "ANWeather/Category/NSUserDefaults+firstStart.h"; sourceTree = "<group>"; };
 		0069A76A1C467B880058D710 /* NSUserDefaults+firstStart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+firstStart.m"; path = "ANWeather/Category/NSUserDefaults+firstStart.m"; sourceTree = "<group>"; };
-		0069A76C1C46D4070058D710 /* UIView+awesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+awesomeMenu.h"; path = "ANWeather/Category/UIView+awesomeMenu.h"; sourceTree = "<group>"; };
-		0069A76D1C46D4070058D710 /* UIView+awesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+awesomeMenu.m"; path = "ANWeather/Category/UIView+awesomeMenu.m"; sourceTree = "<group>"; };
 		0069A76F1C46D5720058D710 /* ANAwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANAwesomeMenu.h; path = ANWeather/Main/ANAwesomeMenu.h; sourceTree = "<group>"; };
 		0069A7701C46D5720058D710 /* ANAwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANAwesomeMenu.m; path = ANWeather/Main/ANAwesomeMenu.m; sourceTree = "<group>"; };
 		0069A7751C47C2990058D710 /* ANFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFeedBackViewController.h; sourceTree = "<group>"; };
@@ -592,8 +589,6 @@
 		002215671C2CE6DA00E665F6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				0069A76C1C46D4070058D710 /* UIView+awesomeMenu.h */,
-				0069A76D1C46D4070058D710 /* UIView+awesomeMenu.m */,
 				00492A9E1C4285F2003296FB /* UIImage+Blur.h */,
 				00492A9F1C4285F2003296FB /* UIImage+Blur.m */,
 				00557DDE1C4422C000E6B790 /* RESideMenu+BackToHome.h */,
@@ -1159,8 +1154,6 @@
 			isa = PBXGroup;
 			children = (
 				00B98CE51C33846200AD5B5C /* Controller */,
-				00B98CE91C33846200AD5B5C /* Model */,
-				00B98CEA1C33846200AD5B5C /* View */,
 			);
 			name = About;
 			path = ANWeather/Left/Controller/About;
@@ -1174,20 +1167,6 @@
 				00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		00B98CE91C33846200AD5B5C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		00B98CEA1C33846200AD5B5C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		00B98CF11C33846200AD5B5C /* Feedback */ = {
@@ -1230,8 +1209,6 @@
 			children = (
 				0069A73E1C461B940058D710 /* Tool */,
 				00B98CFA1C33846200AD5B5C /* Controller */,
-				00B98CFE1C33846200AD5B5C /* Model */,
-				00B98CFF1C33846200AD5B5C /* View */,
 			);
 			name = Setting;
 			path = ANWeather/Left/Controller/Setting;
@@ -1247,26 +1224,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		00B98CFE1C33846200AD5B5C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		00B98CFF1C33846200AD5B5C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		00B98D001C33846200AD5B5C /* support  */ = {
 			isa = PBXGroup;
 			children = (
 				00B98D011C33846200AD5B5C /* Controller */,
-				00B98D021C33846200AD5B5C /* Model */,
-				00B98D031C33846200AD5B5C /* View */,
 			);
 			name = "support ";
 			path = "ANWeather/Left/Controller/support ";
@@ -1280,20 +1241,6 @@
 				0069A77C1C47C2B50058D710 /* ANSupportViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		00B98D021C33846200AD5B5C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		00B98D031C33846200AD5B5C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		00B98D1F1C33C07D00AD5B5C /* Tool */ = {
@@ -1550,7 +1497,6 @@
 				0095117F1C3D84C500EA9FDC /* MJRefreshComponent.m in Sources */,
 				009511801C3D84C500EA9FDC /* MJRefreshFooter.m in Sources */,
 				002215F91C2CE8E500E665F6 /* MJExtensionConst.m in Sources */,
-				0069A76E1C46D4070058D710 /* UIView+awesomeMenu.m in Sources */,
 				00492B051C438B5D003296FB /* MSRangeGauge.m in Sources */,
 				009033F91C2E2FA3001FFED3 /* ANCity.m in Sources */,
 				009033CC1C2E2F53001FFED3 /* RESideMenu.m in Sources */,

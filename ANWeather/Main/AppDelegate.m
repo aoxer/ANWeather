@@ -70,12 +70,7 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
-    ANAwesomeMenu *awm =[ANAwesomeMenu sharedAwesomeMenu];
-    [UIView animateWithDuration:1 animations:^{
-        awm.alpha = 0;
-    } completion:^(BOOL finished) {
-        awm.hidden = YES;
-    }];
+    
 //    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
@@ -87,7 +82,7 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
 {
-    ANAwesomeMenuHideOrShow
+     
 //    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
