@@ -28,8 +28,8 @@
  */
 + (BOOL)cityExists:(NSString *)city;
  /**
- *  判断当前城市是否为今天
+ *  判断当前城市数据是否为今天
  */
 + (BOOL)CityWeatherIsToday:(NSString *)city;
-
-@end
+ 
+ @end

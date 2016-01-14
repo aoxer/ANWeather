@@ -51,6 +51,9 @@ static FMDatabase *_db;
     } else { // 没有就创建
         [_db executeUpdateWithFormat:@"INSERT INTO t_weathers (weathers, city) VALUES (%@, %@)", weathersData, basic.city];
     }
+    
+    // 保存当前城市到本地
+    [self saveLastCity:basic.city];
 
     
 }
@@ -73,22 +76,11 @@ static FMDatabase *_db;
 
 + (NSString *)getLastCity
 {
-    NSString *sql = @"SELECT city FROM t_weathers";
+    NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.last"];
     
-    FMResultSet *set = [_db executeQuery:sql];
-    
-    NSString *city = [NSString string];
-    while (set.next) {
-
-        city = [set objectForColumnName:@"city"];
-
-    }
-    
+   NSString *city = [NSKeyedUnarchiver unarchiveObjectWithFile:lastCityPath];
     return city;
 }
-
-
-#warning 判断是否为今天 待做
 
 + (BOOL)cityExists:(NSString *)city
 {
@@ -126,6 +118,11 @@ static FMDatabase *_db;
     return NO;
 }
 
++ (void)saveLastCity:(NSString *)city
+{
+    NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.last"];
+    [NSKeyedArchiver archiveRootObject:city toFile:lastCityPath];
+}
 
 @end
 
