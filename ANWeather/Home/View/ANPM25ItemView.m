@@ -79,7 +79,6 @@
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
-     
     _weatherData = weatherData;
     ANLog(@"%@", weatherData);
     
@@ -116,6 +115,8 @@
     }  else if (pm2_5 > 300) {
         self.bigGauge.fillArcFillColor = [UIColor purpleColor];
     }
+    
+    
     
 }
 

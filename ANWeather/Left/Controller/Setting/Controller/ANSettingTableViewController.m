@@ -201,7 +201,6 @@
         case 2:
             // 清空缓存
             
-            [MBProgressHUD showMessage:@"正在清理..." toView:self.view];
             [self myClearCacheAction];
             self.cache = [self getCacheSize];
              break;
@@ -289,7 +288,6 @@
 -(void)clearCacheSuccess
 {
     
-    [MBProgressHUD hideHUD];
     [MBProgressHUD showSuccess:@"清理成功"];
     
 }

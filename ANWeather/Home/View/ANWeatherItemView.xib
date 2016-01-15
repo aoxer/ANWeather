@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="314" height="330"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRi-hd-lsc">
+                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRi-hd-lsc">
                     <rect key="frame" x="0.0" y="309" width="314" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="VkC-1j-B7x"/>
@@ -19,7 +19,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="100" translatesAutoresizingMaskIntoConstraints="NO" id="Slq-2d-7OU">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slq-2d-7OU">
                     <rect key="frame" x="0.0" y="0.0" width="314" height="309"/>
                 </imageView>
             </subviews>
@@ -41,7 +41,4 @@
             <point key="canvasLocation" x="170" y="281"/>
         </view>
     </objects>
-    <resources>
-        <image name="100" width="74" height="74"/>
-    </resources>
 </document>

@@ -542,12 +542,12 @@
     AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem menuItems:menuItems];
     menu.delegate = self;
     
-    menu.menuWholeAngle = M_PI;
+    menu.menuWholeAngle = M_PI_2;
     menu.farRadius = 110.0f;
     menu.endRadius = 100.0f;
     menu.nearRadius = 90.0f;
     menu.animationDuration = 0.3f;
-    self.startPoint = CGPointMake(100, 100);
+    self.startPoint = CGPointMake(50, ANScreenHeight - 110);
     menu.startPoint = self.startPoint;
 
     

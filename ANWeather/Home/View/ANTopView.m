@@ -25,23 +25,14 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    ANLog(@"-");
     [self setup];
 }
 
 
 - (void)setup
 {
-    CATransition *anim = [CATransition animation];
-    
-    anim.type = @"pageCurl";
-    
-    anim.subtype = kCATransitionFromLeft;
-    //    anim.startProgress = 0.5;
-    
-    anim.duration = 2;
-    
-    [self.layer addAnimation:anim forKey:nil];}
+   
+}
 
 + (instancetype)view
 {

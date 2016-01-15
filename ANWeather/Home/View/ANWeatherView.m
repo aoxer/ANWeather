@@ -79,7 +79,41 @@
     
     // cell
     self.daysWeatherView.weatherData = weatherData;
+     
+
+
+    [UIView transitionWithView:self.topView duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+        
+    } completion:^(BOOL finished) {
+        [UIView transitionWithView:self.windSpeedItem duration:0.25 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+            
+        } completion:^(BOOL finished) {
+            [UIView transitionWithView:self.weatherItem duration:0.25 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+                
+            } completion:^(BOOL finished) {
+                [UIView transitionWithView:self.pm25Item duration:0.25 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+                    
+                } completion:^(BOOL finished) {
+                    //
+                }];
+                
+            }];
+            
+        }];
+        
+    }];
     
+    
+//    [self subView:self.topView animWithType:@"pageu"];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self subView:self.windSpeedItem animWithType:@"cube"];
+//    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self subView:self.weatherItem animWithType:@"cube"];
+//    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self subView:self.pm25Item animWithType:@"cube"];
+//    });
 }
 
 /**
@@ -155,6 +189,7 @@
     self.daysWeatherView.frame = CGRectMake(0, self.height + MARGIN, ANScreenWidth, 44*6);
     
 }
+
 
 
 
