@@ -5,6 +5,7 @@
 //  Created by a on 15/12/24.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
+#import "AppDelegate.h"
 #import <Accelerate/Accelerate.h>
 #import "ViewController.h"
 #import "AFNetworking.h"
@@ -18,14 +19,15 @@
 #import "MJRefresh.h"
 #import "ANRightTableViewController.h"
 #import "ANOffLineTool.h"
-
 #import "AwesomeMenu.h"
 
+#import "UMSocialShakeService.h"
+#import "UMSocialScreenShoter.h"
 
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface ViewController ()<CLLocationManagerDelegate, AwesomeMenuDelegate>
+@interface ViewController ()<CLLocationManagerDelegate, AwesomeMenuDelegate,ANAppDelegateRESideMenuDelegate>
 
 /**
  *  已选城市城市
@@ -77,13 +79,22 @@
     // 判断城市并获取数据
     [self judgeCity];
     
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
     
+    
+    [UIApplication sharedApplication].applicationSupportsShakeToEdit = [ANSettingTool isShakeEnable];
+
+    //设置第一响应者
+    [self becomeFirstResponder];
+        //可以设置响应摇一摇阈值，数值越低越灵敏，默认是0.8
+    [UMSocialShakeService setShakeThreshold:0.8];
+
+    
+    self.view.backgroundColor = ANColor(222, 222, 222, 0.5);
     self.navigationController.navigationBar.shadowImage = [UIImage new];
    
     if ([ANSettingTool isBigHand]) {
@@ -134,7 +145,6 @@
     }
     
 }
-
 
 /**
  *  初始化tableView
@@ -493,13 +503,7 @@
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat alpha =  offsetY / 200;
     [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
-    
-    
-//    GPUImageGaussianBlurFilter *blurFilter = [[GPUImageGaussianBlurFilter alloc] init];
-//    blurFilter.blurRadiusInPixels = 2.0;
-//    UIImage *backGroundImage = [UIImage imageNamed:@"lake"];
-//   self.backGroungImageView.image = [blurFilter imageByFilteringImage:backGroundImage];
-    
+
 }
 
 #pragma mark <ANRightTableViewControllerDelegate>
@@ -521,11 +525,11 @@
                                                            highlightedImage:storyMenuItemImagePressed
                                                                ContentImage:starImage
                                                     highlightedContentImage:nil];
+   
     AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                            highlightedImage:storyMenuItemImagePressed
                                                                ContentImage:starImage
                                                     highlightedContentImage:nil];
-   
     
     NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, nil];
     
@@ -550,8 +554,8 @@
     self.startPoint = CGPointMake(50, ANScreenHeight - 110);
     menu.startPoint = self.startPoint;
 
-    
-    [self.view insertSubview:menu atIndex:self.view.subviews.count];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:menu];
 
    
     
@@ -566,14 +570,16 @@
     switch (idx) {
         case 0:
             [self callLeft];
-//            [ANNotificationCenter postNotificationName:ANCallLeftNotification object:nil];
+
             break;
             
-        case 1:
+            
+        case 2:
+            
             [self callRight];
-//            [ANNotificationCenter postNotificationName:ANCallHomeNotification object:nil];
+
             break;
-            
+  
  
             break;
             
@@ -581,6 +587,52 @@
         default:
             break;
     }
+}
+
+#pragma mark ANAppDelegateRESideMenuDelegate
+- (void)appDelegateRESideMenuWillShowMenuViewController
+{
+    [UIView animateWithDuration:1 animations:^{
+        self.menu.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.menu.hidden = YES;
+
+    }];
+}
+
+
+- (void)appDelegateRESideMenuWillHideMenuViewController
+{
+    self.menu.alpha = 0;
+    [UIView animateWithDuration:1 animations:^{
+        self.menu.hidden = NO;
+        self.menu.alpha = 1;
+    } completion:^(BOOL finished) {
+        
+    }];
+
+}
+
+#pragma mark 摇一摇
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+
+//在响应摇一摇动作方法内得到屏幕截图
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*)event
+{
+    if(motion == UIEventSubtypeMotionShake)
+    {
+       // 该功能是在用户打开分享面板时，将要分享的图像内容替换为当前应用截图，要使用该功能需要将 UMSocial_ScreenShot_Sdk文件夹添加到工程的中，示例如下:
+        
+        UIImage *image = [[UMSocialScreenShoterDefault screenShoter] getScreenShot];
+        [UMSocialSnsService presentSnsIconSheetView:self appKey:ANUMAppKey shareText:@"分享文字" shareImage:image shareToSnsNames:nil delegate:nil];
+
+    }
+    
+    [UMSocialShakeService unShakeToSns];
+
 }
 
 @end

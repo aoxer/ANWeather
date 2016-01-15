@@ -16,7 +16,7 @@
 #import "AwesomeMenu.h"
 
 
-@interface AppDelegate ()<AwesomeMenuDelegate>
+@interface AppDelegate ()
 
 
 @end
@@ -33,6 +33,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     ViewController *viewController = [[ViewController alloc] init];
+    self.delegate = viewController;
+    ANLog(@"%@", viewController);
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     ANLeftTableViewController *leftTableViewController = [[ANLeftTableViewController alloc] init];
@@ -70,8 +72,13 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
+    if ([self.delegate respondsToSelector:@selector(appDelegateRESideMenuWillShowMenuViewController)]) {
+        [self.delegate appDelegateRESideMenuWillShowMenuViewController];
+    }
     
-//    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
+    
+    
+    //    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 
 - (void)sideMenu:(RESideMenu *)sideMenu didShowMenuViewController:(UIViewController *)menuViewController
@@ -82,7 +89,11 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willHideMenuViewController:(UIViewController *)menuViewController
 {
-     
+    
+    if ([self.delegate respondsToSelector:@selector(appDelegateRESideMenuWillHideMenuViewController)]) {
+        [self.delegate appDelegateRESideMenuWillHideMenuViewController];
+    }
+
 //    NSLog(@"willHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
 }
 

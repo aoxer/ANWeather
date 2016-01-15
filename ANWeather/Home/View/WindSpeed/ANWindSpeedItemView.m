@@ -27,6 +27,7 @@
     [super awakeFromNib];
     [self setup];
 }
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -35,6 +36,7 @@
     }
     return self;
 }
+
 - (void)setup
 {
     ANWindmill *windmill = [ANWindmill view];
@@ -67,7 +69,6 @@
         self.windDirLabel.text = [NSString stringWithFormat:@"%@%@kmh",weatherData.now.wind.dir, weatherData.now.wind.spd];
     }
     
-    [ANSettingTool updateWindScale:![ANSettingTool isWindScale]];
 }
 
 

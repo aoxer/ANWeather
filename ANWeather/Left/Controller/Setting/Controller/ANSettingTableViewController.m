@@ -129,6 +129,13 @@
             cell.highlighted = NO;
             cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
             break;
+            
+        case 4:
+            
+            cell.textLabel.text = @"更换背景图片";
+            
+            break;
+
         default:
             break;
     }
@@ -209,9 +216,16 @@
             // 摇一摇分享
             [ANSettingTool isShakeEnable] ? ([self.switchBtn setOn:NO animated:YES]) : ([self.switchBtn setOn:YES animated:YES]);
             [ANSettingTool updateShakeEnable:![ANSettingTool isShakeEnable]];
-            
+            ANLog(@"%d", [ANSettingTool isShakeEnable]);
             break;
    
+            
+        case 4:
+            // 清空缓存
+            [self openAlbum];
+
+            break;
+
             
         default:
             break;
@@ -291,6 +305,53 @@
     [MBProgressHUD showSuccess:@"清理成功"];
     
 }
+
+/**
+ *  打开相机
+ */
+- (IBAction)openCamera
+{
+    [self openImagePickerController:UIImagePickerControllerSourceTypeCamera];
+}
+
+
+/**
+ *  打开相册
+ */
+- (IBAction)openAlbum
+{
+    [self openImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
+}
+
+#warning TODO 选择图片设置背景
+/**
+ *  打开图片选择控制器
+ */
+- (void)openImagePickerController:(UIImagePickerControllerSourceType)type
+{
+    if (![UIImagePickerController isSourceTypeAvailable:type]) return;
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = type;
+    ipc.delegate = self;
+    
+    [self presentViewController:ipc animated:YES completion:nil];
+    
+}
+
+#pragma mark UIImagePickerControllerDelegate
+/**
+ *  从imagePickerController选择完图片后就调用, 拍照完毕或者选择相册完毕
+ */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    // info中包含了选择的图片
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+//    [self.photosView addPhoto:image];
+}
+
+
 
 - (NSString *)windScaleSpeedMode
 {

@@ -63,7 +63,7 @@
  
 
 // 导航栏颜色
-#define ANNavBarColor ANColor(200, 200, 500, 1)
+#define ANNavBarColor ANColor(200, 200, 200, 1)
 
 
 

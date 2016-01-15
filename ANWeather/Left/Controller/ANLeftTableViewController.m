@@ -13,7 +13,6 @@
 #import "ANSupportViewController.h"
 #import "ANFeedBackViewController.h"
 #import "ANAboutViewController.h"
-#import "ANCareController.h"
 @interface ANLeftTableViewController ()
 
 @end
@@ -79,8 +78,6 @@
     ANSettingTableViewController *settingVC = [self settingVC];
     // 神秘选项
     ANSupportViewController *supportVC = [[ANSupportViewController alloc] init];
-    // 关心
-    ANCareController *careVC = [[ANCareController alloc] init];
     // 反馈
     ANFeedBackViewController *feedBackVC = [[ANFeedBackViewController alloc] init];
     // 关于
@@ -101,11 +98,6 @@
             
         case 2:
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:supportVC] animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-            break;
-            
-        case 3:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:careVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
             

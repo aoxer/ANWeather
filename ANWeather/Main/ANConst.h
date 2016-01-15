@@ -19,5 +19,11 @@ extern NSString * const ANCityDidClickNotification;
 extern NSString * const ANCallLeftNotification;
 extern NSString * const ANCallRightNotification;
 extern NSString * const ANCallHomeNotification;
+
+
+extern NSString * const ANWillShowMenu;
+extern NSString * const ANWillHideMenu;
+
+
 // 友盟appKey
 extern NSString * const ANUMAppKey;

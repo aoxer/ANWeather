@@ -49,8 +49,8 @@
         self.minTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.min];
     } else {
         
-        self.maxTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(dailyForcast.tmp.max)];
-        self.minTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(dailyForcast.tmp.min)];
+        self.maxTemp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(dailyForcast.tmp.max)];
+        self.minTemp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(dailyForcast.tmp.min)];
     }
     
     self.week.text = [self weekDayFromDate:dailyForcast.date];

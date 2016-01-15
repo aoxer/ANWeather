@@ -173,7 +173,7 @@
         int col = i % ANMaxCol;
         
         UIView *itemView = self.items[i];
-        itemView.backgroundColor = ANColor(200, 200, 200, 0.5);
+        itemView.backgroundColor = ANColor(100, 100, 100, 0.5);
         CGFloat itemViewX = MARGIN + col * (itemViewW + MARGIN);
         CGFloat itemViewY = self.height - itemViewH - MARGIN - row * (itemViewH + MARGIN);
         itemView.frame = CGRectMake(itemViewX, itemViewY, itemViewW, itemViewH);

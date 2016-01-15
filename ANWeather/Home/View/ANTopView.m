@@ -44,7 +44,7 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
-    
+    self.backgroundColor = ANColor(100, 100, 100, 0.5);
     ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
     
     // 当前温度
@@ -61,11 +61,11 @@
     } else {
         
         // 当前温度
-        self.currentTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(nowTmp)];
+        self.currentTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(nowTmp)];
         // 最低温
-        self.minTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.min)];
+        self.minTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(day1.tmp.min)];
         // 最高温
-        self.maxTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.max)];
+        self.maxTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(day1.tmp.max)];
     };
      
     // 日期

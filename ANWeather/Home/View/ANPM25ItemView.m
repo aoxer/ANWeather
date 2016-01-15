@@ -103,17 +103,17 @@
     
     [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
     if (pm2_5 <= 50) {
-        self.bigGauge.fillArcFillColor = [UIColor greenColor];
+        self.bigGauge.fillArcFillColor = ANColor(0, 255, 0, 0.5);
     } else if (pm2_5 > 50 && pm2_5 <= 100) {
-        self.bigGauge.fillArcFillColor = [UIColor yellowColor];
+        self.bigGauge.fillArcFillColor = ANColor(255, 255, 0, 0.1);
     } else if (pm2_5 > 100 && pm2_5 <= 150) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 1);
+        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 5);
     } else if (pm2_5 > 150 && pm2_5 <= 200) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 1);
+        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 5);
     } else if (pm2_5 > 200 && pm2_5 <= 300) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 1);
+        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 5);
     }  else if (pm2_5 > 300) {
-        self.bigGauge.fillArcFillColor = [UIColor purpleColor];
+        self.bigGauge.fillArcFillColor = ANColor(255, 0, 255, 0.5);
     }
     
     

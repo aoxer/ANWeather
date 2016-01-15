@@ -22,6 +22,8 @@ NSString * const ANCityDidClickNotification = @"ANCityDidClickNotification";
 NSString * const ANCallLeftNotification = @"ANCallLeftNotification";
 NSString * const ANCallRightNotification = @"ANCallRightNotification";
 NSString * const ANCallHomeNotification = @"ANCallHomeNotification";
+NSString * const ANWillShowMenu = @"ANWillShowMenuNotification";
+NSString * const ANWillHideMenu = @"ANWillHideMenuNotification";
 
 
 

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Setting Table View Controller-->
@@ -129,6 +130,60 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="m9k-rq-1bW">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JgW-Ze-DvT">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JgW-Ze-DvT" id="rJ7-Vd-Kdf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJI-ev-hre" userLabel="camer">
+                                                    <rect key="frame" x="546" y="8" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="FAL-la-jjX"/>
+                                                        <constraint firstAttribute="width" constant="44" id="pxa-bf-u8n"/>
+                                                    </constraints>
+                                                    <state key="normal" image="camer">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="openCamera" destination="sjh-Bz-1PA" eventType="touchUpInside" id="Wof-v4-2QA"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEN-xe-hK9" userLabel="camer">
+                                                    <rect key="frame" x="502" y="8" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="A14-gC-6oC"/>
+                                                        <constraint firstAttribute="width" constant="44" id="hll-ED-N7b"/>
+                                                        <constraint firstAttribute="height" constant="44" id="k9V-Nx-7Ni"/>
+                                                    </constraints>
+                                                    <state key="normal" image="picture">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="d:" destination="sjh-Bz-1PA" eventType="touchUpInside" id="kpi-le-8CL"/>
+                                                        <action selector="openAlbum" destination="sjh-Bz-1PA" eventType="touchUpInside" id="zEK-UP-Uzz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cJI-ev-hre" firstAttribute="leading" secondItem="rEN-xe-hK9" secondAttribute="trailing" id="3Du-US-KF6"/>
+                                                <constraint firstItem="rEN-xe-hK9" firstAttribute="top" secondItem="rJ7-Vd-Kdf" secondAttribute="topMargin" id="MgJ-Rt-MY6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rEN-xe-hK9" secondAttribute="bottom" id="Reb-pI-Ib4"/>
+                                                <constraint firstItem="cJI-ev-hre" firstAttribute="top" secondItem="rJ7-Vd-Kdf" secondAttribute="topMargin" id="Z2w-s5-caS"/>
+                                                <constraint firstAttribute="bottom" secondItem="cJI-ev-hre" secondAttribute="bottom" id="j0M-r0-VnZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="cJI-ev-hre" secondAttribute="trailing" constant="10" id="qma-qX-uaj"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Reb-pI-Ib4"/>
+                                                    <exclude reference="j0M-r0-VnZ"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="sjh-Bz-1PA" id="rGB-8p-sBi"/>
@@ -142,4 +197,8 @@
             <point key="canvasLocation" x="425" y="229"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camer" width="24" height="24"/>
+        <image name="picture" width="24" height="24"/>
+    </resources>
 </document>

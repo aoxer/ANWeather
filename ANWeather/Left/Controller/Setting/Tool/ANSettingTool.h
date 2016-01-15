@@ -25,10 +25,6 @@
  *  摇否
  */
 + (BOOL)isShakeEnable;
-/**
- *  第一次打开的话设置数据
- */
-+ (void)setup;
 
 /**
  * 更新温度模式
