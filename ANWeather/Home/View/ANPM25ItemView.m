@@ -38,25 +38,37 @@
 
 @implementation ANPM25ItemView
 
-
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+    }
+    return self;
+}
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+}
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     
     [self setup];
- 
+    [self setWeatherData:_weatherData];
 }
 
 
 - (void)setup
 {
-    if (!_bigGauge) {
+  
         _bigGauge = [[MSSimpleGauge alloc] initWithFrame:_gaugeView.bounds];
         _bigGauge.backgroundColor = ANClearColor;
         _bigGauge.startAngle = 0;
         _bigGauge.endAngle = 180;
         [_gaugeView addSubview:_bigGauge];
-        
-    }
+    
+    [self setNeedsDisplay];
 }
 
 + (instancetype)view
@@ -105,7 +117,6 @@
         self.bigGauge.fillArcFillColor = [UIColor purpleColor];
     }
     
-    [self setNeedsDisplay];
 }
 
 

@@ -10,18 +10,6 @@
             <rect key="frame" x="0.0" y="0.0" width="292" height="227"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowR" translatesAutoresizingMaskIntoConstraints="NO" id="xHJ-7n-Y1e" userLabel="r">
-                    <rect key="frame" x="289" y="0.0" width="3" height="227"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="3" id="7mB-Fg-9xl"/>
-                    </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowB" translatesAutoresizingMaskIntoConstraints="NO" id="RZP-Nh-4fT" userLabel="b">
-                    <rect key="frame" x="0.0" y="221" width="292" height="3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="3" id="xtI-6s-X0o"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pm2.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUz-ll-boQ">
                     <rect key="frame" x="0.0" y="185" width="292" height="21"/>
                     <constraints>
@@ -50,17 +38,11 @@
                 <constraint firstAttribute="trailing" secondItem="Es1-Qi-o7f" secondAttribute="trailing" id="1G7-he-pQh"/>
                 <constraint firstItem="NHM-bE-lnO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Kv-ca-Np6"/>
                 <constraint firstAttribute="trailing" secondItem="SUz-ll-boQ" secondAttribute="trailing" id="3jX-DC-tRE"/>
-                <constraint firstAttribute="bottom" secondItem="RZP-Nh-4fT" secondAttribute="bottom" constant="3" id="4hF-t4-P0g"/>
-                <constraint firstAttribute="bottom" secondItem="xHJ-7n-Y1e" secondAttribute="bottom" id="9Zp-9u-DMu"/>
                 <constraint firstItem="NHM-bE-lnO" firstAttribute="top" secondItem="SUz-ll-boQ" secondAttribute="bottom" id="G9f-7k-C82"/>
-                <constraint firstAttribute="trailing" secondItem="RZP-Nh-4fT" secondAttribute="trailing" id="HJH-yk-9wu"/>
-                <constraint firstItem="xHJ-7n-Y1e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Hjq-C8-Mkk"/>
-                <constraint firstItem="RZP-Nh-4fT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lq0-0g-K0I"/>
                 <constraint firstAttribute="bottom" secondItem="NHM-bE-lnO" secondAttribute="bottom" id="S4u-2a-rDF"/>
                 <constraint firstItem="Es1-Qi-o7f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TEe-zC-ddQ"/>
                 <constraint firstItem="Es1-Qi-o7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WkS-Qh-Z2P"/>
                 <constraint firstItem="SUz-ll-boQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kRf-l6-IqD"/>
-                <constraint firstAttribute="trailing" secondItem="xHJ-7n-Y1e" secondAttribute="trailing" id="mtE-3e-PaE"/>
                 <constraint firstAttribute="trailing" secondItem="NHM-bE-lnO" secondAttribute="trailing" id="sTM-Sn-jBd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -72,8 +54,4 @@
             <point key="canvasLocation" x="-34" y="39.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="shadowB" width="35" height="3"/>
-        <image name="shadowR" width="3" height="35"/>
-    </resources>
 </document>

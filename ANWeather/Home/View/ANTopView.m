@@ -25,20 +25,23 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    ANLog(@"-");
     [self setup];
 }
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
+
+
 - (void)setup
 {
-    self.layer.shadowOpacity = 1;
-}
+    CATransition *anim = [CATransition animation];
+    
+    anim.type = @"pageCurl";
+    
+    anim.subtype = kCATransitionFromLeft;
+    //    anim.startProgress = 0.5;
+    
+    anim.duration = 2;
+    
+    [self.layer addAnimation:anim forKey:nil];}
 
 + (instancetype)view
 {
