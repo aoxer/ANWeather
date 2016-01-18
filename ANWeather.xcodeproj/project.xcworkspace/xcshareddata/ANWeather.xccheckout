@@ -22,7 +22,7 @@
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>../..</string>
 		<key>E609DD15689CC93D8F4D219EB393F30F9F726178</key>
-		<string>../../../../GitHub/GPUImage</string>
+		<string>../../../GitHub/GPUImage</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/aoxer/ANWeather.git</string>

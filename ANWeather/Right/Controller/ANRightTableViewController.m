@@ -19,6 +19,8 @@
 
 @interface ANRightTableViewController ()
 
+
+
 @end
 
 @implementation ANRightTableViewController
@@ -49,14 +51,18 @@
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return 2;
     
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+    if (section == 0) {
+        return 2;
+    }
     return self.selectedCitys.count;
+
 }
 
 
@@ -64,67 +70,98 @@
 {
     // 创建cell
     ANRightTableViewCell *cell = [ANRightTableViewCell cellWithTableView:tableView];
-    cell.delegate = self;
     cell.tag = indexPath.row;
     cell.backgroundColor = [UIColor clearColor];
     
-    if (0 == indexPath.row) {
-        cell.delCityBtn.hidden = YES;
-        cell.locIcon.image = [UIImage imageNamed:@"addcity"];
-    } else if (1 == indexPath.row){
-        cell.delCityBtn.hidden = YES;
-        cell.locIcon.image = [UIImage imageNamed:@"city"];
-    } else {
-        cell.locIcon.image = [UIImage imageNamed:@"city"];
+    switch (indexPath.section) {
+        case 0:
+        {
+            cell.delCityBtn.hidden = YES;
+            NSArray *icons = [NSArray arrayWithObjects:@"addcity", @"city", nil];
+            NSArray *titles= [NSArray arrayWithObjects:@"添加城市", @"定位", nil];
+            cell.locIcon.image = [UIImage imageNamed:icons[indexPath.row]];
+            cell.cityName.text = titles[indexPath.row];
+        }
+            break;
+            
+        case 1:
+        
+            cell.locIcon.image = [UIImage imageNamed:@"city"];
+            cell.cityName.text = self.selectedCitys[indexPath.row];
+        
+            break;
+  
+        default:
+            break;
     }
-    
-    cell.cityName.text = self.selectedCitys[indexPath.row];
-    
+   
     return cell;
 }
- 
+
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] init];
+    headerView.backgroundColor = ANClearColor;
+    return headerView;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
- 
-    if (0 == indexPath.row) { // 点击添加城市
-        
-        [self addCity];
-        
-#pragma mark 定位
-    } else if (1 == indexPath.row){
-        
-        // 回到首页
-        ViewController *homeVC = [[ViewController alloc] init];
-        self.delegate = homeVC;
-        [self.sideMenuViewController toViewController:homeVC];
-        
-        // 调用代理方法
-        if ([self.delegate respondsToSelector:@selector(rightTableViewControllerClickGetLocation)]) {
-            [self.delegate rightTableViewControllerClickGetLocation];
-        }
-        
-        
-#pragma mark 其他城市
-    } else {
-
-        // 回到首页并把城市带过去
-         NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
-    
-        [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
-
-        //点击已选城市把选择城市提到最前
-        if (indexPath.row > 2) {
-            [self.selectedCitys insertObject:self.selectedCitys[indexPath.row] atIndex:2];
-            [self.selectedCitys removeObjectAtIndex:indexPath.row+1];
+    switch (indexPath.section) {
+        case 0:
             
-            [self.tableView reloadData];
+            if (0 == indexPath.row) {// 添加城市
+                
+                [self addCity];
+                
+            } else {// 定位
+                
+                // 回到首页
+                ViewController *homeVC = [[ViewController alloc] init];
+                self.delegate = homeVC;
+                [self.sideMenuViewController toViewController:homeVC];
+                
+                // 调用代理方法
+                if ([self.delegate respondsToSelector:@selector(rightTableViewControllerClickGetLocation)]) {
+                    [self.delegate rightTableViewControllerClickGetLocation];
+                }
+
+            }
             
+            break;
+            
+        case 1:
+        {
+            
+            // 回到首页并把城市带过去
+            NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
+            
+            [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
+            
+            //点击已选城市把选择城市提到最前
+            if (indexPath.row > 2) {
+                [self.selectedCitys insertObject:self.selectedCitys[indexPath.row] atIndex:2];
+                [self.selectedCitys removeObjectAtIndex:indexPath.row+1];
+                
+                [self.tableView reloadData];
+                
+            }
         }
+            break;
+
+        default:
+            break;
     }
-
+ 
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -143,13 +180,14 @@
         // 2.如果读取出来为空
         if (_selectedCitys == nil) {
             _selectedCitys = [NSMutableArray array];
-            [_selectedCitys addObjectsFromArray:@[@"添加", @"定位"]];
+            [_selectedCitys addObjectsFromArray:@[@"北京", @"上海", @"深圳", @"广州"]];
         }
         
     }
 
     return _selectedCitys;
 }
+
 
 #pragma mark ANRightTableViewCellDelegate
 - (void)rightTableViewCellDidClickDelBtnAtCell:(ANRightTableViewCell *)cell

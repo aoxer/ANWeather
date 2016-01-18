@@ -121,11 +121,12 @@
     } else if (self.isFromRight){ // 如果从右边来
         
         // 加载所选城市天气
+        self.navigationItem.title = self.selectedCity;
         [self loadWeatherWithCity:self.selectedCity];
          self.isFromRight = NO;
         
     } else{
-
+        
         [self sendRequestWithCity:self.city];
     }
 }
@@ -257,8 +258,7 @@
     
     // 通过取出的字典创建模型
     self.weatherData = [ANWeatherData objectWithKeyValues:weathersDict];
-#warning 只有刷新时才调用weatherView.weatherData 的setWeatherData方法
-     self.weatherView.weatherData = self.weatherData;
+    self.weatherView.weatherData = self.weatherData;
     
     // 设置导航栏
     self.navigationItem.title = self.weatherData.basic.city;
@@ -274,7 +274,9 @@
  */
 - (void)sendRequestWithCity:(NSString *)city
 {
-    
+    // 0.菊花
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
     // 1.创建请求管理者
     AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     mgr.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -308,10 +310,17 @@
             [MBProgressHUD showError:@"暂时获取不到当地天气数据"];
         }
         
+        // 结束刷新
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [MBProgressHUD showError:@"请检查网络状态"];
         // 结束刷新
         [self.tableView.header endRefreshing];
+        
+        [MBProgressHUD hideHUD];
+
     }];
     
     

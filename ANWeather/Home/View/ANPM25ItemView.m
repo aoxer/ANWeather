@@ -80,10 +80,13 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
-    ANLog(@"%@", weatherData);
     
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
 
+    if (weatherData.aqi.city.pm25 != nil) {
+        // 如果该城市没有pm2.5做点啥
+    }
+    
     //pm2.5
     if (!weatherData.aqi.city.pm25.length) {
         self.pm2_5.text = @"";
@@ -99,25 +102,24 @@
     }
     
     // 指针
-    [self.bigGauge setValue:pm2_5 animated:YES];
-    
     [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
-    if (pm2_5 <= 50) {
+    
+    ANLog(@"%f", pm2_5);
+    if (pm2_5 > 0 && pm2_5 <= 50) {
         self.bigGauge.fillArcFillColor = ANColor(0, 255, 0, 0.5);
     } else if (pm2_5 > 50 && pm2_5 <= 100) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 255, 0, 0.1);
+        self.bigGauge.fillArcFillColor = ANColor(255, 255, 0, 0.5);
     } else if (pm2_5 > 100 && pm2_5 <= 150) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 5);
+        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, 0.5);
     } else if (pm2_5 > 150 && pm2_5 <= 200) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 5);
+        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, 0.5);
     } else if (pm2_5 > 200 && pm2_5 <= 300) {
-        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 5);
+        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, 0.5);
     }  else if (pm2_5 > 300) {
         self.bigGauge.fillArcFillColor = ANColor(255, 0, 255, 0.5);
     }
     
-    
-    
+
 }
 
 

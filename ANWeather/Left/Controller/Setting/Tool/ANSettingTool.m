@@ -51,6 +51,13 @@ static FMDatabase *_db;
     [_db executeUpdate:sql];
     
   
+    if (![self isUseable]) { // 不能用就创建
+        
+        // 1为是 0为否
+        NSString *sql = [NSString stringWithFormat:@"INSERT INTO t_settings (%@,%@,%@,%@) VALUES (%d,%d,%d,%d)", isC, isWindScale, isBigHand, isShakeEnable, 1, 1, 1, 1];
+        [_db executeUpdate: sql];
+        
+    }  
     
 }
 
@@ -60,18 +67,10 @@ static FMDatabase *_db;
  */
 + (void)updateC:(int)value
 {
-    if (![self isUseable]) { // 不能用就创建
-        
-        // 1为是 0为否
-        NSString *sql = [NSString stringWithFormat:@"INSERT INTO t_settings (%@,%@,%@,%@) VALUES (%d,%d,%d,%d)", isC, isWindScale, isBigHand, isShakeEnable, 1, 1, 1, 1];
-        [_db executeUpdate: sql];
-        
-    } else { // 能用就更新
-        
-        NSString *sql = [NSString stringWithFormat:@"UPDATE t_settings SET %@ = %d", isC, value];
-        [_db executeUpdate:sql];
+    
+    NSString *sql = [NSString stringWithFormat:@"UPDATE t_settings SET %@ = %d", isC, value];
+    [_db executeUpdate:sql];
 
-    }
 }
 
 /**

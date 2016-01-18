@@ -12,11 +12,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PY5-Kh-htq">
-                    <rect key="frame" x="299" y="0.0" width="30" height="44"/>
+                    <rect key="frame" x="289" y="0.0" width="30" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="sk5-ku-FPe"/>
                     </constraints>
-                    <state key="normal">
+                    <state key="normal" image="Trash-gray-32">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -29,8 +29,8 @@
                         <constraint firstAttribute="width" constant="20" id="THb-TT-ciD"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pd-HS-QLy">
-                    <rect key="frame" x="175" y="0.0" width="124" height="44"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pd-HS-QLy">
+                    <rect key="frame" x="175" y="0.0" width="122" height="44"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
             <constraints>
                 <constraint firstItem="PY5-Kh-htq" firstAttribute="leading" secondItem="8pd-HS-QLy" secondAttribute="trailing" id="1ia-sx-Akr"/>
                 <constraint firstItem="PY5-Kh-htq" firstAttribute="top" secondItem="1NB-3T-bVQ" secondAttribute="top" id="4IJ-lD-a0U"/>
-                <constraint firstAttribute="trailing" secondItem="PY5-Kh-htq" secondAttribute="trailing" id="F0K-HQ-8Ur"/>
+                <constraint firstAttribute="trailing" secondItem="PY5-Kh-htq" secondAttribute="trailing" constant="10" id="F0K-HQ-8Ur"/>
                 <constraint firstItem="zBu-dd-dtV" firstAttribute="top" secondItem="1NB-3T-bVQ" secondAttribute="top" id="Wyg-Di-0Em"/>
                 <constraint firstItem="zBu-dd-dtV" firstAttribute="leading" secondItem="1NB-3T-bVQ" secondAttribute="centerX" constant="-15" id="ace-g4-Uls"/>
                 <constraint firstItem="8pd-HS-QLy" firstAttribute="top" secondItem="1NB-3T-bVQ" secondAttribute="top" id="bzc-kv-XW2"/>
@@ -60,6 +60,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Trash-gray-32" width="32" height="32"/>
         <image name="city" width="29" height="29"/>
     </resources>
 </document>
