@@ -56,6 +56,8 @@
 {
     _weatherData = weatherData;
     self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weatherData.daily_forecast];
+    // 移除当天数据
+    [self.dailyForecastArray removeObjectAtIndex:0];
     [self.tableView reloadData];
 }
 

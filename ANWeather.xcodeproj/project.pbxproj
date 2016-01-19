@@ -168,6 +168,8 @@
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 		00F1BCDC1C4BA077003333BA /* ANDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F1BCDA1C4BA077003333BA /* ANDetailViewController.m */; };
 		00F1BCDD1C4BA077003333BA /* ANDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F1BCDB1C4BA077003333BA /* ANDetailViewController.xib */; };
+		00F1BCE01C4DD1C0003333BA /* ANHumidityItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F1BCDF1C4DD1C0003333BA /* ANHumidityItemView.m */; };
+		00F1BCE21C4DD202003333BA /* ANHumidityItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F1BCE11C4DD202003333BA /* ANHumidityItemView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -467,6 +469,9 @@
 		00F1BCD91C4BA077003333BA /* ANDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDetailViewController.h; sourceTree = "<group>"; };
 		00F1BCDA1C4BA077003333BA /* ANDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANDetailViewController.m; sourceTree = "<group>"; };
 		00F1BCDB1C4BA077003333BA /* ANDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANDetailViewController.xib; sourceTree = "<group>"; };
+		00F1BCDE1C4DD1C0003333BA /* ANHumidityItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANHumidityItemView.h; sourceTree = "<group>"; };
+		00F1BCDF1C4DD1C0003333BA /* ANHumidityItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHumidityItemView.m; sourceTree = "<group>"; };
+		00F1BCE11C4DD202003333BA /* ANHumidityItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANHumidityItemView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -984,6 +989,9 @@
 				009033E91C2E2FA3001FFED3 /* ANPM25ItemView.h */,
 				009033EA1C2E2FA3001FFED3 /* ANPM25ItemView.m */,
 				00492AA11C4362E3003296FB /* ANPM25ItemView.xib */,
+				00F1BCDE1C4DD1C0003333BA /* ANHumidityItemView.h */,
+				00F1BCDF1C4DD1C0003333BA /* ANHumidityItemView.m */,
+				00F1BCE11C4DD202003333BA /* ANHumidityItemView.xib */,
 				009033EF1C2E2FA3001FFED3 /* ANWeatherItemView.h */,
 				009033F01C2E2FA3001FFED3 /* ANWeatherItemView.m */,
 				009033F11C2E2FA3001FFED3 /* ANWeatherItemView.xib */,
@@ -1334,6 +1342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0069A7791C47C2990058D710 /* ANFeedBackViewController.xib in Resources */,
+				00F1BCE21C4DD202003333BA /* ANHumidityItemView.xib in Resources */,
 				00557E351C4575EA00E6B790 /* UMSCommentDetailController.xib in Resources */,
 				0069A75B1C4631A20058D710 /* bg-addbutton@2x.png in Resources */,
 				00557E381C4575EA00E6B790 /* UMShareEditViewController.xib in Resources */,
@@ -1420,6 +1429,7 @@
 				003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */,
 				0095117B1C3D84C500EA9FDC /* FMDatabaseQueue.m in Sources */,
 				009511811C3D84C500EA9FDC /* MJRefreshHeader.m in Sources */,
+				00F1BCE01C4DD1C0003333BA /* ANHumidityItemView.m in Sources */,
 				00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */,
 				009033FB1C2E2FA3001FFED3 /* ANDailyForecastM.m in Sources */,
 				002215C11C2CE8CE00E665F6 /* Foundation+Log.m in Sources */,

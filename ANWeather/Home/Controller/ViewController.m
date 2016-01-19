@@ -48,7 +48,6 @@
 @property (strong, nonatomic)CLGeocoder *geocoder;
 
 @property (strong, nonatomic)UIImageView *backGroungImageView;
-@property (weak, nonatomic)MBProgressHUD *HUD;
 @property (weak, nonatomic)AwesomeMenu *menu;
 @property (strong, nonatomic)UIPanGestureRecognizer *dragGesture;
 @property (assign, nonatomic)CGPoint startPoint;
@@ -444,14 +443,16 @@
         // 获取到的城市开始刷新
         NSString *locCity = [pm.locality getCityName:pm.locality];
         self.city = locCity;
+        // 设置导航栏标题
         self.navigationItem.title = locCity;
         [self.tableView.header beginRefreshing];
    
+        [MBProgressHUD hideHUD];
+
         if (error) { // 定位失败
              [MBProgressHUD showError:@"定位失败请手动选择城市"];
         }
     }];
-    
     [self.locationMgr stopUpdatingLocation];
 
 }
@@ -494,16 +495,6 @@
     
     ANLog(@"%f", scrollView.contentOffset.y);
 }
-
-- (void)HUDWithText:(NSString *)text
-{
-    _HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    _HUD.delegate = self;
-    
-    _HUD.labelText = text;
-    [_HUD hide:YES afterDelay:2];
-}
-
 
 #pragma scrollViewDelegate
 #warning TODO 模糊

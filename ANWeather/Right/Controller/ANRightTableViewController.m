@@ -81,6 +81,7 @@
             NSArray *titles= [NSArray arrayWithObjects:@"添加城市", @"定位", nil];
             cell.locIcon.image = [UIImage imageNamed:icons[indexPath.row]];
             cell.cityName.text = titles[indexPath.row];
+
         }
             break;
             
@@ -90,7 +91,7 @@
             cell.cityName.text = self.selectedCitys[indexPath.row];
         
             break;
-  
+            
         default:
             break;
     }
@@ -105,13 +106,14 @@
     return 20;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *headerView = [[UIView alloc] init];
-    headerView.backgroundColor = ANClearColor;
-    return headerView;
-}
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 7, 0)];
+    header.backgroundColor = ANClearColor;
+    return header;
+}
+ 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
