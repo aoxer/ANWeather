@@ -17,7 +17,7 @@
 #define ANSelectedCityFilePath [ANDocumentPath stringByAppendingPathComponent:@"selectedCity.data"]
 
 
-@interface ANRightTableViewController ()
+@interface ANRightTableViewController ()<ANRightTableViewCellDelegate>
 
 
 
@@ -37,6 +37,7 @@
 
 - (void)setupTableView
 {
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.frame = CGRectMake(0, (ANScreenHeight - 54 * 5) /2.0f, ANScreenWidth, 54*5);
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
     
@@ -59,7 +60,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     if (section == 0) {
-        return 2;
+        return 3;
     }
     return self.selectedCitys.count;
 
@@ -70,6 +71,7 @@
 {
     // 创建cell
     ANRightTableViewCell *cell = [ANRightTableViewCell cellWithTableView:tableView];
+    cell.delegate = self;
     cell.tag = indexPath.row;
     cell.backgroundColor = [UIColor clearColor];
     
@@ -77,10 +79,11 @@
         case 0:
         {
             cell.delCityBtn.hidden = YES;
-            NSArray *icons = [NSArray arrayWithObjects:@"addcity", @"city", nil];
-            NSArray *titles= [NSArray arrayWithObjects:@"添加城市", @"定位", nil];
+            NSArray *icons = [NSArray arrayWithObjects:@"addcity", @"city", @"", nil];
+            NSArray *titles= [NSArray arrayWithObjects:@"添加城市", @"定位", @"", nil];
             cell.locIcon.image = [UIImage imageNamed:icons[indexPath.row]];
             cell.cityName.text = titles[indexPath.row];
+            
 
         }
             break;
@@ -99,21 +102,22 @@
     return cell;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 增加一个空白cell区分上下
+    if (indexPath.section == 0 && indexPath.row == 2) {
+        return 5;
+    }
+    
+    return 44;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 20;
-}
-
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 7, 0)];
-    header.backgroundColor = ANClearColor;
-    return header;
+    return 0;
 }
  
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -125,7 +129,7 @@
                 
                 [self addCity];
                 
-            } else {// 定位
+            } else if (1 == indexPath.row){// 定位
                 
                 // 回到首页
                 ViewController *homeVC = [[ViewController alloc] init];
@@ -138,7 +142,6 @@
                 }
 
             }
-            
             break;
             
         case 1:
@@ -166,10 +169,6 @@
  
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44;
-}
 
 #pragma mark 懒加载
 - (NSMutableArray *)selectedCitys
@@ -192,9 +191,11 @@
 
 
 #pragma mark ANRightTableViewCellDelegate
+/**
+ *  删除城市
+ */
 - (void)rightTableViewCellDidClickDelBtnAtCell:(ANRightTableViewCell *)cell
 {
-    
     [self showAlertWithBlock:^{
         [self.selectedCitys removeObjectAtIndex:cell.tag];
         
@@ -203,6 +204,7 @@
         
         [self.tableView reloadData];
     }];
+    
 
 }
 
@@ -259,7 +261,7 @@
         if(![self.selectedCitys containsObject:cityName]) { // 如果选择城市不存在
             
             // 1.把传回来的城市添加到已选城市列表
-            [self.selectedCitys insertObject:cityName atIndex:2];
+            [self.selectedCitys insertObject:cityName atIndex:0];
             
             // 2.刷新表格
             [self.tableView reloadData];

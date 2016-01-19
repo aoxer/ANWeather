@@ -60,6 +60,7 @@
     
     [super viewDidLoad];
     
+    
     // 设置上一次城市
     [self setupLastCity];
     
@@ -78,6 +79,15 @@
     // 判断城市并获取数据
     [self judgeCity];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+
+    // 隐藏状态栏
+    [self prefersStatusBarHidden];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -153,7 +163,7 @@
 {
    
     
-    self.tableView.contentInset = UIEdgeInsetsMake(-64 , 0, 44*6 +20, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(-20 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundView = self.backGroungImageView;
@@ -175,7 +185,7 @@
     
     // 设置导航栏文字颜色
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];
-    attr[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    attr[NSForegroundColorAttributeName] = ANColor(1, 1, 1, 1);
     [self.navigationController.navigationBar setTitleTextAttributes:attr];
     
 }
@@ -188,6 +198,7 @@
 {
     ANWeatherView *weatherView = [[ANWeatherView alloc] init];
     CGRect rect = CGRectMake(0, 0, ANScreenWidth, ANScreenHeight);
+
     weatherView.frame = rect;
     
     [self.tableView addSubview:weatherView];
@@ -318,8 +329,6 @@
         // 结束刷新
         [self.tableView.header endRefreshing];
         
-        [MBProgressHUD hideHUD];
-
     }];
     
     
@@ -425,8 +434,8 @@
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-     [MBProgressHUD showMessage:@"定位ing"];
-    
+    // 0.菊花
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     CLLocation *location = [locations lastObject];
 
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -447,7 +456,9 @@
         self.navigationItem.title = locCity;
         [self.tableView.header beginRefreshing];
    
-        [MBProgressHUD hideHUD];
+        
+        // 0.菊花
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
         if (error) { // 定位失败
              [MBProgressHUD showError:@"定位失败请手动选择城市"];
@@ -493,7 +504,6 @@
 {
     self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 20);
     
-    ANLog(@"%f", scrollView.contentOffset.y);
 }
 
 #pragma scrollViewDelegate
@@ -503,8 +513,17 @@
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat alpha =  offsetY / 200;
     [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
-
+    
+    if (scrollView.contentOffset.y < 0) {
+            self.navigationController.navigationBar.hidden = YES;
+    } else {
+            self.navigationController.navigationBar.hidden = NO;
+    }
+    
 }
+
+
+
 
 #pragma mark <ANRightTableViewControllerDelegate>
 - (void)rightTableViewControllerClickGetLocation
@@ -635,6 +654,11 @@
 
 }
 
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 @end
 
 

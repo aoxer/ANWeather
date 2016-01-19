@@ -285,7 +285,13 @@
 }
 
 
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if (self.searchController.active) {
+        [self.searchController.view endEditing:YES];
+    }
 
+}
 
 
 

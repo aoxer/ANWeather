@@ -58,6 +58,7 @@
     self.date.text = [self dateWithMonthDay:dailyForcast.date];
     self.weatherIcon.image = [self getWeatherImageWithCondCode:dailyForcast.cond.code_d];
    
+
 }
 
 /**

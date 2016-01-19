@@ -31,7 +31,8 @@
 
 - (void)setup
 {
-   
+    self.layer.backgroundColor = ANLayerBackgroundColor;
+    self.layer.cornerRadius = ANCornerRadius;
 }
 
 + (instancetype)view
@@ -44,9 +45,10 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
-    self.backgroundColor = ANColor(100, 100, 100, 0.5);
     ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
     
+ 
+
     // 当前温度
     NSString *nowTmp = weatherData.now.tmp;
     

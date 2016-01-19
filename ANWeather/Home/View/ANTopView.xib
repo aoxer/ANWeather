@@ -11,8 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="321" height="255"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-dI-4HK">
-                    <rect key="frame" x="251" y="230" width="50" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-dI-4HK">
+                    <rect key="frame" x="251" y="230" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="VfT-o2-K8H"/>
                         <constraint firstAttribute="width" constant="50" id="et9-4w-8S8"/>

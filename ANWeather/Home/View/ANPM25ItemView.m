@@ -61,7 +61,6 @@
 
 - (void)setup
 {
-  
         _bigGauge = [[MSSimpleGauge alloc] initWithFrame:_gaugeView.bounds];
         _bigGauge.backgroundColor = ANClearColor;
         _bigGauge.startAngle = 0;
@@ -80,6 +79,7 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
+    
     
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
 
@@ -104,7 +104,6 @@
     // 指针
     [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
     
-    ANLog(@"%f", pm2_5);
     if (pm2_5 > 0 && pm2_5 <= 50) {
         self.bigGauge.fillArcFillColor = ANColor(0, 255, 0, 0.5);
     } else if (pm2_5 > 50 && pm2_5 <= 100) {

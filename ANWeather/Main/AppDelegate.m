@@ -26,7 +26,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
+        
     // 友盟分享
     [UMSocialData setAppKey:ANUMAppKey];
     
@@ -44,8 +44,9 @@
                                                                     leftMenuViewController:leftTableViewController
                                                                    rightMenuViewController:rightTableViewController];
     
+
     sideMenuViewController.backgroundImage = [UIImage imageNamed:@"Stars"];
-    sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
+    sideMenuViewController.menuPreferredStatusBarStyle = 0; // UIStatusBarStyleLightContent
     sideMenuViewController.delegate = self;
     sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
     sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);

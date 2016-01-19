@@ -37,13 +37,13 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="SUz-ll-boQ" firstAttribute="centerY" secondItem="Es1-Qi-o7f" secondAttribute="bottom" id="0ce-l8-4Xv"/>
-                <constraint firstAttribute="trailing" secondItem="Es1-Qi-o7f" secondAttribute="trailing" id="1G7-he-pQh"/>
+                <constraint firstAttribute="trailing" secondItem="Es1-Qi-o7f" secondAttribute="trailing" constant="5" id="1G7-he-pQh"/>
                 <constraint firstItem="NHM-bE-lnO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Kv-ca-Np6"/>
                 <constraint firstAttribute="trailing" secondItem="SUz-ll-boQ" secondAttribute="trailing" id="3jX-DC-tRE"/>
                 <constraint firstItem="NHM-bE-lnO" firstAttribute="top" secondItem="SUz-ll-boQ" secondAttribute="bottom" id="G9f-7k-C82"/>
                 <constraint firstAttribute="bottom" secondItem="NHM-bE-lnO" secondAttribute="bottom" id="S4u-2a-rDF"/>
                 <constraint firstItem="Es1-Qi-o7f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TEe-zC-ddQ"/>
-                <constraint firstItem="Es1-Qi-o7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WkS-Qh-Z2P"/>
+                <constraint firstItem="Es1-Qi-o7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="WkS-Qh-Z2P"/>
                 <constraint firstItem="SUz-ll-boQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kRf-l6-IqD"/>
                 <constraint firstAttribute="trailing" secondItem="NHM-bE-lnO" secondAttribute="trailing" id="sTM-Sn-jBd"/>
                 <constraint firstAttribute="bottom" secondItem="Es1-Qi-o7f" secondAttribute="bottom" multiplier="1.4" id="vuH-Tf-NTe"/>

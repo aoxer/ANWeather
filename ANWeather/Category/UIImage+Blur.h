@@ -13,6 +13,11 @@
 /**
  *  图片模糊
  */
-+ (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
- 
+- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
+
+/**
+ *  图片模糊
+ */
+- (UIImage *)blurImageWithvalue:(CGFloat)value;
+
 @end

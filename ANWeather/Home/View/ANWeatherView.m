@@ -18,7 +18,7 @@
 #import "ANWeatherData.h"
 
 
-#define MARGIN 5
+
 #define ANMaxRow 3
 #define ANMaxCol 3
 
@@ -64,7 +64,7 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
-
+    
     // 天气图标
     self.weatherItem.weatherData = weatherData;
     
@@ -173,7 +173,11 @@
         int col = i % ANMaxCol;
         
         UIView *itemView = self.items[i];
-        itemView.backgroundColor = ANColor(100, 100, 100, 0.5);
+        
+        // 设置layer
+        itemView.layer.backgroundColor = ANLayerBackgroundColor;
+        itemView.layer.cornerRadius = ANCornerRadius;
+        
         CGFloat itemViewX = MARGIN + col * (itemViewW + MARGIN);
         CGFloat itemViewY = self.height - itemViewH - MARGIN - row * (itemViewH + MARGIN);
         itemView.frame = CGRectMake(itemViewX, itemViewY, itemViewW, itemViewH);
@@ -185,8 +189,19 @@
     CGFloat topViewX = MARGIN;
     CGFloat topViewY = self.height - (itemViewH + MARGIN * 2) - topViewH;
     
+    // topView
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
-    self.daysWeatherView.frame = CGRectMake(0, self.height + MARGIN, ANScreenWidth, 44*6);
+    // 设置layer
+    self.topView.layer.backgroundColor = ANLayerBackgroundColor;
+    self.topView.layer.cornerRadius = ANCornerRadius;
+
+    // 一周天气
+    self.daysWeatherView.frame = CGRectMake(MARGIN, self.height , ANScreenWidth - MARGIN * 2, 44*6);
+    // 设置layer
+    self.daysWeatherView.layer.backgroundColor = ANLayerBackgroundColor;
+    self.daysWeatherView.layer.cornerRadius = ANCornerRadius;
+    
+
     
 }
 
