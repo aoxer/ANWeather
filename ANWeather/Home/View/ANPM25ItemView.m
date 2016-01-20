@@ -51,11 +51,19 @@
     [super awakeFromNib];
     
 }
+
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
     
     [self setup];
     [self setWeatherData:_weatherData];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = rect;
+    gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0.2).CGColor,
+                       (id)ANColor(100, 100, 100, 0.9).CGColor,nil];
+    [self.layer insertSublayer:gradient atIndex:0];
+
 }
 
 

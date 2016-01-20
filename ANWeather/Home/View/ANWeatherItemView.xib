@@ -23,6 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="314" height="309"/>
                 </imageView>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Slq-2d-7OU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Fd-TL-15n"/>
                 <constraint firstAttribute="trailing" secondItem="Slq-2d-7OU" secondAttribute="trailing" id="9KF-Pg-zB7"/>

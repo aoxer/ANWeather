@@ -12,6 +12,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-fP-PLS">
                     <rect key="frame" x="0.0" y="389" width="297" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Qgt-iV-LEA"/>
                     </constraints>
@@ -23,6 +24,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="297" height="389"/>
                 </view>
             </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Rda-fP-PLS" firstAttribute="top" secondItem="XOC-SV-vYf" secondAttribute="bottom" id="9rC-ac-pb5"/>
                 <constraint firstAttribute="trailing" secondItem="XOC-SV-vYf" secondAttribute="trailing" id="IbT-5d-eoI"/>

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentTmp;
 @property (weak, nonatomic) IBOutlet UILabel *minTmp;
 @property (weak, nonatomic) IBOutlet UILabel *maxTmp;
+@property (weak, nonatomic) IBOutlet UILabel *CF;
 
 @property (weak, nonatomic) IBOutlet UILabel *MonthDay;
 
@@ -31,8 +32,7 @@
 
 - (void)setup
 {
-    self.layer.backgroundColor = ANLayerBackgroundColor;
-    self.layer.cornerRadius = ANCornerRadius;
+    
 }
 
 + (instancetype)view
@@ -41,6 +41,18 @@
     return [[[NSBundle mainBundle] loadNibNamed:@"ANTopView" owner:nil options:0] lastObject];
 }
 
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = rect;
+    gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0).CGColor,
+                       (id)ANColor(100, 100, 100, 0.95).CGColor,nil];
+    [self.layer insertSublayer:gradient atIndex:0];
+    
+
+}
 
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
@@ -54,20 +66,24 @@
     
     if ([ANSettingTool isC]) {
         
+        // 摄氏度
+        self.CF.text = @"°C";
         // 当前温度
-        self.currentTmp.text = [NSString stringWithFormat:@"%@°",nowTmp];
+        self.currentTmp.text = [NSString stringWithFormat:@"%@",nowTmp];
         // 最低温
         self.minTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.min];
         // 最高温
         self.maxTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.max];
     } else {
         
+        // 华氏度
+        self.CF.text = @"°F";
         // 当前温度
-        self.currentTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(nowTmp)];
+        self.currentTmp.text = [NSString stringWithFormat:@"%ld", ANFahrenheit(nowTmp)];
         // 最低温
-        self.minTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(day1.tmp.min)];
+        self.minTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.min)];
         // 最高温
-        self.maxTmp.text = [NSString stringWithFormat:@"%d°", ANFahrenheit(day1.tmp.max)];
+        self.maxTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.max)];
     };
      
     // 日期
@@ -106,6 +122,13 @@
     return MMDD;
 }
 
-
-
-@end
+- (CAGradientLayer *)shadowAsInverse
+{
+    CAGradientLayer *newShadow = [[CAGradientLayer alloc] init];
+    CGRect newShadowFrame = self.bounds;
+    newShadow.frame = newShadowFrame;
+    ANLog(@"%@", NSStringFromCGRect(self.bounds));
+    //添加渐变的颜色组合
+    newShadow.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor,(id)[UIColor blackColor].CGColor,nil];
+    return newShadow;
+}@end

@@ -67,8 +67,8 @@
                         <constraint firstAttribute="bottom" secondItem="zIl-xp-1md" secondAttribute="bottom" id="vgc-an-MfL"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzS-vV-JDs">
-                    <rect key="frame" x="0.0" y="125" width="321" height="100"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzS-vV-JDs" userLabel="tmp">
+                    <rect key="frame" x="76" y="85" width="170" height="140"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="p5S-6H-Uip"/>
                     </constraints>
@@ -76,10 +76,17 @@
                     <color key="textColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdS-7k-TdS" userLabel="℃">
+                    <rect key="frame" x="246" y="85" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Fjd-w3-jGQ" firstAttribute="top" secondItem="tzS-vV-JDs" secondAttribute="bottom" id="47C-Mi-Z5x"/>
+                <constraint firstItem="GdS-7k-TdS" firstAttribute="leading" secondItem="tzS-vV-JDs" secondAttribute="trailing" id="7q2-Os-V1i"/>
                 <constraint firstItem="pbf-dI-4HK" firstAttribute="leading" secondItem="Fjd-w3-jGQ" secondAttribute="trailing" constant="10" id="A5W-aT-E4a"/>
                 <constraint firstAttribute="bottom" secondItem="Fjd-w3-jGQ" secondAttribute="bottom" id="Cx2-fp-VOP"/>
                 <constraint firstAttribute="trailing" secondItem="pbf-dI-4HK" secondAttribute="trailing" constant="20" id="DTd-XP-bi5"/>
@@ -87,18 +94,23 @@
                 <constraint firstItem="Fjd-w3-jGQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="KON-fX-QUB"/>
                 <constraint firstAttribute="trailing" secondItem="tzS-vV-JDs" secondAttribute="trailing" id="M8d-il-cws"/>
                 <constraint firstItem="Fjd-w3-jGQ" firstAttribute="centerY" secondItem="pbf-dI-4HK" secondAttribute="centerY" id="OP2-jY-tnK"/>
+                <constraint firstItem="tzS-vV-JDs" firstAttribute="top" secondItem="GdS-7k-TdS" secondAttribute="top" id="YaT-5F-JeJ"/>
                 <constraint firstAttribute="centerX" secondItem="Fjd-w3-jGQ" secondAttribute="centerX" id="h7E-Vs-fEW"/>
+                <constraint firstAttribute="centerX" secondItem="tzS-vV-JDs" secondAttribute="centerX" id="lM4-MD-30C"/>
                 <constraint firstAttribute="bottom" secondItem="pbf-dI-4HK" secondAttribute="bottom" id="rRT-0o-sIp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="H2z-cl-kcD"/>
+                    <exclude reference="M8d-il-cws"/>
                     <exclude reference="h7E-Vs-fEW"/>
                     <exclude reference="A5W-aT-E4a"/>
                     <exclude reference="rRT-0o-sIp"/>
                 </mask>
             </variation>
             <connections>
+                <outlet property="CF" destination="GdS-7k-TdS" id="C3S-RI-Al7"/>
                 <outlet property="MonthDay" destination="pbf-dI-4HK" id="fZH-cz-OIY"/>
                 <outlet property="currentTmp" destination="tzS-vV-JDs" id="dbL-hb-BVk"/>
                 <outlet property="maxTmp" destination="zIl-xp-1md" id="xuG-mY-Z2V"/>

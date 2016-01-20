@@ -175,7 +175,7 @@
         UIView *itemView = self.items[i];
         
         // 设置layer
-        itemView.layer.backgroundColor = ANLayerBackgroundColor;
+//        itemView.layer.backgroundColor = ANLayerBackgroundColor;
         itemView.layer.cornerRadius = ANCornerRadius;
         
         CGFloat itemViewX = MARGIN + col * (itemViewW + MARGIN);
@@ -192,8 +192,9 @@
     // topView
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
     // 设置layer
-    self.topView.layer.backgroundColor = ANLayerBackgroundColor;
     self.topView.layer.cornerRadius = ANCornerRadius;
+//    self.topView.layer.backgroundColor = ANLayerBackgroundColor;
+
 
     // 一周天气
     self.daysWeatherView.frame = CGRectMake(MARGIN, self.height , ANScreenWidth - MARGIN * 2, 44*6);

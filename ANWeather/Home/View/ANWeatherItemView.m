@@ -25,6 +25,18 @@
 
 @implementation ANWeatherItemView
 
+- (void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+   
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = rect;
+    gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0.2).CGColor,
+                       (id)ANColor(100, 100, 100, 0.9).CGColor,nil];
+    [self.layer insertSublayer:gradient atIndex:0];
+    
+}
+
 + (instancetype)view
 {
     return [[[NSBundle mainBundle] loadNibNamed:@"ANWeatherItemView" owner:nil options:0 ] lastObject];
