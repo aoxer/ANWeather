@@ -10,31 +10,14 @@
 #import <Accelerate/Accelerate.h>
 
 @implementation UIImage (Blur)
-/**
- *  图片模糊
- */
-- (UIImage *)blurImageWithvalue:(CGFloat)value;
-{
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CIImage *inputImage = [[CIImage alloc] initWithImage:self];
-    // create gaussian blur filter
-    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
-    [filter setValue:inputImage forKey:kCIInputImageKey];
-    [filter setValue:[NSNumber numberWithFloat:value] forKey:@"inputRadius"];
-    // blur image
-    CIImage *result = [filter valueForKey:kCIOutputImageKey];
-    CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
-    UIImage *blurImage = [UIImage imageWithCGImage:cgImage];
-    
-    return blurImage;
-}
+
 
 /**
  *  加模糊效果函数，传入参数：image是图片，blur是模糊度（0~2.0之间）
  *  @param blur  模糊度（0~2.0之间）
  */
 //加模糊效果，image是图片，blur是模糊度 
-- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
++ (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur {
     //模糊度,
     if ((blur < 0.1f) || (blur > 2.0f)) {
         blur = 0.5f;
@@ -43,7 +26,7 @@
     //boxSize必须大于0
     int boxSize = (int)(blur * 100);
     boxSize -= (boxSize % 2) + 1;
-    NSLog(@"boxSize:%i",boxSize);
+
     //图像处理
     CGImageRef img = image.CGImage;
     //需要引入#import <Accelerate/Accelerate.h>

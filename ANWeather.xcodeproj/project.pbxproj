@@ -170,6 +170,7 @@
 		00F1BCDD1C4BA077003333BA /* ANDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F1BCDB1C4BA077003333BA /* ANDetailViewController.xib */; };
 		00F1BCE01C4DD1C0003333BA /* ANHumidityItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F1BCDF1C4DD1C0003333BA /* ANHumidityItemView.m */; };
 		00F1BCE21C4DD202003333BA /* ANHumidityItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F1BCE11C4DD202003333BA /* ANHumidityItemView.xib */; };
+		00F1BCEE1C4F3CD7003333BA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1BCED1C4F3CD7003333BA /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -472,6 +473,7 @@
 		00F1BCDE1C4DD1C0003333BA /* ANHumidityItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANHumidityItemView.h; sourceTree = "<group>"; };
 		00F1BCDF1C4DD1C0003333BA /* ANHumidityItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANHumidityItemView.m; sourceTree = "<group>"; };
 		00F1BCE11C4DD202003333BA /* ANHumidityItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANHumidityItemView.xib; sourceTree = "<group>"; };
+		00F1BCED1C4F3CD7003333BA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,6 +481,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F1BCEE1C4F3CD7003333BA /* MessageUI.framework in Frameworks */,
 				00557E4B1C45774F00E6B790 /* MediaPlayer.framework in Frameworks */,
 				00493D651C43D7B7003296FB /* AVFoundation.framework in Frameworks */,
 				00493D5E1C43D3F0003296FB /* OpenGLES.framework in Frameworks */,
@@ -509,6 +512,7 @@
 		002215151C2CE63900E665F6 = {
 			isa = PBXGroup;
 			children = (
+				00F1BCED1C4F3CD7003333BA /* MessageUI.framework */,
 				00557E4A1C45774F00E6B790 /* MediaPlayer.framework */,
 				00493D611C43D675003296FB /* AVFoundation.framework */,
 				00493D5D1C43D3F0003296FB /* OpenGLES.framework */,

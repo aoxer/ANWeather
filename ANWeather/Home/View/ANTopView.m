@@ -46,10 +46,15 @@
     [super drawRect:rect];
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.cornerRadius = ANCornerRadius;
+    gradient.shadowColor = [UIColor blackColor].CGColor;
+    gradient.shadowOffset = CGSizeMake(1.5, 1.5);
+    gradient.shadowOpacity = 0.8;
     gradient.frame = rect;
     gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0).CGColor,
-                       (id)ANColor(100, 100, 100, 0.95).CGColor,nil];
+                       (id)ANColor(100, 100, 100, 0.7).CGColor,nil];
     [self.layer insertSublayer:gradient atIndex:0];
+    
     
 
 }
@@ -85,7 +90,7 @@
         // 最高温
         self.maxTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.max)];
     };
-     
+    
     // 日期
     self.MonthDay.text = [self dateWithMonthDay:day1.date];
     

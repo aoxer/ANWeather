@@ -8,12 +8,14 @@
 
 #import "ANLeftTableViewController.h"
 
+#import "MBProgressHUD+MJ.h"
+#import <MessageUI/MessageUI.h>
 #import "ViewController.h"
 #import "ANSettingTableViewController.h"
 #import "ANSupportViewController.h"
 #import "ANFeedBackViewController.h"
 #import "ANAboutViewController.h"
-@interface ANLeftTableViewController ()
+@interface ANLeftTableViewController ()<MFMailComposeViewControllerDelegate>
 
 @end
 
@@ -41,7 +43,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 6;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -60,8 +62,8 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
 
     }
-    NSArray *titles = @[@"Home", @"Settings", @"神秘选项",@"关心Ta", @"评分", @"About"];
-    NSArray *images = @[@"IconHome", @"IconProfile", @"IconProfile", @"IconProfile", @"IconSettings", @"IconSettings"];
+    NSArray *titles = @[@"Home", @"Settings",@"给我打分", @"吐槽", @"About"];
+    NSArray *images = @[@"IconHome", @"IconProfile", @"IconProfile", @"IconSettings", @"IconSettings"];
 
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
@@ -74,10 +76,13 @@
     // 主页
     ViewController *homeVc = [[ViewController alloc] init];
     homeVc.isFromLeft = YES;
+    
     // 设置
     ANSettingTableViewController *settingVC = [self settingVC];
+    
     // 神秘选项
     ANSupportViewController *supportVC = [[ANSupportViewController alloc] init];
+    
     // 反馈
     ANFeedBackViewController *feedBackVC = [[ANFeedBackViewController alloc] init];
     // 关于
@@ -97,17 +102,19 @@
             break;
             
         case 2:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:supportVC] animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
+        {
+            NSString *str = @"http://www.baidu.com";
+            NSURL *url = [NSURL URLWithString:str];
+            [[UIApplication sharedApplication] openURL:url];
+        }
             break;
+            
+        case 3:
+            [self sendEMail];
+            break;
+            
             
         case 4:
-            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:feedBackVC] animated:YES];
-            [self.sideMenuViewController hideMenuViewController];
-            break;
-            
-            
-        case 5:
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:aboutVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
@@ -125,6 +132,94 @@
     
     return settingVC;
 }
+
+
+#pragma mark 反馈邮件
+
+// 发送邮件
+-(void)sendEMail
+{
+    Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+    
+    if (mailClass != nil)
+    {
+        if ([mailClass canSendMail])
+        {
+            [self displayComposerSheet];
+        }
+        else
+        {
+            [self launchMailAppOnDevice];
+        }
+    }
+    else
+    {
+        [self launchMailAppOnDevice];
+    }
+}
+
+//可以发送邮件的话
+-(void)displayComposerSheet
+{
+    MFMailComposeViewController *mailPicker = [[MFMailComposeViewController alloc] init];
+    
+        mailPicker.mailComposeDelegate = self;
+    
+    //设置主题
+    [mailPicker setSubject: @"我要吐槽"];
+    
+    // 添加发送者
+    NSArray *toRecipients = [NSArray arrayWithObject: @"aoxer@163.com"];
+    
+    [mailPicker setToRecipients: toRecipients];
+    
+    [self presentViewController:mailPicker animated:YES completion:nil];
+}
+
+// 转到系统邮件
+-(void)launchMailAppOnDevice
+{
+    NSString *recipients = @"mailto:first@example.com&subject=my email!";
+    //@"mailto:first@example.com?cc=second@example.com,third@example.com&subject=my email!";
+    NSString *body = @"&body=email body!";
+    
+    NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
+    email = [email stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:email]];
+}
+
+// 邮件发送返回
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    NSString *msg;
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            msg = @"邮件发送取消";
+            break;
+        case MFMailComposeResultSaved:
+            msg = @"邮件保存成功";
+            [MBProgressHUD showSuccess:msg];
+            break;
+        case MFMailComposeResultSent:
+            msg = @"邮件发送成功";
+            [MBProgressHUD showSuccess:msg];
+            break;
+        case MFMailComposeResultFailed:
+            msg = @"邮件发送失败";
+            [MBProgressHUD showError:msg];
+            break;
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 
 

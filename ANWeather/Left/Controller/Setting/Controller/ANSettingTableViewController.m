@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
 
-#import "ANSettingTableViewController.h"
+ #import "ANSettingTableViewController.h"
 #import "MBProgressHUD+MJ.h" 
 #import "AwesomeMenu.h"
 #define ANTabViewHeight 50
@@ -87,7 +87,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 44;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -117,9 +117,19 @@
             break;
             
         case 2:
-            cell.textLabel.text = @"清空缓存";
-             cell.detailTextLabel.text = [self getCacheSize];
-            cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
+            
+            if (indexPath.row == 0) {
+                cell.textLabel.text = @"清空缓存";
+                cell.detailTextLabel.text = [self getCacheSize];
+                cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
+
+            } else {
+                
+                cell.textLabel.text = @"检查更新";
+                cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
+
+            }
+            
             break;
             
         case 3:
@@ -376,9 +386,6 @@
     }
     return _bigSmallHandMode;
 }
-
-
-
 
 
 

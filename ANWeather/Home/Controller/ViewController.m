@@ -47,10 +47,10 @@
 @property (strong, nonatomic)CLLocationManager *locationMgr;
 @property (strong, nonatomic)CLGeocoder *geocoder;
 
-@property (strong, nonatomic)UIImageView *backGroungImageView;
 @property (weak, nonatomic)AwesomeMenu *menu;
-@property (strong, nonatomic)UIPanGestureRecognizer *dragGesture;
 @property (assign, nonatomic)CGPoint startPoint;
+// 背景图片蒙版
+@property (strong, nonatomic)UIView *cover;
 @end
 
 @implementation ViewController
@@ -166,7 +166,7 @@
     self.tableView.contentInset = UIEdgeInsetsMake(-20 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundView = self.backGroungImageView;
+
     self.tableView.header.tintColor = ANRandomColor;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 
@@ -272,12 +272,57 @@
     
     // 设置导航栏
     self.navigationItem.title = self.weatherData.basic.city;
- 
+    
+    // 设置背景图片并添加图片蒙版
+    UIView *cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, ANScreenHeight)];
+    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[self backGroungImageWithWeather:self.weatherData]];
+    [self.tableView.backgroundView addSubview:cover];
+    self.cover = cover;
     // 重新加载tableView
     [self.tableView reloadData];
     
 }
 
+- (UIImage *)backGroungImageWithWeather:(ANWeatherData *)weatherDate
+{
+    NSString *txt = weatherDate.now.cond.txt;
+    
+    UIImage *image = [UIImage imageNamed:@"clear_d_portrait"];
+    if ([txt hasPrefix:@"晴"]) {
+        
+        image = [UIImage imageNamed:@"clear_d_portrait"];
+        return image;
+    } else if ([txt hasSuffix:@"雨"]){
+        
+        image = [UIImage imageNamed:@"rain_d_portrait"];
+        return image;
+    } else if ([txt hasSuffix:@"暴雨"]){
+        
+        image = [UIImage imageNamed:@"storm_d_portrait"];
+        return image;
+    }else if ([txt hasSuffix:@"云"]){
+        
+        image = [UIImage imageNamed:@"cloudy_d_portrait"];
+        return image;
+    } else if ([txt hasSuffix:@"雪"]){
+        
+        image = [UIImage imageNamed:@"snow_d_portrait"];
+        return image;
+    } else if ([txt hasSuffix:@"风"]){
+        
+//        image = [UIImage imageNamed:@""];
+//        return image;
+    } else if ([txt hasSuffix:@"雾"]){
+        
+        image = [UIImage imageNamed:@"foggy_d_portrait"];
+        return image;
+    } else if ([txt hasSuffix:@"霾"]){
+        
+//        image = [UIImage imageNamed:@""];
+//        return image;
+    }
+     return image;
+}
 
 /**
  *  发送数据请求
@@ -490,13 +535,6 @@
     return _locationMgr;
 }
 
-- (UIImageView *)backGroungImageView
-{
-    if (!_backGroungImageView) {
-        _backGroungImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lake"]];
-    }
-    return _backGroungImageView;
-}
 
 
 
@@ -512,13 +550,22 @@
 {
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat alpha =  offsetY / 200;
+    ANLog(@"%f", alpha);
     [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
     
+    if (alpha> 0.7) {
+        alpha = 0.7;
+    }
+    
+    self.cover.backgroundColor = ANColor(200, 200, 200, alpha);
+    
+    // 下拉导航栏隐藏
     if (scrollView.contentOffset.y < 0) {
             self.navigationController.navigationBar.hidden = YES;
     } else {
             self.navigationController.navigationBar.hidden = NO;
     }
+    
     
 }
 
@@ -557,10 +604,6 @@
                                                            ContentImage:[UIImage imageNamed:@"icon-plus.png"]
                                                 highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
     
-    // 添加手势
-    // 手势
-    self.dragGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragBtn:)];
-    [startItem addGestureRecognizer:self.dragGesture];
 
     AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem menuItems:menuItems];
     menu.delegate = self;
@@ -573,14 +616,19 @@
     self.startPoint = CGPointMake(50, ANScreenHeight - 110);
     menu.startPoint = self.startPoint;
 
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:menu];
-
-   
-    
     self.menu = menu;
+    [ANKeyWindow addSubview:self.menu];
 }
 
+- (void)dealloc
+{
+    for (UIView *a in [ANKeyWindow subviews]) {
+        if ([a isKindOfClass:[AwesomeMenu class]]) {
+            [a removeFromSuperview];
+
+        }
+    };
+}
 
 
 #pragma mark AwesomeMenuDelegate

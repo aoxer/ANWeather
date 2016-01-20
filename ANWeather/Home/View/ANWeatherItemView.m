@@ -30,6 +30,12 @@
    
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.cornerRadius = ANCornerRadius;
+    gradient.shadowColor = [UIColor blackColor].CGColor;
+    gradient.shadowOffset = CGSizeMake(1.5, 1.5);
+    gradient.shadowOpacity = 0.5;
+
+
     gradient.frame = rect;
     gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0.2).CGColor,
                        (id)ANColor(100, 100, 100, 0.9).CGColor,nil];

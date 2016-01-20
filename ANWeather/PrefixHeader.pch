@@ -60,7 +60,8 @@
 // 华氏度
 #define ANFahrenheit(c) (c).integerValue * 9 / 5 + 32
 
- 
+// keyWindow
+#define ANKeyWindow [UIApplication sharedApplication].keyWindow
 
 // 导航栏颜色
 #define ANNavBarColor ANColor(245, 245, 245, 1)

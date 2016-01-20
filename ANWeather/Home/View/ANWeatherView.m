@@ -191,9 +191,7 @@
     
     // topView
     self.topView.frame = CGRectMake(topViewX, topViewY, topViewW, topViewH);
-    // 设置layer
-    self.topView.layer.cornerRadius = ANCornerRadius;
-//    self.topView.layer.backgroundColor = ANLayerBackgroundColor;
+
 
 
     // 一周天气
