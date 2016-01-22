@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHM-bE-lnO" userLabel="pm2.5">
-                    <rect key="frame" x="0.0" y="264" width="147" height="21"/>
+                    <rect key="frame" x="0.0" y="264" width="176" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="78U-Gb-gMQ"/>
                     </constraints>
@@ -43,7 +43,7 @@
                 <constraint firstItem="Es1-Qi-o7f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TEe-zC-ddQ"/>
                 <constraint firstItem="Es1-Qi-o7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="WkS-Qh-Z2P"/>
                 <constraint firstAttribute="trailing" secondItem="aTf-7e-8zp" secondAttribute="trailing" id="X1P-cH-x1Q"/>
-                <constraint firstAttribute="centerX" secondItem="NHM-bE-lnO" secondAttribute="trailing" multiplier="0.9" id="sTM-Sn-jBd"/>
+                <constraint firstAttribute="centerX" secondItem="NHM-bE-lnO" secondAttribute="trailing" multiplier="0.75" id="sTM-Sn-jBd"/>
                 <constraint firstAttribute="bottom" secondItem="Es1-Qi-o7f" secondAttribute="bottom" multiplier="1.4" id="vuH-Tf-NTe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

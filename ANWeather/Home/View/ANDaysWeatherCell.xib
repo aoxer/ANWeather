@@ -50,19 +50,11 @@
                     <color key="textColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-Qk-aEk" userLabel="sp">
-                    <rect key="frame" x="20" y="43" width="289" height="1"/>
-                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="Cyn-AY-KrR"/>
-                    </constraints>
-                </view>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ar0-77-cZU" secondAttribute="bottom" id="1jX-d2-RbX"/>
                 <constraint firstAttribute="trailing" secondItem="yFy-Un-vxh" secondAttribute="trailing" constant="10" id="8ph-Gk-TSd"/>
                 <constraint firstItem="KCg-XM-pKH" firstAttribute="height" secondItem="yFy-Un-vxh" secondAttribute="height" id="9Uk-uS-dEa"/>
-                <constraint firstItem="MM6-Qk-aEk" firstAttribute="leading" secondItem="PwU-HW-d6p" secondAttribute="leading" constant="20" id="DU6-zU-5ya"/>
                 <constraint firstAttribute="bottom" secondItem="yFy-Un-vxh" secondAttribute="bottom" id="EE5-El-vOa"/>
                 <constraint firstItem="yFy-Un-vxh" firstAttribute="top" secondItem="PwU-HW-d6p" secondAttribute="top" id="GT8-gI-5rk"/>
                 <constraint firstAttribute="centerX" secondItem="XP6-Uc-L4v" secondAttribute="centerX" id="Nbd-Jx-XRU"/>
@@ -73,9 +65,7 @@
                 <constraint firstAttribute="centerY" secondItem="7AO-nU-Snh" secondAttribute="centerY" id="Xp2-ob-dw2"/>
                 <constraint firstItem="7AO-nU-Snh" firstAttribute="leading" secondItem="ar0-77-cZU" secondAttribute="trailing" constant="5" id="lLS-jo-pUd"/>
                 <constraint firstAttribute="centerY" secondItem="KCg-XM-pKH" secondAttribute="centerY" id="njC-vT-o71"/>
-                <constraint firstAttribute="trailing" secondItem="MM6-Qk-aEk" secondAttribute="trailing" constant="20" id="oPf-57-BPA"/>
                 <constraint firstAttribute="centerY" secondItem="XP6-Uc-L4v" secondAttribute="centerY" id="yAp-cB-2l0"/>
-                <constraint firstAttribute="bottom" secondItem="MM6-Qk-aEk" secondAttribute="bottom" id="zFQ-EV-faa"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

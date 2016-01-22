@@ -111,24 +111,18 @@
             break;
             
         case 1:
+            
             cell.textLabel.text = @"大手模式";
             cell.detailTextLabel.text = self.bigSmallHandMode;
             cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
+            
             break;
             
         case 2:
             
-            if (indexPath.row == 0) {
-                cell.textLabel.text = @"清空缓存";
-                cell.detailTextLabel.text = [self getCacheSize];
-                cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
-
-            } else {
-                
-                cell.textLabel.text = @"检查更新";
-                cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
-
-            }
+            cell.textLabel.text = @"清空缓存";
+            cell.detailTextLabel.text = [self getCacheSize];
+            cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
             
             break;
             
@@ -176,8 +170,8 @@
         case 0:
             switch (indexPath.row) {
                 case 0:
-                    // 是摄氏度嘛
                     
+                    // 是摄氏度嘛
                     if ([ANSettingTool isC]) {
                         self.tmpMode = @"°F";
                     } else {

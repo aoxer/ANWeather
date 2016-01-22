@@ -44,6 +44,7 @@
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, self.bounds.size.height)];
         tableView.backgroundColor = [UIColor clearColor];
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20);
         tableView.delegate = self;
         tableView.dataSource = self;
         [self addSubview:tableView];
