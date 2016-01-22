@@ -6,38 +6,39 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ANHumidityItemView">
-            <rect key="frame" x="0.0" y="0.0" width="270" height="254"/>
+        <view contentMode="scaleToFill" id="NJi-CL-oE2" customClass="ANHumidityItemView">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相对湿度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xe-3p-BZJ">
-                    <rect key="frame" x="0.0" y="233" width="270" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="湿度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-kn-SHi">
+                    <rect key="frame" x="0.0" y="129" width="150" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="Ecn-rC-Ru4"/>
+                        <constraint firstAttribute="height" constant="21" id="zi5-IS-APD"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFi-7l-KOL">
-                    <rect key="frame" x="0.0" y="0.0" width="270" height="233"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="74"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="401-OB-r7H">
+                    <rect key="frame" x="0.0" y="0.0" width="150" height="129"/>
+                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="64"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="MFi-7l-KOL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3oq-mu-8n9"/>
-                <constraint firstItem="MFi-7l-KOL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="A7e-bE-77n"/>
-                <constraint firstItem="2Xe-3p-BZJ" firstAttribute="top" secondItem="MFi-7l-KOL" secondAttribute="bottom" id="Iqs-Mb-cKf"/>
-                <constraint firstAttribute="bottom" secondItem="2Xe-3p-BZJ" secondAttribute="bottom" id="Kk6-nc-jfp"/>
-                <constraint firstAttribute="trailing" secondItem="MFi-7l-KOL" secondAttribute="trailing" id="aT7-IQ-CvV"/>
-                <constraint firstItem="2Xe-3p-BZJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mFc-I3-9Je"/>
-                <constraint firstAttribute="trailing" secondItem="2Xe-3p-BZJ" secondAttribute="trailing" id="sWC-2B-O3G"/>
+                <constraint firstItem="bdL-kn-SHi" firstAttribute="leading" secondItem="NJi-CL-oE2" secondAttribute="leading" id="1Hz-1g-Fj0"/>
+                <constraint firstAttribute="trailing" secondItem="bdL-kn-SHi" secondAttribute="trailing" id="1Jg-NL-WaO"/>
+                <constraint firstItem="401-OB-r7H" firstAttribute="leading" secondItem="NJi-CL-oE2" secondAttribute="leading" id="SfK-Hv-1R5"/>
+                <constraint firstItem="bdL-kn-SHi" firstAttribute="top" secondItem="401-OB-r7H" secondAttribute="bottom" id="TU1-We-1pd"/>
+                <constraint firstItem="401-OB-r7H" firstAttribute="top" secondItem="NJi-CL-oE2" secondAttribute="top" id="YIM-1k-Sge"/>
+                <constraint firstAttribute="bottom" secondItem="bdL-kn-SHi" secondAttribute="bottom" id="gp1-nM-uTg"/>
+                <constraint firstAttribute="trailing" secondItem="401-OB-r7H" secondAttribute="trailing" id="qVJ-jN-PVL"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-130" y="27"/>
+            <connections>
+                <outlet property="humLabel" destination="401-OB-r7H" id="T18-Bc-gdM"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="-4"/>
         </view>
     </objects>
 </document>

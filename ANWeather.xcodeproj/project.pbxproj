@@ -442,7 +442,6 @@
 		009511771C3D84C500EA9FDC /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		009511ED1C3D86D200EA9FDC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0098E79E1C3F819700499D33 /* AddedFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddedFont.h; sourceTree = "<group>"; };
 		0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		00B98CE61C33846200AD5B5C /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
 		00B98CE71C33846200AD5B5C /* ANAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutViewController.m; sourceTree = "<group>"; };
@@ -554,7 +553,6 @@
 			isa = PBXGroup;
 			children = (
 				00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */,
-				0098E79E1C3F819700499D33 /* AddedFont.h */,
 				0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */,
 				0095112E1C3CDD4300EA9FDC /* area.json */,
 				002215221C2CE63900E665F6 /* Info.plist */,

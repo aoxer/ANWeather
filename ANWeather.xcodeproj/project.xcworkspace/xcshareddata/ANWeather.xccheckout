@@ -7,22 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C16C972B-FFDB-44D1-A54F-993ED7EF5DAF</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ANWeather</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>https://github.com/aoxer/ANWeather.git</string>
-		<key>E609DD15689CC93D8F4D219EB393F30F9F726178</key>
-		<string>https://github.com/BradLarson/GPUImage.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ANWeather.xcodeproj</string>
+	<string>ANWeather.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>../..</string>
-		<key>E609DD15689CC93D8F4D219EB393F30F9F726178</key>
-		<string>../../../GitHub/GPUImage</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/aoxer/ANWeather.git</string>
@@ -39,14 +35,6 @@
 			<string>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ANWeather</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E609DD15689CC93D8F4D219EB393F30F9F726178</string>
-			<key>IDESourceControlWCCName</key>
-			<string>GPUImage</string>
 		</dict>
 	</array>
 </dict>

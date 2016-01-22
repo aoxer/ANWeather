@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 @class ANWeatherData;
 
+@protocol ANPM25ItemViewDelegate <NSObject>
+
+@optional
+- (void)pm25ItemViewDidClick;
+
+@end
 
 @interface ANPM25ItemView : UIView
 /**
@@ -16,6 +22,7 @@
  */
 @property (strong, nonatomic)ANWeatherData *weatherData;
 
+@property (weak, nonatomic)id<ANPM25ItemViewDelegate> delegate;
 + (instancetype)view;
 
 @end

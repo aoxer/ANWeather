@@ -553,8 +553,8 @@
     ANLog(@"%f", alpha);
     [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
     
-    if (alpha> 0.7) {
-        alpha = 0.7;
+    if (alpha> 0.75) {
+        alpha = 0.75;
     }
     
     self.cover.backgroundColor = ANColor(200, 200, 200, alpha);

@@ -18,6 +18,7 @@
  */
 @property (weak, nonatomic) IBOutlet UILabel *pm2_5;
 
+
 /**
  *  空气质量的label
  */
@@ -32,7 +33,10 @@
  *  仪表盘
  */
 @property (strong, nonatomic)MSSimpleGauge *bigGauge;
-
+/**
+ *  是否为空气质量
+ */
+@property (assign, nonatomic)BOOL isQlty;
 
 @end
 
@@ -101,19 +105,41 @@
         // 如果该城市没有pm2.5做点啥
     }
     
-    //pm2.5
-    if (!weatherData.aqi.city.pm25.length) {
-        self.pm2_5.text = @"";
+    
+    if (self.isQlty) {
+        self.pm2_5.hidden = YES;
+        self.qltyLabel.hidden = NO;
+        self.qltyLabel.font = ANLightFontSize17;
+        // 空气质量
+        if (!weatherData.aqi.city.qlty.length) {
+            self.qltyLabel.text = @"优";
+        } else {
+            self.qltyLabel.text = weatherData.aqi.city.qlty;
+        }
     } else {
-        self.pm2_5.text = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
+        
+        
+        self.pm2_5.hidden = NO;
+        self.qltyLabel.hidden = YES;
+        
+        // pm2.5
+        if (!weatherData.aqi.city.pm25.length) {
+            self.pm2_5.text = @"";
+        } else {
+            
+            NSString *pm = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
+            NSMutableAttributedString *humAttr = [[NSMutableAttributedString alloc] initWithString:pm];
+            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(0, 5)];
+            [humAttr addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, 5)];
+            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(6, weatherData.aqi.city.pm25.length)];
+            
+             self.pm2_5.attributedText = humAttr;
+        }
+
     }
     
-    // 空气质量
-    if (!weatherData.aqi.city.qlty.length) {
-        self.qltyLabel.text = @"优";
-    } else {
-        self.qltyLabel.text = weatherData.aqi.city.qlty;
-    }
+    
+   
     
     // 指针
     [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
@@ -135,6 +161,18 @@
 
 }
 
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    
+    [self setWeatherData:self.weatherData];
+    self.isQlty = !self.isQlty;
+    
+//    if ([self.delegate respondsToSelector:@selector(pm25ItemViewDidClick)]) {
+//        [self.delegate pm25ItemViewDidClick];
+//    }
+}
 
 
 @end

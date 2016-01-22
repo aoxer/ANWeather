@@ -14,7 +14,6 @@
 #import "RESideMenu.h"
 #import "ANConst.h"
 #import "NSString+Extension.h"
-#import "AddedFont.h"
 #import "UIImage+Blur.h"
 #import "RESideMenu+BackToHome.h"
 #import "NSUserDefaults+firstStart.h"
@@ -72,6 +71,16 @@
 // 圆角
 #define ANCornerRadius 3
 
-//
+// layer背景色
 #define ANLayerBackgroundColor (ANColor(100, 100, 100, 0.5).CGColor)
+
+// 字体
+#define  ANLightFontSize17  [UIFont fontWithName:@"STHeitiTC-Light" size:17]
+
+#define  ANLightFontSize12  [UIFont fontWithName:@"STHeitiTC-Light" size:12]
+
+
+
+
+
 #endif

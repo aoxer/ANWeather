@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -12,17 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="264" height="285"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUz-ll-boQ">
-                    <rect key="frame" x="0.0" y="185" width="292" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="hMc-H0-OgT"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
-                    <color key="textColor" red="1" green="0.98431372549999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHM-bE-lnO">
-                    <rect key="frame" x="0.0" y="206" width="292" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHM-bE-lnO" userLabel="pm2.5">
+                    <rect key="frame" x="0.0" y="264" width="147" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="78U-Gb-gMQ"/>
                     </constraints>
@@ -30,34 +20,37 @@
                     <color key="textColor" red="1" green="0.98431372549999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view autoresizesSubviews="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Es1-Qi-o7f" userLabel="gauge">
-                    <rect key="frame" x="0.0" y="0.0" width="292" height="162"/>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Es1-Qi-o7f" userLabel="gauge">
+                    <rect key="frame" x="5" y="0.0" width="254" height="204"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTf-7e-8zp" userLabel="空气质量">
+                    <rect key="frame" x="0.0" y="264" width="264" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="AfN-xN-87w"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.98431372549999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="SUz-ll-boQ" firstAttribute="centerY" secondItem="Es1-Qi-o7f" secondAttribute="bottom" id="0ce-l8-4Xv"/>
                 <constraint firstAttribute="trailing" secondItem="Es1-Qi-o7f" secondAttribute="trailing" constant="5" id="1G7-he-pQh"/>
                 <constraint firstItem="NHM-bE-lnO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1Kv-ca-Np6"/>
-                <constraint firstAttribute="trailing" secondItem="SUz-ll-boQ" secondAttribute="trailing" id="3jX-DC-tRE"/>
-                <constraint firstItem="NHM-bE-lnO" firstAttribute="top" secondItem="SUz-ll-boQ" secondAttribute="bottom" id="G9f-7k-C82"/>
+                <constraint firstItem="aTf-7e-8zp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="H3D-hf-i1s"/>
+                <constraint firstAttribute="bottom" secondItem="aTf-7e-8zp" secondAttribute="bottom" id="Kiz-34-6en"/>
                 <constraint firstAttribute="bottom" secondItem="NHM-bE-lnO" secondAttribute="bottom" id="S4u-2a-rDF"/>
                 <constraint firstItem="Es1-Qi-o7f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TEe-zC-ddQ"/>
                 <constraint firstItem="Es1-Qi-o7f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="WkS-Qh-Z2P"/>
-                <constraint firstItem="SUz-ll-boQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kRf-l6-IqD"/>
-                <constraint firstAttribute="trailing" secondItem="NHM-bE-lnO" secondAttribute="trailing" id="sTM-Sn-jBd"/>
+                <constraint firstAttribute="trailing" secondItem="aTf-7e-8zp" secondAttribute="trailing" id="X1P-cH-x1Q"/>
+                <constraint firstAttribute="centerX" secondItem="NHM-bE-lnO" secondAttribute="trailing" multiplier="0.9" id="sTM-Sn-jBd"/>
                 <constraint firstAttribute="bottom" secondItem="Es1-Qi-o7f" secondAttribute="bottom" multiplier="1.4" id="vuH-Tf-NTe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="0ce-l8-4Xv"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="gaugeView" destination="Es1-Qi-o7f" id="TCc-fq-G7P"/>
-                <outlet property="pm2_5" destination="SUz-ll-boQ" id="DhZ-ij-pUU"/>
-                <outlet property="qltyLabel" destination="NHM-bE-lnO" id="I5m-1s-xoK"/>
+                <outlet property="pm2_5" destination="NHM-bE-lnO" id="Jfz-8V-QLU"/>
+                <outlet property="qltyLabel" destination="aTf-7e-8zp" id="rxn-Et-JEk"/>
             </connections>
             <point key="canvasLocation" x="-48" y="68.5"/>
         </view>

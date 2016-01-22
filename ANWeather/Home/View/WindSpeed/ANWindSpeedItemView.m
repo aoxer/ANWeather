@@ -79,13 +79,56 @@
     // 风速
     self.windmill.weatherData = weatherData;
     // 风向 风力
+    NSString *dir = weatherData.now.wind.dir;
+    NSString *sc = weatherData.now.wind.sc;
+    NSString *spd = weatherData.now.wind.spd;
+    self.windDirLabel.font = ANLightFontSize17;
+    
+    
     if ([ANSettingTool isWindScale]) {
-        self.windDirLabel.text = [NSString stringWithFormat:@"%@ %@级",weatherData.now.wind.dir, weatherData.now.wind.sc];
+        self.windDirLabel.textAlignment = NSTextAlignmentLeft;
+
+        // attrs
+        NSString *dirSpeedStr = [NSString stringWithFormat:@" %@ %@级", dir, sc];
+        NSMutableAttributedString *dirSpeedAttr = [[NSMutableAttributedString alloc] initWithString:dirSpeedStr];
+        // 修改风向字体大小
+        [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(1, dir.length)];
+        // 修改风速字体大小
+        [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(1+dir.length, spd.length)];
+
+        self.windDirLabel.attributedText = dirSpeedAttr;// [NSString stringWithFormat:@"%@ %@级",weatherData.now.wind.dir, weatherData.now.wind.sc];
     } else {
-        self.windDirLabel.text = [NSString stringWithFormat:@"%@%@kmh",weatherData.now.wind.dir, weatherData.now.wind.spd];
+        
+        self.windDirLabel.textAlignment = NSTextAlignmentCenter;
+
+        // 风速风向
+        NSString *dirSpeedStr = [NSString stringWithFormat:@"%@ %@ kmh", dir, spd];
+        NSMutableAttributedString *dirSpeedAttr = [[NSMutableAttributedString alloc] initWithString:dirSpeedStr];
+        // 修改风向字体大小
+        [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(0, dir.length)];
+        // 修改风速字体大小
+        [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(dir.length, spd.length)];
+        // 修改级数字体大小
+        [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(dirSpeedStr.length-3 , 3)];
+        
+        self.windDirLabel.attributedText = dirSpeedAttr;// [NSString stringWithFormat:@"%@%@kmh",weatherData.now.wind.dir, weatherData.now.wind.spd];
     }
     
 }
+
+//
+//- (NSAttributedString *)attrWithDir:(NSString *)dir scSpd:(NSString *)scSpd
+//{
+//    // attrs
+//    NSString *dirSpeedStr = [NSString stringWithFormat:@" %@ %@级", dir, scSpd];
+//    NSMutableAttributedString *dirSpeedAttr = [[NSMutableAttributedString alloc] initWithString:dirSpeedStr];
+//    // 修改风向字体大小
+//    [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(2, dir.length)];
+//    // 修改风速字体大小
+//    [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(2+dir.length, spd.length)];
+//    
+//    return dirSpeedStr;
+//}
 
 
 @end

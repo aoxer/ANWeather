@@ -10,7 +10,7 @@
 #import "ANWeatherItemView.h"
 #import "ANWindSpeedItemView.h"
 #import "ANPM25ItemView.h"
-
+#import "ANHumidityItemView.h"
 #import "ANDaysWeatherView.h"
 
 #import "ANTopView.h"
@@ -23,16 +23,17 @@
 #define ANMaxCol 3
 
 
-@interface ANWeatherView ()
+@interface ANWeatherView () <ANPM25ItemViewDelegate>
 
-@property (strong, nonatomic)ANTopView *topView;
+@property (weak, nonatomic)ANTopView *topView;
 
 @property (strong, nonatomic)NSMutableArray *items;
-@property (strong, nonatomic)ANWeatherItemView *weatherItem;
-@property (strong, nonatomic)ANWindSpeedItemView *windSpeedItem;
-@property (strong, nonatomic)ANPM25ItemView *pm25Item;
+@property (weak, nonatomic)ANWeatherItemView *weatherItem;
+@property (weak, nonatomic)ANWindSpeedItemView *windSpeedItem;
+@property (weak, nonatomic)ANPM25ItemView *pm25Item;
+@property (weak, nonatomic)ANHumidityItemView *humItem;
 
-@property (strong, nonatomic)ANDaysWeatherView *daysWeatherView;
+@property (weak, nonatomic)ANDaysWeatherView *daysWeatherView;
  
 
 @end
@@ -82,7 +83,7 @@
      
 
 
-    [UIView transitionWithView:self.topView duration:0.25 options:UIViewAnimationOptionTransitionFlipFromTop animations:^{
+    [UIView transitionWithView:self.topView duration:0.25 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
         
     } completion:^(BOOL finished) {
         [UIView transitionWithView:self.windSpeedItem duration:0.25 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
@@ -103,6 +104,7 @@
         
     }];
     
+// GCD
     
 //    [self subView:self.topView animWithType:@"pageu"];
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -143,6 +145,13 @@
     [self addSubview:pm25Item];
     self.pm25Item = pm25Item;
     [self.items addObject:pm25Item];
+    
+//    // 湿度
+//    ANHumidityItemView *humItem = [ANHumidityItemView view];
+//    [self addSubview:humItem];
+//    self.humItem = humItem;
+//    [self.items addObject:humItem];
+
     
     // cell
     ANDaysWeatherView *daysWeatherView = [[ANDaysWeatherView alloc] init];
@@ -204,7 +213,13 @@
     
 }
 
-
-
+#pragma mark   ANPM25ItemViewDelegate
+- (void)pm25ItemViewDidClick
+{
+    
+    
+    
+//    [self.items replaceObjectAtIndex:<#(NSUInteger)#> withObject:<#(id)#>]
+}
 
 @end

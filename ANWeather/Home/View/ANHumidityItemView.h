@@ -12,4 +12,8 @@
 
 @property (strong, nonatomic)ANWeatherData *weatherData;
 
+
+
++ (instancetype)view;
+
 @end
