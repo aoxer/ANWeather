@@ -63,7 +63,7 @@
 
     }
     NSArray *titles = @[@"Home", @"Settings",@"给我打分", @"吐槽", @"About"];
-    NSArray *images = @[@"IconHome", @"IconProfile", @"IconProfile", @"IconSettings", @"IconSettings"];
+    NSArray *images = @[@"left_home", @"left_setting", @"left_write", @"left_mail", @"left_about"];
 
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
@@ -80,12 +80,7 @@
     // 设置
     ANSettingTableViewController *settingVC = [self settingVC];
     
-    // 神秘选项
-    ANSupportViewController *supportVC = [[ANSupportViewController alloc] init];
-    
-    // 反馈
-    ANFeedBackViewController *feedBackVC = [[ANFeedBackViewController alloc] init];
-    // 关于
+        // 关于
     ANAboutViewController *aboutVC = [[ANAboutViewController alloc] init];
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

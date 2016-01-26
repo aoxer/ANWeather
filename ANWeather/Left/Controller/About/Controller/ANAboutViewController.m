@@ -17,8 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self.sideMenuViewController Action:@selector(presentLeftMenuViewController) andImageName:@"back" andImageNameHighlight:@"back"];
- 
+    
+  
 }
 
 - (IBAction)left{
@@ -26,9 +26,7 @@
     [self.sideMenuViewController presentLeftMenuViewController];
 }
 
-- (IBAction)home {
-    [self.sideMenuViewController backToHomeViewController];
-}
+
 
 
 

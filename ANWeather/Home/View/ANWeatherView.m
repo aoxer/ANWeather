@@ -168,6 +168,7 @@
 {
     [super layoutSubviews];
     
+    
  
     // 布局下面方块元素
     NSInteger count = self.items.count;

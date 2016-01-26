@@ -56,21 +56,24 @@
     UIView *tabbarView = [[UIView alloc] init];
     tabbarView.frame = CGRectMake(0, ANScreenHeight - 64-ANTabViewHeight, ANScreenWidth, ANTabViewHeight);
    
+    // 线
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, 1)];
+    line.backgroundColor = ANColor(222, 222, 222, 1);
+    
     // 按钮
     UIButton *btn = [[UIButton alloc] init];
-    btn.imageView.image = [UIImage imageNamed:@"back"];
+    [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     btn.frame = CGRectMake(0, 0, ANTabViewHeight, ANTabViewHeight);
     [btn addTarget:self.sideMenuViewController action:@selector(presentLeftMenuViewController) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton *homeBtn = [[UIButton alloc] init];
-    homeBtn.frame = CGRectMake(ANTabViewHeight, 0, ANTabViewHeight, ANTabViewHeight);
-    [btn addTarget:self.sideMenuViewController action:@selector(backToHomeViewController) forControlEvents:UIControlEventTouchUpInside];
-    
+    // 添加
     [tabbarView addSubview:btn];
-    [tabbarView addSubview:homeBtn];
+    [tabbarView addSubview:line];
+    
     
     tabbarView.backgroundColor = ANNavBarColor;
     [self.view addSubview:tabbarView];
+    
     self.tabbarView = tabbarView;
     
 }
@@ -81,6 +84,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.separatorColor = ANColor(217, 217, 223, 1.0);
     
+    self.navigationController.navigationBar.backgroundColor = ANNavBarColor;
 }
 
 #pragma mark - Table view data source
@@ -134,12 +138,7 @@
             cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
             break;
             
-        case 4:
-            
-            cell.textLabel.text = @"更换背景图片";
-            
-            break;
-
+ 
         default:
             break;
     }

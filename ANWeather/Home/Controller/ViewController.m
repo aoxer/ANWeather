@@ -109,7 +109,7 @@
     if ([ANSettingTool isBigHand]) {
         self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
         
-        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"adds" andImageNameHighlight:@"adds"];
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"addMenu" andImageNameHighlight:@"addMenu"];
         
     }else {
         [self awesome];
@@ -198,7 +198,7 @@
 {
     ANWeatherView *weatherView = [[ANWeatherView alloc] init];
     CGRect rect = CGRectMake(0, 0, ANScreenWidth, ANScreenHeight);
-
+ 
     weatherView.frame = rect;
     
     [self.tableView addSubview:weatherView];
@@ -553,8 +553,8 @@
     ANLog(@"%f", alpha);
     [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
     
-    if (alpha> 0.75) {
-        alpha = 0.75;
+    if (alpha> 0.8) {
+        alpha = 0.8;
     }
     
     self.cover.backgroundColor = ANColor(200, 200, 200, alpha);

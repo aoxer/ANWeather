@@ -37,6 +37,7 @@
     [super drawRect:rect];
     [self setup];
 }
+
 - (void)setup
 {
     if (!_tableView) {
@@ -53,13 +54,15 @@
 }
 
 
-
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     _weatherData = weatherData;
     self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weatherData.daily_forecast];
     // 移除当天数据
-    [self.dailyForecastArray removeObjectAtIndex:0];
+    if (self.dailyForecastArray.count) {
+        [self.dailyForecastArray removeObjectAtIndex:0];
+
+    }
     [self.tableView reloadData];
 }
 

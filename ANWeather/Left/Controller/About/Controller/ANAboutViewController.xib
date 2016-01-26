@@ -46,28 +46,22 @@
                                 <action selector="left" destination="-1" eventType="touchUpInside" id="Xrb-KN-WEW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkr-SO-fU7">
-                            <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxP-ae-98M" userLabel="线">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                            <color key="backgroundColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="4RG-hE-Dm9"/>
-                                <constraint firstAttribute="width" constant="50" id="hj1-zC-Hwk"/>
+                                <constraint firstAttribute="height" constant="1" id="8aC-gU-TGh"/>
                             </constraints>
-                            <state key="normal" image="home">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="back" destination="-1" eventType="touchUpOutside" id="d1W-zI-XdY"/>
-                                <action selector="home" destination="-1" eventType="touchUpInside" id="qRx-Ue-h87"/>
-                            </connections>
-                        </button>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="TxP-ae-98M" secondAttribute="trailing" id="3yR-h2-Z0w"/>
                         <constraint firstAttribute="height" constant="50" id="8pq-20-GTp"/>
-                        <constraint firstAttribute="bottom" secondItem="jkr-SO-fU7" secondAttribute="bottom" id="e07-88-PCi"/>
+                        <constraint firstItem="TxP-ae-98M" firstAttribute="top" secondItem="bZa-gW-UCI" secondAttribute="top" id="X4S-sV-zNU"/>
+                        <constraint firstItem="TxP-ae-98M" firstAttribute="leading" secondItem="bZa-gW-UCI" secondAttribute="leading" id="Xud-5P-5Nk"/>
                         <constraint firstItem="EnR-FL-CTt" firstAttribute="leading" secondItem="bZa-gW-UCI" secondAttribute="leading" id="eUs-yB-49B"/>
                         <constraint firstAttribute="bottom" secondItem="EnR-FL-CTt" secondAttribute="bottom" id="iCn-hp-t4G"/>
-                        <constraint firstItem="jkr-SO-fU7" firstAttribute="leading" secondItem="EnR-FL-CTt" secondAttribute="trailing" id="jgu-WG-oz9"/>
                     </constraints>
                 </view>
             </subviews>
@@ -87,7 +81,6 @@
     </objects>
     <resources>
         <image name="back" width="9" height="17"/>
-        <image name="home" width="20" height="20"/>
         <image name="lake" width="1212" height="1884"/>
     </resources>
 </document>

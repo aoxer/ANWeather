@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C16C972B-FFDB-44D1-A54F-993ED7EF5DAF</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ANWeather</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
 		<string>https://github.com/aoxer/ANWeather.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ANWeather.xcodeproj/project.xcworkspace</string>
+	<string>ANWeather.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A84414C5CB6BF2F9F9F12AF8BA8F5EEB5AF6DFEE</key>
