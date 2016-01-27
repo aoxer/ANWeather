@@ -17,6 +17,7 @@
 #import "ANAboutViewController.h"
 @interface ANLeftTableViewController ()<MFMailComposeViewControllerDelegate>
 
+@property (strong, nonatomic)NSArray *titles;
 @end
 
 @implementation ANLeftTableViewController
@@ -62,10 +63,9 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
 
     }
-    NSArray *titles = @[@"Home", @"Settings",@"给我打分", @"吐槽", @"About"];
     NSArray *images = @[@"left_home", @"left_setting", @"left_write", @"left_mail", @"left_about"];
 
-    cell.textLabel.text = titles[indexPath.row];
+    cell.textLabel.attributedText = self.titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
     
     return cell;
@@ -215,51 +215,18 @@
 }
 
 
+- (NSArray *)titles
+{
+    if (!_titles) {
+        NSAttributedString *weather = [NSString attrStringWithStr:@"主页"];
+        NSAttributedString *setting = [NSString attrStringWithStr:@"设置"];
+        NSAttributedString *dafen = [NSString attrStringWithStr:@"给我打分"];
+        NSAttributedString *tucao = [NSString attrStringWithStr:@"吐槽"];
+        NSAttributedString *about = [NSString attrStringWithStr:@"关于"];
 
+        _titles = @[weather, setting, dafen, tucao, about];
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    }
+    return _titles;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

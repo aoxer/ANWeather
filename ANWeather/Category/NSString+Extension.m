@@ -58,4 +58,19 @@
     return NO;
    
 }
+
+
+/**
+ *  转为attrStr
+ */
++ (NSAttributedString *)attrStringWithStr:(NSString *)string
+{
+    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:string];
+    
+    [attr addAttribute:NSForegroundColorAttributeName value:ANColor(155, 158, 169, 1) range:NSMakeRange(0, string.length)];
+    [attr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:17] range:NSMakeRange(0, string.length)];
+
+    return attr;
+}
+
 @end

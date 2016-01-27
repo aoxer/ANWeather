@@ -21,7 +21,7 @@
                         <constraint firstAttribute="height" constant="100" id="kMI-pF-XS1"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大安天气 Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkb-zJ-H5c">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大安天气 ANWeather Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkb-zJ-H5c">
                     <rect key="frame" x="0.0" y="427" width="600" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="h9q-cG-hsx"/>
@@ -54,7 +54,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="TxP-ae-98M" secondAttribute="trailing" id="3yR-h2-Z0w"/>
                         <constraint firstAttribute="height" constant="50" id="8pq-20-GTp"/>
@@ -80,7 +80,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="9" height="17"/>
+        <image name="back" width="32" height="32"/>
         <image name="lake" width="1212" height="1884"/>
     </resources>
 </document>

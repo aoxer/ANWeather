@@ -34,10 +34,12 @@
  */
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
-    static NSString *ID = @"citys";
+    static NSString *ID = @"cities";
     ANRightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ANRightTableViewCell" owner:nil options:0] lastObject];
+        cell.textLabel.font = [UIFont systemFontOfSize:7];
+
     }
     
     return cell;

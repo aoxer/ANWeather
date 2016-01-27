@@ -74,7 +74,6 @@
     cell.delegate = self;
     cell.tag = indexPath.row;
     cell.backgroundColor = [UIColor clearColor];
-    
     switch (indexPath.section) {
         case 0:
         {

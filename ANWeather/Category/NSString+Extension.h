@@ -24,4 +24,9 @@
  *  判断日期是否为今天
  */
 - (BOOL)isToday;
+
+/**
+ *  转为attrStr
+ */
++ (NSAttributedString *)attrStringWithStr:(NSString *)string;
 @end
