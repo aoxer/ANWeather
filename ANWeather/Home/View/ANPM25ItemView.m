@@ -70,7 +70,7 @@
 
 
     gradient.frame = rect;
-    gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0.5).CGColor,
+    gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0.1).CGColor,
                        (id)ANColor(100, 100, 100, 1).CGColor,nil];
     [self.layer insertSublayer:gradient atIndex:0];
 
@@ -127,11 +127,11 @@
             self.pm2_5.text = @"";
         } else {
             
-            NSString *pm = [NSString stringWithFormat:@"PM2.5 %@", weatherData.aqi.city.pm25];
+            NSString *pm = [NSString stringWithFormat:@" PM2.5 %@", weatherData.aqi.city.pm25];
             NSMutableAttributedString *humAttr = [[NSMutableAttributedString alloc] initWithString:pm];
-            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(0, 5)];
-            [humAttr addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, 5)];
-            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(6, weatherData.aqi.city.pm25.length)];
+            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(0, 6)];
+            [humAttr addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, 6)];
+            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(7, weatherData.aqi.city.pm25.length)];
             
              self.pm2_5.attributedText = humAttr;
         }
