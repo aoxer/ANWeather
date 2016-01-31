@@ -116,21 +116,13 @@
             
         case 1:
             
-            cell.textLabel.text = @"大手模式";
-            cell.detailTextLabel.text = self.bigSmallHandMode;
-            cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
-            
-            break;
-            
-        case 2:
-            
             cell.textLabel.text = @"清空缓存";
             cell.detailTextLabel.text = [self getCacheSize];
             cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
             
             break;
             
-        case 3:
+        case 2:
             
             cell.textLabel.text = @"摇一摇分享";
             [self switchBtnAtCell:cell];
@@ -195,27 +187,15 @@
             
             break;
             
+            
         case 1:
-            
-            if ([ANSettingTool isBigHand]) {
-                self.bigSmallHandMode = @"小手模式";
-             } else {
-                self.bigSmallHandMode = @"大手模式";
-              }
-            
-            
-            [ANSettingTool updateBigHand:![ANSettingTool isBigHand]];
-
-             break;
-            
-        case 2:
             // 清空缓存
             
             [self myClearCacheAction];
             self.cache = [self getCacheSize];
              break;
             
-        case 3:
+        case 2:
             // 摇一摇分享
             [ANSettingTool isShakeEnable] ? ([self.switchBtn setOn:NO animated:YES]) : ([self.switchBtn setOn:YES animated:YES]);
             [ANSettingTool updateShakeEnable:![ANSettingTool isShakeEnable]];
@@ -223,7 +203,7 @@
             break;
    
             
-        case 4:
+        case 3:
             // 清空缓存
             [self openAlbum];
 

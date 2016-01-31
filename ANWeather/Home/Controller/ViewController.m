@@ -51,6 +51,12 @@
 @property (assign, nonatomic)CGPoint startPoint;
 // 背景图片蒙版
 @property (strong, nonatomic)UIView *cover;
+
+/**
+ * 此成员变量是为了修复摇一摇之后布局出现问题
+ */
+@property (assign, nonatomic)BOOL justShaked;
+
 @end
 
 @implementation ViewController
@@ -288,9 +294,10 @@
     NSString *txt = weatherDate.now.cond.txt;
     
     UIImage *image = [UIImage imageNamed:@"clear_d_portrait"];
-    if ([txt hasPrefix:@"晴"]) {
-        
+    if ([txt isEqualToString:@"晴"]) {
         image = [UIImage imageNamed:@"clear_d_portrait"];
+        
+
         return image;
     } else if ([txt hasSuffix:@"雨"]){
         
@@ -303,24 +310,30 @@
     }else if ([txt hasSuffix:@"云"]){
         
         image = [UIImage imageNamed:@"cloudy_d_portrait"];
+        
+
         return image;
     } else if ([txt hasSuffix:@"雪"]){
         
         image = [UIImage imageNamed:@"snow_d_portrait"];
-        return image;
-    } else if ([txt hasSuffix:@"风"]){
         
-//        image = [UIImage imageNamed:@""];
-//        return image;
+
+        return image;
     } else if ([txt hasSuffix:@"雾"]){
         
         image = [UIImage imageNamed:@"foggy_d_portrait"];
+        
+
         return image;
     } else if ([txt hasSuffix:@"霾"]){
         
-//        image = [UIImage imageNamed:@""];
-//        return image;
+        image = [UIImage imageNamed:@"foggy_d_portrait"];
+        
+
+        return image;
     }
+    
+
      return image;
 }
 
@@ -553,20 +566,35 @@
     ANLog(@"%f", alpha);
     [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
     
-    if (alpha> 0.8) {
-        alpha = 0.8;
-    }
+//    if (alpha> 0.8) {
+//        alpha = 0.8;
+//    }
     
-    self.cover.backgroundColor = ANColor(200, 200, 200, alpha);
+//    self.cover.backgroundColor = ANColor(50, 50, 50, alpha);
     
     // 下拉导航栏隐藏
     if (scrollView.contentOffset.y < 0) {
-            self.navigationController.navigationBar.hidden = YES;
+        self.navigationController.navigationBar.hidden = YES;
     } else {
-            self.navigationController.navigationBar.hidden = NO;
+        self.navigationController.navigationBar.hidden = NO;
     }
     
-    
+    // 模糊背景
+//    CIContext *context = [CIContext contextWithOptions:nil];
+//    CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"snow_d_portrait"]];
+//    // create gaussian blur filter
+//    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+//    [filter setValue:inputImage forKey:kCIInputImageKey];
+//    [filter setValue:[NSNumber numberWithFloat:alpha*1.3] forKey:@"inputRadius"];
+//    // blur image
+//    CIImage *result = [filter valueForKey:kCIOutputImageKey];
+//    CGImageRef cgImage = [context createCGImage:result fromRect:[result extent]];
+//    UIImage *image = [UIImage imageWithCGImage:cgImage];
+//    CGImageRelease(cgImage);
+//    
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+//    self.tableView.backgroundView = imageView;
+
 }
 
 

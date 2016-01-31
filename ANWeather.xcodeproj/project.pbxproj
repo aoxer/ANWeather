@@ -164,7 +164,6 @@
 		00B98DAC1C3527DE00AD5B5C /* ANTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98DAB1C3527DE00AD5B5C /* ANTopView.m */; };
 		00B98DAE1C3527EE00AD5B5C /* ANTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98DAD1C3527ED00AD5B5C /* ANTopView.xib */; };
 		00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B98DB11C38280200AD5B5C /* CoreImage.framework */; };
-		00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B98DB91C3A327C00AD5B5C /* addcity.png */; };
 		00ED1C071C2EDCA500813F30 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */; };
 		00F1BCDC1C4BA077003333BA /* ANDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F1BCDA1C4BA077003333BA /* ANDetailViewController.m */; };
 		00F1BCDD1C4BA077003333BA /* ANDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F1BCDB1C4BA077003333BA /* ANDetailViewController.xib */; };
@@ -463,7 +462,6 @@
 		00B98DAB1C3527DE00AD5B5C /* ANTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTopView.m; sourceTree = "<group>"; };
 		00B98DAD1C3527ED00AD5B5C /* ANTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTopView.xib; sourceTree = "<group>"; };
 		00B98DB11C38280200AD5B5C /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		00B98DB91C3A327C00AD5B5C /* addcity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addcity.png; sourceTree = "<group>"; };
 		00ED1C051C2EDCA500813F30 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		00ED1C061C2EDCA500813F30 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		00F1BCD91C4BA077003333BA /* ANDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANDetailViewController.h; sourceTree = "<group>"; };
@@ -541,7 +539,6 @@
 			children = (
 				002215631C2CE6B700E665F6 /* Classes */,
 				002215311C2CE63900E665F6 /* Images.xcassets */,
-				00B98DB91C3A327C00AD5B5C /* addcity.png */,
 				002215331C2CE63900E665F6 /* LaunchScreen.xib */,
 				002215281C2CE63900E665F6 /* ANWeather.xcdatamodeld */,
 				002215211C2CE63900E665F6 /* Supporting Files */,
@@ -1357,7 +1354,6 @@
 				0069A75D1C4631A20058D710 /* bg-menuitem-highlighted@2x.png in Resources */,
 				00F1BCDD1C4BA077003333BA /* ANDetailViewController.xib in Resources */,
 				00557E361C4575EA00E6B790 /* UMSCommentInputController.xib in Resources */,
-				00B98DBA1C3A327C00AD5B5C /* addcity.png in Resources */,
 				0069A7641C4631A20058D710 /* icon-star.png in Resources */,
 				0069A7601C4631A20058D710 /* icon-plus-highlighted.png in Resources */,
 				009033C21C2E2F46001FFED3 /* MBProgressHUD.bundle in Resources */,

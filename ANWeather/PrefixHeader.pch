@@ -72,7 +72,11 @@
 #define ANCornerRadius 3
 
 // layer背景色
-#define ANLayerBackgroundColor (ANColor(100, 100, 100, 0.5).CGColor)
+#define ANLayerBackgroundColor (ANColor(50, 50, 50, 0.5).CGColor)
+
+// 天气 风速 PM2.5的 背景色
+#define ANItemBackgroundColor (ANColor(50, 50, 50, 1).CGColor)
+
 
 // 字体
 #define  ANLightFontSize17  [UIFont fontWithName:@"STHeitiTC-Light" size:17]

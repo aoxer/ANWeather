@@ -71,7 +71,7 @@
 
     gradient.frame = rect;
     gradient.colors = [NSArray arrayWithObjects:(id)ANColor(255, 255, 255, 0.1).CGColor,
-                       (id)ANColor(100, 100, 100, 1).CGColor,nil];
+                       (id)ANItemBackgroundColor, nil];
     [self.layer insertSublayer:gradient atIndex:0];
 
 }
