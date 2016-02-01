@@ -690,28 +690,28 @@
 }
 
 #pragma mark ANAppDelegateRESideMenuDelegate
-- (void)appDelegateRESideMenuWillShowMenuViewController
-{
-    [UIView animateWithDuration:1 animations:^{
-        self.menu.alpha = 0;
-    } completion:^(BOOL finished) {
-        self.menu.hidden = YES;
-
-    }];
-}
-
-
-- (void)appDelegateRESideMenuWillHideMenuViewController
-{
-    self.menu.alpha = 0;
-    [UIView animateWithDuration:1 animations:^{
-        self.menu.hidden = NO;
-        self.menu.alpha = 1;
-    } completion:^(BOOL finished) {
-        
-    }];
-
-}
+//- (void)appDelegateRESideMenuWillShowMenuViewController
+//{
+//    [UIView animateWithDuration:1 animations:^{
+//        self.menu.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        self.menu.hidden = YES;
+//
+//    }];
+//}
+//
+//
+//- (void)appDelegateRESideMenuWillHideMenuViewController
+//{
+//    self.menu.alpha = 0;
+//    [UIView animateWithDuration:1 animations:^{
+//        self.menu.hidden = NO;
+//        self.menu.alpha = 1;
+//    } completion:^(BOOL finished) {
+//        
+//    }];
+//
+//}
 
 #pragma mark 摇一摇
 //- (BOOL)canBecomeFirstResponder {

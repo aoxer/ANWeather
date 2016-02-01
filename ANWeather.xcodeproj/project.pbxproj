@@ -84,6 +84,8 @@
 		005EC4491C5E40830091DBD2 /* ANCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC4471C5E40830091DBD2 /* ANCareViewController.m */; };
 		005EC44A1C5E40830091DBD2 /* ANCareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005EC4481C5E40830091DBD2 /* ANCareViewController.xib */; };
 		005EC45C1C5F7DAA0091DBD2 /* xxxx.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 005EC45B1C5F7D760091DBD2 /* xxxx.ttf */; };
+		005EC45F1C5FA2B40091DBD2 /* UIWindow+Version.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC45E1C5FA2B40091DBD2 /* UIWindow+Version.m */; };
+		005EC4621C5FA3390091DBD2 /* ANNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC4611C5FA3390091DBD2 /* ANNewFeatureViewController.m */; };
 		0069A7411C461BAE0058D710 /* ANSettingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7401C461BAE0058D710 /* ANSettingTool.m */; };
 		0069A7471C462E210058D710 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7441C462E210058D710 /* AwesomeMenu.m */; };
 		0069A7481C462E210058D710 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7461C462E210058D710 /* AwesomeMenuItem.m */; };
@@ -326,6 +328,10 @@
 		005EC4471C5E40830091DBD2 /* ANCareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCareViewController.m; sourceTree = "<group>"; };
 		005EC4481C5E40830091DBD2 /* ANCareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANCareViewController.xib; sourceTree = "<group>"; };
 		005EC45B1C5F7D760091DBD2 /* xxxx.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = xxxx.ttf; sourceTree = "<group>"; };
+		005EC45D1C5FA2B40091DBD2 /* UIWindow+Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+Version.h"; path = "ANWeather/Category/UIWindow+Version.h"; sourceTree = "<group>"; };
+		005EC45E1C5FA2B40091DBD2 /* UIWindow+Version.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+Version.m"; path = "ANWeather/Category/UIWindow+Version.m"; sourceTree = "<group>"; };
+		005EC4601C5FA3390091DBD2 /* ANNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANNewFeatureViewController.h; path = ANWeather/Main/ANNewFeatureViewController.h; sourceTree = "<group>"; };
+		005EC4611C5FA3390091DBD2 /* ANNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANNewFeatureViewController.m; path = ANWeather/Main/ANNewFeatureViewController.m; sourceTree = "<group>"; };
 		0069A73F1C461BAE0058D710 /* ANSettingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSettingTool.h; sourceTree = "<group>"; };
 		0069A7401C461BAE0058D710 /* ANSettingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSettingTool.m; sourceTree = "<group>"; };
 		0069A7431C462E210058D710 /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
@@ -599,6 +605,8 @@
 		002215671C2CE6DA00E665F6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				005EC45D1C5FA2B40091DBD2 /* UIWindow+Version.h */,
+				005EC45E1C5FA2B40091DBD2 /* UIWindow+Version.m */,
 				00492A9E1C4285F2003296FB /* UIImage+Blur.h */,
 				00492A9F1C4285F2003296FB /* UIImage+Blur.m */,
 				00557DDE1C4422C000E6B790 /* RESideMenu+BackToHome.h */,
@@ -695,6 +703,8 @@
 		002216081C2CE91400E665F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				005EC4601C5FA3390091DBD2 /* ANNewFeatureViewController.h */,
+				005EC4611C5FA3390091DBD2 /* ANNewFeatureViewController.m */,
 				0022152E1C2CE63900E665F6 /* Main.storyboard */,
 				002216031C2CE8F800E665F6 /* AppDelegate.h */,
 				002216041C2CE8F800E665F6 /* AppDelegate.m */,
@@ -1477,10 +1487,12 @@
 				0095118F1C3D84C500EA9FDC /* UIView+MJExtension.m in Sources */,
 				005EC4441C5E40680091DBD2 /* ANAboutViewController.m in Sources */,
 				0095117D1C3D84C500EA9FDC /* MJRefreshAutoFooter.m in Sources */,
+				005EC45F1C5FA2B40091DBD2 /* UIWindow+Version.m in Sources */,
 				00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
 				0069A7711C46D5720058D710 /* ANAwesomeMenu.m in Sources */,
 				009511781C3D84C500EA9FDC /* FMDatabase.m in Sources */,
+				005EC4621C5FA3390091DBD2 /* ANNewFeatureViewController.m in Sources */,
 				009033FF1C2E2FA3001FFED3 /* ANWindM.m in Sources */,
 				002215FF1C2CE8E500E665F6 /* NSObject+MJCoding.m in Sources */,
 				009511321C3CDFD700EA9FDC /* ANAreaM.m in Sources */,

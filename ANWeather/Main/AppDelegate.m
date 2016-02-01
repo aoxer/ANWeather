@@ -31,37 +31,11 @@
     [UMSocialData setAppKey:ANUMAppKey];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    ViewController *viewController = [[ViewController alloc] init];
-    self.delegate = viewController;
-    ANLog(@"%@", viewController);
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    
-    ANLeftTableViewController *leftTableViewController = [[ANLeftTableViewController alloc] init];
-    ANRightTableViewController *rightTableViewController = [[ANRightTableViewController alloc] init];
-//    rightTableViewController.delegate = viewController;
-    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
-                                                                    leftMenuViewController:leftTableViewController
-                                                                   rightMenuViewController:rightTableViewController];
-    
+//    self.window.rootViewController = sideMenuViewController;
+    [self.window switchRootViewController];
 
-    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"clear_blur"];
-    sideMenuViewController.menuPreferredStatusBarStyle = 0; // UIStatusBarStyleLightContent
-    sideMenuViewController.delegate = self;
-    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
-    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
-    sideMenuViewController.contentViewShadowOpacity = 0.6;
-    sideMenuViewController.contentViewShadowRadius = 12;
-    sideMenuViewController.contentViewShadowEnabled = YES;
-    sideMenuViewController.contentViewScaleValue = 1.0;
-    
-    self.window.rootViewController = sideMenuViewController;
-//    self.window.rootViewController = [[ANRightTableViewController alloc] init];
-    
-    
     self.window.backgroundColor = [UIColor whiteColor];
-    
-  
+
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -73,9 +47,9 @@
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
-    if ([self.delegate respondsToSelector:@selector(appDelegateRESideMenuWillShowMenuViewController)]) {
-        [self.delegate appDelegateRESideMenuWillShowMenuViewController];
-    }
+//    if ([self.delegate respondsToSelector:@selector(appDelegateRESideMenuWillShowMenuViewController)]) {
+//        [self.delegate appDelegateRESideMenuWillShowMenuViewController];
+//    }
     
     
     
