@@ -79,6 +79,11 @@
 		005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B1AEF1C40FAEF001F6CF9 /* ANWindSpeedItemView.xib */; };
 		005B1AF51C40FB57001F6CF9 /* ANWindmill.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B1AF41C40FB57001F6CF9 /* ANWindmill.m */; };
 		005B1AF71C40FD32001F6CF9 /* ANWindmill.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B1AF61C40FD32001F6CF9 /* ANWindmill.xib */; };
+		005EC4441C5E40680091DBD2 /* ANAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC4421C5E40680091DBD2 /* ANAboutViewController.m */; };
+		005EC4451C5E40680091DBD2 /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005EC4431C5E40680091DBD2 /* ANAboutViewController.xib */; };
+		005EC4491C5E40830091DBD2 /* ANCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC4471C5E40830091DBD2 /* ANCareViewController.m */; };
+		005EC44A1C5E40830091DBD2 /* ANCareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005EC4481C5E40830091DBD2 /* ANCareViewController.xib */; };
+		005EC45C1C5F7DAA0091DBD2 /* xxxx.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 005EC45B1C5F7D760091DBD2 /* xxxx.ttf */; };
 		0069A7411C461BAE0058D710 /* ANSettingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7401C461BAE0058D710 /* ANSettingTool.m */; };
 		0069A7471C462E210058D710 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7441C462E210058D710 /* AwesomeMenu.m */; };
 		0069A7481C462E210058D710 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7461C462E210058D710 /* AwesomeMenuItem.m */; };
@@ -152,8 +157,6 @@
 		0095118F1C3D84C500EA9FDC /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 009511771C3D84C500EA9FDC /* UIView+MJExtension.m */; };
 		009511EE1C3D86D200EA9FDC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009511ED1C3D86D200EA9FDC /* QuartzCore.framework */; };
 		009511F01C3D86EC00EA9FDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */; };
-		00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CE71C33846200AD5B5C /* ANAboutViewController.m */; };
-		00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */; };
 		00B98D091C33846200AD5B5C /* ANSettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */; };
 		00B98D0D1C33848000AD5B5C /* ANLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */; };
 		00B98D151C33B0AF00AD5B5C /* ANRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B98D141C33B0AF00AD5B5C /* ANRightTableViewCell.m */; };
@@ -316,6 +319,13 @@
 		005B1AF31C40FB57001F6CF9 /* ANWindmill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANWindmill.h; sourceTree = "<group>"; };
 		005B1AF41C40FB57001F6CF9 /* ANWindmill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANWindmill.m; sourceTree = "<group>"; };
 		005B1AF61C40FD32001F6CF9 /* ANWindmill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANWindmill.xib; sourceTree = "<group>"; };
+		005EC4411C5E40680091DBD2 /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
+		005EC4421C5E40680091DBD2 /* ANAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutViewController.m; sourceTree = "<group>"; };
+		005EC4431C5E40680091DBD2 /* ANAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutViewController.xib; sourceTree = "<group>"; };
+		005EC4461C5E40830091DBD2 /* ANCareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCareViewController.h; sourceTree = "<group>"; };
+		005EC4471C5E40830091DBD2 /* ANCareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCareViewController.m; sourceTree = "<group>"; };
+		005EC4481C5E40830091DBD2 /* ANCareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANCareViewController.xib; sourceTree = "<group>"; };
+		005EC45B1C5F7D760091DBD2 /* xxxx.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = xxxx.ttf; sourceTree = "<group>"; };
 		0069A73F1C461BAE0058D710 /* ANSettingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSettingTool.h; sourceTree = "<group>"; };
 		0069A7401C461BAE0058D710 /* ANSettingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSettingTool.m; sourceTree = "<group>"; };
 		0069A7431C462E210058D710 /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
@@ -441,10 +451,6 @@
 		009511771C3D84C500EA9FDC /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		009511ED1C3D86D200EA9FDC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		009511EF1C3D86EC00EA9FDC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
-		00B98CE61C33846200AD5B5C /* ANAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANAboutViewController.h; sourceTree = "<group>"; };
-		00B98CE71C33846200AD5B5C /* ANAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANAboutViewController.m; sourceTree = "<group>"; };
-		00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANAboutViewController.xib; sourceTree = "<group>"; };
 		00B98CFB1C33846200AD5B5C /* ANSettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSettingTableViewController.h; sourceTree = "<group>"; };
 		00B98CFC1C33846200AD5B5C /* ANSettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSettingTableViewController.m; sourceTree = "<group>"; };
 		00B98D0B1C33848000AD5B5C /* ANLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANLeftTableViewController.h; path = ANWeather/Left/Controller/ANLeftTableViewController.h; sourceTree = "<group>"; };
@@ -550,8 +556,8 @@
 			isa = PBXGroup;
 			children = (
 				00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */,
-				0098E79F1C3F819700499D33 /* Lato-ThinItalic.ttf */,
 				0095112E1C3CDD4300EA9FDC /* area.json */,
+				005EC45B1C5F7D760091DBD2 /* xxxx.ttf */,
 				002215221C2CE63900E665F6 /* Info.plist */,
 				002215681C2CE70800E665F6 /* PrefixHeader.pch */,
 			);
@@ -848,6 +854,41 @@
 			path = WindSpeed;
 			sourceTree = "<group>";
 		};
+		005EC42C1C5E3E880091DBD2 /* Care */ = {
+			isa = PBXGroup;
+			children = (
+				005EC42D1C5E3E880091DBD2 /* Controller */,
+				005EC42E1C5E3E880091DBD2 /* Model */,
+				005EC42F1C5E3E880091DBD2 /* View */,
+			);
+			name = Care;
+			path = ANWeather/Left/Controller/Care;
+			sourceTree = "<group>";
+		};
+		005EC42D1C5E3E880091DBD2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				005EC4461C5E40830091DBD2 /* ANCareViewController.h */,
+				005EC4471C5E40830091DBD2 /* ANCareViewController.m */,
+				005EC4481C5E40830091DBD2 /* ANCareViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		005EC42E1C5E3E880091DBD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		005EC42F1C5E3E880091DBD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0069A73E1C461B940058D710 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -909,6 +950,7 @@
 				00B98D0C1C33848000AD5B5C /* ANLeftTableViewController.m */,
 				00B98CE41C33846200AD5B5C /* About */,
 				00B98CF11C33846200AD5B5C /* Feedback */,
+				005EC42C1C5E3E880091DBD2 /* Care */,
 				00B98CF91C33846200AD5B5C /* Setting */,
 				00B98D001C33846200AD5B5C /* support  */,
 			);
@@ -1133,9 +1175,9 @@
 		00B98CE51C33846200AD5B5C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				00B98CE61C33846200AD5B5C /* ANAboutViewController.h */,
-				00B98CE71C33846200AD5B5C /* ANAboutViewController.m */,
-				00B98CE81C33846200AD5B5C /* ANAboutViewController.xib */,
+				005EC4411C5E40680091DBD2 /* ANAboutViewController.h */,
+				005EC4421C5E40680091DBD2 /* ANAboutViewController.m */,
+				005EC4431C5E40680091DBD2 /* ANAboutViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1346,6 +1388,7 @@
 				0069A75B1C4631A20058D710 /* bg-addbutton@2x.png in Resources */,
 				00557E381C4575EA00E6B790 /* UMShareEditViewController.xib in Resources */,
 				00492AA21C4362E3003296FB /* ANPM25ItemView.xib in Resources */,
+				005EC44A1C5E40830091DBD2 /* ANCareViewController.xib in Resources */,
 				0069A75F1C4631A20058D710 /* bg-menuitem@2x.png in Resources */,
 				0069A75E1C4631A20058D710 /* bg-menuitem.png in Resources */,
 				005B1AF71C40FD32001F6CF9 /* ANWindmill.xib in Resources */,
@@ -1361,6 +1404,7 @@
 				0069A75C1C4631A20058D710 /* bg-menuitem-highlighted.png in Resources */,
 				00557E3B1C4575EA00E6B790 /* UMSnsAccountViewController.xib in Resources */,
 				0069A7611C4631A20058D710 /* icon-plus-highlighted@2x.png in Resources */,
+				005EC4451C5E40680091DBD2 /* ANAboutViewController.xib in Resources */,
 				0095112F1C3CDD4300EA9FDC /* area.json in Resources */,
 				005B1AF11C40FAEF001F6CF9 /* ANWindSpeedItemView.xib in Resources */,
 				00557E371C4575EA00E6B790 /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -1381,7 +1425,6 @@
 				0069A7621C4631A20058D710 /* icon-plus.png in Resources */,
 				0069A7591C4631A20058D710 /* bg-addbutton-highlighted@2x.png in Resources */,
 				00557E391C4575EA00E6B790 /* UMShareEditViewControlleriPad.xib in Resources */,
-				00B98D071C33846200AD5B5C /* ANAboutViewController.xib in Resources */,
 				0069A7651C4631A20058D710 /* icon-star@2x.png in Resources */,
 				0069A75A1C4631A20058D710 /* bg-addbutton.png in Resources */,
 				00557E3A1C4575EA00E6B790 /* UMSLoginViewController.xib in Resources */,
@@ -1402,6 +1445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005EC45C1C5F7DAA0091DBD2 /* xxxx.ttf in Sources */,
 				0095118D1C3D84C500EA9FDC /* UIScrollView+MJExtension.m in Sources */,
 				0069A76B1C467B880058D710 /* NSUserDefaults+firstStart.m in Sources */,
 				002215F31C2CE8E500E665F6 /* AFSecurityPolicy.m in Sources */,
@@ -1428,10 +1472,10 @@
 				0095117B1C3D84C500EA9FDC /* FMDatabaseQueue.m in Sources */,
 				009511811C3D84C500EA9FDC /* MJRefreshHeader.m in Sources */,
 				00F1BCE01C4DD1C0003333BA /* ANHumidityItemView.m in Sources */,
-				00B98D061C33846200AD5B5C /* ANAboutViewController.m in Sources */,
 				009033FB1C2E2FA3001FFED3 /* ANDailyForecastM.m in Sources */,
 				002215C11C2CE8CE00E665F6 /* Foundation+Log.m in Sources */,
 				0095118F1C3D84C500EA9FDC /* UIView+MJExtension.m in Sources */,
+				005EC4441C5E40680091DBD2 /* ANAboutViewController.m in Sources */,
 				0095117D1C3D84C500EA9FDC /* MJRefreshAutoFooter.m in Sources */,
 				00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */,
 				009033C31C2E2F46001FFED3 /* MBProgressHUD.m in Sources */,
@@ -1485,6 +1529,7 @@
 				0095118C1C3D84C500EA9FDC /* MJRefreshConst.m in Sources */,
 				004ED9F81C3A8957001614A4 /* ANCitySearchController.m in Sources */,
 				009511831C3D84C500EA9FDC /* MJRefreshAutoNormalFooter.m in Sources */,
+				005EC4491C5E40830091DBD2 /* ANCareViewController.m in Sources */,
 				009034041C2E2FA3001FFED3 /* ANWeatherItemView.m in Sources */,
 				009033F81C2E2FA3001FFED3 /* ANAqiM.m in Sources */,
 				0069A7471C462E210058D710 /* AwesomeMenu.m in Sources */,

@@ -14,6 +14,7 @@
 #import "ANSettingTableViewController.h"
 #import "ANSupportViewController.h"
 #import "ANFeedBackViewController.h"
+#import "ANCareViewController.h"
 #import "ANAboutViewController.h"
 @interface ANLeftTableViewController ()<MFMailComposeViewControllerDelegate>
 
@@ -73,34 +74,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 主页
-    ViewController *homeVc = [[ViewController alloc] init];
-    homeVc.isFromLeft = YES;
     
-    // 设置
-    ANSettingTableViewController *settingVC = [self settingVC];
-    
-        // 关于
-    ANAboutViewController *aboutVC = [[ANAboutViewController alloc] init];
-
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
+            
 #warning 待改
         case 0:
+        {// 主页
+            ViewController *homeVc = [[ViewController alloc] init];
+            homeVc.isFromLeft = YES;
              [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController: homeVc] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
+        }
             break;
             
         case 1:
+        {
+            // 设置
+            ANSettingTableViewController *settingVC = [self settingVC];
+         
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:settingVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
+        }
             break;
             
         case 2:
+       
+            
         {
-            NSString *str = @"http://www.baidu.com";
-            NSURL *url = [NSURL URLWithString:str];
-            [[UIApplication sharedApplication] openURL:url];
+            // 关心
+            ANCareViewController *careVC = [[ANCareViewController alloc] init];
+            [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:careVC] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
         }
             break;
             
@@ -110,8 +115,12 @@
             
             
         case 4:
+        {
+            // 关于
+            ANAboutViewController *aboutVC = [[ANAboutViewController alloc] init];
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:aboutVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
+        }
             break;
 
 
@@ -220,7 +229,7 @@
     if (!_titles) {
         NSAttributedString *weather = [NSString attrStringWithStr:@"主页"];
         NSAttributedString *setting = [NSString attrStringWithStr:@"设置"];
-        NSAttributedString *dafen = [NSString attrStringWithStr:@"给我打分"];
+        NSAttributedString *dafen = [NSString attrStringWithStr:@"关爱"];
         NSAttributedString *tucao = [NSString attrStringWithStr:@"吐槽"];
         NSAttributedString *about = [NSString attrStringWithStr:@"关于"];
 

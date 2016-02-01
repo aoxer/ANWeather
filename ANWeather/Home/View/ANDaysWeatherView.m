@@ -85,7 +85,6 @@
     ANDaysWeatherCell *cell = [ANDaysWeatherCell cellWithTableView:tableView];
     
     cell.dailyForcast = self.dailyForecastArray[indexPath.row];
-    ANLog(@"%d", indexPath.row);
     return cell;
     
 }

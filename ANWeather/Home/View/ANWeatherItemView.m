@@ -56,7 +56,14 @@
 - (void)setWeatherData:(ANWeatherData *)weatherData
 {
     self.condLabel.font = ANLightFontSize17;
-    self.condLabel.text = weatherData.now.cond.txt;
+   
+    NSString *text = nil;
+    if (weatherData.now.cond.txt) {
+        text = weatherData.now.cond.txt;
+    } else {
+        text = weatherData.now.cond.txt_d;
+    }
+    self.condLabel.text = text;
     self.condImageView.image = [self getWeatherImageWithCondCode:weatherData.now.cond.code];
 }
 

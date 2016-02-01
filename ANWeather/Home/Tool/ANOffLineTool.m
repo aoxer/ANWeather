@@ -74,14 +74,6 @@ static FMDatabase *_db;
     return weathersDict;
 }
 
-+ (NSString *)getLastCity
-{
-    NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.last"];
-    
-   NSString *city = [NSKeyedUnarchiver unarchiveObjectWithFile:lastCityPath];
-    return city;
-}
-
 + (BOOL)cityExists:(NSString *)city
 {
     NSString *sql = @"SELECT city FROM t_weathers";
@@ -116,6 +108,14 @@ static FMDatabase *_db;
         return YES;
     }
     return NO;
+}
+
++ (NSString *)getLastCity
+{
+    NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.last"];
+    
+    NSString *city = [NSKeyedUnarchiver unarchiveObjectWithFile:lastCityPath];
+    return city;
 }
 
 + (void)saveLastCity:(NSString *)city

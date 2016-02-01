@@ -93,6 +93,7 @@
 {
     return 44;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
@@ -124,11 +125,9 @@
             
         case 2:
             
-            cell.textLabel.text = @"摇一摇分享";
-            [self switchBtnAtCell:cell];
-            cell.highlighted = NO;
-            cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
-            break;
+            cell.textLabel.text = @"给我打分";
+ 
+        break;
             
  
         default:
@@ -142,16 +141,16 @@
  *
  *  @param cell 放到哪个cell上
  */
-- (void)switchBtnAtCell:(UITableViewCell *)cell
-{
-    UISwitch *switchBtn = [[UISwitch alloc] init];
-    [ANSettingTool isShakeEnable] ? (switchBtn.on = YES) : (switchBtn.on = NO);
-    switchBtn.centerY = cell.centerY;
-    switchBtn.x = cell.width - switchBtn.width - 20;
-    [cell.contentView addSubview:switchBtn];
-    
-    self.switchBtn = switchBtn;
-}
+//- (void)switchBtnAtCell:(UITableViewCell *)cell
+//{
+//    UISwitch *switchBtn = [[UISwitch alloc] init];
+//    [ANSettingTool isShakeEnable] ? (switchBtn.on = YES) : (switchBtn.on = NO);
+//    switchBtn.centerY = cell.centerY;
+//    switchBtn.x = cell.width - switchBtn.width - 20;
+//    [cell.contentView addSubview:switchBtn];
+//    
+//    self.switchBtn = switchBtn;
+//}
 
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -196,10 +195,12 @@
              break;
             
         case 2:
-            // 摇一摇分享
-            [ANSettingTool isShakeEnable] ? ([self.switchBtn setOn:NO animated:YES]) : ([self.switchBtn setOn:YES animated:YES]);
-            [ANSettingTool updateShakeEnable:![ANSettingTool isShakeEnable]];
-            ANLog(@"%d", [ANSettingTool isShakeEnable]);
+           
+            {
+                NSString *str = @"http://www.baidu.com";
+                NSURL *url = [NSURL URLWithString:str];
+                [[UIApplication sharedApplication] openURL:url];
+            }
             break;
    
             

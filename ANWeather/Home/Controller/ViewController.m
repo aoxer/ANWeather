@@ -289,9 +289,14 @@
     
 }
 
-- (UIImage *)backGroungImageWithWeather:(ANWeatherData *)weatherDate
+- (UIImage *)backGroungImageWithWeather:(ANWeatherData *)weatherData
 {
-    NSString *txt = weatherDate.now.cond.txt;
+    NSString *txt = nil;
+    if (weatherData.now.cond.txt) {
+        txt = weatherData.now.cond.txt;
+    } else {
+        txt = weatherData.now.cond.txt_d;
+    }
     
     UIImage *image = [UIImage imageNamed:@"clear_d_portrait"];
     if ([txt isEqualToString:@"晴"]) {
@@ -709,26 +714,26 @@
 }
 
 #pragma mark 摇一摇
-- (BOOL)canBecomeFirstResponder {
-    return YES;
-}
-
-
-//在响应摇一摇动作方法内得到屏幕截图
--(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*)event
-{
-    if(motion == UIEventSubtypeMotionShake)
-    {
-       // 该功能是在用户打开分享面板时，将要分享的图像内容替换为当前应用截图，要使用该功能需要将 UMSocial_ScreenShot_Sdk文件夹添加到工程的中，示例如下:
-        
-        UIImage *image = [[UMSocialScreenShoterDefault screenShoter] getScreenShot];
-        [UMSocialSnsService presentSnsIconSheetView:self appKey:ANUMAppKey shareText:@"分享文字" shareImage:image shareToSnsNames:nil delegate:nil];
-
-    }
-    
-    [UMSocialShakeService unShakeToSns];
-
-}
+//- (BOOL)canBecomeFirstResponder {
+//    return YES;
+//}
+//
+//
+////在响应摇一摇动作方法内得到屏幕截图
+//-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent*)event
+//{
+//    if(motion == UIEventSubtypeMotionShake)
+//    {
+//       // 该功能是在用户打开分享面板时，将要分享的图像内容替换为当前应用截图，要使用该功能需要将 UMSocial_ScreenShot_Sdk文件夹添加到工程的中，示例如下:
+//        
+//        UIImage *image = [[UMSocialScreenShoterDefault screenShoter] getScreenShot];
+//        [UMSocialSnsService presentSnsIconSheetView:self appKey:ANUMAppKey shareText:@"分享文字" shareImage:image shareToSnsNames:nil delegate:nil];
+//
+//    }
+//    
+//    [UMSocialShakeService unShakeToSns];
+//
+//}
 
 
 - (BOOL)prefersStatusBarHidden
