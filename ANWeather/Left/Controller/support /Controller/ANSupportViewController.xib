@@ -63,7 +63,7 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="9" height="17"/>
+        <image name="back" width="32" height="32"/>
         <image name="home" width="20" height="20"/>
     </resources>
 </document>

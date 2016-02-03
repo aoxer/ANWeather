@@ -83,7 +83,6 @@
 		005EC4451C5E40680091DBD2 /* ANAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005EC4431C5E40680091DBD2 /* ANAboutViewController.xib */; };
 		005EC4491C5E40830091DBD2 /* ANCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC4471C5E40830091DBD2 /* ANCareViewController.m */; };
 		005EC44A1C5E40830091DBD2 /* ANCareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005EC4481C5E40830091DBD2 /* ANCareViewController.xib */; };
-		005EC45C1C5F7DAA0091DBD2 /* xxxx.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 005EC45B1C5F7D760091DBD2 /* xxxx.ttf */; };
 		005EC45F1C5FA2B40091DBD2 /* UIWindow+Version.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC45E1C5FA2B40091DBD2 /* UIWindow+Version.m */; };
 		005EC4621C5FA3390091DBD2 /* ANNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC4611C5FA3390091DBD2 /* ANNewFeatureViewController.m */; };
 		0069A7411C461BAE0058D710 /* ANSettingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0069A7401C461BAE0058D710 /* ANSettingTool.m */; };
@@ -327,7 +326,6 @@
 		005EC4461C5E40830091DBD2 /* ANCareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCareViewController.h; sourceTree = "<group>"; };
 		005EC4471C5E40830091DBD2 /* ANCareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCareViewController.m; sourceTree = "<group>"; };
 		005EC4481C5E40830091DBD2 /* ANCareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANCareViewController.xib; sourceTree = "<group>"; };
-		005EC45B1C5F7D760091DBD2 /* xxxx.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = xxxx.ttf; sourceTree = "<group>"; };
 		005EC45D1C5FA2B40091DBD2 /* UIWindow+Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+Version.h"; path = "ANWeather/Category/UIWindow+Version.h"; sourceTree = "<group>"; };
 		005EC45E1C5FA2B40091DBD2 /* UIWindow+Version.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+Version.m"; path = "ANWeather/Category/UIWindow+Version.m"; sourceTree = "<group>"; };
 		005EC4601C5FA3390091DBD2 /* ANNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANNewFeatureViewController.h; path = ANWeather/Main/ANNewFeatureViewController.h; sourceTree = "<group>"; };
@@ -563,7 +561,6 @@
 			children = (
 				00B98D831C33E79700AD5B5C /* libsqlite3.0.dylib */,
 				0095112E1C3CDD4300EA9FDC /* area.json */,
-				005EC45B1C5F7D760091DBD2 /* xxxx.ttf */,
 				002215221C2CE63900E665F6 /* Info.plist */,
 				002215681C2CE70800E665F6 /* PrefixHeader.pch */,
 			);
@@ -1455,7 +1452,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005EC45C1C5F7DAA0091DBD2 /* xxxx.ttf in Sources */,
 				0095118D1C3D84C500EA9FDC /* UIScrollView+MJExtension.m in Sources */,
 				0069A76B1C467B880058D710 /* NSUserDefaults+firstStart.m in Sources */,
 				002215F31C2CE8E500E665F6 /* AFSecurityPolicy.m in Sources */,

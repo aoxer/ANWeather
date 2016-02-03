@@ -91,7 +91,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,30 +105,56 @@
                 
                 cell.textLabel.text = @"温度单位";
                 cell.detailTextLabel.text = self.tmpMode;
+                
+                if ([ANSettingTool isC]) {
+                    cell.imageView.image = [UIImage imageNamed:@"isC"];
+                } else {
+                    cell.imageView.image = [UIImage imageNamed:@"isF"];
+                }
             } else if (indexPath.row == 1){
                 
                 cell.textLabel.text = @"风力单位";
                 cell.detailTextLabel.text = self.windScaleSpeedMode;
+                cell.imageView.image = [UIImage imageNamed:@"wind"];
             }
             
             
-            cell.imageView.image = [UIImage imageNamed:@[@"blueArrow", @"blueArrow"][indexPath.row]];
+            
             break;
             
         case 1:
-            
+ 
             cell.textLabel.text = @"清空缓存";
             cell.detailTextLabel.text = [self getCacheSize];
-            cell.imageView.image = [UIImage imageNamed:@"blueArrow"];
+            if ([[self getCacheSize] isEqualToString:@""]) {
+                cell.imageView.image = [UIImage imageNamed:@"file"];
+            } else {
+                cell.imageView.image = [UIImage imageNamed:@"files"];
+            }
+
             
             break;
             
         case 2:
             
             cell.textLabel.text = @"给我打分";
- 
+            cell.imageView.image = [UIImage imageNamed:@"comments"];
+            
         break;
             
+        case 3:
+        {
+            
+            // 读取沙盒里的版本号
+            NSString *versionKey = @"CFBundleVersion";
+            // 当前版本号
+            NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][versionKey];
+            
+            cell.textLabel.text = @"版本信息";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@.0", currentVersion];
+            cell.imageView.image = [UIImage imageNamed:@"an_logo"];
+        }
+            break;
  
         default:
             break;
@@ -207,7 +233,6 @@
         case 3:
             // 清空缓存
             [self openAlbum];
-
             break;
 
             

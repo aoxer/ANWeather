@@ -120,6 +120,20 @@
     }else {
         [self awesome];
     }
+    
+    // 如果是点击分享 就滚到最下并截屏分享
+    if (self.isFromcare) {
+        CGFloat offset = self.tableView.contentSize.height - self.tableView.bounds.size.height;
+        if (offset > 0)
+        {
+            [self.tableView setContentOffset:CGPointMake(0, offset) animated:animated];
+        }
+        
+        self.isFromcare = NO;
+        
+
+    }
+    
 }
 /**
  *  判断城市
@@ -302,11 +316,14 @@
     if ([txt isEqualToString:@"晴"]) {
         image = [UIImage imageNamed:@"clear_d_portrait"];
         
-
         return image;
     } else if ([txt hasSuffix:@"雨"]){
         
         image = [UIImage imageNamed:@"rain_d_portrait"];
+        return image;
+    } else if ([txt hasSuffix:@"阴"]){
+        
+        image = [UIImage imageNamed:@"yintian"];
         return image;
     } else if ([txt hasSuffix:@"暴雨"]){
         
@@ -315,7 +332,6 @@
     }else if ([txt hasSuffix:@"云"]){
         
         image = [UIImage imageNamed:@"cloudy_d_portrait"];
-        
 
         return image;
     } else if ([txt hasSuffix:@"雪"]){
@@ -554,13 +570,15 @@
 }
 
 
-
+#pragma mark scrollViewDelegate
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     self.tableView.contentSize = CGSizeMake(self.weatherView.size.width, self.weatherView.size.height - 20);
     
 }
+
+
 
 #pragma scrollViewDelegate
 #warning TODO 模糊

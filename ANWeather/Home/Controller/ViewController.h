@@ -23,5 +23,11 @@
  */
 @property (assign, nonatomic)BOOL isFromRight;
 
+/**
+ *  是否分享
+ */
+@property (assign, nonatomic)BOOL isFromcare;
+
+
  @end
 

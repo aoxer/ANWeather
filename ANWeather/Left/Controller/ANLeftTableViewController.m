@@ -45,7 +45,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,7 +64,7 @@
         cell.selectedBackgroundView = [[UIView alloc] init];
 
     }
-    NSArray *images = @[@"left_home", @"left_setting", @"left_write", @"left_mail", @"left_about"];
+    NSArray *images = @[@"left_home", @"left_setting", @"left_write", @"left_mail"];
 
     cell.textLabel.attributedText = self.titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
@@ -100,10 +100,10 @@
             
         case 2:
        
-            
         {
-            // 关心
+            // 分享
             ANCareViewController *careVC = [[ANCareViewController alloc] init];
+            
             [self.sideMenuViewController setContentViewController:[[UINavigationController alloc] initWithRootViewController:careVC] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
         }
@@ -229,11 +229,10 @@
     if (!_titles) {
         NSAttributedString *weather = [NSString attrStringWithStr:@"主页"];
         NSAttributedString *setting = [NSString attrStringWithStr:@"设置"];
-        NSAttributedString *dafen = [NSString attrStringWithStr:@"关爱"];
+        NSAttributedString *dafen = [NSString attrStringWithStr:@"分享"];
         NSAttributedString *tucao = [NSString attrStringWithStr:@"吐槽"];
-        NSAttributedString *about = [NSString attrStringWithStr:@"关于"];
 
-        _titles = @[weather, setting, dafen, tucao, about];
+        _titles = @[weather, setting, dafen, tucao];
 
     }
     return _titles;
