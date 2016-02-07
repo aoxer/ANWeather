@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000698241C633193009669F0 /* ANTodayTomorrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 000698231C633193009669F0 /* ANTodayTomorrowView.m */; };
+		000698261C6331AA009669F0 /* ANTodayTomorrowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000698251C6331AA009669F0 /* ANTodayTomorrowView.xib */; };
 		0022152A1C2CE63900E665F6 /* ANWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 002215281C2CE63900E665F6 /* ANWeather.xcdatamodeld */; };
 		002215301C2CE63900E665F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0022152E1C2CE63900E665F6 /* Main.storyboard */; };
 		002215321C2CE63900E665F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 002215311C2CE63900E665F6 /* Images.xcassets */; };
@@ -187,6 +189,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000698221C633193009669F0 /* ANTodayTomorrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTodayTomorrowView.h; sourceTree = "<group>"; };
+		000698231C633193009669F0 /* ANTodayTomorrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTodayTomorrowView.m; sourceTree = "<group>"; };
+		000698251C6331AA009669F0 /* ANTodayTomorrowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTodayTomorrowView.xib; sourceTree = "<group>"; };
 		0022151E1C2CE63900E665F6 /* ANWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		002215221C2CE63900E665F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		002215291C2CE63900E665F6 /* ANWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ANWeather.xcdatamodel; sourceTree = "<group>"; };
@@ -892,6 +897,9 @@
 		005EC42F1C5E3E880091DBD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				000698221C633193009669F0 /* ANTodayTomorrowView.h */,
+				000698231C633193009669F0 /* ANTodayTomorrowView.m */,
+				000698251C6331AA009669F0 /* ANTodayTomorrowView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1399,6 +1407,7 @@
 				0069A75F1C4631A20058D710 /* bg-menuitem@2x.png in Resources */,
 				0069A75E1C4631A20058D710 /* bg-menuitem.png in Resources */,
 				005B1AF71C40FD32001F6CF9 /* ANWindmill.xib in Resources */,
+				000698261C6331AA009669F0 /* ANTodayTomorrowView.xib in Resources */,
 				004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */,
 				00557E3C1C4575EA00E6B790 /* UMSShareListController.xib in Resources */,
 				0069A75D1C4631A20058D710 /* bg-menuitem-highlighted@2x.png in Resources */,
@@ -1472,6 +1481,7 @@
 				009511841C3D84C500EA9FDC /* MJRefreshAutoStateFooter.m in Sources */,
 				00557DE31C44F49C00E6B790 /* ANUpdateTimeM.m in Sources */,
 				00F1BCDC1C4BA077003333BA /* ANDetailViewController.m in Sources */,
+				000698241C633193009669F0 /* ANTodayTomorrowView.m in Sources */,
 				00492B031C438B5D003296FB /* MSGradientArcLayer.m in Sources */,
 				002215C21C2CE8CE00E665F6 /* UIView+Extension.m in Sources */,
 				003C984B1C32BA3A00160D91 /* ANRightTableViewController.m in Sources */,

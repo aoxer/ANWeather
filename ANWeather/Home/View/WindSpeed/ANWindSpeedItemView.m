@@ -84,12 +84,19 @@
     NSString *spd = weatherData.now.wind.spd;
     self.windDirLabel.font = ANLightFontSize17;
     
+    // 如果是微风 不显示级字
+    NSString *ji = nil;
+    if ([sc isEqualToString:@"微风"]) {
+        ji = @"";
+    } else {
+        ji = @"级";
+    }
     
     if ([ANSettingTool isWindScale]) {
         self.windDirLabel.textAlignment = NSTextAlignmentLeft;
 
         // attrs
-        NSString *dirSpeedStr = [NSString stringWithFormat:@" %@ %@级", dir, sc];
+        NSString *dirSpeedStr = [NSString stringWithFormat:@" %@ %@%@", dir, sc, ji];
         NSMutableAttributedString *dirSpeedAttr = [[NSMutableAttributedString alloc] initWithString:dirSpeedStr];
         // 修改风向字体大小
         [dirSpeedAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(1, dir.length)];
