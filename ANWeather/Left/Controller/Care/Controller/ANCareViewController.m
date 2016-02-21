@@ -59,6 +59,19 @@
 
 - (void)loadUI
 {
+    self.photoFrame.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.photoFrame.layer.shadowOffset = CGSizeMake(0.5, 1);
+    self.photoFrame.layer.shadowOpacity = 0.7;
+    
+    self.todayView.layer.cornerRadius = ANCornerRadius;
+    self.todayView.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    self.tomorrowView.layer.cornerRadius = ANCornerRadius;
+    self.tomorrowView.layer.shadowColor = [UIColor blackColor].CGColor;
+
+    
+
+    
     // 今天
 //    UIView *today = [self today];
 //    today.backgroundColor = ANRandomColor;
