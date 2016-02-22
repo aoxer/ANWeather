@@ -205,7 +205,7 @@
     
     // 设置导航栏文字颜色
     NSMutableDictionary *attr = [NSMutableDictionary dictionary];
-    attr[NSForegroundColorAttributeName] = ANColor(1, 1, 1, 1);
+    attr[NSForegroundColorAttributeName] = ANColor(50, 50, 50, 1);
     [self.navigationController.navigationBar setTitleTextAttributes:attr];
     
 }
