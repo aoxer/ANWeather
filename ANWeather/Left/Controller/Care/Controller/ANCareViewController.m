@@ -20,6 +20,7 @@
 #define PhotoFrameMargin 10
 
 @interface ANCareViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *city;
 // 今天
 @property (weak, nonatomic) IBOutlet UIView *todayView;
 @property (weak, nonatomic) IBOutlet UILabel *todayQlty;
@@ -59,6 +60,8 @@
 
 - (void)loadUI
 {
+    // 城市
+    
     self.photoFrame.layer.shadowColor = [UIColor blackColor].CGColor;
     self.photoFrame.layer.shadowOffset = CGSizeMake(0.5, 1);
     self.photoFrame.layer.shadowOpacity = 0.7;
@@ -100,7 +103,7 @@
         [UMSocialSnsService presentSnsIconSheetView:self
                                              appKey:ANUMAppKey shareText:@"点击下载"
                                          shareImage:image
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToQQ, UMShareToInstagram, UMShareToSms, UMShareToTumblr,nil]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession, UMShareToWechatTimeline, UMShareToQQ, UMShareToSms,nil]
                                            delegate:nil];
     
     
@@ -118,6 +121,9 @@
     
     NSArray *daysWeather = [ANDailyForecastM objectArrayWithKeyValuesArray:weatherDict[@"daily_forecast"]];
     
+    // 城市
+    self.city.text = lastCity;
+    
     // 空气质量
     ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weatherDict];
     
@@ -125,7 +131,7 @@
     ANDailyForecastM *today = [daysWeather firstObject];
     ANDailyForecastM *tomorrow = [daysWeather objectAtIndex:1];
     
-    
+ 
     // 今天
     // 天气
     NSString *txt = nil;

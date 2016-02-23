@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANCareViewController">
             <connections>
                 <outlet property="bigView" destination="Y57-pq-09J" id="QDg-lN-lGI"/>
+                <outlet property="city" destination="Lm8-O6-gIv" id="qFz-Fg-5dF"/>
                 <outlet property="photoFrame" destination="M9K-Yc-o8z" id="dv8-GS-pwJ"/>
                 <outlet property="todayIcon" destination="eyq-P3-wG0" id="gOf-cR-CLx"/>
                 <outlet property="todayMax" destination="VKp-K2-NGK" id="EMG-Y3-yiU"/>
@@ -206,7 +207,7 @@
                                 </mask>
                             </variation>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from AN Weahter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMV-7U-iDF">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="from Weahter.AN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMV-7U-iDF">
                             <rect key="frame" x="194" y="417" width="111" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="nQ2-RH-69r"/>
