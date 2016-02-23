@@ -30,9 +30,11 @@
     // 友盟分享
     [UMSocialData setAppKey:ANUMAppKey];
     
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = sideMenuViewController;
-    [self.window switchRootViewController];
+    self.window.rootViewController = [self sideMenuViewController];
+//    [self.window switchRootViewController];
 
     self.window.backgroundColor = [UIColor whiteColor];
 
@@ -42,7 +44,33 @@
  
 }
 
-#pragma mark -
+#pragma mark - 返回 sideMenuViewController
+
+- (RESideMenu *)sideMenuViewController
+{
+    ViewController *viewController = [[ViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    ANLeftTableViewController *leftTableViewController = [[ANLeftTableViewController alloc] init];
+    ANRightTableViewController *rightTableViewController = [[ANRightTableViewController alloc] init];
+    //    rightTableViewController.delegate = viewController;
+    RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:navigationController
+                                                                    leftMenuViewController:leftTableViewController
+                                                                   rightMenuViewController:rightTableViewController];
+    
+    
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"clear_blur"];
+    sideMenuViewController.menuPreferredStatusBarStyle = 0; // UIStatusBarStyleLightContent
+    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
+    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
+    sideMenuViewController.contentViewShadowOpacity = 0.6;
+    sideMenuViewController.contentViewShadowRadius = 12;
+    sideMenuViewController.contentViewShadowEnabled = YES;
+    sideMenuViewController.contentViewScaleValue = 1.0;
+    
+    return sideMenuViewController;
+}
+
 #pragma mark RESideMenu Delegate
 
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
