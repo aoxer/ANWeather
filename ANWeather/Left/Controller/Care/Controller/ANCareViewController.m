@@ -116,13 +116,14 @@
  */
 - (void)loadWeather
 {
-    NSString *lastCity = [ANOffLineTool getLastCity];
-    NSDictionary *weatherDict = [ANOffLineTool weathersWithCity:lastCity];
+    NSString *currentCity = [ANOffLineTool getCurrentCity];
+    
+    NSDictionary *weatherDict = [ANOffLineTool weathersWithCity:currentCity];
     
     NSArray *daysWeather = [ANDailyForecastM objectArrayWithKeyValuesArray:weatherDict[@"daily_forecast"]];
     
     // 城市
-    self.city.text = lastCity;
+    self.city.text = currentCity;
     
     // 空气质量
     ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weatherDict];

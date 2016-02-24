@@ -118,11 +118,29 @@ static FMDatabase *_db;
     return city;
 }
 
+// 保存上次打开的城市
 + (void)saveLastCity:(NSString *)city
 {
     NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.last"];
     [NSKeyedArchiver archiveRootObject:city toFile:lastCityPath];
 }
+
+// 保存当前城市
++ (void)saveCurrentCity:(NSString *)city
+{
+    NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.current"];
+    [NSKeyedArchiver archiveRootObject:city toFile:lastCityPath];
+}
+
+// 拿到当前城市
++ (NSString *)getCurrentCity
+{
+    NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.current"];
+    
+    NSString *city = [NSKeyedUnarchiver unarchiveObjectWithFile:lastCityPath];
+    return city;
+}
+
 
 @end
 

@@ -31,5 +31,16 @@
  *  判断当前城市数据是否为今天
  */
 + (BOOL)CityWeatherIsToday:(NSString *)city;
- 
+
+/**
+ *  保存当前城市名到本地
+ */
++ (void)saveCurrentCity:(NSString *)city;
+
+
+/**
+ *  拿到当前城市
+ */
++ (NSString *)getCurrentCity;
+
  @end
