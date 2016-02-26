@@ -130,6 +130,7 @@ static FMDatabase *_db;
 {
     NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.current"];
     [NSKeyedArchiver archiveRootObject:city toFile:lastCityPath];
+    
 }
 
 // 拿到当前城市

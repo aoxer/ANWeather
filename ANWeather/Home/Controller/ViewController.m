@@ -208,9 +208,6 @@
     attr[NSForegroundColorAttributeName] = ANColor(50, 50, 50, 1);
     [self.navigationController.navigationBar setTitleTextAttributes:attr];
     
-    // 保存当前城市到缓存
-    [ANOffLineTool saveCurrentCity:self.navigationItem.title];
-
 }
 
 
@@ -277,6 +274,10 @@
         // 发送请求
         [self sendRequestWithCity:city];
     }
+    
+    // 保存当前城市到缓存
+    [ANOffLineTool saveCurrentCity:self.navigationItem.title];
+
 }
 
 
