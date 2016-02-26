@@ -31,5 +31,6 @@ NSString * const ANWillHideMenu = @"ANWillHideMenuNotification";
 // 友盟AppKey
 NSString * const ANUMAppKey = @"568bcd9ce0f55a549f0035b3";
 
-// 路径们
-  
+// 微信分享
+NSString * const ANWXAppID = @"wx8ce94c6dad48a50e";
+NSString * const ANWXAppSecert = @"fc9b8bdf390b26a26e051df1e85d200a";
