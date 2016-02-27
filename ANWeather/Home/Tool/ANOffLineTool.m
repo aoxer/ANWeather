@@ -128,8 +128,8 @@ static FMDatabase *_db;
 // 保存当前城市
 + (void)saveCurrentCity:(NSString *)city
 {
-    NSString *lastCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.current"];
-    [NSKeyedArchiver archiveRootObject:city toFile:lastCityPath];
+    NSString *currentCity = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"city.current"];
+    [NSKeyedArchiver archiveRootObject:city toFile:currentCity];
     
 }
 

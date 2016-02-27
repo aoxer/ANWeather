@@ -19,15 +19,12 @@
 #import "MJRefresh.h"
 #import "ANRightTableViewController.h"
 #import "ANOffLineTool.h"
-#import "AwesomeMenu.h"
 
-#import "UMSocialShakeService.h"
-#import "UMSocialScreenShoter.h"
 
 #import <CoreLocation/CoreLocation.h>
 
 
-@interface ViewController ()<CLLocationManagerDelegate, AwesomeMenuDelegate,ANAppDelegateRESideMenuDelegate>
+@interface ViewController ()<CLLocationManagerDelegate,ANAppDelegateRESideMenuDelegate>
 
 /**
  *  已选城市城市
@@ -47,7 +44,6 @@
 @property (strong, nonatomic)CLLocationManager *locationMgr;
 @property (strong, nonatomic)CLGeocoder *geocoder;
 
-@property (weak, nonatomic)AwesomeMenu *menu;
 @property (assign, nonatomic)CGPoint startPoint;
 // 背景图片蒙版
 @property (strong, nonatomic)UIView *cover;
@@ -105,21 +101,16 @@
 
     //设置第一响应者
     [self becomeFirstResponder];
-        //可以设置响应摇一摇阈值，数值越低越灵敏，默认是0.8
-    [UMSocialShakeService setShakeThreshold:0.8];
 
     
     self.view.backgroundColor = ANColor(222, 222, 222, 0.5);
     self.navigationController.navigationBar.shadowImage = [UIImage new];
    
-    if ([ANSettingTool isBigHand]) {
         self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
         
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"addMenu" andImageNameHighlight:@"addMenu"];
         
-    }else {
-        [self awesome];
-    }
+  
     
     // 如果是点击分享 就滚到最下并截屏分享
     if (self.isFromcare) {
@@ -131,7 +122,6 @@
         
         self.isFromcare = NO;
         
-
     }
     
 }
@@ -158,6 +148,7 @@
         
         [self sendRequestWithCity:self.city];
     }
+
 }
 #pragma mark 初始化方法
 
@@ -275,8 +266,6 @@
         [self sendRequestWithCity:city];
     }
     
-    // 保存当前城市到缓存
-    [ANOffLineTool saveCurrentCity:self.navigationItem.title];
 
 }
 
@@ -304,6 +293,9 @@
     self.cover = cover;
     // 重新加载tableView
     [self.tableView reloadData];
+    
+    // 保存当前城市到缓存
+    [ANOffLineTool saveCurrentCity:self.navigationItem.title];
     
 }
 
@@ -413,7 +405,6 @@
         [self.tableView.header endRefreshing];
         
     }];
-    
     
 }
 
@@ -590,7 +581,6 @@
 {
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat alpha =  offsetY / 200;
-    ANLog(@"%f", alpha);
     [self.navigationController.navigationBar lt_setBackgroundColor:[ANNavBarColor colorWithAlphaComponent:alpha]];
     
 //    if (alpha> 0.8) {
@@ -631,84 +621,6 @@
 - (void)rightTableViewControllerClickGetLocation
 {
     [self getLocation];
-}
-
--(void)awesome
-{
-    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
-    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
-    
-    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
-    
-    // Default Menu
-    
-    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                           highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
-                                                    highlightedContentImage:nil];
-   
-    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                           highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
-                                                    highlightedContentImage:nil];
-    
-    NSArray *menuItems = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, nil];
-    
-    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg-addbutton.png"]
-                                                       highlightedImage:[UIImage imageNamed:@"bg-addbutton-highlighted.png"]
-                                                           ContentImage:[UIImage imageNamed:@"icon-plus.png"]
-                                                highlightedContentImage:[UIImage imageNamed:@"icon-plus-highlighted.png"]];
-    
-
-    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem menuItems:menuItems];
-    menu.delegate = self;
-    
-    menu.menuWholeAngle = M_PI_2;
-    menu.farRadius = 110.0f;
-    menu.endRadius = 100.0f;
-    menu.nearRadius = 90.0f;
-    menu.animationDuration = 0.3f;
-    self.startPoint = CGPointMake(50, ANScreenHeight - 110);
-    menu.startPoint = self.startPoint;
-
-    self.menu = menu;
-    [ANKeyWindow addSubview:self.menu];
-}
-
-- (void)dealloc
-{
-    for (UIView *a in [ANKeyWindow subviews]) {
-        if ([a isKindOfClass:[AwesomeMenu class]]) {
-            [a removeFromSuperview];
-
-        }
-    };
-}
-
-
-#pragma mark AwesomeMenuDelegate
-- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
-{
-    switch (idx) {
-        case 0:
-            [self callLeft];
-
-            break;
-            
-            
-        case 2:
-            
-            [self callRight];
-
-            break;
-  
- 
-            break;
-            
-            
-        default:
-            break;
-    }
 }
 
 #pragma mark ANAppDelegateRESideMenuDelegate

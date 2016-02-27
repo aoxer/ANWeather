@@ -12,9 +12,9 @@
 #import "ANLeftTableViewController.h"
 #import "ANRightTableViewController.h"
 #import "ANSettingTool.h"
+#import "UMSocialWechatHandler.h"
 #import "UMSocial.h"
-#import "AwesomeMenu.h"
-
+#import "UMSocialSinaSSOHandler.h"
 
 @interface AppDelegate ()
 
@@ -30,11 +30,19 @@
     // 友盟分享
     [UMSocialData setAppKey:ANUMAppKey];
     
+    // 微信
+    [UMSocialWechatHandler setWXAppId:@"wx8ce94c6dad48a50e" appSecret:@"fc9b8bdf390b26a26e051df1e85d200a" url:@"http://www.umeng.com/social"];
     
+    // 微博
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954"
+                                              secret:@"04b48b094faeb16683c32669824ebdad"
+                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [self sideMenuViewController];
-//    [self.window switchRootViewController];
+    
+    
+//  [self.window switchRootViewController];
 
     self.window.backgroundColor = [UIColor whiteColor];
 
@@ -43,6 +51,16 @@
     return YES;
  
 }
+
+// 系统回调方法
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    BOOL result = [UMSocialSnsService handleOpenURL:url];
+//    if (result == FALSE) {
+//        //调用其他SDK，例如支付宝SDK等
+//    }
+//    return result;
+//}
 
 #pragma mark - 返回 sideMenuViewController
 

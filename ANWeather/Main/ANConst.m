@@ -32,5 +32,5 @@ NSString * const ANWillHideMenu = @"ANWillHideMenuNotification";
 NSString * const ANUMAppKey = @"568bcd9ce0f55a549f0035b3";
 
 // 微信分享
-NSString * const ANWXAppID = @"wx8ce94c6dad48a50e";
-NSString * const ANWXAppSecert = @"fc9b8bdf390b26a26e051df1e85d200a";
+//NSString * const ANWXAppID = @"wx8ce94c6dad48a50e";
+//NSString * const ANWXAppSecert = @"fc9b8bdf390b26a26e051df1e85d200a";

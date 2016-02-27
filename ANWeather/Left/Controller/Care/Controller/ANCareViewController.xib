@@ -10,6 +10,7 @@
                 <outlet property="bigView" destination="Y57-pq-09J" id="QDg-lN-lGI"/>
                 <outlet property="city" destination="Lm8-O6-gIv" id="qFz-Fg-5dF"/>
                 <outlet property="photoFrame" destination="M9K-Yc-o8z" id="dv8-GS-pwJ"/>
+                <outlet property="shareDate" destination="sqa-7d-9tw" id="Pf6-U2-5eL"/>
                 <outlet property="todayIcon" destination="eyq-P3-wG0" id="gOf-cR-CLx"/>
                 <outlet property="todayMax" destination="VKp-K2-NGK" id="EMG-Y3-yiU"/>
                 <outlet property="todayMin" destination="Mxb-fS-kn8" id="e7L-Kz-NAg"/>

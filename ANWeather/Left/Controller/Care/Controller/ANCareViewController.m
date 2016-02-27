@@ -13,8 +13,7 @@
 #import "ANSettingTool.h"
 #import "ANWeatherData.h"
 #import "UMSocial.h"
-#import "UMSocialScreenShoter.h"
-
+ 
 #import "ANTodayTomorrowView.h"
 
 #define PhotoFrameMargin 10
@@ -42,6 +41,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *bigView;
 
+@property (weak, nonatomic) IBOutlet UILabel *shareDate;
 
 @end
 
@@ -98,12 +98,17 @@
 
 - (IBAction)share {
 #warning TODO 友盟分享
-    UIImage *image = [self ScreenShot];
     
+    // 以图片形式分享
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeImage;
+ 
+    
+    UIImage *image = [self ScreenShot];
+    ANLog(@"clickShare");
         [UMSocialSnsService presentSnsIconSheetView:self
                                              appKey:ANUMAppKey shareText:@"点击下载"
                                          shareImage:image
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession, UMShareToWechatTimeline, UMShareToQQ, UMShareToSms,nil]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina ,UMShareToWechatSession, UMShareToWechatTimeline, UMShareToWechatFavorite, UMShareToQQ, UMShareToSms,nil]
                                            delegate:nil];
     
     
@@ -125,6 +130,8 @@
     // 城市
     self.city.text = currentCity;
     
+   
+    
     // 空气质量
     ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weatherDict];
     
@@ -132,7 +139,9 @@
     ANDailyForecastM *today = [daysWeather firstObject];
     ANDailyForecastM *tomorrow = [daysWeather objectAtIndex:1];
     
- 
+    // 今天日期
+    self.shareDate.text = [self dateWithMonthDay:today.date];
+    
     // 今天
     // 天气
     NSString *txt = nil;
@@ -272,6 +281,18 @@
      return image;
 }
 
+/**
+ *  把日期转为月日
+ */
+- (NSString *)dateWithMonthDay:(NSString *)date
+{
+    
+    NSString *month = [date substringWithRange:NSMakeRange(5, 2)];
+    NSString *day = [date substringWithRange:NSMakeRange(8, 2)];
+    NSString *MMDD = [NSString stringWithFormat:@"%@.%@", month, day];
+    
+    return MMDD;
+}
 
 /**
  *  动画组 暂时无用

@@ -8,7 +8,6 @@
 
  #import "ANSettingTableViewController.h"
 #import "MBProgressHUD+MJ.h" 
-#import "AwesomeMenu.h"
 #define ANTabViewHeight 50
 
 @interface ANSettingTableViewController ()
@@ -48,9 +47,33 @@
   
     // 设置tabbar
     [self setupTabbarView];
+    
+    // 开源许可
+    [self github];
 }
 
--(void)setupTabbarView
+- (void)github
+{
+    UILabel *githubLabel = [[UILabel alloc] init];
+    githubLabel.text = @"该项目已开源";
+    githubLabel.textColor = [UIColor lightGrayColor];
+    githubLabel.font = [UIFont systemFontOfSize:12];
+    githubLabel.textAlignment = NSTextAlignmentCenter;
+    githubLabel.frame = CGRectMake(0, -50, ANScreenWidth, 15);
+    [self.tabbarView addSubview:githubLabel];
+    
+    UILabel *address = [[UILabel alloc] init];
+    address.text = @"https://github.com/aoxer/ANWeather";
+    address.textColor = [UIColor lightGrayColor];
+    address.font = [UIFont systemFontOfSize:12];
+
+    address.textAlignment = NSTextAlignmentCenter;
+    address.frame = CGRectMake(0, -35, ANScreenWidth, 15);
+    [self.tabbarView addSubview:address];
+
+}
+
+- (void)setupTabbarView
 {
     // 容器
     UIView *tabbarView = [[UIView alloc] init];
@@ -221,11 +244,13 @@
              break;
             
         case 2:
-           
             {
-                NSString *str = @"http://www.baidu.com";
-                NSURL *url = [NSURL URLWithString:str];
-                [[UIApplication sharedApplication] openURL:url];
+                //去评分
+                NSString *str = [NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1088526122" ];
+                if( ([[[UIDevice currentDevice] systemVersion] doubleValue]>=7.0)){
+                    str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1088526122"];
+                }
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
             }
             break;
    

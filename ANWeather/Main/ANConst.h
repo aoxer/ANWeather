@@ -29,5 +29,5 @@ extern NSString * const ANWillHideMenu;
 extern NSString * const ANUMAppKey;
 
 // 微信分享
-extern NSString * const ANWXAppID;
-extern NSString * const ANWXAppSecert;
+//extern NSString * const ANWXAppID;
+//extern NSString * const ANWXAppSecert;
