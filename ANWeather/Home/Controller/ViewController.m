@@ -308,43 +308,43 @@
         txt = weatherData.now.cond.txt_d;
     }
     
-    UIImage *image = [UIImage imageNamed:@"clear_d_portrait"];
+    UIImage *image = [UIImage imageNamed:@"clear.jpg"];
     if ([txt isEqualToString:@"晴"]) {
-        image = [UIImage imageNamed:@"clear_d_portrait"];
+        image = [UIImage imageNamed:@"clear.jpg"];
         
         return image;
     } else if ([txt hasSuffix:@"雨"]){
         
-        image = [UIImage imageNamed:@"rain_d_portrait"];
+        image = [UIImage imageNamed:@"rain_d_portrait.jpg"];
         return image;
     } else if ([txt hasSuffix:@"阴"]){
         
-        image = [UIImage imageNamed:@"yintian"];
+        image = [UIImage imageNamed:@"yintian.jpg"];
         return image;
     } else if ([txt hasSuffix:@"暴雨"]){
         
-        image = [UIImage imageNamed:@"storm_d_portrait"];
+        image = [UIImage imageNamed:@"storm_d_portrait.jpg"];
         return image;
     }else if ([txt hasSuffix:@"云"]){
         
-        image = [UIImage imageNamed:@"cloudy_d_portrait"];
+        image = [UIImage imageNamed:@"cloudy_d_portrait.jpg"];
 
         return image;
     } else if ([txt hasSuffix:@"雪"]){
         
-        image = [UIImage imageNamed:@"snow_d_portrait"];
+        image = [UIImage imageNamed:@"snow_d_portrait.jpg"];
         
 
         return image;
     } else if ([txt hasSuffix:@"雾"]){
         
-        image = [UIImage imageNamed:@"foggy_d_portrait"];
+        image = [UIImage imageNamed:@"foggy_d_portrait.jpg"];
         
 
         return image;
     } else if ([txt hasSuffix:@"霾"]){
         
-        image = [UIImage imageNamed:@"foggy_d_portrait"];
+        image = [UIImage imageNamed:@"foggy_d_portrait.jpg"];
         
 
         return image;
@@ -599,7 +599,7 @@
     // 模糊背景
 //    CIContext *context = [CIContext contextWithOptions:nil];
 //    CIImage *inputImage = [[CIImage alloc] initWithImage:[UIImage imageNamed:@"snow_d_portrait"]];
-//    // create gaussian blur filter
+//    // create gaussian blurcfilter
 //    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
 //    [filter setValue:inputImage forKey:kCIInputImageKey];
 //    [filter setValue:[NSNumber numberWithFloat:alpha*1.3] forKey:@"inputRadius"];

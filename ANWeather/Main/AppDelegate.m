@@ -32,11 +32,9 @@
     
     // 微信
     [UMSocialWechatHandler setWXAppId:@"wx8ce94c6dad48a50e" appSecret:@"fc9b8bdf390b26a26e051df1e85d200a" url:@"http://www.umeng.com/social"];
-    
-    // 微博
-    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954"
-                                              secret:@"04b48b094faeb16683c32669824ebdad"
-                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+//
+//    // 微博
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954" secret:@"04b48b094faeb16683c32669824ebdad" RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [self sideMenuViewController];
@@ -77,7 +75,7 @@
                                                                    rightMenuViewController:rightTableViewController];
     
     
-    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"clear_blur"];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"clear_d_portrait_blur.jpg"];
     sideMenuViewController.menuPreferredStatusBarStyle = 0; // UIStatusBarStyleLightContent
     sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
     sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);

@@ -48,8 +48,8 @@
 		0045131E1C80841200306725 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0045131D1C80841200306725 /* libz.dylib */; };
 		004513981C816AE600306725 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 004513971C816AE600306725 /* AppDelegate.m */; };
 		004513BD1C816B1F00306725 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0045139B1C816B1F00306725 /* UMSocialLocalizable.strings */; };
-		004513BE1C816B1F00306725 /* libUMSocial_Sdk_5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513A91C816B1F00306725 /* libUMSocial_Sdk_5.0.a */; };
-		004513BF1C816B1F00306725 /* libUMSocial_Sdk_Comment_5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513AA1C816B1F00306725 /* libUMSocial_Sdk_Comment_5.0.a */; };
+		004513BE1C816B1F00306725 /* libUMSocial_Sdk_5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513A91C816B1F00306725 /* libUMSocial_Sdk_5.0.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		004513BF1C816B1F00306725 /* libUMSocial_Sdk_Comment_5.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513AA1C816B1F00306725 /* libUMSocial_Sdk_Comment_5.0.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		004513C01C816B1F00306725 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004513AC1C816B1F00306725 /* UMSCommentDetailController.xib */; };
 		004513C11C816B1F00306725 /* UMSCommentInputController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004513AD1C816B1F00306725 /* UMSCommentInputController.xib */; };
 		004513C21C816B1F00306725 /* UMSCommentInputControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004513AE1C816B1F00306725 /* UMSCommentInputControlleriPad.xib */; };
@@ -59,10 +59,10 @@
 		004513C61C816B1F00306725 /* UMSnsAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004513B21C816B1F00306725 /* UMSnsAccountViewController.xib */; };
 		004513C71C816B1F00306725 /* UMSShareListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004513B31C816B1F00306725 /* UMSShareListController.xib */; };
 		004513C81C816B1F00306725 /* UMSocialSDKResourcesNew.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 004513B41C816B1F00306725 /* UMSocialSDKResourcesNew.bundle */; };
-		004513C91C816B1F00306725 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513B71C816B1F00306725 /* libSocialWechat.a */; };
-		004513CA1C816B1F00306725 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513B81C816B1F00306725 /* libWeChatSDK.a */; };
-		004513DA1C8173F300306725 /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513CC1C8173F300306725 /* libSocialSinaSSO.a */; };
-		004513DB1C8173F300306725 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513CD1C8173F300306725 /* libWeiboSDK.a */; };
+		004513C91C816B1F00306725 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513B71C816B1F00306725 /* libSocialWechat.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		004513CA1C816B1F00306725 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513B81C816B1F00306725 /* libWeChatSDK.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		004513DA1C8173F300306725 /* libSocialSinaSSO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513CC1C8173F300306725 /* libSocialSinaSSO.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		004513DB1C8173F300306725 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513CD1C8173F300306725 /* libWeiboSDK.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		004513DC1C8173F300306725 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 004513D71C8173F300306725 /* WeiboSDK.bundle */; };
 		004513DE1C8175DC00306725 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 004513DD1C8175DC00306725 /* ImageIO.framework */; };
 		00492A621C4230CD003296FB /* ANDaysWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00492A611C4230CD003296FB /* ANDaysWeatherView.m */; };
@@ -1371,6 +1371,7 @@
 					};
 					002215391C2CE63900E665F6 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 4JSD97Y88N;
 						TestTargetID = 0022151D1C2CE63900E665F6;
 					};
 				};
@@ -1643,7 +1644,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "bc02faa2-4fe1-4a89-a276-5a35da471511";
+				PROVISIONING_PROFILE = "f1f3283a-d360-4368-be1b-fe82b07ea180";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1665,8 +1666,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yongchao An (4JSD97Y88N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yongchao An (4JSD97Y88N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongchao An (8K69JTCZ5S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongchao An (8K69JTCZ5S)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1681,7 +1682,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "bc02faa2-4fe1-4a89-a276-5a35da471511";
+				PROVISIONING_PROFILE = "f1f3283a-d360-4368-be1b-fe82b07ea180";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1714,7 +1715,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bc02faa2-4fe1-4a89-a276-5a35da471511";
+				PROVISIONING_PROFILE = "f1f3283a-d360-4368-be1b-fe82b07ea180";
 			};
 			name = Debug;
 		};
@@ -1722,8 +1723,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Yongchao An (4JSD97Y88N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yongchao An (4JSD97Y88N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yongchao An (8K69JTCZ5S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongchao An (8K69JTCZ5S)";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ANWeather/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1745,7 +1746,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "bc02faa2-4fe1-4a89-a276-5a35da471511";
+				PROVISIONING_PROFILE = "f1f3283a-d360-4368-be1b-fe82b07ea180";
 			};
 			name = Release;
 		};
@@ -1753,6 +1754,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1764,6 +1767,7 @@
 				INFOPLIST_FILE = ANWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ANWeather.app/ANWeather";
 			};
 			name = Debug;
@@ -1772,6 +1776,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1779,6 +1785,7 @@
 				INFOPLIST_FILE = ANWeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ANWeather.app/ANWeather";
 			};
 			name = Release;

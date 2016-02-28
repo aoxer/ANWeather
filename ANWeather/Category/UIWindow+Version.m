@@ -49,7 +49,7 @@
                                                                    rightMenuViewController:rightTableViewController];
     
     
-    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"clear_blur"];
+    sideMenuViewController.backgroundImage = [UIImage imageNamed:@"clear_d_portrait_blur.jpg"];
     sideMenuViewController.menuPreferredStatusBarStyle = 0; // UIStatusBarStyleLightContent
     sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
     sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
