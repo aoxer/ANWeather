@@ -106,9 +106,9 @@
     UIImage *image = [self ScreenShot];
     ANLog(@"clickShare");
         [UMSocialSnsService presentSnsIconSheetView:self
-                                             appKey:ANUMAppKey shareText:@"点击下载"
+                                             appKey:ANUMAppKey shareText:@"注意天气哦!"
                                          shareImage:image
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina ,UMShareToWechatSession, UMShareToWechatTimeline, UMShareToWechatFavorite, UMShareToQQ, UMShareToSms,nil]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina ,UMShareToWechatSession, UMShareToWechatTimeline, UMShareToQQ, UMShareToSms, UMShareToEmail, UMShareToFacebook, UMShareToInstagram, UMShareToTwitter, nil]
                                            delegate:nil];
     
     

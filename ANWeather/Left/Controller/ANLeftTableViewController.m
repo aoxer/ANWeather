@@ -166,18 +166,26 @@
 -(void)displayComposerSheet
 {
     MFMailComposeViewController *mailPicker = [[MFMailComposeViewController alloc] init];
-    
-        mailPicker.mailComposeDelegate = self;
+    mailPicker.mailComposeDelegate = self;
     
     //设置主题
     [mailPicker setSubject: @"我要吐槽"];
     
-    // 添加发送者
+    // 添加收信人
     NSArray *toRecipients = [NSArray arrayWithObject: @"aoxer@163.com"];
     
     [mailPicker setToRecipients: toRecipients];
     
-    [self presentViewController:mailPicker animated:YES completion:nil];
+    // 设置cc
+//    [mailPicker setCcRecipients:[NSArray arrayWithObject:@"aoxer@163.com"]];
+
+    // 设置bcc
+//    [mailPicker setBccRecipients:[NSArray arrayWithObject:@"aoxer@163.com"]];
+    
+    // 邮件主体
+    [mailPicker setMessageBody:@"Watson!!!\n\nCome here, I need you!" isHTML:NO];
+    
+     [self presentViewController:mailPicker animated:YES completion:nil];
 }
 
 // 转到系统邮件

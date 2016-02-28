@@ -15,6 +15,7 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocial.h"
 #import "UMSocialSinaSSOHandler.h"
+#import "UMSocialInstagramHandler.h"
 
 @interface AppDelegate ()
 
@@ -35,6 +36,12 @@
 //
 //    // 微博
     [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954" secret:@"04b48b094faeb16683c32669824ebdad" RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    
+    // Instragam
+     [UMSocialInstagramHandler openInstagramWithScale:NO paddingColor:[UIColor blackColor]];
+    
+    // Facebook
+    // Twitter
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [self sideMenuViewController];
