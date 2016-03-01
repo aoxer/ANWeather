@@ -16,9 +16,18 @@
 
 @implementation ANRightTableViewCell
 
- 
+- (void)awakeFromNib{
+    
+    [super awakeFromNib];
+    // 添加删除按钮
+    UIButton *delCityBtn = [[UIButton alloc] init];
+    delCityBtn.frame = CGRectMake(self.width - 40, 0, 30, self.height);
+    [delCityBtn setImage:[UIImage imageNamed:@"del"] forState:UIControlStateNormal];
+    [delCityBtn addTarget:self action:@selector(delCity) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:delCityBtn];
+    self.delCityBtn = delCityBtn;
+}
 
- 
 - (IBAction)delCity {
     
     if ([self.delegate respondsToSelector:@selector(rightTableViewCellDidClickDelBtnAtCell:)]) {
