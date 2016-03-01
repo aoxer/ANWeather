@@ -30,13 +30,16 @@
 
     // 初始化tableView
     [self setupTableView];
-    
-}
 
+}
 
 
 - (void)setupTableView
 {
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.frame = CGRectMake(0, (ANScreenHeight - 54 * 5) /2.0f, ANScreenWidth, 54*5);
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
@@ -72,6 +75,7 @@
     
     // 创建cell
     ANRightTableViewCell *cell = [ANRightTableViewCell cellWithTableView:tableView];
+    
     cell.delegate = self;
     cell.tag = indexPath.row;
     cell.backgroundColor = [UIColor clearColor];
@@ -89,17 +93,20 @@
             break;
             
         case 1:
-        
+        {
             cell.locIcon.image = [UIImage imageNamed:@"city"];
             cell.cityName.text = self.selectedCitys[indexPath.row];
-        
+         
+         }
             break;
             
         default:
             break;
     }
     
-     
+    
+
+    
     return cell;
 }
 
@@ -118,8 +125,8 @@
 {
     return 0;
 }
- 
 
+ 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    [tableView deselectRowAtIndexPath:indexPath animated:YES];

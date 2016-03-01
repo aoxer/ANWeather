@@ -59,26 +59,50 @@
 
 - (void)loadUI
 {
+    CGFloat screenHeight = ANScreenHeight;
+
+    if (screenHeight == 667) {
+        self.todaytmp.font = [UIFont fontWithName:@"Verdana-Bold" size:30];
+        self.todayCond.font = [UIFont systemFontOfSize:17];
+        self.todayQlty.font = [UIFont systemFontOfSize:17];
+
+        self.tomorrowtmp.font = [UIFont fontWithName:@"Verdana-Bold" size:30];
+        self.tomorrowCond.font = [UIFont systemFontOfSize:17];
+        self.tomorrowWind.font = [UIFont systemFontOfSize:17];
+
+    } else if (screenHeight == 736) {
+        
+        self.todaytmp.font = [UIFont fontWithName:@"Verdana-Bold" size:40];
+        self.todayCond.font = [UIFont systemFontOfSize:20];
+        self.todayQlty.font = [UIFont systemFontOfSize:20];
+        
+        self.tomorrowtmp.font = [UIFont fontWithName:@"Verdana-Bold" size:40];
+        self.tomorrowCond.font = [UIFont systemFontOfSize:20];
+        self.tomorrowWind.font = [UIFont systemFontOfSize:20];
+
+    }
+    
+    
     
     // 相框阴影
     self.photoFrame.layer.shadowOffset = CGSizeMake(2, 5);
-    self.photoFrame.layer.shadowOpacity = 0.1;
+    self.photoFrame.layer.shadowOpacity = 0.15;
     self.photoFrame.layer.shadowRadius = 4;
     
     // 今天
     self.todayView.layer.shadowOffset = CGSizeMake(2,5);
-    self.todayView.layer.shadowOpacity = 0.11;
+    self.todayView.layer.shadowOpacity = 0.1;
     self.todayView.layer.shadowRadius = 4;
     for (UIView *view in [self.todayView subviews]) {
         view.layer.shadowOffset = CGSizeMake(10,10);
-        view.layer.shadowOpacity = 0.11;
+        view.layer.shadowOpacity = 0.15;
         view.layer.shadowRadius = 4;
     }
     self.todayView.layer.cornerRadius = ANCornerRadius;
 
     // 明天
     self.tomorrowView.layer.shadowOffset = CGSizeMake(2,5);
-    self.tomorrowView.layer.shadowOpacity = 0.11;
+    self.tomorrowView.layer.shadowOpacity = 0.15;
     self.tomorrowView.layer.shadowRadius = 4;
     for (UIView *view in [self.tomorrowView subviews]) {
     view.layer.shadowOffset = CGSizeMake(10,10);
@@ -172,15 +196,15 @@
     NSString *max = nil;
     if ([ANSettingTool isC]) {
         min = [NSString stringWithFormat:@"%@", today.tmp.min];
-        max = [NSString stringWithFormat:@"%@°", today.tmp.max];
+        max = [NSString stringWithFormat:@"%@", today.tmp.max];
 
     } else {
         min = [NSString stringWithFormat:@"%ld", ANFahrenheit(today.tmp.min)];
-        max = [NSString stringWithFormat:@"%ld°", ANFahrenheit(today.tmp.max)];
+        max = [NSString stringWithFormat:@"%ld", ANFahrenheit(today.tmp.max)];
 
      }
     
-    NSString *tmp = [NSString stringWithFormat:@"%@~%@", min, max];
+    NSString *tmp = [NSString stringWithFormat:@"%@~%@°", min, max];
     self.todaytmp.text = tmp;
     
  
@@ -221,15 +245,15 @@
     NSString *tomoMax = nil;
     if ([ANSettingTool isC]) {
         tomoMin = [NSString stringWithFormat:@"%@", tomorrow.tmp.min];
-        tomoMax = [NSString stringWithFormat:@"%@°", tomorrow.tmp.max];
+        tomoMax = [NSString stringWithFormat:@"%@", tomorrow.tmp.max];
         
     } else {
         tomoMin = [NSString stringWithFormat:@"%ld", ANFahrenheit(tomorrow.tmp.min)];
-        tomoMax = [NSString stringWithFormat:@"%ld°", ANFahrenheit(tomorrow.tmp.max)];
+        tomoMax = [NSString stringWithFormat:@"%ld", ANFahrenheit(tomorrow.tmp.max)];
         
     }
     
-    NSString *tomoTmp = [NSString stringWithFormat:@"%@~%@", tomoMin, tomoMax];
+    NSString *tomoTmp = [NSString stringWithFormat:@"%@~%@°", tomoMin, tomoMax];
     self.tomorrowtmp.text = tomoTmp;
     
      // 风

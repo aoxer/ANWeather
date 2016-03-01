@@ -127,6 +127,8 @@
         _contentViewController = contentViewController;
         _leftMenuViewController = leftMenuViewController;
         _rightMenuViewController = rightMenuViewController;
+        
+        
     }
     return self;
 }
@@ -184,6 +186,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // 禁止在所有界面都能侧滑
     
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.backgroundImageView = ({

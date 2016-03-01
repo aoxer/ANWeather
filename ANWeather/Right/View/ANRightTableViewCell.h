@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class ANRightTableViewCell;
 @protocol ANRightTableViewCellDelegate <NSObject>
 
@@ -17,6 +18,8 @@
 @end
 
 @interface ANRightTableViewCell : UITableViewCell
+
+
 @property (weak, nonatomic) IBOutlet UIButton *delCityBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *locIcon;
 
@@ -26,4 +29,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *cityName;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
-@end
+ @end
