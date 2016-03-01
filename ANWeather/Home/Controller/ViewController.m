@@ -321,6 +321,10 @@
         
         image = [UIImage imageNamed:@"yintian.jpg"];
         return image;
+    } else if ([txt hasSuffix:@"阴"]){
+        
+        image = [UIImage imageNamed:@"yintian.jpg"];
+        return image;
     } else if ([txt hasSuffix:@"暴雨"]){
         
         image = [UIImage imageNamed:@"storm_d_portrait.jpg"];
@@ -375,6 +379,11 @@
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setValue:city forKey:@"city"];
     ANLog(@"sendRequestWithCity-%@", city);
+    
+//    AFSecurityPolicy *policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+//    [policy setValidatesDomainName:NO];
+//    [policy setAllowInvalidCertificates:YES];
+//    mgr.securityPolicy = policy;
     
     // 2.发送请求
     [mgr GET:requsetURL parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {

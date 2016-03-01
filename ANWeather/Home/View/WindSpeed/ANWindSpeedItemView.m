@@ -80,6 +80,13 @@
     self.windmill.weatherData = weatherData;
     // 风向 风力
     NSString *dir = weatherData.now.wind.dir;
+     if ([dir isEqualToString:@"无持续风向"]) {
+        dir = @"";
+    } else {
+        dir = weatherData.now.wind.dir;
+    }
+
+    
     NSString *sc = weatherData.now.wind.sc;
     NSString *spd = weatherData.now.wind.spd;
     self.windDirLabel.font = ANLightFontSize17;

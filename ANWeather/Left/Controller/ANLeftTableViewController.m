@@ -176,14 +176,8 @@
     
     [mailPicker setToRecipients: toRecipients];
     
-    // 设置cc
-//    [mailPicker setCcRecipients:[NSArray arrayWithObject:@"aoxer@163.com"]];
-
-    // 设置bcc
-//    [mailPicker setBccRecipients:[NSArray arrayWithObject:@"aoxer@163.com"]];
-    
-    // 邮件主体
-    [mailPicker setMessageBody:@"Watson!!!\n\nCome here, I need you!" isHTML:NO];
+     // 邮件主体
+    [mailPicker setMessageBody:@"哪里不爽？\n我改完让大家爽爽!" isHTML:NO];
     
      [self presentViewController:mailPicker animated:YES completion:nil];
 }

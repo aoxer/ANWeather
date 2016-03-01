@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "share_tomorrow.png"
+      "filename" : "share_tomorrow.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

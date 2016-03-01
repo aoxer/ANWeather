@@ -55,11 +55,11 @@
 - (void)github
 {
     UILabel *githubLabel = [[UILabel alloc] init];
-    githubLabel.text = @"该项目已开源";
+    githubLabel.text = @"项目已开源";
     githubLabel.textColor = [UIColor lightGrayColor];
     githubLabel.font = [UIFont systemFontOfSize:12];
     githubLabel.textAlignment = NSTextAlignmentCenter;
-    githubLabel.frame = CGRectMake(0, -50, ANScreenWidth, 15);
+    githubLabel.frame = CGRectMake(0, -35, ANScreenWidth, 15);
     [self.tabbarView addSubview:githubLabel];
     
     UILabel *address = [[UILabel alloc] init];
@@ -68,7 +68,7 @@
     address.font = [UIFont systemFontOfSize:12];
 
     address.textAlignment = NSTextAlignmentCenter;
-    address.frame = CGRectMake(0, -35, ANScreenWidth, 15);
+    address.frame = CGRectMake(0, -20, ANScreenWidth, 15);
     [self.tabbarView addSubview:address];
 
 }
@@ -77,7 +77,7 @@
 {
     // 容器
     UIView *tabbarView = [[UIView alloc] init];
-    tabbarView.frame = CGRectMake(0, ANScreenHeight - 64-ANTabViewHeight, ANScreenWidth, ANTabViewHeight);
+    tabbarView.frame = CGRectMake(0, ANScreenHeight - 64 - ANTabViewHeight, ANScreenWidth, ANTabViewHeight);
    
     // 线
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, 1)];
@@ -253,14 +253,7 @@
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
             }
             break;
-   
-            
-        case 3:
-            // 清空缓存
-            [self openAlbum];
-            break;
-
-            
+    
         default:
             break;
             

@@ -23,17 +23,15 @@
 // 今天
 @property (weak, nonatomic) IBOutlet UIView *todayView;
 @property (weak, nonatomic) IBOutlet UILabel *todayQlty;
-@property (weak, nonatomic) IBOutlet UILabel *todayMin;
-@property (weak, nonatomic) IBOutlet UILabel *todayMax;
+@property (weak, nonatomic) IBOutlet UILabel *todaytmp;
 @property (weak, nonatomic) IBOutlet UILabel *todayCond;
 @property (weak, nonatomic) IBOutlet UIImageView *todayIcon;
-@property (weak, nonatomic) IBOutlet UILabel *todayWind;
+@property (weak, nonatomic) IBOutlet UILabel *todayIsC;
 
 // 明天
 @property (weak, nonatomic) IBOutlet UIView *tomorrowView;
- @property (weak, nonatomic) IBOutlet UILabel *tomorrowMin;
-@property (weak, nonatomic) IBOutlet UILabel *tomorrowMax;
-@property (weak, nonatomic) IBOutlet UILabel *tomorrowCond;
+ @property (weak, nonatomic) IBOutlet UILabel *tomorrowtmp;
+ @property (weak, nonatomic) IBOutlet UILabel *tomorrowCond;
 @property (weak, nonatomic) IBOutlet UIImageView *tomorrowIcon;
 @property (weak, nonatomic) IBOutlet UILabel *tomorrowWind;
 
@@ -42,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bigView;
 
 @property (weak, nonatomic) IBOutlet UILabel *shareDate;
+@property (weak, nonatomic) IBOutlet UILabel *tomoIsC;
 
 @end
 
@@ -60,18 +59,34 @@
 
 - (void)loadUI
 {
-    // 城市
     
-    self.photoFrame.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.photoFrame.layer.shadowOffset = CGSizeMake(0.5, 1);
-    self.photoFrame.layer.shadowOpacity = 0.7;
+    // 相框阴影
+    self.photoFrame.layer.shadowOffset = CGSizeMake(2, 5);
+    self.photoFrame.layer.shadowOpacity = 0.1;
+    self.photoFrame.layer.shadowRadius = 4;
     
+    // 今天
+    self.todayView.layer.shadowOffset = CGSizeMake(2,5);
+    self.todayView.layer.shadowOpacity = 0.11;
+    self.todayView.layer.shadowRadius = 4;
+    for (UIView *view in [self.todayView subviews]) {
+        view.layer.shadowOffset = CGSizeMake(10,10);
+        view.layer.shadowOpacity = 0.11;
+        view.layer.shadowRadius = 4;
+    }
     self.todayView.layer.cornerRadius = ANCornerRadius;
-    self.todayView.layer.shadowColor = [UIColor blackColor].CGColor;
-    
-    self.tomorrowView.layer.cornerRadius = ANCornerRadius;
-    self.tomorrowView.layer.shadowColor = [UIColor blackColor].CGColor;
 
+    // 明天
+    self.tomorrowView.layer.shadowOffset = CGSizeMake(2,5);
+    self.tomorrowView.layer.shadowOpacity = 0.11;
+    self.tomorrowView.layer.shadowRadius = 4;
+    for (UIView *view in [self.tomorrowView subviews]) {
+    view.layer.shadowOffset = CGSizeMake(10,10);
+    view.layer.shadowOpacity = 0.11;
+    view.layer.shadowRadius = 4;
+}
+     self.tomorrowView.layer.cornerRadius = ANCornerRadius;
+ 
     
 
     
@@ -156,23 +171,25 @@
     NSString *min = nil;
     NSString *max = nil;
     if ([ANSettingTool isC]) {
-        min = [NSString stringWithFormat:@"%@°", today.tmp.min];
+        min = [NSString stringWithFormat:@"%@", today.tmp.min];
         max = [NSString stringWithFormat:@"%@°", today.tmp.max];
 
     } else {
-        min = [NSString stringWithFormat:@"%ld°", ANFahrenheit(today.tmp.min)];
+        min = [NSString stringWithFormat:@"%ld", ANFahrenheit(today.tmp.min)];
         max = [NSString stringWithFormat:@"%ld°", ANFahrenheit(today.tmp.max)];
 
      }
-    self.todayMax.text = max;
-    self.todayMin.text = min;
+    
+    NSString *tmp = [NSString stringWithFormat:@"%@~%@", min, max];
+    self.todaytmp.text = tmp;
+    
+ 
     
     // 空气质量
     NSString *qlty = weatherData.aqi.city.qlty;
     self.todayQlty.text = qlty;
 
     // 风
-    NSString *dir = weatherData.now.wind.dir;
     NSString *spd = nil;
     if ([ANSettingTool isWindScale]) {
         if ([tomorrow.wind.sc isEqualToString:@"微风"]) {
@@ -184,10 +201,10 @@
     } else {
         spd = [NSString stringWithFormat:@"%@kmh", weatherData.now.wind.spd];
     }
-    self.todayWind.text = [NSString stringWithFormat:@"%@ %@", dir, spd];
+//    self.todayWind.text = [NSString stringWithFormat:@"%@ %@", dir, spd];
     
     // 图标
-    self.todayIcon.image = [UIImage imageNamed:today.cond.code_d];
+    self.todayIcon.image = [self ImageWithWeather:weatherData];
     
     // 明天
     // 天气
@@ -203,19 +220,25 @@
     NSString *tomoMin = nil;
     NSString *tomoMax = nil;
     if ([ANSettingTool isC]) {
-        tomoMin = [NSString stringWithFormat:@"%@°", tomorrow.tmp.min];
+        tomoMin = [NSString stringWithFormat:@"%@", tomorrow.tmp.min];
         tomoMax = [NSString stringWithFormat:@"%@°", tomorrow.tmp.max];
         
     } else {
-        tomoMin = [NSString stringWithFormat:@"%ld°", ANFahrenheit(tomorrow.tmp.min)];
+        tomoMin = [NSString stringWithFormat:@"%ld", ANFahrenheit(tomorrow.tmp.min)];
         tomoMax = [NSString stringWithFormat:@"%ld°", ANFahrenheit(tomorrow.tmp.max)];
         
     }
-    self.tomorrowMax.text = tomoMax;
-    self.tomorrowMin.text = tomoMin;
+    
+    NSString *tomoTmp = [NSString stringWithFormat:@"%@~%@", tomoMin, tomoMax];
+    self.tomorrowtmp.text = tomoTmp;
     
      // 风
     NSString *tomoDir = tomorrow.wind.dir;
+    if ([tomoDir isEqualToString:@"无持续风向"]) {
+        tomoDir = @"";
+    } else {
+        tomoDir = [NSString stringWithFormat:@"%@ ", tomorrow.wind.dir];
+    }
     NSString *tomoSpd = nil;
     if ([ANSettingTool isWindScale]) {
         
@@ -227,13 +250,64 @@
     } else {
         tomoSpd = [NSString stringWithFormat:@"%@kmh", tomorrow.wind.spd];
     }
-    self.tomorrowWind.text = [NSString stringWithFormat:@"%@ %@", tomoDir, tomoSpd];
+    self.tomorrowWind.text = [NSString stringWithFormat:@"%@%@", tomoDir, tomoSpd];
     
     // 图标
-    self.tomorrowIcon.image = [UIImage imageNamed:tomorrow.cond.code_d];
+    self.tomorrowIcon.image = [self ImageWithWeather:weatherData];
 
 
     
+}
+
+- (UIImage *)ImageWithWeather:(ANWeatherData *)weatherData
+{
+    NSString *txt = nil;
+    if (weatherData.now.cond.txt) {
+        txt = weatherData.now.cond.txt;
+    } else {
+        txt = weatherData.now.cond.txt_d;
+    }
+    
+    UIImage *image = [UIImage imageNamed:@"share_sun"];
+    if ([txt isEqualToString:@"晴"]) {
+        image = [UIImage imageNamed:@"share_sun"];
+        
+        return image;
+    } else if ([txt hasSuffix:@"雨"]){
+        
+        image = [UIImage imageNamed:@"share_rain"];
+        return image;
+    } else if ([txt hasSuffix:@"阴"]){
+        
+        image = [UIImage imageNamed:@"share_yintian"];
+        return image;
+    } else if ([txt hasSuffix:@"云"]){
+        
+        image = [UIImage imageNamed:@"share_cloudy"];
+        
+        return image;
+    } else if ([txt hasSuffix:@"雪"]){
+        
+        image = [UIImage imageNamed:@"share_snow"];
+        
+        
+        return image;
+    } else if ([txt hasSuffix:@"雾"]){
+        
+        image = [UIImage imageNamed:@"share_foggy"];
+        
+        
+        return image;
+    } else if ([txt hasSuffix:@"霾"]){
+        
+        image = [UIImage imageNamed:@"share_haze"];
+        
+        
+        return image;
+    }
+    
+    
+    return image;
 }
 
 #pragma mark -=====自定义截屏位置大小的逻辑代码=====-
