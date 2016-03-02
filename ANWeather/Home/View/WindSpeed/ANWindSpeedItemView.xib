@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-fP-PLS">
-                    <rect key="frame" x="0.0" y="389" width="297" height="21"/>
+                    <rect key="frame" x="0.0" y="384" width="297" height="21"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Qgt-iV-LEA"/>
@@ -21,7 +22,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOC-SV-vYf" customClass="ANWindmill">
-                    <rect key="frame" x="0.0" y="0.0" width="297" height="389"/>
+                    <rect key="frame" x="0.0" y="0.0" width="297" height="384"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -31,7 +32,7 @@
                 <constraint firstItem="XOC-SV-vYf" firstAttribute="leading" secondItem="y0M-ca-ebG" secondAttribute="leading" id="Pda-0E-kM7"/>
                 <constraint firstAttribute="trailing" secondItem="Rda-fP-PLS" secondAttribute="trailing" id="hhe-Zu-Vfe"/>
                 <constraint firstItem="Rda-fP-PLS" firstAttribute="leading" secondItem="y0M-ca-ebG" secondAttribute="leading" id="mjR-1g-aCn"/>
-                <constraint firstAttribute="bottom" secondItem="Rda-fP-PLS" secondAttribute="bottom" id="vkI-en-5Zd"/>
+                <constraint firstAttribute="bottom" secondItem="Rda-fP-PLS" secondAttribute="bottom" constant="5" id="vkI-en-5Zd"/>
                 <constraint firstItem="XOC-SV-vYf" firstAttribute="top" secondItem="y0M-ca-ebG" secondAttribute="top" id="yE2-mX-XeA"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

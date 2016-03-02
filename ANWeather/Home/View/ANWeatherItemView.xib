@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRi-hd-lsc">
-                    <rect key="frame" x="0.0" y="309" width="314" height="21"/>
+                    <rect key="frame" x="0.0" y="304" width="314" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="VkC-1j-B7x"/>
                     </constraints>
@@ -20,7 +21,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Slq-2d-7OU">
-                    <rect key="frame" x="0.0" y="0.0" width="314" height="309"/>
+                    <rect key="frame" x="0.0" y="0.0" width="314" height="304"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -30,7 +31,7 @@
                 <constraint firstItem="YRi-hd-lsc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Euz-yM-9Iq"/>
                 <constraint firstAttribute="trailing" secondItem="YRi-hd-lsc" secondAttribute="trailing" id="FTc-GQ-K8q"/>
                 <constraint firstItem="YRi-hd-lsc" firstAttribute="top" secondItem="Slq-2d-7OU" secondAttribute="bottom" id="TAr-3V-zOr"/>
-                <constraint firstAttribute="bottom" secondItem="YRi-hd-lsc" secondAttribute="bottom" id="axs-OT-7Q4"/>
+                <constraint firstAttribute="bottom" secondItem="YRi-hd-lsc" secondAttribute="bottom" constant="5" id="axs-OT-7Q4"/>
                 <constraint firstItem="Slq-2d-7OU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eEO-Bs-CBu"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

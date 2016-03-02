@@ -126,57 +126,57 @@
     return 0;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    switch (indexPath.section) {
+        case 0:
+            
+            if (0 == indexPath.row) {// 添加城市
+                
+                [self addCity];
+                
+            } else if (1 == indexPath.row){// 定位
+                
+                // 回到首页
+                ViewController *homeVC = [[ViewController alloc] init];
+                self.delegate = homeVC;
+                [self.sideMenuViewController toViewController:homeVC];
+                
+                // 调用代理方法
+                if ([self.delegate respondsToSelector:@selector(rightTableViewControllerClickGetLocation)]) {
+                    [self.delegate rightTableViewControllerClickGetLocation];
+                }
+
+            }
+            break;
+            
+        case 1:
+        {
+            
+            // 回到首页并把城市带过去
+            NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
+            
+            [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
+            
+            //点击已选城市把选择城市提到最前
+            if (indexPath.row > 2) {
+                [self.selectedCitys insertObject:self.selectedCitys[indexPath.row] atIndex:2];
+                [self.selectedCitys removeObjectAtIndex:indexPath.row+1];
+                
+                [self.tableView reloadData];
+                
+            }
+        }
+            break;
+
+        default:
+            break;
+    }
  
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    
-//    switch (indexPath.section) {
-//        case 0:
-//            
-//            if (0 == indexPath.row) {// 添加城市
-//                
-//                [self addCity];
-//                
-//            } else if (1 == indexPath.row){// 定位
-//                
-//                // 回到首页
-//                ViewController *homeVC = [[ViewController alloc] init];
-//                self.delegate = homeVC;
-//                [self.sideMenuViewController toViewController:homeVC];
-//                
-//                // 调用代理方法
-//                if ([self.delegate respondsToSelector:@selector(rightTableViewControllerClickGetLocation)]) {
-//                    [self.delegate rightTableViewControllerClickGetLocation];
-//                }
-//
-//            }
-//            break;
-//            
-//        case 1:
-//        {
-//            
-//            // 回到首页并把城市带过去
-//            NSString *selectedCity = [self.selectedCitys[indexPath.row] removeShi];
-//            
-//            [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
-//            
-//            //点击已选城市把选择城市提到最前
-//            if (indexPath.row > 2) {
-//                [self.selectedCitys insertObject:self.selectedCitys[indexPath.row] atIndex:2];
-//                [self.selectedCitys removeObjectAtIndex:indexPath.row+1];
-//                
-//                [self.tableView reloadData];
-//                
-//            }
-//        }
-//            break;
-//
-//        default:
-//            break;
-//    }
-// 
-//}
+}
 
 
 #pragma mark 懒加载

@@ -80,7 +80,18 @@
         self.tomorrowCond.font = [UIFont systemFontOfSize:20];
         self.tomorrowWind.font = [UIFont systemFontOfSize:20];
 
+    } else if (screenHeight == 480) {
+        
+        self.todaytmp.font = [UIFont fontWithName:@"Verdana-Bold" size:20];
+        self.todayCond.font = [UIFont systemFontOfSize:10];
+        self.todayQlty.font = [UIFont systemFontOfSize:10];
+        
+        self.tomorrowtmp.font = [UIFont fontWithName:@"Verdana-Bold" size:20];
+        self.tomorrowCond.font = [UIFont systemFontOfSize:10];
+        self.tomorrowWind.font = [UIFont systemFontOfSize:10];
+        
     }
+
     
     
     
@@ -143,8 +154,8 @@
  
     
     UIImage *image = [self ScreenShot];
-    ANLog(@"clickShare");
-        [UMSocialSnsService presentSnsIconSheetView:self
+ 
+    [UMSocialSnsService presentSnsIconSheetView:self
                                              appKey:ANUMAppKey shareText:@"注意天气哦!"
                                          shareImage:image
                                     shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina ,UMShareToWechatSession, UMShareToWechatTimeline, UMShareToQQ, UMShareToSms, UMShareToEmail, UMShareToFacebook, UMShareToInstagram, UMShareToTwitter, nil]
@@ -336,12 +347,7 @@
 
 #pragma mark -=====自定义截屏位置大小的逻辑代码=====-
 - (UIImage *)ScreenShot{
-    
-    CGFloat photoFrameW = self.photoFrame.width;
-    CGFloat photoFrameH = self.photoFrame.height;
-    CGFloat photoFrameX = self.photoFrame.x;
-    CGFloat photoFrameY = self.photoFrame.y;
-    
+     
     // 开启上下文
     UIGraphicsBeginImageContextWithOptions(_bigView.bounds.size, NO, 0.0);
     

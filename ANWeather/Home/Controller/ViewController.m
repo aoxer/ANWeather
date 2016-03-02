@@ -160,7 +160,6 @@
         self.city = @"上海";
         ANLog(@"第一次");
     } else {
-#warning 出厂需改为beijing
         self.city = [ANOffLineTool getLastCity];
         ANLog(@"第二次");
     }
@@ -585,7 +584,6 @@
 
 
 #pragma scrollViewDelegate
-#warning TODO 模糊
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetY = scrollView.contentOffset.y;

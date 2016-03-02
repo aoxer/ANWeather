@@ -12,9 +12,9 @@
 #import "ANLeftTableViewController.h"
 #import "ANRightTableViewController.h"
 #import "ANSettingTool.h"
-//#import "UMSocialWechatHandler.h"
+#import "UMSocialWechatHandler.h"
 #import "UMSocial.h"
-//#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialSinaSSOHandler.h"
 #import "UMSocialInstagramHandler.h"
 
 @interface AppDelegate ()
@@ -32,10 +32,10 @@
     [UMSocialData setAppKey:ANUMAppKey];
     
     // 微信
-//    [UMSocialWechatHandler setWXAppId:@"wx8ce94c6dad48a50e" appSecret:@"fc9b8bdf390b26a26e051df1e85d200a" url:@"http://www.umeng.com/social"];
+    [UMSocialWechatHandler setWXAppId:@"wx8ce94c6dad48a50e" appSecret:@"fc9b8bdf390b26a26e051df1e85d200a" url:@"http://ydb.hk"];
 //
 //    // 微博
-//    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954" secret:@"04b48b094faeb16683c32669824ebdad" RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3921700954" secret:@"04b48b094faeb16683c32669824ebdad" RedirectURL:@"http://ydb.hk"];
     
     // Instragam
      [UMSocialInstagramHandler openInstagramWithScale:NO paddingColor:[UIColor blackColor]];

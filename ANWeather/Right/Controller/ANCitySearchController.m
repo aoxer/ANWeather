@@ -61,13 +61,14 @@
     
     
     self.tableView.backgroundColor = ANColor(40, 40, 40, 0.1);
-    self.navigationItem.title = @"请输入城市中文名";
+    self.navigationItem.title = @"搜索城市";
     self.navigationController.navigationBar.backgroundColor = ANRandomColor;
 }
 
 - (void)setupSearchController
 {
     self.searchController.searchBar.backgroundColor = ANRandomColor;
+    self.searchController.searchBar.placeholder= @"请输入城市中文名";
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater =self;
     self.searchController.dimsBackgroundDuringPresentation = NO;

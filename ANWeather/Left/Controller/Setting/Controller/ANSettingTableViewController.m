@@ -336,34 +336,34 @@
 /**
  *  打开相机
  */
-- (IBAction)openCamera
-{
-    [self openImagePickerController:UIImagePickerControllerSourceTypeCamera];
-}
+//- (IBAction)openCamera
+//{
+//    [self openImagePickerController:UIImagePickerControllerSourceTypeCamera];
+//}
 
 
 /**
  *  打开相册
  */
-- (IBAction)openAlbum
-{
-    [self openImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
-}
+//- (IBAction)openAlbum
+//{
+//    [self openImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
+//}
 
 #warning TODO 选择图片设置背景
 /**
  *  打开图片选择控制器
  */
-- (void)openImagePickerController:(UIImagePickerControllerSourceType)type
-{
-    if (![UIImagePickerController isSourceTypeAvailable:type]) return;
-    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
-    ipc.sourceType = type;
-    ipc.delegate = self;
-    
-    [self presentViewController:ipc animated:YES completion:nil];
-    
-}
+//- (void)openImagePickerController:(UIImagePickerControllerSourceType)type
+//{
+//    if (![UIImagePickerController isSourceTypeAvailable:type]) return;
+//    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+//    ipc.sourceType = type;
+//    ipc.delegate = self;
+//    
+//    [self presentViewController:ipc animated:YES completion:nil];
+//    
+//}
 
 #pragma mark UIImagePickerControllerDelegate
 /**

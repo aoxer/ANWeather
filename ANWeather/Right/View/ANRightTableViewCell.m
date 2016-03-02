@@ -21,8 +21,7 @@
 {
     [super awakeFromNib];
     
-    ANLog(@"cell.width = %f", self.width);
-    // 添加删除按钮
+     // 添加删除按钮
     UIButton *delCityBtn = [[UIButton alloc] init];
     delCityBtn.frame = CGRectMake(ANScreenWidth - 40, 0, 30, self.height);
     [delCityBtn setImage:[UIImage imageNamed:@"del"] forState:UIControlStateNormal];
