@@ -124,7 +124,7 @@
                             </tableViewSection>
                             <tableViewSection id="e7f-kz-n7d">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="IVv-EE-cUU" detailTextLabel="y2y-i3-65u" style="IBUITableViewCellStyleValue1" id="gax-r4-PQ2">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="IVv-EE-cUU" detailTextLabel="y2y-i3-65u" style="IBUITableViewCellStyleValue1" id="gax-r4-PQ2">
                                         <rect key="frame" x="0.0" y="271" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="gax-r4-PQ2" id="zg8-zO-8La">
