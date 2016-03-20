@@ -102,12 +102,14 @@
     
     CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
 
-    if (weatherData.aqi.city.pm25 != nil) {
+    if (weatherData.aqi.city.pm25 == nil) {
         // 如果该城市没有pm2.5做点啥
+        self.isQlty = YES;
     }
     
-    
+    // 显示空气质量
     if (self.isQlty) {
+        
         self.pm2_5.hidden = YES;
         self.qltyLabel.hidden = NO;
         self.qltyLabel.font = ANLightFontSize17;
@@ -117,8 +119,8 @@
         } else {
             self.qltyLabel.text = weatherData.aqi.city.qlty;
         }
-    } else {
         
+    } else { // pm2.5
         
         self.pm2_5.hidden = NO;
         self.qltyLabel.hidden = YES;
