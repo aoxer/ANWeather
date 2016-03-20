@@ -581,8 +581,7 @@
     
 }
 
-
-
+ 
 #pragma scrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -677,10 +676,6 @@
 //}
 
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
 @end
 
 
