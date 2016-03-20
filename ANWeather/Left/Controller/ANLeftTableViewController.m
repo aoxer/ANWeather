@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
 
+
 #import "ANLeftTableViewController.h"
 
 #import "MBProgressHUD+MJ.h"
@@ -169,7 +170,7 @@
     mailPicker.mailComposeDelegate = self;
     
     //设置主题
-    [mailPicker setSubject: @"我要吐槽"];
+    [mailPicker setSubject: @"我要吐槽！！"];
     
     // 添加收信人
     NSArray *toRecipients = [NSArray arrayWithObject: @"aoxer@163.com"];
@@ -177,8 +178,9 @@
     [mailPicker setToRecipients: toRecipients];
     
      // 邮件主体
-    [mailPicker setMessageBody:@"哪里不爽？\n我改完让大家爽爽!" isHTML:NO];
-    
+     NSString *deviceInfo = [NSString stringWithFormat:@"这里写吐槽内容\n\n\n\n\n\n设备信息: %@/ %@/ %@/ ", [[UIDevice currentDevice] systemName], [[UIDevice currentDevice] systemVersion], [[UIDevice currentDevice] model]];
+      [mailPicker setMessageBody:deviceInfo isHTML:NO];
+    NSLog(@"%@", deviceInfo);
      [self presentViewController:mailPicker animated:YES completion:nil];
 }
 
@@ -239,4 +241,7 @@
     }
     return _titles;
 }
+
+#pragma mark 获取设备信息
+
 @end
