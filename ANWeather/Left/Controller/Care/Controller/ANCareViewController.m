@@ -14,7 +14,6 @@
 #import "ANWeatherData.h"
 #import "UMSocial.h"
  
-#import "ANTodayTomorrowView.h"
 
 #define PhotoFrameMargin 10
 
@@ -171,7 +170,12 @@
  */
 - (void)loadWeather
 {
-    NSString *currentCity = [ANOffLineTool getCurrentCity];
+    
+    NSString *CurrentCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"current.city"];
+    NSLog(@"%@", CurrentCityPath);
+    NSString *currentCity = [NSKeyedUnarchiver unarchiveObjectWithFile:CurrentCityPath];
+    
+//    NSString *currentCity = [ANOffLineTool getCurrentCity];
     
     NSDictionary *weatherDict = [ANOffLineTool weathersWithCity:currentCity];
     
@@ -314,7 +318,7 @@
         return image;
     } else if ([txt hasSuffix:@"阴"]){
         
-        image = [UIImage imageNamed:@"share_yintian"];
+        image = [UIImage imageNamed:@"share_overcast"];
         return image;
     } else if ([txt hasSuffix:@"云"]){
         

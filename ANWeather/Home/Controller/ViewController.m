@@ -294,8 +294,12 @@
     [self.tableView reloadData];
     
     // 保存当前城市到缓存
-    [ANOffLineTool saveCurrentCity:self.navigationItem.title];
+//    [ANOffLineTool saveCurrentCity:self.navigationItem.title];
     
+    NSString *currentCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"current.city"];
+    NSLog(@"%@", currentCityPath);
+    
+    [NSKeyedArchiver archiveRootObject:self.navigationItem.title toFile:currentCityPath];
 }
 
 - (UIImage *)backGroungImageWithWeather:(ANWeatherData *)weatherData

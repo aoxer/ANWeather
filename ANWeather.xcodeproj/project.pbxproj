@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		000698241C633193009669F0 /* ANTodayTomorrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 000698231C633193009669F0 /* ANTodayTomorrowView.m */; };
-		000698261C6331AA009669F0 /* ANTodayTomorrowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000698251C6331AA009669F0 /* ANTodayTomorrowView.xib */; };
 		0022152A1C2CE63900E665F6 /* ANWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 002215281C2CE63900E665F6 /* ANWeather.xcdatamodeld */; };
 		002215301C2CE63900E665F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0022152E1C2CE63900E665F6 /* Main.storyboard */; };
 		002215321C2CE63900E665F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 002215311C2CE63900E665F6 /* Images.xcassets */; };
@@ -184,9 +182,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		000698221C633193009669F0 /* ANTodayTomorrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTodayTomorrowView.h; sourceTree = "<group>"; };
-		000698231C633193009669F0 /* ANTodayTomorrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTodayTomorrowView.m; sourceTree = "<group>"; };
-		000698251C6331AA009669F0 /* ANTodayTomorrowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTodayTomorrowView.xib; sourceTree = "<group>"; };
 		0022151E1C2CE63900E665F6 /* ANWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		002215221C2CE63900E665F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		002215291C2CE63900E665F6 /* ANWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ANWeather.xcdatamodel; sourceTree = "<group>"; };
@@ -918,9 +913,6 @@
 		005EC42F1C5E3E880091DBD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				000698221C633193009669F0 /* ANTodayTomorrowView.h */,
-				000698231C633193009669F0 /* ANTodayTomorrowView.m */,
-				000698251C6331AA009669F0 /* ANTodayTomorrowView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1429,7 +1421,6 @@
 				004513C71C816B1F00306725 /* UMSShareListController.xib in Resources */,
 				004513C81C816B1F00306725 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				005B1AF71C40FD32001F6CF9 /* ANWindmill.xib in Resources */,
-				000698261C6331AA009669F0 /* ANTodayTomorrowView.xib in Resources */,
 				004EDA0A1C3AF61B001614A4 /* ANRightTableViewCell.xib in Resources */,
 				004513C21C816B1F00306725 /* UMSCommentInputControlleriPad.xib in Resources */,
 				004513C01C816B1F00306725 /* UMSCommentDetailController.xib in Resources */,
@@ -1489,7 +1480,6 @@
 				009511841C3D84C500EA9FDC /* MJRefreshAutoStateFooter.m in Sources */,
 				00557DE31C44F49C00E6B790 /* ANUpdateTimeM.m in Sources */,
 				00F1BCDC1C4BA077003333BA /* ANDetailViewController.m in Sources */,
-				000698241C633193009669F0 /* ANTodayTomorrowView.m in Sources */,
 				004513981C816AE600306725 /* AppDelegate.m in Sources */,
 				00492B031C438B5D003296FB /* MSGradientArcLayer.m in Sources */,
 				002215C21C2CE8CE00E665F6 /* UIView+Extension.m in Sources */,
@@ -1662,7 +1652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "f1f3283a-d360-4368-be1b-fe82b07ea180";
@@ -1702,7 +1692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "f1f3283a-d360-4368-be1b-fe82b07ea180";
 				SDKROOT = iphoneos;
@@ -1714,6 +1704,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yongchao An (8K69JTCZ5S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yongchao An (8K69JTCZ5S)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1725,7 +1716,7 @@
 					"$(SRCROOT)/ANWeather/Libs/GPUImage/Source",
 				);
 				INFOPLIST_FILE = ANWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1748,6 +1739,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yongchao An (4JSD97Y88N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yongchao An (4JSD97Y88N)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1759,7 +1751,7 @@
 					"$(SRCROOT)/ANWeather/Libs/GPUImage/Source",
 				);
 				INFOPLIST_FILE = ANWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

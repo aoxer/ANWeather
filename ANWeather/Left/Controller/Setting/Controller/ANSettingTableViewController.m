@@ -169,12 +169,12 @@
         {
             
             // 读取沙盒里的版本号
-            NSString *versionKey = @"CFBundleVersion";
+//            NSString *versionKey = @"CFBundleVersion";
             // 当前版本号
-            NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][versionKey];
+//            NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][versionKey];
             cell.userInteractionEnabled = NO;
             cell.textLabel.text = @"版本信息";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@.0", currentVersion];
+            cell.detailTextLabel.text = @"1.3.2";
             cell.imageView.image = [UIImage imageNamed:@"an_logo"];
         }
             break;

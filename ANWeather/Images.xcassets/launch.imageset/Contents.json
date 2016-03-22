@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "cloudy_d_portraitp.jpg"
+      "filename" : "cloudy_d_portraitp.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
