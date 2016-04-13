@@ -162,13 +162,14 @@
             [self.sideMenuViewController backToHomeViewControllerWithSelectedCity:selectedCity];
             
             //点击已选城市把选择城市提到最前
-            if (indexPath.row > 2) {
-                [self.selectedCitys insertObject:self.selectedCitys[indexPath.row] atIndex:2];
+//            if (indexPath.row > 2) {
+                [self.selectedCitys insertObject:self.selectedCitys[indexPath.row] atIndex:0];
                 [self.selectedCitys removeObjectAtIndex:indexPath.row+1];
                 
                 [self.tableView reloadData];
-                
-            }
+            
+            [NSKeyedArchiver archiveRootObject:_selectedCitys toFile:ANSelectedCityFilePath];
+//            }
         }
             break;
 

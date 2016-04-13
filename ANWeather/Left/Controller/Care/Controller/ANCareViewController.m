@@ -197,14 +197,14 @@
     self.shareDate.text = [self dateWithMonthDay:today.date];
     
     // 今天
-    // 天气
-    NSString *txt = nil;
+    // 天气天气文字
+    NSString *todayTxt = nil;
     if (weatherData.now.cond.txt) {
-        txt = weatherData.now.cond.txt;
+        todayTxt = weatherData.now.cond.txt;
     } else {
-        txt = weatherData.now.cond.txt_d;
+        todayTxt = weatherData.now.cond.txt_d;
     }
-    self.todayCond.text = txt;
+    self.todayCond.text = todayTxt;
     
     // 最高最低温
     NSString *min = nil;
@@ -243,7 +243,7 @@
 //    self.todayWind.text = [NSString stringWithFormat:@"%@ %@", dir, spd];
     
     // 图标
-    self.todayIcon.image = [self ImageWithWeather:weatherData];
+    self.todayIcon.image = [self ImageWithCondTxt:todayTxt];
     
     // 明天
     // 天气
@@ -292,52 +292,47 @@
     self.tomorrowWind.text = [NSString stringWithFormat:@"%@%@", tomoDir, tomoSpd];
     
     // 图标
-    self.tomorrowIcon.image = [self ImageWithWeather:weatherData];
-
+    self.tomorrowIcon.image = [self ImageWithCondTxt:tomoTxt];
 
     
 }
 
-- (UIImage *)ImageWithWeather:(ANWeatherData *)weatherData
+
+- (UIImage *)ImageWithCondTxt:(NSString *)CondTxt
 {
-    NSString *txt = nil;
-    if (weatherData.now.cond.txt) {
-        txt = weatherData.now.cond.txt;
-    } else {
-        txt = weatherData.now.cond.txt_d;
-    }
+    
     
     UIImage *image = [UIImage imageNamed:@"share_sun"];
-    if ([txt isEqualToString:@"晴"]) {
+    if ([CondTxt isEqualToString:@"晴"]) {
         image = [UIImage imageNamed:@"share_sun"];
         
         return image;
-    } else if ([txt hasSuffix:@"雨"]){
+    } else if ([CondTxt hasSuffix:@"雨"]){
         
         image = [UIImage imageNamed:@"share_rain"];
         return image;
-    } else if ([txt hasSuffix:@"阴"]){
+    } else if ([CondTxt hasSuffix:@"阴"]){
         
         image = [UIImage imageNamed:@"share_overcast"];
         return image;
-    } else if ([txt hasSuffix:@"云"]){
+    } else if ([CondTxt hasSuffix:@"云"]){
         
         image = [UIImage imageNamed:@"share_cloudy"];
         
         return image;
-    } else if ([txt hasSuffix:@"雪"]){
+    } else if ([CondTxt hasSuffix:@"雪"]){
         
         image = [UIImage imageNamed:@"share_snow"];
         
         
         return image;
-    } else if ([txt hasSuffix:@"雾"]){
+    } else if ([CondTxt hasSuffix:@"雾"]){
         
         image = [UIImage imageNamed:@"share_foggy"];
         
         
         return image;
-    } else if ([txt hasSuffix:@"霾"]){
+    } else if ([CondTxt hasSuffix:@"霾"]){
         
         image = [UIImage imageNamed:@"share_haze"];
         
