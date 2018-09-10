@@ -1,0 +1,93 @@
+//
+//  PrefixHeader.pch
+//  大安天气
+//
+//  Created by a on 15/12/24.
+//  Copyright (c) 2015年 YongChaoAn. All rights reserved.
+//
+
+#import "UIWindow+Version.h"
+#import "ANSettingTool.h"
+#import "UINavigationBar+BackgroundColor.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "MJExtension.h" 
+#import "RESideMenu.h"
+#import "ANConst.h"
+#import "NSString+Extension.h"
+#import "UIImage+Blur.h"
+#import "RESideMenu+BackToHome.h"
+#import "NSUserDefaults+firstStart.h"
+#import "AFNTool.h"
+
+#ifndef _____PrefixHeader_pch
+#define _____PrefixHeader_pch
+
+
+
+#ifdef DEBUG // 开发阶段
+#define ANLog(...) NSLog( @"< %s:(第%d行) > %@",__func__ , __LINE__, [NSString stringWithFormat:__VA_ARGS__] ) 
+#else // 发布阶段
+#define ANLog(...)
+#endif
+// 角度转弧度
+#define   ANRadian(x)  ((M_PI * (x))/ 180.f)
+// 定位授权不可用
+#define  ANAuthorizationDenied (([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined))
+
+// iOS8+
+#define IOS_8_ABOVE [[UIDevice currentDevice].systemVersion doubleValue] >= 8.0
+// RGB颜色
+#define ANColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+// 透明色
+#define ANClearColor [UIColor clearColor]
+// 随机颜色
+#define ANRandomColor ANColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256), 1)
+// 屏幕宽度
+#define ANScreenWidth [UIScreen mainScreen].bounds.size.width
+// 屏幕高度
+#define ANScreenHeight [UIScreen mainScreen].bounds.size.height
+// 通知中心
+#define ANNotificationCenter [NSNotificationCenter defaultCenter]
+
+// DocumentPath
+#define ANDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
+// 宽度
+#define  Width                             [UIScreen mainScreen].bounds.size.width
+
+// 高度
+#define  Height                            [UIScreen mainScreen].bounds.size.height
+
+// 华氏度
+#define ANFahrenheit(c) (c).integerValue * 9 / 5 + 32
+
+// keyWindow
+#define ANKeyWindow [UIApplication sharedApplication].keyWindow
+
+// 导航栏颜色
+#define ANNavBarColor ANColor(245, 245, 245, 1)
+
+// 边距
+#define MARGIN 5
+
+// 圆角
+#define ANCornerRadius 3
+
+// layer背景色
+#define ANLayerBackgroundColor (ANColor(50, 50, 50, 0.5).CGColor)
+
+// 天气 风速 PM2.5的 背景色
+#define ANItemBackgroundColor (ANColor(50, 50, 50, 1).CGColor)
+
+
+// 字体
+#define  ANLightFontSize17  [UIFont fontWithName:@"STHeitiTC-Light" size:17]
+
+#define  ANLightFontSize12  [UIFont fontWithName:@"STHeitiTC-Light" size:12]
+
+
+
+
+
+#endif
