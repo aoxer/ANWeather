@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ArknowM;
 
 @interface ANDaysWeatherCell : UITableViewCell
 
+@property (strong, nonatomic)ArknowM *nowm;
 
 /**
  *  根据xib创建cell

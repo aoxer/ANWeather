@@ -79,7 +79,7 @@
     
     // cell
     //szh
-//    self.daysWeatherView.weatherData = weatherData;
+    self.daysWeatherView.nowm = nowm;
     
 
 

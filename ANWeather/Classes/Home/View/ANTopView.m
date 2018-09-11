@@ -77,9 +77,9 @@
         // 当前温度
         self.currentTmp.text = [NSString stringWithFormat:@"%@",nowTmp];
         // 最低温
-//        self.minTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.min];
+        self.minTmp.text = [NSString stringWithFormat:@"%@°", nowm.tmp_min];
 //        // 最高温
-//        self.maxTmp.text = [NSString stringWithFormat:@"%@°", day1.tmp.max];
+        self.maxTmp.text = [NSString stringWithFormat:@"%@°", nowm.tmp_max];
     } else {
         
         // 华氏度
@@ -87,13 +87,13 @@
         // 当前温度
         self.currentTmp.text = [NSString stringWithFormat:@"%ld", ANFahrenheit(nowTmp)];
         // 最低温
-//        self.minTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.min)];
+        self.minTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(nowm.tmp_min)];
 //        // 最高温
-//        self.maxTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(day1.tmp.max)];
+        self.maxTmp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(nowm.tmp_max)];
     };
     
     // 日期
-//    self.MonthDay.text = [self dateWithMonthDay:day1.date];
+    self.MonthDay.text = [self dateWithMonthDay:nowm.date];
     
 }
 

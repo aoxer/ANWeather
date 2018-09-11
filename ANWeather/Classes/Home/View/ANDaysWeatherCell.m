@@ -39,28 +39,24 @@
     self.userInteractionEnabled = NO;
 }
 
-//szh
-//- (void)setDailyForcast:(ANDailyForecastM *)dailyForcast
-//{
-//    _dailyForcast = dailyForcast;
-//    
-//    
-//    if ([ANSettingTool isC]) {
-//        
-//        self.maxTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.max];
-//        self.minTemp.text = [NSString stringWithFormat:@"%@°", dailyForcast.tmp.min];
-//    } else {
-//        
-//        self.maxTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(dailyForcast.tmp.max)];
-//        self.minTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(dailyForcast.tmp.min)];
-//    }
-//    
-//    self.week.text = [self weekDayFromDate:dailyForcast.date];
-//    self.date.text = [self dateWithMonthDay:dailyForcast.date];
-//    self.weatherIcon.image = [self getWeatherImageWithCondCode:@"101"];
-//   
-//
-//}
+-(void)setNowm:(ArknowM *)nowm
+{
+    _nowm=nowm;
+    
+    if ([ANSettingTool isC]) {
+        
+        self.maxTemp.text = [NSString stringWithFormat:@"%@°", nowm.tmp_max];
+        self.minTemp.text = [NSString stringWithFormat:@"%@°", nowm.tmp_min];
+    } else {
+        
+        self.maxTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(nowm.tmp_max)];
+        self.minTemp.text = [NSString stringWithFormat:@"%ld°", ANFahrenheit(nowm.tmp_min)];
+    }
+    
+    self.week.text = [self weekDayFromDate:nowm.date];
+    self.date.text = [self dateWithMonthDay:nowm.date];
+    self.weatherIcon.image = [self getWeatherImageWithCondCode:nowm.cond_code_d];
+}
 
 /**
  *  把日期转为月日

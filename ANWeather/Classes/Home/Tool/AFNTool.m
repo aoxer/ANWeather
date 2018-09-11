@@ -9,6 +9,21 @@
 
 @implementation RequestDataModel
 
++ (instancetype)reqParamLoction:(NSString *)city
+{
+    RequestDataModel * model=[[self alloc] init];
+    model.username=ANApiusername;
+    model.key=ANApiKey;
+    NSDate *currentDate = [NSDate date];//获取当前时间，日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];// 创建一个时间格式化对象
+    [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss"];//设定时间格式,这里可以设置成自己需要的格式
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];//将时间转化成字符串
+    model.t=dateString;
+    model.location=city;
+    model.sign=[AFNTool getSignKeyWithDict:model.keyValues];
+    return model;
+}
+
 @end
 
 @implementation AFNTool

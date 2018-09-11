@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -20,7 +24,7 @@
                         <constraint firstAttribute="width" constant="50" id="et9-4w-8S8"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                    <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-w3-jGQ" userLabel="MaxMin">
@@ -32,7 +36,7 @@
                                 <constraint firstAttribute="width" constant="50" id="5od-Mj-k2Y"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" red="0.54117647058823526" green="0.78431372549019607" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.47453096508979797" green="0.73146402835845947" blue="0.99892747402191162" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
@@ -46,7 +50,7 @@
                                 <constraint firstAttribute="width" constant="50" id="ku9-c9-NDE"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.99962222576141357" green="0.98160260915756226" blue="0.92656290531158447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
@@ -55,7 +59,7 @@
                             </variation>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="LVe-AQ-EGL" firstAttribute="leading" secondItem="Fjd-w3-jGQ" secondAttribute="leading" id="9O9-d0-XUj"/>
                         <constraint firstItem="zIl-xp-1md" firstAttribute="leading" secondItem="Fjd-w3-jGQ" secondAttribute="centerX" id="9ZB-gm-tCF"/>
@@ -69,10 +73,10 @@
                         <constraint firstAttribute="bottom" secondItem="zIl-xp-1md" secondAttribute="bottom" id="vgc-an-MfL"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdS-7k-TdS" userLabel="℃">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdS-7k-TdS" userLabel="℃">
                     <rect key="frame" x="207" y="105" width="25" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <color key="textColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.99962222576141357" green="0.98160260915756226" blue="0.92656290531158447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzS-vV-JDs" userLabel="tmp">
@@ -82,11 +86,11 @@
                         <constraint firstAttribute="height" constant="120" id="be0-Ve-IbR"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="117"/>
-                    <color key="textColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.99962222576141357" green="0.98160260915756226" blue="0.92656290531158447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Fjd-w3-jGQ" firstAttribute="top" secondItem="tzS-vV-JDs" secondAttribute="bottom" id="47C-Mi-Z5x"/>
                 <constraint firstItem="GdS-7k-TdS" firstAttribute="leading" secondItem="tzS-vV-JDs" secondAttribute="trailing" id="7q2-Os-V1i"/>

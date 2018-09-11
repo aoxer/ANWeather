@@ -13,8 +13,12 @@
  */
 
 // 账号信息
+
+NSString * const ANWeatherRequestUrlnow = @"https://free-api.heweather.com/s6/weather/now";
+NSString * const ANWeatherRequestUrlforecast = @"https://free-api.heweather.com/s6/weather/forecast";
+NSString * const ANWeatherRequestUrlparameters = @"https://free-api.heweather.com/s6/air?parameters";
+
 NSString * const ANApiKey = @"05ebb69af005444dab53b381a86632eb";
-NSString * const ANWeatherRequestUrl = @"https://free-api.heweather.com/s6/weather/now";
 NSString * const ANApiusername=@"HE1809101150461656";
 // 通知们
 NSString * const ANGetLocationDidClickNotification = @"ANGetLocationDidClickNotification";

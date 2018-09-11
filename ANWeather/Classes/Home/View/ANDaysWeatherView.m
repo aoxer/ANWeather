@@ -8,7 +8,7 @@
 
 #import "ANDaysWeatherCell.h"
 #import "ANDaysWeatherView.h"
-
+#import "ArknowM.h"
 @interface ANDaysWeatherView () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic)UITableView *tableView;
@@ -52,18 +52,17 @@
     }
 }
 
-//szh
-//- (void)setWeatherData:(ANWeatherData *)weatherData
-//{
-//    _weatherData = weatherData;
-//    self.dailyForecastArray = [ANDailyForecastM objectArrayWithKeyValuesArray:weatherData.daily_forecast];
-//    // 移除当天数据
-//    if (self.dailyForecastArray.count) {
-//        [self.dailyForecastArray removeObjectAtIndex:0];
-//
-//    }
-//    [self.tableView reloadData];
-//}
+- (void)setNowm:(ArknowM *)nowm
+{
+    _nowm=nowm;
+    
+    self.dailyForecastArray = [NSMutableArray arrayWithArray:nowm.daily_forecast];
+    // 移除当天数据
+    if (self.dailyForecastArray.count) {
+        [self.dailyForecastArray removeObjectAtIndex:0];
+    }
+    [self.tableView reloadData];
+}
 
 
 
@@ -83,8 +82,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ANDaysWeatherCell *cell = [ANDaysWeatherCell cellWithTableView:tableView];
-    
-//    cell.dailyForcast = self.dailyForecastArray[indexPath.row];
+    cell.nowm = [ArknowM objectWithKeyValues:self.dailyForecastArray[indexPath.row]];
     return cell;
     
 }

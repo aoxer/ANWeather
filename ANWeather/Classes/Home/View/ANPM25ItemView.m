@@ -100,66 +100,66 @@
     _nowm = nowm;
     
     
-//    CGFloat pm2_5 = weatherData.aqi.city.pm25.doubleValue;
-//
-//    if (weatherData.aqi.city.pm25 == nil) {
-//        // 如果该城市没有pm2.5做点啥
-//        self.isQlty = YES;
-//    }
+    CGFloat pm2_5 = nowm.pm25.doubleValue;
+
+    if (nowm.pm25 == nil) {
+        // 如果该城市没有pm2.5做点啥
+        self.isQlty = YES;
+    }
     
-//    // 显示空气质量
-//    if (self.isQlty) {
-//
-//        self.pm2_5.hidden = YES;
-//        self.qltyLabel.hidden = NO;
-//        self.qltyLabel.font = ANLightFontSize17;
-//        // 空气质量
-//        if (!weatherData.aqi.city.qlty.length) {
-//            self.qltyLabel.text = @"优";
-//        } else {
-//            self.qltyLabel.text = weatherData.aqi.city.qlty;
-//        }
-//
-//    } else { // pm2.5
-//
-//        self.pm2_5.hidden = NO;
-//        self.qltyLabel.hidden = YES;
-//
-//        // pm2.5
-//        if (!weatherData.aqi.city.pm25.length) {
-//            self.pm2_5.text = @"";
-//        } else {
-//
-//            NSString *pm = [NSString stringWithFormat:@" PM2.5 %@", weatherData.aqi.city.pm25];
-//            NSMutableAttributedString *humAttr = [[NSMutableAttributedString alloc] initWithString:pm];
-//            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(0, 6)];
-//            [humAttr addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, 6)];
-//            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(7, weatherData.aqi.city.pm25.length)];
-//
-//             self.pm2_5.attributedText = humAttr;
-//        }
-//
-//    }
-//
-//
-//
-//
-//    // 指针
-//    [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
-//
-//    if (pm2_5 > 0 && pm2_5 <= 50) {
-//        self.bigGauge.fillArcFillColor = ANColor(0, 255, 0, ANAlpha);
-//    } else if (pm2_5 > 50 && pm2_5 <= 100) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 255, 0, ANAlpha);
-//    } else if (pm2_5 > 100 && pm2_5 <= 150) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, ANAlpha);
-//    } else if (pm2_5 > 150 && pm2_5 <= 200) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, ANAlpha);
-//    } else if (pm2_5 > 200 && pm2_5 <= 300) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, ANAlpha);
-//    }  else if (pm2_5 > 300) {
-//        self.bigGauge.fillArcFillColor = ANColor(255, 0, 255, ANAlpha);
-//    }
+    // 显示空气质量
+    if (self.isQlty) {
+
+        self.pm2_5.hidden = YES;
+        self.qltyLabel.hidden = NO;
+        self.qltyLabel.font = ANLightFontSize17;
+        // 空气质量
+        if (!nowm.qlty.length) {
+            self.qltyLabel.text = @"优";
+        } else {
+            self.qltyLabel.text = nowm.qlty;
+        }
+
+    } else { // pm2.5
+
+        self.pm2_5.hidden = NO;
+        self.qltyLabel.hidden = YES;
+
+        // pm2.5
+        if (!nowm.pm25.length) {
+            self.pm2_5.text = @"";
+        } else {
+
+            NSString *pm = [NSString stringWithFormat:@" PM2.5 %@", nowm.pm25];
+            NSMutableAttributedString *humAttr = [[NSMutableAttributedString alloc] initWithString:pm];
+            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize12 range:NSMakeRange(0, 6)];
+            [humAttr addAttribute:NSForegroundColorAttributeName value:[UIColor lightGrayColor] range:NSMakeRange(0, 6)];
+            [humAttr addAttribute:NSFontAttributeName value:ANLightFontSize17 range:NSMakeRange(7, nowm.pm25.length)];
+
+             self.pm2_5.attributedText = humAttr;
+        }
+
+    }
+
+
+
+
+    // 指针
+    [self.bigGauge setValue:pm2_5 / 3 animated:YES] ;
+
+    if (pm2_5 > 0 && pm2_5 <= 50) {
+        self.bigGauge.fillArcFillColor = ANColor(0, 255, 0, ANAlpha);
+    } else if (pm2_5 > 50 && pm2_5 <= 100) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 255, 0, ANAlpha);
+    } else if (pm2_5 > 100 && pm2_5 <= 150) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 155, 0, ANAlpha);
+    } else if (pm2_5 > 150 && pm2_5 <= 200) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 40, 40, ANAlpha);
+    } else if (pm2_5 > 200 && pm2_5 <= 300) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 0, 0, ANAlpha);
+    }  else if (pm2_5 > 300) {
+        self.bigGauge.fillArcFillColor = ANColor(255, 0, 255, ANAlpha);
+    }
     
 }
 
@@ -174,30 +174,3 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
