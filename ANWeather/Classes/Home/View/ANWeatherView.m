@@ -78,7 +78,6 @@
     self.topView.nowm = nowm;
     
     // cell
-    //szh
     self.daysWeatherView.nowm = nowm;
     
 

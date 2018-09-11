@@ -98,6 +98,9 @@
                 [mdict addEntriesFromDictionary:[dataDict[@"daily_forecast"] firstObject]];
                 [mdict setValue:dataDict[@"daily_forecast"] forKey:@"daily_forecast"];
             }
+            
+            [mdict addEntriesFromDictionary:dataDict[@"basic"]];
+
         }
         
     }else{

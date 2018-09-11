@@ -48,6 +48,13 @@
 @property (copy, nonatomic)NSString *air_sta;// = 普陀,
 @property (copy, nonatomic)NSString *lat ;//= 31.238,
 
+@property (copy, nonatomic)NSString *location;// = 上海,
+@property (copy, nonatomic)NSString *cnty;// = 中国,
+@property (copy, nonatomic)NSString *tz;// = +8.00,
+@property (copy, nonatomic)NSString *admin_area;// = 上海,
+@property (copy, nonatomic)NSString *parent_city;// = 上海,
+@property (copy, nonatomic)NSString *cid;// = CN101020100
+
 
 
 @end

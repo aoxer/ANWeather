@@ -206,22 +206,16 @@
 {
     // 加载天气
     if (self.isFromLeft) {// 如果是从左边来
-        
         // 加载当前城市天气
-        [self loadWeatherWithCity:self.city];
-         self.isFromLeft = NO;
-        
+        self.isFromLeft = NO;
     } else if (self.isFromRight){ // 如果从右边来
-        
         // 加载所选城市天气
-        self.navigationItem.title = self.selectedCity;
-        [self loadWeatherWithCity:self.selectedCity];
-         self.isFromRight = NO;
-        
-    } else{
-        
-        [self sendRequestWithCity:self.city];
+        self.city= self.selectedCity;
+        self.isFromRight = NO;
     }
+    
+    [self loadWeatherWithCity:self.city];
+
 
 }
 
@@ -239,14 +233,14 @@
         weakSelf.nowm=nowm;
         
         weakSelf.weatherView.nowm = nowm;
-        // 设置导航栏
-        weakSelf.title = city;
-        
-        [weakSelf dealingResult:nil];
+
+        weakSelf.title=weakSelf.nowm.location;
+
+        [weakSelf dealingResult];
         // 结束刷新
         [weakSelf.tableView.header endRefreshing];
         
-        // [ANOffLineTool saveWeathersDictWithJson:responseObject[@"data"]];//szh
+         [ANOffLineTool saveWeathers:nowm];
 
     } failure:^{
         [weakSelf.tableView.header endRefreshing];
@@ -283,7 +277,8 @@
     NSString *city = (NSString *)notification.userInfo;
     // 把市去掉 赋值给成员变量
     self.city = [city removeShi];
-    self.navigationItem.title = self.city;
+    
+    self.title = self.city;
     // 开始刷新
     [self.tableView.header beginRefreshing];
     
@@ -320,9 +315,13 @@
 {
     if ([ANOffLineTool cityExists:city] && [ANOffLineTool CityWeatherIsToday:city]) { // 有城市缓存并且为当天数据
         // 从缓存读取数据加载数据
-        NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
+        self.nowm=[ArknowM objectWithKeyValues:[ANOffLineTool weathersWithCity:city]];
         
-        [self dealingResult:nil];//szh
+        self.weatherView.nowm = self.nowm;
+        
+        self.title=self.nowm.location;
+        // 设置导航栏
+        [self dealingResult];
         
     } else { //
         // 发送请求
@@ -331,15 +330,12 @@
     
 
 }
-
-
-
 /**
  *  处理返回的数据
  *
  *  @param weathersDict 传进来的天气字典
  */
-- (void)dealingResult:(ArknowM *)nowm
+- (void)dealingResult
 {
         // 设置背景图片并添加图片蒙版
     UIView *cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, ANScreenHeight)];
@@ -349,10 +345,7 @@
     // 重新加载tableView
     [self.tableView reloadData];
     
-    NSString *currentCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"current.city"];
-    NSLog(@"%@", currentCityPath);
-    
-    [NSKeyedArchiver archiveRootObject:self.navigationItem.title toFile:currentCityPath];
+    [ANOffLineTool saveCurrentCity:self.city];
 }
 
 - (UIImage *)backGroungImageWithWeather:(ArknowM *)nowm
@@ -501,7 +494,6 @@
         NSString *locCity = [pm.locality getCityName:pm.locality];
         self.city = locCity;
         // 设置导航栏标题
-        self.navigationItem.title = locCity;
         [self.tableView.header beginRefreshing];
    
         

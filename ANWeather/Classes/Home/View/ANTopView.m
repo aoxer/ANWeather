@@ -59,14 +59,10 @@
 
 }
 
-//szh
 -(void)setNowm:(ArknowM *)nowm
 {
     _nowm = nowm;
-//    ANDailyForecastM *day1 = [ANDailyForecastM objectWithKeyValues:[weatherData.daily_forecast firstObject]];
     
- 
-
     // 当前温度
     NSString *nowTmp = nowm.tmp;
     

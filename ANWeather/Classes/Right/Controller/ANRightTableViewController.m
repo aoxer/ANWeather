@@ -84,7 +84,7 @@
         {
             cell.delCityBtn.hidden = YES;
             NSArray *icons = [NSArray arrayWithObjects:@"addCity", @"location", @"", nil];
-            NSArray *titles= [NSArray arrayWithObjects:@"添加城市", @"定位", @"", nil];
+            NSArray *titles= [NSArray arrayWithObjects:@"添加城市", [NSString stringWithFormat:@"定位:%@" ,[kUserDefaults objectForKey:USERCity] ], @"", nil];
             cell.locIcon.image = [UIImage imageNamed:icons[indexPath.row]];
             cell.cityName.text = titles[indexPath.row];
             

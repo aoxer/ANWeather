@@ -94,7 +94,6 @@
     
 }
 
-//szh
 -(void)setNowm:(ArknowM *)nowm
 {
     _nowm = nowm;

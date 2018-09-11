@@ -21,12 +21,20 @@
 #import "AFNTool.h"
 #import "NSString+Password.h"
 #import "ArkReqTool.h"
-
+#import "ArkBMKManager.h"
 #ifndef _____PrefixHeader_pch
 #define _____PrefixHeader_pch
 
 
 #define WeakSelf __weak typeof(self) weakSelf = self;
+#define kUserDefaults [NSUserDefaults standardUserDefaults]
+#define USERLNG @"user_longtitude"  // 定位的用户经度
+#define USERLAT @"user_latitude"    // 定位的用户纬度
+#define USERProvince @"user_province"       //定位省
+#define USERCity @"user_city"               //定位城市
+#define USERDistrict @"user_district"      //定位区
+#define USERAddress @"user_address"         //定位街道
+#define USERPoiname @"user_POIname"       //商圈位置
 
 #ifdef DEBUG // 开发阶段
 #define ANLog(...) NSLog( @"< %s:(第%d行) > %@",__func__ , __LINE__, [NSString stringWithFormat:__VA_ARGS__] ) 

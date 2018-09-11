@@ -78,7 +78,6 @@
     return self.dailyForecastArray.count;
 }
 
-//szh
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ANDaysWeatherCell *cell = [ANDaysWeatherCell cellWithTableView:tableView];
