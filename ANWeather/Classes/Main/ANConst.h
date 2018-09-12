@@ -11,8 +11,10 @@
 // 账号信息
 
 extern NSString * const ANApiKey;
-extern NSString * const ANWeatherRequestUrl;
 extern NSString * const ANApiusername;
+extern NSString * const ANWeatherRequestUrlnow;
+extern NSString * const ANWeatherRequestUrlforecast;
+extern NSString * const ANWeatherRequestUrlparameters;
 // 通知们
 extern NSString * const ANGetLocationDidClickNotification;
 extern NSString * const ANCityDidClickNotification;

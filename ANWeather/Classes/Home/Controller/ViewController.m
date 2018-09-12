@@ -18,6 +18,7 @@
 #import "ANRightTableViewController.h"
 #import "ANOffLineTool.h"
 #import "ArknowM.h"
+//#import "MapViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -127,10 +128,10 @@
     // 第一次打开设置默认城市
     if ([NSUserDefaults isFirst])
     {
-        self.city = @"上海";
+        self.city = @"北京";
         ANLog(@"第一次");
     } else {
-        self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"上海";
+        self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"北京";
         ANLog(@"第二次");
     }
     
@@ -206,22 +207,16 @@
 {
     // 加载天气
     if (self.isFromLeft) {// 如果是从左边来
-        
         // 加载当前城市天气
-        [self loadWeatherWithCity:self.city];
-         self.isFromLeft = NO;
-        
+        self.isFromLeft = NO;
     } else if (self.isFromRight){ // 如果从右边来
-        
         // 加载所选城市天气
-        self.navigationItem.title = self.selectedCity;
-        [self loadWeatherWithCity:self.selectedCity];
-         self.isFromRight = NO;
-        
-    } else{
-        
-        [self sendRequestWithCity:self.city];
+        self.city= self.selectedCity;
+        self.isFromRight = NO;
     }
+    
+    [self loadWeatherWithCity:self.city];
+
 
 }
 
@@ -232,46 +227,28 @@
  */
 - (void)sendRequestWithCity:(NSString *)city
 {
-
-    RequestDataModel *model=[RequestDataModel new];
-    model.location=city;
-    model.username=ANApiusername;
-    model.key=ANApiKey;
-    NSDate *currentDate = [NSDate date];//获取当前时间，日期
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];// 创建一个时间格式化对象
-    [dateFormatter setDateFormat:@"YYYY/MM/dd hh:mm:ss"];//设定时间格式,这里可以设置成自己需要的格式
-    NSString *dateString = [dateFormatter stringFromDate:currentDate];//将时间转化成字符串
-    model.t=dateString;
-    model.sign=[AFNTool getSignKeyWithDict:model.keyValues];
-    [AFNTool reqGetWithURl:ANWeatherRequestUrl parameters:model success:^(id responseObject) {
-        
-        ANLog(@"%@",responseObject);
-        
-        // 处理返回的结果
-        NSMutableDictionary *weathersDict = [responseObject[@"HeWeather6"] lastObject];
-
-        // 处理返回的结果
-        [self dealingResult:weathersDict];
-        
-        // 结束刷新
-        [self.tableView.header endRefreshing];
-        
-        // 判断返回数据是否ok
-        if ([weathersDict[@"status"] isEqualToString:@"ok"]) { // 如果ok把数据缓存到本地
-            [ANOffLineTool saveWeathersDictWithJson:responseObject[@"data"]];
-        } else { // 失败提示HUD
-            [MBProgressHUD showError:@"暂时获取不到当地天气数据"];
-        }
-        
-    } failure:^(NSError *error) {
-        
-        [MBProgressHUD showError:@"请检查网络状态"];
-        // 结束刷新
-        [self.tableView.header endRefreshing];
-        
-        
-    }];
+    WeakSelf;
     
+    [ArkReqTool reqWeatherData:city success:^(ArknowM *nowm) {
+        
+        weakSelf.nowm=nowm;
+        
+        weakSelf.weatherView.nowm = nowm;
+
+        weakSelf.title=weakSelf.nowm.location;
+
+        [weakSelf dealingResult];
+        // 结束刷新
+        [weakSelf.tableView.header endRefreshing];
+        
+         [ANOffLineTool saveWeathers:nowm];
+
+    } failure:^{
+        [weakSelf.tableView.header endRefreshing];
+
+        [MBProgressHUD showError:@"暂时获取不到当地天气数据"];
+    }];
+
 }
 
 
@@ -289,6 +266,10 @@
 - (void)callRight
 {
     [self.sideMenuViewController presentRightMenuViewController];
+    
+//    MapViewController *map= [MapViewController new];
+//    map.nowm=self.nowm;
+//    [self.navigationController pushViewController:map animated:YES];
 }
 
 
@@ -301,7 +282,8 @@
     NSString *city = (NSString *)notification.userInfo;
     // 把市去掉 赋值给成员变量
     self.city = [city removeShi];
-    self.navigationItem.title = self.city;
+    
+    self.title = self.city;
     // 开始刷新
     [self.tableView.header beginRefreshing];
     
@@ -338,8 +320,13 @@
 {
     if ([ANOffLineTool cityExists:city] && [ANOffLineTool CityWeatherIsToday:city]) { // 有城市缓存并且为当天数据
         // 从缓存读取数据加载数据
-        NSDictionary *weathersDict = [ANOffLineTool weathersWithCity:city];
-        [self dealingResult:weathersDict];
+        self.nowm=[ArknowM objectWithKeyValues:[ANOffLineTool weathersWithCity:city]];
+        
+        self.weatherView.nowm = self.nowm;
+        
+        self.title=self.nowm.location;
+        // 设置导航栏
+        [self dealingResult];
         
     } else { //
         // 发送请求
@@ -348,26 +335,14 @@
     
 
 }
-
-
-
 /**
  *  处理返回的数据
  *
  *  @param weathersDict 传进来的天气字典
  */
-- (void)dealingResult:(NSDictionary *)weathersDict
+- (void)dealingResult
 {
-    
-    // 通过取出的字典创建模型
-    self.nowm = [ArknowM objectWithKeyValues:weathersDict[@"now"]];
-    
-    self.weatherView.nowm = self.nowm;
-    
-    // 设置导航栏
-    self.title = weathersDict[@"basic"][@"location"];
-    
-    // 设置背景图片并添加图片蒙版
+        // 设置背景图片并添加图片蒙版
     UIView *cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, ANScreenHeight)];
     self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[self backGroungImageWithWeather:self.nowm]];
     [self.tableView.backgroundView addSubview:cover];
@@ -375,19 +350,16 @@
     // 重新加载tableView
     [self.tableView reloadData];
     
-    NSString *currentCityPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"current.city"];
-    NSLog(@"%@", currentCityPath);
-    
-    [NSKeyedArchiver archiveRootObject:self.navigationItem.title toFile:currentCityPath];
+    [ANOffLineTool saveCurrentCity:self.city];
 }
 
 - (UIImage *)backGroungImageWithWeather:(ArknowM *)nowm
 {
     NSString *txt = nil;
-    if (nowm.cond_txt) {
-        txt = nowm.cond_txt;
+    if (nowm.cond_txt_d) {
+        txt = nowm.cond_txt_d;
     } else {
-        txt = nowm.cond_txt;
+        txt = nowm.cond_txt_n;
     }
     
     UIImage *image = [UIImage imageNamed:@"clear.jpg"];
@@ -525,11 +497,10 @@
         
         // 获取到的城市开始刷新
         NSString *locCity = [pm.locality getCityName:pm.locality];
-        self.city = locCity;
         // 设置导航栏标题
-        self.navigationItem.title = locCity;
-        [self.tableView.header beginRefreshing];
-   
+        self.city=locCity;
+        [self loadWeatherWithCity:locCity];
+
         
         // 0.菊花
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -668,21 +639,6 @@
 //}
 
 
+
+
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

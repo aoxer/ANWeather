@@ -239,9 +239,9 @@
 		4926FBB32146503400466260 /* ANNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FB222146503400466260 /* ANNewFeatureViewController.m */; };
 		4926FBB42146503400466260 /* ANConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FB252146503400466260 /* ANConst.m */; };
 		4926FBB92146697300466260 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBB72146697200466260 /* NSString+Password.m */; };
-		4926FBBC2146744000466260 /* ArkbasicM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBBB2146744000466260 /* ArkbasicM.m */; };
-		4926FBBF2146748F00466260 /* ArkupdateM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBBE2146748F00466260 /* ArkupdateM.m */; };
 		4926FBC2214674B800466260 /* ArknowM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBC1214674B800466260 /* ArknowM.m */; };
+		4926FBC52147611B00466260 /* ArkReqTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBC42147611B00466260 /* ArkReqTool.m */; };
+		4926FBEF2147A42A00466260 /* pm2.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4926FBEE2147A42A00466260 /* pm2.5@2x.png */; };
 		493B7DC821464AD900FF8EA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B7DC521464AD900FF8EA9 /* AppDelegate.m */; };
 		493B7DC921464AD900FF8EA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B7DC721464AD900FF8EA9 /* main.m */; };
 		493B7E0921464C6200FF8EA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B7E0521464C6200FF8EA9 /* LaunchScreen.xib */; };
@@ -630,12 +630,11 @@
 		4926FB252146503400466260 /* ANConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANConst.m; sourceTree = "<group>"; };
 		4926FBB72146697200466260 /* NSString+Password.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Password.m"; sourceTree = "<group>"; };
 		4926FBB82146697300466260 /* NSString+Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Password.h"; sourceTree = "<group>"; };
-		4926FBBA2146744000466260 /* ArkbasicM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArkbasicM.h; sourceTree = "<group>"; };
-		4926FBBB2146744000466260 /* ArkbasicM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArkbasicM.m; sourceTree = "<group>"; };
-		4926FBBD2146748F00466260 /* ArkupdateM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArkupdateM.h; sourceTree = "<group>"; };
-		4926FBBE2146748F00466260 /* ArkupdateM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArkupdateM.m; sourceTree = "<group>"; };
 		4926FBC0214674B800466260 /* ArknowM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArknowM.h; sourceTree = "<group>"; };
 		4926FBC1214674B800466260 /* ArknowM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArknowM.m; sourceTree = "<group>"; };
+		4926FBC32147611B00466260 /* ArkReqTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArkReqTool.h; sourceTree = "<group>"; };
+		4926FBC42147611B00466260 /* ArkReqTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArkReqTool.m; sourceTree = "<group>"; };
+		4926FBEE2147A42A00466260 /* pm2.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pm2.5@2x.png"; sourceTree = "<group>"; };
 		493B7DC521464AD900FF8EA9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		493B7DC621464AD900FF8EA9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		493B7DC721464AD900FF8EA9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -695,6 +694,7 @@
 				002215201C2CE63900E665F6 /* ANWeather */,
 				0022153D1C2CE63900E665F6 /* ANWeatherTests */,
 				0022151F1C2CE63900E665F6 /* Products */,
+				4926FC202147B25400466260 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -774,13 +774,13 @@
 		4926F93E21464EF800466260 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				4926F93F21464EF800466260 /* citys.json */,
-				4926F94021464EF800466260 /* area.json */,
-				4926F94121464EF800466260 /* icons */,
-				4926F98621464EF800466260 /* 4.jpg */,
+				4926F98921464EF800466260 /* 1.jpg */,
 				4926F98721464EF800466260 /* 2.jpg */,
 				4926F98821464EF800466260 /* 3.jpg */,
-				4926F98921464EF800466260 /* 1.jpg */,
+				4926F98621464EF800466260 /* 4.jpg */,
+				4926F94021464EF800466260 /* area.json */,
+				4926F93F21464EF800466260 /* citys.json */,
+				4926F94121464EF800466260 /* icons */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -788,6 +788,7 @@
 		4926F94121464EF800466260 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4926FBEE2147A42A00466260 /* pm2.5@2x.png */,
 				4926F94221464EF800466260 /* left_wirte@2x.png */,
 				4926F94321464EF800466260 /* 501@2x.png */,
 				4926F94421464EF800466260 /* addMenu@2x.png */,
@@ -863,14 +864,14 @@
 		4926F9D42146503300466260 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4926F9D52146503300466260 /* Right */,
-				4926F9E42146503300466260 /* Home */,
 				4926FA1E2146503300466260 /* Category */,
-				4926FA302146503300466260 /* WeatherDetail */,
-				4926FA352146503300466260 /* Other */,
+				4926F9E42146503300466260 /* Home */,
 				4926FA372146503300466260 /* Left */,
 				4926FA572146503300466260 /* Libs */,
 				4926FB212146503400466260 /* Main */,
+				4926FA352146503300466260 /* Other */,
+				4926F9D52146503300466260 /* Right */,
+				4926FA302146503300466260 /* WeatherDetail */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -889,8 +890,8 @@
 			isa = PBXGroup;
 			children = (
 				4926F9D72146503300466260 /* ANCitySearchController.h */,
-				4926F9D82146503300466260 /* ANRightTableViewController.h */,
 				4926F9D92146503300466260 /* ANCitySearchController.m */,
+				4926F9D82146503300466260 /* ANRightTableViewController.h */,
 				4926F9DA2146503300466260 /* ANRightTableViewController.m */,
 			);
 			path = Controller;
@@ -940,10 +941,6 @@
 		4926F9E82146503300466260 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4926FBBA2146744000466260 /* ArkbasicM.h */,
-				4926FBBB2146744000466260 /* ArkbasicM.m */,
-				4926FBBD2146748F00466260 /* ArkupdateM.h */,
-				4926FBBE2146748F00466260 /* ArkupdateM.m */,
 				4926FBC0214674B800466260 /* ArknowM.h */,
 				4926FBC1214674B800466260 /* ArknowM.m */,
 			);
@@ -953,27 +950,27 @@
 		4926F9FD2146503300466260 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4926F9FE2146503300466260 /* WindSpeed */,
-				4926FA052146503300466260 /* ANWeatherItemView.xib */,
-				4926FA062146503300466260 /* ANPM25ItemView.m */,
-				4926FA072146503300466260 /* ANTopView.m */,
-				4926FA082146503300466260 /* ANWeatherItemView.h */,
-				4926FA092146503300466260 /* ANTopView.xib */,
-				4926FA0A2146503300466260 /* ANWeatherView.m */,
-				4926FA0B2146503300466260 /* ANDaysWeatherCell.xib */,
-				4926FA0C2146503300466260 /* ANHumidityItemView.h */,
-				4926FA0D2146503300466260 /* ANDaysWeatherCell.m */,
-				4926FA0E2146503300466260 /* ANDaysWeatherView.m */,
-				4926FA0F2146503300466260 /* ANPM25ItemView.h */,
-				4926FA102146503300466260 /* ANTempIte4mView.xib */,
-				4926FA112146503300466260 /* ANPM25ItemView.xib */,
-				4926FA122146503300466260 /* ANWeatherView.h */,
-				4926FA132146503300466260 /* ANHumidityItemView.xib */,
-				4926FA142146503300466260 /* ANTopView.h */,
-				4926FA152146503300466260 /* ANWeatherItemView.m */,
 				4926FA162146503300466260 /* ANDaysWeatherCell.h */,
-				4926FA172146503300466260 /* ANHumidityItemView.m */,
+				4926FA0D2146503300466260 /* ANDaysWeatherCell.m */,
+				4926FA0B2146503300466260 /* ANDaysWeatherCell.xib */,
 				4926FA182146503300466260 /* ANDaysWeatherView.h */,
+				4926FA0E2146503300466260 /* ANDaysWeatherView.m */,
+				4926FA0C2146503300466260 /* ANHumidityItemView.h */,
+				4926FA172146503300466260 /* ANHumidityItemView.m */,
+				4926FA132146503300466260 /* ANHumidityItemView.xib */,
+				4926FA0F2146503300466260 /* ANPM25ItemView.h */,
+				4926FA062146503300466260 /* ANPM25ItemView.m */,
+				4926FA112146503300466260 /* ANPM25ItemView.xib */,
+				4926FA102146503300466260 /* ANTempIte4mView.xib */,
+				4926FA142146503300466260 /* ANTopView.h */,
+				4926FA072146503300466260 /* ANTopView.m */,
+				4926FA092146503300466260 /* ANTopView.xib */,
+				4926FA082146503300466260 /* ANWeatherItemView.h */,
+				4926FA152146503300466260 /* ANWeatherItemView.m */,
+				4926FA052146503300466260 /* ANWeatherItemView.xib */,
+				4926FA122146503300466260 /* ANWeatherView.h */,
+				4926FA0A2146503300466260 /* ANWeatherView.m */,
+				4926F9FE2146503300466260 /* WindSpeed */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -995,9 +992,11 @@
 			isa = PBXGroup;
 			children = (
 				4926FA1A2146503300466260 /* ANOffLineTool.h */,
+				4926FA1D2146503300466260 /* ANOffLineTool.m */,
 				4926FA1B2146503300466260 /* AFNTool.h */,
 				4926FA1C2146503300466260 /* AFNTool.m */,
-				4926FA1D2146503300466260 /* ANOffLineTool.m */,
+				4926FBC32147611B00466260 /* ArkReqTool.h */,
+				4926FBC42147611B00466260 /* ArkReqTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1005,25 +1004,25 @@
 		4926FA1E2146503300466260 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				4926FA282146503300466260 /* Foundation+Log.m */,
+				4926FA212146503300466260 /* NSString+Extension.h */,
+				4926FA292146503300466260 /* NSString+Extension.m */,
 				4926FBB82146697300466260 /* NSString+Password.h */,
 				4926FBB72146697200466260 /* NSString+Password.m */,
-				4926FA1F2146503300466260 /* UIWindow+Version.m */,
-				4926FA202146503300466260 /* UIImage+Blur.m */,
-				4926FA212146503300466260 /* NSString+Extension.h */,
-				4926FA222146503300466260 /* UIView+Extension.h */,
-				4926FA232146503300466260 /* UINavigationBar+BackgroundColor.m */,
 				4926FA242146503300466260 /* NSUserDefaults+firstStart.h */,
-				4926FA252146503300466260 /* RESideMenu+BackToHome.h */,
-				4926FA262146503300466260 /* UIBarButtonItem+Extension.h */,
-				4926FA272146503300466260 /* UIWindow+Version.h */,
-				4926FA282146503300466260 /* Foundation+Log.m */,
-				4926FA292146503300466260 /* NSString+Extension.m */,
-				4926FA2A2146503300466260 /* UIImage+Blur.h */,
-				4926FA2B2146503300466260 /* UIBarButtonItem+Extension.m */,
-				4926FA2C2146503300466260 /* RESideMenu+BackToHome.m */,
 				4926FA2D2146503300466260 /* NSUserDefaults+firstStart.m */,
+				4926FA252146503300466260 /* RESideMenu+BackToHome.h */,
+				4926FA2C2146503300466260 /* RESideMenu+BackToHome.m */,
+				4926FA262146503300466260 /* UIBarButtonItem+Extension.h */,
+				4926FA2B2146503300466260 /* UIBarButtonItem+Extension.m */,
+				4926FA2A2146503300466260 /* UIImage+Blur.h */,
+				4926FA202146503300466260 /* UIImage+Blur.m */,
 				4926FA2E2146503300466260 /* UINavigationBar+BackgroundColor.h */,
+				4926FA232146503300466260 /* UINavigationBar+BackgroundColor.m */,
+				4926FA222146503300466260 /* UIView+Extension.h */,
 				4926FA2F2146503300466260 /* UIView+Extension.m */,
+				4926FA272146503300466260 /* UIWindow+Version.h */,
+				4926FA1F2146503300466260 /* UIWindow+Version.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1065,13 +1064,13 @@
 		4926FA382146503300466260 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4926FA392146503300466260 /* Care */,
-				4926FA3E2146503300466260 /* ANLeftTableViewController.h */,
 				4926FA3F2146503300466260 /* About */,
-				4926FA442146503300466260 /* Feedback */,
-				4926FA492146503300466260 /* support  */,
+				4926FA3E2146503300466260 /* ANLeftTableViewController.h */,
 				4926FA4E2146503300466260 /* ANLeftTableViewController.m */,
+				4926FA392146503300466260 /* Care */,
+				4926FA442146503300466260 /* Feedback */,
 				4926FA4F2146503300466260 /* Setting */,
+				4926FA492146503300466260 /* support  */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1087,8 +1086,8 @@
 		4926FA3A2146503300466260 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4926FA3B2146503300466260 /* ANCareViewController.m */,
 				4926FA3C2146503300466260 /* ANCareViewController.h */,
+				4926FA3B2146503300466260 /* ANCareViewController.m */,
 				4926FA3D2146503300466260 /* ANCareViewController.xib */,
 			);
 			path = Controller;
@@ -1532,12 +1531,19 @@
 		4926FB212146503400466260 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				4926FB222146503400466260 /* ANNewFeatureViewController.m */,
 				4926FB232146503400466260 /* ANConst.h */,
-				4926FB242146503400466260 /* ANNewFeatureViewController.h */,
 				4926FB252146503400466260 /* ANConst.m */,
+				4926FB242146503400466260 /* ANNewFeatureViewController.h */,
+				4926FB222146503400466260 /* ANNewFeatureViewController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		4926FC202147B25400466260 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1564,6 +1570,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 002215471C2CE63900E665F6 /* Build configuration list for PBXNativeTarget "ANWeatherTests" */;
 			buildPhases = (
+				25930929B69E0C930E9A0A81 /* [CP] Check Pods Manifest.lock */,
 				002215361C2CE63900E665F6 /* Sources */,
 				002215371C2CE63900E665F6 /* Frameworks */,
 				002215381C2CE63900E665F6 /* Resources */,
@@ -1665,6 +1672,7 @@
 				4926F99621464EF800466260 /* share_sun@3x.png in Resources */,
 				4926F9C221464EF800466260 /* city@2x.png in Resources */,
 				4926F99B21464EF800466260 /* shareBG.png in Resources */,
+				4926FBEF2147A42A00466260 /* pm2.5@2x.png in Resources */,
 				4926F9CA21464EF800466260 /* files@2x.png in Resources */,
 				4926F98F21464EF800466260 /* share_rain@2x.png in Resources */,
 				4926F9BA21464EF800466260 /* comments@3x.png in Resources */,
@@ -1743,6 +1751,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25930929B69E0C930E9A0A81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ANWeatherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0022151A1C2CE63900E665F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1815,13 +1844,13 @@
 				4926FB6D2146503400466260 /* MJRefreshConst.m in Sources */,
 				4926FB652146503400466260 /* MJExtensionConst.m in Sources */,
 				4926FB9B2146503400466260 /* FMDatabaseQueue.m in Sources */,
+				4926FBC52147611B00466260 /* ArkReqTool.m in Sources */,
 				4926FB9F2146503400466260 /* FMResultSet.m in Sources */,
 				4926FB7F2146503400466260 /* UIViewController+RESideMenu.m in Sources */,
 				4926FB412146503400466260 /* ANDaysWeatherCell.m in Sources */,
 				4926FB712146503400466260 /* MJRefreshBackGifFooter.m in Sources */,
 				4926FB7D2146503400466260 /* MJRefreshAutoFooter.m in Sources */,
 				4926FB732146503400466260 /* MJRefreshBackNormalFooter.m in Sources */,
-				4926FBBC2146744000466260 /* ArkbasicM.m in Sources */,
 				493B7DC821464AD900FF8EA9 /* AppDelegate.m in Sources */,
 				4926FB5B2146503400466260 /* ANSupportViewController.m in Sources */,
 				4926FBC2214674B800466260 /* ArknowM.m in Sources */,
@@ -1833,7 +1862,6 @@
 				4926FBB32146503400466260 /* ANNewFeatureViewController.m in Sources */,
 				4926FB892146503400466260 /* UIProgressView+AFNetworking.m in Sources */,
 				4926FB762146503400466260 /* MJRefreshAutoNormalFooter.m in Sources */,
-				4926FBBF2146748F00466260 /* ArkupdateM.m in Sources */,
 				4926FB3F2146503400466260 /* ANWeatherView.m in Sources */,
 				4926FBB92146697300466260 /* NSString+Password.m in Sources */,
 				4926FB8A2146503400466260 /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -1926,6 +1954,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1972,6 +2001,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2000,7 +2030,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ANWeather/Classes/Other",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ANWeather/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2022,12 +2056,15 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Wechat",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/UMSocial_Sdk_5.0",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Instagram",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.An.WeahterAN.ark;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.An.WeahterAN-Ark";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2046,7 +2083,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ANWeather/Classes/Other",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ANWeather/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2068,12 +2109,15 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Wechat",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/UMSocial_Sdk_5.0",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Instagram",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.An.WeahterAN.ark;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.An.WeahterAN-Ark";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

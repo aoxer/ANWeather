@@ -8,6 +8,7 @@
 
 #import "ANOffLineTool.h"
 #import "FMDB.h"
+#import "ArknowM.h"
 
 @interface ANOffLineTool ()
 
@@ -33,25 +34,22 @@ static FMDatabase *_db;
     
 }
 
-//szh
- + (void)saveWeathersDictWithJson:(NSDictionary *)weathersDict
++ (void)saveWeathers:(ArknowM *)weathers
 {
     // 要将一个对象存进数据库的blob字段, 最好先转为NSData
     // 一个对象要遵守NSCoding协议, 实现协议中的相应方法, 才能转成NSData
  
-    NSData *weathersData = [NSKeyedArchiver archivedDataWithRootObject:weathersDict];
-    // 拿到
-//    ANBasicM *basic = [ANBasicM objectWithKeyValues:weathersDict[@"basic"]]; 
-//    
-//    if ([self cityExists:basic.city]) { // 如果有当前城市缓存就更新
-//        
-//        [_db executeUpdate: @"UPDATE t_weathers SET weathers = ? WHERE city = ?", weathersData, basic.city];
-//    } else { // 没有就创建
-//        [_db executeUpdateWithFormat:@"INSERT INTO t_weathers (weathers, city) VALUES (%@, %@)", weathersData, basic.city];
-//    }
-//    
-//    // 保存当前城市到本地
-//    [self saveLastCity:basic.city];
+    NSData *weathersData = [NSKeyedArchiver archivedDataWithRootObject:weathers.keyValues];
+    
+    if ([self cityExists:weathers.location]) { // 如果有当前城市缓存就更新
+        
+        [_db executeUpdate: @"UPDATE t_weathers SET weathers = ? WHERE city = ?", weathersData, weathers.location];
+    } else { // 没有就创建
+        [_db executeUpdateWithFormat:@"INSERT INTO t_weathers (weathers, city) VALUES (%@, %@)", weathersData, weathers.location];
+    }
+    
+    // 保存当前城市到本地
+    [self saveLastCity:weathers.location];
 
     
 }
@@ -95,16 +93,16 @@ static FMDatabase *_db;
 + (BOOL)CityWeatherIsToday:(NSString *)city
 {
    NSDictionary *weatherDict = [self weathersWithCity:city];//szh
-//
-//    ANWeatherData *weatherData = [ANWeatherData objectWithKeyValues:weatherDict];
-//
-//    NSString *date = weatherData.loc;
-//
-//    NSString *dateWithoutTime = [date substringWithRange:NSMakeRange(0, 10)];
-//
-//    if ([dateWithoutTime isToday]) {
-//        return YES;
-//    }
+
+    ArknowM *weatherData = [ArknowM objectWithKeyValues:weatherDict];
+
+    NSString *date = weatherData.date;
+
+    NSString *dateWithoutTime = [date substringWithRange:NSMakeRange(0, 10)];
+
+    if ([dateWithoutTime isToday]) {
+        return YES;
+    }
     return NO;
 }
 

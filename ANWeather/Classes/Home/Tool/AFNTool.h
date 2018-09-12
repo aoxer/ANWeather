@@ -32,4 +32,7 @@
 @property(nonatomic,copy)NSString *t;
 @property(nonatomic,copy)NSString *sign;
 
++ (instancetype)reqParamLoction:(NSString *)city;
+
+
 @end

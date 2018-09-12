@@ -24,9 +24,9 @@
 
 @implementation ANWeatherItemView
 
-- (void)drawRect:(CGRect)rect{
+- (void)drawRect:(CGRect)rect
+{
     [super drawRect:rect];
-   
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.cornerRadius = ANCornerRadius;
@@ -59,13 +59,13 @@
     self.condLabel.font = ANLightFontSize17;
    
     NSString *text = nil;
-    if (nowm.cond_txt) {
-        text = nowm.cond_txt;
+    if (nowm.cond_txt_d) {
+        text = nowm.cond_txt_d;
     } else {
-        text = nowm.cond_txt;
+        text = nowm.cond_txt_n;
     }
     self.condLabel.text = text;
-    self.condImageView.image = [self getWeatherImageWithCondCode:nowm.cond_code];
+    self.condImageView.image = [self getWeatherImageWithCondCode:nowm.cond_code_d];
 }
 
 

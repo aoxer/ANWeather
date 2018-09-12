@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class ArknowM;
 @interface ANOffLineTool : NSObject
 /**
  *  把返回的json存到本地
  */
-+ (void)saveWeathersDictWithJson:(NSDictionary *)weathersDict;
++ (void)saveWeathers:(ArknowM *)weathers;
 /**
  * 根据城市名去沙盒中加载缓存
  */

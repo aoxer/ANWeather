@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ArknowM;
 @interface ANDaysWeatherView : UITableView
-//@property (strong, nonatomic)ANWeatherData *weatherData;
+@property (strong, nonatomic)ArknowM *nowm;
 @end

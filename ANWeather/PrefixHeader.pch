@@ -5,7 +5,9 @@
 //  Created by a on 15/12/24.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
-
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "UIWindow+Version.h"
 #import "ANSettingTool.h"
 #import "UINavigationBar+BackgroundColor.h"
@@ -20,11 +22,22 @@
 #import "NSUserDefaults+firstStart.h"
 #import "AFNTool.h"
 #import "NSString+Password.h"
+#import "ArkReqTool.h"
+#endif
 
 #ifndef _____PrefixHeader_pch
 #define _____PrefixHeader_pch
 
 
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#define kUserDefaults [NSUserDefaults standardUserDefaults]
+#define USERLNG @"user_longtitude"  // 定位的用户经度
+#define USERLAT @"user_latitude"    // 定位的用户纬度
+#define USERProvince @"user_province"       //定位省
+#define USERCity @"user_city"               //定位城市
+#define USERDistrict @"user_district"      //定位区
+#define USERAddress @"user_address"         //定位街道
+#define USERPoiname @"user_POIname"       //商圈位置
 
 #ifdef DEBUG // 开发阶段
 #define ANLog(...) NSLog( @"< %s:(第%d行) > %@",__func__ , __LINE__, [NSString stringWithFormat:__VA_ARGS__] ) 
@@ -59,6 +72,18 @@
 
 // 高度
 #define  Height                            [UIScreen mainScreen].bounds.size.height
+
+#define KScreenWidth  Width
+//屏幕高度
+#define KScreenHeight Height
+//状态栏高度
+#define KStatuesBarHeight  ([UIApplication sharedApplication].statusBarFrame.size.height)
+//导航栏高度
+#define KNavigationBarHeight 44.0
+//导航栏高度+状态栏高度
+#define kViewTopHeight (KStatuesBarHeight + KNavigationBarHeight)
+//iphoneX适配差值
+#define KiPhoneXSafeAreaDValue ([[UIApplication sharedApplication] statusBarFrame].size.height>20?34:0)
 
 // 华氏度
 #define ANFahrenheit(c) (c).integerValue * 9 / 5 + 32
