@@ -18,6 +18,12 @@
  */
 + (NSDictionary *)weathersWithCity:(NSString *)city;
 
+
+/**
+ *  保存上一次的城市
+ */
++ (void)saveLastCity:(NSString *)city;
+
 /**
  *  获取上一次的城市
  */

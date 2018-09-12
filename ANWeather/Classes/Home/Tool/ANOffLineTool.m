@@ -140,25 +140,3 @@ static FMDatabase *_db;
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

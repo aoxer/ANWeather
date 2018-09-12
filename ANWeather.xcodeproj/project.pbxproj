@@ -678,6 +678,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D44ADB2148B5B000B74D86 /* BaiduMapAPI_Base.framework in Frameworks */,
+				49D44ADC2148B5B000B74D86 /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				49D44ADE2148B5B000B74D86 /* BaiduMapAPI_Map.framework in Frameworks */,
+				49D44AD92148B5B000B74D86 /* BaiduMapAPI_Search.framework in Frameworks */,
+				49D44ADA2148B5B000B74D86 /* BaiduMapAPI_Utils.framework in Frameworks */,
+				49D44ADD2148B5B000B74D86 /* BMKLocationKit.framework in Frameworks */,
 				00DCFB3E1C8483FB00720010 /* libiconv.2.4.0.tbd in Frameworks */,
 				00DCFB4A1C84843D00720010 /* libsqlite3.0.tbd in Frameworks */,
 				00DCFB481C84843300720010 /* libiconv.tbd in Frameworks */,
@@ -687,11 +692,8 @@
 				00DCFB441C84842300720010 /* libstdc++.tbd in Frameworks */,
 				00DCFB421C84841900720010 /* libz.tbd in Frameworks */,
 				00DCFB401C84840800720010 /* libiconv.2.tbd in Frameworks */,
-				49D44ADA2148B5B000B74D86 /* BaiduMapAPI_Utils.framework in Frameworks */,
-				49D44ADC2148B5B000B74D86 /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				00F1BCEE1C4F3CD7003333BA /* MessageUI.framework in Frameworks */,
 				004513161C8083D300306725 /* SystemConfiguration.framework in Frameworks */,
-				49D44ADE2148B5B000B74D86 /* BaiduMapAPI_Map.framework in Frameworks */,
 				4926FB832146503400466260 /* libSocialSinaSSO.a in Frameworks */,
 				004513121C8083A600306725 /* Security.framework in Frameworks */,
 				004513DE1C8175DC00306725 /* ImageIO.framework in Frameworks */,
@@ -706,12 +708,10 @@
 				4926FB862146503400466260 /* libWeChatSDK.a in Frameworks */,
 				00493D631C43D79A003296FB /* CoreMedia.framework in Frameworks */,
 				00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */,
-				49D44AD92148B5B000B74D86 /* BaiduMapAPI_Search.framework in Frameworks */,
 				4926FBB22146503400466260 /* libSocialInstagram.a in Frameworks */,
 				009511EE1C3D86D200EA9FDC /* QuartzCore.framework in Frameworks */,
 				4926FB852146503400466260 /* libSocialWechat.a in Frameworks */,
 				4926FBAB2146503400466260 /* libUMSocial_Sdk_Comment_5.0.a in Frameworks */,
-				49D44ADD2148B5B000B74D86 /* BMKLocationKit.framework in Frameworks */,
 				00492B081C43A84C003296FB /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +732,7 @@
 				002215201C2CE63900E665F6 /* ANWeather */,
 				0022153D1C2CE63900E665F6 /* ANWeatherTests */,
 				0022151F1C2CE63900E665F6 /* Products */,
+				49D44B6B2148DEC500B74D86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1647,6 +1648,13 @@
 				49D44B0B2148B6BF00B74D86 /* ArkBMKAnnotationView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		49D44B6B2148DEC500B74D86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
