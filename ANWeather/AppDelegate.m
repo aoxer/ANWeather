@@ -16,8 +16,8 @@
 #import "UMSocial.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialInstagramHandler.h"
-
 @interface AppDelegate ()
+@property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
 
 
 @end
@@ -27,7 +27,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+   
+    [[ArkBMKManager manager] setupBMK];
     // 友盟分享
     [UMSocialData setAppKey:ANUMAppKey];
     

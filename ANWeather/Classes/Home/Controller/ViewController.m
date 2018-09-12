@@ -18,7 +18,7 @@
 #import "ANRightTableViewController.h"
 #import "ANOffLineTool.h"
 #import "ArknowM.h"
-//#import "MapViewController.h"
+#import "MapViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -265,11 +265,12 @@
  */
 - (void)callRight
 {
-    [self.sideMenuViewController presentRightMenuViewController];
+//    [self.sideMenuViewController presentRightMenuViewController];
     
-//    MapViewController *map= [MapViewController new];
-//    map.nowm=self.nowm;
-//    [self.navigationController pushViewController:map animated:YES];
+    MapViewController *map= [MapViewController new];
+    map.nowm=self.nowm;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:map];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 

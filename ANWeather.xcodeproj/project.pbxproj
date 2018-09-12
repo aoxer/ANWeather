@@ -246,6 +246,19 @@
 		493B7DC921464AD900FF8EA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B7DC721464AD900FF8EA9 /* main.m */; };
 		493B7E0921464C6200FF8EA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B7E0521464C6200FF8EA9 /* LaunchScreen.xib */; };
 		493B7E0A21464C6200FF8EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493B7E0721464C6200FF8EA9 /* Main.storyboard */; };
+		49D44AD92148B5B000B74D86 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD02148B5B000B74D86 /* BaiduMapAPI_Search.framework */; };
+		49D44ADA2148B5B000B74D86 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD12148B5B000B74D86 /* BaiduMapAPI_Utils.framework */; };
+		49D44ADB2148B5B000B74D86 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD22148B5B000B74D86 /* BaiduMapAPI_Base.framework */; };
+		49D44ADC2148B5B000B74D86 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD32148B5B000B74D86 /* BaiduMapAPI_Cloud.framework */; };
+		49D44ADD2148B5B000B74D86 /* BMKLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD42148B5B000B74D86 /* BMKLocationKit.framework */; };
+		49D44ADE2148B5B000B74D86 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD52148B5B000B74D86 /* BaiduMapAPI_Map.framework */; };
+		49D44ADF2148B5B000B74D86 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD72148B5B000B74D86 /* libcrypto.a */; };
+		49D44AE02148B5B000B74D86 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD82148B5B000B74D86 /* libssl.a */; };
+		49D44AE42148B5C700B74D86 /* ArkBMKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44AE32148B5C700B74D86 /* ArkBMKManager.m */; };
+		49D44B0D2148B6BF00B74D86 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44B052148B6BF00B74D86 /* MapViewController.m */; };
+		49D44B0E2148B6BF00B74D86 /* ArkBMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44B082148B6BF00B74D86 /* ArkBMKAnnotation.m */; };
+		49D44B0F2148B6BF00B74D86 /* ArkBMKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D44B0B2148B6BF00B74D86 /* ArkBMKAnnotationView.m */; };
+		49D44B112148B76100B74D86 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49D44B102148B76100B74D86 /* mapapi.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -640,6 +653,23 @@
 		493B7DC721464AD900FF8EA9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		493B7E0621464C6200FF8EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		493B7E0821464C6200FF8EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49D44AD02148B5B000B74D86 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		49D44AD12148B5B000B74D86 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
+		49D44AD22148B5B000B74D86 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		49D44AD32148B5B000B74D86 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
+		49D44AD42148B5B000B74D86 /* BMKLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BMKLocationKit.framework; sourceTree = "<group>"; };
+		49D44AD52148B5B000B74D86 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		49D44AD72148B5B000B74D86 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		49D44AD82148B5B000B74D86 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		49D44AE22148B5C700B74D86 /* ArkBMKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArkBMKManager.h; sourceTree = "<group>"; };
+		49D44AE32148B5C700B74D86 /* ArkBMKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArkBMKManager.m; sourceTree = "<group>"; };
+		49D44B052148B6BF00B74D86 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		49D44B062148B6BF00B74D86 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		49D44B082148B6BF00B74D86 /* ArkBMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArkBMKAnnotation.m; sourceTree = "<group>"; };
+		49D44B092148B6BF00B74D86 /* ArkBMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArkBMKAnnotation.h; sourceTree = "<group>"; };
+		49D44B0B2148B6BF00B74D86 /* ArkBMKAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArkBMKAnnotationView.m; sourceTree = "<group>"; };
+		49D44B0C2148B6BF00B74D86 /* ArkBMKAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArkBMKAnnotationView.h; sourceTree = "<group>"; };
+		49D44B102148B76100B74D86 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapAPI_Map.framework/mapapi.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -647,21 +677,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D44ADB2148B5B000B74D86 /* BaiduMapAPI_Base.framework in Frameworks */,
 				00DCFB3E1C8483FB00720010 /* libiconv.2.4.0.tbd in Frameworks */,
 				00DCFB4A1C84843D00720010 /* libsqlite3.0.tbd in Frameworks */,
 				00DCFB481C84843300720010 /* libiconv.tbd in Frameworks */,
 				00DCFB461C84842D00720010 /* libsqlite3.tbd in Frameworks */,
 				4926FB842146503400466260 /* libWeiboSDK.a in Frameworks */,
+				49D44ADF2148B5B000B74D86 /* libcrypto.a in Frameworks */,
 				00DCFB441C84842300720010 /* libstdc++.tbd in Frameworks */,
 				00DCFB421C84841900720010 /* libz.tbd in Frameworks */,
 				00DCFB401C84840800720010 /* libiconv.2.tbd in Frameworks */,
+				49D44ADA2148B5B000B74D86 /* BaiduMapAPI_Utils.framework in Frameworks */,
+				49D44ADC2148B5B000B74D86 /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				00F1BCEE1C4F3CD7003333BA /* MessageUI.framework in Frameworks */,
 				004513161C8083D300306725 /* SystemConfiguration.framework in Frameworks */,
+				49D44ADE2148B5B000B74D86 /* BaiduMapAPI_Map.framework in Frameworks */,
 				4926FB832146503400466260 /* libSocialSinaSSO.a in Frameworks */,
 				004513121C8083A600306725 /* Security.framework in Frameworks */,
 				004513DE1C8175DC00306725 /* ImageIO.framework in Frameworks */,
 				0045131A1C8083EE00306725 /* CoreTelephony.framework in Frameworks */,
 				009511F01C3D86EC00EA9FDC /* CoreGraphics.framework in Frameworks */,
+				49D44AE02148B5B000B74D86 /* libssl.a in Frameworks */,
 				00557E4B1C45774F00E6B790 /* MediaPlayer.framework in Frameworks */,
 				00493D651C43D7B7003296FB /* AVFoundation.framework in Frameworks */,
 				4926FBA12146503400466260 /* libUMSocial_Sdk_5.0.a in Frameworks */,
@@ -670,10 +706,12 @@
 				4926FB862146503400466260 /* libWeChatSDK.a in Frameworks */,
 				00493D631C43D79A003296FB /* CoreMedia.framework in Frameworks */,
 				00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */,
+				49D44AD92148B5B000B74D86 /* BaiduMapAPI_Search.framework in Frameworks */,
 				4926FBB22146503400466260 /* libSocialInstagram.a in Frameworks */,
 				009511EE1C3D86D200EA9FDC /* QuartzCore.framework in Frameworks */,
 				4926FB852146503400466260 /* libSocialWechat.a in Frameworks */,
 				4926FBAB2146503400466260 /* libUMSocial_Sdk_Comment_5.0.a in Frameworks */,
+				49D44ADD2148B5B000B74D86 /* BMKLocationKit.framework in Frameworks */,
 				00492B081C43A84C003296FB /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,7 +732,6 @@
 				002215201C2CE63900E665F6 /* ANWeather */,
 				0022153D1C2CE63900E665F6 /* ANWeatherTests */,
 				0022151F1C2CE63900E665F6 /* Products */,
-				4926FC202147B25400466260 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -864,6 +901,7 @@
 		4926F9D42146503300466260 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				49D44B032148B6BF00B74D86 /* Map */,
 				4926FA1E2146503300466260 /* Category */,
 				4926F9E42146503300466260 /* Home */,
 				4926FA372146503300466260 /* Left */,
@@ -1178,6 +1216,7 @@
 		4926FA572146503300466260 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				49D44ABE2148B4F400B74D86 /* BMKFrameworks */,
 				4926FA582146503300466260 /* MJExtension */,
 				4926FA702146503300466260 /* MJRefresh */,
 				4926FA9D2146503400466260 /* RESideMenu */,
@@ -1539,11 +1578,75 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		4926FC202147B25400466260 /* Frameworks */ = {
+		49D44ABE2148B4F400B74D86 /* BMKFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49D44B102148B76100B74D86 /* mapapi.bundle */,
+				49D44AD22148B5B000B74D86 /* BaiduMapAPI_Base.framework */,
+				49D44AD32148B5B000B74D86 /* BaiduMapAPI_Cloud.framework */,
+				49D44AD52148B5B000B74D86 /* BaiduMapAPI_Map.framework */,
+				49D44AD02148B5B000B74D86 /* BaiduMapAPI_Search.framework */,
+				49D44AD12148B5B000B74D86 /* BaiduMapAPI_Utils.framework */,
+				49D44AD42148B5B000B74D86 /* BMKLocationKit.framework */,
+				49D44AD62148B5B000B74D86 /* thirdlibs */,
 			);
-			name = Frameworks;
+			path = BMKFrameworks;
+			sourceTree = "<group>";
+		};
+		49D44AD62148B5B000B74D86 /* thirdlibs */ = {
+			isa = PBXGroup;
+			children = (
+				49D44AD72148B5B000B74D86 /* libcrypto.a */,
+				49D44AD82148B5B000B74D86 /* libssl.a */,
+			);
+			path = thirdlibs;
+			sourceTree = "<group>";
+		};
+		49D44AE12148B5C700B74D86 /* BMKTool */ = {
+			isa = PBXGroup;
+			children = (
+				49D44AE22148B5C700B74D86 /* ArkBMKManager.h */,
+				49D44AE32148B5C700B74D86 /* ArkBMKManager.m */,
+			);
+			path = BMKTool;
+			sourceTree = "<group>";
+		};
+		49D44B032148B6BF00B74D86 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				49D44AE12148B5C700B74D86 /* BMKTool */,
+				49D44B042148B6BF00B74D86 /* Controller */,
+				49D44B072148B6BF00B74D86 /* Model */,
+				49D44B0A2148B6BF00B74D86 /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		49D44B042148B6BF00B74D86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49D44B062148B6BF00B74D86 /* MapViewController.h */,
+				49D44B052148B6BF00B74D86 /* MapViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		49D44B072148B6BF00B74D86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49D44B092148B6BF00B74D86 /* ArkBMKAnnotation.h */,
+				49D44B082148B6BF00B74D86 /* ArkBMKAnnotation.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49D44B0A2148B6BF00B74D86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49D44B0C2148B6BF00B74D86 /* ArkBMKAnnotationView.h */,
+				49D44B0B2148B6BF00B74D86 /* ArkBMKAnnotationView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1646,6 +1749,7 @@
 				4926F99D21464EF800466260 /* isC@3x.png in Resources */,
 				4926F9C921464EF800466260 /* menu@3x.png in Resources */,
 				4926FBA82146503400466260 /* UMShareEditViewController.xib in Resources */,
+				49D44B112148B76100B74D86 /* mapapi.bundle in Resources */,
 				4926F9A421464EF800466260 /* shareBG.ai in Resources */,
 				4926FB822146503400466260 /* WeiboSDK.bundle in Resources */,
 				4926F9B821464EF800466260 /* del@3x.png in Resources */,
@@ -1782,6 +1886,7 @@
 				4926FB4A2146503400466260 /* UIWindow+Version.m in Sources */,
 				4926FB8D2146503400466260 /* UIButton+AFNetworking.m in Sources */,
 				4926FB462146503400466260 /* ANWeatherItemView.m in Sources */,
+				49D44B0F2148B6BF00B74D86 /* ArkBMKAnnotationView.m in Sources */,
 				4926FB3A2146503400466260 /* ANWindSpeedItemView.m in Sources */,
 				4926FB982146503400466260 /* MBProgressHUD.m in Sources */,
 				4926FB8F2146503400466260 /* UIWebView+AFNetworking.m in Sources */,
@@ -1797,6 +1902,7 @@
 				4926FB922146503400466260 /* AFURLResponseSerialization.m in Sources */,
 				4926FB4B2146503400466260 /* UIImage+Blur.m in Sources */,
 				4926FB7C2146503400466260 /* MJRefreshBackFooter.m in Sources */,
+				49D44AE42148B5C700B74D86 /* ArkBMKManager.m in Sources */,
 				4926FB692146503400466260 /* MJPropertyKey.m in Sources */,
 				4926FB542146503400466260 /* ANDetailViewController.m in Sources */,
 				4926FBAE2146503400466260 /* MSNeedleView.m in Sources */,
@@ -1835,6 +1941,7 @@
 				4926FB5D2146503400466260 /* ANLeftTableViewController.m in Sources */,
 				4926FB512146503400466260 /* NSUserDefaults+firstStart.m in Sources */,
 				4926FB552146503400466260 /* ANCareViewController.m in Sources */,
+				49D44B0D2148B6BF00B74D86 /* MapViewController.m in Sources */,
 				4926FB4F2146503400466260 /* UIBarButtonItem+Extension.m in Sources */,
 				4926FB4D2146503400466260 /* Foundation+Log.m in Sources */,
 				4926FB9C2146503400466260 /* FMDatabaseAdditions.m in Sources */,
@@ -1844,6 +1951,7 @@
 				4926FB6D2146503400466260 /* MJRefreshConst.m in Sources */,
 				4926FB652146503400466260 /* MJExtensionConst.m in Sources */,
 				4926FB9B2146503400466260 /* FMDatabaseQueue.m in Sources */,
+				49D44B0E2148B6BF00B74D86 /* ArkBMKAnnotation.m in Sources */,
 				4926FBC52147611B00466260 /* ArkReqTool.m in Sources */,
 				4926FB9F2146503400466260 /* FMResultSet.m in Sources */,
 				4926FB7F2146503400466260 /* UIViewController+RESideMenu.m in Sources */,
@@ -2033,6 +2141,8 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Frameworks",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BMKFrameworks",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2059,6 +2169,8 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit/thirdlibs",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks/thirdlibs",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Frameworks/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BMKFrameworks/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -2086,6 +2198,8 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Frameworks",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BMKFrameworks",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2112,6 +2226,8 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit/thirdlibs",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks/thirdlibs",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Frameworks/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BMKFrameworks/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",

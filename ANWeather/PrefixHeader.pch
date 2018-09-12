@@ -23,6 +23,8 @@
 #import "AFNTool.h"
 #import "NSString+Password.h"
 #import "ArkReqTool.h"
+#import "ArkBMKManager.h"
+
 #endif
 
 #ifndef _____PrefixHeader_pch
