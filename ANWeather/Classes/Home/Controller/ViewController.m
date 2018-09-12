@@ -18,6 +18,7 @@
 #import "ANRightTableViewController.h"
 #import "ANOffLineTool.h"
 #import "ArknowM.h"
+//#import "MapViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -127,10 +128,10 @@
     // 第一次打开设置默认城市
     if ([NSUserDefaults isFirst])
     {
-        self.city = @"上海";
+        self.city = @"北京";
         ANLog(@"第一次");
     } else {
-        self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"上海";
+        self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"北京";
         ANLog(@"第二次");
     }
     
@@ -150,7 +151,7 @@
     self.tableView.header.tintColor = ANRandomColor;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
-        [self sendRequestWithCity:self.title];
+        [self sendRequestWithCity:self.city];
         
     }];
 }
@@ -265,6 +266,10 @@
 - (void)callRight
 {
     [self.sideMenuViewController presentRightMenuViewController];
+    
+//    MapViewController *map= [MapViewController new];
+//    map.nowm=self.nowm;
+//    [self.navigationController pushViewController:map animated:YES];
 }
 
 
@@ -492,10 +497,10 @@
         
         // 获取到的城市开始刷新
         NSString *locCity = [pm.locality getCityName:pm.locality];
-        self.city = locCity;
         // 设置导航栏标题
-        [self.tableView.header beginRefreshing];
-   
+        self.city=locCity;
+        [self loadWeatherWithCity:locCity];
+
         
         // 0.菊花
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -634,21 +639,6 @@
 //}
 
 
+
+
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

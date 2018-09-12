@@ -18,8 +18,11 @@ NSString * const ANWeatherRequestUrlnow = @"https://free-api.heweather.com/s6/we
 NSString * const ANWeatherRequestUrlforecast = @"https://free-api.heweather.com/s6/weather/forecast";
 NSString * const ANWeatherRequestUrlparameters = @"https://free-api.heweather.com/s6/air?parameters";
 
-NSString * const ANApiKey = @"05ebb69af005444dab53b381a86632eb";
-NSString * const ANApiusername=@"HE1809101150461656";
+//NSString * const ANApiKey = @"05ebb69af005444dab53b381a86632eb";
+//NSString * const ANApiusername=@"HE1809101150461656";
+
+NSString * const ANApiKey = @"0bfe50a0bb70414eb48f4a38ee566304";
+NSString * const ANApiusername=@"HE1809111706021595";
 // 通知们
 NSString * const ANGetLocationDidClickNotification = @"ANGetLocationDidClickNotification";
 NSString * const ANCityDidClickNotification = @"ANCityDidClickNotification";

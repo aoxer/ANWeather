@@ -5,7 +5,9 @@
 //  Created by a on 15/12/24.
 //  Copyright (c) 2015年 YongChaoAn. All rights reserved.
 //
-
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "UIWindow+Version.h"
 #import "ANSettingTool.h"
 #import "UINavigationBar+BackgroundColor.h"
@@ -21,7 +23,8 @@
 #import "AFNTool.h"
 #import "NSString+Password.h"
 #import "ArkReqTool.h"
-#import "ArkBMKManager.h"
+#endif
+
 #ifndef _____PrefixHeader_pch
 #define _____PrefixHeader_pch
 
@@ -69,6 +72,18 @@
 
 // 高度
 #define  Height                            [UIScreen mainScreen].bounds.size.height
+
+#define KScreenWidth  Width
+//屏幕高度
+#define KScreenHeight Height
+//状态栏高度
+#define KStatuesBarHeight  ([UIApplication sharedApplication].statusBarFrame.size.height)
+//导航栏高度
+#define KNavigationBarHeight 44.0
+//导航栏高度+状态栏高度
+#define kViewTopHeight (KStatuesBarHeight + KNavigationBarHeight)
+//iphoneX适配差值
+#define KiPhoneXSafeAreaDValue ([[UIApplication sharedApplication] statusBarFrame].size.height>20?34:0)
 
 // 华氏度
 #define ANFahrenheit(c) (c).integerValue * 9 / 5 + 32

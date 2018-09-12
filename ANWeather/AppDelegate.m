@@ -28,8 +28,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [[ArkBMKManager manager] setupBMK];
-
     // 友盟分享
     [UMSocialData setAppKey:ANUMAppKey];
     

@@ -241,19 +241,7 @@
 		4926FBB92146697300466260 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBB72146697200466260 /* NSString+Password.m */; };
 		4926FBC2214674B800466260 /* ArknowM.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBC1214674B800466260 /* ArknowM.m */; };
 		4926FBC52147611B00466260 /* ArkReqTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBC42147611B00466260 /* ArkReqTool.m */; };
-		4926FBC92147962600466260 /* ArkBMKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBC72147962500466260 /* ArkBMKManager.m */; };
-		4926FBD82147968A00466260 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4926FBCB2147968A00466260 /* LICENSE */; };
-		4926FBD92147968A00466260 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4926FBCC2147968A00466260 /* README.md */; };
-		4926FBDA2147968A00466260 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBCE2147968A00466260 /* BaiduMapAPI_Location.framework */; };
-		4926FBDB2147968A00466260 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBCF2147968A00466260 /* BaiduMapAPI_Map.framework */; };
-		4926FBDC2147968A00466260 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBD12147968A00466260 /* libcrypto.a */; };
-		4926FBDD2147968A00466260 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBD22147968A00466260 /* libssl.a */; };
-		4926FBDE2147968A00466260 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBD32147968A00466260 /* BaiduMapAPI_Utils.framework */; };
-		4926FBDF2147968A00466260 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBD42147968A00466260 /* BaiduMapAPI_Base.framework */; };
-		4926FBE02147968A00466260 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBD52147968A00466260 /* BaiduMapAPI_Search.framework */; };
-		4926FBE12147968A00466260 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBD62147968A00466260 /* BaiduMapAPI_Radar.framework */; };
-		4926FBE22147968A00466260 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926FBD72147968A00466260 /* BaiduMapAPI_Cloud.framework */; };
-		4926FBE621479BCF00466260 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926FBE521479BCF00466260 /* MapViewController.m */; };
+		4926FBEF2147A42A00466260 /* pm2.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4926FBEE2147A42A00466260 /* pm2.5@2x.png */; };
 		493B7DC821464AD900FF8EA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B7DC521464AD900FF8EA9 /* AppDelegate.m */; };
 		493B7DC921464AD900FF8EA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B7DC721464AD900FF8EA9 /* main.m */; };
 		493B7E0921464C6200FF8EA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B7E0521464C6200FF8EA9 /* LaunchScreen.xib */; };
@@ -646,21 +634,7 @@
 		4926FBC1214674B800466260 /* ArknowM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArknowM.m; sourceTree = "<group>"; };
 		4926FBC32147611B00466260 /* ArkReqTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArkReqTool.h; sourceTree = "<group>"; };
 		4926FBC42147611B00466260 /* ArkReqTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArkReqTool.m; sourceTree = "<group>"; };
-		4926FBC72147962500466260 /* ArkBMKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArkBMKManager.m; sourceTree = "<group>"; };
-		4926FBC82147962600466260 /* ArkBMKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArkBMKManager.h; sourceTree = "<group>"; };
-		4926FBCB2147968A00466260 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		4926FBCC2147968A00466260 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4926FBCE2147968A00466260 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
-		4926FBCF2147968A00466260 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
-		4926FBD12147968A00466260 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		4926FBD22147968A00466260 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		4926FBD32147968A00466260 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
-		4926FBD42147968A00466260 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
-		4926FBD52147968A00466260 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
-		4926FBD62147968A00466260 /* BaiduMapAPI_Radar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Radar.framework; sourceTree = "<group>"; };
-		4926FBD72147968A00466260 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
-		4926FBE421479BCF00466260 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		4926FBE521479BCF00466260 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4926FBEE2147A42A00466260 /* pm2.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pm2.5@2x.png"; sourceTree = "<group>"; };
 		493B7DC521464AD900FF8EA9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		493B7DC621464AD900FF8EA9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		493B7DC721464AD900FF8EA9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -673,18 +647,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4926FBDD2147968A00466260 /* libssl.a in Frameworks */,
-				4926FBDF2147968A00466260 /* BaiduMapAPI_Base.framework in Frameworks */,
 				00DCFB3E1C8483FB00720010 /* libiconv.2.4.0.tbd in Frameworks */,
-				4926FBDE2147968A00466260 /* BaiduMapAPI_Utils.framework in Frameworks */,
 				00DCFB4A1C84843D00720010 /* libsqlite3.0.tbd in Frameworks */,
 				00DCFB481C84843300720010 /* libiconv.tbd in Frameworks */,
-				4926FBE02147968A00466260 /* BaiduMapAPI_Search.framework in Frameworks */,
 				00DCFB461C84842D00720010 /* libsqlite3.tbd in Frameworks */,
 				4926FB842146503400466260 /* libWeiboSDK.a in Frameworks */,
-				4926FBDC2147968A00466260 /* libcrypto.a in Frameworks */,
 				00DCFB441C84842300720010 /* libstdc++.tbd in Frameworks */,
-				4926FBE22147968A00466260 /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				00DCFB421C84841900720010 /* libz.tbd in Frameworks */,
 				00DCFB401C84840800720010 /* libiconv.2.tbd in Frameworks */,
 				00F1BCEE1C4F3CD7003333BA /* MessageUI.framework in Frameworks */,
@@ -699,11 +667,8 @@
 				4926FBA12146503400466260 /* libUMSocial_Sdk_5.0.a in Frameworks */,
 				00493D5E1C43D3F0003296FB /* OpenGLES.framework in Frameworks */,
 				00493D641C43D7A1003296FB /* CoreVideo.framework in Frameworks */,
-				4926FBE12147968A00466260 /* BaiduMapAPI_Radar.framework in Frameworks */,
-				4926FBDA2147968A00466260 /* BaiduMapAPI_Location.framework in Frameworks */,
 				4926FB862146503400466260 /* libWeChatSDK.a in Frameworks */,
 				00493D631C43D79A003296FB /* CoreMedia.framework in Frameworks */,
-				4926FBDB2147968A00466260 /* BaiduMapAPI_Map.framework in Frameworks */,
 				00B98DB21C38280200AD5B5C /* CoreImage.framework in Frameworks */,
 				4926FBB22146503400466260 /* libSocialInstagram.a in Frameworks */,
 				009511EE1C3D86D200EA9FDC /* QuartzCore.framework in Frameworks */,
@@ -729,6 +694,7 @@
 				002215201C2CE63900E665F6 /* ANWeather */,
 				0022153D1C2CE63900E665F6 /* ANWeatherTests */,
 				0022151F1C2CE63900E665F6 /* Products */,
+				4926FC202147B25400466260 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -822,6 +788,7 @@
 		4926F94121464EF800466260 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4926FBEE2147A42A00466260 /* pm2.5@2x.png */,
 				4926F94221464EF800466260 /* left_wirte@2x.png */,
 				4926F94321464EF800466260 /* 501@2x.png */,
 				4926F94421464EF800466260 /* addMenu@2x.png */,
@@ -897,7 +864,6 @@
 		4926F9D42146503300466260 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4926FBE321479BB700466260 /* Map */,
 				4926FA1E2146503300466260 /* Category */,
 				4926F9E42146503300466260 /* Home */,
 				4926FA372146503300466260 /* Left */,
@@ -1212,8 +1178,6 @@
 		4926FA572146503300466260 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				4926FBCA2147968A00466260 /* BaiduMapKit */,
-				4926FBC6214795B200466260 /* BMKTool */,
 				4926FA582146503300466260 /* MJExtension */,
 				4926FA702146503300466260 /* MJRefresh */,
 				4926FA9D2146503400466260 /* RESideMenu */,
@@ -1575,72 +1539,11 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		4926FBC6214795B200466260 /* BMKTool */ = {
-			isa = PBXGroup;
-			children = (
-				4926FBC82147962600466260 /* ArkBMKManager.h */,
-				4926FBC72147962500466260 /* ArkBMKManager.m */,
-			);
-			path = BMKTool;
-			sourceTree = "<group>";
-		};
-		4926FBCA2147968A00466260 /* BaiduMapKit */ = {
-			isa = PBXGroup;
-			children = (
-				4926FBCB2147968A00466260 /* LICENSE */,
-				4926FBCC2147968A00466260 /* README.md */,
-				4926FBCD2147968A00466260 /* BaiduMapKit */,
-			);
-			path = BaiduMapKit;
-			sourceTree = "<group>";
-		};
-		4926FBCD2147968A00466260 /* BaiduMapKit */ = {
-			isa = PBXGroup;
-			children = (
-				4926FBCE2147968A00466260 /* BaiduMapAPI_Location.framework */,
-				4926FBCF2147968A00466260 /* BaiduMapAPI_Map.framework */,
-				4926FBD02147968A00466260 /* thirdlibs */,
-				4926FBD32147968A00466260 /* BaiduMapAPI_Utils.framework */,
-				4926FBD42147968A00466260 /* BaiduMapAPI_Base.framework */,
-				4926FBD52147968A00466260 /* BaiduMapAPI_Search.framework */,
-				4926FBD62147968A00466260 /* BaiduMapAPI_Radar.framework */,
-				4926FBD72147968A00466260 /* BaiduMapAPI_Cloud.framework */,
-			);
-			path = BaiduMapKit;
-			sourceTree = "<group>";
-		};
-		4926FBD02147968A00466260 /* thirdlibs */ = {
-			isa = PBXGroup;
-			children = (
-				4926FBD12147968A00466260 /* libcrypto.a */,
-				4926FBD22147968A00466260 /* libssl.a */,
-			);
-			path = thirdlibs;
-			sourceTree = "<group>";
-		};
-		4926FBE321479BB700466260 /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				4926FBE921479BE200466260 /* Controller */,
-				4926FBE721479BD200466260 /* View */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
-		4926FBE721479BD200466260 /* View */ = {
+		4926FC202147B25400466260 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4926FBE921479BE200466260 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				4926FBE421479BCF00466260 /* MapViewController.h */,
-				4926FBE521479BCF00466260 /* MapViewController.m */,
-			);
-			path = Controller;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1667,6 +1570,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 002215471C2CE63900E665F6 /* Build configuration list for PBXNativeTarget "ANWeatherTests" */;
 			buildPhases = (
+				25930929B69E0C930E9A0A81 /* [CP] Check Pods Manifest.lock */,
 				002215361C2CE63900E665F6 /* Sources */,
 				002215371C2CE63900E665F6 /* Frameworks */,
 				002215381C2CE63900E665F6 /* Resources */,
@@ -1768,8 +1672,8 @@
 				4926F99621464EF800466260 /* share_sun@3x.png in Resources */,
 				4926F9C221464EF800466260 /* city@2x.png in Resources */,
 				4926F99B21464EF800466260 /* shareBG.png in Resources */,
+				4926FBEF2147A42A00466260 /* pm2.5@2x.png in Resources */,
 				4926F9CA21464EF800466260 /* files@2x.png in Resources */,
-				4926FBD82147968A00466260 /* LICENSE in Resources */,
 				4926F98F21464EF800466260 /* share_rain@2x.png in Resources */,
 				4926F9BA21464EF800466260 /* comments@3x.png in Resources */,
 				4926F99221464EF800466260 /* back@2x.png in Resources */,
@@ -1779,7 +1683,6 @@
 				4926F9C421464EF800466260 /* location@3x.png in Resources */,
 				4926F9D321464EF800466260 /* 1.jpg in Resources */,
 				4926F9B121464EF800466260 /* left_mail@2x.png in Resources */,
-				4926FBD92147968A00466260 /* README.md in Resources */,
 				4926F99921464EF800466260 /* share_figgy@2x.png in Resources */,
 				4926FB872146503400466260 /* LICENSE in Resources */,
 				4926F9A121464EF800466260 /* left_wirte@3x.png in Resources */,
@@ -1848,6 +1751,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25930929B69E0C930E9A0A81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ANWeatherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0022151A1C2CE63900E665F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1873,7 +1797,6 @@
 				4926FB922146503400466260 /* AFURLResponseSerialization.m in Sources */,
 				4926FB4B2146503400466260 /* UIImage+Blur.m in Sources */,
 				4926FB7C2146503400466260 /* MJRefreshBackFooter.m in Sources */,
-				4926FBC92147962600466260 /* ArkBMKManager.m in Sources */,
 				4926FB692146503400466260 /* MJPropertyKey.m in Sources */,
 				4926FB542146503400466260 /* ANDetailViewController.m in Sources */,
 				4926FBAE2146503400466260 /* MSNeedleView.m in Sources */,
@@ -1912,7 +1835,6 @@
 				4926FB5D2146503400466260 /* ANLeftTableViewController.m in Sources */,
 				4926FB512146503400466260 /* NSUserDefaults+firstStart.m in Sources */,
 				4926FB552146503400466260 /* ANCareViewController.m in Sources */,
-				4926FBE621479BCF00466260 /* MapViewController.m in Sources */,
 				4926FB4F2146503400466260 /* UIBarButtonItem+Extension.m in Sources */,
 				4926FB4D2146503400466260 /* Foundation+Log.m in Sources */,
 				4926FB9C2146503400466260 /* FMDatabaseAdditions.m in Sources */,
@@ -2032,6 +1954,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2078,6 +2001,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2107,7 +2031,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ANWeather/Classes/Other",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ANWeather/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2130,6 +2057,8 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/UMSocial_Sdk_5.0",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Instagram",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -2155,7 +2084,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ANWeather/Classes/Other",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit",
 				);
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ANWeather/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2178,6 +2110,8 @@
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/UMSocial_Sdk_5.0",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/Instagram",
 					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/BaiduMapKit/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/Frameworks/thirdlibs",
+					"$(PROJECT_DIR)/ANWeather/Classes/Libs/BaiduMapKit/thirdlibs",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
