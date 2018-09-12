@@ -101,9 +101,9 @@
     self.view.backgroundColor = ANColor(222, 222, 222, 0.5);
     self.navigationController.navigationBar.shadowImage = [UIImage new];
    
-        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
-        
-        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"addMenu" andImageNameHighlight:@"addMenu"];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callLeft) andImageName:@"menu" andImageNameHighlight:@"menu"];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self Action:@selector(callRight) andImageName:@"addMenu" andImageNameHighlight:@"addMenu"];
         
   
     
@@ -135,6 +135,8 @@
         ANLog(@"第二次");
     }
     
+    [self autoScrollShow];
+    
 }
 
 /**
@@ -142,8 +144,6 @@
  */
 - (void)setupTableView
 {
-    
-    
     self.tableView.contentInset = UIEdgeInsetsMake(-20 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -352,6 +352,8 @@
     [self.tableView reloadData];
     
     [ANOffLineTool saveCurrentCity:self.city];
+    
+    [ANOffLineTool saveLastCity:self.city];
 }
 
 - (UIImage *)backGroungImageWithWeather:(ArknowM *)nowm
@@ -483,6 +485,7 @@
 {
     // 0.菊花
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     CLLocation *location = [locations lastObject];
 
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -500,9 +503,9 @@
         NSString *locCity = [pm.locality getCityName:pm.locality];
         // 设置导航栏标题
         self.city=locCity;
+        
         [self loadWeatherWithCity:locCity];
 
-        
         // 0.菊花
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 
@@ -584,7 +587,22 @@
 
 }
 
+- (void)autoScrollShow
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:3 animations:^{
+            UIView.animationRepeatCount  = 3;
+            [self.tableView setContentOffset:CGPointMake(0, 55) animated:YES];
+        } completion:^(BOOL finished) {
 
+        }];
+        [UIView animateWithDuration:3 animations:^{
+            
+        }];
+    });
+
+   
+}
 
 
 #pragma mark <ANRightTableViewControllerDelegate>
