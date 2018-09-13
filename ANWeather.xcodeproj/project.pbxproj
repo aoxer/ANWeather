@@ -246,6 +246,9 @@
 		493B7DC921464AD900FF8EA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 493B7DC721464AD900FF8EA9 /* main.m */; };
 		493B7E0921464C6200FF8EA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 493B7E0521464C6200FF8EA9 /* LaunchScreen.xib */; };
 		493B7E0A21464C6200FF8EA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493B7E0721464C6200FF8EA9 /* Main.storyboard */; };
+		49CA5A54214A1433002888C4 /* mapPM2.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CA5A53214A1433002888C4 /* mapPM2.5@2x.png */; };
+		49CA5A58214A2F7F002888C4 /* scrollWeatherView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CA5A57214A2F7F002888C4 /* scrollWeatherView@2x.png */; };
+		49CA5A5B214A3890002888C4 /* LaunchScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CA5A5A214A3890002888C4 /* LaunchScreen@2x.png */; };
 		49D44AD92148B5B000B74D86 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD02148B5B000B74D86 /* BaiduMapAPI_Search.framework */; };
 		49D44ADA2148B5B000B74D86 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD12148B5B000B74D86 /* BaiduMapAPI_Utils.framework */; };
 		49D44ADB2148B5B000B74D86 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD22148B5B000B74D86 /* BaiduMapAPI_Base.framework */; };
@@ -653,6 +656,9 @@
 		493B7DC721464AD900FF8EA9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		493B7E0621464C6200FF8EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		493B7E0821464C6200FF8EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49CA5A53214A1433002888C4 /* mapPM2.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapPM2.5@2x.png"; sourceTree = "<group>"; };
+		49CA5A57214A2F7F002888C4 /* scrollWeatherView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scrollWeatherView@2x.png"; sourceTree = "<group>"; };
+		49CA5A5A214A3890002888C4 /* LaunchScreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchScreen@2x.png"; sourceTree = "<group>"; };
 		49D44AD02148B5B000B74D86 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		49D44AD12148B5B000B74D86 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		49D44AD22148B5B000B74D86 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
@@ -826,6 +832,9 @@
 		4926F94121464EF800466260 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				49CA5A5A214A3890002888C4 /* LaunchScreen@2x.png */,
+				49CA5A57214A2F7F002888C4 /* scrollWeatherView@2x.png */,
+				49CA5A53214A1433002888C4 /* mapPM2.5@2x.png */,
 				4926FBEE2147A42A00466260 /* pm2.5@2x.png */,
 				4926F94221464EF800466260 /* left_wirte@2x.png */,
 				4926F94321464EF800466260 /* 501@2x.png */,
@@ -1785,6 +1794,7 @@
 				4926F9C221464EF800466260 /* city@2x.png in Resources */,
 				4926F99B21464EF800466260 /* shareBG.png in Resources */,
 				4926FBEF2147A42A00466260 /* pm2.5@2x.png in Resources */,
+				49CA5A5B214A3890002888C4 /* LaunchScreen@2x.png in Resources */,
 				4926F9CA21464EF800466260 /* files@2x.png in Resources */,
 				4926F98F21464EF800466260 /* share_rain@2x.png in Resources */,
 				4926F9BA21464EF800466260 /* comments@3x.png in Resources */,
@@ -1828,11 +1838,13 @@
 				4926FB372146503400466260 /* ANWindSpeedItemView.xib in Resources */,
 				4926FB402146503400466260 /* ANDaysWeatherCell.xib in Resources */,
 				4926F9A321464EF800466260 /* share@2x.png in Resources */,
+				49CA5A54214A1433002888C4 /* mapPM2.5@2x.png in Resources */,
 				4926F9A521464EF800466260 /* an_logo@3x.png in Resources */,
 				4926F9C821464EF800466260 /* isF@2x.png in Resources */,
 				4926F99721464EF800466260 /* share_sun@2x.png in Resources */,
 				4926F9D221464EF800466260 /* 3.jpg in Resources */,
 				493B7E0A21464C6200FF8EA9 /* Main.storyboard in Resources */,
+				49CA5A58214A2F7F002888C4 /* scrollWeatherView@2x.png in Resources */,
 				4926FB442146503400466260 /* ANPM25ItemView.xib in Resources */,
 				4926F9C321464EF800466260 /* wind@2x.png in Resources */,
 				4926FBA22146503400466260 /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -2138,7 +2150,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2195,7 +2206,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

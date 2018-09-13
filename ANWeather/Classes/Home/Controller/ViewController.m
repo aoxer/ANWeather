@@ -22,6 +22,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+static CGFloat mainScrollH=150;
 
 @interface ViewController ()<CLLocationManagerDelegate,ANAppDelegateRESideMenuDelegate>
 
@@ -30,7 +31,12 @@
  */
 @property (copy, nonatomic)NSString *city;
 
+@property (assign, nonatomic)int count;
+
 @property (strong, nonatomic)ANWeatherView *weatherView;
+
+@property (strong, nonatomic)UIView *scrollWeatherView;
+
 
 @property (strong, nonatomic)ArknowM *nowm;
 
@@ -129,13 +135,14 @@
     if ([NSUserDefaults isFirst])
     {
         self.city = @"北京";
+        self.count=0;
+        [self autoScrollShow:mainScrollH];
+        [self scrollWeatherView];
         ANLog(@"第一次");
     } else {
         self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"北京";
         ANLog(@"第二次");
     }
-    
-    [self autoScrollShow];
     
 }
 
@@ -185,6 +192,25 @@
     
     self.weatherView = weatherView;
     
+    UIButton *mapBtn=[UIButton new];
+    mapBtn.layer.cornerRadius=3;
+    mapBtn.clipsToBounds=YES;
+    [mapBtn setTitle:@" PM2.5" forState:0];
+    mapBtn.frame=CGRectMake(Width-130, 100, 120, 70);
+    mapBtn.titleLabel.font=[UIFont systemFontOfSize:18];
+    [mapBtn setTitleColor:[UIColor whiteColor] forState:0];
+    mapBtn.backgroundColor=ANColor(10, 10, 10, 0.3);
+    [mapBtn setImage:[UIImage imageNamed:@"mapPM2.5"] forState:0];
+    [weatherView addSubview:mapBtn];
+    [mapBtn addTarget:self action:@selector(toMap) forControlEvents:UIControlEventTouchUpInside];
+    
+}
+- (void)toMap
+{
+    MapViewController *map= [MapViewController new];
+    map.nowm=self.nowm;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:map];
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 /**
@@ -265,12 +291,8 @@
  */
 - (void)callRight
 {
-//    [self.sideMenuViewController presentRightMenuViewController];
+    [self.sideMenuViewController presentRightMenuViewController];
     
-    MapViewController *map= [MapViewController new];
-    map.nowm=self.nowm;
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:map];
-    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 
@@ -587,20 +609,26 @@
 
 }
 
-- (void)autoScrollShow
+- (void)autoScrollShow:(CGFloat )h
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:3 animations:^{
-            UIView.animationRepeatCount  = 3;
-            [self.tableView setContentOffset:CGPointMake(0, 55) animated:YES];
-        } completion:^(BOOL finished) {
-
-        }];
-        [UIView animateWithDuration:3 animations:^{
-            
+        [UIView animateWithDuration:1 animations:^{
+            [self.tableView setContentOffset:CGPointMake(0,h) animated:YES];
+            self.count++;
+        }completion:^(BOOL finished) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (self.count<5) {
+                    if (h==mainScrollH) {
+                        [self autoScrollShow:0];
+                    }else{
+                        [self autoScrollShow:mainScrollH];
+                    }
+                }else{
+                    [self.scrollWeatherView removeFromSuperview];
+                }
+            });
         }];
     });
-
    
 }
 
@@ -656,6 +684,31 @@
 //    [UMSocialShakeService unShakeToSns];
 //
 //}
+
+- (UIView *)scrollWeatherView
+{
+    if (!_scrollWeatherView) {
+        _scrollWeatherView=[UIView new];
+        _scrollWeatherView.frame=CGRectMake(0, 0, Width, Height);
+        UIImageView *scrollImage=[UIImageView new];
+        scrollImage.image=[UIImage imageNamed:@"scrollWeatherView@2x"];
+        scrollImage.contentMode=UIViewContentModeScaleAspectFit;
+        scrollImage.frame=CGRectMake(Width*0.6, Height*0.6, 100, 100);
+        UILabel *textL=[UILabel new];
+        textL.text=@"滑动查看一周天气";
+        CGSize size = [textL.text sizeWithAttributes:@{NSFontAttributeName: textL.font}];
+        textL.textColor=[UIColor whiteColor];
+        textL.textAlignment=1;
+        textL.font=[UIFont systemFontOfSize:15];
+        textL.frame=CGRectMake(0, scrollImage.y+scrollImage.height, size.width+20, 30);
+        textL.centerX=scrollImage.centerX;
+        [_scrollWeatherView addSubview:textL];
+        [_scrollWeatherView addSubview:scrollImage];
+        _scrollWeatherView.backgroundColor=ANColor(1,1,1,0.4);
+        [ANKeyWindow addSubview:_scrollWeatherView];
+    }
+    return _scrollWeatherView;
+}
 
 
 

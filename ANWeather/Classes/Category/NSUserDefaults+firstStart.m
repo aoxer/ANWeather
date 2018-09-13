@@ -12,18 +12,13 @@
 
 + (BOOL)isFirst
 {
-    // 第一次打开设置默认城市
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"])
-    {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
-       
+    if (![kUserDefaults boolForKey:@"firstStart"]){
+        [kUserDefaults setBool:YES forKey:@"firstStart"];
         return YES;
-    } else {
- 
+    }else{
         return NO;
     }
     
-    return YES;
 }
 
 @end
