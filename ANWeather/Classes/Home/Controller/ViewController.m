@@ -64,8 +64,7 @@ static CGFloat mainScrollH=150;
     
     [super viewDidLoad];
     
-    // 设置上一次城市
-    [self setupLastCity];
+    [self setupNewShow];
     
     // 设置tableView
     [self setupTableView];
@@ -75,9 +74,6 @@ static CGFloat mainScrollH=150;
     
     // 设置天气View
     [self SetupWeatherView];
-    
-    // 如果是iOS8+ 请求位置授权
-    [self requestAuthorizaiton];
     
     // 判断城市并获取数据
     [self judgeCity];
@@ -129,21 +125,14 @@ static CGFloat mainScrollH=150;
 
 #pragma mark 初始化方法
 
-- (void)setupLastCity
+- (void)setupNewShow
 {
     // 第一次打开设置默认城市
-    if ([NSUserDefaults isFirst])
-    {
-        self.city = @"北京";
+    if ([NSUserDefaults isFirst]){
         self.count=0;
         [self autoScrollShow:mainScrollH];
         [self scrollWeatherView];
-        ANLog(@"第一次");
-    } else {
-        self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"北京";
-        ANLog(@"第二次");
     }
-    
 }
 
 /**
@@ -151,6 +140,8 @@ static CGFloat mainScrollH=150;
  */
 - (void)setupTableView
 {
+    self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"北京";
+
     self.tableView.contentInset = UIEdgeInsetsMake(-20 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -191,7 +182,6 @@ static CGFloat mainScrollH=150;
     [self.tableView addSubview:weatherView];
     
     self.weatherView = weatherView;
-    
     UIButton *mapBtn=[UIButton new];
     mapBtn.layer.cornerRadius=3;
     mapBtn.clipsToBounds=YES;
@@ -388,6 +378,7 @@ static CGFloat mainScrollH=150;
     }
     
     UIImage *image = [UIImage imageNamed:@"clear.jpg"];
+    
     if ([txt isEqualToString:@"晴"]) {
         image = [UIImage imageNamed:@"clear.jpg"];
         
@@ -395,10 +386,6 @@ static CGFloat mainScrollH=150;
     } else if ([txt hasSuffix:@"雨"]){
         
         image = [UIImage imageNamed:@"rain_d_portrait.jpg"];
-        return image;
-    } else if ([txt hasSuffix:@"阴"]){
-        
-        image = [UIImage imageNamed:@"yintian.jpg"];
         return image;
     } else if ([txt hasSuffix:@"阴"]){
         
@@ -417,18 +404,15 @@ static CGFloat mainScrollH=150;
         
         image = [UIImage imageNamed:@"snow_d_portrait.jpg"];
         
-
         return image;
     } else if ([txt hasSuffix:@"雾"]){
         
         image = [UIImage imageNamed:@"foggy_d_portrait.jpg"];
         
-
         return image;
     } else if ([txt hasSuffix:@"霾"]){
         
         image = [UIImage imageNamed:@"foggy_d_portrait.jpg"];
-        
 
         return image;
     }
@@ -624,6 +608,9 @@ static CGFloat mainScrollH=150;
                         [self autoScrollShow:mainScrollH];
                     }
                 }else{
+                    // 如果是iOS8+ 请求位置授权
+                    [self requestAuthorizaiton];
+                    
                     [self.scrollWeatherView removeFromSuperview];
                 }
             });
@@ -693,7 +680,7 @@ static CGFloat mainScrollH=150;
         UIImageView *scrollImage=[UIImageView new];
         scrollImage.image=[UIImage imageNamed:@"scrollWeatherView@2x"];
         scrollImage.contentMode=UIViewContentModeScaleAspectFit;
-        scrollImage.frame=CGRectMake(Width*0.6, Height*0.6, 100, 100);
+        scrollImage.frame=CGRectMake(Width*0.6, Height*0.6, 50, 50);
         UILabel *textL=[UILabel new];
         textL.text=@"滑动查看一周天气";
         CGSize size = [textL.text sizeWithAttributes:@{NSFontAttributeName: textL.font}];

@@ -120,19 +120,23 @@
           failure:(void (^)(NSError *error))failure
 {
     AFHTTPSessionManager *manager = [AFNTool manager];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible=YES;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIApplication sharedApplication].networkActivityIndicatorVisible=YES;
+    });
     [manager GET:url parameters:model.keyValues progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
-            [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
-        }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
+            });        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {
             failure(error);
-            [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
-        }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
+            });        }
     }];
     
 }

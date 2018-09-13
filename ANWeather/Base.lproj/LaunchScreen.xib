@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="975"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="3qH-0p-EOq">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="3qH-0p-EOq">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="975"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright © 2016-2018 An. All right reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PR-6N-Pcv">
@@ -44,6 +44,6 @@
         </view>
     </objects>
     <resources>
-        <image name="LaunchScreen.png" width="320" height="527"/>
+        <image name="launchScreen.png" width="320" height="527"/>
     </resources>
 </document>
