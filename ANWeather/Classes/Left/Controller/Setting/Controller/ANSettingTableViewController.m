@@ -174,7 +174,7 @@
 //            NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][versionKey];
             cell.userInteractionEnabled = NO;
             cell.textLabel.text = @"版本信息";
-            cell.detailTextLabel.text = @"1.3.2";
+            cell.detailTextLabel.text = @"1.3.3";
             cell.imageView.image = [UIImage imageNamed:@"an_logo"];
         }
             break;
