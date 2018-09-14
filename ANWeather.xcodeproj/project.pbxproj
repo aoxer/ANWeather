@@ -249,6 +249,30 @@
 		49CA5A54214A1433002888C4 /* mapPM2.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CA5A53214A1433002888C4 /* mapPM2.5@2x.png */; };
 		49CA5A58214A2F7F002888C4 /* scrollWeatherView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CA5A57214A2F7F002888C4 /* scrollWeatherView@2x.png */; };
 		49CA5A5B214A3890002888C4 /* LaunchScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49CA5A5A214A3890002888C4 /* LaunchScreen@2x.png */; };
+		49CA5A8C214A4158002888C4 /* Myclass2YourClass5.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A5C214A4155002888C4 /* Myclass2YourClass5.m */; };
+		49CA5A8D214A4158002888C4 /* Myclass2YourClass3.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A5D214A4155002888C4 /* Myclass2YourClass3.m */; };
+		49CA5A8E214A4158002888C4 /* Myclass4YourClass3.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A60214A4155002888C4 /* Myclass4YourClass3.m */; };
+		49CA5A8F214A4158002888C4 /* Myclass4YourClass4.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A61214A4155002888C4 /* Myclass4YourClass4.m */; };
+		49CA5A90214A4158002888C4 /* Myclass1YourClass6.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A62214A4155002888C4 /* Myclass1YourClass6.m */; };
+		49CA5A91214A4158002888C4 /* Myclass1YourClass2.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A67214A4155002888C4 /* Myclass1YourClass2.m */; };
+		49CA5A92214A4158002888C4 /* Myclass1YourClass3.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A69214A4156002888C4 /* Myclass1YourClass3.m */; };
+		49CA5A93214A4158002888C4 /* Myclass3YourClass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A6A214A4156002888C4 /* Myclass3YourClass1.m */; };
+		49CA5A94214A4158002888C4 /* Myclass2YourClass2.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A6B214A4156002888C4 /* Myclass2YourClass2.m */; };
+		49CA5A95214A4158002888C4 /* Myclass2YourClass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A6C214A4156002888C4 /* Myclass2YourClass1.m */; };
+		49CA5A96214A4158002888C4 /* Myclass2YourClass6.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A6E214A4156002888C4 /* Myclass2YourClass6.m */; };
+		49CA5A97214A4158002888C4 /* Myclass3YourClass2.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A72214A4156002888C4 /* Myclass3YourClass2.m */; };
+		49CA5A98214A4158002888C4 /* Myclass2YourClass4.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A78214A4157002888C4 /* Myclass2YourClass4.m */; };
+		49CA5A99214A4158002888C4 /* Myclass1YourClass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A7B214A4157002888C4 /* Myclass1YourClass1.m */; };
+		49CA5A9A214A4158002888C4 /* Myclass3YourClass3.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A7C214A4157002888C4 /* Myclass3YourClass3.m */; };
+		49CA5A9B214A4158002888C4 /* Myclass3YourClass5.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A81214A4157002888C4 /* Myclass3YourClass5.m */; };
+		49CA5A9C214A4158002888C4 /* Myclass4YourClass2.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A83214A4158002888C4 /* Myclass4YourClass2.m */; };
+		49CA5A9D214A4158002888C4 /* Myclass1YourClass5.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A84214A4158002888C4 /* Myclass1YourClass5.m */; };
+		49CA5A9E214A4158002888C4 /* Myclass1YourClass4.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A85214A4158002888C4 /* Myclass1YourClass4.m */; };
+		49CA5A9F214A4158002888C4 /* Myclass3YourClass4.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A86214A4158002888C4 /* Myclass3YourClass4.m */; };
+		49CA5AA0214A4158002888C4 /* Myclass4YourClass6.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A87214A4158002888C4 /* Myclass4YourClass6.m */; };
+		49CA5AA1214A4158002888C4 /* Myclass3YourClass6.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A89214A4158002888C4 /* Myclass3YourClass6.m */; };
+		49CA5AA2214A4158002888C4 /* Myclass4YourClass1.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A8A214A4158002888C4 /* Myclass4YourClass1.m */; };
+		49CA5AA3214A4158002888C4 /* Myclass4YourClass5.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CA5A8B214A4158002888C4 /* Myclass4YourClass5.m */; };
 		49D44AD92148B5B000B74D86 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD02148B5B000B74D86 /* BaiduMapAPI_Search.framework */; };
 		49D44ADA2148B5B000B74D86 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD12148B5B000B74D86 /* BaiduMapAPI_Utils.framework */; };
 		49D44ADB2148B5B000B74D86 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D44AD22148B5B000B74D86 /* BaiduMapAPI_Base.framework */; };
@@ -659,6 +683,54 @@
 		49CA5A53214A1433002888C4 /* mapPM2.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapPM2.5@2x.png"; sourceTree = "<group>"; };
 		49CA5A57214A2F7F002888C4 /* scrollWeatherView@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scrollWeatherView@2x.png"; sourceTree = "<group>"; };
 		49CA5A5A214A3890002888C4 /* LaunchScreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchScreen@2x.png"; sourceTree = "<group>"; };
+		49CA5A5C214A4155002888C4 /* Myclass2YourClass5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass2YourClass5.m; sourceTree = "<group>"; };
+		49CA5A5D214A4155002888C4 /* Myclass2YourClass3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass2YourClass3.m; sourceTree = "<group>"; };
+		49CA5A5E214A4155002888C4 /* Myclass2YourClass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass2YourClass1.h; sourceTree = "<group>"; };
+		49CA5A5F214A4155002888C4 /* Myclass3YourClass6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass3YourClass6.h; sourceTree = "<group>"; };
+		49CA5A60214A4155002888C4 /* Myclass4YourClass3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass4YourClass3.m; sourceTree = "<group>"; };
+		49CA5A61214A4155002888C4 /* Myclass4YourClass4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass4YourClass4.m; sourceTree = "<group>"; };
+		49CA5A62214A4155002888C4 /* Myclass1YourClass6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass1YourClass6.m; sourceTree = "<group>"; };
+		49CA5A63214A4155002888C4 /* Myclass2YourClass4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass2YourClass4.h; sourceTree = "<group>"; };
+		49CA5A64214A4155002888C4 /* Myclass4YourClass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass4YourClass1.h; sourceTree = "<group>"; };
+		49CA5A65214A4155002888C4 /* Myclass3YourClass2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass3YourClass2.h; sourceTree = "<group>"; };
+		49CA5A66214A4155002888C4 /* Myclass3YourClass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass3YourClass1.h; sourceTree = "<group>"; };
+		49CA5A67214A4155002888C4 /* Myclass1YourClass2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass1YourClass2.m; sourceTree = "<group>"; };
+		49CA5A68214A4156002888C4 /* Myclass3YourClass3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass3YourClass3.h; sourceTree = "<group>"; };
+		49CA5A69214A4156002888C4 /* Myclass1YourClass3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass1YourClass3.m; sourceTree = "<group>"; };
+		49CA5A6A214A4156002888C4 /* Myclass3YourClass1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass3YourClass1.m; sourceTree = "<group>"; };
+		49CA5A6B214A4156002888C4 /* Myclass2YourClass2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass2YourClass2.m; sourceTree = "<group>"; };
+		49CA5A6C214A4156002888C4 /* Myclass2YourClass1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass2YourClass1.m; sourceTree = "<group>"; };
+		49CA5A6D214A4156002888C4 /* Myclass4YourClass2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass4YourClass2.h; sourceTree = "<group>"; };
+		49CA5A6E214A4156002888C4 /* Myclass2YourClass6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass2YourClass6.m; sourceTree = "<group>"; };
+		49CA5A6F214A4156002888C4 /* Myclass3YourClass5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass3YourClass5.h; sourceTree = "<group>"; };
+		49CA5A70214A4156002888C4 /* Myclass4YourClass6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass4YourClass6.h; sourceTree = "<group>"; };
+		49CA5A71214A4156002888C4 /* Myclass4YourClass4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass4YourClass4.h; sourceTree = "<group>"; };
+		49CA5A72214A4156002888C4 /* Myclass3YourClass2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass3YourClass2.m; sourceTree = "<group>"; };
+		49CA5A73214A4156002888C4 /* Myclass1YourClass2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass1YourClass2.h; sourceTree = "<group>"; };
+		49CA5A74214A4156002888C4 /* Myclass2YourClass3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass2YourClass3.h; sourceTree = "<group>"; };
+		49CA5A75214A4157002888C4 /* Myclass4YourClass3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass4YourClass3.h; sourceTree = "<group>"; };
+		49CA5A76214A4157002888C4 /* Myclass1YourClass6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass1YourClass6.h; sourceTree = "<group>"; };
+		49CA5A77214A4157002888C4 /* Myclass2YourClass5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass2YourClass5.h; sourceTree = "<group>"; };
+		49CA5A78214A4157002888C4 /* Myclass2YourClass4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass2YourClass4.m; sourceTree = "<group>"; };
+		49CA5A79214A4157002888C4 /* Myclass1YourClass3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass1YourClass3.h; sourceTree = "<group>"; };
+		49CA5A7A214A4157002888C4 /* Myclass1YourClass4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass1YourClass4.h; sourceTree = "<group>"; };
+		49CA5A7B214A4157002888C4 /* Myclass1YourClass1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass1YourClass1.m; sourceTree = "<group>"; };
+		49CA5A7C214A4157002888C4 /* Myclass3YourClass3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass3YourClass3.m; sourceTree = "<group>"; };
+		49CA5A7D214A4157002888C4 /* Myclass1YourClass5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass1YourClass5.h; sourceTree = "<group>"; };
+		49CA5A7E214A4157002888C4 /* Myclass2YourClass6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass2YourClass6.h; sourceTree = "<group>"; };
+		49CA5A7F214A4157002888C4 /* Myclass4YourClass5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass4YourClass5.h; sourceTree = "<group>"; };
+		49CA5A80214A4157002888C4 /* Myclass2YourClass2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass2YourClass2.h; sourceTree = "<group>"; };
+		49CA5A81214A4157002888C4 /* Myclass3YourClass5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass3YourClass5.m; sourceTree = "<group>"; };
+		49CA5A82214A4158002888C4 /* Myclass1YourClass1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass1YourClass1.h; sourceTree = "<group>"; };
+		49CA5A83214A4158002888C4 /* Myclass4YourClass2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass4YourClass2.m; sourceTree = "<group>"; };
+		49CA5A84214A4158002888C4 /* Myclass1YourClass5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass1YourClass5.m; sourceTree = "<group>"; };
+		49CA5A85214A4158002888C4 /* Myclass1YourClass4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass1YourClass4.m; sourceTree = "<group>"; };
+		49CA5A86214A4158002888C4 /* Myclass3YourClass4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass3YourClass4.m; sourceTree = "<group>"; };
+		49CA5A87214A4158002888C4 /* Myclass4YourClass6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass4YourClass6.m; sourceTree = "<group>"; };
+		49CA5A88214A4158002888C4 /* Myclass3YourClass4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myclass3YourClass4.h; sourceTree = "<group>"; };
+		49CA5A89214A4158002888C4 /* Myclass3YourClass6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass3YourClass6.m; sourceTree = "<group>"; };
+		49CA5A8A214A4158002888C4 /* Myclass4YourClass1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass4YourClass1.m; sourceTree = "<group>"; };
+		49CA5A8B214A4158002888C4 /* Myclass4YourClass5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Myclass4YourClass5.m; sourceTree = "<group>"; };
 		49D44AD02148B5B000B74D86 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
 		49D44AD12148B5B000B74D86 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
 		49D44AD22148B5B000B74D86 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
@@ -1096,6 +1168,54 @@
 		4926FA352146503300466260 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				49CA5A82214A4158002888C4 /* Myclass1YourClass1.h */,
+				49CA5A7B214A4157002888C4 /* Myclass1YourClass1.m */,
+				49CA5A73214A4156002888C4 /* Myclass1YourClass2.h */,
+				49CA5A67214A4155002888C4 /* Myclass1YourClass2.m */,
+				49CA5A79214A4157002888C4 /* Myclass1YourClass3.h */,
+				49CA5A69214A4156002888C4 /* Myclass1YourClass3.m */,
+				49CA5A7A214A4157002888C4 /* Myclass1YourClass4.h */,
+				49CA5A85214A4158002888C4 /* Myclass1YourClass4.m */,
+				49CA5A7D214A4157002888C4 /* Myclass1YourClass5.h */,
+				49CA5A84214A4158002888C4 /* Myclass1YourClass5.m */,
+				49CA5A76214A4157002888C4 /* Myclass1YourClass6.h */,
+				49CA5A62214A4155002888C4 /* Myclass1YourClass6.m */,
+				49CA5A5E214A4155002888C4 /* Myclass2YourClass1.h */,
+				49CA5A6C214A4156002888C4 /* Myclass2YourClass1.m */,
+				49CA5A80214A4157002888C4 /* Myclass2YourClass2.h */,
+				49CA5A6B214A4156002888C4 /* Myclass2YourClass2.m */,
+				49CA5A74214A4156002888C4 /* Myclass2YourClass3.h */,
+				49CA5A5D214A4155002888C4 /* Myclass2YourClass3.m */,
+				49CA5A63214A4155002888C4 /* Myclass2YourClass4.h */,
+				49CA5A78214A4157002888C4 /* Myclass2YourClass4.m */,
+				49CA5A77214A4157002888C4 /* Myclass2YourClass5.h */,
+				49CA5A5C214A4155002888C4 /* Myclass2YourClass5.m */,
+				49CA5A7E214A4157002888C4 /* Myclass2YourClass6.h */,
+				49CA5A6E214A4156002888C4 /* Myclass2YourClass6.m */,
+				49CA5A66214A4155002888C4 /* Myclass3YourClass1.h */,
+				49CA5A6A214A4156002888C4 /* Myclass3YourClass1.m */,
+				49CA5A65214A4155002888C4 /* Myclass3YourClass2.h */,
+				49CA5A72214A4156002888C4 /* Myclass3YourClass2.m */,
+				49CA5A68214A4156002888C4 /* Myclass3YourClass3.h */,
+				49CA5A7C214A4157002888C4 /* Myclass3YourClass3.m */,
+				49CA5A88214A4158002888C4 /* Myclass3YourClass4.h */,
+				49CA5A86214A4158002888C4 /* Myclass3YourClass4.m */,
+				49CA5A6F214A4156002888C4 /* Myclass3YourClass5.h */,
+				49CA5A81214A4157002888C4 /* Myclass3YourClass5.m */,
+				49CA5A5F214A4155002888C4 /* Myclass3YourClass6.h */,
+				49CA5A89214A4158002888C4 /* Myclass3YourClass6.m */,
+				49CA5A64214A4155002888C4 /* Myclass4YourClass1.h */,
+				49CA5A8A214A4158002888C4 /* Myclass4YourClass1.m */,
+				49CA5A6D214A4156002888C4 /* Myclass4YourClass2.h */,
+				49CA5A83214A4158002888C4 /* Myclass4YourClass2.m */,
+				49CA5A75214A4157002888C4 /* Myclass4YourClass3.h */,
+				49CA5A60214A4155002888C4 /* Myclass4YourClass3.m */,
+				49CA5A71214A4156002888C4 /* Myclass4YourClass4.h */,
+				49CA5A61214A4155002888C4 /* Myclass4YourClass4.m */,
+				49CA5A7F214A4157002888C4 /* Myclass4YourClass5.h */,
+				49CA5A8B214A4158002888C4 /* Myclass4YourClass5.m */,
+				49CA5A70214A4156002888C4 /* Myclass4YourClass6.h */,
+				49CA5A87214A4158002888C4 /* Myclass4YourClass6.m */,
 				4926FA362146503300466260 /* AddedFont.h */,
 			);
 			path = Other;
@@ -1901,10 +2021,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CA5A8F214A4158002888C4 /* Myclass4YourClass4.m in Sources */,
 				4926FB8B2146503400466260 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4926FB962146503400466260 /* AFNetworkReachabilityManager.m in Sources */,
+				49CA5A91214A4158002888C4 /* Myclass1YourClass2.m in Sources */,
 				4926FB4A2146503400466260 /* UIWindow+Version.m in Sources */,
 				4926FB8D2146503400466260 /* UIButton+AFNetworking.m in Sources */,
+				49CA5A93214A4158002888C4 /* Myclass3YourClass1.m in Sources */,
 				4926FB462146503400466260 /* ANWeatherItemView.m in Sources */,
 				49D44B0F2148B6BF00B74D86 /* ArkBMKAnnotationView.m in Sources */,
 				4926FB3A2146503400466260 /* ANWindSpeedItemView.m in Sources */,
@@ -1923,21 +2046,27 @@
 				4926FB4B2146503400466260 /* UIImage+Blur.m in Sources */,
 				4926FB7C2146503400466260 /* MJRefreshBackFooter.m in Sources */,
 				49D44AE42148B5C700B74D86 /* ArkBMKManager.m in Sources */,
+				49CA5AA1214A4158002888C4 /* Myclass3YourClass6.m in Sources */,
 				4926FB692146503400466260 /* MJPropertyKey.m in Sources */,
 				4926FB542146503400466260 /* ANDetailViewController.m in Sources */,
+				49CA5A94214A4158002888C4 /* Myclass2YourClass2.m in Sources */,
 				4926FBAE2146503400466260 /* MSNeedleView.m in Sources */,
 				4926FB6A2146503400466260 /* MJDictionaryCache.m in Sources */,
 				4926FB942146503400466260 /* AFURLSessionManager.m in Sources */,
 				4926FB642146503400466260 /* NSObject+MJCoding.m in Sources */,
 				4926FBB12146503400466260 /* MSRangeGauge.m in Sources */,
+				49CA5AA0214A4158002888C4 /* Myclass4YourClass6.m in Sources */,
 				493B7DC921464AD900FF8EA9 /* main.m in Sources */,
 				4926FB7E2146503400466260 /* MJRefreshComponent.m in Sources */,
 				4926FB522146503400466260 /* UIView+Extension.m in Sources */,
 				4926FB2A2146503400466260 /* ANRightTableViewCell.m in Sources */,
+				49CA5A90214A4158002888C4 /* Myclass1YourClass6.m in Sources */,
 				4926FB3C2146503400466260 /* ANPM25ItemView.m in Sources */,
 				4926FB6B2146503400466260 /* MJFoundation.m in Sources */,
 				4926FB682146503400466260 /* NSString+MJExtension.m in Sources */,
+				49CA5AA3214A4158002888C4 /* Myclass4YourClass5.m in Sources */,
 				4926FB9E2146503400466260 /* FMDatabasePool.m in Sources */,
+				49CA5A99214A4158002888C4 /* Myclass1YourClass1.m in Sources */,
 				4926FB812146503400466260 /* RECommonFunctions.m in Sources */,
 				4926FB492146503400466260 /* ANOffLineTool.m in Sources */,
 				4926FB632146503400466260 /* MJProperty.m in Sources */,
@@ -1949,8 +2078,11 @@
 				4926FBAD2146503400466260 /* MSAnnotatedGauge.m in Sources */,
 				4926FB952146503400466260 /* AFURLRequestSerialization.m in Sources */,
 				4926FB4E2146503400466260 /* NSString+Extension.m in Sources */,
+				49CA5A97214A4158002888C4 /* Myclass3YourClass2.m in Sources */,
+				49CA5A8E214A4158002888C4 /* Myclass4YourClass3.m in Sources */,
 				4926FB7B2146503400466260 /* MJRefreshHeader.m in Sources */,
 				4926FB272146503400466260 /* ANRightTableViewController.m in Sources */,
+				49CA5A8C214A4158002888C4 /* Myclass2YourClass5.m in Sources */,
 				4926FB262146503400466260 /* ANCitySearchController.m in Sources */,
 				4926FB592146503400466260 /* ANFeedBackViewController.m in Sources */,
 				4926FB8E2146503400466260 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1958,18 +2090,22 @@
 				4926FB7A2146503400466260 /* MJRefreshFooter.m in Sources */,
 				4926FB702146503400466260 /* UIView+MJExtension.m in Sources */,
 				4926FBAF2146503400466260 /* MSGradientArcLayer.m in Sources */,
+				49CA5A9E214A4158002888C4 /* Myclass1YourClass4.m in Sources */,
 				4926FB5D2146503400466260 /* ANLeftTableViewController.m in Sources */,
 				4926FB512146503400466260 /* NSUserDefaults+firstStart.m in Sources */,
 				4926FB552146503400466260 /* ANCareViewController.m in Sources */,
 				49D44B0D2148B6BF00B74D86 /* MapViewController.m in Sources */,
 				4926FB4F2146503400466260 /* UIBarButtonItem+Extension.m in Sources */,
+				49CA5A9A214A4158002888C4 /* Myclass3YourClass3.m in Sources */,
 				4926FB4D2146503400466260 /* Foundation+Log.m in Sources */,
 				4926FB9C2146503400466260 /* FMDatabaseAdditions.m in Sources */,
 				4926FB932146503400466260 /* AFHTTPSessionManager.m in Sources */,
 				4926FB8C2146503400466260 /* UIImageView+AFNetworking.m in Sources */,
 				4926FBB02146503400466260 /* MSArcLayer.m in Sources */,
 				4926FB6D2146503400466260 /* MJRefreshConst.m in Sources */,
+				49CA5A8D214A4158002888C4 /* Myclass2YourClass3.m in Sources */,
 				4926FB652146503400466260 /* MJExtensionConst.m in Sources */,
+				49CA5A92214A4158002888C4 /* Myclass1YourClass3.m in Sources */,
 				4926FB9B2146503400466260 /* FMDatabaseQueue.m in Sources */,
 				49D44B0E2148B6BF00B74D86 /* ArkBMKAnnotation.m in Sources */,
 				4926FBC52147611B00466260 /* ArkReqTool.m in Sources */,
@@ -1979,6 +2115,9 @@
 				4926FB712146503400466260 /* MJRefreshBackGifFooter.m in Sources */,
 				4926FB7D2146503400466260 /* MJRefreshAutoFooter.m in Sources */,
 				4926FB732146503400466260 /* MJRefreshBackNormalFooter.m in Sources */,
+				49CA5A9B214A4158002888C4 /* Myclass3YourClass5.m in Sources */,
+				49CA5AA2214A4158002888C4 /* Myclass4YourClass1.m in Sources */,
+				49CA5A95214A4158002888C4 /* Myclass2YourClass1.m in Sources */,
 				493B7DC821464AD900FF8EA9 /* AppDelegate.m in Sources */,
 				4926FB5B2146503400466260 /* ANSupportViewController.m in Sources */,
 				4926FBC2214674B800466260 /* ArknowM.m in Sources */,
@@ -1991,14 +2130,19 @@
 				4926FB892146503400466260 /* UIProgressView+AFNetworking.m in Sources */,
 				4926FB762146503400466260 /* MJRefreshAutoNormalFooter.m in Sources */,
 				4926FB3F2146503400466260 /* ANWeatherView.m in Sources */,
+				49CA5A9F214A4158002888C4 /* Myclass3YourClass4.m in Sources */,
 				4926FBB92146697300466260 /* NSString+Password.m in Sources */,
 				4926FB8A2146503400466260 /* UIRefreshControl+AFNetworking.m in Sources */,
+				49CA5A96214A4158002888C4 /* Myclass2YourClass6.m in Sources */,
 				4926FB292146503400466260 /* ANCityM.m in Sources */,
 				4926FB482146503400466260 /* AFNTool.m in Sources */,
 				4926FB992146503400466260 /* MBProgressHUD+MJ.m in Sources */,
 				4926FB6C2146503400466260 /* UIScrollView+MJRefresh.m in Sources */,
+				49CA5A9C214A4158002888C4 /* Myclass4YourClass2.m in Sources */,
 				4926FB902146503400466260 /* AFAutoPurgingImageCache.m in Sources */,
 				4926FB802146503400466260 /* RESideMenu.m in Sources */,
+				49CA5A9D214A4158002888C4 /* Myclass1YourClass5.m in Sources */,
+				49CA5A98214A4158002888C4 /* Myclass2YourClass4.m in Sources */,
 				4926FB792146503400466260 /* MJRefreshGifHeader.m in Sources */,
 				4926FB722146503400466260 /* MJRefreshBackStateFooter.m in Sources */,
 				4926FB782146503400466260 /* MJRefreshStateHeader.m in Sources */,
@@ -2172,7 +2316,7 @@
 					"$(SRCROOT)/ANWeather/Libs/GPUImage/Source",
 				);
 				INFOPLIST_FILE = ANWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2228,7 +2372,7 @@
 					"$(SRCROOT)/ANWeather/Libs/GPUImage/Source",
 				);
 				INFOPLIST_FILE = ANWeather/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
