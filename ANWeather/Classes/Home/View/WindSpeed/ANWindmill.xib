@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,10 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tower" translatesAutoresizingMaskIntoConstraints="NO" id="1q1-6G-DkA">
+                <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigpole.png" translatesAutoresizingMaskIntoConstraints="NO" id="1q1-6G-DkA">
                     <rect key="frame" x="0.0" y="100" width="200" height="100"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blade" translatesAutoresizingMaskIntoConstraints="NO" id="UGg-as-Sbn">
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blade_big.png" translatesAutoresizingMaskIntoConstraints="NO" id="UGg-as-Sbn">
                     <rect key="frame" x="75" y="75" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="0jx-qA-GCl"/>
@@ -22,7 +27,7 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1q1-6G-DkA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5du-Jp-Pqm"/>
                 <constraint firstAttribute="centerX" secondItem="UGg-as-Sbn" secondAttribute="centerX" id="6xe-fU-AcE"/>
@@ -39,7 +44,7 @@
         </view>
     </objects>
     <resources>
-        <image name="blade" width="63" height="63"/>
-        <image name="tower" width="9" height="59"/>
+        <image name="bigpole.png" width="9" height="59"/>
+        <image name="blade_big.png" width="63" height="63"/>
     </resources>
 </document>

@@ -19,6 +19,7 @@
 #import "ANOffLineTool.h"
 #import "ArknowM.h"
 #import "MapViewController.h"
+#import "WHWeatherView.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -37,6 +38,7 @@ static CGFloat mainScrollH=150;
 
 @property (strong, nonatomic)UIView *scrollWeatherView;
 
+@property (nonatomic, strong) WHWeatherView *weatherViewAnimation;
 
 @property (strong, nonatomic)ArknowM *nowm;
 
@@ -48,7 +50,7 @@ static CGFloat mainScrollH=150;
 
 @property (assign, nonatomic)CGPoint startPoint;
 // 背景图片蒙版
-@property (strong, nonatomic)UIView *cover;
+@property (strong, nonatomic)UIImageView *cover;
 
 /**
  * 此成员变量是为了修复摇一摇之后布局出现问题
@@ -64,24 +66,20 @@ static CGFloat mainScrollH=150;
     
     [super viewDidLoad];
     
-    // 设置上一次城市
-    [self setupLastCity];
-    
+    [self setupNewShow];
+
     // 设置tableView
     [self setupTableView];
     
     // 设置导航栏
     [self setupNavigaitonItem];
-    
+
     // 设置天气View
     [self SetupWeatherView];
-    
-    // 如果是iOS8+ 请求位置授权
-    [self requestAuthorizaiton];
-    
+
     // 判断城市并获取数据
     [self judgeCity];
-    
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -129,21 +127,14 @@ static CGFloat mainScrollH=150;
 
 #pragma mark 初始化方法
 
-- (void)setupLastCity
+- (void)setupNewShow
 {
     // 第一次打开设置默认城市
-    if ([NSUserDefaults isFirst])
-    {
-        self.city = @"北京";
+    if ([NSUserDefaults isFirst]){
         self.count=0;
         [self autoScrollShow:mainScrollH];
         [self scrollWeatherView];
-        ANLog(@"第一次");
-    } else {
-        self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"北京";
-        ANLog(@"第二次");
     }
-    
 }
 
 /**
@@ -151,6 +142,8 @@ static CGFloat mainScrollH=150;
  */
 - (void)setupTableView
 {
+    self.city = [ANOffLineTool getLastCity].length ? [ANOffLineTool getLastCity] :@"北京";
+
     self.tableView.contentInset = UIEdgeInsetsMake(-20 , 0, 44*6 +20, 0);
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -191,7 +184,6 @@ static CGFloat mainScrollH=150;
     [self.tableView addSubview:weatherView];
     
     self.weatherView = weatherView;
-    
     UIButton *mapBtn=[UIButton new];
     mapBtn.layer.cornerRadius=3;
     mapBtn.clipsToBounds=YES;
@@ -203,6 +195,15 @@ static CGFloat mainScrollH=150;
     [mapBtn setImage:[UIImage imageNamed:@"mapPM2.5"] forState:0];
     [weatherView addSubview:mapBtn];
     [mapBtn addTarget:self action:@selector(toMap) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIView *cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, ANScreenHeight)];
+    self.tableView.backgroundView.contentMode=UIViewContentModeRedraw;
+    [self.tableView.backgroundView addSubview:cover];
+    self.cover = [UIImageView new];
+    
+    self.weatherViewAnimation.frame = cover.bounds;
+    [self.tableView.backgroundView addSubview:self.weatherViewAnimation];
     
 }
 - (void)toMap
@@ -246,6 +247,12 @@ static CGFloat mainScrollH=150;
 
 }
 
+- (WHWeatherView *)weatherViewAnimation {
+    if (!_weatherViewAnimation) {
+        _weatherViewAnimation = [[WHWeatherView alloc] init];
+    }
+    return _weatherViewAnimation;
+}
 
 
 /**
@@ -365,12 +372,14 @@ static CGFloat mainScrollH=150;
  */
 - (void)dealingResult
 {
-        // 设置背景图片并添加图片蒙版
-    UIView *cover = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ANScreenWidth, ANScreenHeight)];
-    self.tableView.backgroundView = [[UIImageView alloc]initWithImage:[self backGroungImageWithWeather:self.nowm]];
-    [self.tableView.backgroundView addSubview:cover];
-    self.cover = cover;
-    // 重新加载tableView
+    self.cover.image=[self backGroungImageWithWeather:self.nowm] ;
+
+    self.tableView.backgroundView=self.cover;
+    
+    [self.weatherViewAnimation removeFromSuperview];
+
+    [self.tableView.backgroundView addSubview:self.weatherViewAnimation];
+
     [self.tableView reloadData];
     
     [ANOffLineTool saveCurrentCity:self.city];
@@ -387,56 +396,61 @@ static CGFloat mainScrollH=150;
         txt = nowm.cond_txt_n;
     }
     
-    UIImage *image = [UIImage imageNamed:@"clear.jpg"];
-    if ([txt isEqualToString:@"晴"]) {
-        image = [UIImage imageNamed:@"clear.jpg"];
+    UIImage *image = [self stringFormat:@"sunny_d_portrait"];;
+    
+    if ([txt rangeOfString:@"晴"].location != NSNotFound) {
         
-        return image;
-    } else if ([txt hasSuffix:@"雨"]){
-        
-        image = [UIImage imageNamed:@"rain_d_portrait.jpg"];
-        return image;
-    } else if ([txt hasSuffix:@"阴"]){
-        
-        image = [UIImage imageNamed:@"yintian.jpg"];
-        return image;
-    } else if ([txt hasSuffix:@"阴"]){
-        
-        image = [UIImage imageNamed:@"yintian.jpg"];
-        return image;
-    } else if ([txt hasSuffix:@"暴雨"]){
-        
-        image = [UIImage imageNamed:@"storm_d_portrait.jpg"];
-        return image;
-    }else if ([txt hasSuffix:@"云"]){
-        
-        image = [UIImage imageNamed:@"cloudy_d_portrait.jpg"];
+        [self.weatherViewAnimation showWeatherAnimationWithType:WHWeatherTypeSun];
 
-        return image;
-    } else if ([txt hasSuffix:@"雪"]){
+        return [self stringFormat:@"sunny_d_portrait"];
         
-        image = [UIImage imageNamed:@"snow_d_portrait.jpg"];
+    }else if ([txt rangeOfString:@"暴"].location != NSNotFound){
         
+        [self.weatherViewAnimation showWeatherAnimationWithType:WHWeatherTypeRainLighting];
 
-        return image;
-    } else if ([txt hasSuffix:@"雾"]){
+        return [self stringFormat:@"storm_d_portrait"];
         
-        image = [UIImage imageNamed:@"foggy_d_portrait.jpg"];
+    } else if ([txt rangeOfString:@"雨"].location != NSNotFound ){
         
+        [self.weatherViewAnimation showWeatherAnimationWithType:WHWeatherTypeRain];
 
-        return image;
-    } else if ([txt hasSuffix:@"霾"]){
+        return [self stringFormat:@"rain_d_portrait"];
         
-        image = [UIImage imageNamed:@"foggy_d_portrait.jpg"];
-        
+    } else if ([txt rangeOfString:@"阴"].location != NSNotFound){
 
-        return image;
+        return [self stringFormat:@"overcast_d_portrait"];
+
+    } else if ([txt rangeOfString:@"云"].location != NSNotFound){
+        
+        [self.weatherViewAnimation showWeatherAnimationWithType:WHWeatherTypeClound];
+
+        return [self stringFormat:@"cloudy_d_portrait"];
+        
+    } else if ([txt rangeOfString:@"雪"].location != NSNotFound){
+        
+        [self.weatherViewAnimation showWeatherAnimationWithType:WHWeatherTypeSnow];
+
+        return [self stringFormat:@"snow_d_portrait"];
+
+    } else if ([txt rangeOfString:@"雾"].location != NSNotFound){
+        
+        return [self stringFormat:@"foggy_d_portrait"];
+
+    } else if ([txt rangeOfString:@"霾"].location != NSNotFound){
+        
+        return [self stringFormat:@"foggy_d_portrait"];
+        
     }
     
-
      return image;
 }
 
+- (UIImage *)stringFormat:(NSString *)str
+{
+    int i = arc4random() % 3 ;
+    
+    return [UIImage imageNamed:[NSString stringWithFormat:@"%@%d.jpg",str,i]];
+}
 
 
 
@@ -624,6 +638,9 @@ static CGFloat mainScrollH=150;
                         [self autoScrollShow:mainScrollH];
                     }
                 }else{
+                    // 如果是iOS8+ 请求位置授权
+                    [self requestAuthorizaiton];
+                    
                     [self.scrollWeatherView removeFromSuperview];
                 }
             });
@@ -693,7 +710,7 @@ static CGFloat mainScrollH=150;
         UIImageView *scrollImage=[UIImageView new];
         scrollImage.image=[UIImage imageNamed:@"scrollWeatherView@2x"];
         scrollImage.contentMode=UIViewContentModeScaleAspectFit;
-        scrollImage.frame=CGRectMake(Width*0.6, Height*0.6, 100, 100);
+        scrollImage.frame=CGRectMake(Width*0.6, Height*0.6, 50, 50);
         UILabel *textL=[UILabel new];
         textL.text=@"滑动查看一周天气";
         CGSize size = [textL.text sizeWithAttributes:@{NSFontAttributeName: textL.font}];

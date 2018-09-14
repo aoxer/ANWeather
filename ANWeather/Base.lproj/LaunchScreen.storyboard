@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IrC-sf-Exs"/>
+                        <viewControllerLayoutGuide type="bottom" id="LWM-aq-fpD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchBackgroundImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-Va-fDE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather.AN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-k2-WRj">
+                                <rect key="frame" x="71" y="309.5" width="232.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="copyright © 2016-2018 An. All right reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ano-Z9-wsW">
+                                <rect key="frame" x="16" y="621" width="343" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HuW-Va-fDE" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="MES-w1-3qK"/>
+                            <constraint firstAttribute="trailing" secondItem="HuW-Va-fDE" secondAttribute="trailing" id="VHU-Sw-XPA"/>
+                            <constraint firstItem="Ano-Z9-wsW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="VnY-SW-0gh"/>
+                            <constraint firstItem="xhm-k2-WRj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Xnp-1c-nfs"/>
+                            <constraint firstItem="LWM-aq-fpD" firstAttribute="top" secondItem="Ano-Z9-wsW" secondAttribute="bottom" constant="30" id="i2m-dB-Rxx"/>
+                            <constraint firstItem="HuW-Va-fDE" firstAttribute="top" secondItem="IrC-sf-Exs" secondAttribute="bottom" constant="-20" id="icc-e9-ZFz"/>
+                            <constraint firstItem="LWM-aq-fpD" firstAttribute="top" secondItem="HuW-Va-fDE" secondAttribute="bottom" id="jTA-Rp-rbK"/>
+                            <constraint firstItem="xhm-k2-WRj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nys-AJ-VGO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ano-Z9-wsW" secondAttribute="trailing" id="tCa-2Y-KzF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launchBackgroundImage.png" width="621" height="1104"/>
+    </resources>
+</document>

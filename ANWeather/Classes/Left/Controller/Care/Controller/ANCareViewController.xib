@@ -86,7 +86,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y57-pq-09J">
                     <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareBG" translatesAutoresizingMaskIntoConstraints="NO" id="M9K-Yc-o8z">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shareBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="M9K-Yc-o8z">
                             <rect key="frame" x="10" y="10" width="355" height="533"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4z-NP-3Zm" userLabel="today">
@@ -362,6 +362,6 @@
     <resources>
         <image name="back" width="32" height="32"/>
         <image name="share" width="32" height="32"/>
-        <image name="shareBG" width="31" height="89"/>
+        <image name="shareBG.png" width="201" height="226"/>
     </resources>
 </document>
